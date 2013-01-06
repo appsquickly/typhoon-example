@@ -26,6 +26,15 @@
         </initializer>
     </component>
 
+    <component class="NSBundle" key="mainBundle">
+        <initializer selector="mainBundle"/>
+    </component>
 
+    <component class="PFAddCityViewController" key="addCityViewController" scope="prototype">
+        <initializer selector="initWithNibName:bundle:">
+            <argument parameterName="nibName" value="AddCity" required-class="NSString" />
+            <argument parameterName="bundle" ref="mainBundle"/>
+        </initializer>
+    </component>
 
 </assembly>
