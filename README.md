@@ -1,14 +1,23 @@
 spring-objective-c-example
 ==========================
 
-An example application built with spring-objective-c. Features: 
+An example application built with spring-objective-c. 
+
+###Features: 
 
 * Returns weather reports from a remote cloud service
 * Caches weather reports locally
-* Stores the cities that the user is interested in receiving reports for. 
+* Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
 * Can use metric or old-style units. 
 
 ### The Assembly
+
+Just a few lines of XML. These components are used in a few places. You could use a traditional sharedInstance, but
+then how would you: 
+
+* Test the classes that use them in isolation. 
+* Configure the shared instances for both production and test scenarios. 
+
 ```xml
 
 <assembly xmlns="http://jasperblues.github.com/spring-objective-c/schema/assembly"
