@@ -27,7 +27,7 @@ An example application built with spring-objective-c. Features:
 
     <component class="PFWeatherReportDaoFileSystemImpl" key="weatherReportDao">
         <description>
-            This class is responsible for caching retrieved reports to the device for later usage.
+            This class is responsible for caching retrieved reports to the device for later off-line usage.
         </description>
     </component>
 
