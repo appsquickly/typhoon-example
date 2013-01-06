@@ -18,7 +18,7 @@
     </component>
 
     <component class="PFWeatherReportViewController">
-        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:">
+        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao">
             <argument parameterName="weatherClient" ref="weatherClient"/>
             <argument parameterName="weatherReportDao" ref="weatherReportDao"/>
             <argument parameterName="cityDao" ref="cityDao"/>
