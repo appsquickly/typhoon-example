@@ -158,7 +158,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 /* ============================================================ Private Methods ========================================================= */
 - (void)addCity:(id)sender
 {
-    PFAddCityViewController* addCityController = [[SpringComponentFactory defaultFactory] componentForKey:@"addCityViewController"];
+    PFAddCityViewController* addCityController = [[SpringComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]];
     [self presentViewController:addCityController animated:YES completion:^
     {
 
