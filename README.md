@@ -1,7 +1,9 @@
 spring-objective-c-example
 ==========================
 
-An example application built with spring-objective-c. Features: 
+An example application built with spring-objective-c. 
+
+###Features: 
 
 * Returns weather reports from a remote cloud service
 * Caches weather reports locally
