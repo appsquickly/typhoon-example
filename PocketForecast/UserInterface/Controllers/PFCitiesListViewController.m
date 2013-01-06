@@ -29,7 +29,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 @synthesize temperatureUnitsControl = _temperatureUnitsControl;
 
 
-/* ================================================== Initializers ================================================== */
+/* ============================================================ Initializers ============================================================ */
 - (id)initWithCityDao:(id <PFCityDao>)cityDao
 {
     self = [super initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];
@@ -42,56 +42,65 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 }
 
 
-/* ================================================ Interface Methods =============================================== */
-- (void) viewDidLoad {
+/* ========================================================== Interface Methods ========================================================= */
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self setTitle:@"Pocket Forecast"];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
-            initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity:)];
+    self.navigationItem.leftBarButtonItem =
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity:)];
     [_citiesListTableView setEditing:YES];
 
-    [_temperatureUnitsControl addTarget:self action:@selector(saveTemperatureUnitPreference)
-            forControlEvents:UIControlEventValueChanged];
+    [_temperatureUnitsControl addTarget:self action:@selector(saveTemperatureUnitPreference) forControlEvents:UIControlEventValueChanged];
 
-    if ([PFTemperature defaultUnits] == PFTemperatureUnitsCelsius) {
+    if ([PFTemperature defaultUnits] == PFTemperatureUnitsCelsius)
+    {
         [_temperatureUnitsControl setSelectedSegmentIndex:CELSIUS_SEGMENT_INDEX];
     }
-    else {
+    else
+    {
         [_temperatureUnitsControl setSelectedSegmentIndex:FAHRENHEIT_SEGMENT_INDEX];
     }
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     [self refreshCitiesList];
 }
 
 
-- (void) viewDidUnload {
+- (void)viewDidUnload
+{
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-/* ================================================= Protocol Methods =============================================== */
+/* =========================================================== Protocol Methods ========================================================= */
 #pragma mark UITableView methods
 
-- (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+{
     return 1;
 }
 
 
-- (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [_cities count];
 }
 
-- (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+{
     static NSString* reuseId = @"Cities";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
         cell.textLabel.backgroundColor = [UIColor clearColor];
         cell.detailTextLabel.textColor = [UIColor darkGrayColor];
@@ -105,7 +114,8 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     return cell;
 }
 
-- (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
 
     NSString* cityName = [_cities objectAtIndex:indexPath.row];
 
@@ -126,15 +136,18 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 }
 
-- (UITableViewCellEditingStyle) tableView:(UITableView*)tableView
-        editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView
+        editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
+{
     return UITableViewCellEditingStyleDelete;
 }
 
-- (void) tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-        forRowAtIndexPath:(NSIndexPath*)indexPath {
+- (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+        forRowAtIndexPath:(NSIndexPath*)indexPath
+{
 
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         NSString* city = [_cities objectAtIndex:indexPath.row];
         [_cityDao deleteCity:city];
         [self refreshCitiesList];
@@ -142,16 +155,18 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 }
 
 
-/* ================================================== Private Methods =============================================== */
-- (void) addCity:(id)sender {
-    PFAddCityViewController* addCityController =
-            [[PFAddCityViewController alloc] initWithNibName:@"AddCity" bundle:[NSBundle mainBundle]];
-    [self presentViewController:addCityController animated:YES completion:^{
+/* ============================================================ Private Methods ========================================================= */
+- (void)addCity:(id)sender
+{
+    PFAddCityViewController* addCityController = [[PFAddCityViewController alloc] initWithNibName:@"AddCity" bundle:[NSBundle mainBundle]];
+    [self presentViewController:addCityController animated:YES completion:^
+    {
 
     }];
 }
 
-- (void) refreshCitiesList {
+- (void)refreshCitiesList
+{
     _cities = [_cityDao listAllCities];
     [_citiesListTableView reloadData];
 }
@@ -159,20 +174,23 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 /*
 * When replacing the root view controller it's necessary to adjust a new view's frame below the status bar.
 */
-- (void) moveFrameBelowStatusBarFor:(PFWeatherReportViewController*)weatherReportController {
+- (void)moveFrameBelowStatusBarFor:(PFWeatherReportViewController*)weatherReportController
+{
     CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
     CGRect newFrame = weatherReportController.view.frame;
     newFrame.origin = CGPointMake(0, 0 + statusBarFrame.size.height);
-    newFrame.size =
-            CGSizeMake(self.view.frame.size.width, self.view.window.frame.size.height - statusBarFrame.size.height);
+    newFrame.size = CGSizeMake(self.view.frame.size.width, self.view.window.frame.size.height - statusBarFrame.size.height);
     weatherReportController.view.frame = newFrame;
 }
 
-- (void) saveTemperatureUnitPreference {
-    if ([_temperatureUnitsControl selectedSegmentIndex] == CELSIUS_SEGMENT_INDEX) {
+- (void)saveTemperatureUnitPreference
+{
+    if ([_temperatureUnitsControl selectedSegmentIndex] == CELSIUS_SEGMENT_INDEX)
+    {
         [PFTemperature setDefaultUnits:PFTemperatureUnitsCelsius];
     }
-    else{
+    else
+    {
         [PFTemperature setDefaultUnits:PFTemperatureUnitsFahrenheit];
     }
 }

@@ -3,7 +3,8 @@
           xsi:schemaLocation="http://jasperblues.github.com/spring-objective-c/schema/assembly
           http://www.appsquick.ly/schema/assembly.xsd">
 
-    <description>This file encapsulates the assembly of view controllers</description>
+    <description>This file encapsulates the assembly of view controllers. You could also look-up view controller dependencies
+    from within the controllers themselves. . . just showing here that both styles are possible. </description>
 
     <component class="UINavigationController">
         <initializer selector="initWithRootViewController:">
@@ -18,11 +19,13 @@
     </component>
 
     <component class="PFWeatherReportViewController">
-        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao">
+        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:">
             <argument parameterName="weatherClient" ref="weatherClient"/>
             <argument parameterName="weatherReportDao" ref="weatherReportDao"/>
             <argument parameterName="cityDao" ref="cityDao"/>
         </initializer>
     </component>
+
+
 
 </assembly>

@@ -3,14 +3,16 @@
           xsi:schemaLocation="http://jasperblues.github.com/spring-objective-c/schema/assembly
           http://www.appsquick.ly/schema/assembly.xsd">
 
-    <description>This file encapsulats the core model.</description>
+    <description>
+        This file encapsulates the core model. To use, please get an API key from: http://www.worldweatheronline.com
+    </description>
 
     <component class="PFWeatherClientBasicImpl" key="weatherClient">
         <description>
             This is component retrieves weather reports from the cloud-service.
         </description>
         <property name="serviceUrl" value="http://free.worldweatheronline.com/feed/weather.ashx"/>
-        <property name="apiKey" value="c5615012b3093944130101"/>
+        <property name="apiKey" value="$$YOUR_API_KEY_HERE$$"/>
         <property name="weatherReportDao" ref="weatherReportDao"/>
     </component>
 

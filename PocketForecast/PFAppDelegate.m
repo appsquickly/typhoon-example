@@ -27,6 +27,8 @@
     [factory makeDefault];
     _cityDao = [factory componentForType:@protocol(PFCityDao)];
     _navigationController = [factory componentForType:[UINavigationController class]];
+    _navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+
     _weatherReportController = [factory componentForType:[PFWeatherReportViewController class]];
 
     NSString* selectedCity = [_cityDao getCurrentlySelectedCity];
