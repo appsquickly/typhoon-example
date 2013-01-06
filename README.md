@@ -44,7 +44,7 @@ An example application built with spring-objective-c. Features:
 
 ### The App ('scuse the dev's designs). 
 
-<img src="https://github.com/downloads/jasperblues/spring-objective-c-example/weather-report.png"/>
-<img src="https://github.com/downloads/jasperblues/spring-objective-c-example/cities-list.png"/>
-<img src="https://github.com/downloads/jasperblues/spring-objective-c-example/add-city.png"/>
+<img src="https://www.github.com/jasperblues/spring-objective-c-example/weather-report.png"/>
+<img src="https://www.github.com/jasperblues/spring-objective-c-example/cities-list.png"/>
+<img src="https://www.github.com/jasperblues/spring-objective-c-example/add-city.png"/>
 
