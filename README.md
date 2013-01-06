@@ -7,7 +7,7 @@ An example application built with spring-objective-c.
 
 * Returns weather reports from a remote cloud service
 * Caches weather reports locally
-* Stores the cities that the user is interested in receiving reports for. 
+* Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
 * Can use metric or old-style units. 
 
 ### The Assembly
