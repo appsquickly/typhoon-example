@@ -23,7 +23,6 @@
 @synthesize weatherReportDao = _weatherReportDao;
 
 
-
 /* ============================================================ Initializers ============================================================ */
 - (id)init
 {
@@ -36,6 +35,16 @@
     return self;
 }
 
+/* ========================================================== Interface Methods ========================================================= */
+- (void)setApiKey:(NSString*)apiKey
+{
+    _apiKey = apiKey;
+    if ([_apiKey isEqualToString:@"$$YOUR_API_KEY_HERE$$"])
+    {
+        [NSException raise:NSInvalidArgumentException format:@"Please get an API key from: http://free.worldweatheronline.com"];
+    }
+}
+
 /* =========================================================== Protocol Methods ========================================================= */
 - (void)loadWeatherReportFor:(NSString*)city delegate:(id <PFWeatherClientDelegate>)delegate
 {
@@ -43,7 +52,6 @@
     [parameters setValue:city forKey:@"q"];
     [parameters setValue:@"xml" forKey:@"format"];
     [parameters setValue:@"5" forKey:@"num_of_days"];
-    LogDebug(@"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Here's the api key: %@", _apiKey);
     [parameters setValue:_apiKey forKey:@"key"];
 
     [_client get:_serviceUrl parameters:parameters withBlock:^(LRRestyResponse* response)
@@ -83,7 +91,7 @@
 
 /* ============================================================ Private Methods ========================================================= */
 - (void)dispatchErrorWith:(id <PFWeatherClientDelegate>)delegate statusCode:(NSInteger)statusCode
-            failureReason:(NSString*)failureReason
+        failureReason:(NSString*)failureReason
 {
 
     LogDebug(@"Dispatching error with failure reason: %@", failureReason);

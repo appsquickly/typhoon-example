@@ -20,23 +20,22 @@ then how would you:
 
 ```xml
 
-<assembly xmlns="http://jasperblues.github.com/spring-objective-c/schema/assembly"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://jasperblues.github.com/spring-objective-c/schema/assembly
-          http://www.appsquick.ly/schema/assembly.xsd">
+    <description>
+        This file encapsulates the core model. To use, please get an API key from: http://www.worldweatheronline.com
+    </description>
 
     <component class="PFWeatherClientBasicImpl" key="weatherClient">
         <description>
             This is component retrieves weather reports from the cloud-service.
         </description>
         <property name="serviceUrl" value="http://free.worldweatheronline.com/feed/weather.ashx"/>
-        <property name="apiKey" value="$YOUR_API_KEY_HERE$"/>
+        <property name="apiKey" value="$$YOUR_API_KEY_HERE$$"/>
         <property name="weatherReportDao" ref="weatherReportDao"/>
     </component>
 
     <component class="PFWeatherReportDaoFileSystemImpl" key="weatherReportDao">
         <description>
-            This class is responsible for caching retrieved reports to the device for later off-line usage.
+            This class is responsible for caching retrieved reports to the device for later usage.
         </description>
     </component>
 
@@ -47,6 +46,8 @@ then how would you:
     </component>
 
 </assembly>
+
+
 
 
 ```
