@@ -11,6 +11,13 @@ An example application built with spring-objective-c.
 * Can use metric or old-style units. 
 
 ### The Assembly
+
+Just a few lines of XML. These components are used in a few places. You could use a traditional sharedInstance, but
+then how would you: 
+
+* Test them in isolation. 
+* Configure them for both product and test scenarios. 
+
 ```xml
 
 <assembly xmlns="http://jasperblues.github.com/spring-objective-c/schema/assembly"
