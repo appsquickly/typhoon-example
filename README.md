@@ -16,7 +16,7 @@ Just a few lines of XML. These components are used in a few places. You could us
 then how would you: 
 
 * Test them in isolation. 
-* Configure them for both product and test scenarios. 
+* Configure them for both production and test scenarios. 
 
 ```xml
 
