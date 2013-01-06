@@ -30,13 +30,17 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 
 /* ================================================== Initializers ================================================== */
-- (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        _cityDao = [[SpringComponentFactory defaultFactory] componentForKey:@"cityDao"];
+- (id)initWithCityDao:(id <PFCityDao>)cityDao
+{
+    self = [super initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];
+    if (self)
+    {
+        _cityDao = cityDao;
     }
+
     return self;
 }
+
 
 /* ================================================ Interface Methods =============================================== */
 - (void) viewDidLoad {

@@ -20,12 +20,8 @@
 @protocol PFCityDao;
 
 
-@interface PFWeatherReportViewController : UIViewController<PFWeatherClientDelegate, UITableViewDataSource,
-        UITableViewDelegate> {
-
-    id<PFWeatherClient> _weatherClient;
-    id<PFWeatherReportDao> _weatherReportDao;
-    id<PFCityDao> _cityDao;
+@interface PFWeatherReportViewController : UIViewController <PFWeatherClientDelegate, UITableViewDataSource, UITableViewDelegate>
+{
 
     PFWeatherReport* _weatherReport;
     PFActivityIndicatorTableViewCell* _activityIndicatorCell;
@@ -38,14 +34,22 @@
     UIImage* _chanceOfRainImage;
 }
 
+#pragma mark - Spring injected properties
+@property(nonatomic, strong, readonly) id <PFWeatherClient> weatherClient;
+@property(nonatomic, strong, readonly) id <PFWeatherReportDao> weatherReportDao;
+@property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
+
+#pragma mark - Interface Builder injected properties.
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* presentCitiesViewButton;
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* refreshReportButton;
 @property(nonatomic, weak) IBOutlet UITableView* weatherReportTableView;
 @property(nonatomic, weak) IBOutlet UILabel* statusMessageLabel;
 @property(nonatomic, weak) IBOutlet UITableViewCell* injectedTableViewCell;
 @property(nonatomic, weak) IBOutlet UIImageView* currentConditionsImageView;
-
 @property(nonatomic, strong) NSString* cityName;
+
+- (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
+        cityDao:(id <PFCityDao>)cityDao;
 
 
 @end

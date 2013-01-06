@@ -15,13 +15,17 @@
 
 @protocol PFCityDao;
 
-@interface PFCitiesListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
-
-    id<PFCityDao> _cityDao;
+@interface PFCitiesListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
     NSArray* _cities;
 }
 
-@property (nonatomic, weak) IBOutlet UITableView* citiesListTableView;
-@property (nonatomic, weak) IBOutlet UISegmentedControl* temperatureUnitsControl;
+@property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
+
+@property(nonatomic, weak) IBOutlet UITableView* citiesListTableView;
+@property(nonatomic, weak) IBOutlet UISegmentedControl* temperatureUnitsControl;
+
+- (id)initWithCityDao:(id <PFCityDao>)cityDao;
+
 
 @end

@@ -1,0 +1,28 @@
+<assembly xmlns="http://jasperblues.github.com/spring-objective-c/schema/assembly"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://jasperblues.github.com/spring-objective-c/schema/assembly
+          http://www.appsquick.ly/schema/assembly.xsd">
+
+    <description>This file encapsulates the assembly of view controllers</description>
+
+    <component class="UINavigationController">
+        <initializer selector="initWithRootViewController:">
+            <argument parameterName="rootViewController" ref="citiesListController"/>
+        </initializer>
+    </component>
+
+    <component class="PFCitiesListViewController" key="citiesListController">
+        <initializer selector="initWithCityDao:">
+            <argument parameterName="cityDao" ref="cityDao"/>
+        </initializer>
+    </component>
+
+    <component class="PFWeatherReportViewController">
+        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:">
+            <argument parameterName="weatherClient" ref="weatherClient"/>
+            <argument parameterName="weatherReportDao" ref="weatherReportDao"/>
+            <argument parameterName="cityDao" ref="cityDao"/>
+        </initializer>
+    </component>
+
+</assembly>

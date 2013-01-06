@@ -22,7 +22,6 @@
 #import "PFActivityIndicatorTableViewCell.h"
 #import "PFWeatherReportDao.h"
 #import "PFCityDao.h"
-#import "SpringComponentFactory.h"
 #import <QuartzCore/QuartzCore.h>
 
 static int const CURRENT_CONDITIONS_ROW = 0;
@@ -41,13 +40,16 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 @synthesize currentConditionsImageView = _currentConditionsImageView;
 
 
-/* ================================================== Initializers ================================================== */
-- (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        _weatherClient = [[SpringComponentFactory defaultFactory] componentForType:@protocol(PFWeatherClient)];
-        _weatherReportDao = [[SpringComponentFactory defaultFactory] componentForType:@protocol(PFWeatherReportDao)];
-        _cityDao = [[SpringComponentFactory defaultFactory] componentForType:@protocol(PFCityDao)];
+/* ============================================================ Initializers ============================================================ */
+- (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
+        cityDao:(id <PFCityDao>)cityDao
+{
+    self = [super initWithNibName:@"WeatherReport" bundle:[NSBundle mainBundle]];
+    if (self)
+    {
+        _weatherClient = weatherClient;
+        _weatherReportDao = weatherReportDao;
+        _cityDao = cityDao;
 
         _mostlyCloudyImage = [UIImage imageNamed:@"mostly_cloudy.png"];
         _sunnyImage = [UIImage imageNamed:@"sunny.png"];
@@ -59,8 +61,10 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     return self;
 }
 
-/* ================================================ Interface Methods =============================================== */
-- (void) viewDidLoad {
+
+/* ========================================================== Interface Methods ========================================================= */
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [_presentCitiesViewButton setAction:@selector(presentCitiesView)];
     [_refreshReportButton setAction:@selector(retrieveRemoteReport)];
@@ -70,95 +74,114 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     _weatherReportTableView.layer.borderWidth = 4.0f;
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     [self clearStaleData];
 
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
-    if (_weatherReport) {
+    if (_weatherReport)
+    {
         [self presentReport:_weatherReport];
     }
-    else {
+    else
+    {
         [self retrieveRemoteReport];
     }
 }
 
-/* ================================================= Protocol Methods =============================================== */
+/* =========================================================== Protocol Methods ========================================================= */
 #pragma mark PFWeatherClientDelegate
 
-- (void) requestDidFinishWithWeatherReport:(PFWeatherReport*)weatherReport {
+- (void)requestDidFinishWithWeatherReport:(PFWeatherReport*)weatherReport
+{
     [self presentReport:weatherReport];
 }
 
-- (void) requestDidFailWithError:(NSError*)error {
+- (void)requestDidFailWithError:(NSError*)error
+{
 
 }
 
-/* ================================================================================================================== */
+/* ====================================================================================================================================== */
 #pragma mark UITableView methods
 
-- (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+{
     return 1;
 }
 
 
-- (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
+{
     return 5;
 }
 
-- (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+{
 
     UITableViewCell* cell;
-    if (indexPath.row == CURRENT_CONDITIONS_ROW) {
+    if (indexPath.row == CURRENT_CONDITIONS_ROW)
+    {
         cell = [self makeCurrentConditionsCellWith:[_weatherReport currentConditions]];
         self.injectedTableViewCell = nil;
     }
-    else if (indexPath.row == LOADING_INDICATOR_ROW) {
+    else if (indexPath.row == LOADING_INDICATOR_ROW)
+    {
         cell = [self makeLoadingTableCell];
     }
-    else {
+    else
+    {
         cell = [self makeForecastConditionsCellWith:[[_weatherReport forecast] objectAtIndex:indexPath.row]];
     }
     return cell;
 }
 
-- (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
 
 }
 
-- (UITableViewCellEditingStyle) tableView:(UITableView*)tableView
-        editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView
+        editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
+{
     return UITableViewCellEditingStyleDelete;
 }
 
-- (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
-    if (indexPath.row == 0) {
+- (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    if (indexPath.row == 0)
+    {
         return CURRENT_CONDITIONS_CELL_HEIGHT;
     }
-    else {
+    else
+    {
         return DETAIL_ROW_CELL_HEIGHT;
     }
 }
 
-- (void) tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell
-        forRowAtIndexPath:(NSIndexPath*)indexPath {
+- (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell
+        forRowAtIndexPath:(NSIndexPath*)indexPath
+{
     cell.backgroundColor = [UIColor clearColor];
 }
 
 
-/* ================================================== Private Methods =============================================== */
+/* ============================================================ Private Methods ========================================================= */
 
 /**
 * Clears all data from the controller - ready for reuse.
 */
-- (void) clearStaleData {
+- (void)clearStaleData
+{
     _weatherReport = nil;
     [_weatherReportTableView reloadData];
     [_currentConditionsImageView setImage:nil];
     [_statusMessageLabel setText:@""];
 }
 
-- (void) presentReport:(PFWeatherReport*)weatherReport {
+- (void)presentReport:(PFWeatherReport*)weatherReport
+{
     [_activityIndicatorCell stopAnimating];
     _weatherReport = weatherReport;
     [_weatherReportTableView reloadData];
@@ -166,12 +189,14 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     [_statusMessageLabel setText:[NSString stringWithFormat:@"Updated %@", [weatherReport reportDateAsString]]];
 }
 
-- (void) retrieveRemoteReport {
+- (void)retrieveRemoteReport
+{
     [_activityIndicatorCell startAnimating];
     [_weatherClient loadWeatherReportFor:_cityName delegate:self];
 }
 
-- (void) presentCitiesView {
+- (void)presentCitiesView
+{
 
     [self.view removeFromSuperview];
     [_cityDao clearCurrentlySelectedCity];
@@ -185,7 +210,8 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     [UIView commitAnimations];
 }
 
-- (PFCurrentConditionsTableViewCell*) makeCurrentConditionsCellWith:(PFCurrentConditions*)currentConditions {
+- (PFCurrentConditionsTableViewCell*)makeCurrentConditionsCellWith:(PFCurrentConditions*)currentConditions
+{
     [[NSBundle mainBundle] loadNibNamed:@"CurrentConditionsTableCell" owner:self options:nil];
     PFCurrentConditionsTableViewCell* cell = (PFCurrentConditionsTableViewCell*) self.injectedTableViewCell;
     self.injectedTableViewCell = nil;
@@ -195,7 +221,8 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     return cell;
 }
 
-- (PFForecastConditionsTableViewCell*) makeForecastConditionsCellWith:(PFForecastConditions*)forecastConditions {
+- (PFForecastConditionsTableViewCell*)makeForecastConditionsCellWith:(PFForecastConditions*)forecastConditions
+{
     [[NSBundle mainBundle] loadNibNamed:@"ForecastTableCell" owner:self options:nil];
     PFForecastConditionsTableViewCell* cell = (PFForecastConditionsTableViewCell*) self.injectedTableViewCell;
     self.injectedTableViewCell = nil;
@@ -207,7 +234,8 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     return cell;
 }
 
-- (UITableViewCell*) makeLoadingTableCell {
+- (UITableViewCell*)makeLoadingTableCell
+{
     [[NSBundle mainBundle] loadNibNamed:@"LoadingTableCell" owner:self options:nil];
     _activityIndicatorCell = (PFActivityIndicatorTableViewCell*) self.injectedTableViewCell;
     [_activityIndicatorCell stopAnimating];
@@ -215,26 +243,34 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     return _activityIndicatorCell;
 }
 
-- (UIImage*) uiImageForImageUri:(NSString*)imageUri {
+- (UIImage*)uiImageForImageUri:(NSString*)imageUri
+{
 
-    if ([imageUri length] > 0) {
+    if ([imageUri length] > 0)
+    {
         LogDebug(@"Retrieving image for URI: %@", imageUri);
-        if ([imageUri isEqualToString:@"/ig/images/weather/sunny.gif"]) {
+        if ([imageUri isEqualToString:@"/ig/images/weather/sunny.gif"])
+        {
             return _sunnyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/mostly_sunny.gif"]) {
+        else if ([imageUri isEqualToString:@"/ig/images/weather/mostly_sunny.gif"])
+        {
             return _mostlySunnyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/partly_cloudy.gif"]) {
+        else if ([imageUri isEqualToString:@"/ig/images/weather/partly_cloudy.gif"])
+        {
             return _partlyCloudyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/mostly_cloudy.gif"]) {
+        else if ([imageUri isEqualToString:@"/ig/images/weather/mostly_cloudy.gif"])
+        {
             return _mostlyCloudyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/chance_of_rain.gif"]) {
+        else if ([imageUri isEqualToString:@"/ig/images/weather/chance_of_rain.gif"])
+        {
             return _chanceOfRainImage;
         }
-        else {
+        else
+        {
             return _mostlySunnyImage;
         }
     }

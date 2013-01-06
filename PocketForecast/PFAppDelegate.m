@@ -17,28 +17,26 @@
 #import "SpringXmlComponentFactory.h"
 
 @implementation PFAppDelegate
-@synthesize window = _window;
-@synthesize navigationController = _navigationController;
-@synthesize weatherReportController = _weatherReportController;
 
 
-
-
-- (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-    SpringXmlComponentFactory* factory = [[SpringXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
-    [factory makeDefault];
-    _cityDao = [factory componentForKey:@"cityDao"];
-
-
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
+{
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self makeViewControllers];
+    SpringComponentFactory
+            * factory = [[SpringXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
+    [factory makeDefault];
+    _cityDao = [factory componentForType:@protocol(PFCityDao)];
+    _navigationController = [factory componentForType:[UINavigationController class]];
+    _weatherReportController = [factory componentForType:[PFWeatherReportViewController class]];
 
     NSString* selectedCity = [_cityDao getCurrentlySelectedCity];
-    if (selectedCity) {
+    if (selectedCity)
+    {
         [_weatherReportController setCityName:selectedCity];
         [_window setRootViewController:_weatherReportController];
     }
-    else {
+    else
+    {
         [_window setRootViewController:_navigationController];
     }
 
@@ -46,25 +44,6 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
 
     return YES;
-
-
 }
-
-
-
-
-
-/* ================================================== Private Methods =============================================== */
-- (void) makeViewControllers {
-    PFCitiesListViewController* citiesController =
-            [[PFCitiesListViewController alloc] initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];
-    _navigationController = [[UINavigationController alloc] initWithRootViewController:citiesController];
-    [_navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
-
-
-    _weatherReportController =
-            [[PFWeatherReportViewController alloc] initWithNibName:@"WeatherReport" bundle:[NSBundle mainBundle]];
-}
-
 
 @end
