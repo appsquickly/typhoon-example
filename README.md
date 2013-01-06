@@ -15,8 +15,8 @@ An example application built with spring-objective-c.
 Just a few lines of XML. These components are used in a few places. You could use a traditional sharedInstance, but
 then how would you: 
 
-* Test them in isolation. 
-* Configure them for both production and test scenarios. 
+* Test the classes that use them in isolation. 
+* Configure the shared instances for both production and test scenarios. 
 
 ```xml
 
