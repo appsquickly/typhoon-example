@@ -1,7 +1,7 @@
 spring-objective-c-example
 ==========================
 
-An example application built with <a href ="https://github.com/jasperblues/spring-objective-c">spring-objective-c</a>
+An example application built with <a href ="https://github.com/jasperblues/spring-objective-c">spring-objective-c</a>.
 
 ###Features: 
 
