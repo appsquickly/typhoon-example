@@ -249,23 +249,23 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     if ([imageUri length] > 0)
     {
         LogDebug(@"Retrieving image for URI: %@", imageUri);
-        if ([imageUri isEqualToString:@"/ig/images/weather/sunny.gif"])
+        if ([imageUri hasSuffix:@"wsymbol_0001_sunny.png"])
         {
             return _sunnyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/mostly_sunny.gif"])
+        else if ([imageUri hasSuffix:@"/ig/images/weather/mostly_sunny.gif"])
         {
             return _mostlySunnyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/partly_cloudy.gif"])
+        else if ([imageUri hasSuffix:@"/ig/images/weather/partly_cloudy.gif"])
         {
             return _partlyCloudyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/mostly_cloudy.gif"])
+        else if ([imageUri hasSuffix:@"wsymbol_0004_black_low_cloud.png"])
         {
             return _mostlyCloudyImage;
         }
-        else if ([imageUri isEqualToString:@"/ig/images/weather/chance_of_rain.gif"])
+        else if ([imageUri hasSuffix:@"wsymbol_0017_cloudy_with_light_rain.png"])
         {
             return _chanceOfRainImage;
         }
