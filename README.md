@@ -13,47 +13,8 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 ### Exercises
 
 1. Get an API key from http://free.worldweatheronline.com. 
-2. Study the application assembly here: 
-
-### The Assembly
-
-Just a few lines of XML. These components are used in a few places. You could use a traditional sharedInstance, but
-then how would you: 
-
-* Test the classes that use them in isolation. 
-* Configure the shared instances for both production and test scenarios. 
-
-```xml
-
-    <description>
-        This file encapsulates the core model. To use, please get an API key from: http://www.worldweatheronline.com
-    </description>
-
-    <component class="PFWeatherClientBasicImpl" key="weatherClient">
-        <description>
-            This is component retrieves weather reports from the cloud-service.
-        </description>
-        <property name="serviceUrl" value="http://free.worldweatheronline.com/feed/weather.ashx"/>
-        <property name="apiKey" value="$$YOUR_API_KEY_HERE$$"/>
-        <property name="weatherReportDao" ref="weatherReportDao"/>
-    </component>
-
-    <component class="PFWeatherReportDaoFileSystemImpl" key="weatherReportDao">
-        <description>
-            This class is responsible for caching retrieved reports to the device for later usage.
-        </description>
-    </component>
-
-    <component class="PFCityDaoUserDefaultsImpl" key="cityDao">
-        <description>
-            This class is responsible for saving and retrieving cities the user wants reports for.
-        </description>
-    </component>
-
-</assembly>
-
-
-
+2. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. 
+3. Study the test cases. Say you needed to use one service URL for integration tests and another for production. How would you do it? 
 
 ```
 
