@@ -10,6 +10,11 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 * Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
 * Can use metric or old-style units. 
 
+### Exercises
+
+1. Get an API key from http://free.worldweatheronline.com. 
+2. Study the application assembly here: 
+
 ### The Assembly
 
 Just a few lines of XML. These components are used in a few places. You could use a traditional sharedInstance, but
