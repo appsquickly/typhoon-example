@@ -21,6 +21,7 @@ Imagine that you needed to use one service URL for integration tests and another
 5. Imagine that you decided to save the list of cities the user likes to iCloud instead of locally on the device. Notice
 how you'd only need to change one line of code to supply your new implementation in place of the old one. And you'd be able to reuse the existing test cases. 
 6. Imagine that you'd like to integrate with other weather data providers. How would you do it? 
+7. Try writing the same Application without dependency injection. What would the code look like? 
 
 
 ### The App ('scuse the dev's designs). 
