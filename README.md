@@ -19,7 +19,8 @@ Notice how the framework allows you to group related components together.
 4. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/tree/master/PocketForecastTests/Integration">test cases</a>.
 Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
 5. Imagine that you decided to save the list of cities the user likes to iCloud instead of locally on the device. Notice
-how you'd only need to change one line of code to include your new implementation. And you'd be able to reuse the existing test cases. 
+how you'd only need to change one line of code to supply your new implementation in place of the old one. And you'd be able to reuse the existing test cases. 
+6. Imagine that you'd like to integrate with other weather data providers. How would you do it? 
 
 
 ### The App ('scuse the dev's designs). 
