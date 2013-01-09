@@ -18,15 +18,20 @@
 @protocol PFWeatherClient;
 
 
-@interface PFAddCityViewController : UIViewController<UITextFieldDelegate, PFWeatherClientDelegate>  {
+@interface PFAddCityViewController : UIViewController <UITextFieldDelegate, PFWeatherClientDelegate>
 
-    id<PFCityDao> _cityDao;
-    id<PFWeatherClient> _weatherClient;
-}
 
-@property (nonatomic, weak) IBOutlet UITextField* nameOfCityToAdd;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem* doneButton;
-@property (nonatomic, weak) IBOutlet UILabel* validationMessage;
-@property (nonatomic, weak) IBOutlet UIActivityIndicatorView* spinner;
+#pragma mark - Container injected properties.
+@property(nonatomic, strong) id <PFCityDao> cityDao;
+@property(nonatomic, strong) id <PFWeatherClient> weatherClient;
+
+
+#pragma mark - Interface Builder injected properties
+@property(nonatomic, weak) IBOutlet UITextField* nameOfCityToAdd;
+@property(nonatomic, weak) IBOutlet UIBarButtonItem* doneButton;
+@property(nonatomic, weak) IBOutlet UILabel* validationMessage;
+@property(nonatomic, weak) IBOutlet UIActivityIndicatorView* spinner;
+
+- (void)validateRequiredProperties;
 
 @end

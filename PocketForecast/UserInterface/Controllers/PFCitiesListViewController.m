@@ -47,7 +47,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 {
     [super viewDidLoad];
     [self setTitle:@"Pocket Forecast"];
-    self.navigationItem.leftBarButtonItem =
+    self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity:)];
     [_citiesListTableView setEditing:YES];
 

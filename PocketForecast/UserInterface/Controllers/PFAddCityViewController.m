@@ -31,8 +31,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        _cityDao = [[SpringComponentFactory defaultFactory] componentForType:@protocol(PFCityDao)];
-        _weatherClient = [[SpringComponentFactory defaultFactory] componentForType:@protocol(PFWeatherClient)];
+
     }
     return self;
 }
@@ -61,6 +60,19 @@
     [self doneAdding:textField];
     return YES;
 }
+
+- (void)validateRequiredProperties
+{
+    if (!_weatherClient)
+    {
+        [NSException raise:NSInternalInconsistencyException format:@"Property weatherClient is required."];
+    }
+    if (!_cityDao)
+    {
+        [NSException raise:NSInternalInconsistencyException format:@"Property cityDao is required."];
+    }
+}
+
 
 /* =========================================================== Protocol Methods ========================================================= */
 - (void)requestDidFinishWithWeatherReport:(PFWeatherReport*)weatherReport
