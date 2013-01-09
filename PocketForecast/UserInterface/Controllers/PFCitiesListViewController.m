@@ -17,7 +17,7 @@
 #import "PFWeatherReportViewController.h"
 #import "PFTemperature.h"
 #import "SpringComponentFactory.h"
-#import "SpringComponentDefinition.h"
+#import "PFCityLabelTableViewCell.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -47,8 +47,9 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 {
     [super viewDidLoad];
     [self setTitle:@"Pocket Forecast"];
+
     self.navigationItem.rightBarButtonItem =
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity)];
     [_citiesListTableView setEditing:YES];
 
     [_temperatureUnitsControl addTarget:self action:@selector(saveTemperatureUnitPreference) forControlEvents:UIControlEventValueChanged];
@@ -66,7 +67,11 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self refreshCitiesList];
+    [_citiesListTableView deselectRowAtIndexPath:[_citiesListTableView indexPathForSelectedRow] animated:NO];
+    if ([_cityDao repositoryUpdated])
+    {
+        [self refreshCitiesList];
+    }
 }
 
 
@@ -98,19 +103,15 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* reuseId = @"Cities";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
+    PFCityLabelTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
-        cell.textLabel.backgroundColor = [UIColor clearColor];
-        cell.detailTextLabel.textColor = [UIColor darkGrayColor];
-        cell.detailTextLabel.backgroundColor = [UIColor clearColor];
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell = [[PFCityLabelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
     }
-
-    NSString* city = [_cities objectAtIndex:indexPath.row];
-    cell.textLabel.text = city;
-
+    cell.cityLabel.backgroundColor = [UIColor clearColor];
+    cell.cityLabel.textColor = [UIColor darkGrayColor];
+    cell.cityLabel.text = ([_cities objectAtIndex:indexPath.row]);
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
@@ -118,28 +119,23 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 {
 
     NSString* cityName = [_cities objectAtIndex:indexPath.row];
-
     [_cityDao saveCurrentlySelectedCity:cityName];
 
     PFWeatherReportViewController
             * weatherReportController = [[SpringComponentFactory defaultFactory] componentForType:[PFWeatherReportViewController class]];
     [weatherReportController setCityName:cityName];
-
     [self moveFrameBelowStatusBarFor:weatherReportController];
-    [self.navigationController removeFromParentViewController];
 
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:0.9f];
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:window cache:YES];
-    [window setRootViewController:weatherReportController];
-    [UIView commitAnimations];
+    [UIView transitionWithView:window duration:0.9f options:UIViewAnimationOptionTransitionFlipFromLeft animations:^
+    {
+        [window setRootViewController:weatherReportController];
+    } completion:nil];
+
 
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView
-        editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     return UITableViewCellEditingStyleDelete;
 }
@@ -163,7 +159,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 }
 
 /* ============================================================ Private Methods ========================================================= */
-- (void)addCity:(id)sender
+- (void)addCity
 {
     PFAddCityViewController* addCityController = [[SpringComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]];
     [self presentViewController:addCityController animated:YES completion:^
@@ -171,6 +167,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
     }];
 }
+
 
 - (void)refreshCitiesList
 {

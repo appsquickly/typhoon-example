@@ -77,8 +77,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self clearStaleData];
-
+    [_activityIndicatorCell startAnimating];
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
     {
@@ -89,6 +88,13 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
         [self retrieveRemoteReport];
     }
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self clearStaleData];
+}
+
 
 /* =========================================================== Protocol Methods ========================================================= */
 #pragma mark PFWeatherClientDelegate
@@ -132,7 +138,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     }
     else
     {
-        cell = [self makeForecastConditionsCellWith:[[_weatherReport forecast] objectAtIndex:indexPath.row]];
+        cell = [self makeForecastConditionsCellWith:[[_weatherReport forecast] objectAtIndex:indexPath.row] tableView:tableView];
     }
     return cell;
 }
@@ -212,7 +218,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     {
         UIViewController* controller = [[SpringComponentFactory defaultFactory] componentForType:[UINavigationController class]];
         [window setRootViewController:controller];
-    }               completion:nil];
+    } completion:nil];
 }
 
 - (PFCurrentConditionsTableViewCell*)makeCurrentConditionsCellWith:(PFCurrentConditions*)currentConditions
@@ -227,9 +233,16 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 }
 
 - (PFForecastConditionsTableViewCell*)makeForecastConditionsCellWith:(PFForecastConditions*)forecastConditions
+        tableView:(UITableView*)tableView
 {
-    [[NSBundle mainBundle] loadNibNamed:@"ForecastTableCell" owner:self options:nil];
-    PFForecastConditionsTableViewCell* cell = (PFForecastConditionsTableViewCell*) self.injectedTableViewCell;
+    static NSString* CellIdentifier = @"weatherForecast";
+    PFForecastConditionsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        [[NSBundle mainBundle] loadNibNamed:@"ForecastTableCell" owner:self options:nil];
+        cell = (PFForecastConditionsTableViewCell*) self.injectedTableViewCell;
+    }
+
     self.injectedTableViewCell = nil;
     [cell.dayLabel setText:forecastConditions.longDayOfTheWeek];
 

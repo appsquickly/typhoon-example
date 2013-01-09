@@ -3,8 +3,9 @@
           xsi:schemaLocation="http://jasperblues.github.com/spring-objective-c/schema/assembly
           http://www.appsquick.ly/schema/assembly.xsd">
 
-    <description>This file encapsulates the assembly of view controllers. You could also look-up view controller dependencies
-        from within the controllers themselves. . . just showing here that both styles are possible.
+    <description>
+        This file encapsulates the assembly of view controllers and their dependencies. Note that the view controllers are declared
+        as prototype, so they go away each time we move to a new view.
     </description>
 
     <component class="UINavigationController" key="mainNavigationController">

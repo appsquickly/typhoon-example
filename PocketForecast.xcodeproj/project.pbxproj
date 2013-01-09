@@ -150,16 +150,18 @@
 		BA79849D9158294255206480 /* Assembly.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987ED54F252A869A45D85 /* Assembly.xml */; };
 		BA7984ED36D647870D6E09B6 /* chance_of_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79877379F4CC3428859D07 /* chance_of_rain.png */; };
 		BA798591227D17C710EF6EBA /* PFTemperatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798955F01A0DA6516C878C /* PFTemperatureTests.m */; };
-		BA798662DA51C72536C10C49 /* PFBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79838D6B2A838A80AF3270 /* PFBundleResource.m */; };
+		BA7986C7B28D0A3C95A79C57 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
 		BA798711EE4D26A67AB61DE4 /* PFForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */; };
 		BA79873145F4FDDE76A9014C /* PFCurrentConditionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */; };
 		BA79873BD3B6ADB4374DC1C6 /* PFActivityIndicatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E82FFE465D80123C4CD /* PFActivityIndicatorTableViewCell.m */; };
 		BA798873E9DA8CEE34984273 /* PFTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B1EF321D3252A608028 /* PFTemperature.m */; };
+		BA798A53749DDEDC8E086A7F /* PFCityLabelTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798E6E7E7030B87B4BD57D /* PFCityLabelTableViewCell.h */; };
 		BA798BD20E9AD59DCED10715 /* PFCityDoaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EC033265E30559E1216 /* PFCityDoaTests.m */; };
 		BA798C120173D2A18BB50FDE /* PFAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7989AEB3F4353A6B89451C /* PFAddCityViewController.m */; };
 		BA798CD2C01837FD3E6B9167 /* RXMLElement+PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */; };
 		BA798CD6D23ACE87BFC6DAA4 /* PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987478471BA92A0518862 /* PFWeatherReport.m */; };
 		BA798CFBF46EB10AC945B816 /* PFCurrentConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */; };
+		BA798D837AA1F5B4EC577353 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
 		BA798E0566990B85665B89F7 /* PFWeatherClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A8B15B6D784A0374F1A /* PFWeatherClientTests.m */; };
 		BA798F3DBF3353B33D121259 /* SampleForecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */; };
 		BA798F5F7C9ACF5AA904A671 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79867A0DF25A188ED3D7D5 /* Icon.png */; };
@@ -183,6 +185,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				BA798A53749DDEDC8E086A7F /* PFCityLabelTableViewCell.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +240,6 @@
 		6B3E6E15169D36C3000CAFA7 /* SpringTypeConverterRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringTypeConverterRegistry.m; sourceTree = "<group>"; };
 		6B3E6E16169D36C3000CAFA7 /* SpringTypeDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringTypeDescriptor.h; sourceTree = "<group>"; };
 		6B3E6E17169D36C3000CAFA7 /* SpringTypeDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringTypeDescriptor.m; sourceTree = "<group>"; };
-		6B3E6E19169D36C3000CAFA7 /* NSObject+ContainerManagedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ContainerManagedInstance.h"; sourceTree = "<group>"; };
-		6B3E6E1A169D36C3000CAFA7 /* NSObject+ContainerManagedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ContainerManagedInstance.m"; sourceTree = "<group>"; };
 		6B3E6E1B169D36C3000CAFA7 /* NSObject+SpringIntrospectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SpringIntrospectionUtils.h"; sourceTree = "<group>"; };
 		6B3E6E1C169D36C3000CAFA7 /* NSObject+SpringIntrospectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SpringIntrospectionUtils.m"; sourceTree = "<group>"; };
 		6B3E6E1E169D36C3000CAFA7 /* SpringBundleResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBundleResource.h; sourceTree = "<group>"; };
@@ -338,8 +339,6 @@
 		BA7981F95ADE57DBB6722C39 /* PFWeatherClientBasicImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClientBasicImpl.h; sourceTree = "<group>"; };
 		BA798242DB2AFFB8035D791F /* PFWeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportViewController.m; sourceTree = "<group>"; };
 		BA798320014BEE93DD0527CC /* PFAddCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddCityViewController.h; sourceTree = "<group>"; };
-		BA79838D6B2A838A80AF3270 /* PFBundleResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBundleResource.m; sourceTree = "<group>"; };
-		BA7984B98A1DF9FCF693444A /* PFBundleResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBundleResource.h; sourceTree = "<group>"; };
 		BA79853AB5AA71AA4689A849 /* PFWeatherReportDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportDaoTests.m; sourceTree = "<group>"; };
 		BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCurrentConditionsTableViewCell.m; sourceTree = "<group>"; };
 		BA79867A0DF25A188ED3D7D5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -349,6 +348,7 @@
 		BA79877379F4CC3428859D07 /* chance_of_rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chance_of_rain.png; sourceTree = "<group>"; };
 		BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleForecast.xml; sourceTree = "<group>"; };
 		BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFForecastConditions.m; sourceTree = "<group>"; };
+		BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityLabelTableViewCell.m; sourceTree = "<group>"; };
 		BA7987ED54F252A869A45D85 /* Assembly.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Assembly.xml; sourceTree = "<group>"; };
 		BA7988A5EED8474C69C5CB29 /* PFForecastConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFForecastConditions.h; sourceTree = "<group>"; };
 		BA798955F01A0DA6516C878C /* PFTemperatureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperatureTests.m; sourceTree = "<group>"; };
@@ -364,6 +364,7 @@
 		BA798D2A742E3B6ED1BCE83D /* PFWeatherClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClient.h; sourceTree = "<group>"; };
 		BA798D46E597628F7C5337FB /* PFWeatherReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportViewController.h; sourceTree = "<group>"; };
 		BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RXMLElement+PFWeatherReport.m"; sourceTree = "<group>"; };
+		BA798E6E7E7030B87B4BD57D /* PFCityLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityLabelTableViewCell.h; sourceTree = "<group>"; };
 		BA798E82FFE465D80123C4CD /* PFActivityIndicatorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFActivityIndicatorTableViewCell.m; sourceTree = "<group>"; };
 		BA798EC033265E30559E1216 /* PFCityDoaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityDoaTests.m; sourceTree = "<group>"; };
 		BA798EE7FC647ED03B050115 /* RXMLElement_PFWeatherReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement_PFWeatherReportSpec.m; sourceTree = "<group>"; };
@@ -516,8 +517,6 @@
 		6B3E6E18169D36C3000CAFA7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				6B3E6E19169D36C3000CAFA7 /* NSObject+ContainerManagedInstance.h */,
-				6B3E6E1A169D36C3000CAFA7 /* NSObject+ContainerManagedInstance.m */,
 				6B3E6E1B169D36C3000CAFA7 /* NSObject+SpringIntrospectionUtils.h */,
 				6B3E6E1C169D36C3000CAFA7 /* NSObject+SpringIntrospectionUtils.m */,
 				6B3E6E1D169D36C3000CAFA7 /* Resource */,
@@ -625,8 +624,6 @@
 		6BE9747815AF01A3004472E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BA7984B98A1DF9FCF693444A /* PFBundleResource.h */,
-				BA79838D6B2A838A80AF3270 /* PFBundleResource.m */,
 				6BE9747915AF01A3004472E2 /* PocketForecastTests-Info.plist */,
 				6BE9747A15AF01A3004472E2 /* InfoPlist.strings */,
 				BA79869B697659AC289E570D /* Tests.pch */,
@@ -804,6 +801,8 @@
 				6B3A342915B1B28200541F7E /* PFForecastConditionsTableViewCell.m */,
 				BA7986A6F4B016421D5D66A2 /* PFCurrentConditionsTableViewCell.h */,
 				BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */,
+				BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */,
+				BA798E6E7E7030B87B4BD57D /* PFCityLabelTableViewCell.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1030,6 +1029,7 @@
 				6B3E6E4C169D36C3000CAFA7 /* NSObject+SpringIntrospectionUtils.m in Sources */,
 				6B3E6E4E169D36C3000CAFA7 /* SpringBundleResource.m in Sources */,
 				6B3E6E50169D36C3000CAFA7 /* SpringIntrospectionUtils.m in Sources */,
+				BA798D837AA1F5B4EC577353 /* PFCityLabelTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,7 +1037,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA798662DA51C72536C10C49 /* PFBundleResource.m in Sources */,
 				BA798591227D17C710EF6EBA /* PFTemperatureTests.m in Sources */,
 				BA798E0566990B85665B89F7 /* PFWeatherClientTests.m in Sources */,
 				BA798FB65B6BCA447E4A102B /* StubWeatherClientDelegate.m in Sources */,
@@ -1103,6 +1102,7 @@
 				6B3E6E4D169D36C3000CAFA7 /* NSObject+SpringIntrospectionUtils.m in Sources */,
 				6B3E6E4F169D36C3000CAFA7 /* SpringBundleResource.m in Sources */,
 				6B3E6E51169D36C3000CAFA7 /* SpringIntrospectionUtils.m in Sources */,
+				BA7986C7B28D0A3C95A79C57 /* PFCityLabelTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1184,6 +1184,7 @@
 		6BE9748315AF01A3004472E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
@@ -1196,6 +1197,7 @@
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = PocketForecast;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FBB592D3-16A1-47D8-85B5-A094BEFFE60F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1203,6 +1205,7 @@
 		6BE9748415AF01A3004472E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
@@ -1215,6 +1218,7 @@
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = PocketForecast;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FBB592D3-16A1-47D8-85B5-A094BEFFE60F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

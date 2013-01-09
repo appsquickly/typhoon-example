@@ -14,14 +14,12 @@
 #import "PFCityDao.h"
 
 
-@interface PFCityDaoUserDefaultsImpl : NSObject<PFCityDao> {
-
+@interface PFCityDaoUserDefaultsImpl : NSObject <PFCityDao>
+{
+    BOOL _repositoryUpdated;
     NSUserDefaults* _defaults;
 
 }
-
-
-
 
 
 @end

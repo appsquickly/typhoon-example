@@ -44,4 +44,6 @@
 */
 - (NSString*) getCurrentlySelectedCity;
 
+- (BOOL)repositoryUpdated;
+
 @end
