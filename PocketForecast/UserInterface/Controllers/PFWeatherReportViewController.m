@@ -209,14 +209,15 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 - (void)presentCitiesView
 {
 
-    [self.view removeFromSuperview];
     [_cityDao clearCurrentlySelectedCity];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController* controller = [[SpringComponentFactory defaultFactory] componentForType:[UINavigationController class]];
+    //pre-load this, because it may not have loaded yet.
+    assert(controller.visibleViewController.view != nil);
 
     [UIView transitionWithView:window duration:0.9f options:UIViewAnimationOptionTransitionFlipFromRight animations:^
     {
-        UIViewController* controller = [[SpringComponentFactory defaultFactory] componentForType:[UINavigationController class]];
         [window setRootViewController:controller];
     } completion:nil];
 }
