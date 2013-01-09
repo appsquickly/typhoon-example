@@ -8,7 +8,7 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 * Returns weather reports from a remote cloud service
 * Caches weather reports locally, for later off-line use. 
 * Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
-* Can use metric or old-style units. 
+* Can use metric or imperial units. 
 
 ### Exercises
 
