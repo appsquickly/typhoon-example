@@ -20,7 +20,7 @@ static NSString* const pfCitiesListKey = @"pfWeather.cities";
 static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
 
 
-/* ================================================== Initializers ================================================== */
+/* ============================================================ Initializers ============================================================ */
 - (id)init
 {
     self = [super init];
@@ -33,7 +33,7 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
 }
 
 
-/* ================================================= Protocol Methods =============================================== */
+/* =========================================================== Protocol Methods ========================================================= */
 
 - (NSArray*)listAllCities
 {
@@ -41,7 +41,7 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     NSArray* cities = [_defaults objectForKey:pfCitiesListKey];
     if (cities == nil)
     {
-        cities = [NSArray arrayWithObjects:@"Manila", @"Wollongong", @"Sydney", @"Melbourne", @"Kuala Lumpur", @"London", @"San Francisco",
+        cities = [NSArray arrayWithObjects:@"Manila", @"Sydney", @"Melbourne", @"Kuala Lumpur", @"London", @"San Francisco",
                                            nil];
         [_defaults setObject:cities forKey:pfCitiesListKey];
     }
