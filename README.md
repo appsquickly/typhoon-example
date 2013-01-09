@@ -6,15 +6,22 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 ###Features: 
 
 * Returns weather reports from a remote cloud service
-* Caches weather reports locally
+* Caches weather reports locally, for later off-line use. 
 * Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
 * Can use metric or old-style units. 
 
 ### Exercises
 
 1. Get an API key from http://free.worldweatheronline.com. 
-2. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. 
-3. Study the test cases. If you needed to use one service URL for integration tests and another for production. How would you do it? 
+2. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. Run the App in the simulator or on your device. 
+3. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
+Notice how the framework allows you to group related components together. 
+4. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/tree/master/PocketForecastTests/Integration">test cases</a>.
+Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
+5. Imagine that you decided to save the list of cities the user likes to iCloud instead of locally on the device. Notice
+how you'd only need to change one line of code to supply your new implementation in place of the old one. And you'd be able to reuse the existing test cases. 
+6. Imagine that you'd like to integrate with other weather data providers. How would you do it? 
+7. Try writing the same Application without dependency injection. What would the code look like? 
 
 
 ### The App ('scuse the dev's designs). 
