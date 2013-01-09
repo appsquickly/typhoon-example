@@ -15,9 +15,9 @@
 #import "PFCityDao.h"
 #import "PFAddCityViewController.h"
 #import "PFWeatherReportViewController.h"
-#import "PFAppDelegate.h"
 #import "PFTemperature.h"
 #import "SpringComponentFactory.h"
+#import "SpringComponentDefinition.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -120,18 +120,20 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     NSString* cityName = [_cities objectAtIndex:indexPath.row];
 
     [_cityDao saveCurrentlySelectedCity:cityName];
-    PFAppDelegate* delegate = (PFAppDelegate*) [UIApplication sharedApplication].delegate;
-    PFWeatherReportViewController* weatherReportController = delegate.weatherReportController;
+
+    PFWeatherReportViewController
+            * weatherReportController = [[SpringComponentFactory defaultFactory] componentForType:[PFWeatherReportViewController class]];
     [weatherReportController setCityName:cityName];
 
     [self moveFrameBelowStatusBarFor:weatherReportController];
-    [delegate.navigationController removeFromParentViewController];
+    [self.navigationController removeFromParentViewController];
 
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.9f];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:delegate.window cache:YES];
-    [delegate.window setRootViewController:weatherReportController];
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:window cache:YES];
+    [window setRootViewController:weatherReportController];
     [UIView commitAnimations];
 
 }
@@ -154,6 +156,11 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     }
 }
 
+/* ============================================================ Utility Methods ========================================================= */
+- (void)dealloc
+{
+    NSLog(@"%@ in dealloc!", self);
+}
 
 /* ============================================================ Private Methods ========================================================= */
 - (void)addCity:(id)sender

@@ -17,13 +17,14 @@
 @class PFWeatherReportViewController;
 @protocol PFCityDao;
 
-@interface PFAppDelegate : UIResponder<UIApplicationDelegate> {
+@interface PFAppDelegate : UIResponder <UIApplicationDelegate>
+{
 
-    id<PFCityDao> _cityDao;
+
 }
 
 @property(nonatomic, strong) UIWindow* window;
 @property(nonatomic, strong) UINavigationController* navigationController;
-@property(nonatomic, strong) PFWeatherReportViewController* weatherReportController;
+
 
 @end

@@ -90,6 +90,12 @@
     [_validationMessage setText:[NSString stringWithFormat:@"No weather reports for '%@'.", [_nameOfCityToAdd text]]];
 }
 
+/* ============================================================ Utility Methods ========================================================= */
+- (void)dealloc
+{
+    NSLog(@"%@ in dealloc!", self);
+}
+
 
 /* ============================================================ Private Methods ========================================================= */
 - (void)doneAdding:(id)sender

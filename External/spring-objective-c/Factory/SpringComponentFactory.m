@@ -18,7 +18,7 @@
 
 @interface SpringComponentDefinition (SpringComponentFactory)
 
-@property (nonatomic, strong) NSString* key;
+@property(nonatomic, strong) NSString* key;
 
 @end
 
@@ -56,7 +56,7 @@ static SpringComponentFactory* defaultFactory;
     }
     if ([definition.key length] == 0)
     {
-        NSString *uuidStr = [[NSProcessInfo processInfo] globallyUniqueString];
+        NSString* uuidStr = [[NSProcessInfo processInfo] globallyUniqueString];
         definition.key = [NSString stringWithFormat:@"%@%@", NSStringFromClass(definition.type), uuidStr];
     }
     [_registry addObject:definition];
@@ -87,6 +87,7 @@ static SpringComponentFactory* defaultFactory;
         {
             if (definition.type == classOrProtocol || [definition.type isSubclassOfClass:classOrProtocol])
             {
+                [self assertNotCircularDependency:definition.key];
                 [results addObject:[self objectForDefinition:definition]];
             }
         }
@@ -94,21 +95,19 @@ static SpringComponentFactory* defaultFactory;
         {
             if ([definition.type conformsToProtocol:classOrProtocol])
             {
+                [self assertNotCircularDependency:definition.key];
                 [results addObject:[self objectForDefinition:definition]];
             }
         }
     }
+    [_currentlyResolvingReferences removeAllObjects];
     return [results copy];
 }
 
+
 - (id)componentForKey:(NSString*)key
 {
-    if ([_currentlyResolvingReferences containsObject:key])
-    {
-        [NSException raise:NSInvalidArgumentException format:@"Circular dependency detected: %@", _currentlyResolvingReferences];
-    }
-    [_currentlyResolvingReferences addObject:key];
-
+    [self assertNotCircularDependency:key];
     SpringComponentDefinition* definition = [self definitionForKey:key];
     if (!definition)
     {
@@ -123,9 +122,9 @@ static SpringComponentFactory* defaultFactory;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^
-    {
-        defaultFactory = self;
-    });
+{
+    defaultFactory = self;
+});
 }
 
 
@@ -174,6 +173,16 @@ static SpringComponentFactory* defaultFactory;
         }
     }
     return nil;
+}
+
+- (void)assertNotCircularDependency:(NSString*)key
+{
+    if ([_currentlyResolvingReferences containsObject:key])
+    {
+        [NSException raise:NSInvalidArgumentException format:@"Circular dependency detected: %@",
+                                                             _currentlyResolvingReferences];
+    }
+    [_currentlyResolvingReferences addObject:key];
 }
 
 @end

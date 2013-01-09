@@ -4,7 +4,8 @@
           http://www.appsquick.ly/schema/assembly.xsd">
 
     <description>This file encapsulates the assembly of view controllers. You could also look-up view controller dependencies
-    from within the controllers themselves. . . just showing here that both styles are possible. </description>
+        from within the controllers themselves. . . just showing here that both styles are possible.
+    </description>
 
     <component class="UINavigationController" key="mainNavigationController">
         <initializer selector="initWithRootViewController:">
@@ -12,24 +13,24 @@
         </initializer>
     </component>
 
-    <component class="PFCitiesListViewController" key="citiesListController">
+    <component class="PFCitiesListViewController" key="citiesListController" scope="prototype">
         <initializer selector="initWithCityDao:">
             <argument parameterName="cityDao" ref="cityDao"/>
         </initializer>
     </component>
 
-    <component class="PFWeatherReportViewController">
-        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:mainNavigationController:">
+    <component class="PFWeatherReportViewController" scope="prototype">
+        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:">
             <argument parameterName="weatherClient" ref="weatherClient"/>
             <argument parameterName="weatherReportDao" ref="weatherReportDao"/>
             <argument parameterName="cityDao" ref="cityDao"/>
-            <argument parameterName="mainNavigationController" ref="mainNavigationController"/>
         </initializer>
     </component>
 
-    <component class="PFAddCityViewController" key="addCityViewController" scope="prototype" after-property-injection="validateRequiredProperties">
+    <component class="PFAddCityViewController" key="addCityViewController" scope="prototype"
+               after-property-injection="validateRequiredProperties">
         <initializer selector="initWithNibName:bundle:">
-            <argument parameterName="nibName" value="AddCity" required-class="NSString" />
+            <argument parameterName="nibName" value="AddCity" required-class="NSString"/>
             <argument parameterName="bundle" ref="mainBundle"/>
         </initializer>
         <property name="cityDao" ref="cityDao"/>

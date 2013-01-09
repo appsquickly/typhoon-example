@@ -21,6 +21,7 @@
 #import "PFActivityIndicatorTableViewCell.h"
 #import "PFWeatherReportDao.h"
 #import "PFCityDao.h"
+#import "SpringComponentFactory.h"
 #import <QuartzCore/QuartzCore.h>
 
 static int const CURRENT_CONDITIONS_ROW = 0;
@@ -41,7 +42,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 
 /* ============================================================ Initializers ============================================================ */
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-        cityDao:(id <PFCityDao>)cityDao mainNavigationController:(UINavigationController*)mainNavigationController;
+        cityDao:(id <PFCityDao>)cityDao
 {
     self = [super initWithNibName:@"WeatherReport" bundle:[NSBundle mainBundle]];
     if (self)
@@ -49,7 +50,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
         _weatherClient = weatherClient;
         _weatherReportDao = weatherReportDao;
         _cityDao = cityDao;
-        _mainNavigationController = mainNavigationController;
 
         _mostlyCloudyImage = [UIImage imageNamed:@"mostly_cloudy.png"];
         _sunnyImage = [UIImage imageNamed:@"sunny.png"];
@@ -166,6 +166,12 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     cell.backgroundColor = [UIColor clearColor];
 }
 
+/* ============================================================ Utility Methods ========================================================= */
+- (void)dealloc
+{
+    NSLog(@"%@ in dealloc!", self);
+}
+
 
 /* ============================================================ Private Methods ========================================================= */
 /**
@@ -201,9 +207,11 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     [_cityDao clearCurrentlySelectedCity];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
+
     [UIView transitionWithView:window duration:0.9f options:UIViewAnimationOptionTransitionFlipFromRight animations:^
     {
-        [window setRootViewController:_mainNavigationController];
+        UIViewController* controller = [[SpringComponentFactory defaultFactory] componentForType:[UINavigationController class]];
+        [window setRootViewController:controller];
     }               completion:nil];
 }
 

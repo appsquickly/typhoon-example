@@ -10,16 +10,22 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
+
 #import <Foundation/Foundation.h>
-#import "SpringTypeConverter.h"
+#import "SpringResource.h"
 
 /**
-* A 'type converter' for NSString and NSMutableString.
+* Represents a resource within the application bundle.
 */
-@interface SpringPassThroughTypeConverter : NSObject <SpringTypeConverter>
+@interface SpringBundleResource : NSObject<SpringResource>
+{
+    NSString* _stringValue;
+}
 
-@property (nonatomic, readonly) BOOL isMutable;
 
-- (id)initWithIsMutable:(BOOL)isMutable;
+
++ (id<SpringResource>)withName:(NSString*)name;
+
+- (id)initWithStringValue:(NSString*)stringValue;
 
 @end
