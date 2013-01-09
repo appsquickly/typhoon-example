@@ -6,7 +6,7 @@
     <description>This file encapsulates the assembly of view controllers. You could also look-up view controller dependencies
     from within the controllers themselves. . . just showing here that both styles are possible. </description>
 
-    <component class="UINavigationController">
+    <component class="UINavigationController" key="mainNavigationController">
         <initializer selector="initWithRootViewController:">
             <argument parameterName="rootViewController" ref="citiesListController"/>
         </initializer>
@@ -19,15 +19,12 @@
     </component>
 
     <component class="PFWeatherReportViewController">
-        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:">
+        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:mainNavigationController:">
             <argument parameterName="weatherClient" ref="weatherClient"/>
             <argument parameterName="weatherReportDao" ref="weatherReportDao"/>
             <argument parameterName="cityDao" ref="cityDao"/>
+            <argument parameterName="mainNavigationController" ref="mainNavigationController"/>
         </initializer>
-    </component>
-
-    <component class="NSBundle" key="mainBundle">
-        <initializer selector="mainBundle"/>
     </component>
 
     <component class="PFAddCityViewController" key="addCityViewController" scope="prototype" after-property-injection="validateRequiredProperties">
@@ -38,5 +35,11 @@
         <property name="cityDao" ref="cityDao"/>
         <property name="weatherClient" ref="weatherClient"/>
     </component>
+
+
+    <component class="NSBundle" key="mainBundle">
+        <initializer selector="mainBundle"/>
+    </component>
+
 
 </assembly>

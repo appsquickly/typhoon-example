@@ -12,7 +12,6 @@
 
 
 #import "PFWeatherReportViewController.h"
-#import "PFAppDelegate.h"
 #import "PFCurrentConditionsTableViewCell.h"
 #import "PFForecastConditionsTableViewCell.h"
 #import "PFWeatherReport.h"
@@ -42,7 +41,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 
 /* ============================================================ Initializers ============================================================ */
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-        cityDao:(id <PFCityDao>)cityDao
+        cityDao:(id <PFCityDao>)cityDao mainNavigationController:(UINavigationController*)mainNavigationController;
 {
     self = [super initWithNibName:@"WeatherReport" bundle:[NSBundle mainBundle]];
     if (self)
@@ -50,6 +49,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
         _weatherClient = weatherClient;
         _weatherReportDao = weatherReportDao;
         _cityDao = cityDao;
+        _mainNavigationController = mainNavigationController;
 
         _mostlyCloudyImage = [UIImage imageNamed:@"mostly_cloudy.png"];
         _sunnyImage = [UIImage imageNamed:@"sunny.png"];
@@ -168,7 +168,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 
 
 /* ============================================================ Private Methods ========================================================= */
-
 /**
 * Clears all data from the controller - ready for reuse.
 */
@@ -201,13 +200,11 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     [self.view removeFromSuperview];
     [_cityDao clearCurrentlySelectedCity];
 
-    PFAppDelegate* delegate = (PFAppDelegate*) [UIApplication sharedApplication].delegate;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:0.9f];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:delegate.window cache:YES];
-    [delegate.window setRootViewController:delegate.navigationController];
-    [UIView commitAnimations];
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    [UIView transitionWithView:window duration:0.9f options:UIViewAnimationOptionTransitionFlipFromRight animations:^
+    {
+        [window setRootViewController:_mainNavigationController];
+    }               completion:nil];
 }
 
 - (PFCurrentConditionsTableViewCell*)makeCurrentConditionsCellWith:(PFCurrentConditions*)currentConditions

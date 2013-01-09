@@ -34,10 +34,11 @@
     UIImage* _chanceOfRainImage;
 }
 
-#pragma mark - Spring injected properties
+#pragma mark - Spring injected via initializer
 @property(nonatomic, strong, readonly) id <PFWeatherClient> weatherClient;
 @property(nonatomic, strong, readonly) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
+@property(nonatomic, strong, readonly) UINavigationController* mainNavigationController;
 
 #pragma mark - Interface Builder injected properties.
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* presentCitiesViewButton;
@@ -49,7 +50,7 @@
 @property(nonatomic, strong) NSString* cityName;
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-        cityDao:(id <PFCityDao>)cityDao;
+        cityDao:(id <PFCityDao>)cityDao mainNavigationController:(UINavigationController*)mainNavigationController;
 
 
 @end
