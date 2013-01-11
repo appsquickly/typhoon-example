@@ -10,6 +10,11 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 * Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
 * Can use metric or imperial units. 
 
+###Running the sample:
+
+* Just clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
+Then proceed to step 1 below. 
+
 ### Exercises
 
 1. Get an API key from http://free.worldweatheronline.com. 
