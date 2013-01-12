@@ -12,7 +12,7 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 
 ###Running the sample:
 
-* Just clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
+* Clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
 Then proceed to step 1 below. 
 
 ### Exercises
