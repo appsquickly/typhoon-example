@@ -14,7 +14,7 @@
 
 
 #import <Foundation/Foundation.h>
-
+#import "SpringComponentFactoryMutator.h"
 @class SpringComponentDefinition;
 
 /**
@@ -27,6 +27,9 @@
     NSMutableDictionary* _singletons;
 
     NSMutableSet* _currentlyResolvingReferences;
+    NSMutableArray* _mutators;
+
+    BOOL _hasPerformedMutations;
 }
 
 /**
@@ -64,6 +67,8 @@
 
 - (id)componentForKey:(NSString*)key;
 
+- (NSArray*)registry;
 
+- (void)attachMutator:(id<SpringComponentFactoryMutator>)mutator;
 
 @end

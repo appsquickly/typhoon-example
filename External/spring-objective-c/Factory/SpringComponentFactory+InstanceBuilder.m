@@ -36,7 +36,7 @@
 
     if (definition.factoryComponent)
     {
-         instance = [self componentForKey:definition.factoryComponent];
+        instance = [self componentForKey:definition.factoryComponent];
     }
     else if (definition.initializer && definition.initializer.isClassMethod)
     {
@@ -113,8 +113,8 @@
         if (typeDescriptor == nil)
         {
             [NSException raise:NSInvalidArgumentException
-                        format:@"Tried to inject property '%@' on object of type '%@', but the instance has no setter for this property.",
-                               property.name, [instance class]];
+                    format:@"Tried to inject property '%@' on object of type '%@', but the instance has no setter for this property.",
+                           property.name, [instance class]];
         }
         [self doPropertyInjection:instance property:property typeDescriptor:typeDescriptor];
     }
@@ -135,7 +135,7 @@
 }
 
 - (void)doPropertyInjection:(id <SpringIntrospectiveNSObject>)instance property:(id <SpringInjectedProperty>)property
-             typeDescriptor:(SpringTypeDescriptor*)typeDescriptor
+        typeDescriptor:(SpringTypeDescriptor*)typeDescriptor
 {
     if (property.type == SpringPropertyInjectionByTypeType)
     {

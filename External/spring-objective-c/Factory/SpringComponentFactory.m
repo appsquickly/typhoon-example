@@ -14,6 +14,7 @@
 #import "SpringComponentFactory.h"
 #import "SpringComponentDefinition.h"
 #import "SpringComponentFactory+InstanceBuilder.h"
+#import "SpringComponentFactoryMutator.h"
 
 
 @interface SpringComponentDefinition (SpringComponentFactory)
@@ -42,6 +43,8 @@ static SpringComponentFactory* defaultFactory;
         _registry = [[NSMutableArray alloc] init];
         _singletons = [[NSMutableDictionary alloc] init];
         _currentlyResolvingReferences = [[NSMutableSet alloc] init];
+        _mutators = [[NSMutableArray alloc] init];
+        _hasPerformedMutations = NO;
     }
     return self;
 }
@@ -78,6 +81,7 @@ static SpringComponentFactory* defaultFactory;
 
 - (NSArray*)allComponentsForType:(id)classOrProtocol
 {
+    [self performMutations];
     NSMutableArray* results = [[NSMutableArray alloc] init];
     BOOL isClass = class_isMetaClass(object_getClass(classOrProtocol));
 
@@ -107,6 +111,7 @@ static SpringComponentFactory* defaultFactory;
 
 - (id)componentForKey:(NSString*)key
 {
+    [self performMutations];
     [self assertNotCircularDependency:key];
     SpringComponentDefinition* definition = [self definitionForKey:key];
     if (!definition)
@@ -125,6 +130,17 @@ static SpringComponentFactory* defaultFactory;
 {
     defaultFactory = self;
 });
+}
+
+- (NSArray*)registry
+{
+    return [_registry copy];
+}
+
+- (void)attachMutator:(id)mutator
+{
+    NSLog(@"Attaching mutator: %@", mutator);
+    [_mutators addObject:mutator];
 }
 
 
@@ -179,10 +195,22 @@ static SpringComponentFactory* defaultFactory;
 {
     if ([_currentlyResolvingReferences containsObject:key])
     {
-        [NSException raise:NSInvalidArgumentException format:@"Circular dependency detected: %@",
-                                                             _currentlyResolvingReferences];
+        [NSException raise:NSInvalidArgumentException format:@"Circular dependency detected: %@", _currentlyResolvingReferences];
     }
     [_currentlyResolvingReferences addObject:key];
+}
+
+- (void)performMutations
+{
+    if (!_hasPerformedMutations)
+    {
+        NSLog(@"Running mutators. . . %@", _mutators);
+        for (id <SpringComponentFactoryMutator> mutator in _mutators)
+        {
+            [mutator mutateComponentDefinitionsIfRequired:_registry];
+        }
+        _hasPerformedMutations = YES;
+    }
 }
 
 @end
