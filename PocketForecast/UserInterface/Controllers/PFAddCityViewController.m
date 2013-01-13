@@ -77,17 +77,11 @@
 /* =========================================================== Protocol Methods ========================================================= */
 - (void)requestDidFinishWithWeatherReport:(PFWeatherReport*)weatherReport
 {
-    LogDebug(@"Got weather report: %@", weatherReport);
 
-    [_cityDao saveCity:[weatherReport cityDisplayName]];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)requestDidFailWithError:(NSError*)error
 {
-    [_spinner stopAnimating];
-    [_nameOfCityToAdd setEnabled:YES];
-    [_validationMessage setText:[NSString stringWithFormat:@"No weather reports for '%@'.", [_nameOfCityToAdd text]]];
 }
 
 /* ============================================================ Utility Methods ========================================================= */
@@ -106,7 +100,22 @@
         [_nameOfCityToAdd setEnabled:NO];
         [_validationMessage setHidden:NO];
         [_spinner startAnimating];
-        [_weatherClient loadWeatherReportFor:[_nameOfCityToAdd text] delegate:self];
+
+        __weak id weatherClientDelegate = self;
+        __weak id <PFCityDao> cityDao = _cityDao;
+
+
+        [_weatherClient loadWeatherReportFor:[_nameOfCityToAdd text] onSuccess:^(PFWeatherReport* weatherReport)
+        {
+            LogDebug(@"Got weather report: %@", weatherReport);
+            [cityDao saveCity:[weatherReport cityDisplayName]];
+            [weatherClientDelegate dismissViewControllerAnimated:YES completion:nil];
+        } onError:^(NSUInteger statusCode, NSString* message)
+        {
+            [_spinner stopAnimating];
+            [_nameOfCityToAdd setEnabled:YES];
+            [_validationMessage setText:[NSString stringWithFormat:@"No weather reports for '%@'.", [_nameOfCityToAdd text]]];
+        }];
     }
     else
     {

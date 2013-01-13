@@ -13,27 +13,21 @@
 @class PFWeatherReport;
 
 /**
-* Protocol for handling asynchronous responses from PFWeatherClient
+* Block protocol for handling asynchronous responses from PFWeatherClient
 */
-@protocol PFWeatherClientDelegate<NSObject>
 
-@optional
+typedef void(^PFWeatherReportReceivedBlock)(PFWeatherReport* report);
 
-- (void) requestDidFinishWithWeatherReport:(PFWeatherReport*)weatherReport;
-
-- (void) requestDidFinishWithImage:(UIImage*)image;
-
-- (void) requestDidFailWithError:(NSError*)error;
-
-@end
+typedef void(^PFWeatherReportErrorBlock)(NSUInteger errorCode, NSString* message);
 
 /* ================================================================================================================== */
 
 /**
 * Protocol specifying the retrieval of weather forecast information.
 */
-@protocol PFWeatherClient<NSObject>
+@protocol PFWeatherClient <NSObject>
 
-- (void) loadWeatherReportFor:(NSString*)city delegate:(id<PFWeatherClientDelegate>)delegate;
+- (void)loadWeatherReportFor:(NSString*)city onSuccess:(PFWeatherReportReceivedBlock)successBlock
+        onError:(PFWeatherReportErrorBlock)errorBlock;
 
 @end

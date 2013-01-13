@@ -20,7 +20,7 @@
 @protocol PFCityDao;
 
 
-@interface PFWeatherReportViewController : UIViewController <PFWeatherClientDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface PFWeatherReportViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
 
     PFWeatherReport* _weatherReport;

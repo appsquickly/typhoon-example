@@ -11,12 +11,12 @@
 
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "PFBundleResource.h"
 #import "RXMLElement+PFWeatherReport.h"
 #import "PFWeatherReport.h"
 #import "PFCurrentConditions.h"
 #import "PFForecastConditions.h"
 #import "PFTemperature.h"
+#import "SpringBundleResource.h"
 
 @interface RXMLElement_PFWeatherReportTests : SenTestCase
 @end
@@ -29,7 +29,7 @@
 
 - (void)setUp
 {
-    sampleReportString = [PFBundleResource withName:@"SampleForecast.xml"];
+    sampleReportString = [[SpringBundleResource withName:@"SampleForecast.xml"] asString];
 }
 
 

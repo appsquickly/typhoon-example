@@ -16,6 +16,7 @@
 		6BA1400315B16B110071C7A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA1400215B16B110071C7A0 /* QuartzCore.framework */; };
 		6BA1400515B170920071C7A0 /* Clouds.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 6BA1400415B170920071C7A0 /* Clouds.JPG */; };
 		6BA1400915B175020071C7A0 /* CurrentConditionsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA1400815B175020071C7A0 /* CurrentConditionsTableCell.xib */; };
+		6BC40C7016A2E05100A3C48E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE9745715AF01A3004472E2 /* CoreGraphics.framework */; };
 		6BE9230A15B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9230615B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m */; };
 		6BE9230B15B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9230915B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.m */; };
 		6BE9231615B2CFB3002EF310 /* chance_of_storm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BE9231115B2CFB3002EF310 /* chance_of_storm.png */; };
@@ -193,7 +194,6 @@
 		BA798F3DBF3353B33D121259 /* SampleForecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */; };
 		BA798F5F7C9ACF5AA904A671 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79867A0DF25A188ED3D7D5 /* Icon.png */; };
 		BA798F6BBF76D4C0FE7C4C99 /* Spring.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798AB49D08D2B7C2AB9BF1 /* Spring.h */; };
-		BA798FB65B6BCA447E4A102B /* StubWeatherClientDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798BE74372D46A8E52F536 /* StubWeatherClientDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,7 +347,6 @@
 		BA79804FF9ADB119E70F2D80 /* SpringParameterInjectedByReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringParameterInjectedByReference.h; sourceTree = "<group>"; };
 		BA79807586F8B444B6FB1774 /* SpringComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringComponentFactory.m; sourceTree = "<group>"; };
 		BA79807FA64173B8AB6306CA /* SpringXmlComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringXmlComponentFactory.m; sourceTree = "<group>"; };
-		BA7980A7D055654B1BC5313D /* StubWeatherClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubWeatherClientDelegate.h; sourceTree = "<group>"; };
 		BA7980C9AE788B0D3EF380E4 /* SpringInjectedParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringInjectedParameter.h; sourceTree = "<group>"; };
 		BA7981652F142A43F10744AF /* SpringComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringComponentFactory.h; sourceTree = "<group>"; };
 		BA7981B0F545B242FBE14D11 /* SpringComponentFactoryMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringComponentFactoryMutator.h; sourceTree = "<group>"; };
@@ -405,7 +404,6 @@
 		BA798B1EF321D3252A608028 /* PFTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperature.m; sourceTree = "<group>"; };
 		BA798B362DA8741775671768 /* PFActivityIndicatorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFActivityIndicatorTableViewCell.h; sourceTree = "<group>"; };
 		BA798B92876C0679AA3E6DC8 /* PFCurrentConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCurrentConditions.h; sourceTree = "<group>"; };
-		BA798BE74372D46A8E52F536 /* StubWeatherClientDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubWeatherClientDelegate.m; sourceTree = "<group>"; };
 		BA798BEADD7DF6BCD10377DF /* SpringPropertyInjectedByValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPropertyInjectedByValue.m; sourceTree = "<group>"; };
 		BA798BF29C35501BD1A1CAB6 /* SpringBundleResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBundleResource.h; sourceTree = "<group>"; };
 		BA798C0B05EF4F51F721F0D8 /* SpringPrimitiveTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPrimitiveTypeConverter.m; sourceTree = "<group>"; };
@@ -447,6 +445,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC40C7016A2E05100A3C48E /* CoreGraphics.framework in Frameworks */,
 				6BE9747215AF01A3004472E2 /* SenTestingKit.framework in Frameworks */,
 				6BE9747315AF01A3004472E2 /* UIKit.framework in Frameworks */,
 				6BE9747415AF01A3004472E2 /* Foundation.framework in Frameworks */,
@@ -658,8 +657,6 @@
 			children = (
 				BA79853AB5AA71AA4689A849 /* PFWeatherReportDaoTests.m */,
 				BA798EC033265E30559E1216 /* PFCityDoaTests.m */,
-				BA7980A7D055654B1BC5313D /* StubWeatherClientDelegate.h */,
-				BA798BE74372D46A8E52F536 /* StubWeatherClientDelegate.m */,
 				BA798A8B15B6D784A0374F1A /* PFWeatherClientTests.m */,
 			);
 			path = Integration;
@@ -1095,7 +1092,6 @@
 			files = (
 				BA798591227D17C710EF6EBA /* PFTemperatureTests.m in Sources */,
 				BA798E0566990B85665B89F7 /* PFWeatherClientTests.m in Sources */,
-				BA798FB65B6BCA447E4A102B /* StubWeatherClientDelegate.m in Sources */,
 				BA798276304602804042C918 /* RXMLElement_PFWeatherReportSpec.m in Sources */,
 				BA798BD20E9AD59DCED10715 /* PFCityDoaTests.m in Sources */,
 				BA7982C1B1F1DB140D34225A /* PFWeatherReportDaoTests.m in Sources */,
@@ -1295,7 +1291,10 @@
 				GCC_PREFIX_HEADER = PocketForecastTests/Tests.pch;
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = "PocketForecastTests/PocketForecastTests-Info.plist";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-Obj-c",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1320,7 +1319,10 @@
 				GCC_PREFIX_HEADER = PocketForecastTests/Tests.pch;
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = "PocketForecastTests/PocketForecastTests-Info.plist";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-Obj-c",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";

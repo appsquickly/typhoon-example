@@ -18,7 +18,7 @@
 @protocol PFWeatherClient;
 
 
-@interface PFAddCityViewController : UIViewController <UITextFieldDelegate, PFWeatherClientDelegate>
+@interface PFAddCityViewController : UIViewController <UITextFieldDelegate>
 
 
 #pragma mark - Container injected properties.

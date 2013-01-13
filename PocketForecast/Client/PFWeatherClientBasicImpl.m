@@ -46,7 +46,8 @@
 }
 
 /* =========================================================== Protocol Methods ========================================================= */
-- (void)loadWeatherReportFor:(NSString*)city delegate:(id <PFWeatherClientDelegate>)delegate
+- (void)loadWeatherReportFor:(NSString*)city onSuccess:(PFWeatherReportReceivedBlock)successBlock
+        onError:(PFWeatherReportErrorBlock)errorBlock;
 {
     NSDictionary* parameters = [[NSMutableDictionary alloc] init];
     [parameters setValue:city forKey:@"q"];
@@ -67,36 +68,26 @@
             RXMLElement* error = [rootElement child:@"error"];
             if (error)
             {
-                NSString* failureReason = [[error child:@"msg"] text];
+                NSString* failureReason = [[[error child:@"msg"] text] copy];
                 if (failureReason.length == 0)
                 {
                     failureReason = @"No info. Perhaps the city name is invalid?";
                 }
-                [self dispatchErrorWith:delegate statusCode:response.status failureReason:failureReason];
+                errorBlock(response.status, failureReason);
             }
             else
             {
                 __autoreleasing PFWeatherReport* weatherReport = [rootElement asWeatherReport];
                 [_weatherReportDao saveReport:weatherReport];
-                [delegate requestDidFinishWithWeatherReport:weatherReport];
+                successBlock(weatherReport);
             }
         }
         else
         {
-            [self dispatchErrorWith:delegate statusCode:response.status failureReason:[response asString]];
+            errorBlock(response.status, [response asString]);
         }
     }];
 
-}
-
-/* ============================================================ Private Methods ========================================================= */
-- (void)dispatchErrorWith:(id <PFWeatherClientDelegate>)delegate statusCode:(NSInteger)statusCode
-        failureReason:(NSString*)failureReason
-{
-
-    LogDebug(@"Dispatching error with failure reason: %@", failureReason);
-    NSDictionary* userInfo = [NSDictionary dictionaryWithObject:failureReason forKey:NSLocalizedFailureReasonErrorKey];
-    [delegate requestDidFailWithError:[NSError errorWithDomain:NSStringFromClass([self class]) code:statusCode userInfo:userInfo]];
 }
 
 

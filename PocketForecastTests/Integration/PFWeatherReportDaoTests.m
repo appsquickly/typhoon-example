@@ -12,10 +12,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "PFWeatherReportDao.h"
-#import "PFBundleResource.h"
 #import "PFWeatherReport.h"
 #import "RXMLElement+PFWeatherReport.h"
 #import "SpringXmlComponentFactory.h"
+#import "SpringBundleResource.h"
 
 @interface PFWeatherReportDaoTests : SenTestCase
 @end
@@ -31,8 +31,8 @@
     SpringXmlComponentFactory* factory = [[SpringXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
     weatherReportDao = [factory componentForType:@protocol(PFWeatherReportDao)];
 
-    RXMLElement* xmlElement =
-            [RXMLElement elementFromXMLString:[PFBundleResource withName:@"SampleForecast.xml"] encoding:NSUTF8StringEncoding];
+    NSString* xmlString = [[SpringBundleResource withName:@"SampleForecast.xml"] asString];
+    RXMLElement* xmlElement = [RXMLElement elementFromXMLString:xmlString encoding:NSUTF8StringEncoding];
     testReport = [xmlElement asWeatherReport];
 }
 

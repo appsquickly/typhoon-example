@@ -96,18 +96,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 }
 
 
-/* =========================================================== Protocol Methods ========================================================= */
-#pragma mark PFWeatherClientDelegate
-
-- (void)requestDidFinishWithWeatherReport:(PFWeatherReport*)weatherReport
-{
-    [self presentReport:weatherReport];
-}
-
-- (void)requestDidFailWithError:(NSError*)error
-{
-
-}
 
 /* ====================================================================================================================================== */
 #pragma mark UITableView methods
@@ -202,8 +190,12 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 
 - (void)retrieveRemoteReport
 {
+    __weak PFWeatherReportViewController* weakSelf = self;
     [_activityIndicatorCell startAnimating];
-    [_weatherClient loadWeatherReportFor:_cityName delegate:self];
+    [_weatherClient loadWeatherReportFor:_cityName onSuccess:^(PFWeatherReport* report)
+    {
+        [weakSelf presentReport:report];
+    } onError:nil];
 }
 
 - (void)presentCitiesView
