@@ -11,8 +11,6 @@
     <path id="classes">
         <fileset dir="${source.main.dir}">
             <include name="**/*.m"/>
-            <exclude name="**/main.m"/>
-            <exclude name="**/Examples/**/*"/>
         </fileset>
     </path>
 
@@ -22,19 +20,12 @@
         --clean,
         --run.tests,
         --assemble.coverage.data,
-        --coverage.report,
-        --api.report"/>
+        --coverage.report"/>
 
     <target name="fast">
         <property name="fast" value="yes"/>
     </target>
 
-    <target name="release" depends="
-        --init,
-        --clean,
-        --build.app">
-
-    </target>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END PUBLIC TARGETS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
@@ -74,11 +65,6 @@
         <delete dir="${target.dir}"/>
     </target>
 
-    <target name="--build.app">
-        <exec executable="${xcodebuild}" failonerror="true">
-            <arg line="CONFIGURATION_BUILD_DIR='${target.dir}' -workspace ${module.name}.xcworkspace/ -scheme ${module.name}"/>
-        </exec>
-    </target>
 
     <target name="--simulator.launch">
         <echo file="${temp.dir}/fg-simulator.script">
@@ -97,9 +83,10 @@
         <mkdir dir="${user.home}/Library/Application Support/iPhone Simulator/Documents"/>
 
         <exec executable="${xcodebuild}" failonerror="true">
-            <arg line="-sdk iphonesimulator${module.sdk.version} -workspace ${module.name}.xcworkspace/ -scheme ${module.name}Tests TEST_AFTER_BUILD=YES"/>
+            <arg line="-sdk iphonesimulator${module.sdk.version} -target ${tests.target.name}"/>
         </exec>
     </target>
+
 
     <target name="--assemble.coverage.data">
         <mkdir dir="${temp.dir}/coverage-data"/>
@@ -113,7 +100,7 @@
         </pathconvert>
         <echo message="Coverage info files: ${gcno.list}"/>
         <copy todir="${temp.dir}/coverage-data" flatten="true">
-            <fileset dir="${user.home}/Library/Developer/Xcode/DerivedData" includes="${gcno.list}"/>
+            <fileset dir="${target.dir}" includes="${gcno.list}"/>
         </copy>
         <pathconvert pathsep=", " property="gcda.list" refid="classes">
             <mapper>
@@ -125,7 +112,7 @@
         </pathconvert>
         <echo message="Coverage data files: ${gcda.list}"/>
         <copy todir="${temp.dir}/coverage-data" flatten="true">
-            <fileset dir="${user.home}/Library/Developer/Xcode/DerivedData" includes="${gcda.list}"/>
+            <fileset dir="${target.dir}" includes="${gcda.list}"/>
         </copy>
     </target>
 
@@ -152,35 +139,6 @@
         <exec executable="${temp.dir}/genhtml.sh" failonerror="true" failifexecutionfails="true"/>
     </target>
 
-    <target name="--api.report">
-        <property name="docs.dir" value="${user.home}/Library/Developer/Shared/Documentation/Docsets"/>
-        <mkdir dir="${docs.dir}"/>
-        <mkdir dir="${reports.dir}/api"/>
-        <mkdir dir="${user.home}/Library/Developer/Shared"/>
-        <mkdir dir="${user.home}/Library/Developer/Shared/Documentation"/>
-        <mkdir dir="${user.home}/Library/Developer/Shared/Documentation/Docsets"/>
-        <!-- In case it's turned up somehow, despite cleaning up. -->
-        <delete file="${basedir}/docset-installed.txt"/>
 
-        <pathconvert pathsep=" " property="doc.files.list" refid="headers"/>
-
-        <exec executable="${appledoc.bin}">
-            <arg line="--project-name=${module.name}"/>
-            <arg line="--project-company=${module.company}"/>
-            <arg line="--company-id=${module.company}"/>
-            <arg line="-h --keep-undocumented-objects --keep-undocumented-members"/>
-            <arg line="${doc.files.list}"/>
-        </exec>
-
-        <loadfile srcfile="${basedir}/docset-installed.txt" property="docset.installed"/>
-        <fail unless="docset.installed" message="Error creating documentation"/>
-        <!-- Don't leave it lying around -->
-        <delete file="${basedir}/docset-installed.txt"/>
-
-        <property name="docs.dir" value="${user.home}/Library/Developer/Shared/Documentation/Docsets"/>
-        <copy todir="${reports.dir}/api">
-            <fileset dir="${docs.dir}/${module.company}.${module.name}.docset/Contents/Resources/Documents"/>
-        </copy>
-    </target>
 
 </project>
