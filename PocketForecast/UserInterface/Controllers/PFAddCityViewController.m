@@ -74,16 +74,6 @@
 }
 
 
-/* =========================================================== Protocol Methods ========================================================= */
-- (void)requestDidFinishWithWeatherReport:(PFWeatherReport*)weatherReport
-{
-
-}
-
-- (void)requestDidFailWithError:(NSError*)error
-{
-}
-
 /* ============================================================ Utility Methods ========================================================= */
 - (void)dealloc
 {
