@@ -16,9 +16,7 @@
 
 @interface PFCityDaoUserDefaultsImpl : NSObject <PFCityDao>
 {
-    BOOL _repositoryUpdated;
     NSUserDefaults* _defaults;
-
 }
 
 

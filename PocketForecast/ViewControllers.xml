@@ -8,7 +8,7 @@
         as prototype, so they go away each time we move to a new view.
     </description>
 
-    <component class="UINavigationController" key="mainNavigationController">
+    <component class="UINavigationController" key="mainNavigationController" scope="prototype" after-property-injection="applySkin">
         <initializer selector="initWithRootViewController:">
             <argument parameterName="rootViewController" ref="citiesListController"/>
         </initializer>

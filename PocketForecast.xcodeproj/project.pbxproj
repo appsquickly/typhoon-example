@@ -103,6 +103,7 @@
 		BA7980496AA6E5D925243353 /* SpringBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7985EAC86C4433B8DB0163 /* SpringBundleResource.m */; };
 		BA798052D23478AB4F54D832 /* SpringComponentFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7981652F142A43F10744AF /* SpringComponentFactory.h */; };
 		BA798084E5C88D3F74ED0A9E /* SpringXmlComponentFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7986B92E83F77936A1D5B4 /* SpringXmlComponentFactory.h */; };
+		BA79808E9113DEB312A8BAFA /* UINavigationController+PocketForecastSkin.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798E5D46F5BB84E60FB37E /* UINavigationController+PocketForecastSkin.h */; };
 		BA7980B7D9976346C860DEAC /* SpringTypeDescriptor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7986D56FD48D331DD3E637 /* SpringTypeDescriptor.h */; };
 		BA7980F97A55AD6548EB165D /* SpringPassThroughTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7989279F5637A842D80286 /* SpringPassThroughTypeConverter.m */; };
 		BA7981088FA218ECD034170C /* PFWeatherClientBasicImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */; };
@@ -118,6 +119,7 @@
 		BA798276304602804042C918 /* RXMLElement_PFWeatherReportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EE7FC647ED03B050115 /* RXMLElement_PFWeatherReportSpec.m */; };
 		BA7982836A2B69970E7B418B /* NSObject+SpringIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A751524AA63AE6DA389 /* NSObject+SpringIntrospectionUtils.m */; };
 		BA79829B5FCE75C6A35C7679 /* SpringComponentDefinition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79891A62B53F4A9FAB0724 /* SpringComponentDefinition.h */; };
+		BA7982A0D278E0B180AF7AA8 /* UINavigationController+PocketForecastSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */; };
 		BA7982AFE569B101EA3C2350 /* SpringPropertyInjectedByReference.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79892058AC4AAB43EEA8A5 /* SpringPropertyInjectedByReference.h */; };
 		BA7982C1B1F1DB140D34225A /* PFWeatherReportDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79853AB5AA71AA4689A849 /* PFWeatherReportDaoTests.m */; };
 		BA7982CB844DDC587CB1CAF3 /* SpringPropertyInjectedByType.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79861E89C0CF9B8A4710A4 /* SpringPropertyInjectedByType.m */; };
@@ -157,6 +159,7 @@
 		BA7987EB18BFA581A8589018 /* SpringPropertyInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7984EAD92BF4CE210D4EE2 /* SpringPropertyInjectedByReference.m */; };
 		BA7987EF7B4A56E5C18F14A4 /* SpringPrimitiveTypeConverter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7982FF17E5A290D0A15E50 /* SpringPrimitiveTypeConverter.h */; };
 		BA79881100EF57438CC426D9 /* SpringPrimitiveTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C0B05EF4F51F721F0D8 /* SpringPrimitiveTypeConverter.m */; };
+		BA7988459DAC793F9981C4C9 /* UINavigationController+PocketForecastSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */; };
 		BA798873E9DA8CEE34984273 /* PFTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B1EF321D3252A608028 /* PFTemperature.m */; };
 		BA7988778514D413D4F05082 /* SpringParameterInjectedByValue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798CF20AA22D579AE76D1C /* SpringParameterInjectedByValue.h */; };
 		BA7988965D06EB79F1060A26 /* SpringComponentDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798322748D32FADE60DDBF /* SpringComponentDefinition.m */; };
@@ -244,6 +247,7 @@
 				BA798AFB39B10011AD3DDF2C /* SpringIntrospectionUtils.h in CopyFiles */,
 				BA7986BBB39683450A5EBDCE /* SpringIntrospectiveNSObject.h in CopyFiles */,
 				BA7989BEA8B605528541A4D0 /* SpringTestUtils.h in CopyFiles */,
+				BA79808E9113DEB312A8BAFA /* UINavigationController+PocketForecastSkin.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +364,7 @@
 		BA798313F643EC9331B96A4D /* SpringRXMLElement+SpringXmlComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpringRXMLElement+SpringXmlComponentFactory.m"; sourceTree = "<group>"; };
 		BA798320014BEE93DD0527CC /* PFAddCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddCityViewController.h; sourceTree = "<group>"; };
 		BA798322748D32FADE60DDBF /* SpringComponentDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringComponentDefinition.m; sourceTree = "<group>"; };
+		BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+PocketForecastSkin.m"; sourceTree = "<group>"; };
 		BA79845F74A645C02B008A4E /* SpringRXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringRXMLElement.h; sourceTree = "<group>"; };
 		BA7984EAD92BF4CE210D4EE2 /* SpringPropertyInjectedByReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPropertyInjectedByReference.m; sourceTree = "<group>"; };
 		BA7985280FE6C3CFC9CAFB56 /* SpringComponentFactory+InstanceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpringComponentFactory+InstanceBuilder.m"; sourceTree = "<group>"; };
@@ -417,6 +422,7 @@
 		BA798E0FB54AE15AEF49235B /* SpringPropertyInjectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPropertyInjectionDelegate.h; sourceTree = "<group>"; };
 		BA798E21AA715F7DC6F2D581 /* SpringComponentFactory+InstanceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpringComponentFactory+InstanceBuilder.h"; sourceTree = "<group>"; };
 		BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RXMLElement+PFWeatherReport.m"; sourceTree = "<group>"; };
+		BA798E5D46F5BB84E60FB37E /* UINavigationController+PocketForecastSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+PocketForecastSkin.h"; sourceTree = "<group>"; };
 		BA798E6E7E7030B87B4BD57D /* PFCityLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityLabelTableViewCell.h; sourceTree = "<group>"; };
 		BA798E82FFE465D80123C4CD /* PFActivityIndicatorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFActivityIndicatorTableViewCell.m; sourceTree = "<group>"; };
 		BA798EB3E4454CB57F00EF71 /* SpringIntrospectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringIntrospectionUtils.m; sourceTree = "<group>"; };
@@ -704,6 +710,7 @@
 				BA798D1153F25B22F24E2CEF /* Assets */,
 				BA79877DD1EE5642AE5A333C /* Controllers */,
 				BA798CC1F256F99F3109F14F /* Components */,
+				BA798FA990BB1BE153C309F8 /* Categories */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -895,6 +902,15 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
+		BA798FA990BB1BE153C309F8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */,
+				BA798E5D46F5BB84E60FB37E /* UINavigationController+PocketForecastSkin.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1083,6 +1099,7 @@
 				BA7982836A2B69970E7B418B /* NSObject+SpringIntrospectionUtils.m in Sources */,
 				BA7980496AA6E5D925243353 /* SpringBundleResource.m in Sources */,
 				BA7982CF7675F7FF41D50E6B /* SpringIntrospectionUtils.m in Sources */,
+				BA7982A0D278E0B180AF7AA8 /* UINavigationController+PocketForecastSkin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1155,6 +1172,7 @@
 				BA798DA59662A0BF177E936D /* NSObject+SpringIntrospectionUtils.m in Sources */,
 				BA79871F129F993771DEE7C7 /* SpringBundleResource.m in Sources */,
 				BA79823F3CEB863542CC4AFF /* SpringIntrospectionUtils.m in Sources */,
+				BA7988459DAC793F9981C4C9 /* UINavigationController+PocketForecastSkin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

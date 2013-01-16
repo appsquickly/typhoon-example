@@ -26,20 +26,16 @@
             * factory = [[SpringXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
     [factory makeDefault];
 
-    _navigationController = [factory componentForType:[UINavigationController class]];
-    _navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 
     id<PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
     NSString* selectedCity = [cityDao getCurrentlySelectedCity];
     if (selectedCity)
     {
-        PFWeatherReportViewController* _weatherReportController = [factory componentForType:[PFWeatherReportViewController class]];
-        [_weatherReportController setCityName:selectedCity];
-        [_window setRootViewController:_weatherReportController];
+        [_window setRootViewController:[factory componentForType:[PFWeatherReportViewController class]]];
     }
     else
     {
-        [_window setRootViewController:_navigationController];
+        [_window setRootViewController:[factory componentForType:[UINavigationController class]]];
     }
 
     [self.window makeKeyAndVisible];

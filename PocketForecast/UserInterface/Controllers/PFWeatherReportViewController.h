@@ -32,6 +32,8 @@
     UIImage* _partlyCloudyImage;
     UIImage* _chanceOfStormImage;
     UIImage* _chanceOfRainImage;
+
+    NSString* _cityName;
 }
 
 #pragma mark - Spring injected via initializer
@@ -46,7 +48,6 @@
 @property(nonatomic, weak) IBOutlet UILabel* statusMessageLabel;
 @property(nonatomic, weak) IBOutlet UITableViewCell* injectedTableViewCell;
 @property(nonatomic, weak) IBOutlet UIImageView* currentConditionsImageView;
-@property(nonatomic, strong) NSString* cityName;
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
         cityDao:(id <PFCityDao>)cityDao;

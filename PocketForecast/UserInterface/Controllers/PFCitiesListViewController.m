@@ -67,10 +67,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 {
     [super viewWillAppear:animated];
     [_citiesListTableView deselectRowAtIndexPath:[_citiesListTableView indexPathForSelectedRow] animated:NO];
-    if ([_cityDao repositoryUpdated])
-    {
-        [self refreshCitiesList];
-    }
+    [self refreshCitiesList];
 }
 
 
@@ -122,7 +119,6 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
     PFWeatherReportViewController
             * weatherReportController = [[SpringComponentFactory defaultFactory] componentForType:[PFWeatherReportViewController class]];
-    [weatherReportController setCityName:cityName];
     [self moveFrameBelowStatusBarFor:weatherReportController];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;

@@ -27,7 +27,6 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     if (self)
     {
         _defaults = [NSUserDefaults standardUserDefaults];
-        _repositoryUpdated = YES;
     }
     return self;
 }
@@ -45,7 +44,6 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
                                            nil];
         [_defaults setObject:cities forKey:pfCitiesListKey];
     }
-    _repositoryUpdated = NO;
     return [cities sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 }
 
@@ -65,7 +63,6 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     {
         [cities addObject:name];
         [_defaults setObject:cities forKey:pfCitiesListKey];
-        _repositoryUpdated = YES;
     }
 }
 
@@ -83,7 +80,6 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     }
     [cities removeObject:cityToRemove];
     [_defaults setObject:cities forKey:pfCitiesListKey];
-    _repositoryUpdated = YES;
 }
 
 - (void)saveCurrentlySelectedCity:(NSString*)cityName
@@ -106,10 +102,6 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     return [_defaults objectForKey:pfCurrentCityKey];
 }
 
-- (BOOL)repositoryUpdated
-{
-    return _repositoryUpdated;
-}
 
 
 @end

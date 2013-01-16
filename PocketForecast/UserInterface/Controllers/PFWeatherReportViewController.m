@@ -34,7 +34,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 @synthesize presentCitiesViewButton = _presentCitiesViewButton;
 @synthesize refreshReportButton = _refreshReportButton;
 @synthesize weatherReportTableView = _weatherReportTableView;
-@synthesize cityName = _cityName;
 @synthesize injectedTableViewCell = _injectedTableViewCell;
 @synthesize statusMessageLabel = _statusMessageLabel;
 @synthesize currentConditionsImageView = _currentConditionsImageView;
@@ -78,6 +77,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 {
     [super viewWillAppear:animated];
     [_activityIndicatorCell startAnimating];
+    _cityName = [_cityDao getCurrentlySelectedCity];
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
     {
