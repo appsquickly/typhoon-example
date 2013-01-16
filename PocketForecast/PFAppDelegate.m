@@ -22,10 +22,9 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    SpringComponentFactory
-            * factory = [[SpringXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
+    SpringComponentFactory* factory =
+            [[SpringXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
     [factory makeDefault];
-
 
     id<PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
     NSString* selectedCity = [cityDao getCurrentlySelectedCity];
