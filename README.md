@@ -20,10 +20,10 @@ Then proceed to step 1 below.
 
 ### Exercises
 
-3. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
-
-* Notice how the framework allows you to group related components together. 
-* Notice how dependency injection allows for centralized configuration, at the same time as using aggressive memory management. View controllers will go away 
+3. Study the 
+<a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
+Notice how the framework allows you to group related components together. Notice how dependency injection allows for 
+centralized configuration, at the same time as using aggressive memory management. View controllers will go away 
 whenever they're not being used. 
 4. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/tree/master/PocketForecastTests/Integration">test cases</a>.
 Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
