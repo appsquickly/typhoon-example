@@ -13,12 +13,13 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 ###Running the sample:
 
 * Clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
-Then proceed to step 1 below. 
+Then proceed to step 1 below.
+* Get an API key from http://free.worldweatheronline.com. 
+* Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. Run the App in the simulator or on your device. 
+* Proceed to the exercises below. 
 
 ### Exercises
 
-1. Get an API key from http://free.worldweatheronline.com. 
-2. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. Run the App in the simulator or on your device. 
 3. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
 Notice how the framework allows you to group related components together. 
 4. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/tree/master/PocketForecastTests/Integration">test cases</a>.
