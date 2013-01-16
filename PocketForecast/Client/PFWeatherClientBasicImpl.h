@@ -26,6 +26,7 @@
 @property(nonatomic, strong) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong) NSString* serviceUrl;
 @property(nonatomic, strong) NSString* apiKey;
+@property(nonatomic) int daysToRetrieve;
 
 
 @end

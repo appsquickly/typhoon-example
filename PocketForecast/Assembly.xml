@@ -13,6 +13,7 @@
         </description>
         <property name="serviceUrl" value="http://free.worldweatheronline.com/feed/weather.ashx"/>
         <property name="apiKey" value="$$YOUR_API_KEY_HERE$$"/>
+        <property name="daysToRetrieve" value="5"/>
         <property name="weatherReportDao" ref="weatherReportDao"/>
     </component>
 

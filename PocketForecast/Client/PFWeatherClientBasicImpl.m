@@ -52,7 +52,7 @@
     NSDictionary* parameters = [[NSMutableDictionary alloc] init];
     [parameters setValue:city forKey:@"q"];
     [parameters setValue:@"xml" forKey:@"format"];
-    [parameters setValue:@"5" forKey:@"num_of_days"];
+    [parameters setValue:[NSString stringWithFormat:@"%i", _daysToRetrieve] forKey:@"num_of_days"];
     [parameters setValue:_apiKey forKey:@"key"];
 
     [_client get:_serviceUrl parameters:parameters withBlock:^(LRRestyResponse* response)
@@ -69,11 +69,7 @@
             if (error)
             {
                 NSString* failureReason = [[[error child:@"msg"] text] copy];
-                if (failureReason.length == 0)
-                {
-                    failureReason = @"No info. Perhaps the city name is invalid?";
-                }
-                errorBlock(response.status, failureReason);
+                errorBlock(response.status, failureReason.length == 0 ? @"Unexpected error." : failureReason);
             }
             else
             {
