@@ -15,13 +15,16 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 * Clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
 Then proceed to step 1 below.
 * Get an API key from http://free.worldweatheronline.com. 
-* Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. Run the App in the simulator or on your device. 
-* Proceed to the exercises below. 
+* Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. 
+* Run the App in the simulator or on your device. Proceed to the exercises below. 
 
 ### Exercises
 
-3. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
-Notice how the framework allows you to group related components together. 
+3. Study the 
+<a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
+Notice how the framework allows you to group related components together. Notice how dependency injection allows for 
+centralized configuration, at the same time as using aggressive memory management. (With prototype-scope, view controllers will go away 
+whenever they're not being used). 
 4. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/tree/master/PocketForecastTests/Integration">test cases</a>.
 Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
 5. Imagine that you decided to save the list of cities that the user wants to get reports for to iCloud, instead of locally on the device. Notice
