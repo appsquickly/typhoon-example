@@ -15,7 +15,8 @@ An example application built with <a href ="https://github.com/jasperblues/sprin
 * Clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
 * Get an API key from http://free.worldweatheronline.com. 
 * Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. 
-* Run the App in the simulator or on your device. Proceed to the exercises below. 
+* Run the App in the simulator or on your device. Look up the weather in your town, and put a jacket on, if you need 
+to. Now, proceed to the exercises below. 
 
 ### Exercises
 
