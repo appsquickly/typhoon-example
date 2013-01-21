@@ -21,7 +21,7 @@
 #import "PFActivityIndicatorTableViewCell.h"
 #import "PFWeatherReportDao.h"
 #import "PFCityDao.h"
-#import "SpringComponentFactory.h"
+#import "Typhoon.h"
 #import <QuartzCore/QuartzCore.h>
 
 static int const CURRENT_CONDITIONS_ROW = 0;
@@ -204,7 +204,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     [_cityDao clearCurrentlySelectedCity];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController* controller = [[SpringComponentFactory defaultFactory] componentForType:[UINavigationController class]];
+    UINavigationController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[UINavigationController class]];
     //pre-load this, because it may not have loaded yet.
     assert(controller.visibleViewController.view != nil);
 

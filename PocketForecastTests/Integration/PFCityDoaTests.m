@@ -12,7 +12,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "PFCityDao.h"
-#import "SpringXmlComponentFactory.h"
+#import "TyphoonXmlComponentFactory.h"
 
 @interface PFCityDoaTests : SenTestCase
 @end
@@ -28,7 +28,7 @@
 
 - (void)setUp
 {
-    SpringXmlComponentFactory* factory = [[SpringXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
+    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
     cityDao = [factory componentForKey:@"cityDao"];
 }
 

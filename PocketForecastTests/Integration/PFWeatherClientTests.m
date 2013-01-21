@@ -12,9 +12,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "PFWeatherClient.h"
-#import "SpringXmlComponentFactory.h"
 #import "PFWeatherReport.h"
-#import "SpringTestUtils.h"
+#import "Typhoon.h"
 
 @interface PFWeatherClientTests : SenTestCase
 @end
@@ -29,7 +28,7 @@
 
 - (void)setUp
 {
-    SpringXmlComponentFactory* factory = [[SpringXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
+    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
     weatherClient = [factory componentForKey:@"weatherClient"];
 }
 

@@ -11,10 +11,9 @@
 
 
 #import "PFAppDelegate.h"
-#import "PFCitiesListViewController.h"
 #import "PFCityDao.h"
 #import "PFWeatherReportViewController.h"
-#import "SpringXmlComponentFactory.h"
+#import "Typhoon.h"
 
 @implementation PFAppDelegate
 
@@ -22,8 +21,8 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    SpringComponentFactory* factory =
-            [[SpringXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
+    TyphoonComponentFactory* factory =
+            [[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
     [factory makeDefault];
 
     id<PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];

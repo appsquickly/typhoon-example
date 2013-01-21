@@ -14,7 +14,6 @@
 #import "PFAddCityViewController.h"
 #import "PFCityDao.h"
 #import "PFWeatherReport.h"
-#import "SpringComponentFactory.h"
 
 
 @implementation PFAddCityViewController

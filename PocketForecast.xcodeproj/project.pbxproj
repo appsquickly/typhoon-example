@@ -12,6 +12,58 @@
 		6B3A342A15B1B28200541F7E /* PFForecastConditionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3A342915B1B28200541F7E /* PFForecastConditionsTableViewCell.m */; };
 		6B3A342C15B2519200541F7E /* LoadingTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3A342B15B2519200541F7E /* LoadingTableCell.xib */; };
 		6B67639615B04A3400142CD5 /* CitiesList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B67639515B04A3400142CD5 /* CitiesList.xib */; };
+		6B7D493F16AD653400526702 /* TyphoonDefinition+BlockBuilders.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48F716AD653400526702 /* TyphoonDefinition+BlockBuilders.m */; };
+		6B7D494016AD653400526702 /* TyphoonDefinition+BlockBuilders.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48F716AD653400526702 /* TyphoonDefinition+BlockBuilders.m */; };
+		6B7D494116AD653400526702 /* TyphoonInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48FA16AD653400526702 /* TyphoonInitializer.m */; };
+		6B7D494216AD653400526702 /* TyphoonInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48FA16AD653400526702 /* TyphoonInitializer.m */; };
+		6B7D494316AD653400526702 /* TyphoonParameterInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48FD16AD653400526702 /* TyphoonParameterInjectedByReference.m */; };
+		6B7D494416AD653400526702 /* TyphoonParameterInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48FD16AD653400526702 /* TyphoonParameterInjectedByReference.m */; };
+		6B7D494516AD653400526702 /* TyphoonParameterInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48FF16AD653400526702 /* TyphoonParameterInjectedByValue.m */; };
+		6B7D494616AD653400526702 /* TyphoonParameterInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D48FF16AD653400526702 /* TyphoonParameterInjectedByValue.m */; };
+		6B7D494716AD653400526702 /* TyphoonPropertyInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490316AD653400526702 /* TyphoonPropertyInjectedByReference.m */; };
+		6B7D494816AD653400526702 /* TyphoonPropertyInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490316AD653400526702 /* TyphoonPropertyInjectedByReference.m */; };
+		6B7D494916AD653400526702 /* TyphoonPropertyInjectedByType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490516AD653400526702 /* TyphoonPropertyInjectedByType.m */; };
+		6B7D494A16AD653400526702 /* TyphoonPropertyInjectedByType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490516AD653400526702 /* TyphoonPropertyInjectedByType.m */; };
+		6B7D494B16AD653400526702 /* TyphoonPropertyInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490716AD653400526702 /* TyphoonPropertyInjectedByValue.m */; };
+		6B7D494C16AD653400526702 /* TyphoonPropertyInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490716AD653400526702 /* TyphoonPropertyInjectedByValue.m */; };
+		6B7D494D16AD653400526702 /* TyphoonDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490A16AD653400526702 /* TyphoonDefinition.m */; };
+		6B7D494E16AD653400526702 /* TyphoonDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490A16AD653400526702 /* TyphoonDefinition.m */; };
+		6B7D494F16AD653400526702 /* TyphoonAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490E16AD653400526702 /* TyphoonAssembly.m */; };
+		6B7D495016AD653400526702 /* TyphoonAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D490E16AD653400526702 /* TyphoonAssembly.m */; };
+		6B7D495116AD653400526702 /* TyphoonBlockComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491316AD653400526702 /* TyphoonBlockComponentFactory.m */; };
+		6B7D495216AD653400526702 /* TyphoonBlockComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491316AD653400526702 /* TyphoonBlockComponentFactory.m */; };
+		6B7D495316AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491616AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m */; };
+		6B7D495416AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491616AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m */; };
+		6B7D495516AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491816AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m */; };
+		6B7D495616AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491816AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m */; };
+		6B7D495716AD653400526702 /* TyphoonComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491A16AD653400526702 /* TyphoonComponentFactory.m */; };
+		6B7D495816AD653400526702 /* TyphoonComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491A16AD653400526702 /* TyphoonComponentFactory.m */; };
+		6B7D495916AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491D16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m */; };
+		6B7D495A16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491D16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m */; };
+		6B7D495B16AD653400526702 /* TyphoonRXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491F16AD653400526702 /* TyphoonRXMLElement.m */; };
+		6B7D495C16AD653400526702 /* TyphoonRXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D491F16AD653400526702 /* TyphoonRXMLElement.m */; };
+		6B7D495D16AD653400526702 /* TyphoonXmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492116AD653400526702 /* TyphoonXmlComponentFactory.m */; };
+		6B7D495E16AD653400526702 /* TyphoonXmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492116AD653400526702 /* TyphoonXmlComponentFactory.m */; };
+		6B7D495F16AD653400526702 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D492216AD653400526702 /* Info-iOS.plist */; };
+		6B7D496016AD653400526702 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D492216AD653400526702 /* Info-iOS.plist */; };
+		6B7D496116AD653400526702 /* TyphoonNSURLTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492616AD653400526702 /* TyphoonNSURLTypeConverter.m */; };
+		6B7D496216AD653400526702 /* TyphoonNSURLTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492616AD653400526702 /* TyphoonNSURLTypeConverter.m */; };
+		6B7D496316AD653400526702 /* TyphoonPassThroughTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492816AD653400526702 /* TyphoonPassThroughTypeConverter.m */; };
+		6B7D496416AD653400526702 /* TyphoonPassThroughTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492816AD653400526702 /* TyphoonPassThroughTypeConverter.m */; };
+		6B7D496516AD653400526702 /* TyphoonPrimitiveTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492A16AD653400526702 /* TyphoonPrimitiveTypeConverter.m */; };
+		6B7D496616AD653400526702 /* TyphoonPrimitiveTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492A16AD653400526702 /* TyphoonPrimitiveTypeConverter.m */; };
+		6B7D496716AD653400526702 /* TyphoonTypeConverterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492C16AD653400526702 /* TyphoonTypeConverterRegistry.m */; };
+		6B7D496816AD653400526702 /* TyphoonTypeConverterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492C16AD653400526702 /* TyphoonTypeConverterRegistry.m */; };
+		6B7D496916AD653400526702 /* TyphoonTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492E16AD653400526702 /* TyphoonTypeDescriptor.m */; };
+		6B7D496A16AD653400526702 /* TyphoonTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D492E16AD653400526702 /* TyphoonTypeDescriptor.m */; };
+		6B7D496B16AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493316AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m */; };
+		6B7D496C16AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493316AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m */; };
+		6B7D496D16AD653400526702 /* TyphoonBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493616AD653400526702 /* TyphoonBundleResource.m */; };
+		6B7D496E16AD653400526702 /* TyphoonBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493616AD653400526702 /* TyphoonBundleResource.m */; };
+		6B7D496F16AD653400526702 /* TyphoonJRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493A16AD653400526702 /* TyphoonJRSwizzle.m */; };
+		6B7D497016AD653400526702 /* TyphoonJRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493A16AD653400526702 /* TyphoonJRSwizzle.m */; };
+		6B7D497116AD653400526702 /* TyphoonIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493C16AD653400526702 /* TyphoonIntrospectionUtils.m */; };
+		6B7D497216AD653400526702 /* TyphoonIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D493C16AD653400526702 /* TyphoonIntrospectionUtils.m */; };
 		6BA1400015B151E30071C7A0 /* WeatherReport.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA13FFF15B151E30071C7A0 /* WeatherReport.xib */; };
 		6BA1400315B16B110071C7A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA1400215B16B110071C7A0 /* QuartzCore.framework */; };
 		6BA1400515B170920071C7A0 /* Clouds.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 6BA1400415B170920071C7A0 /* Clouds.JPG */; };
@@ -98,105 +150,33 @@
 		6BEE7B2D169997A00042D0B5 /* PFForecastConditionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3A342915B1B28200541F7E /* PFForecastConditionsTableViewCell.m */; };
 		6BEE7B2E169997A30042D0B5 /* PFCurrentConditionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */; };
 		BA798002C7B631863CCC9C1B /* ViewControllers.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA798D218A848E055FB5F6CB /* ViewControllers.xml */; };
-		BA7980195141AFA9084B2571 /* SpringPropertyInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798BEADD7DF6BCD10377DF /* SpringPropertyInjectedByValue.m */; };
 		BA79801D8E4F2971E599D24C /* ViewControllers.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA798D218A848E055FB5F6CB /* ViewControllers.xml */; };
-		BA7980496AA6E5D925243353 /* SpringBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7985EAC86C4433B8DB0163 /* SpringBundleResource.m */; };
-		BA798052D23478AB4F54D832 /* SpringComponentFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7981652F142A43F10744AF /* SpringComponentFactory.h */; };
-		BA798084E5C88D3F74ED0A9E /* SpringXmlComponentFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7986B92E83F77936A1D5B4 /* SpringXmlComponentFactory.h */; };
 		BA79808E9113DEB312A8BAFA /* UINavigationController+PocketForecastSkin.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798E5D46F5BB84E60FB37E /* UINavigationController+PocketForecastSkin.h */; };
-		BA7980B7D9976346C860DEAC /* SpringTypeDescriptor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7986D56FD48D331DD3E637 /* SpringTypeDescriptor.h */; };
-		BA7980F97A55AD6548EB165D /* SpringPassThroughTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7989279F5637A842D80286 /* SpringPassThroughTypeConverter.m */; };
 		BA7981088FA218ECD034170C /* PFWeatherClientBasicImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */; };
-		BA79815F94BE7E2484374C9D /* SpringResource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798AE52646C1B3BA1404DB /* SpringResource.h */; };
-		BA7981792DA7AD5666520A37 /* SpringXmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79807FA64173B8AB6306CA /* SpringXmlComponentFactory.m */; };
-		BA79817C050B998DABCBF8E0 /* SpringRXMLElement+SpringXmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798313F643EC9331B96A4D /* SpringRXMLElement+SpringXmlComponentFactory.m */; };
-		BA79818C755B854CB54C44A4 /* SpringTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798DAF1BBDA82A19252597 /* SpringTypeDescriptor.m */; };
 		BA7981C412299394E6158330 /* Assembly.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987ED54F252A869A45D85 /* Assembly.xml */; };
-		BA7981D453114059E92A1088 /* SpringParameterInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798DE50535717EE6283C9A /* SpringParameterInjectedByReference.m */; };
-		BA79820A86A1578CB90667D7 /* SpringComponentDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798322748D32FADE60DDBF /* SpringComponentDefinition.m */; };
-		BA79823F3CEB863542CC4AFF /* SpringIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EB3E4454CB57F00EF71 /* SpringIntrospectionUtils.m */; };
-		BA798257624C994FB048EF99 /* SpringPropertyInjectedByValue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798AA81B512513C8D70E05 /* SpringPropertyInjectedByValue.h */; };
 		BA798276304602804042C918 /* RXMLElement_PFWeatherReportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EE7FC647ED03B050115 /* RXMLElement_PFWeatherReportSpec.m */; };
-		BA7982836A2B69970E7B418B /* NSObject+SpringIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A751524AA63AE6DA389 /* NSObject+SpringIntrospectionUtils.m */; };
-		BA79829B5FCE75C6A35C7679 /* SpringComponentDefinition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79891A62B53F4A9FAB0724 /* SpringComponentDefinition.h */; };
 		BA7982A0D278E0B180AF7AA8 /* UINavigationController+PocketForecastSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */; };
-		BA7982AFE569B101EA3C2350 /* SpringPropertyInjectedByReference.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79892058AC4AAB43EEA8A5 /* SpringPropertyInjectedByReference.h */; };
 		BA7982C1B1F1DB140D34225A /* PFWeatherReportDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79853AB5AA71AA4689A849 /* PFWeatherReportDaoTests.m */; };
-		BA7982CB844DDC587CB1CAF3 /* SpringPropertyInjectedByType.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79861E89C0CF9B8A4710A4 /* SpringPropertyInjectedByType.m */; };
-		BA7982CF7675F7FF41D50E6B /* SpringIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EB3E4454CB57F00EF71 /* SpringIntrospectionUtils.m */; };
-		BA7982D958A6B630CF41560E /* SpringInjectedProperty.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79801E1D47152ED77F0B99 /* SpringInjectedProperty.h */; };
-		BA7982E3059C26E9C7C44C87 /* SpringPropertyPlaceholderConfigurer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798FFA9AB5DC149E711139 /* SpringPropertyPlaceholderConfigurer.h */; };
 		BA798306AE1CCAE4047F9AC0 /* PFWeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798242DB2AFFB8035D791F /* PFWeatherReportViewController.m */; };
-		BA798342C3391D5778C44DC8 /* SpringPropertyInjectionDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798E0FB54AE15AEF49235B /* SpringPropertyInjectionDelegate.h */; };
-		BA798366B7C3EB01FFAAE2DF /* SpringComponentFactory+InstanceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7985280FE6C3CFC9CAFB56 /* SpringComponentFactory+InstanceBuilder.m */; };
-		BA7983675EFEB2BDEBE1CCAA /* SpringPropertyPlaceholderConfigurer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A27CA4A331C6F8E0990 /* SpringPropertyPlaceholderConfigurer.m */; };
-		BA7983AC8C10BBE2174EE622 /* SpringPropertyInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798BEADD7DF6BCD10377DF /* SpringPropertyInjectedByValue.m */; };
-		BA7983C419E9C556BEE036CD /* SpringComponentFactory+InstanceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7985280FE6C3CFC9CAFB56 /* SpringComponentFactory+InstanceBuilder.m */; };
-		BA798400F94724F64C6772E5 /* SpringPropertyInjectedByType.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79861E89C0CF9B8A4710A4 /* SpringPropertyInjectedByType.m */; };
-		BA79845FAA91F49F9AB311BD /* SpringTypeConverter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79867D7C90A6E2ED7733BB /* SpringTypeConverter.h */; };
 		BA79849D9158294255206480 /* Assembly.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987ED54F252A869A45D85 /* Assembly.xml */; };
-		BA7984C050A1C7D3929AD909 /* SpringPropertyInjectedByType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798ABB7F8ABF8A0E4CAFD8 /* SpringPropertyInjectedByType.h */; };
-		BA7984D646336CFA68D0D99A /* NSObject+SpringIntrospectionUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7988A86ACFB78F2C4BEF75 /* NSObject+SpringIntrospectionUtils.h */; };
 		BA7984ED36D647870D6E09B6 /* chance_of_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79877379F4CC3428859D07 /* chance_of_rain.png */; };
-		BA7984F18BAD723FC3791B09 /* SpringTypeConverterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79882717C3D1E67529F51C /* SpringTypeConverterRegistry.m */; };
-		BA79850195D02C27BDF96B23 /* SpringPrimitiveTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C0B05EF4F51F721F0D8 /* SpringPrimitiveTypeConverter.m */; };
-		BA79852BE09A9FADC0ED2D1D /* SpringParameterInjectedByReference.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79804FF9ADB119E70F2D80 /* SpringParameterInjectedByReference.h */; };
-		BA79855A4C3EAE1AF810481F /* SpringComponentInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C80C6574E12BD342AC4 /* SpringComponentInitializer.m */; };
-		BA79856609AF7C7A981EBB18 /* SpringParameterInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798DE50535717EE6283C9A /* SpringParameterInjectedByReference.m */; };
 		BA798591227D17C710EF6EBA /* PFTemperatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798955F01A0DA6516C878C /* PFTemperatureTests.m */; };
-		BA7985D87B2B7B76C616338C /* SpringNSURLTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798311DC407057FB64C651 /* SpringNSURLTypeConverter.m */; };
-		BA79860EE3ECC4B26B7B6D0E /* SpringParameterInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79870744D9197CDE5D99D5 /* SpringParameterInjectedByValue.m */; };
-		BA79863D2C0ECAE3705EB54D /* SpringRXMLElement+SpringXmlComponentFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798226A0526F9F5A4FBE57 /* SpringRXMLElement+SpringXmlComponentFactory.h */; };
-		BA79866081A335388D09A6A0 /* SpringTypeConverterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79882717C3D1E67529F51C /* SpringTypeConverterRegistry.m */; };
-		BA7986BBB39683450A5EBDCE /* SpringIntrospectiveNSObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79884A68284C5EC8EF0037 /* SpringIntrospectiveNSObject.h */; };
 		BA7986C7B28D0A3C95A79C57 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
-		BA7986CF140C48E7A021B27C /* SpringComponentFactory+InstanceBuilder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798E21AA715F7DC6F2D581 /* SpringComponentFactory+InstanceBuilder.h */; };
 		BA798711EE4D26A67AB61DE4 /* PFForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */; };
-		BA79871819CAB0F723D1228B /* SpringRXMLElement+SpringXmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798313F643EC9331B96A4D /* SpringRXMLElement+SpringXmlComponentFactory.m */; };
-		BA79871F129F993771DEE7C7 /* SpringBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7985EAC86C4433B8DB0163 /* SpringBundleResource.m */; };
 		BA79873145F4FDDE76A9014C /* PFCurrentConditionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */; };
 		BA79873BD3B6ADB4374DC1C6 /* PFActivityIndicatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E82FFE465D80123C4CD /* PFActivityIndicatorTableViewCell.m */; };
-		BA7987EB18BFA581A8589018 /* SpringPropertyInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7984EAD92BF4CE210D4EE2 /* SpringPropertyInjectedByReference.m */; };
-		BA7987EF7B4A56E5C18F14A4 /* SpringPrimitiveTypeConverter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7982FF17E5A290D0A15E50 /* SpringPrimitiveTypeConverter.h */; };
-		BA79881100EF57438CC426D9 /* SpringPrimitiveTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C0B05EF4F51F721F0D8 /* SpringPrimitiveTypeConverter.m */; };
 		BA7988459DAC793F9981C4C9 /* UINavigationController+PocketForecastSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */; };
 		BA798873E9DA8CEE34984273 /* PFTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B1EF321D3252A608028 /* PFTemperature.m */; };
-		BA7988778514D413D4F05082 /* SpringParameterInjectedByValue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798CF20AA22D579AE76D1C /* SpringParameterInjectedByValue.h */; };
-		BA7988965D06EB79F1060A26 /* SpringComponentDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798322748D32FADE60DDBF /* SpringComponentDefinition.m */; };
-		BA7989BEA8B605528541A4D0 /* SpringTestUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7980220F1B1B4DCB49E339 /* SpringTestUtils.h */; };
-		BA7989BFE50C1015DCFF7412 /* SpringRXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79885C7C8F04EC3DDDE0C5 /* SpringRXMLElement.m */; };
-		BA7989FF0DCD7A1E6F298634 /* SpringParameterInjectedByValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79870744D9197CDE5D99D5 /* SpringParameterInjectedByValue.m */; };
-		BA798A288F259A1E9AF8C3BD /* SpringPassThroughTypeConverter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798FB2D6459F5EA3E8C95C /* SpringPassThroughTypeConverter.h */; };
 		BA798A53749DDEDC8E086A7F /* PFCityLabelTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798E6E7E7030B87B4BD57D /* PFCityLabelTableViewCell.h */; };
-		BA798AEB937736566A0196DE /* SpringNSURLTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798311DC407057FB64C651 /* SpringNSURLTypeConverter.m */; };
-		BA798AFB39B10011AD3DDF2C /* SpringIntrospectionUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798856118453A66BEE932E /* SpringIntrospectionUtils.h */; };
-		BA798B0983D56E4758FE55EF /* SpringXmlComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79807FA64173B8AB6306CA /* SpringXmlComponentFactory.m */; };
-		BA798B345A7F08A04EFA8113 /* SpringComponentInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C80C6574E12BD342AC4 /* SpringComponentInitializer.m */; };
-		BA798B45B00CCC48091B65A5 /* SpringPassThroughTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7989279F5637A842D80286 /* SpringPassThroughTypeConverter.m */; };
-		BA798BCAC4CFE8516C1546C0 /* SpringNSURLTypeConverter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7982E87B76C0F1BBD42688 /* SpringNSURLTypeConverter.h */; };
 		BA798BD20E9AD59DCED10715 /* PFCityDoaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EC033265E30559E1216 /* PFCityDoaTests.m */; };
-		BA798BE04028D92243B3A599 /* SpringTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798DAF1BBDA82A19252597 /* SpringTypeDescriptor.m */; };
 		BA798C120173D2A18BB50FDE /* PFAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7989AEB3F4353A6B89451C /* PFAddCityViewController.m */; };
-		BA798C4EFE55DDFE132DA2DD /* SpringComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79807586F8B444B6FB1774 /* SpringComponentFactory.m */; };
-		BA798CB946352950E13A4161 /* SpringBundleResource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798BF29C35501BD1A1CAB6 /* SpringBundleResource.h */; };
 		BA798CD2C01837FD3E6B9167 /* RXMLElement+PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */; };
 		BA798CD6D23ACE87BFC6DAA4 /* PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987478471BA92A0518862 /* PFWeatherReport.m */; };
-		BA798CD746D7EAF9DD168E8B /* SpringRXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79885C7C8F04EC3DDDE0C5 /* SpringRXMLElement.m */; };
 		BA798CFBF46EB10AC945B816 /* PFCurrentConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */; };
-		BA798D1AE972F19BD350D11B /* SpringComponentInitializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79823E8F61996DA2D84707 /* SpringComponentInitializer.h */; };
-		BA798D43ED2E66C0979F7A0D /* SpringInjectedParameter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7980C9AE788B0D3EF380E4 /* SpringInjectedParameter.h */; };
 		BA798D837AA1F5B4EC577353 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
-		BA798D963F3B8129552E73AD /* SpringPropertyInjectedByReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7984EAD92BF4CE210D4EE2 /* SpringPropertyInjectedByReference.m */; };
-		BA798DA59662A0BF177E936D /* NSObject+SpringIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A751524AA63AE6DA389 /* NSObject+SpringIntrospectionUtils.m */; };
-		BA798DAD9EB2DBDE5F2A5448 /* SpringRXMLElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79845F74A645C02B008A4E /* SpringRXMLElement.h */; };
-		BA798DB7B2966A870904090D /* SpringTypeConverterRegistry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798A0D25E49DBD72F0436D /* SpringTypeConverterRegistry.h */; };
 		BA798E0566990B85665B89F7 /* PFWeatherClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A8B15B6D784A0374F1A /* PFWeatherClientTests.m */; };
-		BA798E08D977A8BA4CDE740F /* SpringComponentFactoryMutator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA7981B0F545B242FBE14D11 /* SpringComponentFactoryMutator.h */; };
-		BA798ED108C27337222665C3 /* SpringPropertyPlaceholderConfigurer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A27CA4A331C6F8E0990 /* SpringPropertyPlaceholderConfigurer.m */; };
-		BA798EE5F2D806B8E3AD8FCA /* SpringComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79807586F8B444B6FB1774 /* SpringComponentFactory.m */; };
 		BA798F3DBF3353B33D121259 /* SampleForecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */; };
 		BA798F5F7C9ACF5AA904A671 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79867A0DF25A188ED3D7D5 /* Icon.png */; };
-		BA798F6BBF76D4C0FE7C4C99 /* Spring.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798AB49D08D2B7C2AB9BF1 /* Spring.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,36 +197,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				BA798A53749DDEDC8E086A7F /* PFCityLabelTableViewCell.h in CopyFiles */,
-				BA798D1AE972F19BD350D11B /* SpringComponentInitializer.h in CopyFiles */,
-				BA798D43ED2E66C0979F7A0D /* SpringInjectedParameter.h in CopyFiles */,
-				BA79852BE09A9FADC0ED2D1D /* SpringParameterInjectedByReference.h in CopyFiles */,
-				BA7988778514D413D4F05082 /* SpringParameterInjectedByValue.h in CopyFiles */,
-				BA7982D958A6B630CF41560E /* SpringInjectedProperty.h in CopyFiles */,
-				BA7982AFE569B101EA3C2350 /* SpringPropertyInjectedByReference.h in CopyFiles */,
-				BA7984C050A1C7D3929AD909 /* SpringPropertyInjectedByType.h in CopyFiles */,
-				BA798257624C994FB048EF99 /* SpringPropertyInjectedByValue.h in CopyFiles */,
-				BA798342C3391D5778C44DC8 /* SpringPropertyInjectionDelegate.h in CopyFiles */,
-				BA79829B5FCE75C6A35C7679 /* SpringComponentDefinition.h in CopyFiles */,
-				BA798E08D977A8BA4CDE740F /* SpringComponentFactoryMutator.h in CopyFiles */,
-				BA7982E3059C26E9C7C44C87 /* SpringPropertyPlaceholderConfigurer.h in CopyFiles */,
-				BA7986CF140C48E7A021B27C /* SpringComponentFactory+InstanceBuilder.h in CopyFiles */,
-				BA798052D23478AB4F54D832 /* SpringComponentFactory.h in CopyFiles */,
-				BA79863D2C0ECAE3705EB54D /* SpringRXMLElement+SpringXmlComponentFactory.h in CopyFiles */,
-				BA798DAD9EB2DBDE5F2A5448 /* SpringRXMLElement.h in CopyFiles */,
-				BA798084E5C88D3F74ED0A9E /* SpringXmlComponentFactory.h in CopyFiles */,
-				BA798F6BBF76D4C0FE7C4C99 /* Spring.h in CopyFiles */,
-				BA798BCAC4CFE8516C1546C0 /* SpringNSURLTypeConverter.h in CopyFiles */,
-				BA798A288F259A1E9AF8C3BD /* SpringPassThroughTypeConverter.h in CopyFiles */,
-				BA7987EF7B4A56E5C18F14A4 /* SpringPrimitiveTypeConverter.h in CopyFiles */,
-				BA79845FAA91F49F9AB311BD /* SpringTypeConverter.h in CopyFiles */,
-				BA798DB7B2966A870904090D /* SpringTypeConverterRegistry.h in CopyFiles */,
-				BA7980B7D9976346C860DEAC /* SpringTypeDescriptor.h in CopyFiles */,
-				BA7984D646336CFA68D0D99A /* NSObject+SpringIntrospectionUtils.h in CopyFiles */,
-				BA798CB946352950E13A4161 /* SpringBundleResource.h in CopyFiles */,
-				BA79815F94BE7E2484374C9D /* SpringResource.h in CopyFiles */,
-				BA798AFB39B10011AD3DDF2C /* SpringIntrospectionUtils.h in CopyFiles */,
-				BA7986BBB39683450A5EBDCE /* SpringIntrospectiveNSObject.h in CopyFiles */,
-				BA7989BEA8B605528541A4D0 /* SpringTestUtils.h in CopyFiles */,
 				BA79808E9113DEB312A8BAFA /* UINavigationController+PocketForecastSkin.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +210,67 @@
 		6B3A342915B1B28200541F7E /* PFForecastConditionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFForecastConditionsTableViewCell.m; sourceTree = "<group>"; };
 		6B3A342B15B2519200541F7E /* LoadingTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingTableCell.xib; sourceTree = "<group>"; };
 		6B67639515B04A3400142CD5 /* CitiesList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesList.xib; sourceTree = "<group>"; };
+		6B7D48F616AD653400526702 /* TyphoonDefinition+BlockBuilders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TyphoonDefinition+BlockBuilders.h"; sourceTree = "<group>"; };
+		6B7D48F716AD653400526702 /* TyphoonDefinition+BlockBuilders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TyphoonDefinition+BlockBuilders.m"; sourceTree = "<group>"; };
+		6B7D48F916AD653400526702 /* TyphoonInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonInitializer.h; sourceTree = "<group>"; };
+		6B7D48FA16AD653400526702 /* TyphoonInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonInitializer.m; sourceTree = "<group>"; };
+		6B7D48FB16AD653400526702 /* TyphoonInjectedParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonInjectedParameter.h; sourceTree = "<group>"; };
+		6B7D48FC16AD653400526702 /* TyphoonParameterInjectedByReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonParameterInjectedByReference.h; sourceTree = "<group>"; };
+		6B7D48FD16AD653400526702 /* TyphoonParameterInjectedByReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonParameterInjectedByReference.m; sourceTree = "<group>"; };
+		6B7D48FE16AD653400526702 /* TyphoonParameterInjectedByValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonParameterInjectedByValue.h; sourceTree = "<group>"; };
+		6B7D48FF16AD653400526702 /* TyphoonParameterInjectedByValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonParameterInjectedByValue.m; sourceTree = "<group>"; };
+		6B7D490116AD653400526702 /* TyphoonInjectedProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonInjectedProperty.h; sourceTree = "<group>"; };
+		6B7D490216AD653400526702 /* TyphoonPropertyInjectedByReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonPropertyInjectedByReference.h; sourceTree = "<group>"; };
+		6B7D490316AD653400526702 /* TyphoonPropertyInjectedByReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonPropertyInjectedByReference.m; sourceTree = "<group>"; };
+		6B7D490416AD653400526702 /* TyphoonPropertyInjectedByType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonPropertyInjectedByType.h; sourceTree = "<group>"; };
+		6B7D490516AD653400526702 /* TyphoonPropertyInjectedByType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonPropertyInjectedByType.m; sourceTree = "<group>"; };
+		6B7D490616AD653400526702 /* TyphoonPropertyInjectedByValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonPropertyInjectedByValue.h; sourceTree = "<group>"; };
+		6B7D490716AD653400526702 /* TyphoonPropertyInjectedByValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonPropertyInjectedByValue.m; sourceTree = "<group>"; };
+		6B7D490816AD653400526702 /* TyphoonPropertyInjectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonPropertyInjectionDelegate.h; sourceTree = "<group>"; };
+		6B7D490916AD653400526702 /* TyphoonDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonDefinition.h; sourceTree = "<group>"; };
+		6B7D490A16AD653400526702 /* TyphoonDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonDefinition.m; sourceTree = "<group>"; };
+		6B7D490D16AD653400526702 /* TyphoonAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonAssembly.h; sourceTree = "<group>"; };
+		6B7D490E16AD653400526702 /* TyphoonAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonAssembly.m; sourceTree = "<group>"; };
+		6B7D491016AD653400526702 /* TyphoonComponentFactoryMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonComponentFactoryMutator.h; sourceTree = "<group>"; };
+		6B7D491216AD653400526702 /* TyphoonBlockComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonBlockComponentFactory.h; sourceTree = "<group>"; };
+		6B7D491316AD653400526702 /* TyphoonBlockComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonBlockComponentFactory.m; sourceTree = "<group>"; };
+		6B7D491516AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonPropertyPlaceholderConfigurer.h; sourceTree = "<group>"; };
+		6B7D491616AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonPropertyPlaceholderConfigurer.m; sourceTree = "<group>"; };
+		6B7D491716AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TyphoonComponentFactory+InstanceBuilder.h"; sourceTree = "<group>"; };
+		6B7D491816AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TyphoonComponentFactory+InstanceBuilder.m"; sourceTree = "<group>"; };
+		6B7D491916AD653400526702 /* TyphoonComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonComponentFactory.h; sourceTree = "<group>"; };
+		6B7D491A16AD653400526702 /* TyphoonComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonComponentFactory.m; sourceTree = "<group>"; };
+		6B7D491C16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TyphoonRXMLElement+XmlComponentFactory.h"; sourceTree = "<group>"; };
+		6B7D491D16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TyphoonRXMLElement+XmlComponentFactory.m"; sourceTree = "<group>"; };
+		6B7D491E16AD653400526702 /* TyphoonRXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonRXMLElement.h; sourceTree = "<group>"; };
+		6B7D491F16AD653400526702 /* TyphoonRXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonRXMLElement.m; sourceTree = "<group>"; };
+		6B7D492016AD653400526702 /* TyphoonXmlComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonXmlComponentFactory.h; sourceTree = "<group>"; };
+		6B7D492116AD653400526702 /* TyphoonXmlComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonXmlComponentFactory.m; sourceTree = "<group>"; };
+		6B7D492216AD653400526702 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		6B7D492416AD653400526702 /* TyphonTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphonTypeConverter.h; sourceTree = "<group>"; };
+		6B7D492516AD653400526702 /* TyphoonNSURLTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonNSURLTypeConverter.h; sourceTree = "<group>"; };
+		6B7D492616AD653400526702 /* TyphoonNSURLTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonNSURLTypeConverter.m; sourceTree = "<group>"; };
+		6B7D492716AD653400526702 /* TyphoonPassThroughTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonPassThroughTypeConverter.h; sourceTree = "<group>"; };
+		6B7D492816AD653400526702 /* TyphoonPassThroughTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonPassThroughTypeConverter.m; sourceTree = "<group>"; };
+		6B7D492916AD653400526702 /* TyphoonPrimitiveTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonPrimitiveTypeConverter.h; sourceTree = "<group>"; };
+		6B7D492A16AD653400526702 /* TyphoonPrimitiveTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonPrimitiveTypeConverter.m; sourceTree = "<group>"; };
+		6B7D492B16AD653400526702 /* TyphoonTypeConverterRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonTypeConverterRegistry.h; sourceTree = "<group>"; };
+		6B7D492C16AD653400526702 /* TyphoonTypeConverterRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonTypeConverterRegistry.m; sourceTree = "<group>"; };
+		6B7D492D16AD653400526702 /* TyphoonTypeDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonTypeDescriptor.h; sourceTree = "<group>"; };
+		6B7D492E16AD653400526702 /* TyphoonTypeDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonTypeDescriptor.m; sourceTree = "<group>"; };
+		6B7D492F16AD653400526702 /* Typhoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Typhoon.h; sourceTree = "<group>"; };
+		6B7D493016AD653400526702 /* Typhoon.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Typhoon.pch; sourceTree = "<group>"; };
+		6B7D493216AD653400526702 /* NSObject+TyphoonIntrospectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TyphoonIntrospectionUtils.h"; sourceTree = "<group>"; };
+		6B7D493316AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TyphoonIntrospectionUtils.m"; sourceTree = "<group>"; };
+		6B7D493516AD653400526702 /* TyphoonBundleResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonBundleResource.h; sourceTree = "<group>"; };
+		6B7D493616AD653400526702 /* TyphoonBundleResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonBundleResource.m; sourceTree = "<group>"; };
+		6B7D493716AD653400526702 /* TyphoonResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonResource.h; sourceTree = "<group>"; };
+		6B7D493916AD653400526702 /* TyphoonJRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonJRSwizzle.h; sourceTree = "<group>"; };
+		6B7D493A16AD653400526702 /* TyphoonJRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonJRSwizzle.m; sourceTree = "<group>"; };
+		6B7D493B16AD653400526702 /* TyphoonIntrospectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonIntrospectionUtils.h; sourceTree = "<group>"; };
+		6B7D493C16AD653400526702 /* TyphoonIntrospectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonIntrospectionUtils.m; sourceTree = "<group>"; };
+		6B7D493D16AD653400526702 /* TyphoonIntrospectiveNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonIntrospectiveNSObject.h; sourceTree = "<group>"; };
+		6B7D493E16AD653400526702 /* TyphoonTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonTestUtils.h; sourceTree = "<group>"; };
 		6BA13FFF15B151E30071C7A0 /* WeatherReport.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherReport.xib; sourceTree = "<group>"; };
 		6BA1400215B16B110071C7A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6BA1400415B170920071C7A0 /* Clouds.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Clouds.JPG; sourceTree = "<group>"; };
@@ -346,93 +357,42 @@
 		6BEE7A38169992D70042D0B5 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
 		6BEE7A39169992D70042D0B5 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
 		6BEE7ACD1699961F0042D0B5 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = ../External/OCHamcrestIOS.framework; sourceTree = "<group>"; };
-		BA79801E1D47152ED77F0B99 /* SpringInjectedProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringInjectedProperty.h; sourceTree = "<group>"; };
-		BA7980220F1B1B4DCB49E339 /* SpringTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringTestUtils.h; sourceTree = "<group>"; };
-		BA79804FF9ADB119E70F2D80 /* SpringParameterInjectedByReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringParameterInjectedByReference.h; sourceTree = "<group>"; };
-		BA79807586F8B444B6FB1774 /* SpringComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringComponentFactory.m; sourceTree = "<group>"; };
-		BA79807FA64173B8AB6306CA /* SpringXmlComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringXmlComponentFactory.m; sourceTree = "<group>"; };
-		BA7980C9AE788B0D3EF380E4 /* SpringInjectedParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringInjectedParameter.h; sourceTree = "<group>"; };
-		BA7981652F142A43F10744AF /* SpringComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringComponentFactory.h; sourceTree = "<group>"; };
-		BA7981B0F545B242FBE14D11 /* SpringComponentFactoryMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringComponentFactoryMutator.h; sourceTree = "<group>"; };
 		BA7981F95ADE57DBB6722C39 /* PFWeatherClientBasicImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClientBasicImpl.h; sourceTree = "<group>"; };
-		BA798226A0526F9F5A4FBE57 /* SpringRXMLElement+SpringXmlComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpringRXMLElement+SpringXmlComponentFactory.h"; sourceTree = "<group>"; };
-		BA79823E8F61996DA2D84707 /* SpringComponentInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringComponentInitializer.h; sourceTree = "<group>"; };
 		BA798242DB2AFFB8035D791F /* PFWeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportViewController.m; sourceTree = "<group>"; };
-		BA7982E87B76C0F1BBD42688 /* SpringNSURLTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringNSURLTypeConverter.h; sourceTree = "<group>"; };
-		BA7982FF17E5A290D0A15E50 /* SpringPrimitiveTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPrimitiveTypeConverter.h; sourceTree = "<group>"; };
-		BA798311DC407057FB64C651 /* SpringNSURLTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringNSURLTypeConverter.m; sourceTree = "<group>"; };
-		BA798313F643EC9331B96A4D /* SpringRXMLElement+SpringXmlComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpringRXMLElement+SpringXmlComponentFactory.m"; sourceTree = "<group>"; };
 		BA798320014BEE93DD0527CC /* PFAddCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddCityViewController.h; sourceTree = "<group>"; };
-		BA798322748D32FADE60DDBF /* SpringComponentDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringComponentDefinition.m; sourceTree = "<group>"; };
 		BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+PocketForecastSkin.m"; sourceTree = "<group>"; };
-		BA79845F74A645C02B008A4E /* SpringRXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringRXMLElement.h; sourceTree = "<group>"; };
-		BA7984EAD92BF4CE210D4EE2 /* SpringPropertyInjectedByReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPropertyInjectedByReference.m; sourceTree = "<group>"; };
-		BA7985280FE6C3CFC9CAFB56 /* SpringComponentFactory+InstanceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpringComponentFactory+InstanceBuilder.m"; sourceTree = "<group>"; };
 		BA79853AB5AA71AA4689A849 /* PFWeatherReportDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportDaoTests.m; sourceTree = "<group>"; };
-		BA7985EAC86C4433B8DB0163 /* SpringBundleResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringBundleResource.m; sourceTree = "<group>"; };
-		BA79861E89C0CF9B8A4710A4 /* SpringPropertyInjectedByType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPropertyInjectedByType.m; sourceTree = "<group>"; };
 		BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCurrentConditionsTableViewCell.m; sourceTree = "<group>"; };
 		BA79867A0DF25A188ED3D7D5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		BA79867D7C90A6E2ED7733BB /* SpringTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringTypeConverter.h; sourceTree = "<group>"; };
 		BA79869B697659AC289E570D /* Tests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests.pch; sourceTree = "<group>"; };
 		BA7986A6F4B016421D5D66A2 /* PFCurrentConditionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCurrentConditionsTableViewCell.h; sourceTree = "<group>"; };
-		BA7986B92E83F77936A1D5B4 /* SpringXmlComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringXmlComponentFactory.h; sourceTree = "<group>"; };
-		BA7986D56FD48D331DD3E637 /* SpringTypeDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringTypeDescriptor.h; sourceTree = "<group>"; };
-		BA79870744D9197CDE5D99D5 /* SpringParameterInjectedByValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringParameterInjectedByValue.m; sourceTree = "<group>"; };
 		BA7987478471BA92A0518862 /* PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReport.m; sourceTree = "<group>"; };
 		BA79877379F4CC3428859D07 /* chance_of_rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chance_of_rain.png; sourceTree = "<group>"; };
 		BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleForecast.xml; sourceTree = "<group>"; };
 		BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFForecastConditions.m; sourceTree = "<group>"; };
 		BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityLabelTableViewCell.m; sourceTree = "<group>"; };
 		BA7987ED54F252A869A45D85 /* Assembly.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Assembly.xml; sourceTree = "<group>"; };
-		BA79882717C3D1E67529F51C /* SpringTypeConverterRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringTypeConverterRegistry.m; sourceTree = "<group>"; };
-		BA79884A68284C5EC8EF0037 /* SpringIntrospectiveNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringIntrospectiveNSObject.h; sourceTree = "<group>"; };
-		BA798856118453A66BEE932E /* SpringIntrospectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringIntrospectionUtils.h; sourceTree = "<group>"; };
-		BA79885C7C8F04EC3DDDE0C5 /* SpringRXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringRXMLElement.m; sourceTree = "<group>"; };
 		BA7988A5EED8474C69C5CB29 /* PFForecastConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFForecastConditions.h; sourceTree = "<group>"; };
-		BA7988A86ACFB78F2C4BEF75 /* NSObject+SpringIntrospectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SpringIntrospectionUtils.h"; sourceTree = "<group>"; };
-		BA79891A62B53F4A9FAB0724 /* SpringComponentDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringComponentDefinition.h; sourceTree = "<group>"; };
-		BA79892058AC4AAB43EEA8A5 /* SpringPropertyInjectedByReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPropertyInjectedByReference.h; sourceTree = "<group>"; };
-		BA7989279F5637A842D80286 /* SpringPassThroughTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPassThroughTypeConverter.m; sourceTree = "<group>"; };
 		BA798955F01A0DA6516C878C /* PFTemperatureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperatureTests.m; sourceTree = "<group>"; };
 		BA7989AEB3F4353A6B89451C /* PFAddCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddCityViewController.m; sourceTree = "<group>"; };
-		BA798A0D25E49DBD72F0436D /* SpringTypeConverterRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringTypeConverterRegistry.h; sourceTree = "<group>"; };
-		BA798A27CA4A331C6F8E0990 /* SpringPropertyPlaceholderConfigurer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPropertyPlaceholderConfigurer.m; sourceTree = "<group>"; };
-		BA798A751524AA63AE6DA389 /* NSObject+SpringIntrospectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SpringIntrospectionUtils.m"; sourceTree = "<group>"; };
 		BA798A7EF3E53E1850551BEC /* PFWeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReport.h; sourceTree = "<group>"; };
 		BA798A8B15B6D784A0374F1A /* PFWeatherClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherClientTests.m; sourceTree = "<group>"; };
-		BA798AA81B512513C8D70E05 /* SpringPropertyInjectedByValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPropertyInjectedByValue.h; sourceTree = "<group>"; };
-		BA798AB49D08D2B7C2AB9BF1 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
-		BA798ABB7F8ABF8A0E4CAFD8 /* SpringPropertyInjectedByType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPropertyInjectedByType.h; sourceTree = "<group>"; };
 		BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherClientBasicImpl.m; sourceTree = "<group>"; };
-		BA798AE52646C1B3BA1404DB /* SpringResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringResource.h; sourceTree = "<group>"; };
 		BA798B1EF321D3252A608028 /* PFTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperature.m; sourceTree = "<group>"; };
 		BA798B362DA8741775671768 /* PFActivityIndicatorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFActivityIndicatorTableViewCell.h; sourceTree = "<group>"; };
 		BA798B92876C0679AA3E6DC8 /* PFCurrentConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCurrentConditions.h; sourceTree = "<group>"; };
-		BA798BEADD7DF6BCD10377DF /* SpringPropertyInjectedByValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPropertyInjectedByValue.m; sourceTree = "<group>"; };
-		BA798BF29C35501BD1A1CAB6 /* SpringBundleResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBundleResource.h; sourceTree = "<group>"; };
-		BA798C0B05EF4F51F721F0D8 /* SpringPrimitiveTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringPrimitiveTypeConverter.m; sourceTree = "<group>"; };
-		BA798C80C6574E12BD342AC4 /* SpringComponentInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringComponentInitializer.m; sourceTree = "<group>"; };
-		BA798CF20AA22D579AE76D1C /* SpringParameterInjectedByValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringParameterInjectedByValue.h; sourceTree = "<group>"; };
 		BA798D218A848E055FB5F6CB /* ViewControllers.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ViewControllers.xml; sourceTree = "<group>"; };
 		BA798D2A742E3B6ED1BCE83D /* PFWeatherClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClient.h; sourceTree = "<group>"; };
 		BA798D46E597628F7C5337FB /* PFWeatherReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportViewController.h; sourceTree = "<group>"; };
-		BA798DAF1BBDA82A19252597 /* SpringTypeDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringTypeDescriptor.m; sourceTree = "<group>"; };
-		BA798DE50535717EE6283C9A /* SpringParameterInjectedByReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringParameterInjectedByReference.m; sourceTree = "<group>"; };
-		BA798E0FB54AE15AEF49235B /* SpringPropertyInjectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPropertyInjectionDelegate.h; sourceTree = "<group>"; };
-		BA798E21AA715F7DC6F2D581 /* SpringComponentFactory+InstanceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpringComponentFactory+InstanceBuilder.h"; sourceTree = "<group>"; };
 		BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RXMLElement+PFWeatherReport.m"; sourceTree = "<group>"; };
 		BA798E5D46F5BB84E60FB37E /* UINavigationController+PocketForecastSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+PocketForecastSkin.h"; sourceTree = "<group>"; };
 		BA798E6E7E7030B87B4BD57D /* PFCityLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityLabelTableViewCell.h; sourceTree = "<group>"; };
 		BA798E82FFE465D80123C4CD /* PFActivityIndicatorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFActivityIndicatorTableViewCell.m; sourceTree = "<group>"; };
-		BA798EB3E4454CB57F00EF71 /* SpringIntrospectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringIntrospectionUtils.m; sourceTree = "<group>"; };
 		BA798EC033265E30559E1216 /* PFCityDoaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityDoaTests.m; sourceTree = "<group>"; };
 		BA798EE7FC647ED03B050115 /* RXMLElement_PFWeatherReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement_PFWeatherReportSpec.m; sourceTree = "<group>"; };
 		BA798EF2E6B2241602FA1B9F /* RXMLElement+PFWeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RXMLElement+PFWeatherReport.h"; sourceTree = "<group>"; };
 		BA798F720169320B08150907 /* PFTemperature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTemperature.h; sourceTree = "<group>"; };
-		BA798FB2D6459F5EA3E8C95C /* SpringPassThroughTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPassThroughTypeConverter.h; sourceTree = "<group>"; };
 		BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCurrentConditions.m; sourceTree = "<group>"; };
-		BA798FFA9AB5DC149E711139 /* SpringPropertyPlaceholderConfigurer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringPropertyPlaceholderConfigurer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -462,6 +422,186 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B7D48F316AD653400526702 /* Typhoon */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D48F416AD653400526702 /* Component */,
+				6B7D490B16AD653400526702 /* Factory */,
+				6B7D492216AD653400526702 /* Info-iOS.plist */,
+				6B7D492316AD653400526702 /* TypeConversion */,
+				6B7D492F16AD653400526702 /* Typhoon.h */,
+				6B7D493016AD653400526702 /* Typhoon.pch */,
+				6B7D493116AD653400526702 /* Utils */,
+			);
+			path = Typhoon;
+			sourceTree = "<group>";
+		};
+		6B7D48F416AD653400526702 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D48F516AD653400526702 /* Builders */,
+				6B7D48F816AD653400526702 /* Initializer */,
+				6B7D490016AD653400526702 /* Properties */,
+				6B7D490916AD653400526702 /* TyphoonDefinition.h */,
+				6B7D490A16AD653400526702 /* TyphoonDefinition.m */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		6B7D48F516AD653400526702 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D48F616AD653400526702 /* TyphoonDefinition+BlockBuilders.h */,
+				6B7D48F716AD653400526702 /* TyphoonDefinition+BlockBuilders.m */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		6B7D48F816AD653400526702 /* Initializer */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D48F916AD653400526702 /* TyphoonInitializer.h */,
+				6B7D48FA16AD653400526702 /* TyphoonInitializer.m */,
+				6B7D48FB16AD653400526702 /* TyphoonInjectedParameter.h */,
+				6B7D48FC16AD653400526702 /* TyphoonParameterInjectedByReference.h */,
+				6B7D48FD16AD653400526702 /* TyphoonParameterInjectedByReference.m */,
+				6B7D48FE16AD653400526702 /* TyphoonParameterInjectedByValue.h */,
+				6B7D48FF16AD653400526702 /* TyphoonParameterInjectedByValue.m */,
+			);
+			path = Initializer;
+			sourceTree = "<group>";
+		};
+		6B7D490016AD653400526702 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D490116AD653400526702 /* TyphoonInjectedProperty.h */,
+				6B7D490216AD653400526702 /* TyphoonPropertyInjectedByReference.h */,
+				6B7D490316AD653400526702 /* TyphoonPropertyInjectedByReference.m */,
+				6B7D490416AD653400526702 /* TyphoonPropertyInjectedByType.h */,
+				6B7D490516AD653400526702 /* TyphoonPropertyInjectedByType.m */,
+				6B7D490616AD653400526702 /* TyphoonPropertyInjectedByValue.h */,
+				6B7D490716AD653400526702 /* TyphoonPropertyInjectedByValue.m */,
+				6B7D490816AD653400526702 /* TyphoonPropertyInjectionDelegate.h */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		6B7D490B16AD653400526702 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D490C16AD653400526702 /* Assembly */,
+				6B7D490F16AD653400526702 /* Mutator */,
+				6B7D491116AD653400526702 /* Nano */,
+				6B7D491416AD653400526702 /* PropertyConfigurers */,
+				6B7D491716AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.h */,
+				6B7D491816AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m */,
+				6B7D491916AD653400526702 /* TyphoonComponentFactory.h */,
+				6B7D491A16AD653400526702 /* TyphoonComponentFactory.m */,
+				6B7D491B16AD653400526702 /* Xml */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		6B7D490C16AD653400526702 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D490D16AD653400526702 /* TyphoonAssembly.h */,
+				6B7D490E16AD653400526702 /* TyphoonAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		6B7D490F16AD653400526702 /* Mutator */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D491016AD653400526702 /* TyphoonComponentFactoryMutator.h */,
+			);
+			path = Mutator;
+			sourceTree = "<group>";
+		};
+		6B7D491116AD653400526702 /* Nano */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D491216AD653400526702 /* TyphoonBlockComponentFactory.h */,
+				6B7D491316AD653400526702 /* TyphoonBlockComponentFactory.m */,
+			);
+			path = Nano;
+			sourceTree = "<group>";
+		};
+		6B7D491416AD653400526702 /* PropertyConfigurers */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D491516AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.h */,
+				6B7D491616AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m */,
+			);
+			path = PropertyConfigurers;
+			sourceTree = "<group>";
+		};
+		6B7D491B16AD653400526702 /* Xml */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D491C16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.h */,
+				6B7D491D16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m */,
+				6B7D491E16AD653400526702 /* TyphoonRXMLElement.h */,
+				6B7D491F16AD653400526702 /* TyphoonRXMLElement.m */,
+				6B7D492016AD653400526702 /* TyphoonXmlComponentFactory.h */,
+				6B7D492116AD653400526702 /* TyphoonXmlComponentFactory.m */,
+			);
+			path = Xml;
+			sourceTree = "<group>";
+		};
+		6B7D492316AD653400526702 /* TypeConversion */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D492416AD653400526702 /* TyphonTypeConverter.h */,
+				6B7D492516AD653400526702 /* TyphoonNSURLTypeConverter.h */,
+				6B7D492616AD653400526702 /* TyphoonNSURLTypeConverter.m */,
+				6B7D492716AD653400526702 /* TyphoonPassThroughTypeConverter.h */,
+				6B7D492816AD653400526702 /* TyphoonPassThroughTypeConverter.m */,
+				6B7D492916AD653400526702 /* TyphoonPrimitiveTypeConverter.h */,
+				6B7D492A16AD653400526702 /* TyphoonPrimitiveTypeConverter.m */,
+				6B7D492B16AD653400526702 /* TyphoonTypeConverterRegistry.h */,
+				6B7D492C16AD653400526702 /* TyphoonTypeConverterRegistry.m */,
+				6B7D492D16AD653400526702 /* TyphoonTypeDescriptor.h */,
+				6B7D492E16AD653400526702 /* TyphoonTypeDescriptor.m */,
+			);
+			path = TypeConversion;
+			sourceTree = "<group>";
+		};
+		6B7D493116AD653400526702 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D493216AD653400526702 /* NSObject+TyphoonIntrospectionUtils.h */,
+				6B7D493316AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m */,
+				6B7D493416AD653400526702 /* Resource */,
+				6B7D493816AD653400526702 /* Swizzle */,
+				6B7D493B16AD653400526702 /* TyphoonIntrospectionUtils.h */,
+				6B7D493C16AD653400526702 /* TyphoonIntrospectionUtils.m */,
+				6B7D493D16AD653400526702 /* TyphoonIntrospectiveNSObject.h */,
+				6B7D493E16AD653400526702 /* TyphoonTestUtils.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6B7D493416AD653400526702 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D493516AD653400526702 /* TyphoonBundleResource.h */,
+				6B7D493616AD653400526702 /* TyphoonBundleResource.m */,
+				6B7D493716AD653400526702 /* TyphoonResource.h */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		6B7D493816AD653400526702 /* Swizzle */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D493916AD653400526702 /* TyphoonJRSwizzle.h */,
+				6B7D493A16AD653400526702 /* TyphoonJRSwizzle.m */,
+			);
+			path = Swizzle;
+			sourceTree = "<group>";
+		};
 		6BE9230315B29E56002EF310 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,10 +699,10 @@
 		6BEE79FE169992D70042D0B5 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				6B7D48F316AD653400526702 /* Typhoon */,
 				6BEE79FF169992D70042D0B5 /* LRResty */,
 				6BEE7A35169992D70042D0B5 /* OCLogTemplate */,
 				6BEE7A37169992D70042D0B5 /* RaptureXML */,
-				BA798BD4A55FA6B0D597CF2D /* spring-objective-c */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -650,14 +790,6 @@
 			path = RaptureXML;
 			sourceTree = "<group>";
 		};
-		BA79809FFB2235523CB50A31 /* Mutator */ = {
-			isa = PBXGroup;
-			children = (
-				BA7981B0F545B242FBE14D11 /* SpringComponentFactoryMutator.h */,
-			);
-			path = Mutator;
-			sourceTree = "<group>";
-		};
 		BA7980AAD7FBF86B781FD6E2 /* Integration */ = {
 			isa = PBXGroup;
 			children = (
@@ -666,33 +798,6 @@
 				BA798A8B15B6D784A0374F1A /* PFWeatherClientTests.m */,
 			);
 			path = Integration;
-			sourceTree = "<group>";
-		};
-		BA79815B5638732CE6005A92 /* Initializer */ = {
-			isa = PBXGroup;
-			children = (
-				BA79823E8F61996DA2D84707 /* SpringComponentInitializer.h */,
-				BA798C80C6574E12BD342AC4 /* SpringComponentInitializer.m */,
-				BA7980C9AE788B0D3EF380E4 /* SpringInjectedParameter.h */,
-				BA79804FF9ADB119E70F2D80 /* SpringParameterInjectedByReference.h */,
-				BA798DE50535717EE6283C9A /* SpringParameterInjectedByReference.m */,
-				BA798CF20AA22D579AE76D1C /* SpringParameterInjectedByValue.h */,
-				BA79870744D9197CDE5D99D5 /* SpringParameterInjectedByValue.m */,
-			);
-			path = Initializer;
-			sourceTree = "<group>";
-		};
-		BA79835878BD64C3CB8D5856 /* Xml */ = {
-			isa = PBXGroup;
-			children = (
-				BA798226A0526F9F5A4FBE57 /* SpringRXMLElement+SpringXmlComponentFactory.h */,
-				BA798313F643EC9331B96A4D /* SpringRXMLElement+SpringXmlComponentFactory.m */,
-				BA79845F74A645C02B008A4E /* SpringRXMLElement.h */,
-				BA79885C7C8F04EC3DDDE0C5 /* SpringRXMLElement.m */,
-				BA7986B92E83F77936A1D5B4 /* SpringXmlComponentFactory.h */,
-				BA79807FA64173B8AB6306CA /* SpringXmlComponentFactory.m */,
-			);
-			path = Xml;
 			sourceTree = "<group>";
 		};
 		BA7983690BAC93D4DD10E51F /* Unit */ = {
@@ -723,15 +828,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		BA79869C20F900484A368700 /* PropertyConfigurers */ = {
-			isa = PBXGroup;
-			children = (
-				BA798FFA9AB5DC149E711139 /* SpringPropertyPlaceholderConfigurer.h */,
-				BA798A27CA4A331C6F8E0990 /* SpringPropertyPlaceholderConfigurer.m */,
-			);
-			path = PropertyConfigurers;
-			sourceTree = "<group>";
-		};
 		BA79877DD1EE5642AE5A333C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,16 +839,6 @@
 				6BE9746515AF01A3004472E2 /* PFCitiesListViewController.h */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		BA79887D7D24AE4D5AB2CE15 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				BA798BF29C35501BD1A1CAB6 /* SpringBundleResource.h */,
-				BA7985EAC86C4433B8DB0163 /* SpringBundleResource.m */,
-				BA798AE52646C1B3BA1404DB /* SpringResource.h */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		BA798A517BE02ED4643239E0 /* Model */ = {
@@ -768,72 +854,6 @@
 				BA7987478471BA92A0518862 /* PFWeatherReport.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		BA798A7DBCBF7A283D26A541 /* Properties */ = {
-			isa = PBXGroup;
-			children = (
-				BA79801E1D47152ED77F0B99 /* SpringInjectedProperty.h */,
-				BA79892058AC4AAB43EEA8A5 /* SpringPropertyInjectedByReference.h */,
-				BA7984EAD92BF4CE210D4EE2 /* SpringPropertyInjectedByReference.m */,
-				BA798ABB7F8ABF8A0E4CAFD8 /* SpringPropertyInjectedByType.h */,
-				BA79861E89C0CF9B8A4710A4 /* SpringPropertyInjectedByType.m */,
-				BA798AA81B512513C8D70E05 /* SpringPropertyInjectedByValue.h */,
-				BA798BEADD7DF6BCD10377DF /* SpringPropertyInjectedByValue.m */,
-				BA798E0FB54AE15AEF49235B /* SpringPropertyInjectionDelegate.h */,
-			);
-			path = Properties;
-			sourceTree = "<group>";
-		};
-		BA798A8D683541CF8176952E /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				BA79815B5638732CE6005A92 /* Initializer */,
-				BA798A7DBCBF7A283D26A541 /* Properties */,
-				BA79891A62B53F4A9FAB0724 /* SpringComponentDefinition.h */,
-				BA798322748D32FADE60DDBF /* SpringComponentDefinition.m */,
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
-		BA798AE50BF5114E8BDD9514 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				BA79809FFB2235523CB50A31 /* Mutator */,
-				BA79869C20F900484A368700 /* PropertyConfigurers */,
-				BA798E21AA715F7DC6F2D581 /* SpringComponentFactory+InstanceBuilder.h */,
-				BA7985280FE6C3CFC9CAFB56 /* SpringComponentFactory+InstanceBuilder.m */,
-				BA7981652F142A43F10744AF /* SpringComponentFactory.h */,
-				BA79807586F8B444B6FB1774 /* SpringComponentFactory.m */,
-				BA79835878BD64C3CB8D5856 /* Xml */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		BA798B8FFB21ED81B35D55AC /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				BA7988A86ACFB78F2C4BEF75 /* NSObject+SpringIntrospectionUtils.h */,
-				BA798A751524AA63AE6DA389 /* NSObject+SpringIntrospectionUtils.m */,
-				BA79887D7D24AE4D5AB2CE15 /* Resource */,
-				BA798856118453A66BEE932E /* SpringIntrospectionUtils.h */,
-				BA798EB3E4454CB57F00EF71 /* SpringIntrospectionUtils.m */,
-				BA79884A68284C5EC8EF0037 /* SpringIntrospectiveNSObject.h */,
-				BA7980220F1B1B4DCB49E339 /* SpringTestUtils.h */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		BA798BD4A55FA6B0D597CF2D /* spring-objective-c */ = {
-			isa = PBXGroup;
-			children = (
-				BA798A8D683541CF8176952E /* Component */,
-				BA798AE50BF5114E8BDD9514 /* Factory */,
-				BA798AB49D08D2B7C2AB9BF1 /* Spring.h */,
-				BA798DC38A609355F94C1C22 /* TypeConversion */,
-				BA798B8FFB21ED81B35D55AC /* Utils */,
-			);
-			path = "spring-objective-c";
 			sourceTree = "<group>";
 		};
 		BA798CC1F256F99F3109F14F /* Components */ = {
@@ -870,24 +890,6 @@
 				6B3A342B15B2519200541F7E /* LoadingTableCell.xib */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		BA798DC38A609355F94C1C22 /* TypeConversion */ = {
-			isa = PBXGroup;
-			children = (
-				BA7982E87B76C0F1BBD42688 /* SpringNSURLTypeConverter.h */,
-				BA798311DC407057FB64C651 /* SpringNSURLTypeConverter.m */,
-				BA798FB2D6459F5EA3E8C95C /* SpringPassThroughTypeConverter.h */,
-				BA7989279F5637A842D80286 /* SpringPassThroughTypeConverter.m */,
-				BA7982FF17E5A290D0A15E50 /* SpringPrimitiveTypeConverter.h */,
-				BA798C0B05EF4F51F721F0D8 /* SpringPrimitiveTypeConverter.m */,
-				BA79867D7C90A6E2ED7733BB /* SpringTypeConverter.h */,
-				BA798A0D25E49DBD72F0436D /* SpringTypeConverterRegistry.h */,
-				BA79882717C3D1E67529F51C /* SpringTypeConverterRegistry.m */,
-				BA7986D56FD48D331DD3E637 /* SpringTypeDescriptor.h */,
-				BA798DAF1BBDA82A19252597 /* SpringTypeDescriptor.m */,
-			);
-			path = TypeConversion;
 			sourceTree = "<group>";
 		};
 		BA798E7C3679201AEC43BC53 /* Client */ = {
@@ -1000,6 +1002,7 @@
 				BA798F5F7C9ACF5AA904A671 /* Icon.png in Resources */,
 				BA79849D9158294255206480 /* Assembly.xml in Resources */,
 				BA798002C7B631863CCC9C1B /* ViewControllers.xml in Resources */,
+				6B7D495F16AD653400526702 /* Info-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,6 +1014,7 @@
 				BA798F3DBF3353B33D121259 /* SampleForecast.xml in Resources */,
 				BA7981C412299394E6158330 /* Assembly.xml in Resources */,
 				BA79801D8E4F2971E599D24C /* ViewControllers.xml in Resources */,
+				6B7D496016AD653400526702 /* Info-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,28 +1082,32 @@
 				6BEE7A9B169992D70042D0B5 /* LRURLRequestOperation.m in Sources */,
 				6BEE7A9F169992D70042D0B5 /* RXMLElement.m in Sources */,
 				BA798D837AA1F5B4EC577353 /* PFCityLabelTableViewCell.m in Sources */,
-				BA798B345A7F08A04EFA8113 /* SpringComponentInitializer.m in Sources */,
-				BA7981D453114059E92A1088 /* SpringParameterInjectedByReference.m in Sources */,
-				BA7989FF0DCD7A1E6F298634 /* SpringParameterInjectedByValue.m in Sources */,
-				BA798D963F3B8129552E73AD /* SpringPropertyInjectedByReference.m in Sources */,
-				BA7982CB844DDC587CB1CAF3 /* SpringPropertyInjectedByType.m in Sources */,
-				BA7983AC8C10BBE2174EE622 /* SpringPropertyInjectedByValue.m in Sources */,
-				BA7988965D06EB79F1060A26 /* SpringComponentDefinition.m in Sources */,
-				BA7983675EFEB2BDEBE1CCAA /* SpringPropertyPlaceholderConfigurer.m in Sources */,
-				BA798366B7C3EB01FFAAE2DF /* SpringComponentFactory+InstanceBuilder.m in Sources */,
-				BA798EE5F2D806B8E3AD8FCA /* SpringComponentFactory.m in Sources */,
-				BA79871819CAB0F723D1228B /* SpringRXMLElement+SpringXmlComponentFactory.m in Sources */,
-				BA798CD746D7EAF9DD168E8B /* SpringRXMLElement.m in Sources */,
-				BA7981792DA7AD5666520A37 /* SpringXmlComponentFactory.m in Sources */,
-				BA798AEB937736566A0196DE /* SpringNSURLTypeConverter.m in Sources */,
-				BA798B45B00CCC48091B65A5 /* SpringPassThroughTypeConverter.m in Sources */,
-				BA79850195D02C27BDF96B23 /* SpringPrimitiveTypeConverter.m in Sources */,
-				BA79866081A335388D09A6A0 /* SpringTypeConverterRegistry.m in Sources */,
-				BA79818C755B854CB54C44A4 /* SpringTypeDescriptor.m in Sources */,
-				BA7982836A2B69970E7B418B /* NSObject+SpringIntrospectionUtils.m in Sources */,
-				BA7980496AA6E5D925243353 /* SpringBundleResource.m in Sources */,
-				BA7982CF7675F7FF41D50E6B /* SpringIntrospectionUtils.m in Sources */,
 				BA7982A0D278E0B180AF7AA8 /* UINavigationController+PocketForecastSkin.m in Sources */,
+				6B7D493F16AD653400526702 /* TyphoonDefinition+BlockBuilders.m in Sources */,
+				6B7D494116AD653400526702 /* TyphoonInitializer.m in Sources */,
+				6B7D494316AD653400526702 /* TyphoonParameterInjectedByReference.m in Sources */,
+				6B7D494516AD653400526702 /* TyphoonParameterInjectedByValue.m in Sources */,
+				6B7D494716AD653400526702 /* TyphoonPropertyInjectedByReference.m in Sources */,
+				6B7D494916AD653400526702 /* TyphoonPropertyInjectedByType.m in Sources */,
+				6B7D494B16AD653400526702 /* TyphoonPropertyInjectedByValue.m in Sources */,
+				6B7D494D16AD653400526702 /* TyphoonDefinition.m in Sources */,
+				6B7D494F16AD653400526702 /* TyphoonAssembly.m in Sources */,
+				6B7D495116AD653400526702 /* TyphoonBlockComponentFactory.m in Sources */,
+				6B7D495316AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m in Sources */,
+				6B7D495516AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m in Sources */,
+				6B7D495716AD653400526702 /* TyphoonComponentFactory.m in Sources */,
+				6B7D495916AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m in Sources */,
+				6B7D495B16AD653400526702 /* TyphoonRXMLElement.m in Sources */,
+				6B7D495D16AD653400526702 /* TyphoonXmlComponentFactory.m in Sources */,
+				6B7D496116AD653400526702 /* TyphoonNSURLTypeConverter.m in Sources */,
+				6B7D496316AD653400526702 /* TyphoonPassThroughTypeConverter.m in Sources */,
+				6B7D496516AD653400526702 /* TyphoonPrimitiveTypeConverter.m in Sources */,
+				6B7D496716AD653400526702 /* TyphoonTypeConverterRegistry.m in Sources */,
+				6B7D496916AD653400526702 /* TyphoonTypeDescriptor.m in Sources */,
+				6B7D496B16AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m in Sources */,
+				6B7D496D16AD653400526702 /* TyphoonBundleResource.m in Sources */,
+				6B7D496F16AD653400526702 /* TyphoonJRSwizzle.m in Sources */,
+				6B7D497116AD653400526702 /* TyphoonIntrospectionUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,28 +1159,32 @@
 				6BEE7B2D169997A00042D0B5 /* PFForecastConditionsTableViewCell.m in Sources */,
 				6BEE7B2E169997A30042D0B5 /* PFCurrentConditionsTableViewCell.m in Sources */,
 				BA7986C7B28D0A3C95A79C57 /* PFCityLabelTableViewCell.m in Sources */,
-				BA79855A4C3EAE1AF810481F /* SpringComponentInitializer.m in Sources */,
-				BA79856609AF7C7A981EBB18 /* SpringParameterInjectedByReference.m in Sources */,
-				BA79860EE3ECC4B26B7B6D0E /* SpringParameterInjectedByValue.m in Sources */,
-				BA7987EB18BFA581A8589018 /* SpringPropertyInjectedByReference.m in Sources */,
-				BA798400F94724F64C6772E5 /* SpringPropertyInjectedByType.m in Sources */,
-				BA7980195141AFA9084B2571 /* SpringPropertyInjectedByValue.m in Sources */,
-				BA79820A86A1578CB90667D7 /* SpringComponentDefinition.m in Sources */,
-				BA798ED108C27337222665C3 /* SpringPropertyPlaceholderConfigurer.m in Sources */,
-				BA7983C419E9C556BEE036CD /* SpringComponentFactory+InstanceBuilder.m in Sources */,
-				BA798C4EFE55DDFE132DA2DD /* SpringComponentFactory.m in Sources */,
-				BA79817C050B998DABCBF8E0 /* SpringRXMLElement+SpringXmlComponentFactory.m in Sources */,
-				BA7989BFE50C1015DCFF7412 /* SpringRXMLElement.m in Sources */,
-				BA798B0983D56E4758FE55EF /* SpringXmlComponentFactory.m in Sources */,
-				BA7985D87B2B7B76C616338C /* SpringNSURLTypeConverter.m in Sources */,
-				BA7980F97A55AD6548EB165D /* SpringPassThroughTypeConverter.m in Sources */,
-				BA79881100EF57438CC426D9 /* SpringPrimitiveTypeConverter.m in Sources */,
-				BA7984F18BAD723FC3791B09 /* SpringTypeConverterRegistry.m in Sources */,
-				BA798BE04028D92243B3A599 /* SpringTypeDescriptor.m in Sources */,
-				BA798DA59662A0BF177E936D /* NSObject+SpringIntrospectionUtils.m in Sources */,
-				BA79871F129F993771DEE7C7 /* SpringBundleResource.m in Sources */,
-				BA79823F3CEB863542CC4AFF /* SpringIntrospectionUtils.m in Sources */,
 				BA7988459DAC793F9981C4C9 /* UINavigationController+PocketForecastSkin.m in Sources */,
+				6B7D494016AD653400526702 /* TyphoonDefinition+BlockBuilders.m in Sources */,
+				6B7D494216AD653400526702 /* TyphoonInitializer.m in Sources */,
+				6B7D494416AD653400526702 /* TyphoonParameterInjectedByReference.m in Sources */,
+				6B7D494616AD653400526702 /* TyphoonParameterInjectedByValue.m in Sources */,
+				6B7D494816AD653400526702 /* TyphoonPropertyInjectedByReference.m in Sources */,
+				6B7D494A16AD653400526702 /* TyphoonPropertyInjectedByType.m in Sources */,
+				6B7D494C16AD653400526702 /* TyphoonPropertyInjectedByValue.m in Sources */,
+				6B7D494E16AD653400526702 /* TyphoonDefinition.m in Sources */,
+				6B7D495016AD653400526702 /* TyphoonAssembly.m in Sources */,
+				6B7D495216AD653400526702 /* TyphoonBlockComponentFactory.m in Sources */,
+				6B7D495416AD653400526702 /* TyphoonPropertyPlaceholderConfigurer.m in Sources */,
+				6B7D495616AD653400526702 /* TyphoonComponentFactory+InstanceBuilder.m in Sources */,
+				6B7D495816AD653400526702 /* TyphoonComponentFactory.m in Sources */,
+				6B7D495A16AD653400526702 /* TyphoonRXMLElement+XmlComponentFactory.m in Sources */,
+				6B7D495C16AD653400526702 /* TyphoonRXMLElement.m in Sources */,
+				6B7D495E16AD653400526702 /* TyphoonXmlComponentFactory.m in Sources */,
+				6B7D496216AD653400526702 /* TyphoonNSURLTypeConverter.m in Sources */,
+				6B7D496416AD653400526702 /* TyphoonPassThroughTypeConverter.m in Sources */,
+				6B7D496616AD653400526702 /* TyphoonPrimitiveTypeConverter.m in Sources */,
+				6B7D496816AD653400526702 /* TyphoonTypeConverterRegistry.m in Sources */,
+				6B7D496A16AD653400526702 /* TyphoonTypeDescriptor.m in Sources */,
+				6B7D496C16AD653400526702 /* NSObject+TyphoonIntrospectionUtils.m in Sources */,
+				6B7D496E16AD653400526702 /* TyphoonBundleResource.m in Sources */,
+				6B7D497016AD653400526702 /* TyphoonJRSwizzle.m in Sources */,
+				6B7D497216AD653400526702 /* TyphoonIntrospectionUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

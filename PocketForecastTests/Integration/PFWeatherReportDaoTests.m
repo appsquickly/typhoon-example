@@ -14,8 +14,7 @@
 #import "PFWeatherReportDao.h"
 #import "PFWeatherReport.h"
 #import "RXMLElement+PFWeatherReport.h"
-#import "SpringXmlComponentFactory.h"
-#import "SpringBundleResource.h"
+#import "Typhoon.h"
 
 @interface PFWeatherReportDaoTests : SenTestCase
 @end
@@ -28,10 +27,10 @@
 
 - (void)setUp
 {
-    SpringXmlComponentFactory* factory = [[SpringXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
+    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
     weatherReportDao = [factory componentForType:@protocol(PFWeatherReportDao)];
 
-    NSString* xmlString = [[SpringBundleResource withName:@"SampleForecast.xml"] asString];
+    NSString* xmlString = [[TyphoonBundleResource withName:@"SampleForecast.xml"] asString];
     RXMLElement* xmlElement = [RXMLElement elementFromXMLString:xmlString encoding:NSUTF8StringEncoding];
     testReport = [xmlElement asWeatherReport];
 }

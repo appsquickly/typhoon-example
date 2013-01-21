@@ -15,8 +15,8 @@
 #import "PFAddCityViewController.h"
 #import "PFWeatherReportViewController.h"
 #import "PFTemperature.h"
-#import "SpringComponentFactory.h"
 #import "PFCityLabelTableViewCell.h"
+#import "Typhoon.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -118,7 +118,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     [_cityDao saveCurrentlySelectedCity:cityName];
 
     PFWeatherReportViewController
-            * weatherReportController = [[SpringComponentFactory defaultFactory] componentForType:[PFWeatherReportViewController class]];
+            * weatherReportController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFWeatherReportViewController class]];
     [self moveFrameBelowStatusBarFor:weatherReportController];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
@@ -156,7 +156,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 /* ============================================================ Private Methods ========================================================= */
 - (void)addCity
 {
-    PFAddCityViewController* addCityController = [[SpringComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]];
+    PFAddCityViewController* addCityController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]];
     [self presentViewController:addCityController animated:YES completion:^
     {
 

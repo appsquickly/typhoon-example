@@ -16,7 +16,7 @@
 #import "PFCurrentConditions.h"
 #import "PFForecastConditions.h"
 #import "PFTemperature.h"
-#import "SpringBundleResource.h"
+#import "TyphoonBundleResource.h"
 
 @interface RXMLElement_PFWeatherReportTests : SenTestCase
 @end
@@ -29,7 +29,7 @@
 
 - (void)setUp
 {
-    sampleReportString = [[SpringBundleResource withName:@"SampleForecast.xml"] asString];
+    sampleReportString = [[TyphoonBundleResource withName:@"SampleForecast.xml"] asString];
 }
 
 
