@@ -14,18 +14,18 @@ An example application built with <a href ="https://github.com/jasperblues/Typho
 
 * Clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
 * Get an API key from http://free.worldweatheronline.com. 
-* Study the <a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. 
+* Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. 
 * Run the App in the simulator or on your device. Look up the weather in your town, and put a jacket on, if you need 
 to (Ha!). Now, proceed to the exercises below. 
 
 ### Exercises
 
 3. Study the 
-<a href="https://github.com/jasperblues/spring-objective-c-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
+<a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/ViewControllers.xml">view controllers</a>. 
 Notice how the framework allows you to group related components together. Notice how dependency injection allows for 
 centralized configuration, at the same time as using aggressive memory management. (With prototype-scope, view controllers will go away 
 whenever they're not being used). 
-4. Study the <a href="https://github.com/jasperblues/spring-objective-c-example/tree/master/PocketForecastTests/Integration">test cases</a>.
+4. Study the <a href="https://github.com/jasperblues/Typhoon-example/tree/master/PocketForecastTests/Integration">test cases</a>.
 Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
 5. Imagine that you decided to save the list of cities that the user wants to get reports for to iCloud, instead of locally on the device. Notice
 how you'd only need to change one line of code to supply your new implementation in place of the old one. And you'd be able to reuse the existing test cases. 
