@@ -10,9 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
 #import <Foundation/Foundation.h>
 @class TyphoonDefinition;
 
@@ -23,6 +20,9 @@ typedef enum
     TyphoonComponentInitializerIsClassMethodNo
 } TyphoonComponentInitializerIsClassMethod;
 
+/**
+* Represents an initializer for a component.
+*/
 @interface TyphoonInitializer : NSObject
 {
     NSMutableArray* _injectedParameters;
@@ -38,11 +38,7 @@ typedef enum
 
 - (id)initWithSelector:(SEL)initializer isClassMethod:(TyphoonComponentInitializerIsClassMethod)isClassMethod;
 
-- (void)injectParameterNamed:(NSString*)name withDefinition:(TyphoonDefinition*)definition;
-
 - (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference;
-
-- (void)injectParameterAtIndex:(NSUInteger)index withDefinition:(TyphoonDefinition*)definition;
 
 - (void)injectParameterAtIndex:(NSUInteger)index withReference:(NSString*)reference;
 

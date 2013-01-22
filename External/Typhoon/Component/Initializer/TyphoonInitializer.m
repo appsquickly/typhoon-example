@@ -47,20 +47,15 @@
 
 
 /* ========================================================== Interface Methods ========================================================= */
-- (void)injectParameterNamed:(NSString*)name withDefinition:(TyphoonDefinition*)definition
-{
-    [self injectParameterNamed:name withReference:definition.key];
-}
+
 
 - (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference
 {
     [self injectParameterAtIndex:[self indexOfParameter:name] withReference:reference];
 }
 
-- (void)injectParameterAtIndex:(NSUInteger)index1 withDefinition:(TyphoonDefinition*)definition
-{
-    [self injectParameterAtIndex:index1 withReference:definition.key];
-}
+
+
 
 - (void)injectParameterAtIndex:(NSUInteger)index withReference:(NSString*)reference
 {
