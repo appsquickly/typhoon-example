@@ -25,15 +25,13 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    /*
+    * Switch between the Xml and Block assembly style by below.
+     */
     TyphoonComponentFactory* factory;
-
-//    factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
-
-    factory = [[TyphoonBlockComponentFactory alloc] initWithAssembly:[PFAssembly assembly]];
-    TyphoonPropertyPlaceholderConfigurer* configurer = [TyphoonPropertyPlaceholderConfigurer configurer];
-    [configurer usePropertyStyleResource:[TyphoonBundleResource withName:@"Configuration.properties"]];
-    [factory attachMutator:configurer];
-
+    factory = [self factoryWithXmlAssembly];
+//    factory = [self factoryWithBlockAssembly];
     [factory makeDefault];
 
     id <PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
@@ -51,6 +49,20 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
 
     return YES;
+}
+
+- (TyphoonComponentFactory*)factoryWithXmlAssembly
+{
+    return [[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
+}
+
+- (TyphoonComponentFactory*)factoryWithBlockAssembly
+{
+    TyphoonComponentFactory* factory = [[TyphoonBlockComponentFactory alloc] initWithAssembly:[PFAssembly assembly]];
+    TyphoonPropertyPlaceholderConfigurer* configurer = [TyphoonPropertyPlaceholderConfigurer configurer];
+    [configurer usePropertyStyleResource:[TyphoonBundleResource withName:@"Configuration.properties"]];
+    [factory attachMutator:configurer];
+    return factory;
 }
 
 @end
