@@ -162,21 +162,27 @@
 		BA7982A0D278E0B180AF7AA8 /* UINavigationController+PocketForecastSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */; };
 		BA7982C1B1F1DB140D34225A /* PFWeatherReportDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79853AB5AA71AA4689A849 /* PFWeatherReportDaoTests.m */; };
 		BA798306AE1CCAE4047F9AC0 /* PFWeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798242DB2AFFB8035D791F /* PFWeatherReportViewController.m */; };
+		BA79832EA9186273B8A4EFFF /* PFAssembly+ViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798F73D7441AD7D6823AFF /* PFAssembly+ViewControllers.m */; };
 		BA79849D9158294255206480 /* Assembly.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987ED54F252A869A45D85 /* Assembly.xml */; };
 		BA7984ED36D647870D6E09B6 /* chance_of_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79877379F4CC3428859D07 /* chance_of_rain.png */; };
 		BA798591227D17C710EF6EBA /* PFTemperatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798955F01A0DA6516C878C /* PFTemperatureTests.m */; };
+		BA7986415862710E9FE5228F /* PFAssembly+ViewControllers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798532D57FFA927BCA2C8C /* PFAssembly+ViewControllers.h */; };
 		BA7986C7B28D0A3C95A79C57 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
+		BA798710367E8481AA4BF3BC /* PFAssembly+ViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798F73D7441AD7D6823AFF /* PFAssembly+ViewControllers.m */; };
 		BA798711EE4D26A67AB61DE4 /* PFForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */; };
 		BA79873145F4FDDE76A9014C /* PFCurrentConditionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */; };
 		BA79873BD3B6ADB4374DC1C6 /* PFActivityIndicatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E82FFE465D80123C4CD /* PFActivityIndicatorTableViewCell.m */; };
 		BA7988459DAC793F9981C4C9 /* UINavigationController+PocketForecastSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */; };
 		BA798873E9DA8CEE34984273 /* PFTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B1EF321D3252A608028 /* PFTemperature.m */; };
+		BA7988B3536883BF19E7CC65 /* PFAssembly.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798B65425B75C52D3D6F1A /* PFAssembly.h */; };
+		BA7988BE2CA52AE73D4BB6F2 /* PFAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798346AEEA08622CB82928 /* PFAssembly.m */; };
 		BA798A53749DDEDC8E086A7F /* PFCityLabelTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798E6E7E7030B87B4BD57D /* PFCityLabelTableViewCell.h */; };
 		BA798BD20E9AD59DCED10715 /* PFCityDoaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EC033265E30559E1216 /* PFCityDoaTests.m */; };
 		BA798C120173D2A18BB50FDE /* PFAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7989AEB3F4353A6B89451C /* PFAddCityViewController.m */; };
 		BA798CD2C01837FD3E6B9167 /* RXMLElement+PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */; };
 		BA798CD6D23ACE87BFC6DAA4 /* PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987478471BA92A0518862 /* PFWeatherReport.m */; };
 		BA798CFBF46EB10AC945B816 /* PFCurrentConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */; };
+		BA798D7829AA98FC2948FED2 /* PFAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798346AEEA08622CB82928 /* PFAssembly.m */; };
 		BA798D837AA1F5B4EC577353 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
 		BA798E0566990B85665B89F7 /* PFWeatherClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A8B15B6D784A0374F1A /* PFWeatherClientTests.m */; };
 		BA798F3DBF3353B33D121259 /* SampleForecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */; };
@@ -202,6 +208,8 @@
 			files = (
 				BA798A53749DDEDC8E086A7F /* PFCityLabelTableViewCell.h in CopyFiles */,
 				BA79808E9113DEB312A8BAFA /* UINavigationController+PocketForecastSkin.h in CopyFiles */,
+				BA7988B3536883BF19E7CC65 /* PFAssembly.h in CopyFiles */,
+				BA7986415862710E9FE5228F /* PFAssembly+ViewControllers.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +376,9 @@
 		BA7981F95ADE57DBB6722C39 /* PFWeatherClientBasicImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClientBasicImpl.h; sourceTree = "<group>"; };
 		BA798242DB2AFFB8035D791F /* PFWeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportViewController.m; sourceTree = "<group>"; };
 		BA798320014BEE93DD0527CC /* PFAddCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddCityViewController.h; sourceTree = "<group>"; };
+		BA798346AEEA08622CB82928 /* PFAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAssembly.m; sourceTree = "<group>"; };
 		BA7983A5CF7FC776EE8B960B /* UINavigationController+PocketForecastSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+PocketForecastSkin.m"; sourceTree = "<group>"; };
+		BA798532D57FFA927BCA2C8C /* PFAssembly+ViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFAssembly+ViewControllers.h"; sourceTree = "<group>"; };
 		BA79853AB5AA71AA4689A849 /* PFWeatherReportDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportDaoTests.m; sourceTree = "<group>"; };
 		BA7986581A6E331C407E9A48 /* PFCurrentConditionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCurrentConditionsTableViewCell.m; sourceTree = "<group>"; };
 		BA79867A0DF25A188ED3D7D5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -388,6 +398,7 @@
 		BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherClientBasicImpl.m; sourceTree = "<group>"; };
 		BA798B1EF321D3252A608028 /* PFTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperature.m; sourceTree = "<group>"; };
 		BA798B362DA8741775671768 /* PFActivityIndicatorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFActivityIndicatorTableViewCell.h; sourceTree = "<group>"; };
+		BA798B65425B75C52D3D6F1A /* PFAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAssembly.h; sourceTree = "<group>"; };
 		BA798B92876C0679AA3E6DC8 /* PFCurrentConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCurrentConditions.h; sourceTree = "<group>"; };
 		BA798D218A848E055FB5F6CB /* ViewControllers.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ViewControllers.xml; sourceTree = "<group>"; };
 		BA798D2A742E3B6ED1BCE83D /* PFWeatherClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClient.h; sourceTree = "<group>"; };
@@ -400,6 +411,7 @@
 		BA798EE7FC647ED03B050115 /* RXMLElement_PFWeatherReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement_PFWeatherReportSpec.m; sourceTree = "<group>"; };
 		BA798EF2E6B2241602FA1B9F /* RXMLElement+PFWeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RXMLElement+PFWeatherReport.h"; sourceTree = "<group>"; };
 		BA798F720169320B08150907 /* PFTemperature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTemperature.h; sourceTree = "<group>"; };
+		BA798F73D7441AD7D6823AFF /* PFAssembly+ViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFAssembly+ViewControllers.m"; sourceTree = "<group>"; };
 		BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCurrentConditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -669,8 +681,7 @@
 				6BE9230315B29E56002EF310 /* Dao */,
 				BA798A517BE02ED4643239E0 /* Model */,
 				BA79840A9B9BA6AD4B22AE22 /* UserInterface */,
-				BA7987ED54F252A869A45D85 /* Assembly.xml */,
-				BA798D218A848E055FB5F6CB /* ViewControllers.xml */,
+				BA7981AECCB463AE5C18DCD2 /* Assembly */,
 			);
 			path = PocketForecast;
 			sourceTree = "<group>";
@@ -812,6 +823,15 @@
 			path = Integration;
 			sourceTree = "<group>";
 		};
+		BA7981AECCB463AE5C18DCD2 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				BA798DE1E052DA3E87900EF9 /* Xml */,
+				BA79858DE2025F3491D53FD4 /* Blocks */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		BA7983690BAC93D4DD10E51F /* Unit */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,6 +858,17 @@
 				BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BA79858DE2025F3491D53FD4 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				BA798B65425B75C52D3D6F1A /* PFAssembly.h */,
+				BA798346AEEA08622CB82928 /* PFAssembly.m */,
+				BA798F73D7441AD7D6823AFF /* PFAssembly+ViewControllers.m */,
+				BA798532D57FFA927BCA2C8C /* PFAssembly+ViewControllers.h */,
+			);
+			path = Blocks;
 			sourceTree = "<group>";
 		};
 		BA79877DD1EE5642AE5A333C /* Controllers */ = {
@@ -902,6 +933,15 @@
 				6B3A342B15B2519200541F7E /* LoadingTableCell.xib */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		BA798DE1E052DA3E87900EF9 /* Xml */ = {
+			isa = PBXGroup;
+			children = (
+				BA798D218A848E055FB5F6CB /* ViewControllers.xml */,
+				BA7987ED54F252A869A45D85 /* Assembly.xml */,
+			);
+			path = Xml;
 			sourceTree = "<group>";
 		};
 		BA798E7C3679201AEC43BC53 /* Client */ = {
@@ -1122,6 +1162,8 @@
 				6B4F1F1516AEC60000C0C3E8 /* TyphoonBundleResource.m in Sources */,
 				6B4F1F1716AEC60000C0C3E8 /* TyphoonJRSwizzle.m in Sources */,
 				6B4F1F1916AEC60000C0C3E8 /* TyphoonIntrospectionUtils.m in Sources */,
+				BA7988BE2CA52AE73D4BB6F2 /* PFAssembly.m in Sources */,
+				BA798710367E8481AA4BF3BC /* PFAssembly+ViewControllers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,6 +1243,8 @@
 				6B4F1F1616AEC60000C0C3E8 /* TyphoonBundleResource.m in Sources */,
 				6B4F1F1816AEC60000C0C3E8 /* TyphoonJRSwizzle.m in Sources */,
 				6B4F1F1A16AEC60000C0C3E8 /* TyphoonIntrospectionUtils.m in Sources */,
+				BA798D7829AA98FC2948FED2 /* PFAssembly.m in Sources */,
+				BA79832EA9186273B8A4EFFF /* PFAssembly+ViewControllers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
