@@ -14,18 +14,25 @@
 #import "PFCityDao.h"
 #import "PFWeatherReportViewController.h"
 #import "Typhoon.h"
+#import "TyphoonBlockComponentFactory.h"
+#import "PFAssembly.h"
 
 @implementation PFAppDelegate
 
-
+/**
+* Switch between the Xml assembly and the block assembly by swapping the lines below.
+*/
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    TyphoonComponentFactory* factory =
-            [[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
+    TyphoonComponentFactory* factory;
+
+//    factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
+    factory = [[TyphoonBlockComponentFactory alloc] initWithAssembly:[PFAssembly assembly]];
+
     [factory makeDefault];
 
-    id<PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
+    id <PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
     NSString* selectedCity = [cityDao getCurrentlySelectedCity];
     if (selectedCity)
     {

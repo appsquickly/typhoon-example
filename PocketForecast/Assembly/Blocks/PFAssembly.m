@@ -14,6 +14,8 @@
 #import "PFAssembly.h"
 #import "Typhoon.h"
 #import "PFWeatherClientBasicImpl.h"
+#import "PFWeatherReportDaoFileSystemImpl.h"
+#import "PFCityDaoUserDefaultsImpl.h"
 
 @implementation PFAssembly
 
@@ -31,12 +33,12 @@
 
 - (id)weatherReportDao
 {
-    return nil;
+    return [TyphoonDefinition withClass:[PFWeatherReportDaoFileSystemImpl class]];
 }
 
 - (id)cityDao
 {
-    return nil;
+    return [TyphoonDefinition withClass:[PFCityDaoUserDefaultsImpl class]];
 }
 
 
