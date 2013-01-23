@@ -39,3 +39,4 @@ how you'd only need to change one line of code to supply your new implementation
 ![Add City](http://www.appsquick.ly/add-city.png)
 ![List Cities](http://www.appsquick.ly/cities-list.png)
 
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e47e2f2028b2badfc88e13f95914938 "githalytics.com")](http://githalytics.com/jasperblues/Typhoon)
