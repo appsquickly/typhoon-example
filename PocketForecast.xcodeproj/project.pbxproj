@@ -165,6 +165,7 @@
 		BA79832EA9186273B8A4EFFF /* PFAssembly+ViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798F73D7441AD7D6823AFF /* PFAssembly+ViewControllers.m */; };
 		BA79849D9158294255206480 /* Assembly.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987ED54F252A869A45D85 /* Assembly.xml */; };
 		BA7984ED36D647870D6E09B6 /* chance_of_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79877379F4CC3428859D07 /* chance_of_rain.png */; };
+		BA79857C298E03EC870EC5CE /* Configuration.properties in Resources */ = {isa = PBXBuildFile; fileRef = BA798954410F86A5232E1ED2 /* Configuration.properties */; };
 		BA798591227D17C710EF6EBA /* PFTemperatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798955F01A0DA6516C878C /* PFTemperatureTests.m */; };
 		BA7986415862710E9FE5228F /* PFAssembly+ViewControllers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798532D57FFA927BCA2C8C /* PFAssembly+ViewControllers.h */; };
 		BA7986C7B28D0A3C95A79C57 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
@@ -185,6 +186,7 @@
 		BA798D7829AA98FC2948FED2 /* PFAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798346AEEA08622CB82928 /* PFAssembly.m */; };
 		BA798D837AA1F5B4EC577353 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */; };
 		BA798E0566990B85665B89F7 /* PFWeatherClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A8B15B6D784A0374F1A /* PFWeatherClientTests.m */; };
+		BA798E69EBE0DC68032B347D /* Configuration.properties in Resources */ = {isa = PBXBuildFile; fileRef = BA798954410F86A5232E1ED2 /* Configuration.properties */; };
 		BA798F3DBF3353B33D121259 /* SampleForecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */; };
 		BA798F5F7C9ACF5AA904A671 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79867A0DF25A188ED3D7D5 /* Icon.png */; };
 /* End PBXBuildFile section */
@@ -391,6 +393,7 @@
 		BA7987D08E584917AE7CE5A9 /* PFCityLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityLabelTableViewCell.m; sourceTree = "<group>"; };
 		BA7987ED54F252A869A45D85 /* Assembly.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Assembly.xml; sourceTree = "<group>"; };
 		BA7988A5EED8474C69C5CB29 /* PFForecastConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFForecastConditions.h; sourceTree = "<group>"; };
+		BA798954410F86A5232E1ED2 /* Configuration.properties */ = {isa = PBXFileReference; lastKnownFileType = file.properties; path = Configuration.properties; sourceTree = "<group>"; };
 		BA798955F01A0DA6516C878C /* PFTemperatureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperatureTests.m; sourceTree = "<group>"; };
 		BA7989AEB3F4353A6B89451C /* PFAddCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddCityViewController.m; sourceTree = "<group>"; };
 		BA798A7EF3E53E1850551BEC /* PFWeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReport.h; sourceTree = "<group>"; };
@@ -867,6 +870,7 @@
 				BA798346AEEA08622CB82928 /* PFAssembly.m */,
 				BA798F73D7441AD7D6823AFF /* PFAssembly+ViewControllers.m */,
 				BA798532D57FFA927BCA2C8C /* PFAssembly+ViewControllers.h */,
+				BA798954410F86A5232E1ED2 /* Configuration.properties */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -1055,6 +1059,7 @@
 				BA79849D9158294255206480 /* Assembly.xml in Resources */,
 				BA798002C7B631863CCC9C1B /* ViewControllers.xml in Resources */,
 				6B4F1F0716AEC60000C0C3E8 /* Info-iOS.plist in Resources */,
+				BA798E69EBE0DC68032B347D /* Configuration.properties in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,6 +1072,7 @@
 				BA7981C412299394E6158330 /* Assembly.xml in Resources */,
 				BA79801D8E4F2971E599D24C /* ViewControllers.xml in Resources */,
 				6B4F1F0816AEC60000C0C3E8 /* Info-iOS.plist in Resources */,
+				BA79857C298E03EC870EC5CE /* Configuration.properties in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,8 +27,12 @@
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     TyphoonComponentFactory* factory;
 
-    factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
-//    factory = [[TyphoonBlockComponentFactory alloc] initWithAssembly:[PFAssembly assembly]];
+//    factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil];
+
+    factory = [[TyphoonBlockComponentFactory alloc] initWithAssembly:[PFAssembly assembly]];
+    TyphoonPropertyPlaceholderConfigurer* configurer = [TyphoonPropertyPlaceholderConfigurer configurer];
+    [configurer usePropertyStyleResource:[TyphoonBundleResource withName:@"Configuration.properties"]];
+    [factory attachMutator:configurer];
 
     [factory makeDefault];
 

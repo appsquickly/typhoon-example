@@ -23,9 +23,9 @@
 {
     return [TyphoonDefinition withClass:[PFWeatherClientBasicImpl class] properties:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(serviceUrl) withValueAsText:@"http://free.worldweatheronline.com/feed/weather.ashx"];
-        [definition injectProperty:@selector(apiKey) withValueAsText:@"$$YOUR_API_KEY_HERE$$"];
-        [definition injectProperty:@selector(daysToRetrieve) withValueAsText:@"5"];
+        [definition injectProperty:@selector(serviceUrl) withValueAsText:@"${service.url}"];
+        [definition injectProperty:@selector(apiKey) withValueAsText:@"${api.key}"];
+        [definition injectProperty:@selector(daysToRetrieve) withValueAsText:@"${days.to.retrieve}"];
         [definition injectProperty:@selector(weatherReportDao) withDefinition:[self weatherReportDao]];
     }];
 }
