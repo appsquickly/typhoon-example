@@ -33,6 +33,9 @@ locally on the device. Notice how you'd only need to change one line of code to 
 place of the old one. And you'd be able to reuse the existing test cases. 
 1. Imagine that you'd like to integrate with other weather data providers, and let the user choose at runtime. How would you do it? 
 1. Try writing the same Application without dependency injection. What would the code look like? 
+
+
+####Alternative Configuration Style
 1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly.m">block assembly</a> 
 and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly%2BViewControllers.m">view controllers</a>. 
 Which style do you prefer?

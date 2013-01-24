@@ -28,7 +28,7 @@
         [initializer injectWithDefinition:[self citiesListController]];
     } properties:^(TyphoonDefinition* definition)
     {
-        [definition setAfterPropertyInjection:@selector(applySkin)];
+        definition.afterPropertyInjection = @selector(applySkin);
         definition.lifecycle = TyphoonComponentLifeCyclePrototype;
     }];
 }
