@@ -70,6 +70,7 @@
     {
         [definition injectProperty:@selector(cityDao) withDefinition:[self cityDao]];
         [definition injectProperty:@selector(weatherClient) withDefinition:[self weatherClient]];
+        definition.lifecycle = TyphoonComponentLifeCyclePrototype;
     }];
 }
 
