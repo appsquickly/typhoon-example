@@ -59,9 +59,8 @@
 - (TyphoonComponentFactory*)factoryWithBlockAssembly
 {
     TyphoonComponentFactory* factory = [[TyphoonBlockComponentFactory alloc] initWithAssembly:[PFAssembly assembly]];
-    TyphoonPropertyPlaceholderConfigurer* configurer = [TyphoonPropertyPlaceholderConfigurer configurer];
-    [configurer usePropertyStyleResource:[TyphoonBundleResource withName:@"Configuration.properties"]];
-    [factory attachMutator:configurer];
+    id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
+    [factory attachMutator:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
     return factory;
 }
 

@@ -10,7 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "TyphoonDefinition.h"
-#import "TyphoonDefinition+BlockBuilders.h"
 #import "TyphoonInitializer.h"
 #import "TyphoonPropertyPlaceholderConfigurer.h"
 #import "TyphoonResource.h"
@@ -22,7 +21,13 @@
 #import "TyphoonRXMLElement+XmlComponentFactory.h"
 #import "TyphoonRXMLElement.h"
 #import "TyphoonTestUtils.h"
+#import "TyphoonIntrospectionUtils.h"
+#import "TyphoonAssembly.h"
 
 //TODO: Possibly move this to make explicit
 #import "TyphoonInitializer+BlockAssembly.h"
 #import "TyphoonDefinition+BlockAssembly.h"
+
+#import "TyphoonAutowire.h"
+
+

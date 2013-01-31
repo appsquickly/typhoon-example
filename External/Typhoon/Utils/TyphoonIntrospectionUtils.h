@@ -13,6 +13,11 @@
 
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
+
+NSSet* TyphoonAutoWiredProperties(Class clazz, NSSet* properties);
+
+NSString* TyphoonTypeStringFor(id classOrProtocol);
 
 
 @interface TyphoonIntrospectionUtils : NSObject
