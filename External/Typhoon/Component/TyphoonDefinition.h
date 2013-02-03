@@ -19,8 +19,8 @@
 
 typedef enum
 {
-    TyphoonComponentLifeCycleSingleton,
-    TyphoonComponentLifeCyclePrototype
+    TyphoonComponentLifeCyclePrototype,
+    TyphoonComponentLifeCycleSingleton
 } TyphoonComponentLifecycle;
 
 
@@ -31,7 +31,7 @@ typedef enum
 
 @property(nonatomic, readonly) Class type;
 @property(nonatomic, strong) NSString* key;
-@property(nonatomic, strong, readonly) NSString* factoryComponent;
+@property(nonatomic, strong) NSString* factoryComponent;
 @property(nonatomic, strong) TyphoonInitializer* initializer;
 @property(nonatomic) SEL beforePropertyInjection;
 @property(nonatomic) SEL afterPropertyInjection;
