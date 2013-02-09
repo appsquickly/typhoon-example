@@ -27,7 +27,6 @@ centralized configuration, at the same time as using aggressive memory managemen
 whenever they're not being used). 
 1. Study the <a href="https://github.com/jasperblues/Typhoon-example/tree/master/PocketForecastTests/Integration">test cases</a>.
 Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
-Hint: <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/Configuration.properties">configuration properties</a>.
 1. Imagine that you decided to save the list of cities that the user wants to get reports for to iCloud, instead of 
 locally on the device. Notice how you'd only need to change one line of code to supply your new implementation in 
 place of the old one. And you'd be able to reuse the existing test cases. 
