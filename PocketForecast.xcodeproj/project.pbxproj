@@ -827,6 +827,7 @@
 			children = (
 				BA798DE1E052DA3E87900EF9 /* Xml */,
 				BA79858DE2025F3491D53FD4 /* Blocks */,
+				BA798954410F86A5232E1ED2 /* Configuration.properties */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -866,7 +867,6 @@
 				BA798346AEEA08622CB82928 /* PFAssembly.m */,
 				BA798F73D7441AD7D6823AFF /* PFAssembly+ViewControllers.m */,
 				BA798532D57FFA927BCA2C8C /* PFAssembly+ViewControllers.h */,
-				BA798954410F86A5232E1ED2 /* Configuration.properties */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
