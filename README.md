@@ -14,16 +14,16 @@ An example application built with <a href ="https://github.com/jasperblues/Typho
 
 * Clone this repository, open the Xcode project in your favorite IDE, and run it. It'll say you need an API key.
 * Get an API key from http://free.worldweatheronline.com. 
-* Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/Assembly.xml">application assembly</a>, and _configure_ the application with your API key. 
+* Configure the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Configuration.properties">application configuration</a> with your API key. 
 * Run the App in the simulator or on your device. Look up the weather in your town, and put a jacket on, if you need 
 to (Ha!). Now, proceed to the exercises below. 
 
 ### Exercises
 
-1. Study the 
-<a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/ViewControllers.xml">view controllers</a>. 
+1. Study the Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly.m">block assembly</a> 
+and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly%2BViewControllers.m">view controllers</a>. 
 Notice how the framework allows you to group related components together. Notice how dependency injection allows for 
-centralized configuration, at the same time as using aggressive memory management. (With prototype-scope, view controllers will go away 
+centralized configuration, at the same time as using aggressive memory management. (With default prototype-scope, components will go away 
 whenever they're not being used). 
 1. Study the <a href="https://github.com/jasperblues/Typhoon-example/tree/master/PocketForecastTests/Integration">test cases</a>.
 Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
@@ -36,8 +36,9 @@ place of the old one. And you'd be able to reuse the existing test cases.
 
 
 ####Alternative Configuration Style
-1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly.m">block assembly</a> 
-and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly%2BViewControllers.m">view controllers</a>. 
+
+1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/Assembly.xml">application assembly</a>, and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/ViewControllers.xml">view controllers</a>. 
+
 Which style do you prefer?
 
 ### The App ('scuse the dev's designs). 
