@@ -20,7 +20,7 @@ to (Ha!). Now, proceed to the exercises below.
 
 ### Exercises
 
-1. Study the Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly.m">block assembly</a> 
+1. Study the Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly.m">core assembly</a> 
 and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFAssembly%2BViewControllers.m">view controllers</a>. 
 Notice how the framework allows you to group related components together. Notice how dependency injection allows for 
 centralized configuration, at the same time as using aggressive memory management. (With default prototype-scope, components will go away 
