@@ -10,9 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
 #import "PFAssembly+ViewControllers.h"
 #import "Typhoon.h"
 #import "PFCitiesListViewController.h"
@@ -41,9 +38,6 @@
     {
         initializer.selector = @selector(initWithCityDao:);
         [initializer injectWithDefinition:[self cityDao]];
-    } properties:^(TyphoonDefinition* definition)
-    {
-        definition.lifecycle = TyphoonComponentLifeCyclePrototype;
     }];
 }
 
@@ -55,9 +49,6 @@
         [initializer injectWithDefinition:[self weatherClient]];
         [initializer injectWithDefinition:[self weatherReportDao]];
         [initializer injectWithDefinition:[self cityDao]];
-    } properties:^(TyphoonDefinition* definition)
-    {
-        definition.lifecycle = TyphoonComponentLifeCyclePrototype;
     }];
 }
 
@@ -72,7 +63,6 @@
     {
         [definition injectProperty:@selector(cityDao) withDefinition:[self cityDao]];
         [definition injectProperty:@selector(weatherClient) withDefinition:[self weatherClient]];
-        definition.lifecycle = TyphoonComponentLifeCyclePrototype;
     }];
 }
 

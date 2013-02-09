@@ -30,8 +30,8 @@
     * Switch between the Xml and Block assembly style by below.
      */
     TyphoonComponentFactory* factory;
-    factory = [self factoryWithXmlAssembly];
-//    factory = [self factoryWithBlockAssembly];
+    factory = [self factoryWithBlockAssembly];
+//    factory = [self factoryWithXmlAssembly];
     [factory makeDefault];
 
     id <PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
