@@ -19,12 +19,11 @@
 #import "TyphoonInitializer.h"
 #import "TyphoonPropertyInjectedByReference.h"
 #import "TyphoonTypeDescriptor.h"
-#import "TyphonTypeConverter.h"
 #import "TyphoonTypeConverterRegistry.h"
 #import "TyphoonPropertyInjectedByValue.h"
 #import "TyphoonPropertyInjectionDelegate.h"
 #import "TyphoonParameterInjectedByValue.h"
-#import "TyphoonComponentFactory+PrimitiveTypeInjection.h"
+#import "TyphoonPrimitiveTypeConverter.h"
 
 
 @implementation TyphoonComponentFactory (InstanceBuilder)
@@ -57,12 +56,6 @@
     }
 
     [self injectPropertyDependenciesOn:instance withDefinition:definition];
-    if (definition.factoryComponent || definition.initializer.isClassMethod)
-    {
-        int retainCount = objc_msgSend(instance, NSSelectorFromString(@"retainCount"));
-        NSLog(@"Instance of class '%@' returned from factory. Retain count: %i", NSStringFromClass([instance class]), retainCount);
-        objc_msgSend(instance, NSSelectorFromString(@"retain"));
-    }
     return instance;
 }
 
@@ -83,23 +76,12 @@
         else if (parameter.type == TyphoonParameterInjectedByValueType)
         {
             TyphoonParameterInjectedByValue* byValue = (TyphoonParameterInjectedByValue*) parameter;
-
-            if (byValue.classOrProtocol)
-            {
-                TyphoonTypeDescriptor* descriptor = [TyphoonTypeDescriptor descriptorWithClassOrProtocol:byValue.classOrProtocol];
-                id <TyphonTypeConverter> converter = [[TyphoonTypeConverterRegistry shared] converterFor:descriptor];
-                id converted = [converter convert:byValue.value];
-                [invocation setArgument:&converted atIndex:parameter.index + 2];
-            }
-            else
-            {
-                TyphoonTypeDescriptor* descriptor = [byValue resolveTypeWith:instanceOrClass];
-                [self setPrimitiveArgumentFor:invocation parameter:byValue requiredType:descriptor];
-            }
+            [self setArgumentFor:invocation index:byValue.index + 2 textValue:byValue.textValue
+                    requiredType:[byValue resolveTypeWith:instanceOrClass]];
         }
     }
     [invocation invoke];
-    id <NSObject> returnValue = definition.initializer.isClassMethod || definition.factoryComponent ? nil : instanceOrClass;
+    __autoreleasing id <NSObject> returnValue = definition.initializer.isClassMethod || definition.factoryComponent ? nil : instanceOrClass;
     [invocation getReturnValue:&returnValue];
     return returnValue;
 }
@@ -141,30 +123,33 @@
 - (void)doPropertyInjection:(id <TyphoonIntrospectiveNSObject>)instance property:(id <TyphoonInjectedProperty>)property
         typeDescriptor:(TyphoonTypeDescriptor*)typeDescriptor
 {
+    NSInvocation* invocation = [self propertySetterInvocationFor:instance property:property];
+    NSLog(@"Property setter invocation: %@", invocation);
     if (property.type == TyphoonPropertyInjectionByTypeType)
     {
         id reference = [self componentForType:[typeDescriptor classOrProtocol]];
-        objc_msgSend(instance, [instance setterForPropertyWithName:property.name], reference, nil);
+        [invocation setArgument:&reference atIndex:2];
     }
     else if (property.type == TyphoonPropertyInjectionByReferenceType)
     {
         id reference = [self componentForKey:((TyphoonPropertyInjectedByReference*) property).reference];
-        objc_msgSend(instance, [instance setterForPropertyWithName:property.name], reference, nil);
+        [invocation setArgument:&reference atIndex:2];
     }
     else if (property.type == TyphoonPropertyInjectionByValueType)
     {
         TyphoonPropertyInjectedByValue* valueProperty = (TyphoonPropertyInjectedByValue*) property;
-        if (typeDescriptor.isPrimitive)
-        {
-            [self injectPrimitivePropertyValueOn:instance property:property valueProperty:valueProperty requiredType:typeDescriptor];
-        }
-        else
-        {
-            id <TyphonTypeConverter> converter = [[TyphoonTypeConverterRegistry shared] converterFor:typeDescriptor];
-            id converted = [converter convert:valueProperty.textValue];
-            objc_msgSend(instance, [instance setterForPropertyWithName:property.name], converted, nil);
-        }
+        [self setArgumentFor:invocation index:2 textValue:valueProperty.textValue requiredType:typeDescriptor];
     }
+    [invocation invoke];
+}
+
+- (NSInvocation*)propertySetterInvocationFor:(id <TyphoonIntrospectiveNSObject>)instance property:(id <TyphoonInjectedProperty>)property
+{
+    SEL pSelector = [instance setterForPropertyWithName:property.name];
+    NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:[(NSObject*) instance methodSignatureForSelector:pSelector]];
+    [invocation setTarget:instance];
+    [invocation setSelector:pSelector];
+    return invocation;
 }
 
 
@@ -177,6 +162,24 @@
     if ([instance respondsToSelector:definition.afterPropertyInjection])
     {
         objc_msgSend(instance, definition.afterPropertyInjection);
+    }
+}
+
+
+/* ====================================================================================================================================== */
+- (void)setArgumentFor:(NSInvocation*)invocation index:(NSUInteger)index1 textValue:(NSString*)textValue
+        requiredType:(TyphoonTypeDescriptor*)requiredType
+{
+    if (requiredType.isPrimitive)
+    {
+        TyphoonPrimitiveTypeConverter* converter = [[TyphoonTypeConverterRegistry shared] primitiveTypeConverter];
+        [converter setPrimitiveArgumentFor:invocation index:index1 textValue:textValue requiredType:requiredType];
+    }
+    else
+    {
+        id <TyphoonTypeConverter> converter = [[TyphoonTypeConverterRegistry shared] converterFor:requiredType];
+        id converted = [converter convert:textValue];
+        [invocation setArgument:&converted atIndex:index1];
     }
 }
 

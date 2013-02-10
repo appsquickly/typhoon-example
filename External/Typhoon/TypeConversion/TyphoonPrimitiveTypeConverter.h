@@ -11,7 +11,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "TyphonTypeConverter.h"
+#import "TyphoonTypeConverter.h"
 
 
 @interface TyphoonPrimitiveTypeConverter : NSObject
@@ -47,5 +47,7 @@
 
 - (SEL)convertToSelector:(NSString*)stringValue;
 
+- (void)setPrimitiveArgumentFor:(NSInvocation*)invocation index:(NSUInteger)index textValue:(NSString*)textValue
+        requiredType:(TyphoonTypeDescriptor*)requiredType;
 
 @end

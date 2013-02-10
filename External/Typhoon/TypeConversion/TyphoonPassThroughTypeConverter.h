@@ -11,14 +11,15 @@
 
 
 #import <Foundation/Foundation.h>
-#import "TyphonTypeConverter.h"
+#import "TyphoonTypeConverter.h"
 
 /**
 * A 'type converter' for NSString and NSMutableString.
 */
-@interface TyphoonPassThroughTypeConverter : NSObject <TyphonTypeConverter>
-
-@property (nonatomic, readonly) BOOL isMutable;
+@interface TyphoonPassThroughTypeConverter : NSObject <TyphoonTypeConverter>
+{
+    BOOL _isMutable;
+}
 
 - (id)initWithIsMutable:(BOOL)isMutable;
 

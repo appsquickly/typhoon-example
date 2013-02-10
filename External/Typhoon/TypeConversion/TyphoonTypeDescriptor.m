@@ -76,7 +76,7 @@
             }
             else
             {
-                _metaClass = NSClassFromString(typeCode);
+                _typeBeingDescribed = NSClassFromString(typeCode);
             }
         }
         else
@@ -92,9 +92,9 @@
 /* ========================================================== Interface Methods ========================================================= */
 - (id)classOrProtocol
 {
-    if (_metaClass)
+    if (_typeBeingDescribed)
     {
-        return _metaClass;
+        return _typeBeingDescribed;
     }
     else
     {
@@ -111,7 +111,16 @@
     }
     else
     {
-        return [NSString stringWithFormat:@"Type descriptor: %@", [self classOrProtocol]];
+        Protocol* protocol = [self protocol];
+        if (protocol)
+        {
+            return [NSString stringWithFormat:@"Type descriptor: id<%@>", NSStringFromProtocol(protocol)];
+        }
+        else 
+        {
+            return [NSString stringWithFormat:@"Type descriptor: %@", [self classOrProtocol]];
+        }
+        
     }
 }
 
