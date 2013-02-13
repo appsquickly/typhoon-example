@@ -1,7 +1,7 @@
 Typhoon-example
 ==========================
 
-An example application built with <a href ="https://github.com/jasperblues/Typhoon">Typhoon</a>.
+An example application built with <a href ="http://www.typhoonframework.org">Typhoon</a>.
 
 ###Features: 
 
