@@ -57,7 +57,7 @@
     return [TyphoonDefinition withClass:[PFAddCityViewController class] initialization:^(TyphoonInitializer* initializer)
     {
         initializer.selector = @selector(initWithNibName:bundle:);
-        [initializer injectParameterAt:0 withValueAsText:@"AddCity" requiredTypeOrNil:[NSString class]];
+        [initializer injectWithText:@"AddCity" requiredTypeOrNil:[NSString class]];
         [initializer injectWithDefinition:[self mainBundle]];
     } properties:^(TyphoonDefinition* definition)
     {
