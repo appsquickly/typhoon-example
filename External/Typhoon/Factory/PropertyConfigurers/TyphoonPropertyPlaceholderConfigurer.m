@@ -13,7 +13,9 @@
 #import "TyphoonPropertyPlaceholderConfigurer.h"
 #import "TyphoonResource.h"
 #import "TyphoonDefinition.h"
+#import "TyphoonInitializer.h"
 #import "TyphoonPropertyInjectedByValue.h"
+#import "TyphoonParameterInjectedByValue.h"
 
 @interface TyphoonPropertyInjectedByValue (PropertyPlaceHolderConfigurer)
 
@@ -47,15 +49,15 @@
     return configurer;
 }
 
-+ (TyphoonPropertyPlaceholderConfigurer*)configurerWithResources:(id <TyphoonResource>)first,...
++ (TyphoonPropertyPlaceholderConfigurer*)configurerWithResources:(id <TyphoonResource>)first, ...
 {
     TyphoonPropertyPlaceholderConfigurer* configurer = [TyphoonPropertyPlaceholderConfigurer configurer];
     [configurer usePropertyStyleResource:first];
 
     va_list resource_list;
     va_start(resource_list, first);
-    id<TyphoonResource> resource;
-    while ((resource = va_arg( resource_list, id<TyphoonResource>)))
+    id <TyphoonResource> resource;
+    while ((resource = va_arg( resource_list, id < TyphoonResource >)))
     {
         [configurer usePropertyStyleResource:resource];
     }
@@ -88,12 +90,15 @@
     NSArray* lines = [[resource asString] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     for (NSString* line in lines)
     {
-        NSRange range = [line rangeOfString:@"="];
-        if (range.location != NSNotFound)
+        if (![line hasPrefix:@"#"])
         {
-            NSString* property = [line substringToIndex:range.location];
-            NSString* value = [line substringFromIndex:range.location + range.length];
-            [_properties setObject:value forKey:property];
+            NSRange range = [line rangeOfString:@"="];
+            if (range.location != NSNotFound)
+            {
+                NSString* property = [line substringToIndex:range.location];
+                NSString* value = [line substringFromIndex:range.location + range.length];
+                [_properties setObject:value forKey:property];
+            }
         }
     }
 }
@@ -109,6 +114,18 @@
 {
     for (TyphoonDefinition* definition in componentDefinitions)
     {
+        for (TyphoonParameterInjectedByValue* parameter in [definition.initializer parametersInjectedByValue])
+        {
+            if ([parameter.textValue hasPrefix:_prefix] && [parameter.textValue hasSuffix:_suffix])
+            {
+                NSString* key = [parameter.textValue substringFromIndex:[_prefix length]];
+                key = [key substringToIndex:[key length] - [_suffix length]];
+                NSString* value = [_properties valueForKey:key];
+                NSLog(@"Setting property '%@' to value '%@'", key, value);
+                parameter.textValue = value;
+            }
+        }
+
         for (TyphoonPropertyInjectedByValue* property in [definition propertiesInjectedByValue])
         {
             if ([property.textValue hasPrefix:_prefix] && [property.textValue hasSuffix:_suffix])

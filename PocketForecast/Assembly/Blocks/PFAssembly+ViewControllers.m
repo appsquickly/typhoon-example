@@ -28,7 +28,6 @@
     } properties:^(TyphoonDefinition* definition)
     {
         definition.afterPropertyInjection = @selector(applySkin);
-        definition.lifecycle = TyphoonComponentLifeCyclePrototype;
     }];
 }
 

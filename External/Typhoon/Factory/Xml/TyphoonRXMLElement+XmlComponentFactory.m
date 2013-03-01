@@ -113,11 +113,11 @@
 
     if ([scope isEqualToString:@"singleton"])
     {
-        [definition setLifecycle:TyphoonComponentLifeCycleSingleton];
+        [definition setScope:TyphoonScopeSingleton];
     }
     else if ([scope isEqualToString:@"prototype"])
     {
-        [definition setLifecycle:TyphoonComponentLifeCyclePrototype];
+        [definition setScope:TyphoonScopeDefault];
     }
     else if ([scope length] > 0)
     {

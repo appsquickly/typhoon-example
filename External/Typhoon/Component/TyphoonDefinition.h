@@ -19,9 +19,9 @@
 
 typedef enum
 {
-    TyphoonComponentLifeCyclePrototype,
-    TyphoonComponentLifeCycleSingleton
-} TyphoonComponentLifecycle;
+    TyphoonScopeDefault,
+    TyphoonScopeSingleton
+} TyphoonScope;
 
 
 @interface TyphoonDefinition : NSObject
@@ -36,7 +36,7 @@ typedef enum
 @property(nonatomic) SEL beforePropertyInjection;
 @property(nonatomic) SEL afterPropertyInjection;
 @property(nonatomic, strong, readonly) NSSet* injectedProperties;
-@property(nonatomic) TyphoonComponentLifecycle lifecycle;
+@property(nonatomic) TyphoonScope scope;
 
 
 - (id)initWithClass:(Class)clazz key:(NSString*)key;
