@@ -24,6 +24,8 @@
 #import "TyphoonPropertyInjectionDelegate.h"
 #import "TyphoonParameterInjectedByValue.h"
 #import "TyphoonPrimitiveTypeConverter.h"
+#import "TyphoonInitializer+InstanceBuilder.h"
+#import "TyphoonDefinition+InstanceBuilder.h"
 
 
 @implementation TyphoonComponentFactory (InstanceBuilder)
@@ -33,9 +35,9 @@
 {
     id <TyphoonIntrospectiveNSObject> instance;
 
-    if (definition.factoryComponent)
+    if (definition.factoryReference)
     {
-        instance = [self componentForKey:definition.factoryComponent];
+        instance = [self componentForKey:definition.factoryReference];
     }
     else if (definition.initializer && definition.initializer.isClassMethod)
     {
@@ -81,7 +83,7 @@
         }
     }
     [invocation invoke];
-    __autoreleasing id <NSObject> returnValue = definition.initializer.isClassMethod || definition.factoryComponent ? nil : instanceOrClass;
+    __autoreleasing id <NSObject> returnValue = definition.initializer.isClassMethod || definition.factoryReference ? nil : instanceOrClass;
     [invocation getReturnValue:&returnValue];
     return returnValue;
 }
