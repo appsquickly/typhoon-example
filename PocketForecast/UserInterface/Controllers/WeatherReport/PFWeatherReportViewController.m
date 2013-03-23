@@ -113,6 +113,8 @@
 //    [cell.lowLabel setText:[forecastConditions.low asShortStringInDefaultUnits]];
 //    [cell.highLabel setText:[forecastConditions.high asShortStringInDefaultUnits]];
 //    [cell.weatherIconView setImage:[self uiImageForImageUri:forecastConditions.imageUri]];
+
+    [cell.backgroundView setBackgroundColor:[self colorForRow:indexPath.row]];
     return cell;
 }
 
@@ -141,7 +143,7 @@
 /* ============================================================ Utility Methods ========================================================= */
 - (void)dealloc
 {
-    NSLog(@"%@ in dealloc!", self);
+    Typhoon_LogDealloc();
 }
 
 
@@ -226,6 +228,19 @@
     }
     return nil;
 
+}
+
+- (UIColor*)colorForRow:(NSUInteger)row
+{
+    switch (row)
+    {
+        case 0:
+            return UIColorFromRGB(0x837758);
+        case 1:
+            return UIColorFromRGB(0x564e3a);
+        case 2:
+            return UIColorFromRGB(0x342e22);
+    }
 }
 
 @end

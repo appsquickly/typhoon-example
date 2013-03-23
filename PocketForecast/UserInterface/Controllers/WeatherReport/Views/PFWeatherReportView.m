@@ -124,7 +124,22 @@
     _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
     [_toolbar setBarStyle:UIBarStyleBlackOpaque];
     [self addSubview:_toolbar];
+
+    UIBarButtonItem* cityListButton = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(cityListPressed)];
+
+    UIBarButtonItem* space = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(cityListPressed)];
+
+    UIBarButtonItem* refreshButton = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(cityListPressed)];
+
+    [_toolbar setItems:@[cityListButton, space, refreshButton]];
 }
 
+- (void)cityListPressed
+{
+
+}
 
 @end

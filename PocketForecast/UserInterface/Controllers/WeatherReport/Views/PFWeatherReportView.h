@@ -14,16 +14,18 @@
 
 @interface PFWeatherReportView : UIView
 {
+    UIImageView* _backgroundView;
     UILabel* _cityNameLabel;
     UILabel* _conditionsDescriptionLabel;
     UIImageView* _conditionsIcon;
 
     UIView* _temperatureLabelContainer;
     UILabel* _temperatureLabel;
+
+    UIToolbar* _toolbar;
 }
 
-@property (nonatomic, strong, readonly) UIImageView* backgroundView;
 @property (nonatomic, strong, readonly) UITableView* tableView;
-@property (nonatomic, strong, readonly) UIToolbar* toolbar;
+
 
 @end
