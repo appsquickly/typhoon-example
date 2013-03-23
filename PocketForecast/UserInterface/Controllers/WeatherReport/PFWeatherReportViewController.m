@@ -12,20 +12,15 @@
 
 
 #import "PFWeatherReportViewController.h"
-#import "PFForecastConditionsTableViewCell.h"
 #import "PFWeatherReport.h"
 #import "PFCurrentConditions.h"
 #import "PFForecastConditions.h"
-#import "PFTemperature.h"
-#import "PFActivityIndicatorTableViewCell.h"
 #import "PFWeatherReportDao.h"
 #import "PFCityDao.h"
 #import "Typhoon.h"
 #import "PFWeatherReportView.h"
+#import "PFForecastTableViewCell.h"
 
-
-static int const LOADING_INDICATOR_ROW = 3;
-static int const DETAIL_ROW_CELL_HEIGHT = 51;
 
 @implementation PFWeatherReportViewController
 
@@ -69,7 +64,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [_activityIndicatorCell startAnimating];
+//    [_activityIndicatorCell startAnimating];
     _cityName = [_cityDao getCurrentlySelectedCity];
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
@@ -106,15 +101,18 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    UITableViewCell* cell;
-    if (indexPath.row == LOADING_INDICATOR_ROW)
+    PFForecastConditions* forecastConditions = [[_weatherReport forecast] objectAtIndex:indexPath.row];
+    static NSString* reuseIdentifier = @"weatherForecast";
+    PFForecastTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (cell == nil)
     {
-        cell = [self makeLoadingTableCell];
+        cell = [[PFForecastTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
-    else
-    {
-        cell = [self makeForecastConditionsCellWith:[[_weatherReport forecast] objectAtIndex:indexPath.row] tableView:tableView];
-    }
+
+//    [cell.dayLabel setText:forecastConditions.longDayOfTheWeek];
+//    [cell.lowLabel setText:[forecastConditions.low asShortStringInDefaultUnits]];
+//    [cell.highLabel setText:[forecastConditions.high asShortStringInDefaultUnits]];
+//    [cell.weatherIconView setImage:[self uiImageForImageUri:forecastConditions.imageUri]];
     return cell;
 }
 
@@ -131,7 +129,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return DETAIL_ROW_CELL_HEIGHT;
+    return 50;
 }
 
 - (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell
@@ -161,7 +159,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 
 - (void)presentReport:(PFWeatherReport*)weatherReport
 {
-    [_activityIndicatorCell stopAnimating];
+//    [_activityIndicatorCell stopAnimating];
     _weatherReport = weatherReport;
     [_tableView reloadData];
     [_currentConditionsImageView setImage:[self uiImageForImageUri:weatherReport.currentConditions.imageUri]];
@@ -171,7 +169,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 - (void)retrieveRemoteReport
 {
     __weak PFWeatherReportViewController* weakSelf = self;
-    [_activityIndicatorCell startAnimating];
+//    [_activityIndicatorCell startAnimating];
     [_weatherClient loadWeatherReportFor:_cityName onSuccess:^(PFWeatherReport* report)
     {
         [weakSelf presentReport:report];
@@ -194,35 +192,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
     } completion:nil];
 }
 
-
-- (PFForecastConditionsTableViewCell*)makeForecastConditionsCellWith:(PFForecastConditions*)forecastConditions
-        tableView:(UITableView*)tableView
-{
-    static NSString* CellIdentifier = @"weatherForecast";
-    PFForecastConditionsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        [[NSBundle mainBundle] loadNibNamed:@"ForecastTableCell" owner:self options:nil];
-        cell = (PFForecastConditionsTableViewCell*) self.injectedTableViewCell;
-    }
-
-    self.injectedTableViewCell = nil;
-    [cell.dayLabel setText:forecastConditions.longDayOfTheWeek];
-
-    [cell.lowLabel setText:[forecastConditions.low asShortStringInDefaultUnits]];
-    [cell.highLabel setText:[forecastConditions.high asShortStringInDefaultUnits]];
-    [cell.weatherIconView setImage:[self uiImageForImageUri:forecastConditions.imageUri]];
-    return cell;
-}
-
-- (UITableViewCell*)makeLoadingTableCell
-{
-    [[NSBundle mainBundle] loadNibNamed:@"LoadingTableCell" owner:self options:nil];
-    _activityIndicatorCell = (PFActivityIndicatorTableViewCell*) self.injectedTableViewCell;
-    [_activityIndicatorCell stopAnimating];
-    self.injectedTableViewCell = nil;
-    return _activityIndicatorCell;
-}
 
 - (UIImage*)uiImageForImageUri:(NSString*)imageUri
 {

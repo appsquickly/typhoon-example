@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  Copyright 2013 Jasper Blues
 //  All Rights Reserved.
 //
 //  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
@@ -13,10 +13,14 @@
 #import <Foundation/Foundation.h>
 
 
-@interface PFCurrentConditionsTableViewCell : UITableViewCell
-
-@property (nonatomic, weak) IBOutlet UILabel* cityNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel* temperatureLabel;
-@property (nonatomic, weak) IBOutlet UILabel* conditionsSummary;
+@interface PFForecastTableViewCell : UITableViewCell
+{
+    UIImageView* _conditionsIcon;
+    UILabel* _dayLabel;
+    UILabel* _descriptionLabel;
+    UILabel* _highTempLabel;
+    UILabel* _lowTempLabel;
+    UIImageView* _overlayView;
+}
 
 @end

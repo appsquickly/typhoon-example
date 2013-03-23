@@ -15,7 +15,6 @@
 #import "PFWeatherClient.h"
 
 @class PFWeatherReport;
-@class PFActivityIndicatorTableViewCell;
 @protocol PFWeatherReportDao;
 @protocol PFCityDao;
 
@@ -24,7 +23,6 @@
 {
 
     PFWeatherReport* _weatherReport;
-    PFActivityIndicatorTableViewCell* _activityIndicatorCell;
     NSString* _cityName;
 }
 
@@ -38,7 +36,6 @@
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* refreshReportButton;
 @property(nonatomic, weak) IBOutlet UITableView* tableView;
 @property(nonatomic, weak) IBOutlet UILabel* statusMessageLabel;
-@property(nonatomic, weak) IBOutlet UITableViewCell* injectedTableViewCell;
 @property(nonatomic, weak) IBOutlet UIImageView* currentConditionsImageView;
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao

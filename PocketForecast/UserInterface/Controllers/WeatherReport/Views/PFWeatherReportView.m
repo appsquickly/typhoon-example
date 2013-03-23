@@ -50,7 +50,7 @@
     LogDebug(@"Layout views");
     [_toolbar setFrame:CGRectMake(0, self.frame.size.height - 44, 320, 44)];
 
-    [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 153, 320, 153)];
+    [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 150, 320, 150)];
 }
 
 /* ============================================================ Private Methods ========================================================= */
@@ -112,7 +112,10 @@
 - (void)initTableView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
+    [_tableView setAllowsSelection:NO];
+    [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView setBackgroundColor:[UIColor blackColor]];
+    [_tableView setBounces:NO];
     [self addSubview:_tableView];
 }
 
