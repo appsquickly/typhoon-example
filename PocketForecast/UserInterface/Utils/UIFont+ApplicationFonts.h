@@ -16,4 +16,6 @@
 
 + (UIFont*)applicationFontOfSize:(CGFloat)size;
 
++ (UIFont*)temperatureFontOfSize:(CGFloat)size;
+
 @end

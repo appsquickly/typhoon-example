@@ -22,4 +22,10 @@
     return [UIFont fontWithName:@"Varela Round" size:size];
 }
 
++ (UIFont*)temperatureFontOfSize:(CGFloat)size
+{
+    return [UIFont fontWithName:@"Questrial" size:size];
+}
+
+
 @end

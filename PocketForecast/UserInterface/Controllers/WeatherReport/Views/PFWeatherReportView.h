@@ -16,6 +16,10 @@
 {
     UILabel* _cityNameLabel;
     UILabel* _conditionsDescriptionLabel;
+    UIImageView* _conditionsIcon;
+
+    UIView* _temperatureLabelContainer;
+    UILabel* _temperatureLabel;
 }
 
 @property (nonatomic, strong, readonly) UIImageView* backgroundView;

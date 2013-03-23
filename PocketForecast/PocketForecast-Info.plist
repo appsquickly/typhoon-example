@@ -35,7 +35,7 @@
     <key>UIAppFonts</key>
     <array>
         <string>VarelaRound-Regular.otf</string>
-        <string>Questrial-Regular.ttf</string>
+        <string>Questrial-Regular.otf</string>
     </array>
 </dict>
 </plist>
