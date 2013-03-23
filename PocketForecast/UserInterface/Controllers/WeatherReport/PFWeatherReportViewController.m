@@ -21,6 +21,7 @@
 #import "PFWeatherReportDao.h"
 #import "PFCityDao.h"
 #import "Typhoon.h"
+#import "PFWeatherReportView.h"
 
 
 static int const LOADING_INDICATOR_ROW = 3;
@@ -33,7 +34,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
         cityDao:(id <PFCityDao>)cityDao
 {
-    self = [super initWithNibName:@"WeatherReport" bundle:[NSBundle mainBundle]];
+    self = [super initWithNibName:nil bundle:nil];
     if (self)
     {
         _weatherClient = weatherClient;
@@ -45,6 +46,19 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 
 
 /* ========================================================== Interface Methods ========================================================= */
+- (void)loadView
+{
+    PFWeatherReportView* view = [[PFWeatherReportView alloc] initWithFrame:CGRectZero];
+    [view sizeToFit];
+
+    _tableView = view.tableView;
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+
+    self.view = view;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,7 +101,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 51;
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath

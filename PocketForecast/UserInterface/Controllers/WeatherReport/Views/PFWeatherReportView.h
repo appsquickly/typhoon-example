@@ -9,11 +9,17 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
 #import <Foundation/Foundation.h>
 
-@interface UIFont (ApplicationFonts)
 
-+ (UIFont*)applicationFontOfSize:(CGFloat)size;
+@interface PFWeatherReportView : UIView
+{
+    UILabel* _cityNameLabel;
+    UILabel* _conditionsDescriptionLabel;
+}
+
+@property (nonatomic, strong, readonly) UIImageView* backgroundView;
+@property (nonatomic, strong, readonly) UITableView* tableView;
+@property (nonatomic, strong, readonly) UIToolbar* toolbar;
 
 @end
