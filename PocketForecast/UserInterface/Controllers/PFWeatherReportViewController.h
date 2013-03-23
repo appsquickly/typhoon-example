@@ -25,14 +25,6 @@
 
     PFWeatherReport* _weatherReport;
     PFActivityIndicatorTableViewCell* _activityIndicatorCell;
-
-    UIImage* _mostlyCloudyImage;
-    UIImage* _sunnyImage;
-    UIImage* _mostlySunnyImage;
-    UIImage* _partlyCloudyImage;
-    UIImage* _chanceOfStormImage;
-    UIImage* _chanceOfRainImage;
-
     NSString* _cityName;
 }
 
@@ -44,7 +36,7 @@
 #pragma mark - Interface Builder injected properties.
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* presentCitiesViewButton;
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* refreshReportButton;
-@property(nonatomic, weak) IBOutlet UITableView* weatherReportTableView;
+@property(nonatomic, weak) IBOutlet UITableView* tableView;
 @property(nonatomic, weak) IBOutlet UILabel* statusMessageLabel;
 @property(nonatomic, weak) IBOutlet UITableViewCell* injectedTableViewCell;
 @property(nonatomic, weak) IBOutlet UIImageView* currentConditionsImageView;

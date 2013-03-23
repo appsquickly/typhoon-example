@@ -12,7 +12,6 @@
 
 
 #import "PFWeatherReportViewController.h"
-#import "PFCurrentConditionsTableViewCell.h"
 #import "PFForecastConditionsTableViewCell.h"
 #import "PFWeatherReport.h"
 #import "PFCurrentConditions.h"
@@ -22,21 +21,12 @@
 #import "PFWeatherReportDao.h"
 #import "PFCityDao.h"
 #import "Typhoon.h"
-#import <QuartzCore/QuartzCore.h>
 
-static int const CURRENT_CONDITIONS_ROW = 0;
-static int const LOADING_INDICATOR_ROW = 4;
-static int const CURRENT_CONDITIONS_CELL_HEIGHT = 91;
-static int const DETAIL_ROW_CELL_HEIGHT = 58;
+
+static int const LOADING_INDICATOR_ROW = 3;
+static int const DETAIL_ROW_CELL_HEIGHT = 51;
 
 @implementation PFWeatherReportViewController
-
-@synthesize presentCitiesViewButton = _presentCitiesViewButton;
-@synthesize refreshReportButton = _refreshReportButton;
-@synthesize weatherReportTableView = _weatherReportTableView;
-@synthesize injectedTableViewCell = _injectedTableViewCell;
-@synthesize statusMessageLabel = _statusMessageLabel;
-@synthesize currentConditionsImageView = _currentConditionsImageView;
 
 
 /* ============================================================ Initializers ============================================================ */
@@ -49,13 +39,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
         _weatherClient = weatherClient;
         _weatherReportDao = weatherReportDao;
         _cityDao = cityDao;
-
-        _mostlyCloudyImage = [UIImage imageNamed:@"mostly_cloudy.png"];
-        _sunnyImage = [UIImage imageNamed:@"sunny.png"];
-        _mostlySunnyImage = [UIImage imageNamed:@"mostly_sunny.png"];
-        _partlyCloudyImage = [UIImage imageNamed:@"partly_cloudy.png"];
-        _chanceOfRainImage = [UIImage imageNamed:@"chance_of_rain.png"];
-        _chanceOfStormImage = [UIImage imageNamed:@"chance_of_storm.png"];
     }
     return self;
 }
@@ -67,10 +50,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     [super viewDidLoad];
     [_presentCitiesViewButton setAction:@selector(presentCitiesView)];
     [_refreshReportButton setAction:@selector(retrieveRemoteReport)];
-    _weatherReportTableView.layer.cornerRadius = 10;
-    _weatherReportTableView.layer.masksToBounds = YES;
-    _weatherReportTableView.layer.borderColor = UIColorFromRGB(0x374b58).CGColor;
-    _weatherReportTableView.layer.borderWidth = 4.0f;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -108,19 +87,13 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-
     UITableViewCell* cell;
-    if (indexPath.row == CURRENT_CONDITIONS_ROW)
-    {
-        cell = [self makeCurrentConditionsCellWith:[_weatherReport currentConditions]];
-        self.injectedTableViewCell = nil;
-    }
-    else if (indexPath.row == LOADING_INDICATOR_ROW)
+    if (indexPath.row == LOADING_INDICATOR_ROW)
     {
         cell = [self makeLoadingTableCell];
     }
@@ -144,14 +117,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    if (indexPath.row == 0)
-    {
-        return CURRENT_CONDITIONS_CELL_HEIGHT;
-    }
-    else
-    {
-        return DETAIL_ROW_CELL_HEIGHT;
-    }
+    return DETAIL_ROW_CELL_HEIGHT;
 }
 
 - (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell
@@ -174,7 +140,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 - (void)clearStaleData
 {
     _weatherReport = nil;
-    [_weatherReportTableView reloadData];
+    [_tableView reloadData];
     [_currentConditionsImageView setImage:nil];
     [_statusMessageLabel setText:@""];
 }
@@ -183,7 +149,7 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
 {
     [_activityIndicatorCell stopAnimating];
     _weatherReport = weatherReport;
-    [_weatherReportTableView reloadData];
+    [_tableView reloadData];
     [_currentConditionsImageView setImage:[self uiImageForImageUri:weatherReport.currentConditions.imageUri]];
     [_statusMessageLabel setText:[NSString stringWithFormat:@"Updated %@", [weatherReport reportDateAsString]]];
 }
@@ -214,16 +180,6 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
     } completion:nil];
 }
 
-- (PFCurrentConditionsTableViewCell*)makeCurrentConditionsCellWith:(PFCurrentConditions*)currentConditions
-{
-    [[NSBundle mainBundle] loadNibNamed:@"CurrentConditionsTableCell" owner:self options:nil];
-    PFCurrentConditionsTableViewCell* cell = (PFCurrentConditionsTableViewCell*) self.injectedTableViewCell;
-    self.injectedTableViewCell = nil;
-    [cell.cityNameLabel setText:_cityName];
-    [cell.temperatureLabel setText:[currentConditions.temperature asLongStringInDefaultUnits]];
-    [cell.conditionsSummary setText:currentConditions.longSummary];
-    return cell;
-}
 
 - (PFForecastConditionsTableViewCell*)makeForecastConditionsCellWith:(PFForecastConditions*)forecastConditions
         tableView:(UITableView*)tableView
@@ -262,27 +218,27 @@ static int const DETAIL_ROW_CELL_HEIGHT = 58;
         LogDebug(@"Retrieving image for URI: %@", imageUri);
         if ([imageUri hasSuffix:@"wsymbol_0001_sunny.png"])
         {
-            return _sunnyImage;
+            return [UIImage imageNamed:@"icon_sunny"];
         }
-        else if ([imageUri hasSuffix:@"/ig/images/weather/mostly_sunny.gif"])
+        else if ([imageUri hasSuffix:@"wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"])
         {
-            return _mostlySunnyImage;
+            return [UIImage imageNamed:@"partly_cloudy"];
         }
         else if ([imageUri hasSuffix:@"/ig/images/weather/partly_cloudy.gif"])
         {
-            return _partlyCloudyImage;
+            return [UIImage imageNamed:@"partly_cloudy"];
         }
         else if ([imageUri hasSuffix:@"wsymbol_0004_black_low_cloud.png"])
         {
-            return _mostlyCloudyImage;
+            return [UIImage imageNamed:@"icon_cloudy"];
         }
         else if ([imageUri hasSuffix:@"wsymbol_0017_cloudy_with_light_rain.png"])
         {
-            return _chanceOfRainImage;
+            return [UIImage imageNamed:@"icon_rainy"];
         }
         else
         {
-            return _mostlySunnyImage;
+            return [UIImage imageNamed:@"icon_sunny"];
         }
     }
     return nil;
