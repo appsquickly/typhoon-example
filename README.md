@@ -40,7 +40,7 @@ place of the old one. And you'd be able to reuse the existing test cases.
 
 ### The App ('scuse the dev's designs). 
 ![Weather Report](http://jasperblues.github.com/Typhoon-example/weather-report.png)
-![Add City](http://www.appsquick.ly/add-city.png)
-![List Cities](http://www.appsquick.ly/cities-list.png)
+![Add City](http://jasperblues.github.com/Typhoon-example/add-city.png)
+![List Cities](http://jasperblues.github.com/Typhoon-example/cities-list.png)
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e47e2f2028b2badfc88e13f95914938 "githalytics.com")](http://githalytics.com/jasperblues/Typhoon)
