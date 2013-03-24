@@ -295,28 +295,33 @@
     if ([imageUri length] > 0)
     {
         LogDebug(@"Retrieving image for URI: %@", imageUri);
-        if ([imageUri hasSuffix:@"wsymbol_0001_sunny.png"])
+        if ([imageUri hasSuffix:@"sunny.png"])
         {
             return [UIImage imageNamed:@"icon_sunny"];
         }
-        else if ([imageUri hasSuffix:@"wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"])
+        else if ([imageUri hasSuffix:@"sunny_intervals.png"])
         {
             return [UIImage imageNamed:@"icon_cloudy"];
         }
-        else if ([imageUri hasSuffix:@"/ig/images/weather/partly_cloudy.gif"])
+        else if ([imageUri hasSuffix:@"partly_cloudy.png"])
         {
             return [UIImage imageNamed:@"icon_cloudy"];
         }
-        else if ([imageUri hasSuffix:@"wsymbol_0004_black_low_cloud.png"])
+        else if ([imageUri hasSuffix:@"low_cloud.png"])
         {
             return [UIImage imageNamed:@"icon_cloudy"];
         }
-        else if ([imageUri hasSuffix:@"wsymbol_0017_cloudy_with_light_rain.png"])
+        else if ([imageUri hasSuffix:@"light_rain_showers.png"])
+        {
+            return [UIImage imageNamed:@"icon_rainy"];
+        }
+        else if ([imageUri hasSuffix:@"heavy_rain_showers.png"])
         {
             return [UIImage imageNamed:@"icon_rainy"];
         }
         else
         {
+            LogDebug(@"*** No icon for %@ . . rerturning sunny ***", imageUri);
             return [UIImage imageNamed:@"icon_sunny"];
         }
     }
