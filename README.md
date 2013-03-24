@@ -39,8 +39,7 @@ place of the old one. And you'd be able to reuse the existing test cases.
 1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/Assembly.xml">xml application assembly</a>, and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/ViewControllers.xml">view controllers</a>. Which style do you prefer? Would it be appropriate to add some <a href="https://github.com/jasperblues/Typhoon/wiki/Autowiring">auto-wiring</a>?
 
 ### The App ('scuse the dev's designs). 
-
-![Weather Report](http://www.appsquick.ly/weather-report.png)
+![Weather Report](http://jasperblues.github.com/Typhoon-example/weather-report.png)
 ![Add City](http://www.appsquick.ly/add-city.png)
 ![List Cities](http://www.appsquick.ly/cities-list.png)
 
