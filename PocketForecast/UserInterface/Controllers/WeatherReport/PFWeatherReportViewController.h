@@ -34,7 +34,6 @@
 #pragma mark - Interface Builder injected properties.
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* presentCitiesViewButton;
 @property(nonatomic, weak) IBOutlet UIBarButtonItem* refreshReportButton;
-@property(nonatomic, weak) IBOutlet UITableView* tableView;
 @property(nonatomic, weak) IBOutlet UILabel* statusMessageLabel;
 @property(nonatomic, weak) IBOutlet UIImageView* currentConditionsImageView;
 

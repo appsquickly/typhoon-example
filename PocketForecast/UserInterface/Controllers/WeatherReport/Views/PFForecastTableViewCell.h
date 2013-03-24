@@ -12,15 +12,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class PFForecastConditions;
+
 
 @interface PFForecastTableViewCell : UITableViewCell
 {
-    UIImageView* _conditionsIcon;
-    UILabel* _dayLabel;
-    UILabel* _descriptionLabel;
-    UILabel* _highTempLabel;
-    UILabel* _lowTempLabel;
     UIImageView* _overlayView;
 }
+
+@property(nonatomic, strong, readonly) UILabel* dayLabel;
+@property(nonatomic, strong, readonly) UILabel* descriptionLabel;
+@property (nonatomic, strong, readonly) UILabel* highTempLabel;
+@property (nonatomic, strong, readonly) UILabel* lowTempLabel;
+@property (nonatomic, strong, readonly) UIImageView* conditionsIcon;
 
 @end

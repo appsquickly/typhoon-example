@@ -10,9 +10,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import <Foundation/Foundation.h>
+@class PFWeatherReport;
 
 
-@interface PFWeatherReportView : UIView
+@interface PFWeatherReportView : UIView<UITableViewDelegate, UITableViewDataSource>
 {
     UIImageView* _backgroundView;
     UILabel* _cityNameLabel;
@@ -23,9 +24,13 @@
     UILabel* _temperatureLabel;
 
     UIToolbar* _toolbar;
+    UILabel* _lastUpdateLabel;
+    UITableView* _tableView;
+
+    PFWeatherReport* _weatherReport;
+
 }
 
-@property (nonatomic, strong, readonly) UITableView* tableView;
-
+- (void)setWeatherReport:(PFWeatherReport*)weatherReport;
 
 @end

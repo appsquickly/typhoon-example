@@ -32,6 +32,7 @@
     return self;
 }
 
+
 /* ========================================================== Interface Methods ========================================================= */
 - (void)layoutIfNeeded
 {
@@ -71,7 +72,6 @@
     [_dayLabel setFont:[UIFont applicationFontOfSize:16]];
     [_dayLabel setTextColor:UIColorFromRGB(0xffffff)];
     [_dayLabel setBackgroundColor:[UIColor clearColor]];
-    [_dayLabel setText:@"Sunday"];
     [self addSubview:_dayLabel];
 }
 
@@ -81,27 +81,24 @@
     [_descriptionLabel setFont:[UIFont applicationFontOfSize:13]];
     [_descriptionLabel setTextColor:UIColorFromRGB(0xd9d1bd)];
     [_descriptionLabel setBackgroundColor:[UIColor clearColor]];
-    [_descriptionLabel setText:@"Typhoons"];
     [self addSubview:_descriptionLabel];
 }
 
 - (void)initHighTempLabel
 {
-    _highTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 10, 40, 30)];
+    _highTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 10, 40, 30)];
     [_highTempLabel setFont:[UIFont temperatureFontOfSize:27]];
     [_highTempLabel setTextColor:UIColorFromRGB(0xffffff)];
     [_highTempLabel setBackgroundColor:[UIColor clearColor]];
-    [_highTempLabel setText:@"26"];
     [self addSubview:_highTempLabel];
 }
 
 - (void)initLowTempLabel
 {
-    _lowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(240, 11.5, 40, 30)];
+    _lowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 11.5, 40, 30)];
     [_lowTempLabel setFont:[UIFont temperatureFontOfSize:20]];
     [_lowTempLabel setTextColor:UIColorFromRGB(0xd9d1bd)];
     [_lowTempLabel setBackgroundColor:[UIColor clearColor]];
-    [_lowTempLabel setText:@"22"];
     [self addSubview:_lowTempLabel];
 }
 
