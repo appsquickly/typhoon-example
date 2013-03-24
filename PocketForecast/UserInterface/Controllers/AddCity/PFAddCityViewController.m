@@ -14,6 +14,7 @@
 #import "PFAddCityViewController.h"
 #import "PFCityDao.h"
 #import "PFWeatherReport.h"
+#import "UIFont+ApplicationFonts.h"
 
 
 @implementation PFAddCityViewController
@@ -40,6 +41,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_nameOfCityToAdd setFont:[UIFont applicationFontOfSize:16]];
+    [_validationMessage setFont:[UIFont applicationFontOfSize:16]];
+
     [self setTitle:@"Add City"];
     self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];

@@ -14,8 +14,8 @@
 #import "PFCityDao.h"
 #import "PFWeatherReportViewController.h"
 #import "Typhoon.h"
-#import "TyphoonBlockComponentFactory.h"
 #import "PFAssembly.h"
+#import "UIFont+ApplicationFonts.h"
 
 @implementation PFAppDelegate
 
@@ -25,6 +25,8 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [[UINavigationBar appearance]
+            setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont applicationFontOfSize:20], UITextAttributeFont, nil]];
 
     /*
     * Switch between the Xml and Block assembly style by below.

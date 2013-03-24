@@ -51,12 +51,15 @@
         _weatherReport = weatherReport;
         NSArray* indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0],
                 [NSIndexPath indexPathForRow:2 inSection:0]];
+
         [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
         [_cityNameLabel setText:[_weatherReport cityDisplayName]];
         [_temperatureLabel setText:[_weatherReport.currentConditions.temperature asShortStringInDefaultUnits]];
         [_conditionsDescriptionLabel setText:[_weatherReport.currentConditions longSummary]];
         [_conditionsIcon setImage:[self uiImageForImageUri:weatherReport.currentConditions.imageUri]];
         [_lastUpdateLabel setText:[NSString stringWithFormat:@"Updated %@", [weatherReport reportDateAsString]]];
+
+
     });
 }
 
@@ -167,7 +170,7 @@
 {
     [self setBackgroundColor:UIColorFromRGB(0x837758)];
     _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo_background"]];
-    [_backgroundView setFrame:CGRectMake(0, 0, 320, 285)];
+    [_backgroundView setFrame:CGRectMake(0, 0, 320, 480)];
     [self addSubview:_backgroundView];
 }
 
@@ -232,7 +235,7 @@
     [_tableView setDataSource:self];
     [_tableView setAllowsSelection:NO];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [_tableView setBackgroundColor:UIColorFromRGB(0x827657)];
+    [_tableView setBackgroundColor:[UIColor clearColor]];
     [_tableView setBounces:NO];
     [self addSubview:_tableView];
 }
@@ -240,7 +243,7 @@
 - (void)initToolbar
 {
     _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
-    [_toolbar setBarStyle:UIBarStyleBlackOpaque];
+    [_toolbar setBarStyle:UIBarStyleBlackTranslucent];
     [self addSubview:_toolbar];
 
     UIBarButtonItem* cityListButton = [[UIBarButtonItem alloc]

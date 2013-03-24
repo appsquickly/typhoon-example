@@ -17,6 +17,7 @@
 #import "PFTemperature.h"
 #import "PFCityLabelTableViewCell.h"
 #import "Typhoon.h"
+#import "UIFont+ApplicationFonts.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -105,6 +106,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
         cell = [[PFCityLabelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
     }
     cell.cityLabel.backgroundColor = [UIColor clearColor];
+    cell.cityLabel.font = [UIFont applicationFontOfSize:16];
     cell.cityLabel.textColor = [UIColor darkGrayColor];
     cell.cityLabel.text = ([_cities objectAtIndex:indexPath.row]);
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
