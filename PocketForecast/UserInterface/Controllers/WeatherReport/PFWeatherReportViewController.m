@@ -89,8 +89,10 @@
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
     UINavigationController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[UINavigationController class]];
+
     //pre-load this, because it may not have loaded yet.
-    assert(controller.visibleViewController.view != nil);
+    if (controller.visibleViewController.view == nil)
+    {}
 
     [UIView transitionWithView:window duration:0.9f options:UIViewAnimationOptionTransitionFlipFromRight animations:^
     {
