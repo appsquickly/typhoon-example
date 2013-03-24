@@ -49,6 +49,10 @@
     {
         LogDebug(@"Set weather report: %@", weatherReport);
         _weatherReport = weatherReport;
+
+        [_conditionsIcon setHidden:NO];
+        [_temperatureLabelContainer setHidden:NO];
+
         NSArray* indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0],
                 [NSIndexPath indexPathForRow:2 inSection:0]];
 
@@ -207,6 +211,7 @@
 {
     _conditionsIcon = [[UIImageView alloc] initWithFrame:CGRectMake(40, 123, 130, 120)];
     [_conditionsIcon setImage:[UIImage imageNamed:@"icon_cloudy"]];
+    [_conditionsIcon setHidden:YES];
     [self addSubview:_conditionsIcon];
 }
 
@@ -225,6 +230,7 @@
     [_temperatureLabel setBackgroundColor:[UIColor clearColor]];
     [_temperatureLabel setTextAlignment:NSTextAlignmentCenter];
 
+    [_temperatureLabelContainer setHidden:YES];
     [_temperatureLabelContainer addSubview:_temperatureLabel];
 }
 
