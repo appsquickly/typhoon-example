@@ -61,6 +61,10 @@
 		6B6ED14716FC9E3500429E57 /* TyphoonJRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6ED10F16FC9E3500429E57 /* TyphoonJRSwizzle.m */; };
 		6B6ED14816FC9E3500429E57 /* TyphoonIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6ED11116FC9E3500429E57 /* TyphoonIntrospectionUtils.m */; };
 		6B6ED14916FC9E3500429E57 /* TyphoonIntrospectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6ED11116FC9E3500429E57 /* TyphoonIntrospectionUtils.m */; };
+		6B9FABC016FEA9D800BABD3D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBE16FEA9D800BABD3D /* Default.png */; };
+		6B9FABC116FEA9D800BABD3D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBE16FEA9D800BABD3D /* Default.png */; };
+		6B9FABC216FEA9D800BABD3D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBF16FEA9D800BABD3D /* Default@2x.png */; };
+		6B9FABC316FEA9D800BABD3D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBF16FEA9D800BABD3D /* Default@2x.png */; };
 		6BA1400315B16B110071C7A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA1400215B16B110071C7A0 /* QuartzCore.framework */; };
 		6BC40C7016A2E05100A3C48E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE9745715AF01A3004472E2 /* CoreGraphics.framework */; };
 		6BE9230A15B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9230615B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m */; };
@@ -320,6 +324,8 @@
 		6B6ED11116FC9E3500429E57 /* TyphoonIntrospectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonIntrospectionUtils.m; sourceTree = "<group>"; };
 		6B6ED11216FC9E3500429E57 /* TyphoonIntrospectiveNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonIntrospectiveNSObject.h; sourceTree = "<group>"; };
 		6B6ED11316FC9E3500429E57 /* TyphoonTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonTestUtils.h; sourceTree = "<group>"; };
+		6B9FABBE16FEA9D800BABD3D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6B9FABBF16FEA9D800BABD3D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6BA1400215B16B110071C7A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6BE9230415B29E56002EF310 /* PFCityDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityDao.h; sourceTree = "<group>"; };
 		6BE9230515B29E56002EF310 /* PFCityDaoUserDefaultsImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityDaoUserDefaultsImpl.h; sourceTree = "<group>"; };
@@ -1073,6 +1079,8 @@
 		BA798EA69027CA008D70D92A /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				6B9FABBE16FEA9D800BABD3D /* Default.png */,
+				6B9FABBF16FEA9D800BABD3D /* Default@2x.png */,
 				BA798168A6832AA52892717E /* photo_background@2x.png */,
 				BA798AA1DEFB3C8006C73FBB /* temperature_circle.png */,
 				BA79890A042F3EF38A97A758 /* temperature_circle@2x.png */,
@@ -1192,6 +1200,8 @@
 				BA7985CD4B2D4332CB0C3135 /* Questrial-Regular.otf in Resources */,
 				BA798343E93DFA08479EE28A /* cell_fade@2x.png in Resources */,
 				BA798E5E4CB73163221DEBC0 /* cell_fade.png in Resources */,
+				6B9FABC016FEA9D800BABD3D /* Default.png in Resources */,
+				6B9FABC216FEA9D800BABD3D /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,6 +1235,8 @@
 				BA798B717FF47F1C41E3B473 /* Questrial-Regular.otf in Resources */,
 				BA798226B94C1135F8514958 /* cell_fade@2x.png in Resources */,
 				BA798CEE5480399D8DC61BB1 /* cell_fade.png in Resources */,
+				6B9FABC116FEA9D800BABD3D /* Default.png in Resources */,
+				6B9FABC316FEA9D800BABD3D /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1482,6 +1494,7 @@
 		6BE9748315AF01A3004472E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1495,7 +1508,8 @@
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = PocketForecast;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FBB592D3-16A1-47D8-85B5-A094BEFFE60F";
+				PROVISIONING_PROFILE = "EF452740-BBD7-4E41-8F35-AD0228133251";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF452740-BBD7-4E41-8F35-AD0228133251";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1503,6 +1517,7 @@
 		6BE9748415AF01A3004472E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1516,7 +1531,8 @@
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = PocketForecast;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FBB592D3-16A1-47D8-85B5-A094BEFFE60F";
+				PROVISIONING_PROFILE = "EF452740-BBD7-4E41-8F35-AD0228133251";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF452740-BBD7-4E41-8F35-AD0228133251";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
