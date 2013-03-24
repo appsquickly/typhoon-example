@@ -11,11 +11,13 @@
 
 #import <Foundation/Foundation.h>
 @class PFWeatherReport;
+@protocol PFWeatherReportViewDelegate;
 
 
 @interface PFWeatherReportView : UIView<UITableViewDelegate, UITableViewDataSource>
 {
     UIImageView* _backgroundView;
+    UIActivityIndicatorView* _spinner;
     UILabel* _cityNameLabel;
     UILabel* _conditionsDescriptionLabel;
     UIImageView* _conditionsIcon;
@@ -29,8 +31,16 @@
 
     PFWeatherReport* _weatherReport;
 
+    __weak id<PFWeatherReportViewDelegate> _delegate;
+
 }
 
 - (void)setWeatherReport:(PFWeatherReport*)weatherReport;
+
+- (void)setDelegate:(id<PFWeatherReportViewDelegate>)delegate;
+
+- (void)showSpinner;
+
+- (void)hideSpinner;
 
 @end

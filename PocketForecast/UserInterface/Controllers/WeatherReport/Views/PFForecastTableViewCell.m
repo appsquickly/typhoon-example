@@ -59,7 +59,7 @@
 
 - (void)initConditionsIcon
 {
-    _conditionsIcon = [[UIImageView alloc] initWithFrame:CGRectMake(6, 10, 60 - 12, 50 - 12)];
+    _conditionsIcon = [[UIImageView alloc] initWithFrame:CGRectMake(6, 7, 60 - 12, 50 - 12)];
     [_conditionsIcon setClipsToBounds:YES];
     [_conditionsIcon setContentMode:UIViewContentModeScaleAspectFit];
     [_conditionsIcon setImage:[UIImage imageNamed:@"icon_cloudy"]];
@@ -86,7 +86,7 @@
 
 - (void)initHighTempLabel
 {
-    _highTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 10, 40, 30)];
+    _highTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(235, 10, 40, 30)];
     [_highTempLabel setFont:[UIFont temperatureFontOfSize:27]];
     [_highTempLabel setTextColor:UIColorFromRGB(0xffffff)];
     [_highTempLabel setBackgroundColor:[UIColor clearColor]];
@@ -95,7 +95,7 @@
 
 - (void)initLowTempLabel
 {
-    _lowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 11.5, 40, 30)];
+    _lowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(280, 11.5, 40, 30)];
     [_lowTempLabel setFont:[UIFont temperatureFontOfSize:20]];
     [_lowTempLabel setTextColor:UIColorFromRGB(0xd9d1bd)];
     [_lowTempLabel setBackgroundColor:[UIColor clearColor]];

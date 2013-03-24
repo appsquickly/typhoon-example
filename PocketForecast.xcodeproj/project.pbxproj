@@ -171,6 +171,7 @@
 		BA7985BD57A6F911C135B167 /* temperature_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79890A042F3EF38A97A758 /* temperature_circle@2x.png */; };
 		BA7985CD4B2D4332CB0C3135 /* Questrial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA798E9E3746332B48394016 /* Questrial-Regular.otf */; };
 		BA7985DDFC13965C2EDE6776 /* PFAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C7B558024C0786FA923 /* PFAddCityViewController.m */; };
+		BA79860FEC9AC1CECD9B31DE /* PFWeatherReportViewDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79805C0A0C2453D9AF3841 /* PFWeatherReportViewDelegate.h */; };
 		BA7986415862710E9FE5228F /* PFAssembly+ViewControllers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798532D57FFA927BCA2C8C /* PFAssembly+ViewControllers.h */; };
 		BA798655FF08CCF03AAFAEC7 /* icon_windy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7989A03B709D5789A1ACE2 /* icon_windy@2x.png */; };
 		BA7986AD4FEED10C82D5ADFC /* icon_windy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79841E09AFC834B5DB666E /* icon_windy.png */; };
@@ -247,6 +248,7 @@
 				BA798C217A1573AF81A1391B /* WebColors.h in CopyFiles */,
 				BA7980C5EEFBEF778B9E828D /* PFForecastTableViewCell.h in CopyFiles */,
 				BA7984FF0A9F73DF0DFC0610 /* PFCityLabelTableViewCell.h in CopyFiles */,
+				BA79860FEC9AC1CECD9B31DE /* PFWeatherReportViewDelegate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +397,7 @@
 		6BEE7A39169992D70042D0B5 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
 		6BEE7ACD1699961F0042D0B5 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = ../External/OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		BA7980523B805CF697C4D409 /* UIFont+ApplicationFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ApplicationFonts.h"; sourceTree = "<group>"; };
+		BA79805C0A0C2453D9AF3841 /* PFWeatherReportViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportViewDelegate.h; sourceTree = "<group>"; };
 		BA7980D610AB0AE04C4A3E99 /* icon_partly_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_partly_cloudy.png; sourceTree = "<group>"; };
 		BA798162CA41E6D4902A2BD5 /* icon_rainy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_rainy@2x.png"; sourceTree = "<group>"; };
 		BA798168A6832AA52892717E /* photo_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_background@2x.png"; sourceTree = "<group>"; };
@@ -1050,6 +1053,7 @@
 				BA798945DD532BA1BD7FE30A /* PFWeatherReportViewController.m */,
 				BA798F27FD489318A1210076 /* PFWeatherReportViewController.h */,
 				BA798AE679659C7CC95C40E8 /* Views */,
+				BA79805C0A0C2453D9AF3841 /* PFWeatherReportViewDelegate.h */,
 			);
 			path = WeatherReport;
 			sourceTree = "<group>";

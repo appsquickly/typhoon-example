@@ -49,14 +49,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [_presentCitiesViewButton setAction:@selector(presentCitiesView)];
-    [_refreshReportButton setAction:@selector(retrieveRemoteReport)];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-//    [_activityIndicatorCell startAnimating];
+    [(PFWeatherReportView*) self.view setDelegate:self];
     _cityName = [_cityDao getCurrentlySelectedCity];
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
@@ -65,7 +58,7 @@
     }
     else
     {
-        [self retrieveRemoteReport];
+        [self refreshData];
     }
 }
 
@@ -78,19 +71,20 @@
 
 
 /* ============================================================ Private Methods ========================================================= */
-- (void)retrieveRemoteReport
+- (void)refreshData
 {
     __weak PFWeatherReportView* view = (PFWeatherReportView*) self.view;
-//    [_activityIndicatorCell startAnimating];
+    [view showSpinner];
     [_weatherClient loadWeatherReportFor:_cityName onSuccess:^(PFWeatherReport* report)
     {
+        LogDebug(@"Got report: %@", report);
         [view setWeatherReport:report];
+        [view hideSpinner];
     } onError:nil];
 }
 
-- (void)presentCitiesView
+- (void)presentCitiesList
 {
-
     [_cityDao clearCurrentlySelectedCity];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;

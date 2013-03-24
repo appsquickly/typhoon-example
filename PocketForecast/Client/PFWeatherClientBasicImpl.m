@@ -49,22 +49,11 @@
 - (void)loadWeatherReportFor:(NSString*)city onSuccess:(PFWeatherReportReceivedBlock)successBlock
         onError:(PFWeatherReportErrorBlock)errorBlock;
 {
-    NSDictionary* parameters = [[NSMutableDictionary alloc] init];
-    [parameters setValue:city forKey:@"q"];
-    [parameters setValue:@"xml" forKey:@"format"];
-    [parameters setValue:[NSString stringWithFormat:@"%i", _daysToRetrieve] forKey:@"num_of_days"];
-    [parameters setValue:_apiKey forKey:@"key"];
-
-    [_client get:_serviceUrl parameters:parameters withBlock:^(LRRestyResponse* response)
+    [_client get:_serviceUrl parameters:[self requestParameters:city] withBlock:^(LRRestyResponse* response)
     {
-
         if (response.status == 200)
         {
-
-            NSString* xmlResponse = [[NSString alloc] initWithData:response.responseData encoding:NSASCIIStringEncoding];
-            LogDebug(@"XML response: %@", xmlResponse);
-
-            RXMLElement* rootElement = [RXMLElement elementFromXMLString:xmlResponse encoding:NSUTF8StringEncoding];
+            RXMLElement* rootElement = [RXMLElement elementFromXMLData:response.responseData];
             RXMLElement* error = [rootElement child:@"error"];
             if (error)
             {
@@ -86,5 +75,15 @@
 
 }
 
+/* ============================================================ Private Methods ========================================================= */
+- (NSDictionary*)requestParameters:(NSString*)city
+{
+    NSDictionary* parameters = [[NSMutableDictionary alloc] init];
+    [parameters setValue:city forKey:@"q"];
+    [parameters setValue:@"xml" forKey:@"format"];
+    [parameters setValue:[NSString stringWithFormat:@"%i", _daysToRetrieve] forKey:@"num_of_days"];
+    [parameters setValue:_apiKey forKey:@"key"];
+    return parameters;
+}
 
 @end

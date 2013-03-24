@@ -13,13 +13,14 @@
 
 #import <Foundation/Foundation.h>
 #import "PFWeatherClient.h"
+#import "PFWeatherReportViewDelegate.h"
 
 @class PFWeatherReport;
 @protocol PFWeatherReportDao;
 @protocol PFCityDao;
 
 
-@interface PFWeatherReportViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate>
 {
 
     PFWeatherReport* _weatherReport;
@@ -31,11 +32,6 @@
 @property(nonatomic, strong, readonly) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
 
-#pragma mark - Interface Builder injected properties.
-@property(nonatomic, weak) IBOutlet UIBarButtonItem* presentCitiesViewButton;
-@property(nonatomic, weak) IBOutlet UIBarButtonItem* refreshReportButton;
-@property(nonatomic, weak) IBOutlet UILabel* statusMessageLabel;
-@property(nonatomic, weak) IBOutlet UIImageView* currentConditionsImageView;
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
         cityDao:(id <PFCityDao>)cityDao;
