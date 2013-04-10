@@ -9,11 +9,18 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#define assertWillHappen(__expression__) \
-[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];\
-if ((__expression__) == NO) [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];\
-if ((__expression__) == NO) [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];\
-if ((__expression__) == NO) [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];\
-if ((__expression__) == NO) [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];\
-if ((__expression__) == NO) [NSException raise:NSInternalInconsistencyException \
-format:@"Expression did not occur before timeout."];
+
+#import <Foundation/Foundation.h>
+
+#define typhoon_asynch_condition(expression) return expression;
+
+@interface TyphoonTestUtils : NSObject
+
++ (void)waitForCondition:(BOOL (^)())condition;
+
++ (void)waitForCondition:(BOOL (^)())condition andPerformTests:(void (^)())assertions;
+
++ (void)wait:(NSTimeInterval)seconds secondsForCondition:(BOOL (^)())condition andPerformTests:(void (^)())assertions;
+
+
+@end

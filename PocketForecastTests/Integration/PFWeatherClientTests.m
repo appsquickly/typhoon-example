@@ -46,8 +46,16 @@
     {
         LogDebug(@"Got this error: %@", message);
     }];
-    assertWillHappen(retrievedReport != nil);
-    LogDebug(@"################### Result: %@", retrievedReport);
+
+    [TyphoonTestUtils waitForCondition:^BOOL
+    {
+        typhoon_asynch_condition(retrievedReport != nil);
+    } andPerformTests:^
+    {
+        LogDebug(@"################### Result: %@", retrievedReport);
+        assertThat(retrievedReport.forecast, isNot(empty()));
+    }];
+
 }
 
 
@@ -59,8 +67,15 @@
     {
         errorMessage = message;
     }];
-    assertWillHappen(errorMessage != nil);
-    assertThat(errorMessage, equalTo(@"Unable to find any matching weather location to the query submitted!"));
+
+    [TyphoonTestUtils waitForCondition:^BOOL
+    {
+        typhoon_asynch_condition(errorMessage != nil);
+    } andPerformTests:^
+    {
+        assertThat(errorMessage, equalTo(@"Unable to find any matching weather location to the query submitted!"));
+    }];
+
 }
 
 
