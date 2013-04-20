@@ -80,7 +80,11 @@
         LogDebug(@"Got report: %@", report);
         [view setWeatherReport:report];
         [view hideSpinner];
-    } onError:nil];
+    } onError:^(NSUInteger statusCode, NSString* message)
+    {
+        [view hideSpinner];
+        LogDebug(@"Error (status code %d): %@", statusCode, message);
+    }];
 }
 
 - (void)presentCitiesList
