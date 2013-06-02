@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  Copyright 2013 Jasper Blues
 //  All Rights Reserved.
 //
 //  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
@@ -10,35 +10,26 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
+#import "TyphoonByReferenceCollectionValue.h"
 
 
-#import "TyphoonPropertyInjectedByReference.h"
-
-
-@implementation TyphoonPropertyInjectedByReference
-{
-
-}
+@implementation TyphoonByReferenceCollectionValue
 
 /* ============================================================ Initializers ============================================================ */
-- (id)initWithName:(NSString*)name reference:(NSString*)reference
+- (id)initWithComponentName:(NSString*)componentName
 {
     self = [super init];
     if (self)
     {
-        _name = name;
-        _reference = reference;
+        _componentName = componentName;
     }
     return self;
 }
 
-/* =========================================================== Protocol Methods ========================================================= */
-- (TyphoonPropertyInjectionType)injectionType
+
+- (TyphoonCollectionValueType)type
 {
-    return TyphoonPropertyInjectionByReferenceType;
+    return TyphoonCollectionValueTypeByReference;
 }
-
-
-
 
 @end

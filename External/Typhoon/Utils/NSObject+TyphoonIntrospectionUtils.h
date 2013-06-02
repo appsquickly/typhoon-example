@@ -19,6 +19,8 @@
 
 @interface NSObject (TyphoonIntrospectionUtils) <TyphoonIntrospectiveNSObject>
 
+@property(nonatomic, strong, readonly) NSMutableDictionary* circularDependentProperties;
+
 /**
 * Returns a Class object or `TyphoonTypeDescriptor` in the case of a primitive type.
 */
@@ -31,6 +33,8 @@
 - (NSArray*)typeCodesForSelector:(SEL)selector;
 
 - (NSArray*)typeCodesForSelector:(SEL)selector onClass:(Class)class;
+
+
 
 
 @end

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  Copyright 2013 Jasper Blues
 //  All Rights Reserved.
 //
 //  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
@@ -11,22 +11,14 @@
 
 
 
-
 #import <Foundation/Foundation.h>
-#import "TyphoonIntrospectiveNSObject.h"
+#import "TyphoonCollectionValue.h"
 
-typedef enum
-{
-    TyphoonPropertyInjectionByReferenceType,
-    TyphoonPropertyInjectionByTypeType,
-    TyphoonPropertyInjectionByValueType,
-    TyphoonPropertyInjectionAsCollection
-} TyphoonPropertyInjectionType;
+@interface TyphoonByReferenceCollectionValue : NSObject<TyphoonCollectionValue>
 
-@protocol TyphoonInjectedProperty <NSObject>
+@property (nonatomic, strong, readonly) NSString* componentName;
 
-- (NSString*)name;
+- (id)initWithComponentName:(NSString*)componentName;
 
-- (TyphoonPropertyInjectionType)injectionType;
 
 @end

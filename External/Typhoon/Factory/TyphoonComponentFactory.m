@@ -15,7 +15,6 @@
 #import "TyphoonComponentFactory.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonComponentFactory+InstanceBuilder.h"
-#import "TyphoonIntrospectionUtils.h"
 
 
 @interface TyphoonDefinition (TyphoonComponentFactory)
@@ -43,7 +42,7 @@ static TyphoonComponentFactory* defaultFactory;
     {
         _registry = [[NSMutableArray alloc] init];
         _singletons = [[NSMutableDictionary alloc] init];
-        _currentlyResolvingReferences = [[NSMutableSet alloc] init];
+        _currentlyResolvingReferences = [[NSMutableDictionary alloc] init];
         _mutators = [[NSMutableArray alloc] init];
         _hasPerformedMutations = NO;
     }
@@ -76,50 +75,18 @@ static TyphoonComponentFactory* defaultFactory;
 
 - (id)componentForType:(id)classOrProtocol
 {
-    NSArray* candidates = [self allComponentsForType:classOrProtocol];
-    if ([candidates count] == 0)
-    {
-        if (class_isMetaClass(object_getClass(classOrProtocol)) &&
-                [classOrProtocol respondsToSelector:@selector(typhoonAutoInjectedProperties)])
-        {
-            NSLog(@"Class %@ wants auto-wiring. . . registering.", NSStringFromClass(classOrProtocol));
-            [self register:[TyphoonDefinition withClass:classOrProtocol]];
-            return [self componentForType:classOrProtocol];
-        }
-        [NSException raise:NSInvalidArgumentException format:@"No components defined which satisify type: '%@'",
-                                                             TyphoonTypeStringFor(classOrProtocol)];
-    }
-    if ([candidates count] > 1)
-    {
-        [NSException raise:NSInvalidArgumentException format:@"More than one component is defined satisfying type: '%@'", classOrProtocol];
-    }
-    return [candidates objectAtIndex:0];
+    return [self objectForDefinition:[self definitionForType:classOrProtocol]];
 }
 
 - (NSArray*)allComponentsForType:(id)classOrProtocol
 {
     [self performMutationsIfRequired];
     NSMutableArray* results = [[NSMutableArray alloc] init];
-    BOOL isClass = class_isMetaClass(object_getClass(classOrProtocol));
-
-    for (TyphoonDefinition* definition in _registry)
+    NSArray* definitions = [self allDefinitionsForType:classOrProtocol];
+    NSLog(@"Definitions: %@", definitions);
+    for (TyphoonDefinition* definition in definitions)
     {
-        if (isClass)
-        {
-            if (definition.type == classOrProtocol || [definition.type isSubclassOfClass:classOrProtocol])
-            {
-                [self assertNotCircularDependency:definition.key];
-                [results addObject:[self objectForDefinition:definition]];
-            }
-        }
-        else
-        {
-            if ([definition.type conformsToProtocol:classOrProtocol])
-            {
-                [self assertNotCircularDependency:definition.key];
-                [results addObject:[self objectForDefinition:definition]];
-            }
-        }
+        [results addObject:[self objectForDefinition:definition]];
     }
     [_currentlyResolvingReferences removeAllObjects];
     return [results copy];
@@ -131,7 +98,6 @@ static TyphoonComponentFactory* defaultFactory;
     if (key)
     {
         [self performMutationsIfRequired];
-        [self assertNotCircularDependency:key];
         TyphoonDefinition* definition = [self definitionForKey:key];
         if (!definition)
         {
@@ -164,6 +130,16 @@ static TyphoonComponentFactory* defaultFactory;
     [_mutators addObject:mutator];
 }
 
+- (void)injectProperties:(id)instance {
+    Class class = [instance class];
+    for (TyphoonDefinition* definition in _registry)
+    {
+        if(definition.type == class)
+        {
+            [self injectPropertyDependenciesOn:instance withDefinition:definition];
+        }
+    }
+}
 
 /* ============================================================ Utility Methods ========================================================= */
 - (NSString*)description
@@ -214,15 +190,6 @@ static TyphoonComponentFactory* defaultFactory;
     return nil;
 }
 
-- (void)assertNotCircularDependency:(NSString*)key
-{
-    if ([_currentlyResolvingReferences containsObject:key])
-    {
-        [NSException raise:NSInvalidArgumentException format:@"Circular dependency detected: %@", _currentlyResolvingReferences];
-    }
-    [_currentlyResolvingReferences addObject:key];
-}
-
 - (void)performMutationsIfRequired
 {
     @synchronized (self)
@@ -238,5 +205,7 @@ static TyphoonComponentFactory* defaultFactory;
         }
     }
 }
+
+
 
 @end

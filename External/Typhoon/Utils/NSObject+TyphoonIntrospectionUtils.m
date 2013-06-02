@@ -17,34 +17,13 @@
 #import "TyphoonIntrospectionUtils.h"
 
 
+static char const* const CIRCULAR_DEPENDENCIES_KEY = "typhoon.injectLater";
+
 @implementation NSObject (TyphoonIntrospectionUtils)
 
 - (TyphoonTypeDescriptor*)typeForPropertyWithName:(NSString*)propertyName;
 {
-    TyphoonTypeDescriptor* typeDescriptor = nil;
-    objc_property_t propertyReflection = class_getProperty([self class], [propertyName UTF8String]);
-    if (propertyReflection)
-    {
-        const char* attrs = property_getAttributes(propertyReflection);
-        if (attrs == NULL)
-        {
-            return (NULL);
-        }
-
-        static char buffer[256];
-        const char* e = strchr(attrs, ',');
-        if (e == NULL)
-        {
-            return (NULL);
-        }
-
-        int len = (int) (e - attrs);
-        memcpy( buffer, attrs, len );
-        buffer[len] = '\0';
-
-        typeDescriptor = [TyphoonTypeDescriptor descriptorWithTypeCode:[NSString stringWithCString:buffer encoding:NSUTF8StringEncoding]];
-    }
-    return typeDescriptor;
+    return [TyphoonIntrospectionUtils typeForPropertyWithName:propertyName inClass:[self class]];
 }
 
 - (SEL)setterForPropertyWithName:(NSString*)propertyName
@@ -93,5 +72,18 @@
 {
     return [TyphoonIntrospectionUtils typeCodesForSelector:selector ofClass:[self class] isClassMethod:NO];
 }
+
+- (NSMutableDictionary*)circularDependentProperties
+{
+    NSMutableDictionary* circularDependentProperties = objc_getAssociatedObject(self, &CIRCULAR_DEPENDENCIES_KEY);
+    if (circularDependentProperties == nil)
+    {
+        circularDependentProperties = [[NSMutableDictionary alloc] init];
+        objc_setAssociatedObject(self, &CIRCULAR_DEPENDENCIES_KEY, circularDependentProperties, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return circularDependentProperties;
+}
+
+
 
 @end

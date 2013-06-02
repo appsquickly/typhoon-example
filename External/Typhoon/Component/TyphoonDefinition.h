@@ -15,6 +15,7 @@
 @class TyphoonInitializer;
 @class TyphoonDefinition;
 @protocol TyphoonInjectedProperty;
+@class TyphoonPropertyInjectedAsCollection;
 
 typedef enum
 {
@@ -63,10 +64,24 @@ typedef enum
 /* ====================================================================================================================================== */
 #pragma mark Injection
 
+/**
+* Injects property with a component from the container that matches the type (class or protocol) of the property.
+*/
 - (void)injectProperty:(SEL)withSelector;
 
+/**
+* Injects property with the given definition.
+*/
+- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition;
+
+/**
+* Injects property with the value represented by the given text. The text will be used to create an instance of a class matching the
+* required type.
+*
+* @see TyphoonTypeConverterRegistry for details on declaring your own type converters.
+*/
 - (void)injectProperty:(SEL)withSelector withValueAsText:(NSString*)textValue;
 
-- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition;
+- (void)injectProperty:(SEL)withSelector asCollection:(void (^)(TyphoonPropertyInjectedAsCollection*))collectionValues;
 
 @end

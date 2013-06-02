@@ -16,6 +16,7 @@
 #import "TyphoonPropertyInjectedByValue.h"
 #import "TyphoonInitializer+InstanceBuilder.h"
 #import "TyphoonDefinition+InstanceBuilder.h"
+#import "TyphoonPropertyInjectedAsCollection.h"
 
 
 @implementation TyphoonDefinition
@@ -112,11 +113,27 @@
     [_injectedProperties addObject:[[TyphoonPropertyInjectedByType alloc] initWithName:NSStringFromSelector(selector)]];
 }
 
-
-
 - (void)injectProperty:(SEL)selector withValueAsText:(NSString*)textValue
 {
     [_injectedProperties addObject:[[TyphoonPropertyInjectedByValue alloc] initWithName:NSStringFromSelector(selector) value:textValue]];
+}
+
+- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition
+{
+    [self injectProperty:selector withReference:definition.key];
+}
+
+- (void)injectProperty:(SEL)withSelector asCollection:(void (^)(TyphoonPropertyInjectedAsCollection*))collectionValues;
+{
+    TyphoonPropertyInjectedAsCollection* propertyInjectedAsCollection =
+            [[TyphoonPropertyInjectedAsCollection alloc] initWithName:NSStringFromSelector(withSelector)];
+
+    if (collectionValues)
+    {
+        __unsafe_unretained TyphoonPropertyInjectedAsCollection* weakPropertyInjectedAsCollection = propertyInjectedAsCollection;
+        collectionValues(weakPropertyInjectedAsCollection);
+    }
+    [_injectedProperties addObject:propertyInjectedAsCollection];
 }
 
 
@@ -138,12 +155,6 @@
 }
 
 
-/* ====================================================================================================================================== */
-- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition
-{
-    [self injectProperty:selector withReference:definition.key];
-}
-
 /* ============================================================ Utility Methods ========================================================= */
 - (NSString*)description
 {
@@ -164,7 +175,6 @@
         [NSException raise:NSInvalidArgumentException format:@"Property 'clazz' is required."];
     }
 }
-
 
 
 @end

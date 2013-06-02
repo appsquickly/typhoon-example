@@ -19,6 +19,7 @@
 #import "TyphoonPropertyInjectedByType.h"
 #import "TyphoonInitializer.h"
 #import "TyphoonDefinition+InstanceBuilder.h"
+#import "TyphoonPropertyInjectedAsCollection.h"
 
 @implementation TyphoonRXMLElement (XmlComponentFactory)
 
@@ -41,7 +42,7 @@
     return definition;
 }
 
-
+//TODO: Method too long, clean it up.
 - (id <TyphoonInjectedProperty>)asInjectedProperty
 {
     [self assertTagName:@"property"];
@@ -49,6 +50,12 @@
     NSString* propertyName = [self attribute:@"name"];
     NSString* referenceName = [self attribute:@"ref"];
     NSString* value = [self attribute:@"value"];
+
+    TyphoonRXMLElement* collection = [self child:@"collection"];
+    if ((referenceName || value) && collection)
+    {
+        [NSException raise:NSInvalidArgumentException format:@"'ref' and 'value' attributes cannot be used with 'collection'"];
+    }
 
     id <TyphoonInjectedProperty> injectedProperty = nil;
     if (referenceName && value)
@@ -68,12 +75,36 @@
     {
         injectedProperty = [[TyphoonPropertyInjectedByValue alloc] initWithName:propertyName value:value];
     }
+    else if (collection)
+    {
+        TyphoonPropertyInjectedAsCollection* property = [[TyphoonPropertyInjectedAsCollection alloc] initWithName:propertyName];
+        [collection iterate:@"*" usingBlock:^(TyphoonRXMLElement* child)
+        {
+            if ([[child tag] isEqualToString:@"ref"])
+            {
+                [property addItemWithComponentName:[child text]];
+            }
+            else if ([[child tag] isEqualToString:@"value"])
+            {
+                Class type = NSClassFromString([child attribute:@"requiredType"]);
+                if (!type)
+                {
+                    [NSException raise:NSInvalidArgumentException format:@"Type '%@' could not be resolved.",
+                                                                         [child attribute:@"requiredType"]];
+                }
+                [property addItemWithText:[child text] requiredType:type];
+            }
+        }];
+        NSLog(@"$$$$$$$$$$$$$$ Here's the injected property: %@", property);
+        injectedProperty = property;
+    }
     else
     {
         injectedProperty = [[TyphoonPropertyInjectedByType alloc] initWithName:propertyName];
     }
     return injectedProperty;
 }
+
 
 - (TyphoonInitializer*)asInitializer
 {
@@ -127,7 +158,6 @@
 }
 
 
-
 - (void)parseComponentDefinitionChildren:(TyphoonDefinition*)componentDefinition
 {
     [self iterate:@"*" usingBlock:^(TyphoonRXMLElement* child)
@@ -155,12 +185,27 @@
 - (void)setArgumentOnInitializer:(TyphoonInitializer*)initializer withChildTag:(TyphoonRXMLElement*)child
 {
     NSString* name = [child attribute:@"parameterName"];
+    NSString* index = [child attribute:@"index"];
+
+    if (name && index)
+    {
+        [NSException raise:NSInvalidArgumentException format:@"'parameterName' and 'index' cannot be used together"];
+    }
+
     NSString* reference = [child attribute:@"ref"];
     NSString* value = [child attribute:@"value"];
 
     if (reference)
     {
-        [initializer injectParameterNamed:name withReference:reference];
+        if (name)
+        {
+            [initializer injectParameterNamed:name withReference:reference];
+        }
+        else if (index)
+        {
+            [initializer injectParameterAtIndex:[index integerValue] withReference:reference];
+        }
+
     }
     else if (value)
     {
@@ -174,7 +219,15 @@
                 [NSException raise:NSInvalidArgumentException format:@"Class '%@' could not be resolved.", classAsString];
             }
         }
-        [initializer injectParameterNamed:name withValueAsText:value requiredTypeOrNil:clazz];
+        if (name)
+        {
+            [initializer injectParameterNamed:name withValueAsText:value requiredTypeOrNil:clazz];
+        }
+        else if (index)
+        {
+            [initializer injectParameterAtIndex:[index integerValue] withValueAsText:value requiredTypeOrNil:clazz];
+        }
+
     }
 }
 

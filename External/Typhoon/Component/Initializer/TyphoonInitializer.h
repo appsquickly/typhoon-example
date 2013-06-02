@@ -44,7 +44,7 @@ typedef enum
 
 - (void)injectParameterNamed:(NSString*)name withValueAsText:(NSString*)text requiredTypeOrNil:(id)classOrProtocol;
 
-- (void)injectParameterAt:(NSUInteger)index withValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredClass;
+- (void)injectParameterAtIndex:(NSUInteger)index withValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredClass;
 
 
 /* ====================================================================================================================================== */
@@ -60,4 +60,9 @@ typedef enum
 
 - (void)injectParameterAtIndex:(NSUInteger)index1 withDefinition:(TyphoonDefinition*)definition;
 
+- (void)injectParameterAtIndex:(NSUInteger)index withValue:(id)value;
+
+- (void)injectParameterNamed:(NSString*)name withValue:(id)value;
+
+- (void)injectParameterWithValue:(id)value;
 @end
