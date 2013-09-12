@@ -11,7 +11,7 @@
         <description>
             This is component retrieves weather reports from the cloud-service.
         </description>
-        <property name="serviceUrl" value="http://free.worldweatheronline.com/feed/weather.ashx"/>
+        <property name="serviceUrl" value="http://api.worldweatheronline.com/free/v1/weather.ashx"/>
         <property name="apiKey" value="${api.key}"/>
         <property name="daysToRetrieve" value="5"/>
         <property name="weatherReportDao" ref="weatherReportDao"/>
