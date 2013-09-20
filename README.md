@@ -3,7 +3,7 @@ Typhoon-example
 
 An example application built with <a href ="http://www.typhoonframework.org">Typhoon</a>.
 
-NB: Haven't updated UI for iOS7 yet. Anyone want to send a pull-request ? 
+***NB: Haven't updated UI for iOS7 yet. Anyone want to send a pull-request ?***
 
 ###Features: 
 
