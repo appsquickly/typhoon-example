@@ -37,7 +37,7 @@
 //    factory = ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil]);
 
     id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
-    [factory attachMutator:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
+    [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
     [factory makeDefault];
 
     id <PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];

@@ -1,0 +1,32 @@
+PODS:
+  - Expecta (0.2.3)
+  - LRResty (0.11.0):
+    - NSData+Base64 (~> 1.0)
+  - NSData+Base64 (1.0.0)
+  - OCHamcrest (3.0.1)
+  - OCLogTemplate (1.0)
+  - OCMockito (1.1.0):
+    - OCHamcrest (~> 3.0)
+  - RaptureXML (1.0.1)
+  - Typhoon (1.5.3)
+
+DEPENDENCIES:
+  - Expecta (~> 0.2.1)
+  - LRResty
+  - OCHamcrest
+  - OCLogTemplate
+  - OCMockito
+  - RaptureXML
+  - Typhoon
+
+SPEC CHECKSUMS:
+  Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
+  LRResty: 5e4c1b91bc5f878d64e965facd5cc9320b9ed3e2
+  NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
+  OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
+  OCLogTemplate: d448f0a0c7e34e715e0400fc04c6bd871b8c17f4
+  OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
+  RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
+  Typhoon: 486a9507a0d7d674e3dc023e77603fefd02aedd3
+
+COCOAPODS: 0.28.0

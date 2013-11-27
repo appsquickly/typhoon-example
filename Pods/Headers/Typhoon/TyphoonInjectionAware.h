@@ -1,0 +1,1 @@
+../../Typhoon/Source/Component/TyphoonInjectionAware.h

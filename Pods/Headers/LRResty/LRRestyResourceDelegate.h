@@ -1,0 +1,1 @@
+../../LRResty/Classes/LRRestyResourceDelegate.h
