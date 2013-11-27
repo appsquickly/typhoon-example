@@ -104,7 +104,7 @@
             LogDebug(@"Got weather report: %@", weatherReport);
             [cityDao saveCity:[weatherReport cityDisplayName]];
             [weatherClientDelegate dismissViewControllerAnimated:YES completion:nil];
-        } onError:^(NSUInteger statusCode, NSString* message)
+        } onError:^(NSString* message)
         {
             [_spinner stopAnimating];
             [_nameOfCityToAdd setEnabled:YES];

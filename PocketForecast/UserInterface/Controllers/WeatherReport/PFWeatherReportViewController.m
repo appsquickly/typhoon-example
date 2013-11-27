@@ -81,10 +81,10 @@
         LogDebug(@"Got report: %@", report);
         [view setWeatherReport:report];
         [view hideSpinner];
-    } onError:^(NSUInteger statusCode, NSString* message)
+    } onError:^(NSString* message)
     {
         [view hideSpinner];
-        LogDebug(@"Error (status code %d): %@", statusCode, message);
+        LogDebug(@"Error %@", message);
     }];
 }
 

@@ -19,7 +19,7 @@
 
 typedef void(^PFWeatherReportReceivedBlock)(PFWeatherReport* report);
 
-typedef void(^PFWeatherReportErrorBlock)(NSUInteger errorCode, NSString* message);
+typedef void(^PFWeatherReportErrorBlock)(NSString* message);
 
 /* ====================================================================================================================================== */
 
@@ -29,6 +29,6 @@ typedef void(^PFWeatherReportErrorBlock)(NSUInteger errorCode, NSString* message
 @protocol PFWeatherClient <NSObject>
 
 - (void)loadWeatherReportFor:(NSString*)city onSuccess:(PFWeatherReportReceivedBlock)successBlock
-        onError:(PFWeatherReportErrorBlock)errorBlock;
+    onError:(PFWeatherReportErrorBlock)errorBlock;
 
 @end

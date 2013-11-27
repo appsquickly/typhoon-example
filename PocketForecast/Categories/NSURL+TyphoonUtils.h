@@ -9,25 +9,10 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
 #import <Foundation/Foundation.h>
-#import "PFWeatherClient.h"
 
-@class LRRestyClient;
-@protocol PFWeatherReportDao;
+@interface NSURL (TyphoonUtils)
 
-
-@interface PFWeatherClientBasicImpl : NSObject <PFWeatherClient>
-{
-
-    LRRestyClient* _client;
-}
-
-@property(nonatomic, strong) id <PFWeatherReportDao> weatherReportDao;
-@property(nonatomic, strong) NSURL* serviceUrl;
-@property(nonatomic, strong) NSString* apiKey;
-@property(nonatomic) int daysToRetrieve;
-
+- (NSURL*)URLByAppendingQueryParameters:(NSDictionary*)parameters;
 
 @end

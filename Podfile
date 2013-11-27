@@ -2,7 +2,6 @@ platform :ios, '6.0'
 
 target :PocketForecast, :exclusive => true do
 
-  pod 'LRResty'
   pod 'Typhoon'
   pod 'OCLogTemplate'
   pod 'RaptureXML'
