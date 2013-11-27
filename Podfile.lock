@@ -5,7 +5,7 @@ PODS:
   - OCMockito (1.1.0):
     - OCHamcrest (~> 3.0)
   - RaptureXML (1.0.1)
-  - Typhoon (1.5.3)
+  - Typhoon (1.5.5)
 
 DEPENDENCIES:
   - Expecta (~> 0.2.1)
@@ -21,6 +21,6 @@ SPEC CHECKSUMS:
   OCLogTemplate: d448f0a0c7e34e715e0400fc04c6bd871b8c17f4
   OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
   RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
-  Typhoon: 486a9507a0d7d674e3dc023e77603fefd02aedd3
+  Typhoon: d7e8670687d9fdf0afaa8d1a600783c2423c5abc
 
 COCOAPODS: 0.28.0

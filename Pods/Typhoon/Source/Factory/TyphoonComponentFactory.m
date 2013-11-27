@@ -186,6 +186,10 @@ static TyphoonComponentFactory* defaultFactory;
 {
     LogTrace(@"Attaching post processor: %@", postProcessor);
     [_postProcessors addObject:postProcessor];
+    if ([self isLoaded]) {
+        LogDebug(@"Definitions registered, refreshing all singletons.");
+        [self unload];
+    }
 }
 
 - (void)injectProperties:(id)instance
@@ -224,10 +228,10 @@ static TyphoonComponentFactory* defaultFactory;
         [postProcessor postProcessComponentFactory:self];
     }];
 
-    // Then, we instanciate the not-lazy singletons.
+    // Then, we instantiate the not-lazy singletons.
     [_registry enumerateObjectsUsingBlock:^(id definition, NSUInteger idx, BOOL* stop)
     {
-        if (([definition scope] == TyphoonScopeSingleton)&&![definition isLazy])
+        if (([definition scope] == TyphoonScopeSingleton) && ![definition isLazy])
         {
             [self singletonForDefinition:definition];
         }

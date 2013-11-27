@@ -19,10 +19,7 @@
 
 
 @interface PFWeatherClientBasicImpl : NSObject <PFWeatherClient>
-{
 
-    LRRestyClient* _client;
-}
 
 @property(nonatomic, strong) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong) NSURL* serviceUrl;

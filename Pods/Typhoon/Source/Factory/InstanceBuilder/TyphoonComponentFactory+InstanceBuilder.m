@@ -35,6 +35,8 @@
 #import "TyphoonInjectionAware.h"
 #import "TyphoonParameterInjectedAsCollection.h"
 #import "TyphoonInstanceRegister.h"
+#import "TyphoonDefinitionRegisterer.h"
+#import "TyphoonComponentFactory+TyphoonDefinitionRegisterer.h"
 
 @implementation TyphoonComponentFactory (InstanceBuilder)
 
@@ -57,7 +59,7 @@
         // consider it an allocator
         instance = [self componentForKey:definition.factoryReference]; // clears currently resolving.
     }
-    else if (definition.initializer&&definition.initializer.isClassMethod)
+    else if (definition.initializer && definition.initializer.isClassMethod)
     {
         // this is an instance of the class, needing no more init.
         instance = [self invokeInitializer:definition.initializer on:definition.type];
@@ -93,22 +95,46 @@
 
 - (id)initializerInjectionOn:(id)instance withDefinition:(TyphoonDefinition*)definition
 {
-    if (definition.initializer&&definition.initializer.isClassMethod == NO)
+    if (definition.initializer)
     {
-        instance = [self invokeInitializer:definition.initializer on:instance];
+        if (definition.initializer.isClassMethod == NO) {
+            instance = [self invokeInitializer:definition.initializer on:instance];
+        }else{
+            // initializer was already invoked in allocateInstance:withDefinition:
+        }
     }
     else if (definition.initializer == nil)
     {
-        if (definition.parent) {
-            // use the parents initializer, instead.
-            instance = [self initializerInjectionOn:instance withDefinition:definition.parent];
+        if ([self definitionHasParent:definition]) {
+            instance = [self initializerInjectionOn:instance withDefinition:[self parentForDefinition:definition]];
         }else{
-            // default initializer
-            instance = objc_msgSend(instance, @selector(init));
+            instance = [self invokeDefaultInitializerOn:instance];
         }
     }
 
     return instance;
+}
+
+- (BOOL)definitionHasParent:(TyphoonDefinition*)definition
+{
+    return definition.parent || definition.parentRef;
+}
+
+- (TyphoonDefinition*)parentForDefinition:(TyphoonDefinition*)definition
+{
+    if (definition.parent) {
+        return definition.parent;
+    }else if (definition.parentRef) {
+        return [self definitionForKey:definition.parentRef];
+    }else{
+        return nil;
+    }
+}
+
+- (id)invokeDefaultInitializerOn:(id)instance
+{
+    id initializedInstance = objc_msgSend(instance, @selector(init));
+    return initializedInstance;
 }
 
 - (void)injectAssemblyOnInstanceIfTyphoonAware:(id)instance;

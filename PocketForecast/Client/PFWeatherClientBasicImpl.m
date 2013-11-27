@@ -12,12 +12,10 @@
 
 
 #import "PFWeatherClientBasicImpl.h"
-#import "LRRestyResponse.h"
-#import "LRResty.h"
 #import "RXMLElement+PFWeatherReport.h"
 #import "PFWeatherReport.h"
 #import "PFWeatherReportDao.h"
-#import "NSURL+TyphoonUtils.h"
+#import "TyphoonURLUtils.h"
 
 
 @implementation PFWeatherClientBasicImpl
@@ -25,19 +23,10 @@
 @synthesize weatherReportDao = _weatherReportDao;
 
 
-/* ============================================================ Initializers ============================================================ */
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        _client = [LRResty client];
-    }
 
-    return self;
-}
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
 
-/* ========================================================== Interface Methods ========================================================= */
 - (void)setApiKey:(NSString*)apiKey
 {
     _apiKey = apiKey;
@@ -47,14 +36,15 @@
     }
 }
 
-/* =========================================================== Protocol Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Protocol Methods
+
 - (void)loadWeatherReportFor:(NSString*)city onSuccess:(PFWeatherReportReceivedBlock)successBlock
     onError:(PFWeatherReportErrorBlock)errorBlock;
 {
-
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^
     {
-        NSData* data = [NSData dataWithContentsOfURL:[_serviceUrl URLByAppendingQueryParameters:[self requestParameters:city]]];
+        NSData* data = [NSData dataWithContentsOfURL:[self queryURL:city]];
         RXMLElement* rootElement = [RXMLElement elementFromXMLData:data];
         RXMLElement* error = [rootElement child:@"error"];
         if (error && errorBlock)
@@ -78,16 +68,20 @@
     });
 }
 
-/* ============================================================ Private Methods ========================================================= */
-- (NSDictionary*)requestParameters:(NSString*)city
-{
-    NSDictionary* parameters = [[NSMutableDictionary alloc] init];
-    [parameters setValue:city forKey:@"q"];
-    [parameters setValue:@"xml" forKey:@"format"];
-    [parameters setValue:[NSString stringWithFormat:@"%i", _daysToRetrieve] forKey:@"num_of_days"];
-    [parameters setValue:_apiKey forKey:@"key"];
-    return parameters;
-}
 
+
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
+- (NSURL*)queryURL:(NSString*)city
+{
+    NSURL* url = [TyphoonURLUtils URL:_serviceUrl appendedWithQueryParameters:@{
+        @"q"           : city,
+        @"format"      : @"xml",
+        @"num_of_days" : [NSString stringWithFormat:@"%i", _daysToRetrieve],
+        @"key"         : _apiKey
+    }];
+    return url;
+}
 
 @end

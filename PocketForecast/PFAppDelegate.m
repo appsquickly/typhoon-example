@@ -25,6 +25,8 @@
 */
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [[UINavigationBar appearance]
             setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont applicationFontOfSize:20], UITextAttributeFont, nil]];

@@ -37,5 +37,9 @@
         <string>VarelaRound-Regular.otf</string>
         <string>Questrial-Regular.otf</string>
     </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <false/>
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>
