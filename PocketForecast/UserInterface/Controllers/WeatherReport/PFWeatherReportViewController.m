@@ -23,7 +23,9 @@
 @implementation PFWeatherReportViewController
 
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
         cityDao:(id <PFCityDao>)cityDao
 {
@@ -37,12 +39,17 @@
     return self;
 }
 
+- (void)dealloc
+{
+//    Typhoon_LogDealloc();
+}
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Overridden Methods
+
 - (void)loadView
 {
     PFWeatherReportView* view = [[PFWeatherReportView alloc] initWithFrame:CGRectZero];
-    [view sizeToFit];
     self.view = view;
 }
 
@@ -64,14 +71,9 @@
 }
 
 
-/* ============================================================ Utility Methods ========================================================= */
-- (void)dealloc
-{
-//    Typhoon_LogDealloc();
-}
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
 
-
-/* ============================================================ Private Methods ========================================================= */
 - (void)refreshData
 {
     __weak PFWeatherReportView* view = (PFWeatherReportView*) self.view;

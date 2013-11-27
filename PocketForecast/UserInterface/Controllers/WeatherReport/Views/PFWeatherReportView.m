@@ -18,6 +18,7 @@
 #import "PFCurrentConditions.h"
 #import "PFTemperature.h"
 #import "PFWeatherReportViewDelegate.h"
+#import "CKUITools.h"
 
 
 @implementation PFWeatherReportView
@@ -93,18 +94,20 @@
     _delegate = delegate;
 }
 
-- (void)sizeToFit
-{
-    [super sizeToFit];
-    self.frame = [UIScreen mainScreen].bounds;
-    [self setNeedsLayout];
-}
+/* ====================================================================================================================================== */
+#pragma mark - Overridden Methods
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    LogDebug(@"Layout views");
-    [_spinner setFrame:(CGRectMake((self.frame.size.width - 44) / 2, 0, 44, 44))];
+    [_backgroundView setFrame:self.bounds];
+    [_spinner setFrame:(CGRectMake((self.width - _spinner.width) / 2, 20, _spinner.width, _spinner.height))];
+
+    [_cityNameLabel setFrame:CGRectMake(0, 60, self.width, 40)];
+    [_conditionsDescriptionLabel setFrame:CGRectMake(0, 90, 320, 50)];
+    [_conditionsIcon setFrame:CGRectMake(40, 143, 130, 120)];
+    [_temperatureLabelContainer setFrame:CGRectMake(180, 155, 88, 88)];
+
     [_toolbar setFrame:CGRectMake(0, self.frame.size.height - 44, 320, 44)];
     [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 150, 320, 150)];
     [_lastUpdateLabel setFrame:CGRectMake(20, self.frame.size.height - 44, self.frame.size.width - 40, 44)];
@@ -178,8 +181,7 @@
 - (void)initBackgroundView
 {
     [self setBackgroundColor:UIColorFromRGB(0x837758)];
-    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo_background"]];
-    [_backgroundView setFrame:CGRectMake(0, 0, 320, 480)];
+    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg1.png"]];
     [self addSubview:_backgroundView];
 }
 
@@ -193,7 +195,7 @@
 
 - (void)initCityNameLabel
 {
-    _cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 40)];
+    _cityNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_cityNameLabel setFont:[UIFont applicationFontOfSize:35]];
     [_cityNameLabel setTextColor:UIColorFromRGB(0xf9f7f4)];
     [_cityNameLabel setBackgroundColor:[UIColor clearColor]];
@@ -203,7 +205,7 @@
 
 - (void)initConditionsDescriptionLabel
 {
-    _conditionsDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 74, 320, 50)];
+    _conditionsDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_conditionsDescriptionLabel setFont:[UIFont applicationFontOfSize:16]];
     [_conditionsDescriptionLabel setTextColor:UIColorFromRGB(0xf9f7f4)];
     [_conditionsDescriptionLabel setBackgroundColor:[UIColor clearColor]];
@@ -214,7 +216,7 @@
 
 - (void)initConditionsIcon
 {
-    _conditionsIcon = [[UIImageView alloc] initWithFrame:CGRectMake(40, 123, 130, 120)];
+    _conditionsIcon = [[UIImageView alloc] initWithFrame:CGRectZero];
     [_conditionsIcon setImage:[UIImage imageNamed:@"icon_cloudy"]];
     [_conditionsIcon setHidden:YES];
     [self addSubview:_conditionsIcon];
@@ -222,7 +224,7 @@
 
 - (void)initTemperatureLabel
 {
-    _temperatureLabelContainer = [[UIView alloc] initWithFrame:CGRectMake(180, 135, 88, 88)];
+    _temperatureLabelContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 88, 88)];
     [self addSubview:_temperatureLabelContainer];
 
     UIImageView* labelBackground = [[UIImageView alloc] initWithFrame:_temperatureLabelContainer.bounds];
@@ -255,16 +257,19 @@
 {
     _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
     [_toolbar setBarStyle:UIBarStyleBlackTranslucent];
+    [_toolbar setBarTintColor:UIColorFromRGBWithAlpha(0x2d7194, 0.9)];
     [self addSubview:_toolbar];
 
     UIBarButtonItem* cityListButton = [[UIBarButtonItem alloc]
             initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(cityListPressed)];
+    [cityListButton setTintColor:[UIColor whiteColor]];
 
     UIBarButtonItem* space = [[UIBarButtonItem alloc]
             initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(cityListPressed)];
 
     UIBarButtonItem* refreshButton =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshPressed)];
+    [refreshButton setTintColor:[UIColor whiteColor]];
 
     [_toolbar setItems:@[cityListButton, space, refreshButton]];
 }
@@ -286,11 +291,11 @@
     switch (row)
     {
         case 0:
-            return UIColorFromRGB(0x837758);
+            return UIColorFromRGBWithAlpha(0x2d7194, 0.5);
         case 1:
-            return UIColorFromRGB(0x564e3a);
+            return UIColorFromRGBWithAlpha(0x2d7194, 0.7);
         default:
-            return UIColorFromRGB(0x342e22);
+            return UIColorFromRGBWithAlpha(0x2d7194, 0.9);
     }
 }
 

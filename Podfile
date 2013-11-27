@@ -5,6 +5,7 @@ target :PocketForecast, :exclusive => true do
   pod 'Typhoon'
   pod 'OCLogTemplate'
   pod 'RaptureXML'
+  pod 'CKUITools'
 
 end
 

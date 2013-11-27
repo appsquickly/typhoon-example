@@ -1,4 +1,5 @@
 PODS:
+  - CKUITools (0.5.3)
   - Expecta (0.2.3)
   - OCHamcrest (3.0.1)
   - OCLogTemplate (1.0)
@@ -8,6 +9,7 @@ PODS:
   - Typhoon (1.5.5)
 
 DEPENDENCIES:
+  - CKUITools
   - Expecta (~> 0.2.1)
   - OCHamcrest
   - OCLogTemplate
@@ -16,6 +18,7 @@ DEPENDENCIES:
   - Typhoon
 
 SPEC CHECKSUMS:
+  CKUITools: bbac5931dfa9e96721897bea21f6a2233d611db4
   Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   OCLogTemplate: d448f0a0c7e34e715e0400fc04c6bd871b8c17f4
