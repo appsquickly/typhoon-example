@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -12,10 +12,9 @@
 
 
 #import "TyphoonRXMLElement+XmlComponentFactory.h"
-#import "TyphoonDefinition.h"
 #import "TyphoonInjectedProperty.h"
 #import "TyphoonPropertyInjectedByReference.h"
-#import "TyphoonPropertyInjectedByValue.h"
+#import "TyphoonPropertyInjectedWithStringRepresentation.h"
 #import "TyphoonPropertyInjectedByType.h"
 #import "TyphoonInitializer.h"
 #import "TyphoonDefinition+InstanceBuilder.h"
@@ -31,13 +30,20 @@
     {
         [NSException raise:NSInvalidArgumentException format:@"Class '%@' can't be resolved.", [self attribute:@"class"]];
     }
+	
     NSString* key = [self attribute:@"key"];
     NSString* factory = [self attributeOrNilIfEmpty:@"factory-component"];
-    TyphoonDefinition* definition = [[TyphoonDefinition alloc] initWithClass:clazz key:key factoryComponent:factory];
-
+	TyphoonScope scope = [self scopeForStringValue:[[self attribute:@"scope"] lowercaseString]];
+	BOOL isLazy = (scope == TyphoonScopeSingleton) && [self attributeAsBool:@"lazy-init"];
+    // Don't throw exception if a lazy init is set to a prototype.
+	// Even if the input is wrong, this won't set the definition
+	// in an unstable statement.
+	
+	TyphoonDefinition* definition = [[TyphoonDefinition alloc] initWithClass:clazz key:key factoryComponent:factory];
     [definition setBeforePropertyInjection:NSSelectorFromString([self attribute:@"before-property-injection"])];
     [definition setAfterPropertyInjection:NSSelectorFromString([self attribute:@"after-property-injection"])];
-    [self setScopeForDefinition:definition withStringValue:[[self attribute:@"scope"] lowercaseString]];
+    [definition setLazy:isLazy];
+	[definition setScope:scope];
     [self parseComponentDefinitionChildren:definition];
     return definition;
 }
@@ -73,7 +79,7 @@
     }
     else if (value)
     {
-        injectedProperty = [[TyphoonPropertyInjectedByValue alloc] initWithName:propertyName value:value];
+        injectedProperty = [[TyphoonPropertyInjectedWithStringRepresentation alloc] initWithName:propertyName value:value];
     }
     else if (collection)
     {
@@ -95,7 +101,7 @@
                 [property addItemWithText:[child text] requiredType:type];
             }
         }];
-        NSLog(@"$$$$$$$$$$$$$$ Here's the injected property: %@", property);
+
         injectedProperty = property;
     }
     else
@@ -111,7 +117,7 @@
     [self assertTagName:@"initializer"];
     SEL selector = NSSelectorFromString([self attribute:@"selector"]);
     TyphoonComponentInitializerIsClassMethod isClassMethod = [self handleIsClassMethod:[self attribute:@"is-class-method"]];
-    TyphoonInitializer* initializer = [[TyphoonInitializer alloc] initWithSelector:selector isClassMethod:isClassMethod];
+    TyphoonInitializer* initializer = [[TyphoonInitializer alloc] initWithSelector:selector isClassMethodStrategy:isClassMethod];
 
     [self iterate:@"*" usingBlock:^(TyphoonRXMLElement* child)
     {
@@ -131,7 +137,9 @@
     return initializer;
 }
 
-/* ============================================================ Private Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
 - (void)assertTagName:(NSString*)tagName
 {
     if (![self.tag isEqualToString:tagName])
@@ -140,21 +148,21 @@
     }
 }
 
-- (void)setScopeForDefinition:(TyphoonDefinition*)definition withStringValue:(NSString*)scope;
+- (TyphoonScope)scopeForStringValue:(NSString*)scope
 {
-
-    if ([scope isEqualToString:@"singleton"])
-    {
-        [definition setScope:TyphoonScopeSingleton];
+	NSArray *acceptedScopes = @[@"prototype", @"singleton"];
+	if (([scope length] > 0) && (! [acceptedScopes containsObject:scope])) {
+		[NSException raise:NSInvalidArgumentException format:@"Scope was '%@', but can only be 'singleton' or 'prototype'", scope];
+	}
+	
+	// Here, we don't follow the Spring's implementation :
+	// the "default" scope is the prototype.
+	TyphoonScope result = TyphoonScopeDefault;
+	if ([scope isEqualToString:@"singleton"]) {
+		result = TyphoonScopeSingleton;
     }
-    else if ([scope isEqualToString:@"prototype"])
-    {
-        [definition setScope:TyphoonScopeDefault];
-    }
-    else if ([scope length] > 0)
-    {
-        [NSException raise:NSInvalidArgumentException format:@"Scope was '%@', but can only be 'singleton' or 'prototype'", scope];
-    }
+	
+	return result;
 }
 
 

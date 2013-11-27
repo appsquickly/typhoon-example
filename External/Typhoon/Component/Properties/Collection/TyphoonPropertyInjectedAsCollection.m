@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -21,7 +21,9 @@
 @implementation TyphoonPropertyInjectedAsCollection
 
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithName:(NSString*)name
 {
     self = [super init];
@@ -34,7 +36,9 @@
 }
 
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
+
 - (void)addItemWithText:(NSString*)text requiredType:(Class)requiredType
 {
     [_values addObject:[[TyphoonTypeConvertedCollectionValue alloc] initWithTextValue:text requiredType:requiredType]];
@@ -90,7 +94,8 @@
     return [_values copy];
 }
 
-/* =========================================================== Protocol Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Protocol Methods
 #pragma mark - <TyphoonInjectedProperty>
 
 - (NSString*)name
@@ -100,10 +105,12 @@
 
 - (TyphoonPropertyInjectionType)injectionType
 {
-    return TyphoonPropertyInjectionAsCollection;
+    return TyphoonPropertyInjectionTypeAsCollection;
 }
 
-/* ============================================================ Utility Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Utility Methods
+
 - (NSString*)description
 {
     NSMutableString* description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];

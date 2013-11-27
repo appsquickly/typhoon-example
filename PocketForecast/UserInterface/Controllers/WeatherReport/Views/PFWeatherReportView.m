@@ -1,13 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
+
 
 #import "PFWeatherReportView.h"
 #import "UIFont+ApplicationFonts.h"
@@ -21,7 +22,9 @@
 
 @implementation PFWeatherReportView
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -42,7 +45,9 @@
 }
 
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
+
 - (void)setWeatherReport:(PFWeatherReport*)weatherReport
 {
     dispatch_async(dispatch_get_main_queue(), ^
@@ -105,10 +110,10 @@
     [_lastUpdateLabel setFrame:CGRectMake(20, self.frame.size.height - 44, self.frame.size.width - 40, 44)];
 }
 
-/* =========================================================== Protocol Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Protocol Methods
 #pragma mark <UITableVieDelegate> & <UITableViewDataSource>
 
-#pragma mark UITableView methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
@@ -167,8 +172,8 @@
     cell.backgroundColor = [UIColor clearColor];
 }
 
-/* ============================================================ Private Methods ========================================================= */
-#pragma mark Initializers
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
 
 - (void)initBackgroundView
 {
@@ -267,7 +272,7 @@
 - (void)initLastUpdateLabel
 {
     _lastUpdateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    [_lastUpdateLabel setFont:[UIFont applicationFontOfSize:12]];
+    [_lastUpdateLabel setFont:[UIFont applicationFontOfSize:10]];
     [_lastUpdateLabel setTextColor:UIColorFromRGB(0xf9f7f4)];
     [_lastUpdateLabel setBackgroundColor:[UIColor clearColor]];
     [_lastUpdateLabel setTextAlignment:NSTextAlignmentCenter];

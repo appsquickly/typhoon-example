@@ -1,25 +1,27 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "TyphoonDefinition+InstanceBuilder.h"
-#import "TyphoonPropertyInjectedByValue.h"
+#import "TyphoonPropertyInjectedWithStringRepresentation.h"
 #import "TyphoonPropertyInjectedByType.h"
 #import "TyphoonPropertyInjectedByReference.h"
-
+#import "TyphoonInitializer+InstanceBuilder.h"
 
 @implementation TyphoonDefinition (InstanceBuilder)
 
 
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (NSString*)factoryReference
 {
     return _factoryReference;
@@ -30,6 +32,16 @@
     _factoryReference = factoryReference;
 }
 
+- (NSSet *)componentsInjectedByValue;
+{
+    NSMutableSet *set = [[NSMutableSet alloc] init];
+    [set unionSet:[self propertiesInjectedByValue]];
+    
+    NSArray *a = [self.initializer parametersInjectedByValue];
+    [set unionSet:[NSSet setWithArray:a]];
+    return set;
+}
+
 - (void)injectProperty:(SEL)selector withReference:(NSString*)reference
 {
     [_injectedProperties addObject:[[TyphoonPropertyInjectedByReference alloc]
@@ -38,7 +50,7 @@
 
 - (NSSet*)propertiesInjectedByValue
 {
-    return [self injectedPropertiesWithKind:[TyphoonPropertyInjectedByValue class]];
+    return [self injectedPropertiesWithKind:[TyphoonPropertyInjectedWithStringRepresentation class]];
 }
 
 - (NSSet*)propertiesInjectedByType
@@ -56,7 +68,9 @@
     [_injectedProperties addObject:property];
 }
 
-/* ============================================================ Private Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
 - (NSSet*)injectedPropertiesWithKind:(Class)clazz
 {
     NSPredicate* predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary* bindings)

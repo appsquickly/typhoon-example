@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -13,16 +13,17 @@
 #import "TyphoonInitializer.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonPropertyInjectedByType.h"
-#import "TyphoonPropertyInjectedByValue.h"
+#import "TyphoonPropertyInjectedWithStringRepresentation.h"
 #import "TyphoonInitializer+InstanceBuilder.h"
 #import "TyphoonDefinition+InstanceBuilder.h"
 #import "TyphoonPropertyInjectedAsCollection.h"
+#import "TyphoonPropertyInjectedAsObjectInstance.h"
 
 
 @implementation TyphoonDefinition
 
 /* ====================================================================================================================================== */
-#pragma mark - Factory methods
+#pragma mark - Class Methods
 
 + (TyphoonDefinition*)withClass:(Class)clazz
 {
@@ -34,24 +35,24 @@
     return [[TyphoonDefinition alloc] initWithClass:clazz key:key];
 }
 
-+ (TyphoonDefinition*)withClass:(Class)clazz initialization:(void (^)(TyphoonInitializer*))initialization
++ (TyphoonDefinition*)withClass:(Class)clazz initialization:(TyphoonInitializerBlock)initialization
 {
     return [TyphoonDefinition withClass:clazz key:nil initialization:initialization properties:nil];
 }
 
-+ (TyphoonDefinition*)withClass:(Class)clazz properties:(void (^)(TyphoonDefinition*))properties
++ (TyphoonDefinition*)withClass:(Class)clazz properties:(TyphoonDefinitionBlock)properties
 {
     return [TyphoonDefinition withClass:clazz key:nil initialization:nil properties:properties];
 }
 
-+ (TyphoonDefinition*)withClass:(Class)clazz initialization:(void (^)(TyphoonInitializer*))initialization
-        properties:(void (^)(TyphoonDefinition*))properties
++ (TyphoonDefinition*)withClass:(Class)clazz initialization:(TyphoonInitializerBlock)initialization
+    properties:(TyphoonDefinitionBlock)properties
 {
     return [TyphoonDefinition withClass:clazz key:nil initialization:initialization properties:properties];
 }
 
-+ (TyphoonDefinition*)withClass:(Class)clazz key:(NSString*)key initialization:(void (^)(TyphoonInitializer*))initialization
-        properties:(void (^)(TyphoonDefinition*))properties
++ (TyphoonDefinition*)withClass:(Class)clazz key:(NSString*)key initialization:(TyphoonInitializerBlock)initialization
+    properties:(TyphoonDefinitionBlock)properties
 {
 
     TyphoonDefinition* definition = [[TyphoonDefinition alloc] initWithClass:clazz key:key];
@@ -70,18 +71,20 @@
     return definition;
 }
 
-+ (TyphoonDefinition*)withClass:(Class)clazz key:(NSString*)key initialization:(void (^)(TyphoonInitializer*))initialization
++ (TyphoonDefinition*)withClass:(Class)clazz key:(NSString*)key initialization:(TyphoonInitializerBlock)initialization
 {
     return [TyphoonDefinition withClass:clazz key:key initialization:initialization properties:nil];
 }
 
-+ (TyphoonDefinition*)withClass:(Class)clazz key:(NSString*)key properties:(void (^)(TyphoonDefinition*))properties
++ (TyphoonDefinition*)withClass:(Class)clazz key:(NSString*)key properties:(TyphoonDefinitionBlock)properties
 {
     return [TyphoonDefinition withClass:clazz key:key initialization:nil properties:properties];
 }
 
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithClass:(Class)clazz key:(NSString*)key factoryComponent:(NSString*)factoryComponent
 {
     self = [super init];
@@ -107,7 +110,9 @@
 }
 
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
+
 - (void)injectProperty:(SEL)selector
 {
     [_injectedProperties addObject:[[TyphoonPropertyInjectedByType alloc] initWithName:NSStringFromSelector(selector)]];
@@ -115,7 +120,8 @@
 
 - (void)injectProperty:(SEL)selector withValueAsText:(NSString*)textValue
 {
-    [_injectedProperties addObject:[[TyphoonPropertyInjectedByValue alloc] initWithName:NSStringFromSelector(selector) value:textValue]];
+    [_injectedProperties addObject:[[TyphoonPropertyInjectedWithStringRepresentation alloc]
+        initWithName:NSStringFromSelector(selector) value:textValue]];
 }
 
 - (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition
@@ -123,10 +129,16 @@
     [self injectProperty:selector withReference:definition.key];
 }
 
+- (void)injectProperty:(SEL)selector withObjectInstance:(id)instance
+{
+    [_injectedProperties addObject:[[TyphoonPropertyInjectedAsObjectInstance alloc]
+        initWithName:NSStringFromSelector(selector) objectInstance:instance]];
+}
+
 - (void)injectProperty:(SEL)withSelector asCollection:(void (^)(TyphoonPropertyInjectedAsCollection*))collectionValues;
 {
-    TyphoonPropertyInjectedAsCollection* propertyInjectedAsCollection =
-            [[TyphoonPropertyInjectedAsCollection alloc] initWithName:NSStringFromSelector(withSelector)];
+    TyphoonPropertyInjectedAsCollection
+        * propertyInjectedAsCollection = [[TyphoonPropertyInjectedAsCollection alloc] initWithName:NSStringFromSelector(withSelector)];
 
     if (collectionValues)
     {
@@ -155,7 +167,9 @@
 }
 
 
-/* ============================================================ Utility Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Utility Methods
+
 - (NSString*)description
 {
     return [NSString stringWithFormat:@"Definition: class='%@'", NSStringFromClass(_type)];
@@ -167,7 +181,9 @@
     [_initializer setComponentDefinition:nil];
 }
 
-/* ============================================================ Private Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
 - (void)validateRequiredParametersAreSet
 {
     if (_type == nil)

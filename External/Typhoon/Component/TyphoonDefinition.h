@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -23,6 +23,10 @@ typedef enum
     TyphoonScopeSingleton
 } TyphoonScope;
 
+typedef void(^TyphoonInitializerBlock)(TyphoonInitializer* initializer);
+typedef void(^TyphoonDefinitionBlock)(TyphoonDefinition* definition);
+
+
 
 @interface TyphoonDefinition : NSObject
 {
@@ -39,6 +43,11 @@ typedef enum
 @property(nonatomic) TyphoonScope scope;
 @property(nonatomic, strong) TyphoonDefinition* factory;
 
+/**
+ * Say if the componant (scoped as a singleton) should be lazily instantiated.
+ */
+@property(nonatomic, assign, getter = isLazy) BOOL lazy;
+
 
 /* ====================================================================================================================================== */
 #pragma mark Factory methods
@@ -47,12 +56,11 @@ typedef enum
 
 + (TyphoonDefinition*)withClass:(Class)clazz key:(NSString*)key;
 
-+ (TyphoonDefinition*)withClass:(Class)clazz initialization:(void (^)(TyphoonInitializer*))initialization
-        properties:(void (^)(TyphoonDefinition*))properties;
++ (TyphoonDefinition*)withClass:(Class)clazz initialization:(TyphoonInitializerBlock)initialization properties:(TyphoonDefinitionBlock)properties;
 
-+ (TyphoonDefinition*)withClass:(Class)clazz initialization:(void (^)(TyphoonInitializer*))initialization;
++ (TyphoonDefinition*)withClass:(Class)clazz initialization:(TyphoonInitializerBlock)initialization;
 
-+ (TyphoonDefinition*)withClass:(Class)clazz properties:(void (^)(TyphoonDefinition*))properties;
++ (TyphoonDefinition*)withClass:(Class)clazz properties:(TyphoonDefinitionBlock)properties;
 
 /* ====================================================================================================================================== */
 #pragma mark Initializers
@@ -73,6 +81,8 @@ typedef enum
 * Injects property with the given definition.
 */
 - (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition;
+
+- (void)injectProperty:(SEL)selector withObjectInstance:(id)instance;
 
 /**
 * Injects property with the value represented by the given text. The text will be used to create an instance of a class matching the

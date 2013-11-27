@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -12,7 +12,7 @@
 
 
 #import "TyphoonInitializer+InstanceBuilder.h"
-#import "TyphoonParameterInjectedByValue.h"
+#import "TyphoonParameterInjectedWithStringRepresentation.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonDefinition+InstanceBuilder.h"
 
@@ -29,7 +29,7 @@
 {
     NSPredicate* predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary* bindings)
     {
-        return [evaluatedObject isKindOfClass:[TyphoonParameterInjectedByValue class]];
+        return [evaluatedObject isKindOfClass:[TyphoonParameterInjectedWithStringRepresentation class]];
     }];
     return [_injectedParameters filteredArrayUsingPredicate:predicate];
 
@@ -84,9 +84,9 @@
 {
     if (_definition.factoryReference)
     {
-        if (_isClassMethodStrategy == YES)
+        if (_isClassMethodStrategy == TyphoonComponentInitializerIsClassMethodYes)
         {
-            [NSException raise:NSInvalidArgumentException format:@"'is-class-method' can't be 'YES' when factory-component is used!"];
+            [NSException raise:NSInvalidArgumentException format:@"'is-class-method' can't be 'TyphoonComponentInitializerIsClassMethodYes' when factory-component is used!"];
         }
         else
         {
@@ -101,9 +101,13 @@
         case TyphoonComponentInitializerIsClassMethodYes:
             return YES;
         case TyphoonComponentInitializerIsClassMethodGuess:
-            return ![NSStringFromSelector(_selector) hasPrefix:@"init"];
+            return [self selectorDoesNotStartWithInit];
     }
 }
 
+- (BOOL)selectorDoesNotStartWithInit
+{
+    return ![NSStringFromSelector(_selector) hasPrefix:@"init"];
+}
 
 @end

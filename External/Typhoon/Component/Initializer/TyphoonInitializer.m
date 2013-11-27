@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -14,21 +14,23 @@
 #import "TyphoonInitializer.h"
 #import "TyphoonParameterInjectedByReference.h"
 #import "NSObject+TyphoonIntrospectionUtils.h"
-#import "TyphoonParameterInjectedByValue.h"
-#import "TyphoonParameterInjectedByRawValue.h"
+#import "TyphoonParameterInjectedWithStringRepresentation.h"
+#import "TyphoonParameterInjectedWithObjectInstance.h"
 #import "TyphoonDefinition.h"
 
 
 @implementation TyphoonInitializer
 
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithSelector:(SEL)initializer
 {
-    return [self initWithSelector:initializer isClassMethod:TyphoonComponentInitializerIsClassMethodGuess];
+    return [self initWithSelector:initializer isClassMethodStrategy:TyphoonComponentInitializerIsClassMethodGuess];
 }
 
-- (id)initWithSelector:(SEL)initializer isClassMethod:(TyphoonComponentInitializerIsClassMethod)isClassMethod;
+- (id)initWithSelector:(SEL)initializer isClassMethodStrategy:(TyphoonComponentInitializerIsClassMethod)isClassMethod;
 {
     self = [super init];
     if (self)
@@ -42,12 +44,13 @@
 
 - (id)init
 {
-    return [self initWithSelector:@selector(init) isClassMethod:NO];
+    return [self initWithSelector:@selector(init) isClassMethodStrategy:TyphoonComponentInitializerIsClassMethodGuess];
 }
 
 
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
 
 
 - (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference
@@ -73,8 +76,8 @@
 {
     if (index != NSUIntegerMax && index < [_parameterNames count])
     {
-        TyphoonParameterInjectedByValue* parameterInjectedByValue =
-                [[TyphoonParameterInjectedByValue alloc] initWithIndex:index value:text requiredTypeOrNil:requiredClass];
+        TyphoonParameterInjectedWithStringRepresentation* parameterInjectedByValue =
+                [[TyphoonParameterInjectedWithStringRepresentation alloc] initWithIndex:index value:text requiredTypeOrNil:requiredClass];
         [parameterInjectedByValue setInitializer:self];
         [_injectedParameters addObject:parameterInjectedByValue];
     }
@@ -91,32 +94,32 @@
     [self injectParameterAtIndex:[_injectedParameters count] withDefinition:definition];
 }
 
-- (void)injectWithText:(NSString*)text
+- (void)injectWithValueAsText:(NSString*)text
 {
-    [self injectWithText:text requiredTypeOrNil:nil];
+    [self injectWithValueAsText:text requiredTypeOrNil:nil];
 }
 
-- (void)injectWithText:(NSString*)text requiredTypeOrNil:(id)requiredTypeOrNil
+- (void)injectWithValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredTypeOrNil
 {
     [self injectParameterAtIndex:[_injectedParameters count] withValueAsText:text requiredTypeOrNil:requiredTypeOrNil];
 }
 
-- (void)injectParameterAtIndex:(NSUInteger)index withValue:(id)value
+- (void)injectParameterAtIndex:(NSUInteger)index withObject:(id)value
 {
     if (index != NSUIntegerMax && index < [_parameterNames count])
     {
-        [_injectedParameters addObject:[[TyphoonParameterInjectedByRawValue alloc] initWithParameterIndex:index value:value]];
+        [_injectedParameters addObject:[[TyphoonParameterInjectedWithObjectInstance alloc] initWithParameterIndex:index value:value]];
     }
 }
 
-- (void)injectParameterNamed:(NSString*)name withValue:(id)value
+- (void)injectParameterNamed:(NSString*)name withObject:(id)value
 {
-    [self injectParameterAtIndex:[self indexOfParameter:name] withValue:value];
+    [self injectParameterAtIndex:[self indexOfParameter:name] withObject:value];
 }
 
-- (void)injectParameterWithValue:(id)value
+- (void)injectWithObject:(id)value
 {
-    [self injectParameterAtIndex:[_injectedParameters count] withValue:value];
+    [self injectParameterAtIndex:[_injectedParameters count] withObject:value];
 }
 
 /* ====================================================================================================================================== */
@@ -134,7 +137,9 @@
     _parameterNames = [self parameterNamesForSelector:_selector];
 }
 
-/* ============================================================ Utility Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Utility Methods
+
 - (void)dealloc
 {
     for (id <TyphoonInjectedParameter> parameter in _injectedParameters)
@@ -144,7 +149,9 @@
     }
 }
 
-/* ============================================================ Private Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
 - (int)indexOfParameter:(NSString*)name
 {
     int parameterIndex = NSUIntegerMax;

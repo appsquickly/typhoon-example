@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -36,7 +36,7 @@ typedef enum
 
 - (id)initWithSelector:(SEL)initializer;
 
-- (id)initWithSelector:(SEL)initializer isClassMethod:(TyphoonComponentInitializerIsClassMethod)isClassMethod;
+- (id)initWithSelector:(SEL)initializer isClassMethodStrategy:(TyphoonComponentInitializerIsClassMethod)isClassMethod;
 
 - (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference;
 
@@ -46,23 +46,27 @@ typedef enum
 
 - (void)injectParameterAtIndex:(NSUInteger)index withValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredClass;
 
+- (void)injectParameterAtIndex:(NSUInteger)index withObject:(id)value;
+
+- (void)injectParameterNamed:(NSString*)name withObject:(id)value;
+
 
 /* ====================================================================================================================================== */
 #pragma mark - Block assembly
 
 - (void)injectWithDefinition:(TyphoonDefinition*)definition;
 
-- (void)injectWithText:(NSString*)text;
+- (void)injectWithValueAsText:(NSString*)text;
 
-- (void)injectWithText:(NSString*)text requiredTypeOrNil:(id)requiredTypeOrNil;
+- (void)injectWithValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredTypeOrNil;
+
+- (void)injectWithObject:(id)value;
 
 - (void)injectParameterNamed:(NSString*)name withDefinition:(TyphoonDefinition*)definition;
 
 - (void)injectParameterAtIndex:(NSUInteger)index1 withDefinition:(TyphoonDefinition*)definition;
 
-- (void)injectParameterAtIndex:(NSUInteger)index withValue:(id)value;
 
-- (void)injectParameterNamed:(NSString*)name withValue:(id)value;
 
-- (void)injectParameterWithValue:(id)value;
+
 @end

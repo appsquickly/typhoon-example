@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -24,7 +24,6 @@
     {
         NSString* resource = [name substringToIndex:lastDot.location];
         NSString* type = [name substringFromIndex:lastDot.location + 1];
-        NSLog(@"Resource: %@.%@", resource, type);
         filePath = [[NSBundle bundleForClass:[self class]] pathForResource:resource ofType:type];
     }
     else

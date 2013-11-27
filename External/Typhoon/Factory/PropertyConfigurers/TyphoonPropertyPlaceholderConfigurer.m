@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -13,32 +13,16 @@
 #import "TyphoonPropertyPlaceholderConfigurer.h"
 #import "TyphoonResource.h"
 #import "TyphoonDefinition.h"
-#import "TyphoonInitializer.h"
-#import "TyphoonPropertyInjectedByValue.h"
-#import "TyphoonParameterInjectedByValue.h"
+#import "TyphoonPropertyInjectedWithStringRepresentation.h"
 #import "TyphoonDefinition+InstanceBuilder.h"
-#import "TyphoonInitializer+InstanceBuilder.h"
+#import "OCLogTemplate.h"
 
-@interface TyphoonPropertyInjectedByValue (PropertyPlaceHolderConfigurer)
-
-- (void)setTextValue:(NSString*)textValue;
-
-@end
-
-
-@implementation TyphoonPropertyInjectedByValue (PropertyPlaceHolderConfigurer)
-
-- (void)setTextValue:(NSString*)textValue
-{
-    _textValue = textValue;
-}
-
-
-@end
 
 @implementation TyphoonPropertyPlaceholderConfigurer
 
-/* =========================================================== Class Methods ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Class Methods
+
 + (TyphoonPropertyPlaceholderConfigurer*)configurer
 {
     return [[[self class] alloc] init];
@@ -68,7 +52,9 @@
 }
 
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithPrefix:(NSString*)prefix suffix:(NSString*)suffix
 {
     self = [super init];
@@ -86,7 +72,9 @@
     return [self initWithPrefix:@"${" suffix:@"}"];
 }
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
+
 - (void)usePropertyStyleResource:(id <TyphoonResource>)resource
 {
     NSArray* lines = [[resource asString] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
@@ -111,34 +99,29 @@
 }
 
 
-/* =========================================================== Protocol Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Protocol Methods
+
 - (void)mutateComponentDefinitionsIfRequired:(NSArray*)componentDefinitions
 {
     for (TyphoonDefinition* definition in componentDefinitions)
     {
-        for (TyphoonParameterInjectedByValue* parameter in [definition.initializer parametersInjectedByValue])
+        for (id <TyphoonComponentInjectedByValue> component in [definition componentsInjectedByValue])
         {
-            if ([parameter.textValue hasPrefix:_prefix] && [parameter.textValue hasSuffix:_suffix])
-            {
-                NSString* key = [parameter.textValue substringFromIndex:[_prefix length]];
-                key = [key substringToIndex:[key length] - [_suffix length]];
-                NSString* value = [_properties valueForKey:key];
-                NSLog(@"Setting property '%@' to value '%@'", key, value);
-                parameter.textValue = value;
-            }
+            [self mutateComponentInjectedByValue:component];
         }
+    }
+}
 
-        for (TyphoonPropertyInjectedByValue* property in [definition propertiesInjectedByValue])
-        {
-            if ([property.textValue hasPrefix:_prefix] && [property.textValue hasSuffix:_suffix])
-            {
-                NSString* key = [property.textValue substringFromIndex:[_prefix length]];
-                key = [key substringToIndex:[key length] - [_suffix length]];
-                NSString* value = [_properties valueForKey:key];
-                NSLog(@"Setting property '%@' to value '%@'", key, value);
-                property.textValue = value;
-            }
-        }
+- (void)mutateComponentInjectedByValue:(id <TyphoonComponentInjectedByValue>)component;
+{
+    if ([component.textValue hasPrefix:_prefix] && [component.textValue hasSuffix:_suffix])
+    {
+        NSString* key = [component.textValue substringFromIndex:[_prefix length]];
+        key = [key substringToIndex:[key length] - [_suffix length]];
+        NSString* value = [_properties valueForKey:key];
+        LogTrace(@"Setting property '%@' to value '%@'", key, value);
+        component.textValue = value;
     }
 }
 

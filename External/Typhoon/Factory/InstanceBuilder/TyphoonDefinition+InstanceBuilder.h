@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -18,6 +18,8 @@
 - (NSString*)factoryReference;
 
 - (void)setFactoryReference:(NSString*)factoryReference;
+
+- (NSSet *)componentsInjectedByValue;
 
 - (void)injectProperty:(SEL)withSelector withReference:(NSString*)reference;
 

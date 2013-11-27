@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2012 - 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -42,7 +42,9 @@
 
 @implementation TyphoonTypeDescriptor
 
-/* =========================================================== Class Methods ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Class Methods
+
 + (TyphoonTypeDescriptor*)descriptorWithTypeCode:(NSString*)typeCode
 {
     return [[[self class] alloc] initWithTypeCode:typeCode];
@@ -57,7 +59,9 @@
     return [self descriptorWithTypeCode:[NSString stringWithFormat:@"T@<%@>", NSStringFromProtocol(classOrProtocol)]];
 }
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithTypeCode:(NSString*)typeCode
 {
     self = [super init];
@@ -89,7 +93,9 @@
     return self;
 }
 
-/* ========================================================== Interface Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
+
 - (id)classOrProtocol
 {
     if (_typeBeingDescribed)
@@ -102,7 +108,9 @@
     }
 }
 
-/* ============================================================ Utility Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Utility Methods
+
 - (NSString*)description
 {
     if (_isPrimitive)
@@ -124,16 +132,15 @@
     }
 }
 
-/* ============================================================ Private Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
 - (void)parsePrimitiveType:(NSString*)typeCode
 {
-    NSLog(@"Parsing typeCode: %@", typeCode);
     typeCode = [self extractArrayInformation:typeCode];
     typeCode = [self extractPointerInformation:typeCode];
     typeCode = [self extractStructureInformation:typeCode];
     _primitiveType = [self typeFromTypeCode:typeCode];
-
-
 }
 
 - (NSString*)extractArrayInformation:(NSString*)typeCode
