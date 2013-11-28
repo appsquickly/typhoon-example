@@ -86,19 +86,21 @@
 
 - (void)initHighTempLabel
 {
-    _highTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(235, 10, 40, 30)];
+    _highTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 10, 55, 30)];
     [_highTempLabel setFont:[UIFont temperatureFontOfSize:27]];
     [_highTempLabel setTextColor:UIColorFromRGB(0xffffff)];
     [_highTempLabel setBackgroundColor:[UIColor clearColor]];
+    [_highTempLabel setTextAlignment:NSTextAlignmentRight];
     [self addSubview:_highTempLabel];
 }
 
 - (void)initLowTempLabel
 {
-    _lowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(280, 11.5, 40, 30)];
+    _lowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(270, 11.5, 40, 30)];
     [_lowTempLabel setFont:[UIFont temperatureFontOfSize:20]];
     [_lowTempLabel setTextColor:UIColorFromRGB(0xd9d1bd)];
     [_lowTempLabel setBackgroundColor:[UIColor clearColor]];
+    [_lowTempLabel setTextAlignment:NSTextAlignmentRight];
     [self addSubview:_lowTempLabel];
 }
 
