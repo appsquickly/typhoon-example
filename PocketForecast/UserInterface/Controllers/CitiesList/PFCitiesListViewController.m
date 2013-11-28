@@ -126,7 +126,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     [_cityDao saveCurrentlySelectedCity:cityName];
 
     PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
-    [controller toggleSideViewController];
+    [controller hideSideViewController];
 
 }
 
