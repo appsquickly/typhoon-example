@@ -160,7 +160,6 @@
             } completion:nil];
         }
         _progressHudRetainCount++;
-        LogDebug(@"$$$$$$$$$$$ Hud retain cound: %i", _progressHudRetainCount);
     });
 }
 
@@ -169,7 +168,6 @@
     dispatch_async(dispatch_get_main_queue(), ^
     {
         _progressHudRetainCount--;
-        LogDebug(@"$$$$$$$$$$$$$$$$ Hud retain cound: %i", _progressHudRetainCount);
         if (_progressHudRetainCount == 0)
         {
             [UIView transitionWithView:_progressHUD duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop animations:^
