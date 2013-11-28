@@ -27,9 +27,12 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UINavigationBar appearance]
-        setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont applicationFontOfSize:20], NSFontAttributeName, nil]];
 
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+        NSFontAttributeName            : [UIFont applicationFontOfSize:20],
+        NSForegroundColorAttributeName : [UIColor whiteColor],
+    }];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x9ebeb3)];
 
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
