@@ -13,11 +13,11 @@
 
 #import "PFAppDelegate.h"
 #import "PFCityDao.h"
-#import "PFWeatherReportViewController.h"
 #import "Typhoon.h"
-#import "PFAssembly.h"
+#import "PFCoreComponents.h"
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
+#import "PFViewControllers.h"
 
 @implementation PFAppDelegate
 
@@ -37,7 +37,11 @@
     * Switch between the Xml and Block assembly style by below.
      */
     TyphoonComponentFactory* factory;
-    factory = ([[TyphoonBlockComponentFactory alloc] initWithAssembly:[PFAssembly assembly]]);
+
+    factory = [[TyphoonBlockComponentFactory alloc] initWithAssemblies:@[
+        [PFCoreComponents assembly],
+        [PFViewControllers assembly]
+    ]];
 //    factory = ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil]);
 
     id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];

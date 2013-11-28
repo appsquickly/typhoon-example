@@ -1,25 +1,31 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  58 NORTH
+//  Copyright 2013 58 North
 //  All Rights Reserved.
 //
-//  NOTICE: The authors permit you to use, modify, and distribute this file
-//  in accordance with the terms of the license agreement accompanying it.
+//  NOTICE: This software is the proprietary information of 58 North
+//  Use is subject to license terms.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-#import "PFAssembly+ViewControllers.h"
-#import "Typhoon.h"
-#import "PFCitiesListViewController.h"
+#import "PFViewControllers.h"
+#import "PFCoreComponents.h"
+#import "TyphoonCollaboratingAssemblyProxy.h"
+#import "TyphoonInitializer.h"
+#import "TyphoonDefinition.h"
 #import "PFAddCityViewController.h"
-#import "PFWeatherReportViewController.h"
 #import "PFRootViewController.h"
+#import "PFCitiesListViewController.h"
+#import "PFWeatherReportViewController.h"
 
 
-@implementation PFAssembly (ViewControllers)
+@implementation PFViewControllers
+
+- (void)resolveCollaboratingAssemblies
+{
+    _coreComponents = [TyphoonCollaboratingAssemblyProxy proxy];
+}
 
 - (id)rootViewController
 {
@@ -48,7 +54,7 @@
     return [TyphoonDefinition withClass:[PFCitiesListViewController class] initialization:^(TyphoonInitializer* initializer)
     {
         initializer.selector = @selector(initWithCityDao:);
-        [initializer injectWithDefinition:[self cityDao]];
+        [initializer injectWithDefinition:[_coreComponents cityDao]];
     }];
 }
 
@@ -57,9 +63,9 @@
     return [TyphoonDefinition withClass:[PFWeatherReportViewController class] initialization:^(TyphoonInitializer* initializer)
     {
         initializer.selector = @selector(initWithWeatherClient:weatherReportDao:cityDao:);
-        [initializer injectWithDefinition:[self weatherClient]];
-        [initializer injectWithDefinition:[self weatherReportDao]];
-        [initializer injectWithDefinition:[self cityDao]];
+        [initializer injectWithDefinition:[_coreComponents weatherClient]];
+        [initializer injectWithDefinition:[_coreComponents weatherReportDao]];
+        [initializer injectWithDefinition:[_coreComponents cityDao]];
     }];
 }
 
@@ -83,8 +89,8 @@
         [initializer injectWithDefinition:[self mainBundle]];
     } properties:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(cityDao) withDefinition:[self cityDao]];
-        [definition injectProperty:@selector(weatherClient) withDefinition:[self weatherClient]];
+        [definition injectProperty:@selector(cityDao) withDefinition:[_coreComponents cityDao]];
+        [definition injectProperty:@selector(weatherClient) withDefinition:[_coreComponents weatherClient]];
     }];
 }
 
@@ -95,6 +101,5 @@
         initializer.selector = @selector(mainBundle);
     }];
 }
-
 
 @end

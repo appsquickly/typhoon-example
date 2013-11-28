@@ -1,19 +1,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  58 NORTH
+//  Copyright 2013 58 North
 //  All Rights Reserved.
 //
-//  NOTICE: The authors permit you to use, modify, and distribute this file
-//  in accordance with the terms of the license agreement accompanying it.
+//  NOTICE: This software is the proprietary information of 58 North
+//  Use is subject to license terms.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
 #import <Foundation/Foundation.h>
-#import "PFAssembly.h"
+#import "TyphoonAssembly.h"
 
-@interface PFAssembly (ViewControllers)
+@class PFCoreComponents;
+
+
+@interface PFViewControllers : TyphoonAssembly
+
+@property(nonatomic, strong, readonly) PFCoreComponents* coreComponents;
 
 - (id)rootViewController;
 

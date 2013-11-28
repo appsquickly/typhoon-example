@@ -10,13 +10,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#import "PFAssembly.h"
+#import "PFCoreComponents.h"
 #import "Typhoon.h"
 #import "PFWeatherClientBasicImpl.h"
 #import "PFWeatherReportDaoFileSystemImpl.h"
 #import "PFCityDaoUserDefaultsImpl.h"
 
-@implementation PFAssembly
+@implementation PFCoreComponents
 
 - (id)weatherClient
 {

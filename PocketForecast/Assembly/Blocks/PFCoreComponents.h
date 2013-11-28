@@ -15,7 +15,7 @@
 #import "TyphoonAssembly.h"
 
 
-@interface PFAssembly : TyphoonAssembly
+@interface PFCoreComponents : TyphoonAssembly
 
 
 - (id)weatherClient;
