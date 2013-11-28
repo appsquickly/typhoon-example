@@ -14,6 +14,8 @@
 #import "TyphoonPropertyInjectionDelegate.h"
 #import "PaperFoldView.h"
 
+@class PFProgressHUD;
+
 
 typedef enum
 {
@@ -28,8 +30,10 @@ typedef enum
     UIView* _slideOnMainContentViewContainer;
     PFSideViewState _sideViewState;
     UIViewController* _sideViewController;
+    NSInteger _progressHudRetainCount;
 }
 
+@property(nonatomic, strong, readonly) PFProgressHUD* progressHUD;
 
 /**
 * Creates a root view controller instance, with the initial main content view controller, and side view controller.
@@ -51,6 +55,10 @@ typedef enum
 - (void)hideSideViewController;
 
 - (void)toggleSideViewController;
+
+- (void)showProgressHUD;
+
+- (void)dismissProgressHUD;
 
 
 @end

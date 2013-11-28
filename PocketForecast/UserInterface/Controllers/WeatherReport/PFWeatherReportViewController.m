@@ -19,6 +19,7 @@
 #import "Typhoon.h"
 #import "PFWeatherReportView.h"
 #import "PFRootViewController.h"
+#import "PFProgressHUD.h"
 
 
 @implementation PFWeatherReportViewController
@@ -71,7 +72,7 @@
     {
         [(PFWeatherReportView*) self.view setWeatherReport:_weatherReport];
     }
-    else
+    else if (_cityName)
     {
         [self refreshData];
     }
@@ -113,15 +114,15 @@
 - (void)refreshData
 {
     __weak PFWeatherReportView* view = (PFWeatherReportView*) self.view;
-    [view showSpinner];
+    [PFProgressHUD present];
     [_weatherClient loadWeatherReportFor:_cityName onSuccess:^(PFWeatherReport* report)
     {
         LogDebug(@"Got report: %@", report);
         [view setWeatherReport:report];
-        [view hideSpinner];
+        [PFProgressHUD dismiss];
     } onError:^(NSString* message)
     {
-        [view hideSpinner];
+        [PFProgressHUD dismiss];
         LogDebug(@"Error %@", message);
     }];
 }

@@ -13,6 +13,7 @@
 #import "CKUITools.h"
 #import "PFRootViewController.h"
 #import "PaperFoldView.h"
+#import "PFProgressHUD.h"
 
 #define SIDE_CONTROLLER_WIDTH 245.0
 
@@ -141,6 +142,53 @@
     }
 }
 
+
+- (void)showProgressHUD
+{
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        if (_progressHudRetainCount == 0)
+        {
+            _progressHUD = [[PFProgressHUD alloc] initWithFrame:self.view.frame];
+            [_progressHUD setAlpha:0];
+            [self.view setUserInteractionEnabled:NO];
+            [UIView transitionWithView:_progressHUD duration:0.33 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^
+            {
+                [self.view addSubview:_progressHUD];
+                [_progressHUD setAlpha:1.0];
+            } completion:nil];
+        }
+        _progressHudRetainCount++;
+        LogDebug(@"$$$$$$$$$$$ Hud retain cound: %i", _progressHudRetainCount);
+    });
+}
+
+- (void)dismissProgressHUD
+{
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        _progressHudRetainCount--;
+        LogDebug(@"$$$$$$$$$$$$$$$$ Hud retain cound: %i", _progressHudRetainCount);
+        if (_progressHudRetainCount == 0)
+        {
+            [UIView transitionWithView:_progressHUD duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop animations:^
+            {
+                [_progressHUD setAlpha:0.0];
+            } completion:^(BOOL finished)
+            {
+                [_progressHUD removeFromSuperview];
+                _progressHUD = nil;
+                [self.view setUserInteractionEnabled:YES];
+            }];
+        }
+        if (_progressHudRetainCount < 0)
+        {
+            _progressHudRetainCount = 0;
+            LogError("*** Unmatched calls to progressHUD present/dismiss ***");
+        }
+
+    });
+}
 
 /* ====================================================================================================================================== */
 #pragma mark - Override

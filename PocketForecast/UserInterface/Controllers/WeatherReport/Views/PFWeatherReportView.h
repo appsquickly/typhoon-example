@@ -19,7 +19,6 @@
 @interface PFWeatherReportView : UIView <UITableViewDelegate, UITableViewDataSource>
 {
     UIImageView* _backgroundView;
-    UIActivityIndicatorView* _spinner;
     UILabel* _cityNameLabel;
     UILabel* _conditionsDescriptionLabel;
     UIImageView* _conditionsIcon;
@@ -41,9 +40,5 @@
 - (void)setWeatherReport:(PFWeatherReport*)weatherReport;
 
 - (void)setDelegate:(id <PFWeatherReportViewDelegate>)delegate;
-
-- (void)showSpinner;
-
-- (void)hideSpinner;
 
 @end

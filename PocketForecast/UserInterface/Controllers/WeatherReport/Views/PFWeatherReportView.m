@@ -32,7 +32,6 @@
     if (self)
     {
         [self initBackgroundView];
-        [self initSpinner];
         [self initCityNameLabel];
         [self initConditionsDescriptionLabel];
         [self initConditionsIcon];
@@ -51,42 +50,34 @@
 
 - (void)setWeatherReport:(PFWeatherReport*)weatherReport
 {
-    dispatch_async(dispatch_get_main_queue(), ^
+    if (weatherReport)
     {
-        LogDebug(@"Set weather report: %@", weatherReport);
-        _weatherReport = weatherReport;
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
+            [_tableView setHidden:NO];
+            LogDebug(@"Set weather report: %@", weatherReport);
+            _weatherReport = weatherReport;
 
-        [_conditionsIcon setHidden:NO];
-        [_temperatureLabelContainer setHidden:NO];
+            [_conditionsIcon setHidden:NO];
+            [_temperatureLabelContainer setHidden:NO];
 
-        NSArray* indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0],
-                [NSIndexPath indexPathForRow:2 inSection:0]];
+            NSArray* indexPaths = @[
+                [NSIndexPath indexPathForRow:0 inSection:0],
+                [NSIndexPath indexPathForRow:1 inSection:0],
+                [NSIndexPath indexPathForRow:2 inSection:0]
+            ];
 
-        [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-        [_cityNameLabel setText:[_weatherReport cityDisplayName]];
-        [_temperatureLabel setText:[_weatherReport.currentConditions.temperature asShortStringInDefaultUnits]];
-        [_conditionsDescriptionLabel setText:[_weatherReport.currentConditions longSummary]];
-        [_conditionsIcon setImage:[self uiImageForImageUri:weatherReport.currentConditions.imageUri]];
-        [_lastUpdateLabel setText:[NSString stringWithFormat:@"Updated %@", [weatherReport reportDateAsString]]];
+            [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+            [_cityNameLabel setText:[_weatherReport cityDisplayName]];
+            [_temperatureLabel setText:[_weatherReport.currentConditions.temperature asShortStringInDefaultUnits]];
+            [_conditionsDescriptionLabel setText:[_weatherReport.currentConditions longSummary]];
+            [_conditionsIcon setImage:[self uiImageForImageUri:weatherReport.currentConditions.imageUri]];
+            [_lastUpdateLabel setText:[NSString stringWithFormat:@"Updated %@", [weatherReport reportDateAsString]]];
 
 
-    });
-}
+        });
+    }
 
-- (void)showSpinner
-{
-    dispatch_async(dispatch_get_main_queue(), ^
-    {
-        [_spinner setHidden:NO];
-    });
-}
-
-- (void)hideSpinner
-{
-    dispatch_async(dispatch_get_main_queue(), ^
-    {
-        [_spinner setHidden:YES];
-    });
 }
 
 - (void)setDelegate:(id <PFWeatherReportViewDelegate>)delegate
@@ -101,7 +92,6 @@
 {
     [super layoutSubviews];
     [_backgroundView setFrame:self.bounds];
-    [_spinner setFrame:(CGRectMake((self.width - _spinner.width) / 2, 20, _spinner.width, _spinner.height))];
 
     [_cityNameLabel setFrame:CGRectMake(0, 60, self.width, 40)];
     [_conditionsDescriptionLabel setFrame:CGRectMake(0, 90, 320, 50)];
@@ -158,8 +148,7 @@
 
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView
-        editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     return UITableViewCellEditingStyleDelete;
 }
@@ -169,8 +158,7 @@
     return 50;
 }
 
-- (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell
-        forRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath*)indexPath
 {
     cell.backgroundColor = [UIColor clearColor];
 }
@@ -184,13 +172,6 @@
     [self addSubview:_backgroundView];
 }
 
-- (void)initSpinner
-{
-    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [_spinner startAnimating];
-    [self hideSpinner];
-    [self addSubview:_spinner];
-}
 
 - (void)initCityNameLabel
 {
@@ -249,6 +230,7 @@
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView setBackgroundColor:[UIColor clearColor]];
     [_tableView setBounces:NO];
+    [_tableView setHidden:YES];
     [self addSubview:_tableView];
 }
 
@@ -323,7 +305,6 @@
     }
     return nil;
 }
-
 
 
 @end
