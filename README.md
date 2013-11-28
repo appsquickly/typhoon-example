@@ -41,6 +41,6 @@ place of the old one. And you'd be able to reuse the existing test cases.
 ### The App 
 ![Weather Report](http://www.typhoonframework.org/images/portfolio/PocketForecast1.gif)
 
-***Thanks @hongcheng for the excellent Paperfold animation***
+***Thanks @hongcheng for the excellent <a href="https://github.com/honcheng/PaperFold-for-iOS">Paperfold</a> animation***
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e47e2f2028b2badfc88e13f95914938 "githalytics.com")](http://githalytics.com/jasperblues/Typhoon)
