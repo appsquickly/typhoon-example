@@ -194,21 +194,33 @@
 - (void)showAddCitiesController
 {
     _addCitiesController = [[TyphoonComponentFactory defaultFactory] componentForKey:@"addCityStack"];
-    [_addCitiesController.view setFrame:CGRectMake(0, 0, SIDE_CONTROLLER_WIDTH, self.view.height)];
+    [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
     [self.view addSubview:_addCitiesController.view];
 
-//    __block CGRect frame = _sideViewController.view.frame;
-//    [UIView transitionWithView:self duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
-//    {
-//        frame.origin.y -= self.view.height;
-//        _addCitiesController.view.frame = frame;
-//    } completion:nil];
+    __block CGRect frame = _sideViewController.view.frame;
+    [UIView transitionWithView:self duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+    {
+        frame.origin.y = 0;
+        _addCitiesController.view.frame = frame;
+    } completion:nil];
 
 }
 
 - (void)dismissAddCitiesController
 {
-    [_addCitiesController.view removeFromSuperview];
+    [_sideViewController viewWillAppear:YES];
+    __block CGRect frame = _sideViewController.view.frame;
+    [UIView transitionWithView:self duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+    {
+        frame.origin.y += self.view.height;
+        _addCitiesController.view.frame = frame;
+    } completion:^(BOOL finished)
+    {
+        [_addCitiesController.view removeFromSuperview];
+        [_sideViewController viewDidAppear:YES];
+    }];
+
+
 }
 
 

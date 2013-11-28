@@ -114,6 +114,7 @@
     }
     else
     {
+        [_nameOfCityToAdd resignFirstResponder];
         [rootViewController dismissAddCitiesController];
     }
 }
