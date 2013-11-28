@@ -153,11 +153,8 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 - (void)addCity
 {
-    PFAddCityViewController* addCityController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]];
-    [self presentViewController:addCityController animated:YES completion:^
-    {
-
-    }];
+    PFRootViewController* rootViewController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    [rootViewController showAddCitiesController];
 }
 
 

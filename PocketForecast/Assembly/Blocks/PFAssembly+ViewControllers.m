@@ -63,6 +63,17 @@
     }];
 }
 
+
+- (id)addCityStack
+{
+    return [TyphoonDefinition withClass:[UINavigationController class] initialization:^(TyphoonInitializer* initializer)
+    {
+        initializer.selector = @selector(initWithRootViewController:);
+        [initializer injectWithDefinition:[self addCityViewController]];
+    }];
+}
+
+
 - (id)addCityViewController
 {
     return [TyphoonDefinition withClass:[PFAddCityViewController class] initialization:^(TyphoonInitializer* initializer)

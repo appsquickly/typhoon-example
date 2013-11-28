@@ -16,6 +16,8 @@
 #import "PFCityDao.h"
 #import "PFWeatherReport.h"
 #import "UIFont+ApplicationFonts.h"
+#import "TyphoonComponentFactory.h"
+#import "PFRootViewController.h"
 
 
 @implementation PFAddCityViewController
@@ -47,7 +49,7 @@
 
     [self setTitle:@"Add City"];
     self.navigationItem.rightBarButtonItem =
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAdding:)];
     [_nameOfCityToAdd becomeFirstResponder];
     [_doneButton setAction:@selector(doneAdding:)];
 }
@@ -88,6 +90,7 @@
 /* ============================================================ Private Methods ========================================================= */
 - (void)doneAdding:(id)sender
 {
+    PFRootViewController* rootViewController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
     if ([[_nameOfCityToAdd text] length] > 0)
     {
         [_validationMessage setText:@"Validating city . ."];
@@ -95,15 +98,13 @@
         [_validationMessage setHidden:NO];
         [_spinner startAnimating];
 
-        __weak id weatherClientDelegate = self;
         __weak id <PFCityDao> cityDao = _cityDao;
-
 
         [_weatherClient loadWeatherReportFor:[_nameOfCityToAdd text] onSuccess:^(PFWeatherReport* weatherReport)
         {
             LogDebug(@"Got weather report: %@", weatherReport);
             [cityDao saveCity:[weatherReport cityDisplayName]];
-            [weatherClientDelegate dismissViewControllerAnimated:YES completion:nil];
+            [rootViewController dismissAddCitiesController];
         } onError:^(NSString* message)
         {
             [_spinner stopAnimating];
@@ -113,7 +114,7 @@
     }
     else
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [rootViewController dismissAddCitiesController];
     }
 }
 

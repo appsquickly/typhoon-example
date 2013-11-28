@@ -17,11 +17,19 @@
 
 - (id)rootViewController;
 
+/**
+* Presents the cities list view controller within a navigation controller.
+*/
 - (id)menuStack;
 
 - (id)citiesListController;
 
 - (id)weatherReportController;
+
+/**
+* Presents the add cities controller within a navigation controller.
+*/
+- (id)addCityStack;
 
 - (id)addCityViewController;
 

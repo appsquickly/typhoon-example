@@ -31,6 +31,8 @@ typedef enum
     PFSideViewState _sideViewState;
     UIViewController* _sideViewController;
     NSInteger _progressHudRetainCount;
+
+    UIViewController* _addCitiesController;
 }
 
 @property(nonatomic, strong, readonly) PFProgressHUD* progressHUD;
@@ -53,6 +55,10 @@ typedef enum
 - (void)showSideViewController;
 
 - (void)hideSideViewController;
+
+- (void)showAddCitiesController;
+
+- (void)dismissAddCitiesController;
 
 - (void)toggleSideViewController;
 

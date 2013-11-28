@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFAddCityViewController">
             <connections>
-                <outlet property="doneButton" destination="19" id="26"/>
                 <outlet property="nameOfCityToAdd" destination="24" id="27"/>
                 <outlet property="spinner" destination="25" id="29"/>
                 <outlet property="validationMessage" destination="22" id="30"/>
@@ -18,16 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="245" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" id="17">
-                    <rect key="frame" x="0.0" y="13" width="245" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <color key="barTintColor" red="0.52549019610000003" green="0.60784313729999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <items>
-                        <navigationItem title="Add City" id="18">
-                            <barButtonItem key="rightBarButtonItem" systemItem="done" id="19"/>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Validating city. . ." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="22">
                     <rect key="frame" x="40" y="139" width="165" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,7 +25,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name of a city" textAlignment="center" minimumFontSize="20" id="24">
-                    <rect key="frame" x="7" y="72" width="230" height="31"/>
+                    <rect key="frame" x="7" y="82" width="230" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="textColor" red="0.52549019610000003" green="0.60784313729999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
