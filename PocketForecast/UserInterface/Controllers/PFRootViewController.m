@@ -191,34 +191,38 @@
 
 - (void)showAddCitiesController
 {
-    _addCitiesController = [[TyphoonComponentFactory defaultFactory] componentForKey:@"addCityStack"];
-    [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
-    [self.view addSubview:_addCitiesController.view];
-
-    __block CGRect frame = _menuViewController.view.frame;
-    [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+    if (!_addCitiesController)
     {
-        frame.origin.y = 0;
-        _addCitiesController.view.frame = frame;
-    } completion:nil];
+        _addCitiesController = [[TyphoonComponentFactory defaultFactory] componentForKey:@"addCityStack"];
+        [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
+        [self.view addSubview:_addCitiesController.view];
 
+        __block CGRect frame = _menuViewController.view.frame;
+        [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+        {
+            frame.origin.y = 0;
+            _addCitiesController.view.frame = frame;
+        } completion:nil];
+    }
 }
 
 - (void)dismissAddCitiesController
 {
-    [_menuViewController viewWillAppear:YES];
-    __block CGRect frame = _menuViewController.view.frame;
-    [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+    if (_addCitiesController)
     {
-        frame.origin.y += self.view.height;
-        _addCitiesController.view.frame = frame;
-    } completion:^(BOOL finished)
-    {
-        [_addCitiesController.view removeFromSuperview];
-        [_menuViewController viewDidAppear:YES];
-    }];
-
-
+        [_menuViewController viewWillAppear:YES];
+        __block CGRect frame = _menuViewController.view.frame;
+        [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+        {
+            frame.origin.y += self.view.height;
+            _addCitiesController.view.frame = frame;
+        } completion:^(BOOL finished)
+        {
+            [_addCitiesController.view removeFromSuperview];
+            _addCitiesController = nil;
+            [_menuViewController viewDidAppear:YES];
+        }];
+    }
 }
 
 

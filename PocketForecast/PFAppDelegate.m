@@ -32,7 +32,8 @@
         NSFontAttributeName            : [UIFont applicationFontOfSize:20],
         NSForegroundColorAttributeName : [UIColor whiteColor],
     }];
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x9ebeb3)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x641d23)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 

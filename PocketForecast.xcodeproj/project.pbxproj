@@ -47,6 +47,7 @@
 		BA7981088FA218ECD034170C /* PFWeatherClientBasicImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */; };
 		BA7981261B5929B6EA923BD4 /* PFWeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798945DD532BA1BD7FE30A /* PFWeatherReportViewController.m */; };
 		BA7981432F539328213E14B9 /* icon_cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798E6B7BCCED2C5A113449 /* icon_cloudy.png */; };
+		BA7981AF874ACB6C0FC6F7F4 /* bg3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983FC5295E1248DF73C06 /* bg3@2x.png */; };
 		BA7981C412299394E6158330 /* Assembly.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA7987ED54F252A869A45D85 /* Assembly.xml */; };
 		BA79820179A4C7B8C43BC1BF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7986D22B15C65F246F8705 /* Icon.png */; };
 		BA798226B94C1135F8514958 /* cell_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */; };
@@ -60,6 +61,7 @@
 		BA79831DAB57B1F0736F960C /* icon_sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798253399A5FEC6A52CFCA /* icon_sunny.png */; };
 		BA7983310436F7ED629C7F11 /* PFWeatherReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798312A8E6D9B8F302DCCB /* PFWeatherReportView.m */; };
 		BA798343E93DFA08479EE28A /* cell_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */; };
+		BA79834B5169137324403E8C /* bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798AD5669A020612B839CA /* bg3.png */; };
 		BA798358F55EBAC8EE9A4C11 /* loader-dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798184A69B08B5A95639DE /* loader-dot@2x.png */; };
 		BA7983738A2E8A5B215F5556 /* icon_windy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7989A03B709D5789A1ACE2 /* icon_windy@2x.png */; };
 		BA7983B8CE23657F38B953E7 /* icon_stormy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7988F4AB80D4FD96C0E415 /* icon_stormy.png */; };
@@ -81,6 +83,7 @@
 		BA7985CD4B2D4332CB0C3135 /* Questrial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA798E9E3746332B48394016 /* Questrial-Regular.otf */; };
 		BA7985D554ACC51A6379EADC /* PFViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79872397E3BD83FDCEE810 /* PFViewControllers.m */; };
 		BA7985DDFC13965C2EDE6776 /* PFAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C7B558024C0786FA923 /* PFAddCityViewController.m */; };
+		BA798607C95F754C2CD7BFA2 /* bg3-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79875DE5CE201282E6D700 /* bg3-568h@2x.png */; };
 		BA79860FEC9AC1CECD9B31DE /* PFWeatherReportViewDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA79805C0A0C2453D9AF3841 /* PFWeatherReportViewDelegate.h */; };
 		BA798655FF08CCF03AAFAEC7 /* icon_windy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7989A03B709D5789A1ACE2 /* icon_windy@2x.png */; };
 		BA798661335BA2EF32AB2EDF /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798456C1D6E189F98A901B /* bg1.png */; };
@@ -108,6 +111,8 @@
 		BA798AE967680E4C6D984092 /* icon_stormy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7988F4AB80D4FD96C0E415 /* icon_stormy.png */; };
 		BA798AEDFC11905236E98CE3 /* PFCitiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798D757661C56D7B6A49BD /* PFCitiesListViewController.m */; };
 		BA798B05BFE968110CD32813 /* UIFont+ApplicationFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798AFF8F7ED2C2BAA5DEB6 /* UIFont+ApplicationFonts.m */; };
+		BA798B069F04F841189A2775 /* bg3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983FC5295E1248DF73C06 /* bg3@2x.png */; };
+		BA798B53A5FB4EE516BA0547 /* bg3-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79875DE5CE201282E6D700 /* bg3-568h@2x.png */; };
 		BA798B717FF47F1C41E3B473 /* Questrial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA798E9E3746332B48394016 /* Questrial-Regular.otf */; };
 		BA798BC6AE76A4AB403C3CC2 /* PFCitiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798D757661C56D7B6A49BD /* PFCitiesListViewController.m */; };
 		BA798BD20E9AD59DCED10715 /* PFCityDoaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EC033265E30559E1216 /* PFCityDoaTests.m */; };
@@ -115,6 +120,7 @@
 		BA798C217A1573AF81A1391B /* WebColors.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA798A024407C194DFC20E5C /* WebColors.h */; };
 		BA798C438364562217A0A185 /* loader-dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798184A69B08B5A95639DE /* loader-dot@2x.png */; };
 		BA798C66FD8B122E5E9F358F /* icon_cloudy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798DB9D6A187392B3C07C1 /* icon_cloudy@2x.png */; };
+		BA798C717F0FB458BF71743F /* bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798AD5669A020612B839CA /* bg3.png */; };
 		BA798C91070482BB1C44DEAB /* bg2-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798231ED4AABA3B826EE2C /* bg2-568h@2x.png */; };
 		BA798CC56BF649127B173D19 /* AddCity.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA798C2EBA35DCFC44E9F6CD /* AddCity.xib */; };
 		BA798CC96A8610C2266A544E /* icon_partly_cloudy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798FABE8F822F7C4C37589 /* icon_partly_cloudy@2x.png */; };
@@ -226,6 +232,7 @@
 		BA798386C46D4F082497CCBB /* icon_stormy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_stormy@2x.png"; sourceTree = "<group>"; };
 		BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_fade@2x.png"; sourceTree = "<group>"; };
 		BA7983F2134358A4E02D50EA /* VarelaRound-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; path = "VarelaRound-Regular.otf"; sourceTree = "<group>"; };
+		BA7983FC5295E1248DF73C06 /* bg3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg3@2x.png"; sourceTree = "<group>"; };
 		BA79841E09AFC834B5DB666E /* icon_windy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_windy.png; sourceTree = "<group>"; };
 		BA798456C1D6E189F98A901B /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		BA79849E8B7E0932CE3BCD1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -236,6 +243,7 @@
 		BA7986D22B15C65F246F8705 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BA79872397E3BD83FDCEE810 /* PFViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFViewControllers.m; sourceTree = "<group>"; };
 		BA7987478471BA92A0518862 /* PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReport.m; sourceTree = "<group>"; };
+		BA79875DE5CE201282E6D700 /* bg3-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg3-568h@2x.png"; sourceTree = "<group>"; };
 		BA7987AAC3AB6A8B656FDE00 /* SampleForecast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleForecast.xml; sourceTree = "<group>"; };
 		BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFForecastConditions.m; sourceTree = "<group>"; };
 		BA7987ED54F252A869A45D85 /* Assembly.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Assembly.xml; sourceTree = "<group>"; };
@@ -255,6 +263,7 @@
 		BA798AA1DEFB3C8006C73FBB /* temperature_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperature_circle.png; sourceTree = "<group>"; };
 		BA798AB111DDF31FAB691AD4 /* bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x.png"; sourceTree = "<group>"; };
 		BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherClientBasicImpl.m; sourceTree = "<group>"; };
+		BA798AD5669A020612B839CA /* bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg3.png; sourceTree = "<group>"; };
 		BA798AFF8F7ED2C2BAA5DEB6 /* UIFont+ApplicationFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ApplicationFonts.m"; sourceTree = "<group>"; };
 		BA798B04A978C626822DE2BF /* PFRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRootViewController.m; path = Controllers/PFRootViewController.m; sourceTree = "<group>"; };
 		BA798B1EF321D3252A608028 /* PFTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperature.m; sourceTree = "<group>"; };
@@ -657,6 +666,9 @@
 				BA7982933806BE32E0D896FD /* bg2.png */,
 				BA79831DC314DE17D4AAF933 /* bg2@2x.png */,
 				BA798F751E9984ADBD0255E5 /* Loader */,
+				BA79875DE5CE201282E6D700 /* bg3-568h@2x.png */,
+				BA798AD5669A020612B839CA /* bg3.png */,
+				BA7983FC5295E1248DF73C06 /* bg3@2x.png */,
 			);
 			path = textures;
 			sourceTree = "<group>";
@@ -793,6 +805,9 @@
 				BA7986DE689AB91DD96B43B8 /* loader-dot.png in Resources */,
 				BA7986E3294B5ED967A4C148 /* loader-bg@2x.png in Resources */,
 				BA798358F55EBAC8EE9A4C11 /* loader-dot@2x.png in Resources */,
+				BA798607C95F754C2CD7BFA2 /* bg3-568h@2x.png in Resources */,
+				BA798C717F0FB458BF71743F /* bg3.png in Resources */,
+				BA7981AF874ACB6C0FC6F7F4 /* bg3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,6 +852,9 @@
 				BA79878C74D6FC5636199E60 /* loader-dot.png in Resources */,
 				BA798DC2968472C4AA604971 /* loader-bg@2x.png in Resources */,
 				BA798C438364562217A0A185 /* loader-dot@2x.png in Resources */,
+				BA798B53A5FB4EE516BA0547 /* bg3-568h@2x.png in Resources */,
+				BA79834B5169137324403E8C /* bg3.png in Resources */,
+				BA798B069F04F841189A2775 /* bg3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,7 +1078,7 @@
 			baseConfigurationReference = BBD56735007547068B4E01EE /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
@@ -1077,8 +1095,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = PocketForecast;
-				PROVISIONING_PROFILE = "941A3CC8-933F-4CEC-B672-09AACFEF4A16";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "941A3CC8-933F-4CEC-B672-09AACFEF4A16";
+				PROVISIONING_PROFILE = "73FC1C48-7BCB-482D-83CF-7C846522AB4A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73FC1C48-7BCB-482D-83CF-7C846522AB4A";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -1090,7 +1108,7 @@
 			baseConfigurationReference = BBD56735007547068B4E01EE /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
@@ -1107,8 +1125,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = PocketForecast;
-				PROVISIONING_PROFILE = "941A3CC8-933F-4CEC-B672-09AACFEF4A16";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "941A3CC8-933F-4CEC-B672-09AACFEF4A16";
+				PROVISIONING_PROFILE = "73FC1C48-7BCB-482D-83CF-7C846522AB4A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73FC1C48-7BCB-482D-83CF-7C846522AB4A";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;

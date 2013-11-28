@@ -168,7 +168,7 @@
 
 - (void)initBackgroundView
 {
-    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg2.png"]];
+    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg3-568h@2x.png"]];
     [self addSubview:_backgroundView];
 }
 
@@ -238,7 +238,7 @@
 {
     _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
     [_toolbar setBarStyle:UIBarStyleBlackTranslucent];
-    [_toolbar setBarTintColor:UIColorFromRGBWithAlpha(0x2b97a4, 0.9)];
+    [_toolbar setBarTintColor:UIColorFromRGBWithAlpha(0x641d23, 0.9)];
     [self addSubview:_toolbar];
 }
 
@@ -259,11 +259,11 @@
     switch (row)
     {
         case 0:
-            return UIColorFromRGBWithAlpha(0x0285a3, 0.5);
+            return UIColorFromRGBWithAlpha(0x641d23, 0.5);
         case 1:
-            return UIColorFromRGBWithAlpha(0x0285a3, 0.7);
+            return UIColorFromRGBWithAlpha(0x641d23, 0.7);
         default:
-            return UIColorFromRGBWithAlpha(0x0285a3, 0.9);
+            return UIColorFromRGBWithAlpha(0x641d23, 0.9);
     }
 }
 
