@@ -33,7 +33,10 @@
 {
     PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
     [controller showProgressHUD];
-    [controller.progressHUD withLabelText:@"Loading..."];
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        [controller.progressHUD withLabelText:@"Loading..."];
+    });
     return controller.progressHUD;
 }
 
@@ -130,7 +133,6 @@
     [_label setBackgroundColor:[UIColor clearColor]];
     [_label setTextColor:[UIColor whiteColor]];
     [_label setTextAlignment:NSTextAlignmentCenter];
-    [_label setText:@"Loading"];
     [_label setFont:[UIFont applicationFontOfSize:10]];
     [_contentView addSubview:_label];
 }
