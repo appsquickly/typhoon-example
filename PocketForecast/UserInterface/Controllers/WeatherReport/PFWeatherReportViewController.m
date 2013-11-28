@@ -18,6 +18,7 @@
 #import "PFCityDao.h"
 #import "Typhoon.h"
 #import "PFWeatherReportView.h"
+#import "PFRootViewController.h"
 
 
 @implementation PFWeatherReportViewController
@@ -70,6 +71,18 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
+}
 
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods
@@ -94,17 +107,8 @@
 {
     [_cityDao clearCurrentlySelectedCity];
 
-    UIWindow* window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[UINavigationController class]];
-
-    //pre-load this, because it may not have loaded yet.
-    if (controller.visibleViewController.view == nil)
-    {}
-
-    [UIView transitionWithView:window duration:0.9f options:UIViewAnimationOptionTransitionFlipFromRight animations:^
-    {
-        [window setRootViewController:controller];
-    } completion:nil];
+    PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    [controller toggleSideViewController];
 }
 
 

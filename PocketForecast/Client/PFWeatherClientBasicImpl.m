@@ -42,30 +42,34 @@
 - (void)loadWeatherReportFor:(NSString*)city onSuccess:(PFWeatherReportReceivedBlock)successBlock
     onError:(PFWeatherReportErrorBlock)errorBlock;
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^
+    if (city)
     {
-        NSData* data = [NSData dataWithContentsOfURL:[self queryURL:city]];
-        RXMLElement* rootElement = [RXMLElement elementFromXMLData:data];
-        RXMLElement* error = [rootElement child:@"error"];
-        if (error && errorBlock)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^
         {
-            NSString* failureReason = [[[error child:@"msg"] text] copy];
-            dispatch_async(dispatch_get_main_queue(), ^
+            NSData* data = [NSData dataWithContentsOfURL:[self queryURL:city]];
+            RXMLElement* rootElement = [RXMLElement elementFromXMLData:data];
+            RXMLElement* error = [rootElement child:@"error"];
+            if (error && errorBlock)
             {
-                errorBlock(failureReason.length == 0 ? @"Unexpected error." : failureReason);
-            });
+                NSString* failureReason = [[[error child:@"msg"] text] copy];
+                dispatch_async(dispatch_get_main_queue(), ^
+                {
+                    errorBlock(failureReason.length == 0 ? @"Unexpected error." : failureReason);
+                });
 
-        }
-        else if (successBlock)
-        {
-            PFWeatherReport* weatherReport = [rootElement asWeatherReport];
-            [_weatherReportDao saveReport:weatherReport];
-            dispatch_async(dispatch_get_main_queue(), ^
+            }
+            else if (successBlock)
             {
-                successBlock(weatherReport);
-            });
-        }
-    });
+                PFWeatherReport* weatherReport = [rootElement asWeatherReport];
+                [_weatherReportDao saveReport:weatherReport];
+                dispatch_async(dispatch_get_main_queue(), ^
+                {
+                    successBlock(weatherReport);
+                });
+            }
+        });
+    }
+
 }
 
 

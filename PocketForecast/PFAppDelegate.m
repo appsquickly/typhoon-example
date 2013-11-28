@@ -17,6 +17,7 @@
 #import "Typhoon.h"
 #import "PFAssembly.h"
 #import "UIFont+ApplicationFonts.h"
+#import "PFRootViewController.h"
 
 @implementation PFAppDelegate
 
@@ -43,16 +44,8 @@
     [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
     [factory makeDefault];
 
-    id <PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
-    NSString* selectedCity = [cityDao getCurrentlySelectedCity];
-    if (selectedCity)
-    {
-        [_window setRootViewController:[factory componentForType:[PFWeatherReportViewController class]]];
-    }
-    else
-    {
-        [_window setRootViewController:[factory componentForType:[UINavigationController class]]];
-    }
+    [_window setRootViewController:[factory componentForType:[PFRootViewController class]]];
+
 
     [self.window makeKeyAndVisible];
 

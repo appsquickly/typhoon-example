@@ -180,8 +180,7 @@
 
 - (void)initBackgroundView
 {
-    [self setBackgroundColor:UIColorFromRGB(0x837758)];
-    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg1.png"]];
+    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg2.png"]];
     [self addSubview:_backgroundView];
 }
 
@@ -257,7 +256,7 @@
 {
     _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
     [_toolbar setBarStyle:UIBarStyleBlackTranslucent];
-    [_toolbar setBarTintColor:UIColorFromRGBWithAlpha(0x2d7194, 0.9)];
+    [_toolbar setBarTintColor:UIColorFromRGBWithAlpha(0x2b97a4, 0.9)];
     [self addSubview:_toolbar];
 
     UIBarButtonItem* cityListButton = [[UIBarButtonItem alloc]
@@ -291,11 +290,11 @@
     switch (row)
     {
         case 0:
-            return UIColorFromRGBWithAlpha(0x2d7194, 0.5);
+            return UIColorFromRGBWithAlpha(0x0285a3, 0.5);
         case 1:
-            return UIColorFromRGBWithAlpha(0x2d7194, 0.7);
+            return UIColorFromRGBWithAlpha(0x0285a3, 0.7);
         default:
-            return UIColorFromRGBWithAlpha(0x2d7194, 0.9);
+            return UIColorFromRGBWithAlpha(0x0285a3, 0.9);
     }
 }
 

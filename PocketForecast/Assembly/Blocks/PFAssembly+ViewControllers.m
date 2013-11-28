@@ -16,19 +16,30 @@
 #import "PFCitiesListViewController.h"
 #import "PFAddCityViewController.h"
 #import "PFWeatherReportViewController.h"
+#import "PFRootViewController.h"
 
 
 @implementation PFAssembly (ViewControllers)
 
-- (id)navigationController
+- (id)rootViewController
+{
+    return [TyphoonDefinition withClass:[PFRootViewController class] initialization:^(TyphoonInitializer* initializer)
+    {
+        initializer.selector = @selector(initWithMainContentViewController:sideViewController:);
+        [initializer injectWithDefinition:[self weatherReportController]];
+        [initializer injectWithDefinition:[self menuStack]];
+    } properties:^(TyphoonDefinition* definition)
+    {
+        definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
+- (id)menuStack
 {
     return [TyphoonDefinition withClass:[UINavigationController class] initialization:^(TyphoonInitializer* initializer)
     {
         initializer.selector = @selector(initWithRootViewController:);
         [initializer injectWithDefinition:[self citiesListController]];
-    } properties:^(TyphoonDefinition* definition)
-    {
-        definition.afterPropertyInjection = @selector(applySkin);
     }];
 }
 

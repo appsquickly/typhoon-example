@@ -15,7 +15,9 @@
 
 @interface PFAssembly (ViewControllers)
 
-- (id)navigationController;
+- (id)rootViewController;
+
+- (id)menuStack;
 
 - (id)citiesListController;
 

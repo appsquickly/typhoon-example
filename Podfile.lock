@@ -5,6 +5,7 @@ PODS:
   - OCLogTemplate (1.0)
   - OCMockito (1.1.0):
     - OCHamcrest (~> 3.0)
+  - PaperFold (1.2)
   - RaptureXML (1.0.1)
   - Typhoon (1.5.5)
 
@@ -14,8 +15,13 @@ DEPENDENCIES:
   - OCHamcrest
   - OCLogTemplate
   - OCMockito
+  - PaperFold (from `https://github.com/jasperblues/PaperFold-for-iOS.git`)
   - RaptureXML
   - Typhoon
+
+EXTERNAL SOURCES:
+  PaperFold:
+    :git: https://github.com/jasperblues/PaperFold-for-iOS.git
 
 SPEC CHECKSUMS:
   CKUITools: bbac5931dfa9e96721897bea21f6a2233d611db4
@@ -23,6 +29,7 @@ SPEC CHECKSUMS:
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   OCLogTemplate: d448f0a0c7e34e715e0400fc04c6bd871b8c17f4
   OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
+  PaperFold: 56c21be56fe6454fa99927b251396471d341c874
   RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
   Typhoon: d7e8670687d9fdf0afaa8d1a600783c2423c5abc
 
