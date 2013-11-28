@@ -62,7 +62,7 @@
         NSArray* indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0],
                 [NSIndexPath indexPathForRow:2 inSection:0]];
 
-        [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+        [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
         [_cityNameLabel setText:[_weatherReport cityDisplayName]];
         [_temperatureLabel setText:[_weatherReport.currentConditions.temperature asShortStringInDefaultUnits]];
         [_conditionsDescriptionLabel setText:[_weatherReport.currentConditions longSummary]];
@@ -108,9 +108,9 @@
     [_conditionsIcon setFrame:CGRectMake(40, 143, 130, 120)];
     [_temperatureLabelContainer setFrame:CGRectMake(180, 155, 88, 88)];
 
-    [_toolbar setFrame:CGRectMake(0, self.frame.size.height - 44, 320, 44)];
+    [_toolbar setFrame:CGRectMake(0, self.frame.size.height - _toolbar.height, self.width, _toolbar.height)];
     [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 150, 320, 150)];
-    [_lastUpdateLabel setFrame:CGRectMake(20, self.frame.size.height - 44, self.frame.size.width - 40, 44)];
+    [_lastUpdateLabel setFrame:[_toolbar bounds]];
 }
 
 /* ====================================================================================================================================== */
@@ -254,23 +254,10 @@
 
 - (void)initToolbar
 {
-    _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
+    _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
     [_toolbar setBarStyle:UIBarStyleBlackTranslucent];
     [_toolbar setBarTintColor:UIColorFromRGBWithAlpha(0x2b97a4, 0.9)];
     [self addSubview:_toolbar];
-
-    UIBarButtonItem* cityListButton = [[UIBarButtonItem alloc]
-            initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(cityListPressed)];
-    [cityListButton setTintColor:[UIColor whiteColor]];
-
-    UIBarButtonItem* space = [[UIBarButtonItem alloc]
-            initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(cityListPressed)];
-
-    UIBarButtonItem* refreshButton =
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshPressed)];
-    [refreshButton setTintColor:[UIColor whiteColor]];
-
-    [_toolbar setItems:@[cityListButton, space, refreshButton]];
 }
 
 - (void)initLastUpdateLabel
@@ -280,7 +267,7 @@
     [_lastUpdateLabel setTextColor:UIColorFromRGB(0xf9f7f4)];
     [_lastUpdateLabel setBackgroundColor:[UIColor clearColor]];
     [_lastUpdateLabel setTextAlignment:NSTextAlignmentCenter];
-    [self addSubview:_lastUpdateLabel];
+    [_toolbar addSubview:_lastUpdateLabel];
 }
 
 /* ====================================================================================================================================== */
@@ -337,17 +324,6 @@
     return nil;
 }
 
-/* ====================================================================================================================================== */
-#pragma mark - Actions
 
-- (void)cityListPressed
-{
-    [_delegate presentCitiesList];
-}
-
-- (void)refreshPressed
-{
-    [_delegate refreshData];
-}
 
 @end

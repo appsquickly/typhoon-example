@@ -16,6 +16,6 @@
 
 - (void)refreshData;
 
-- (void)presentCitiesList;
+- (void)presentMenu;
 
 @end

@@ -14,7 +14,7 @@
 #import "PFRootViewController.h"
 #import "PaperFoldView.h"
 
-#define DETAILS_CONTROLLER_WIDTH 245.0
+#define SIDE_CONTROLLER_WIDTH 245.0
 
 @implementation PFRootViewController
 
@@ -101,8 +101,8 @@
     {
         _sideViewState = PFSideViewStateShowing;
 
-        [_sideViewController.view setFrame:CGRectMake(0, 0, _mainContentViewContainer.width - (320 - DETAILS_CONTROLLER_WIDTH),
-            _mainContentViewContainer.height)];
+        [_sideViewController.view setFrame:CGRectMake(0, 0,
+            _mainContentViewContainer.width - (_mainContentViewContainer.width - SIDE_CONTROLLER_WIDTH), _mainContentViewContainer.height)];
 
         PaperFoldView* view = (PaperFoldView*) self.view;
         [view setDelegate:self];
@@ -113,6 +113,8 @@
         [view setEnableBottomFoldDragging:NO];
         [view setEnableHorizontalEdgeDragging:NO];
         [view setPaperFoldState:PaperFoldStateLeftUnfolded];
+
+        [_mainContentViewContainer setNeedsDisplay];
     }
 }
 
@@ -123,6 +125,7 @@
         _sideViewState = PFSideViewStateHidden;
         PaperFoldView* view = (PaperFoldView*) self.view;
         [view setPaperFoldState:PaperFoldStateDefault];
+        [_navigator.topViewController viewWillAppear:YES];
     }
 }
 
@@ -137,7 +140,6 @@
         [self hideSideViewController];
     }
 }
-
 
 
 /* ====================================================================================================================================== */
@@ -213,7 +215,10 @@
 
 - (void)paperFoldView:(id)paperFoldView didFoldAutomatically:(BOOL)automated toState:(PaperFoldState)paperFoldState
 {
-
+    if (paperFoldState == PaperFoldStateDefault)
+    {
+        [_navigator.topViewController viewDidAppear:YES];
+    }
 }
 
 

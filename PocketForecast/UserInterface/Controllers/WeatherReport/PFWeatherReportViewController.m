@@ -28,7 +28,7 @@
 #pragma mark - Initialization & Destruction
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-        cityDao:(id <PFCityDao>)cityDao
+    cityDao:(id <PFCityDao>)cityDao
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
@@ -59,6 +59,12 @@
 {
     [super viewDidLoad];
     [(PFWeatherReportView*) self.view setDelegate:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
     _cityName = [_cityDao getCurrentlySelectedCity];
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
@@ -71,10 +77,27 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [super viewWillAppear:animated];
+    if (_cityName)
+    {
+        UIBarButtonItem* cityListButton = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(presentMenu)];
+        [cityListButton setTintColor:[UIColor whiteColor]];
+
+        UIBarButtonItem* space = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(menuButtonPressed)];
+
+        UIBarButtonItem* refreshButton =
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshData)];
+        [refreshButton setTintColor:[UIColor whiteColor]];
+
+        [((PFWeatherReportView*) self.view).toolbar setItems:@[
+            cityListButton,
+            space,
+            refreshButton
+        ]];
+    }
 }
 
 
@@ -103,10 +126,8 @@
     }];
 }
 
-- (void)presentCitiesList
+- (void)presentMenu
 {
-    [_cityDao clearCurrentlySelectedCity];
-
     PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
     [controller toggleSideViewController];
 }

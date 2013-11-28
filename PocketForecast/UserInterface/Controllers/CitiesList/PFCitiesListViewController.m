@@ -19,6 +19,7 @@
 #import "PFCityLabelTableViewCell.h"
 #import "Typhoon.h"
 #import "UIFont+ApplicationFonts.h"
+#import "PFRootViewController.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -30,7 +31,9 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 @synthesize temperatureUnitsControl = _temperatureUnitsControl;
 
 
-/* ============================================================ Initializers ============================================================ */
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
+
 - (id)initWithCityDao:(id <PFCityDao>)cityDao
 {
     self = [super initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];
@@ -42,8 +45,16 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     return self;
 }
 
+- (void)dealloc
+{
+    NSLog(@"%@ in dealloc!", self);
+}
 
-/* ========================================================== Interface Methods ========================================================= */
+
+
+/* ====================================================================================================================================== */
+#pragma mark - Overridden Methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -78,7 +89,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-/* =========================================================== Protocol Methods ========================================================= */
+/* ====================================================================================================================================== */
 #pragma mark UITableView methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
@@ -114,16 +125,8 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     NSString* cityName = [_cities objectAtIndex:indexPath.row];
     [_cityDao saveCurrentlySelectedCity:cityName];
 
-    PFWeatherReportViewController
-            * weatherReportController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFWeatherReportViewController class]];
-    [self moveFrameBelowStatusBarFor:weatherReportController];
-
-    UIWindow* window = [UIApplication sharedApplication].keyWindow;
-    [UIView transitionWithView:window duration:0.9f options:UIViewAnimationOptionTransitionFlipFromLeft animations:^
-    {
-        [window setRootViewController:weatherReportController];
-    } completion:nil];
-
+    PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    [controller toggleSideViewController];
 
 }
 
@@ -144,13 +147,10 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     }
 }
 
-/* ============================================================ Utility Methods ========================================================= */
-- (void)dealloc
-{
-    NSLog(@"%@ in dealloc!", self);
-}
 
-/* ============================================================ Private Methods ========================================================= */
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
 - (void)addCity
 {
     PFAddCityViewController* addCityController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]];
@@ -165,18 +165,6 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 {
     _cities = [_cityDao listAllCities];
     [_citiesListTableView reloadData];
-}
-
-/*
-* When replacing the root view controller it's necessary to adjust a new view's frame below the status bar.
-*/
-- (void)moveFrameBelowStatusBarFor:(PFWeatherReportViewController*)weatherReportController
-{
-    CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
-    CGRect newFrame = weatherReportController.view.frame;
-    newFrame.origin = CGPointMake(0, 0 + statusBarFrame.size.height);
-    newFrame.size = CGSizeMake(self.view.frame.size.width, self.view.window.frame.size.height - statusBarFrame.size.height);
-    weatherReportController.view.frame = newFrame;
 }
 
 - (void)saveTemperatureUnitPreference

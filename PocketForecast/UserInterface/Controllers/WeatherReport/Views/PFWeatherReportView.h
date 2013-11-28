@@ -27,7 +27,6 @@
     UIView* _temperatureLabelContainer;
     UILabel* _temperatureLabel;
 
-    UIToolbar* _toolbar;
     UILabel* _lastUpdateLabel;
     UITableView* _tableView;
 
@@ -36,6 +35,8 @@
     __weak id <PFWeatherReportViewDelegate> _delegate;
 
 }
+
+@property (nonatomic, strong, readonly) UIToolbar* toolbar;
 
 - (void)setWeatherReport:(PFWeatherReport*)weatherReport;
 

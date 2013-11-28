@@ -44,8 +44,15 @@
     [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
     [factory makeDefault];
 
-    [_window setRootViewController:[factory componentForType:[PFRootViewController class]]];
+    PFRootViewController* rootViewController = [factory componentForType:[PFRootViewController class]];
+    [_window setRootViewController:rootViewController];
 
+    id <PFCityDao> cityDao = [factory componentForType:@protocol(PFCityDao)];
+    NSString* selectedCity = [cityDao getCurrentlySelectedCity];
+    if (!selectedCity)
+    {
+        [rootViewController showSideViewController];
+    }
 
     [self.window makeKeyAndVisible];
 
