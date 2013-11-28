@@ -28,7 +28,7 @@
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance]
-        setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont applicationFontOfSize:20], UITextAttributeFont, nil]];
+        setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont applicationFontOfSize:20], NSFontAttributeName, nil]];
 
 
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -24,13 +24,13 @@
 #pragma mark - Initialization & Destruction
 
 - (instancetype)initWithMainContentViewController:(UIViewController*)mainContentViewController
-    sideViewController:(UIViewController*)sideViewController
+    menuViewController:(UIViewController*)menuViewController
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
     {
         _sideViewState = PFSideViewStateHidden;
-        _sideViewController = sideViewController;
+        _menuViewController = menuViewController;
         if (mainContentViewController)
         {
             [self pushViewController:mainContentViewController replaceRoot:YES];
@@ -41,7 +41,7 @@
 
 - (id)init
 {
-    return [self initWithMainContentViewController:nil sideViewController:nil];
+    return [self initWithMainContentViewController:nil menuViewController:nil];
 }
 
 - (void)beforePropertiesSet
@@ -103,12 +103,12 @@
     {
         _sideViewState = PFSideViewStateShowing;
 
-        [_sideViewController.view setFrame:CGRectMake(0, 0,
+        [_menuViewController.view setFrame:CGRectMake(0, 0,
             _mainContentViewContainer.width - (_mainContentViewContainer.width - SIDE_CONTROLLER_WIDTH), _mainContentViewContainer.height)];
 
         PaperFoldView* view = (PaperFoldView*) self.view;
         [view setDelegate:self];
-        [view setLeftFoldContentView:_sideViewController.view foldCount:5 pullFactor:0.9];
+        [view setLeftFoldContentView:_menuViewController.view foldCount:5 pullFactor:0.9];
         [view setEnableLeftFoldDragging:NO];
         [view setEnableRightFoldDragging:NO];
         [view setEnableTopFoldDragging:NO];
@@ -195,8 +195,8 @@
     [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
     [self.view addSubview:_addCitiesController.view];
 
-    __block CGRect frame = _sideViewController.view.frame;
-    [UIView transitionWithView:self duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+    __block CGRect frame = _menuViewController.view.frame;
+    [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
     {
         frame.origin.y = 0;
         _addCitiesController.view.frame = frame;
@@ -206,16 +206,16 @@
 
 - (void)dismissAddCitiesController
 {
-    [_sideViewController viewWillAppear:YES];
-    __block CGRect frame = _sideViewController.view.frame;
-    [UIView transitionWithView:self duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+    [_menuViewController viewWillAppear:YES];
+    __block CGRect frame = _menuViewController.view.frame;
+    [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
     {
         frame.origin.y += self.view.height;
         _addCitiesController.view.frame = frame;
     } completion:^(BOOL finished)
     {
         [_addCitiesController.view removeFromSuperview];
-        [_sideViewController viewDidAppear:YES];
+        [_menuViewController viewDidAppear:YES];
     }];
 
 

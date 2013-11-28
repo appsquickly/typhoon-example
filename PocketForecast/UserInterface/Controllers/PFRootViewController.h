@@ -29,7 +29,7 @@ typedef enum
     UIView* _mainContentViewContainer;
     UIView* _slideOnMainContentViewContainer;
     PFSideViewState _sideViewState;
-    UIViewController* _sideViewController;
+    UIViewController* _menuViewController;
     NSInteger _progressHudRetainCount;
 
     UIViewController* _addCitiesController;
@@ -41,7 +41,7 @@ typedef enum
 * Creates a root view controller instance, with the initial main content view controller, and side view controller.
 */
 - (instancetype)initWithMainContentViewController:(UIViewController*)mainContentViewController
-    sideViewController:(UIViewController*)sideViewController;
+    menuViewController:(UIViewController*)menuViewController;
 
 /**
 * Sets main content view, with an animated transition.

@@ -1,13 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  58 NORTH
-//  Copyright 2013 58 North
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: This software is the proprietary information of 58 North
-//  Use is subject to license terms.
+//  NOTICE: The authors permit you to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
+
 
 #import "PFViewControllers.h"
 #import "PFCoreComponents.h"
@@ -31,7 +32,7 @@
 {
     return [TyphoonDefinition withClass:[PFRootViewController class] initialization:^(TyphoonInitializer* initializer)
     {
-        initializer.selector = @selector(initWithMainContentViewController:sideViewController:);
+        initializer.selector = @selector(initWithMainContentViewController:menuViewController:);
         [initializer injectWithDefinition:[self weatherReportController]];
         [initializer injectWithDefinition:[self menuStack]];
     } properties:^(TyphoonDefinition* definition)
