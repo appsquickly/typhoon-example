@@ -1,0 +1,42 @@
+<assembly xmlns="http://www.typhoonframework.org/schema/assembly"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.typhoonframework.org/schema/assembly
+          http://www.typhoonframework.org/schema/assembly.xsd">
+
+    <component key="cloudsOverTheCity" class="PFTheme">
+        <property name="backgroundImage" value="bg3.png"/>
+        <property name="navigationBarColor" value="#641d23"/>
+        <property name="forecastTintColor" value="#641d23"/>
+        <property name="controlTintColor" value="#7f9588"/>
+    </component>
+
+    <component key="lightsInTheRain" class="PFTheme">
+        <property name="backgroundImage" value="bg4.png"/>
+        <property name="navigationBarColor" value="#eaa53d"/>
+        <property name="forecastTintColor" value="#722d49"/>
+        <property name="controlTintColor" value="#722d49"/>
+    </component>
+
+    <component key="beach" class="PFTheme">
+        <property name="backgroundImage" value="bg5.png"/>
+        <property name="navigationBarColor" value="#37b1da"/>
+        <property name="forecastTintColor" value="#37b1da"/>
+        <property name="controlTintColor" value="#0043a6"/>
+    </component>
+
+
+    <component key="currentTheme" class="PFTheme" factory-component="themeFactory">
+        <initializer selector="sequentialTheme"/>
+    </component>
+
+    <component key="themeFactory" class="PFThemeFactory" scope="singleton">
+        <property name="themes">
+            <collection>
+                <ref>cloudsOverTheCity</ref>
+                <ref>lightsInTheRain</ref>
+                <ref>beach</ref>
+            </collection>
+        </property>
+    </component>
+
+</assembly>

@@ -29,7 +29,7 @@
 
 - (void)setUp
 {
-    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
+    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"CoreComponents.xml"];
     cityDao = [factory componentForKey:@"cityDao"];
 }
 

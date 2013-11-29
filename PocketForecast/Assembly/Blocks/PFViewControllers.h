@@ -14,11 +14,13 @@
 #import "TyphoonAssembly.h"
 
 @class PFCoreComponents;
+@class PFThemeProvider;
 
 
 @interface PFViewControllers : TyphoonAssembly
 
 @property(nonatomic, strong, readonly) PFCoreComponents* coreComponents;
+@property(nonatomic, strong, readonly) PFThemeProvider* themeProvider;
 
 - (id)rootViewController;
 

@@ -18,6 +18,7 @@
 #import "PFAddCityViewController.h"
 #import "PFRootViewController.h"
 #import "PFCitiesListViewController.h"
+#import "PFThemeProvider.h"
 #import "PFWeatherReportViewController.h"
 
 
@@ -26,6 +27,7 @@
 - (void)resolveCollaboratingAssemblies
 {
     _coreComponents = [TyphoonCollaboratingAssemblyProxy proxy];
+    _themeProvider = [TyphoonCollaboratingAssemblyProxy proxy];
 }
 
 - (id)rootViewController
@@ -54,8 +56,9 @@
 {
     return [TyphoonDefinition withClass:[PFCitiesListViewController class] initialization:^(TyphoonInitializer* initializer)
     {
-        initializer.selector = @selector(initWithCityDao:);
+        initializer.selector = @selector(initWithCityDao:theme:);
         [initializer injectWithDefinition:[_coreComponents cityDao]];
+        [initializer injectWithDefinition:[_themeProvider currentTheme]];
     }];
 }
 
@@ -63,10 +66,11 @@
 {
     return [TyphoonDefinition withClass:[PFWeatherReportViewController class] initialization:^(TyphoonInitializer* initializer)
     {
-        initializer.selector = @selector(initWithWeatherClient:weatherReportDao:cityDao:);
+        initializer.selector = @selector(initWithWeatherClient:weatherReportDao:cityDao:theme:);
         [initializer injectWithDefinition:[_coreComponents weatherClient]];
         [initializer injectWithDefinition:[_coreComponents weatherReportDao]];
         [initializer injectWithDefinition:[_coreComponents cityDao]];
+        [initializer injectWithDefinition:[_themeProvider currentTheme]];
     }];
 }
 

@@ -17,8 +17,8 @@
 #import "PFWeatherReport.h"
 #import "PFCurrentConditions.h"
 #import "PFTemperature.h"
-#import "PFWeatherReportViewDelegate.h"
 #import "CKUITools.h"
+#import "PFTheme.h"
 
 
 @implementation PFWeatherReportView
@@ -77,13 +77,16 @@
 
         });
     }
-
 }
 
-- (void)setDelegate:(id <PFWeatherReportViewDelegate>)delegate
+- (void)setTheme:(PFTheme*)theme
 {
-    _delegate = delegate;
+    _theme = theme;
+    [_backgroundView setImage:theme.backgroundImage];
+    [_toolbar setBarTintColor:theme.forecastTintColor];
+    [_tableView reloadData];
 }
+
 
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods
@@ -168,7 +171,7 @@
 
 - (void)initBackgroundView
 {
-    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg3-568h@2x.png"]];
+    _backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self addSubview:_backgroundView];
 }
 
@@ -237,8 +240,6 @@
 - (void)initToolbar
 {
     _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
-    [_toolbar setBarStyle:UIBarStyleBlackTranslucent];
-    [_toolbar setBarTintColor:UIColorFromRGBWithAlpha(0x641d23, 0.9)];
     [self addSubview:_toolbar];
 }
 
@@ -259,11 +260,11 @@
     switch (row)
     {
         case 0:
-            return UIColorFromRGBWithAlpha(0x641d23, 0.5);
+            return [_theme.forecastTintColor colorWithAlphaComponent:0.5];
         case 1:
-            return UIColorFromRGBWithAlpha(0x641d23, 0.7);
+            return [_theme.forecastTintColor colorWithAlphaComponent:0.7];
         default:
-            return UIColorFromRGBWithAlpha(0x641d23, 0.9);
+            return [_theme.forecastTintColor colorWithAlphaComponent:0.9];
     }
 }
 

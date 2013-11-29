@@ -28,7 +28,7 @@
 
 - (void)setUp
 {
-    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
+    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"CoreComponents.xml"];
     weatherReportDao = [factory componentForType:@protocol(PFWeatherReportDao)];
 
     NSString* xmlString = [[TyphoonBundleResource withName:@"SampleForecast.xml"] asString];

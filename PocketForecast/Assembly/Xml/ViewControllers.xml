@@ -9,7 +9,7 @@
     </description>
 
     <component class="PFRootViewController" key="rootViewController" scope="singleton">
-        <initializer selector="initWithMainContentViewController:sideViewController:">
+        <initializer selector="initWithMainContentViewController:menuViewController:">
             <argument index="0" ref="weatherReportController"/>
             <argument index="1" ref="menuStack"/>
         </initializer>
@@ -29,16 +29,18 @@
 
 
     <component class="PFCitiesListViewController" key="citiesListController" scope="prototype">
-        <initializer selector="initWithCityDao:">
+        <initializer selector="initWithCityDao:theme:">
             <argument parameterName="cityDao" ref="cityDao"/>
+            <argument parameterName="theme" ref="currentTheme"/>
         </initializer>
     </component>
 
     <component class="PFWeatherReportViewController" scope="prototype" key="weatherReportController">
-        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:">
+        <initializer selector="initWithWeatherClient:weatherReportDao:cityDao:theme:">
             <argument parameterName="weatherClient" ref="weatherClient"/>
             <argument parameterName="weatherReportDao" ref="weatherReportDao"/>
             <argument parameterName="cityDao" ref="cityDao"/>
+            <argument parameterName="theme" ref="currentTheme"/>
         </initializer>
     </component>
 

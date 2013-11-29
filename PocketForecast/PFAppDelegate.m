@@ -18,6 +18,8 @@
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
 #import "PFViewControllers.h"
+#import "PFThemeProvider.h"
+#import "PFTheme.h"
 
 @implementation PFAppDelegate
 
@@ -28,13 +30,6 @@
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
-    [[UINavigationBar appearance] setTitleTextAttributes:@{
-        NSFontAttributeName            : [UIFont applicationFontOfSize:20],
-        NSForegroundColorAttributeName : [UIColor whiteColor],
-    }];
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x641d23)];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     /*
@@ -44,9 +39,11 @@
 
     factory = [[TyphoonBlockComponentFactory alloc] initWithAssemblies:@[
         [PFCoreComponents assembly],
-        [PFViewControllers assembly]
+        [PFViewControllers assembly],
+        [PFThemeProvider assembly]
     ]];
-//    factory = ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"Assembly.xml", @"ViewControllers.xml", nil]);
+//    factory =
+//        ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"CoreComponents.xml", @"ViewControllers.xml", @"Themes.xml", nil]);
 
     id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
     [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
@@ -62,9 +59,24 @@
         [rootViewController showSideViewController];
     }
 
+    [self setGlobalTheme:[factory componentForKey:@"currentTheme"]];
+
     [self.window makeKeyAndVisible];
 
     return YES;
+}
+
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
+- (void)setGlobalTheme:(PFTheme*)theme
+{
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+        NSFontAttributeName            : [UIFont applicationFontOfSize:20],
+        NSForegroundColorAttributeName : [UIColor whiteColor],
+    }];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:theme.navigationBarColor];
 }
 
 @end

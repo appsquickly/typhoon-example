@@ -20,6 +20,7 @@
 #import "Typhoon.h"
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
+#import "PFTheme.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -34,12 +35,13 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
 
-- (id)initWithCityDao:(id <PFCityDao>)cityDao
+- (id)initWithCityDao:(id <PFCityDao>)cityDao theme:(PFTheme*)theme
 {
     self = [super initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];
     if (self)
     {
         _cityDao = cityDao;
+        _theme = theme;
     }
 
     return self;
@@ -64,7 +66,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity)];
     [_citiesListTableView setEditing:YES];
 
-    [_temperatureUnitsControl setTintColor:UIColorFromRGB(0x7f9588)];
+    [_temperatureUnitsControl setTintColor:_theme.controlTintColor];
     [_temperatureUnitsControl addTarget:self action:@selector(saveTemperatureUnitPreference) forControlEvents:UIControlEventValueChanged];
 
     if ([PFTemperature defaultUnits] == PFTemperatureUnitsCelsius)

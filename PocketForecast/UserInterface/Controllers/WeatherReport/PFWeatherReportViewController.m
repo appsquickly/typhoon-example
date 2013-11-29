@@ -20,6 +20,7 @@
 #import "PFWeatherReportView.h"
 #import "PFRootViewController.h"
 #import "PFProgressHUD.h"
+#import "PFTheme.h"
 
 
 @implementation PFWeatherReportViewController
@@ -29,7 +30,7 @@
 #pragma mark - Initialization & Destruction
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-    cityDao:(id <PFCityDao>)cityDao
+    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme*)theme
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
@@ -37,6 +38,7 @@
         _weatherClient = weatherClient;
         _weatherReportDao = weatherReportDao;
         _cityDao = cityDao;
+        _theme = theme;
     }
     return self;
 }
@@ -52,14 +54,13 @@
 - (void)loadView
 {
     PFWeatherReportView* view = [[PFWeatherReportView alloc] initWithFrame:CGRectZero];
+    [view setTheme:_theme];
     self.view = view;
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [(PFWeatherReportView*) self.view setDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated

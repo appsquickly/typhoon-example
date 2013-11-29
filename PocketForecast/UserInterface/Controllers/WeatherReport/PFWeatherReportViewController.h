@@ -19,6 +19,7 @@
 @class PFWeatherReport;
 @protocol PFWeatherReportDao;
 @protocol PFCityDao;
+@class PFTheme;
 
 
 @interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate>
@@ -32,10 +33,11 @@
 @property(nonatomic, strong, readonly) id <PFWeatherClient> weatherClient;
 @property(nonatomic, strong, readonly) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
+@property(nonatomic, strong, readonly) PFTheme* theme;
 
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-        cityDao:(id <PFCityDao>)cityDao;
+    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme*)theme;
 
 
 @end

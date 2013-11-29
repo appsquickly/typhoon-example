@@ -29,7 +29,7 @@
 
 - (void)setUp
 {
-    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"Assembly.xml"];
+    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"CoreComponents.xml"];
     id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
     [factory attachMutator:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
     weatherClient = [factory componentForKey:@"weatherClient"];

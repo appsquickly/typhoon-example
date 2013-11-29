@@ -14,6 +14,7 @@
 
 @class PFWeatherReport;
 @protocol PFWeatherReportViewDelegate;
+@class PFTheme;
 
 
 @interface PFWeatherReportView : UIView <UITableViewDelegate, UITableViewDataSource>
@@ -30,15 +31,13 @@
     UITableView* _tableView;
 
     PFWeatherReport* _weatherReport;
-
-    __weak id <PFWeatherReportViewDelegate> _delegate;
-
+    PFTheme* _theme;
 }
 
 @property (nonatomic, strong, readonly) UIToolbar* toolbar;
 
 - (void)setWeatherReport:(PFWeatherReport*)weatherReport;
 
-- (void)setDelegate:(id <PFWeatherReportViewDelegate>)delegate;
+- (void)setTheme:(PFTheme*)theme;
 
 @end
