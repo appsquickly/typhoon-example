@@ -9,6 +9,7 @@ An example application built with <a href ="http://www.typhoonframework.org">Typ
 * Caches weather reports locally, for later off-line use. 
 * Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
 * Can use metric or imperial units. 
+* Displays a different theme (background image, colors, etc) on each run. 
 
 ###Running the sample:
 
@@ -40,6 +41,8 @@ place of the old one. And you'd be able to reuse the existing test cases.
 
 ### The App 
 ![Weather Report](http://www.typhoonframework.org/images/portfolio/PocketForecast3.gif)
+![Weather Report](http://www.typhoonframework.org/images/portfolio/pf-beach1.png)
+![Weather Report](http://www.typhoonframework.org/images/portfolio/pf-lights1.png)
 
 ***Thanks @hongcheng for the excellent <a href="https://github.com/honcheng/PaperFold-for-iOS">Paperfold</a> animation***
 
