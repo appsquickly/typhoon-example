@@ -73,8 +73,8 @@
     	[definition injectProperty:@selector(themes) asCollection:^(TyphoonPropertyInjectedAsCollection* collection)
         {
             [collection addItemWithDefinition:[self cloudsOverTheCity]];
-            [collection addItemWithDefinition:[self lightsInTheRain]];
             [collection addItemWithDefinition:[self beach]];
+            [collection addItemWithDefinition:[self lightsInTheRain]];
         }];
         definition.scope = TyphoonScopeSingleton;
     }];
