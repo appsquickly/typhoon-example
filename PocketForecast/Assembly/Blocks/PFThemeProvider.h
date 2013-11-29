@@ -16,11 +16,13 @@
 @interface PFThemeProvider : TyphoonAssembly
 
 
-- (id)cloudsOverTheCity;
+- (id)cloudsOverTheCityTheme;
 
-- (id)lightsInTheRain;
+- (id)lightsInTheRainTheme;
 
-- (id)beach;
+- (id)beachTheme;
+
+- (id)sunsetTheme;
 
 - (id)currentTheme;
 

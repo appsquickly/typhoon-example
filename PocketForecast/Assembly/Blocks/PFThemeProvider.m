@@ -20,7 +20,7 @@
 
 @implementation PFThemeProvider
 
-- (id)cloudsOverTheCity
+- (id)cloudsOverTheCityTheme
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
     {
@@ -31,7 +31,7 @@
     }];
 }
 
-- (id)lightsInTheRain
+- (id)lightsInTheRainTheme
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
     {
@@ -43,7 +43,7 @@
 }
 
 
-- (id)beach
+- (id)beachTheme
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
     {
@@ -51,6 +51,18 @@
         [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#37b1da"];
         [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#37b1da"];
         [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#0043a6"];
+    }];
+}
+
+
+- (id)sunsetTheme
+{
+    return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
+    {
+        [definition injectProperty:@selector(backgroundImage) withValueAsText:@"sunset.png"];
+        [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#0a1d3b"];
+        [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#0a1d3b"];
+        [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#606970"];
     }];
 }
 
@@ -72,9 +84,10 @@
     {
     	[definition injectProperty:@selector(themes) asCollection:^(TyphoonPropertyInjectedAsCollection* collection)
         {
-            [collection addItemWithDefinition:[self cloudsOverTheCity]];
-            [collection addItemWithDefinition:[self beach]];
-            [collection addItemWithDefinition:[self lightsInTheRain]];
+            [collection addItemWithDefinition:[self cloudsOverTheCityTheme]];
+            [collection addItemWithDefinition:[self beachTheme]];
+            [collection addItemWithDefinition:[self lightsInTheRainTheme]];
+            [collection addItemWithDefinition:[self sunsetTheme]];
         }];
         definition.scope = TyphoonScopeSingleton;
     }];

@@ -3,25 +3,32 @@
           xsi:schemaLocation="http://www.typhoonframework.org/schema/assembly
           http://www.typhoonframework.org/schema/assembly.xsd">
 
-    <component key="cloudsOverTheCity" class="PFTheme">
+    <component key="cloudsOverTheCityTheme" class="PFTheme">
         <property name="backgroundImage" value="bg3.png"/>
         <property name="navigationBarColor" value="#641d23"/>
         <property name="forecastTintColor" value="#641d23"/>
         <property name="controlTintColor" value="#7f9588"/>
     </component>
 
-    <component key="lightsInTheRain" class="PFTheme">
+    <component key="lightsInTheRainTheme" class="PFTheme">
         <property name="backgroundImage" value="bg4.png"/>
         <property name="navigationBarColor" value="#eaa53d"/>
         <property name="forecastTintColor" value="#722d49"/>
         <property name="controlTintColor" value="#722d49"/>
     </component>
 
-    <component key="beach" class="PFTheme">
+    <component key="beachTheme" class="PFTheme">
         <property name="backgroundImage" value="bg5.png"/>
         <property name="navigationBarColor" value="#37b1da"/>
         <property name="forecastTintColor" value="#37b1da"/>
         <property name="controlTintColor" value="#0043a6"/>
+    </component>
+
+    <component key="sunsetTheme" class="PFTheme">
+        <property name="backgroundImage" value="sunset.png"/>
+        <property name="navigationBarColor" value="#0a1d3b"/>
+        <property name="forecastTintColor" value="#0a1d3b"/>
+        <property name="controlTintColor" value="#606970"/>
     </component>
 
 
@@ -32,9 +39,10 @@
     <component key="themeFactory" class="PFThemeFactory" scope="singleton">
         <property name="themes">
             <collection>
-                <ref>cloudsOverTheCity</ref>
-                <ref>beach</ref>
-                <ref>lightsInTheRain</ref>
+                <ref>cloudsOverTheCityTheme</ref>
+                <ref>beachTheme</ref>
+                <ref>lightsInTheRainTheme</ref>
+                <ref>sunsetTheme</ref>
             </collection>
         </property>
     </component>
