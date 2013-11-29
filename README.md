@@ -41,8 +41,8 @@ place of the old one. And you'd be able to reuse the existing test cases.
 
 ### The App 
 ![Weather Report](http://www.typhoonframework.org/images/portfolio/PocketForecast3.gif)
-![Weather Report](http://www.typhoonframework.org/images/portfolio/pf-beach.gif)
-![Weather Report](http://www.typhoonframework.org/images/portfolio/pf-lights.gif)
+![Weather Report](http://www.typhoonframework.org/images/portfolio/pf-beach1.png)
+![Weather Report](http://www.typhoonframework.org/images/portfolio/pf-lights1.png)
 
 ***Thanks @hongcheng for the excellent <a href="https://github.com/honcheng/PaperFold-for-iOS">Paperfold</a> animation***
 
