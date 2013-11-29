@@ -79,7 +79,7 @@
 {
     _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 28, 150, 16)];
     [_descriptionLabel setFont:[UIFont applicationFontOfSize:13]];
-    [_descriptionLabel setTextColor:UIColorFromRGB(0xd9d1bd)];
+    [_descriptionLabel setTextColor:UIColorFromRGB(0xe9e1cd)];
     [_descriptionLabel setBackgroundColor:[UIColor clearColor]];
     [self addSubview:_descriptionLabel];
 }

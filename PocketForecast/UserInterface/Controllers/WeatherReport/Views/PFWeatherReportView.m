@@ -260,11 +260,11 @@
     switch (row)
     {
         case 0:
-            return [_theme.forecastTintColor colorWithAlphaComponent:0.5];
+            return [_theme.forecastTintColor colorWithAlphaComponent:0.55];
         case 1:
-            return [_theme.forecastTintColor colorWithAlphaComponent:0.7];
+            return [_theme.forecastTintColor colorWithAlphaComponent:0.75];
         default:
-            return [_theme.forecastTintColor colorWithAlphaComponent:0.9];
+            return [_theme.forecastTintColor colorWithAlphaComponent:0.95];
     }
 }
 
