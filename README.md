@@ -9,7 +9,7 @@ An example application built with <a href ="http://www.typhoonframework.org">Typ
 * Caches weather reports locally, for later off-line use. 
 * Stores (creates, reads, updates deletes) the cities that the user is interested in receiving reports for. 
 * Can use metric or imperial units. 
-* Displays a different theme on each run. 
+* Displays a different theme (background image, colors, etc) on each run. 
 
 ###Running the sample:
 
