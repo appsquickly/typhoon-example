@@ -3,6 +3,10 @@
           xsi:schemaLocation="http://www.typhoonframework.org/schema/assembly
           http://www.typhoonframework.org/schema/assembly.xsd">
 
+    <description>
+        This assembly illustrates the use of several concepts: factory-components, collections, and type-converters.
+    </description>
+
     <component key="cloudsOverTheCityTheme" class="PFTheme">
         <property name="backgroundResourceName" value="bg3.png"/>
         <property name="navigationBarColor" value="#641d23"/>
