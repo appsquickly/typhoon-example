@@ -13,7 +13,8 @@
 
 @interface PFTheme()
 
-@property (nonatomic, strong, readwrite) UIImage* backgroundImage;
+
+@property (nonatomic, strong, readwrite) NSString* backgroundResourceName;
 @property (nonatomic, strong, readwrite) UIColor* navigationBarColor;
 @property (nonatomic, strong, readwrite) UIColor* forecastTintColor;
 @property (nonatomic, strong, readwrite) UIColor* controlTintColor;

@@ -24,7 +24,7 @@
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
     {
-    	[definition injectProperty:@selector(backgroundImage) withValueAsText:@"bg3.png"];
+    	[definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"bg3.png"];
         [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#641d23"];
         [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#641d23"];
         [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#7f9588"];
@@ -35,7 +35,7 @@
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(backgroundImage) withValueAsText:@"bg4.png"];
+        [definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"bg4.png"];
         [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#eaa53d"];
         [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#722d49"];
         [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#722d49"];
@@ -47,7 +47,7 @@
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(backgroundImage) withValueAsText:@"bg5.png"];
+        [definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"bg5.png"];
         [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#37b1da"];
         [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#37b1da"];
         [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#0043a6"];
@@ -59,7 +59,7 @@
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(backgroundImage) withValueAsText:@"sunset.png"];
+        [definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"sunset.png"];
         [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#0a1d3b"];
         [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#0a1d3b"];
         [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#606970"];

@@ -82,7 +82,7 @@
 - (void)setTheme:(PFTheme*)theme
 {
     _theme = theme;
-    [_backgroundView setImage:theme.backgroundImage];
+    [_backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
     [_toolbar setBarTintColor:theme.forecastTintColor];
     [_tableView reloadData];
 }

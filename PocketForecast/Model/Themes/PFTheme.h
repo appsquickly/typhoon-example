@@ -14,7 +14,12 @@
 
 @interface PFTheme : NSObject
 
-@property (nonatomic, strong, readonly) UIImage* backgroundImage;
+/**
+* Background image name. We could declare this property as a UIImage, however as we're storing a singleton collection of themes we'll use
+* NSString to save memory.
+*/
+@property (nonatomic, strong, readonly) NSString* backgroundResourceName;
+
 @property (nonatomic, strong, readonly) UIColor* navigationBarColor;
 @property (nonatomic, strong, readonly) UIColor* forecastTintColor;
 @property (nonatomic, strong, readonly) UIColor* controlTintColor;

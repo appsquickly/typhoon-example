@@ -37,13 +37,13 @@
      */
     TyphoonComponentFactory* factory;
 
-    factory = [[TyphoonBlockComponentFactory alloc] initWithAssemblies:@[
-        [PFCoreComponents assembly],
-        [PFViewControllers assembly],
-        [PFThemeProvider assembly]
-    ]];
-//    factory =
-//        ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"CoreComponents.xml", @"ViewControllers.xml", @"Themes.xml", nil]);
+//    factory = [[TyphoonBlockComponentFactory alloc] initWithAssemblies:@[
+//        [PFCoreComponents assembly],
+//        [PFViewControllers assembly],
+//        [PFThemeProvider assembly]
+//    ]];
+    factory =
+        ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"CoreComponents.xml", @"ViewControllers.xml", @"Themes.xml", nil]);
 
     id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
     [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
