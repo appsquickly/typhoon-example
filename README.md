@@ -21,8 +21,8 @@ to (Ha!). Now, proceed to the exercises below.
 
 ### Exercises
 
-1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFCoreComponents.m">core assembly</a> 
-and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFViewControllers.m">view controllers</a>. 
+1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFCoreComponents.m">core assembly</a>, 
+<a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFViewControllers.m">view controllers</a> and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Blocks/PFThemeProvider.m">theme provider</a>. 
 Notice how the framework allows you to group related components together. Notice how dependency injection allows for 
 centralized configuration, at the same time as using aggressive memory management. (With default prototype-scope, components will go away 
 whenever they're not being used). 
@@ -37,7 +37,8 @@ place of the old one. And you'd be able to reuse the existing test cases.
 
 ####Alternative Configuration Style
 
-1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/Assembly.xml">xml application assembly</a>, and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/ViewControllers.xml">view controllers</a>. Which style do you prefer? Would it be appropriate to add some <a href="https://github.com/jasperblues/Typhoon/wiki/Autowiring">auto-wiring</a>?
+1. Study the <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/Assembly.xml">xml application assembly</a>, 
+<a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/ViewControllers.xml">view controllers</a> and <a href="https://github.com/jasperblues/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/Themes.xml">themes</a>. Which style do you prefer? Would it be appropriate to add some <a href="https://github.com/jasperblues/Typhoon/wiki/Autowiring">auto-wiring</a>?
 
 ### The App 
 ![Weather Report](http://www.typhoonframework.org/images/portfolio/PocketForecast3.gif)
