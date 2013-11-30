@@ -17,7 +17,9 @@
 #import "PFTheme.h"
 #import "TyphoonInitializer.h"
 
-
+/**
+* This assembly illustrates the use of several concepts: factory-components, collections, and type-converters.
+*/
 @implementation PFThemeProvider
 
 - (id)currentTheme
