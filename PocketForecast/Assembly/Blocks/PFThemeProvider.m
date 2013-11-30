@@ -20,6 +20,32 @@
 
 @implementation PFThemeProvider
 
+- (id)currentTheme
+{
+    return [TyphoonDefinition withClass:[PFTheme class] initialization:^(TyphoonInitializer* initializer)
+    {
+        initializer.selector = @selector(sequentialTheme);
+    } properties:^(TyphoonDefinition* definition)
+    {
+        definition.factory = [self themeFactory];
+    }];
+}
+
+- (id)themeFactory
+{
+    return [TyphoonDefinition withClass:[PFThemeFactory class] properties:^(TyphoonDefinition* definition)
+    {
+        [definition injectProperty:@selector(themes) asCollection:^(TyphoonPropertyInjectedAsCollection* collection)
+        {
+            [collection addItemWithDefinition:[self cloudsOverTheCityTheme]];
+            [collection addItemWithDefinition:[self beachTheme]];
+            [collection addItemWithDefinition:[self lightsInTheRainTheme]];
+            [collection addItemWithDefinition:[self sunsetTheme]];
+        }];
+        definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
 - (id)cloudsOverTheCityTheme
 {
     return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
@@ -66,31 +92,5 @@
     }];
 }
 
-
-- (id)currentTheme
-{
-    return [TyphoonDefinition withClass:[PFTheme class] initialization:^(TyphoonInitializer* initializer)
-    {
-        initializer.selector = @selector(sequentialTheme);
-    } properties:^(TyphoonDefinition* definition)
-    {
-        definition.factory = [self themeFactory];
-    }];
-}
-
-- (id)themeFactory
-{
-    return [TyphoonDefinition withClass:[PFThemeFactory class] properties:^(TyphoonDefinition* definition)
-    {
-    	[definition injectProperty:@selector(themes) asCollection:^(TyphoonPropertyInjectedAsCollection* collection)
-        {
-            [collection addItemWithDefinition:[self cloudsOverTheCityTheme]];
-            [collection addItemWithDefinition:[self beachTheme]];
-            [collection addItemWithDefinition:[self lightsInTheRainTheme]];
-            [collection addItemWithDefinition:[self sunsetTheme]];
-        }];
-        definition.scope = TyphoonScopeSingleton;
-    }];
-}
 
 @end

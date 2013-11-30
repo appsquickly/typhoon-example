@@ -17,6 +17,7 @@
 */
 @interface PFThemeProvider : TyphoonAssembly
 
+- (id)currentTheme;
 
 - (id)cloudsOverTheCityTheme;
 
@@ -25,7 +26,5 @@
 - (id)beachTheme;
 
 - (id)sunsetTheme;
-
-- (id)currentTheme;
 
 @end

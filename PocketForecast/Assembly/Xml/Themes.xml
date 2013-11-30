@@ -7,6 +7,21 @@
         This assembly illustrates the use of several concepts: factory-components, collections, and type-converters.
     </description>
 
+    <component key="currentTheme" class="PFTheme" factory-component="themeFactory">
+        <initializer selector="sequentialTheme"/>
+    </component>
+
+    <component key="themeFactory" class="PFThemeFactory" scope="singleton">
+        <property name="themes">
+            <collection>
+                <ref>cloudsOverTheCityTheme</ref>
+                <ref>beachTheme</ref>
+                <ref>lightsInTheRainTheme</ref>
+                <ref>sunsetTheme</ref>
+            </collection>
+        </property>
+    </component>
+
     <component key="cloudsOverTheCityTheme" class="PFTheme">
         <property name="backgroundResourceName" value="bg3.png"/>
         <property name="navigationBarColor" value="#641d23"/>
@@ -33,22 +48,6 @@
         <property name="navigationBarColor" value="#0a1d3b"/>
         <property name="forecastTintColor" value="#0a1d3b"/>
         <property name="controlTintColor" value="#606970"/>
-    </component>
-
-
-    <component key="currentTheme" class="PFTheme" factory-component="themeFactory">
-        <initializer selector="sequentialTheme"/>
-    </component>
-
-    <component key="themeFactory" class="PFThemeFactory" scope="singleton">
-        <property name="themes">
-            <collection>
-                <ref>cloudsOverTheCityTheme</ref>
-                <ref>beachTheme</ref>
-                <ref>lightsInTheRainTheme</ref>
-                <ref>sunsetTheme</ref>
-            </collection>
-        </property>
     </component>
 
 </assembly>
