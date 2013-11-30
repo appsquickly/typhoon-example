@@ -29,9 +29,9 @@ typedef enum
     UIView* _mainContentViewContainer;
     UIView* _slideOnMainContentViewContainer;
     PFSideViewState _sideViewState;
-    UIViewController* _menuViewController;
     NSInteger _progressHudRetainCount;
 
+    UIViewController* _citiesListController;
     UIViewController* _addCitiesController;
 }
 

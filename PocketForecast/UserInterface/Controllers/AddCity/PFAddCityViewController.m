@@ -39,8 +39,15 @@
     return self;
 }
 
+- (void)dealloc
+{
+    NSLog(@"***** %@ in dealloc *****", self);
+}
 
-/* ========================================================== Interface Methods ========================================================= */
+
+/* ====================================================================================================================================== */
+#pragma mark - Overridden Methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -80,14 +87,9 @@
 }
 
 
-/* ============================================================ Utility Methods ========================================================= */
-- (void)dealloc
-{
-    NSLog(@"%@ in dealloc!", self);
-}
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
 
-
-/* ============================================================ Private Methods ========================================================= */
 - (void)doneAdding:(id)sender
 {
     PFRootViewController* rootViewController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];

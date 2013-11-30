@@ -30,7 +30,7 @@
     if (self)
     {
         _sideViewState = PFSideViewStateHidden;
-        _menuViewController = menuViewController;
+        _citiesListController = menuViewController;
         if (mainContentViewController)
         {
             [self pushViewController:mainContentViewController replaceRoot:YES];
@@ -103,12 +103,12 @@
     {
         _sideViewState = PFSideViewStateShowing;
 
-        [_menuViewController.view setFrame:CGRectMake(0, 0,
+        [_citiesListController.view setFrame:CGRectMake(0, 0,
             _mainContentViewContainer.width - (_mainContentViewContainer.width - SIDE_CONTROLLER_WIDTH), _mainContentViewContainer.height)];
 
         PaperFoldView* view = (PaperFoldView*) self.view;
         [view setDelegate:self];
-        [view setLeftFoldContentView:_menuViewController.view foldCount:5 pullFactor:0.9];
+        [view setLeftFoldContentView:_citiesListController.view foldCount:5 pullFactor:0.9];
         [view setEnableLeftFoldDragging:NO];
         [view setEnableRightFoldDragging:NO];
         [view setEnableTopFoldDragging:NO];
@@ -197,7 +197,7 @@
         [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
         [self.view addSubview:_addCitiesController.view];
 
-        __block CGRect frame = _menuViewController.view.frame;
+        __block CGRect frame = _citiesListController.view.frame;
         [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
         {
             frame.origin.y = 0;
@@ -210,8 +210,8 @@
 {
     if (_addCitiesController)
     {
-        [_menuViewController viewWillAppear:YES];
-        __block CGRect frame = _menuViewController.view.frame;
+        [_citiesListController viewWillAppear:YES];
+        __block CGRect frame = _citiesListController.view.frame;
         [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
         {
             frame.origin.y += self.view.height;
@@ -220,7 +220,7 @@
         {
             [_addCitiesController.view removeFromSuperview];
             _addCitiesController = nil;
-            [_menuViewController viewDidAppear:YES];
+            [_citiesListController viewDidAppear:YES];
         }];
     }
 }

@@ -13,8 +13,6 @@
 
 #import "PFCitiesListViewController.h"
 #import "PFCityDao.h"
-#import "PFAddCityViewController.h"
-#import "PFWeatherReportViewController.h"
 #import "PFTemperature.h"
 #import "PFCityLabelTableViewCell.h"
 #import "Typhoon.h"
@@ -49,7 +47,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 - (void)dealloc
 {
-    NSLog(@"%@ in dealloc!", self);
+    NSLog(@"***** %@ in dealloc *****", self);
 }
 
 
