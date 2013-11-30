@@ -9,24 +9,10 @@
     </description>
 
     <component class="PFRootViewController" key="rootViewController" scope="singleton">
-        <initializer selector="initWithMainContentViewController:menuViewController:">
+        <initializer selector="initWithMainContentViewController:">
             <argument index="0" ref="weatherReportController"/>
-            <argument index="1" ref="menuStack"/>
         </initializer>
     </component>
-
-    <component class="UINavigationController" key="menuStack" scope="prototype">
-        <initializer selector="initWithRootViewController:">
-            <argument parameterName="rootViewController" ref="citiesListController"/>
-        </initializer>
-    </component>
-
-    <component class="UINavigationController" key="addCityStack" scope="prototype">
-        <initializer selector="initWithRootViewController:">
-            <argument parameterName="rootViewController" ref="addCityViewController"/>
-        </initializer>
-    </component>
-
 
     <component class="PFCitiesListViewController" key="citiesListController" scope="prototype">
         <initializer selector="initWithCityDao:theme:">

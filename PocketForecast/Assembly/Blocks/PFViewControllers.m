@@ -34,23 +34,14 @@
 {
     return [TyphoonDefinition withClass:[PFRootViewController class] initialization:^(TyphoonInitializer* initializer)
     {
-        initializer.selector = @selector(initWithMainContentViewController:menuViewController:);
+        initializer.selector = @selector(initWithMainContentViewController:);
         [initializer injectWithDefinition:[self weatherReportController]];
-        [initializer injectWithDefinition:[self menuStack]];
     } properties:^(TyphoonDefinition* definition)
     {
         definition.scope = TyphoonScopeSingleton;
     }];
 }
 
-- (id)menuStack
-{
-    return [TyphoonDefinition withClass:[UINavigationController class] initialization:^(TyphoonInitializer* initializer)
-    {
-        initializer.selector = @selector(initWithRootViewController:);
-        [initializer injectWithDefinition:[self citiesListController]];
-    }];
-}
 
 - (id)citiesListController
 {
@@ -71,16 +62,6 @@
         [initializer injectWithDefinition:[_coreComponents weatherReportDao]];
         [initializer injectWithDefinition:[_coreComponents cityDao]];
         [initializer injectWithDefinition:[_themeProvider currentTheme]];
-    }];
-}
-
-
-- (id)addCityStack
-{
-    return [TyphoonDefinition withClass:[UINavigationController class] initialization:^(TyphoonInitializer* initializer)
-    {
-        initializer.selector = @selector(initWithRootViewController:);
-        [initializer injectWithDefinition:[self addCityViewController]];
     }];
 }
 

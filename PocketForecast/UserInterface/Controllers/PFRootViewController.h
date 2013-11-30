@@ -40,8 +40,7 @@ typedef enum
 /**
 * Creates a root view controller instance, with the initial main content view controller, and side view controller.
 */
-- (instancetype)initWithMainContentViewController:(UIViewController*)mainContentViewController
-    menuViewController:(UIViewController*)menuViewController;
+- (instancetype)initWithMainContentViewController:(UIViewController*)mainContentViewController;
 
 /**
 * Sets main content view, with an animated transition.
@@ -52,9 +51,12 @@ typedef enum
 
 - (void)popViewControllerAnimated:(BOOL)animated;
 
-- (void)showSideViewController;
+/**
+* Shows the cities list view - loading from the TyphoonComponentFactory on-demand, and releasing the prototype-scoped instance when done.
+*/
+- (void)showCitiesListController;
 
-- (void)hideSideViewController;
+- (void)dismissCitiesListController;
 
 - (void)showAddCitiesController;
 

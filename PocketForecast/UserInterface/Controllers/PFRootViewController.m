@@ -15,6 +15,8 @@
 #import "PaperFoldView.h"
 #import "PFProgressHUD.h"
 #import "TyphoonComponentFactory.h"
+#import "PFAddCityViewController.h"
+#import "PFCitiesListViewController.h"
 
 #define SIDE_CONTROLLER_WIDTH 245.0
 
@@ -24,13 +26,11 @@
 #pragma mark - Initialization & Destruction
 
 - (instancetype)initWithMainContentViewController:(UIViewController*)mainContentViewController
-    menuViewController:(UIViewController*)menuViewController
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
     {
         _sideViewState = PFSideViewStateHidden;
-        _citiesListController = menuViewController;
         if (mainContentViewController)
         {
             [self pushViewController:mainContentViewController replaceRoot:YES];
@@ -41,7 +41,7 @@
 
 - (id)init
 {
-    return [self initWithMainContentViewController:nil menuViewController:nil];
+    return [self initWithMainContentViewController:nil];
 }
 
 - (void)beforePropertiesSet
@@ -97,11 +97,14 @@
     }
 }
 
-- (void)showSideViewController
+- (void)showCitiesListController
 {
     if (_sideViewState != PFSideViewStateShowing)
     {
         _sideViewState = PFSideViewStateShowing;
+
+        _citiesListController = [[UINavigationController alloc]
+            initWithRootViewController:[[TyphoonComponentFactory defaultFactory] componentForType:[PFCitiesListViewController class]]];
 
         [_citiesListController.view setFrame:CGRectMake(0, 0,
             _mainContentViewContainer.width - (_mainContentViewContainer.width - SIDE_CONTROLLER_WIDTH), _mainContentViewContainer.height)];
@@ -120,7 +123,7 @@
     }
 }
 
-- (void)hideSideViewController
+- (void)dismissCitiesListController
 {
     if (_sideViewState != PFSideViewStateHidden)
     {
@@ -135,11 +138,11 @@
 {
     if (_sideViewState == PFSideViewStateHidden)
     {
-        [self showSideViewController];
+        [self showCitiesListController];
     }
     else if (_sideViewState == PFSideViewStateShowing)
     {
-        [self hideSideViewController];
+        [self dismissCitiesListController];
     }
 }
 
@@ -193,7 +196,9 @@
 {
     if (!_addCitiesController)
     {
-        _addCitiesController = [[TyphoonComponentFactory defaultFactory] componentForKey:@"addCityStack"];
+        _addCitiesController = [[UINavigationController alloc]
+            initWithRootViewController:[[TyphoonComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]]];
+
         [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
         [self.view addSubview:_addCitiesController.view];
 
@@ -222,6 +227,22 @@
             _addCitiesController = nil;
             [_citiesListController viewDidAppear:YES];
         }];
+    }
+}
+
+/* ====================================================================================================================================== */
+#pragma mark - Protocol Methods
+
+- (void)paperFoldView:(id)paperFoldView didFoldAutomatically:(BOOL)automated toState:(PaperFoldState)paperFoldState
+{
+    if (paperFoldState == PaperFoldStateDefault)
+    {
+        [_navigator.topViewController viewDidAppear:YES];
+
+        //We could set the left-side view to nil here, however Paper-fold issues a (basically harmless) warning about CGRectZero state.
+        UIView* dummyView = [[UIView alloc] initWithFrame:CGRectMake(1, 1, 1, 1)];
+        [(PaperFoldView*) self.view setLeftFoldContentView:dummyView foldCount:0 pullFactor:0];
+        _citiesListController = nil;
     }
 }
 
@@ -294,19 +315,10 @@
     [_navigator.topViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 }
 
+
 /* ====================================================================================================================================== */
-#pragma mark - Protocol Methods
+#pragma mark - Private Methods
 
-- (void)paperFoldView:(id)paperFoldView didFoldAutomatically:(BOOL)automated toState:(PaperFoldState)paperFoldState
-{
-    if (paperFoldState == PaperFoldStateDefault)
-    {
-        [_navigator.topViewController viewDidAppear:YES];
-    }
-}
-
-
-/* ============================================================ Private Methods ========================================================= */
 - (void)makeNavigationControllerWithRoot:(UIViewController*)root
 {
     _navigator = [[UINavigationController alloc] initWithRootViewController:root];
