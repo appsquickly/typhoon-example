@@ -196,6 +196,7 @@
 {
     if (!_addCitiesController)
     {
+        [_navigator.topViewController.view setUserInteractionEnabled:NO];
         _addCitiesController = [[UINavigationController alloc]
             initWithRootViewController:[[TyphoonComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]]];
 
@@ -226,6 +227,7 @@
             [_addCitiesController.view removeFromSuperview];
             _addCitiesController = nil;
             [_citiesListController viewDidAppear:YES];
+            [_navigator.topViewController.view setUserInteractionEnabled:YES];
         }];
     }
 }

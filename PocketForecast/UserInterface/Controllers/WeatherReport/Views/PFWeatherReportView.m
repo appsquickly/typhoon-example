@@ -19,6 +19,7 @@
 #import "PFTemperature.h"
 #import "CKUITools.h"
 #import "PFTheme.h"
+#import "NGAParallaxMotion.h"
 
 
 @implementation PFWeatherReportView
@@ -82,9 +83,13 @@
 - (void)setTheme:(PFTheme*)theme
 {
     _theme = theme;
-    [_backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
-    [_toolbar setBarTintColor:theme.forecastTintColor];
-    [_tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        [_backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
+        [_toolbar setBarTintColor:theme.forecastTintColor];
+        [_tableView reloadData];
+    });
+
 }
 
 
@@ -94,7 +99,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    [_backgroundView setFrame:self.bounds];
+    [_backgroundView setFrame:CGRectInset(self.bounds, -10, -10)];
 
     [_cityNameLabel setFrame:CGRectMake(0, 60, self.width, 40)];
     [_conditionsDescriptionLabel setFrame:CGRectMake(0, 90, 320, 50)];
@@ -172,6 +177,8 @@
 - (void)initBackgroundView
 {
     _backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [_backgroundView setContentMode:UIViewContentModeScaleToFill];
+    [_backgroundView setParallaxIntensity:20];
     [self addSubview:_backgroundView];
 }
 

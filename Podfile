@@ -6,6 +6,7 @@ target :PocketForecast, :exclusive => true do
   pod 'OCLogTemplate'
   pod 'RaptureXML'
   pod 'CKUITools'
+  pod 'NGAParallaxMotion'
   pod 'PaperFold', :git => 'https://github.com/jasperblues/PaperFold-for-iOS.git'
 
 end

@@ -15,6 +15,7 @@
 @class PFWeatherReport;
 @protocol PFWeatherReportViewDelegate;
 @class PFTheme;
+@class MKParallaxView;
 
 
 @interface PFWeatherReportView : UIView <UITableViewDelegate, UITableViewDataSource>
