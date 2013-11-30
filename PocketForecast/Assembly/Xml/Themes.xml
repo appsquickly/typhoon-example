@@ -8,10 +8,18 @@
     </description>
 
     <component key="currentTheme" class="PFTheme" factory-component="themeFactory">
+        <description>
+            Current-theme is emitted from the theme-factory, which increments the theme on each run of the application.
+        </description>
         <initializer selector="sequentialTheme"/>
     </component>
 
     <component key="themeFactory" class="PFThemeFactory" scope="singleton">
+        <description>
+            The theme factory contains a collection of each theme. Individual themes are using Typhoon's type-converter system to convert
+            the string representation of properties to their required runtime type. (This is particularly useful when using
+            PropertyPlaceholder configs).
+        </description>
         <property name="themes">
             <collection>
                 <ref>cloudsOverTheCityTheme</ref>

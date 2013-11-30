@@ -22,6 +22,9 @@
 */
 @implementation PFThemeProvider
 
+/**
+* Current-theme is emitted from the theme-factory, which increments the theme on each run of the application.
+*/
 - (id)currentTheme
 {
     return [TyphoonDefinition withClass:[PFTheme class] initialization:^(TyphoonInitializer* initializer)
@@ -33,6 +36,10 @@
     }];
 }
 
+/**
+* The theme factory contains a collection of each theme. Individual themes are using Typhoon's type-converter system to convert the string
+* representation of properties to their required runtime type. (This is particularly useful when using PropertyPlaceholder configs).
+*/
 - (id)themeFactory
 {
     return [TyphoonDefinition withClass:[PFThemeFactory class] properties:^(TyphoonDefinition* definition)
