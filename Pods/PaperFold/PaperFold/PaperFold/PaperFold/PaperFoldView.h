@@ -49,7 +49,7 @@ typedef void (^CompletionBlock)();
 - (void)paperFoldView:(id)paperFoldView viewDidOffset:(CGPoint)offset;
 @end
 
-@interface PaperFoldView : UIView <MultiFoldViewDelegate, UIGestureRecognizerDelegate>
+@interface PaperFoldView : UIView <MultiFoldViewDelegate>
 
 // main content view
 @property (nonatomic, strong) TouchThroughUIView *contentView;
@@ -79,9 +79,7 @@ typedef void (^CompletionBlock)();
 // optimized screenshot follows the scale of the screen
 // non-optimized is always the non-retina image
 @property (nonatomic, assign) BOOL useOptimizedScreenshot;
-// restrict the dragging gesture recogniser to a certain UIRect of this view. Useful to restrict
-// dragging to, say, a navigation bar.
-@property (nonatomic, assign) CGRect restrictedDraggingRect;
+
 // divider lines
 // these are exposed so that it is possible to hide the lines
 // especially when views have rounded corners
@@ -118,8 +116,8 @@ typedef void (^CompletionBlock)();
 - (void)setPaperFoldState:(PaperFoldState)state;
 - (void)setPaperFoldState:(PaperFoldState)state animated:(BOOL)animated;
 - (void)setPaperFoldState:(PaperFoldState)state
-								 animated:(BOOL)animated
-							 completion:(CompletionBlock)completion;
+    animated:(BOOL)animated
+    completion:(CompletionBlock)completion;
 
 // deprecate methods
 // use setPaperFoldState: instead

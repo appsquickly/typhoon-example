@@ -8,7 +8,7 @@ target :PocketForecast, :exclusive => true do
   pod 'CKUITools'
   pod 'NGAParallaxMotion'
   pod 'FlatUIKit'
-  pod 'PaperFold', :git => 'https://github.com/jasperblues/PaperFold-for-iOS.git'
+  pod 'PaperFold', :git => 'https://github.com/jasperblues/PaperFold-for-iOS.git', :tag => '1.2-no-gesture-recognizers'
 
 end
 

@@ -19,13 +19,14 @@ DEPENDENCIES:
   - OCHamcrest
   - OCLogTemplate
   - OCMockito
-  - PaperFold (from `https://github.com/jasperblues/PaperFold-for-iOS.git`)
+  - PaperFold (from `https://github.com/jasperblues/PaperFold-for-iOS.git`, tag `1.2-no-gesture-recognizers`)
   - RaptureXML
   - Typhoon
 
 EXTERNAL SOURCES:
   PaperFold:
     :git: https://github.com/jasperblues/PaperFold-for-iOS.git
+    :tag: 1.2-no-gesture-recognizers
 
 SPEC CHECKSUMS:
   CKUITools: bbac5931dfa9e96721897bea21f6a2233d611db4
