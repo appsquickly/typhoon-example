@@ -189,6 +189,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     }
     else
     {
+        _temperatureUnitsControl.segmentedControlStyle = UISegmentedControlStyleBar;
         [self.navigationController.navigationBar configureFlatNavigationBarWithColor:_theme.navigationBarColor];
         [UIBarButtonItem configureFlatButtonsWithColor:_theme.controlTintColor highlightedColor:_theme.controlTintColor cornerRadius:3];
         [self.navigationItem.rightBarButtonItem configureFlatButtonWithColor:_theme.navigationBarColor
