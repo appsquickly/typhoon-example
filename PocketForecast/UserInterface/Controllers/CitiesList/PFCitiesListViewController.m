@@ -19,15 +19,15 @@
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
 #import "PFTheme.h"
+#import "UIBarButtonItem+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+#import "FUISegmentedControl.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
 static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 @implementation PFCitiesListViewController
-
-@synthesize citiesListTableView = _citiesListTableView;
-@synthesize temperatureUnitsControl = _temperatureUnitsControl;
 
 
 /* ====================================================================================================================================== */
@@ -61,10 +61,9 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     [self setTitle:@"Pocket Forecast"];
 
     self.navigationItem.rightBarButtonItem =
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity)];
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity)];
     [_citiesListTableView setEditing:YES];
 
-    [_temperatureUnitsControl setTintColor:_theme.controlTintColor];
     [_temperatureUnitsControl addTarget:self action:@selector(saveTemperatureUnitPreference) forControlEvents:UIControlEventValueChanged];
 
     if ([PFTemperature defaultUnits] == PFTemperatureUnitsCelsius)
@@ -75,6 +74,8 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     {
         [_temperatureUnitsControl setSelectedSegmentIndex:FAHRENHEIT_SEGMENT_INDEX];
     }
+
+    [self applyTheme];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -112,6 +113,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     {
         cell = [[PFCityLabelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.cityLabel.backgroundColor = [UIColor clearColor];
     cell.cityLabel.font = [UIFont applicationFontOfSize:16];
     cell.cityLabel.textColor = [UIColor darkGrayColor];
@@ -137,7 +139,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 }
 
 - (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-        forRowAtIndexPath:(NSIndexPath*)indexPath
+    forRowAtIndexPath:(NSIndexPath*)indexPath
 {
 
     if (editingStyle == UITableViewCellEditingStyleDelete)
@@ -177,5 +179,21 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     }
 }
 
+- (void)applyTheme
+{
+    [_temperatureUnitsControl setTintColor:_theme.controlTintColor];
+    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
+    {
+        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+        [self.navigationController.navigationBar setBarTintColor:_theme.navigationBarColor];
+    }
+    else
+    {
+        [self.navigationController.navigationBar configureFlatNavigationBarWithColor:_theme.navigationBarColor];
+        [UIBarButtonItem configureFlatButtonsWithColor:_theme.controlTintColor highlightedColor:_theme.controlTintColor cornerRadius:3];
+        [self.navigationItem.rightBarButtonItem configureFlatButtonWithColor:_theme.navigationBarColor
+            highlightedColor:_theme.navigationBarColor cornerRadius:0];
+    }
+}
 
 @end

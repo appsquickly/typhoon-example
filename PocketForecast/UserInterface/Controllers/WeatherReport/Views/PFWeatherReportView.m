@@ -20,6 +20,7 @@
 #import "CKUITools.h"
 #import "PFTheme.h"
 #import "NGAParallaxMotion.h"
+#import "UIToolbar+FlatUI.h"
 
 
 @implementation PFWeatherReportView
@@ -86,7 +87,14 @@
     dispatch_async(dispatch_get_main_queue(), ^
     {
         [_backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
-        [_toolbar setBarTintColor:theme.forecastTintColor];
+        if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
+        {
+            [_toolbar setBarTintColor:theme.forecastTintColor];
+        }
+        else
+        {
+            [_toolbar configureFlatToolbarWithColor:theme.forecastTintColor];
+        }
         [_tableView reloadData];
     });
 
@@ -178,7 +186,10 @@
 {
     _backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [_backgroundView setContentMode:UIViewContentModeScaleToFill];
-    [_backgroundView setParallaxIntensity:20];
+    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
+    {
+        [_backgroundView setParallaxIntensity:20];
+    }
     [self addSubview:_backgroundView];
 }
 
@@ -236,7 +247,6 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
-    [_tableView setAllowsSelection:NO];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView setBackgroundColor:[UIColor clearColor]];
     [_tableView setBounces:NO];

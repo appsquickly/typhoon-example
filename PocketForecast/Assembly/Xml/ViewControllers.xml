@@ -30,14 +30,14 @@
         </initializer>
     </component>
 
-    <component class="PFAddCityViewController" key="addCityViewController" scope="prototype"
-               after-property-injection="validateRequiredProperties">
+    <component class="PFAddCityViewController" key="addCityViewController" scope="prototype">
         <initializer selector="initWithNibName:bundle:">
             <argument parameterName="nibName" value="AddCity" required-class="NSString"/>
             <argument parameterName="bundle" ref="mainBundle"/>
         </initializer>
         <property name="cityDao" ref="cityDao"/>
         <property name="weatherClient" ref="weatherClient"/>
+        <property name="theme" ref="currentTheme"/>
     </component>
 
 

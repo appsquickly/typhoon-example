@@ -77,6 +77,7 @@
     {
         [definition injectProperty:@selector(cityDao) withDefinition:[_coreComponents cityDao]];
         [definition injectProperty:@selector(weatherClient) withDefinition:[_coreComponents weatherClient]];
+        [definition injectProperty:@selector(theme) withDefinition:[_themeProvider currentTheme]];
     }];
 }
 

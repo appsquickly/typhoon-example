@@ -19,7 +19,6 @@
 #import "PFRootViewController.h"
 #import "PFViewControllers.h"
 #import "PFThemeProvider.h"
-#import "PFTheme.h"
 
 @implementation PFAppDelegate
 
@@ -29,21 +28,13 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+        NSFontAttributeName            : [UIFont applicationFontOfSize:20],
+        NSForegroundColorAttributeName : [UIColor whiteColor],
+    }];
 
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    /*
-    * Switch between the Xml and Block assembly style by below.
-     */
-    TyphoonComponentFactory* factory;
-
-    factory = [[TyphoonBlockComponentFactory alloc] initWithAssemblies:@[
-        [PFCoreComponents assembly],
-        [PFViewControllers assembly],
-        [PFThemeProvider assembly]
-    ]];
-//    factory =
-//        ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"CoreComponents.xml", @"ViewControllers.xml", @"Themes.xml", nil]);
+    TyphoonComponentFactory* factory = [self loadBlockOrXmlFactory];
 
     id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
     [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
@@ -59,8 +50,6 @@
         [rootViewController showCitiesListController];
     }
 
-    [self setGlobalTheme:[factory componentForKey:@"currentTheme"]];
-
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -68,17 +57,28 @@
 
 
 
+
+
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods
 
-- (void)setGlobalTheme:(PFTheme*)theme
+/*
+ * Switch between the Xml and Block assembly style by below.
+ */
+- (TyphoonComponentFactory*)loadBlockOrXmlFactory
 {
-    [[UINavigationBar appearance] setTitleTextAttributes:@{
-        NSFontAttributeName            : [UIFont applicationFontOfSize:20],
-        NSForegroundColorAttributeName : [UIColor whiteColor],
-    }];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:theme.navigationBarColor];
+    TyphoonComponentFactory* factory;
+
+    factory = [[TyphoonBlockComponentFactory alloc] initWithAssemblies:@[
+        [PFCoreComponents assembly],
+        [PFViewControllers assembly],
+        [PFThemeProvider assembly]
+    ]];
+
+//    factory =
+//        ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"CoreComponents.xml", @"ViewControllers.xml", @"Themes.xml", nil]);
+
+    return factory;
 }
 
 @end

@@ -18,14 +18,12 @@
 #import "UIFont+ApplicationFonts.h"
 #import "TyphoonComponentFactory.h"
 #import "PFRootViewController.h"
+#import "PFTheme.h"
+#import "UIBarButtonItem+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
 
 
 @implementation PFAddCityViewController
-
-@synthesize nameOfCityToAdd = _nameOfCityToAdd;
-@synthesize doneButton = _doneButton;
-@synthesize validationMessage = _validationMessage;
-@synthesize spinner = _spinner;
 
 
 /* ============================================================ Initializers ============================================================ */
@@ -44,6 +42,18 @@
     NSLog(@"***** %@ in dealloc *****", self);
 }
 
+- (void)beforePropertiesSet
+{
+    if (self.view) //Eagerly load view
+    {}
+}
+
+- (void)afterPropertiesSet
+{
+    [self validateRequiredProperties];
+    [self applyTheme];
+}
+
 
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods
@@ -56,9 +66,8 @@
 
     [self setTitle:@"Add City"];
     self.navigationItem.rightBarButtonItem =
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAdding:)];
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAdding:)];
     [_nameOfCityToAdd becomeFirstResponder];
-    [_doneButton setAction:@selector(doneAdding:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -72,18 +81,6 @@
 {
     [self doneAdding:textField];
     return YES;
-}
-
-- (void)validateRequiredProperties
-{
-    if (!_weatherClient)
-    {
-        [NSException raise:NSInternalInconsistencyException format:@"Property weatherClient is required."];
-    }
-    if (!_cityDao)
-    {
-        [NSException raise:NSInternalInconsistencyException format:@"Property cityDao is required."];
-    }
 }
 
 
@@ -119,6 +116,37 @@
         [_nameOfCityToAdd resignFirstResponder];
         [rootViewController dismissAddCitiesController];
     }
+}
+
+- (void)validateRequiredProperties
+{
+    if (!_weatherClient)
+    {
+        [NSException raise:NSInternalInconsistencyException format:@"Property weatherClient is required."];
+    }
+    if (!_cityDao)
+    {
+        [NSException raise:NSInternalInconsistencyException format:@"Property cityDao is required."];
+    }
+}
+
+- (void)applyTheme
+{
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
+        {
+            [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+            [self.navigationController.navigationBar setBarTintColor:_theme.navigationBarColor];
+        }
+        else
+        {
+            [self.navigationController.navigationBar configureFlatNavigationBarWithColor:_theme.navigationBarColor];
+            [UIBarButtonItem configureFlatButtonsWithColor:_theme.controlTintColor highlightedColor:_theme.controlTintColor cornerRadius:3];
+            [self.navigationItem.rightBarButtonItem configureFlatButtonWithColor:_theme.navigationBarColor
+                highlightedColor:_theme.navigationBarColor cornerRadius:0];
+        }
+    });
 }
 
 @end

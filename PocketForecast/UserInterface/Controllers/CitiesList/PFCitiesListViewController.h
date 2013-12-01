@@ -16,6 +16,7 @@
 
 @protocol PFCityDao;
 @class PFTheme;
+@class FUISegmentedControl;
 
 @interface PFCitiesListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
