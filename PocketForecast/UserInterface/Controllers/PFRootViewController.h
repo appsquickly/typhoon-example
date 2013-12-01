@@ -52,7 +52,8 @@ typedef enum
 - (void)popViewControllerAnimated:(BOOL)animated;
 
 /**
-* Shows the cities list view - loading from the TyphoonComponentFactory on-demand, and releasing the prototype-scoped instance when done.
+* Shows the cities list menu. We could have injected this component, however we'll instead load from the TyphoonComponentFactory on-demand,
+* and release the prototype-scoped instance when done. .
 */
 - (void)showCitiesListController;
 
