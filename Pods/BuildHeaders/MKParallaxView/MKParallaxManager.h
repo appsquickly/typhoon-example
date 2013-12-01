@@ -1,0 +1,1 @@
+../../MKParallaxView/MKParallaxView/MKParallaxManager.h

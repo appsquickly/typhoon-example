@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_FlatUIKit 2
 #define COCOAPODS_VERSION_PATCH_FlatUIKit 0
 
+// MKParallaxView
+#define COCOAPODS_POD_AVAILABLE_MKParallaxView
+#define COCOAPODS_VERSION_MAJOR_MKParallaxView 1
+#define COCOAPODS_VERSION_MINOR_MKParallaxView 1
+#define COCOAPODS_VERSION_PATCH_MKParallaxView 0
+
 // NGAParallaxMotion
 #define COCOAPODS_POD_AVAILABLE_NGAParallaxMotion
 #define COCOAPODS_VERSION_MAJOR_NGAParallaxMotion 1

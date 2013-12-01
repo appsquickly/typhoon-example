@@ -20,7 +20,7 @@
 
 @interface PFWeatherReportView : UIView <UITableViewDelegate, UITableViewDataSource>
 {
-    UIImageView* _backgroundView;
+    UIView* _backgroundView;
     UILabel* _cityNameLabel;
     UILabel* _conditionsDescriptionLabel;
     UIImageView* _conditionsIcon;

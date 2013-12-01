@@ -21,6 +21,7 @@
 #import "PFTheme.h"
 #import "NGAParallaxMotion.h"
 #import "UIToolbar+FlatUI.h"
+#import "MKParallaxView.h"
 
 
 @implementation PFWeatherReportView
@@ -86,14 +87,15 @@
     _theme = theme;
     dispatch_async(dispatch_get_main_queue(), ^
     {
-        [_backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
         if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
         {
             [_toolbar setBarTintColor:theme.forecastTintColor];
+            [(UIImageView*) _backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
         }
         else
         {
             [_toolbar configureFlatToolbarWithColor:theme.forecastTintColor];
+            [(MKParallaxView*) _backgroundView setBackgroundImage:[UIImage imageNamed:theme.backgroundResourceName]];
         }
         [_tableView reloadData];
     });
@@ -184,12 +186,16 @@
 
 - (void)initBackgroundView
 {
-    _backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [_backgroundView setContentMode:UIViewContentModeScaleToFill];
     if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
     {
+        _backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
         [_backgroundView setParallaxIntensity:20];
     }
+    else
+    {
+        _backgroundView = [[MKParallaxView alloc] initWithFrame:CGRectZero];
+    }
+    [_backgroundView setContentMode:UIViewContentModeScaleToFill];
     [self addSubview:_backgroundView];
 }
 
