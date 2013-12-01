@@ -1,1 +1,0 @@
-../../MKParallaxView/MKParallaxView/MKGyroManager.h

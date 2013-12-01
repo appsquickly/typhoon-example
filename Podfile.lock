@@ -2,7 +2,6 @@ PODS:
   - CKUITools (0.5.3)
   - Expecta (0.2.3)
   - FlatUIKit (1.2)
-  - MKParallaxView (1.1.0)
   - NGAParallaxMotion (1.0.2)
   - OCHamcrest (3.0.1)
   - OCLogTemplate (1.0)
@@ -16,7 +15,6 @@ DEPENDENCIES:
   - CKUITools
   - Expecta (~> 0.2.1)
   - FlatUIKit
-  - MKParallaxView
   - NGAParallaxMotion
   - OCHamcrest
   - OCLogTemplate
@@ -33,7 +31,6 @@ SPEC CHECKSUMS:
   CKUITools: bbac5931dfa9e96721897bea21f6a2233d611db4
   Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
   FlatUIKit: 43b2acaa6f4ef57539b51b00e4ce62d506e33e11
-  MKParallaxView: c0f82b80328c469cb88f1782605e61fbfc5442f7
   NGAParallaxMotion: 876e8934ae1e99eea3a2a0a1e2ae33139f1503b7
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   OCLogTemplate: d448f0a0c7e34e715e0400fc04c6bd871b8c17f4

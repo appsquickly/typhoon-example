@@ -21,7 +21,6 @@
 #import "PFTheme.h"
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
-#import "FUISegmentedControl.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -81,9 +80,17 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [_citiesListTableView deselectRowAtIndexPath:[_citiesListTableView indexPathForSelectedRow] animated:NO];
     [self refreshCitiesList];
+
+    NSString* cityName = [_cityDao getCurrentlySelectedCity];
+    if (cityName)
+    {
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[_cities indexOfObject:cityName] inSection:0];
+        [_citiesListTableView selectRowAtIndexPath:indexPath animated:YES
+            scrollPosition:UITableViewScrollPositionMiddle];
+    }
 }
+
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -7,7 +7,6 @@ target :PocketForecast, :exclusive => true do
   pod 'RaptureXML'
   pod 'CKUITools'
   pod 'NGAParallaxMotion'
-  pod 'MKParallaxView' #This is for pre iOS7
   pod 'FlatUIKit'
   pod 'PaperFold', :git => 'https://github.com/jasperblues/PaperFold-for-iOS.git'
 
