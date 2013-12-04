@@ -36,10 +36,6 @@
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     TyphoonComponentFactory* factory = [self loadBlockOrXmlFactory];
 
-    id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
-    [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
-    [factory makeDefault];
-
     PFRootViewController* rootViewController = [factory componentForType:[PFRootViewController class]];
     [_window setRootViewController:rootViewController];
 
@@ -56,6 +52,21 @@
 }
 
 
+/**
+* If using the block-style assembly, components can be resolved using the assembly interface itself. This avoids "magic strings"
+*/
+- (void)applicationWillEnterForeground:(UIApplication*)application
+{
+    //If using the block-style assembly, components can be resolved using the assembly interface, as follows:
+    PFViewControllers* viewControllers = (PFViewControllers*) [TyphoonComponentFactory defaultFactory];
+    PFRootViewController* rootViewController = [viewControllers rootViewController];
+
+    if ([[[UIDevice currentDevice] systemVersion] integerValue] < 7)
+    {
+        //On early versions of iOS paper-fold mis-behaves when foregrounding. . encourage it not to.
+        [rootViewController dismissCitiesListController];
+    }
+}
 
 
 
@@ -77,6 +88,10 @@
 
 //    factory =
 //        ([[TyphoonXmlComponentFactory alloc] initWithConfigFileNames:@"CoreComponents.xml", @"ViewControllers.xml", @"Themes.xml", nil]);
+
+    id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
+    [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
+    [factory makeDefault];
 
     return factory;
 }
