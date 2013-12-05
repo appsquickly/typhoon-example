@@ -31,7 +31,7 @@
 {
     TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"CoreComponents.xml"];
     id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
-    [factory attachMutator:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
+    [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
     weatherClient = [factory componentForKey:@"weatherClient"];
 }
 
@@ -43,7 +43,7 @@
     [weatherClient loadWeatherReportFor:@"Manila" onSuccess:^(PFWeatherReport* weatherReport)
     {
         retrievedReport = weatherReport;
-    } onError:^(NSUInteger statusCode, NSString* message)
+    } onError:^(NSString* message)
     {
         LogDebug(@"Got this error: %@", message);
     }];
@@ -64,7 +64,7 @@
 {
     __block NSString* errorMessage;
 
-    [weatherClient loadWeatherReportFor:@"Dooglefog" onSuccess:nil onError:^(NSUInteger statusCode, NSString* message)
+    [weatherClient loadWeatherReportFor:@"Dooglefog" onSuccess:nil onError:^(NSString* message)
     {
         errorMessage = message;
     }];

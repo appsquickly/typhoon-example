@@ -31,7 +31,7 @@
     TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"CoreComponents.xml"];
     weatherReportDao = [factory componentForType:@protocol(PFWeatherReportDao)];
 
-    NSString* xmlString = [[TyphoonBundleResource withName:@"SampleForecast.xml"] asString];
+    NSString* xmlString = [[TyphoonBundleResource withName:@"SampleForecast.xml" inBundle:[NSBundle bundleForClass:[self class]]] asString];
     RXMLElement* xmlElement = [RXMLElement elementFromXMLString:xmlString encoding:NSUTF8StringEncoding];
     testReport = [xmlElement asWeatherReport];
 }

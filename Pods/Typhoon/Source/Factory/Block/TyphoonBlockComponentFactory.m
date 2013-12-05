@@ -12,39 +12,16 @@
 
 
 #import <objc/runtime.h>
-#import <objc/message.h>
 #import "TyphoonBlockComponentFactory.h"
 #import "TyphoonAssembly.h"
 #import "TyphoonDefinition.h"
-#import "TyphoonJRSwizzle.h"
 #import "OCLogTemplate.h"
-#import "TyphoonAssemblySelectorAdviser.h"
-
-static NSMutableArray* swizzleRegistry;
-
-@interface TyphoonAssembly (BlockFactoryFriend)
-
-+ (BOOL)selectorReservedOrPropertySetter:(SEL)selector;
-
-- (NSMutableDictionary*)cachedDefinitionsForMethodName;
-
-@end
+#import "TyphoonAssembly+TyphoonBlockFactoryFriend.h"
 
 @implementation TyphoonBlockComponentFactory
 
 /* ====================================================================================================================================== */
 #pragma mark - Class Methods
-
-+ (void)initialize
-{
-    [super initialize];
-    @synchronized (self)
-    {
-        swizzleRegistry = [[NSMutableArray alloc] init];
-    }
-}
-
-
 + (instancetype)factoryWithAssembly:(TyphoonAssembly*)assembly
 {
     return [[self alloc] initWithAssemblies:@[assembly]];
@@ -71,22 +48,32 @@ static NSMutableArray* swizzleRegistry;
         for (TyphoonAssembly* assembly in assemblies)
         {
             LogTrace(@"Building assembly: %@", NSStringFromClass([assembly class]));
-            if (![assembly isKindOfClass:[TyphoonAssembly class]])
-            {
-                [NSException raise:NSInvalidArgumentException format:@"Class '%@' is not a sub-class of %@",
-                                                                     NSStringFromClass([assembly class]),
-                                                                     NSStringFromClass([TyphoonAssembly class])];
-            }
+            [self assertIsAssembly:assembly];
 
-            [self applyBeforeAdviceToAssemblyMethods:assembly];
-            NSArray* definitions = [self definitionsByPopulatingCache:assembly];
-            for (TyphoonDefinition* definition in definitions)
-            {
-                [self register:definition];
-            }
+            [assembly prepareForUse];
+            [self registerAllDefinitions:assembly];
         }
     }
     return self;
+}
+
+- (void)assertIsAssembly:(TyphoonAssembly*)assembly
+{
+    if (![assembly isKindOfClass:[TyphoonAssembly class]]) //
+    {
+        [NSException raise:NSInvalidArgumentException format:@"Class '%@' is not a sub-class of %@",
+                                                             NSStringFromClass([assembly class]),
+                                                             NSStringFromClass([TyphoonAssembly class])];
+    }
+}
+
+- (void)registerAllDefinitions:(TyphoonAssembly*)assembly
+{
+    NSArray* definitions = [assembly definitions];
+    for (TyphoonDefinition* definition in definitions)
+    {
+        [self register:definition];
+    }
 }
 
 /* ====================================================================================================================================== */
@@ -118,132 +105,5 @@ static NSMutableArray* swizzleRegistry;
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods
 
-- (NSArray*)definitionsByPopulatingCache:(TyphoonAssembly*)assembly
-{
-    @synchronized (self)
-    {
-        [self populateCacheOnAssembly:assembly];
-        return [[assembly cachedDefinitionsForMethodName] allValues];
-    }
-}
-
-- (void)populateCacheOnAssembly:(TyphoonAssembly*)assembly
-{
-    NSSet* definitionSelectors = [self obtainDefinitionSelectors:assembly];
-
-    [definitionSelectors enumerateObjectsUsingBlock:^(id obj, BOOL* stop)
-    {
-        SEL selector = (SEL) [obj pointerValue];
-        objc_msgSend(assembly, selector);
-    }];
-}
-
-- (NSSet*)obtainDefinitionSelectors:(TyphoonAssembly*)assembly
-{
-    NSMutableSet* definitionSelectors = [[NSMutableSet alloc] init];
-    [self addDefinitionSelectorsForSubclassesOfAssembly:assembly toSet:definitionSelectors];
-    return definitionSelectors;
-}
-
-- (void)addDefinitionSelectorsForSubclassesOfAssembly:(TyphoonAssembly*)assembly toSet:(NSMutableSet*)definitionSelectors
-{
-    Class currentClass = [assembly class];
-    while ([self classNotRootAssemblyClass:currentClass])
-    {
-        [definitionSelectors unionSet:[self obtainDefinitionSelectorsInAssemblyClass:currentClass]];
-        currentClass = class_getSuperclass(currentClass);
-    }
-}
-
-- (BOOL)classNotRootAssemblyClass:(Class)currentClass;
-{
-    NSString* currentClassName = NSStringFromClass(currentClass);
-    NSString* rootAssemblyClassName = NSStringFromClass([TyphoonAssembly class]);
-
-    return ![currentClassName isEqualToString:rootAssemblyClassName];
-}
-
-- (NSSet*)obtainDefinitionSelectorsInAssemblyClass:(Class)class
-{
-    NSMutableSet* definitionSelectors = [[NSMutableSet alloc] init];
-    [self addDefinitionSelectorsInClass:class toSet:definitionSelectors];
-    return definitionSelectors;
-}
-
-- (void)addDefinitionSelectorsInClass:(Class)aClass toSet:(NSMutableSet*)definitionSelectors
-{
-    [self enumerateMethodsInClass:aClass usingBlock:^(Method method)
-    {
-        if ([self method:method onClassIsNotReserved:aClass])
-        {
-            [self addDefinitionSelectorForMethod:method toSet:definitionSelectors];
-        }
-    }];
-}
-
-typedef void(^MethodEnumerationBlock)(Method method);
-
-- (void)enumerateMethodsInClass:(Class)class usingBlock:(MethodEnumerationBlock)block;
-{
-    unsigned int methodCount;
-    Method* methodList = class_copyMethodList(class, &methodCount);
-    for (int i = 0; i < methodCount; i++)
-    {
-        Method method = methodList[i];
-        block(method);
-    }
-    free(methodList);
-}
-
-- (BOOL)method:(Method)method onClassIsNotReserved:(Class)aClass;
-{
-    SEL methodSelector = method_getName(method);
-    return ![aClass selectorReservedOrPropertySetter:methodSelector];
-}
-
-- (void)addDefinitionSelectorForMethod:(Method)method toSet:(NSMutableSet*)definitionSelectors
-{
-    SEL methodSelector = method_getName(method);
-    [definitionSelectors addObject:[NSValue valueWithPointer:methodSelector]];
-}
-
-- (void)applyBeforeAdviceToAssemblyMethods:(TyphoonAssembly*)assembly
-{
-    @synchronized (self)
-    {
-        if ([self assemblyMethodsHaveNotYetBeenSwizzled:assembly])
-        {
-            [self swizzleAssemblyMethods:assembly];
-        }
-    }
-}
-
-- (BOOL)assemblyMethodsHaveNotYetBeenSwizzled:(TyphoonAssembly*)assembly;
-{
-    return ![swizzleRegistry containsObject:[assembly class]];
-}
-
-- (void)swizzleAssemblyMethods:(TyphoonAssembly*)assembly;
-{
-    [self markAssemblyMethodsAsSwizzled:assembly];
-
-    NSSet* definitionSelectors = [self obtainDefinitionSelectors:assembly];
-    [definitionSelectors enumerateObjectsUsingBlock:^(id obj, BOOL* stop)
-    {
-        [self replaceImplementationOfDefinitionOnAssembly:assembly withDynamicBeforeAdviceImplementation:obj];
-    }];
-}
-
-- (void)markAssemblyMethodsAsSwizzled:(TyphoonAssembly*)assembly;
-{
-    [swizzleRegistry addObject:[assembly class]];
-}
-
-- (void)replaceImplementationOfDefinitionOnAssembly:(TyphoonAssembly*)assembly withDynamicBeforeAdviceImplementation:(id)obj;
-{
-    SEL methodSelector = (SEL) [obj pointerValue];
-    SEL swizzled = [TyphoonAssemblySelectorAdviser advisedSELForSEL:methodSelector];
-    [[assembly class] typhoon_swizzleMethod:methodSelector withMethod:swizzled error:nil];
-}
 
 @end
