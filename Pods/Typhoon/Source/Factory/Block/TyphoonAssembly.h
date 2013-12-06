@@ -13,11 +13,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class TyphoonDefinition;
+
 
 @interface TyphoonAssembly : NSObject
-{
-    NSMutableDictionary* _cachedDefinitions;
-}
 
 + (instancetype)assembly;
 
@@ -27,9 +26,13 @@
 + (instancetype)defaultAssembly;
 
 /**
-* Callback to wire any collaborating assemblies to either a hard-coded reference or a proxy that will be resolved at runtime.
+* Subclasses must implement to wire any collaborating assemblies to one of the following:
+ * a hard-coded reference
+ * a proxy that will be resolved at runtime.
 */
 - (void)resolveCollaboratingAssemblies;
 
+// TyphoonAssemblyAdviser (should be Friend category)
++ (BOOL)selectorReservedOrPropertySetter:(SEL)selector;
 
 @end

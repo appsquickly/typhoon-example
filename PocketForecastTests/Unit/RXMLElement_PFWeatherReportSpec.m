@@ -30,7 +30,7 @@
 
 - (void)setUp
 {
-    sampleReportString = [[TyphoonBundleResource withName:@"SampleForecast.xml"] asString];
+    sampleReportString = [[TyphoonBundleResource withName:@"SampleForecast.xml" inBundle:[NSBundle bundleForClass:[self class]]] asString];
 }
 
 

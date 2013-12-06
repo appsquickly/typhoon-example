@@ -16,7 +16,6 @@
 #import "TyphoonComponentFactory.h"
 #import "TyphoonComponentFactory+TyphoonDefinitionRegisterer.h"
 #import <objc/message.h>
-#
 #import "OCLogTemplate.h"
 
 @implementation TyphoonDefinitionRegisterer

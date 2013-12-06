@@ -9,7 +9,7 @@ PODS:
     - OCHamcrest (~> 3.0)
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
-  - Typhoon (1.6.0)
+  - Typhoon (1.6.1)
 
 DEPENDENCIES:
   - CKUITools
@@ -38,6 +38,6 @@ SPEC CHECKSUMS:
   OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
   PaperFold: 56c21be56fe6454fa99927b251396471d341c874
   RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
-  Typhoon: c264bf494e146cddf0781bb820911a48811f21d3
+  Typhoon: 562bcf3bea287ceff1cbc4c2bd7cca56f2f3691a
 
 COCOAPODS: 0.28.0

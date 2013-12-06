@@ -10,21 +10,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
 #import <Foundation/Foundation.h>
-#import "TyphoonResource.h"
+#import "TyphoonAssembly.h"
 
-/**
-* Represents a resource within the application bundle.
-*/
-@interface TyphoonBundleResource : NSObject <TyphoonResource>
-{
-    NSData* _data;
-}
+@interface TyphoonAssembly (TyphoonBlockFactoryFriend)
 
+- (void)prepareForUse;
 
-+ (id <TyphoonResource>)withName:(NSString*)name;
-+ (id <TyphoonResource>)withName:(NSString *)name inBundle:(NSBundle *)bundle;
-
+- (NSArray*)definitions;
 
 @end

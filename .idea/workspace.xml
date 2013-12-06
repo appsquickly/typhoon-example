@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f6bc38d9-29d3-4e38-95cc-03c66446d1b4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
+    </list>
+    <ignored path="Typhoon-example.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_iPhone_6.1" />
+  <component name="FavoritesManager">
+    <favorites_list name="PocketForecast" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="PFWeatherReportDaoTests.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SampleForecast.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecastTests/Resources/SampleForecast.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="41" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1456">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TyphoonBundleResource.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="24" selection-start="945" selection-end="945" vertical-scroll-proportion="0.29714286" vertical-offset="143" max-vertical-offset="988">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TyphoonBundleResource.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonBundleResource.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RXMLElement_PFWeatherReportSpec.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="0" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1014">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonBundleResource.h" />
+        <option value="$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m" />
+        <option value="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m" />
+        <option value="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.m" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="54" />
+    <option name="y" value="22" />
+    <option name="width" value="1866" />
+    <option name="height" value="1178" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Typhoon" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PocketForecast" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RunManager" selected="XCTest/Kiwi.PocketForecastTests">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecast" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="PocketForecast" RUN_TARGET_NAME="PocketForecast" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecastTests" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="OCGoogleTestRunConfigurationType" factoryName="Google Test" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecast" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="PocketForecast" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="PocketForecast" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecast" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="PocketForecast" RUN_TARGET_NAME="PocketForecast" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast-CKUITools" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast-CKUITools" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-CKUITools" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast-FlatUIKit" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast-FlatUIKit" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-FlatUIKit" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast-NGAParallaxMotion" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast-NGAParallaxMotion" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-NGAParallaxMotion" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast-OCLogTemplate" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast-OCLogTemplate" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-OCLogTemplate" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast-PaperFold" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast-PaperFold" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-PaperFold" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast-RaptureXML" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast-RaptureXML" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-RaptureXML" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast-Typhoon" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast-Typhoon" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-Typhoon" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecast" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecast" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecastTests-Expecta" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecastTests-Expecta" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests-Expecta" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecastTests-OCHamcrest" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecastTests-OCHamcrest" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests-OCHamcrest" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecastTests-OCMockito" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecastTests-OCMockito" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests-OCMockito" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PocketForecastTests" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecastTests" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="PocketForecastTests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" SCHEME_NAME="PocketForecastTests" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecastTests" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
+      <envs />
+      <RunnerSettings RunnerId="AppRunner" />
+      <ConfigurationWrapper RunnerId="AppRunner" />
+      <method />
+    </configuration>
+    <list size="14">
+      <item index="0" class="java.lang.String" itemvalue="Application.PocketForecast" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-CKUITools" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-FlatUIKit" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-NGAParallaxMotion" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-OCLogTemplate" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-PaperFold" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-RaptureXML" />
+      <item index="7" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-Typhoon" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Pods-PocketForecast" />
+      <item index="9" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-Expecta" />
+      <item index="10" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCHamcrest" />
+      <item index="11" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCMockito" />
+      <item index="12" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests" />
+      <item index="13" class="java.lang.String" itemvalue="XCTest/Kiwi.PocketForecastTests" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6bc38d9-29d3-4e38-95cc-03c66446d1b4" name="Default" comment="" />
+      <created>1386181204775</created>
+      <updated>1386181204775</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="22" width="1866" height="1178" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933578" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1866522" sideWeight="0.6715867" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PocketForecastTests/Resources/SampleForecast.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="41" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1456">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1014">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonBundleResource.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="24" selection-start="945" selection-end="945" vertical-scroll-proportion="0.29714286" vertical-offset="143" max-vertical-offset="988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
