@@ -1,1 +1,1 @@
-../../Typhoon/Source/Component/FactoryProvider/TyphoonAssistedFactoryDefinition.h
+../../Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryDefinition.h

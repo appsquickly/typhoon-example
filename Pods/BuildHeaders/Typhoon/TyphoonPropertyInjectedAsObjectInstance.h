@@ -1,1 +1,1 @@
-../../Typhoon/Source/Component/Properties/TyphoonPropertyInjectedAsObjectInstance.h
+../../Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedAsObjectInstance.h

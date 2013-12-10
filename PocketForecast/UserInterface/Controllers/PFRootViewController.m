@@ -11,12 +11,14 @@
 
 
 #import "CKUITools.h"
+#import "TyphoonComponentFactoryAware.h"
 #import "PFRootViewController.h"
 #import "PaperFoldView.h"
 #import "PFProgressHUD.h"
 #import "TyphoonComponentFactory.h"
-#import "PFAddCityViewController.h"
+#import "PFViewControllers.h"
 #import "PFCitiesListViewController.h"
+#import "PFAddCityViewController.h"
 
 #define SIDE_CONTROLLER_WIDTH 245.0
 
@@ -50,10 +52,17 @@
     {} //Eager load view
 }
 
-- (void)afterPropertiesSet
+/**
+* Since we have a PFViewControllers interface (from the block-style assembly) we'll place that interface as a facade in front of the
+* TyphoonComponentFactory. . . we could also use the TyphoonComponentFactory interface directly, eg:
+ *
+ *      TyphoonComponentFactory* factory = theFactory;
+*/
+- (void)setFactory:(id)theFactory
 {
-
+    _factory = theFactory;
 }
+
 
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
@@ -103,8 +112,8 @@
     {
         _sideViewState = PFSideViewStateShowing;
 
-        _citiesListController = [[UINavigationController alloc]
-            initWithRootViewController:[[TyphoonComponentFactory defaultFactory] componentForType:[PFCitiesListViewController class]]];
+        _citiesListController =
+            [[UINavigationController alloc] initWithRootViewController:[_factory componentForType:[PFCitiesListViewController class]]];
 
         [_citiesListController.view setFrame:CGRectMake(0, 0,
             _mainContentViewContainer.width - (_mainContentViewContainer.width - SIDE_CONTROLLER_WIDTH), _mainContentViewContainer.height)];
@@ -197,8 +206,8 @@
     if (!_addCitiesController)
     {
         [_navigator.topViewController.view setUserInteractionEnabled:NO];
-        _addCitiesController = [[UINavigationController alloc]
-            initWithRootViewController:[[TyphoonComponentFactory defaultFactory] componentForType:[PFAddCityViewController class]]];
+        _addCitiesController =
+            [[UINavigationController alloc] initWithRootViewController:[_factory componentForType:[PFAddCityViewController class]]];
 
         [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
         [self.view addSubview:_addCitiesController.view];

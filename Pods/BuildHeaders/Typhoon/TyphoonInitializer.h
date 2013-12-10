@@ -1,1 +1,1 @@
-../../Typhoon/Source/Component/Initializer/TyphoonInitializer.h
+../../Typhoon/Source/Definition/Initializer/TyphoonInitializer.h

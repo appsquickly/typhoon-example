@@ -12,9 +12,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TyphoonPropertyInjectionDelegate.h"
+#import "TyphoonComponentFactoryAware.h"
 #import "PaperFoldView.h"
 
 @class PFProgressHUD;
+@class PFViewControllers;
 
 
 typedef enum
@@ -23,7 +25,7 @@ typedef enum
     PFSideViewStateShowing
 } PFSideViewState;
 
-@interface PFRootViewController : UIViewController <TyphoonPropertyInjectionDelegate, PaperFoldViewDelegate>
+@interface PFRootViewController : UIViewController <TyphoonPropertyInjectionDelegate, TyphoonComponentFactoryAware, PaperFoldViewDelegate>
 {
     UINavigationController* _navigator;
     UIView* _mainContentViewContainer;
@@ -33,6 +35,8 @@ typedef enum
 
     UIViewController* _citiesListController;
     UIViewController* _addCitiesController;
+
+    TyphoonComponentFactory* _factory;
 }
 
 @property(nonatomic, strong, readonly) PFProgressHUD* progressHUD;

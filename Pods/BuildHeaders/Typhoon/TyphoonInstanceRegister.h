@@ -1,1 +1,1 @@
-../../Typhoon/Source/Factory/InstanceBuilder/InstanceRegister/TyphoonInstanceRegister.h
+../../Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonInstanceRegister.h

@@ -1,0 +1,1 @@
+../../Typhoon/Source/Factory/TyphoonComponentFactoryAware.h

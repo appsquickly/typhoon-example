@@ -1,1 +1,1 @@
-../../Typhoon/Source/Factory/InstanceBuilder/TyphoonComponentFactory+InstanceBuilder.h
+../../Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.h

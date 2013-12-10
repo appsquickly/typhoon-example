@@ -12,20 +12,19 @@
 
 
 #import <objc/runtime.h>
-#import <objc/message.h>
 #import "TyphoonAssembly.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonComponentFactory.h"
 #import "TyphoonAssemblySelectorAdviser.h"
 #import "OCLogTemplate.h"
-#import "TyphoonDefinition+Infrastructure.h"
 #import "TyphoonAssembly+TyphoonBlockFactoryFriend.h"
 #import "TyphoonAssemblyAdviser.h"
 #import "TyphoonAssemblyDefinitionBuilder.h"
 
 static NSMutableArray* reservedSelectorsAsStrings;
 
-@implementation TyphoonAssembly {
+@implementation TyphoonAssembly
+{
     TyphoonAssemblyDefinitionBuilder* _definitionBuilder;
 }
 
@@ -42,7 +41,7 @@ static NSMutableArray* reservedSelectorsAsStrings;
 
 + (instancetype)defaultAssembly
 {
-    return (TyphoonAssembly*) [TyphoonComponentFactory defaultFactory];
+    return (TyphoonAssembly*)[TyphoonComponentFactory defaultFactory];
 }
 
 + (void)load
@@ -120,7 +119,7 @@ static NSMutableArray* reservedSelectorsAsStrings;
 
 + (IMP)implementationToConstructDefinitionForSEL:(SEL)selWithAdvicePrefix
 {
-    return imp_implementationWithBlock((__bridge id) objc_unretainedPointer((TyphoonDefinition*) ^(TyphoonAssembly* me)
+    return imp_implementationWithBlock((__bridge id)objc_unretainedPointer((TyphoonDefinition*)^(TyphoonAssembly* me)
     {
         NSString* key = [TyphoonAssemblySelectorAdviser keyForAdvisedSEL:selWithAdvicePrefix];
         return [me->_definitionBuilder builtDefinitionForKey:key];

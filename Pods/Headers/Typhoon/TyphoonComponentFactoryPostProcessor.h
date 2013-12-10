@@ -1,1 +1,1 @@
-../../Typhoon/Source/Factory/Config/TyphoonComponentFactoryPostProcessor.h
+../../Typhoon/Source/Configuration/TyphoonComponentFactoryPostProcessor.h

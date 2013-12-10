@@ -1,1 +1,1 @@
-../../Typhoon/Source/Utils/TyphoonTestUtils.h
+../../Typhoon/Source/Test/TyphoonTestUtils.h

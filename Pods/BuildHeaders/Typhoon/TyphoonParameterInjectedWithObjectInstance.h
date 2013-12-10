@@ -1,1 +1,1 @@
-../../Typhoon/Source/Component/Initializer/TyphoonParameterInjectedWithObjectInstance.h
+../../Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithObjectInstance.h

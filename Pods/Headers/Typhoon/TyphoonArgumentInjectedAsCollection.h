@@ -1,1 +1,1 @@
-../../Typhoon/Source/Component/Collection/TyphoonArgumentInjectedAsCollection.h
+../../Typhoon/Source/Definition/Collection/TyphoonArgumentInjectedAsCollection.h

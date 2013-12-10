@@ -52,14 +52,9 @@
 }
 
 
-/**
-* If using the block-style assembly, components can be resolved using the assembly interface itself. This avoids "magic strings"
-*/
 - (void)applicationWillEnterForeground:(UIApplication*)application
 {
-    //If using the block-style assembly, components can be resolved using the assembly interface, as follows:
-    PFViewControllers* viewControllers = (PFViewControllers*) [TyphoonComponentFactory defaultFactory];
-    PFRootViewController* rootViewController = [viewControllers rootViewController];
+    PFRootViewController* rootViewController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
 
     if ([[[UIDevice currentDevice] systemVersion] integerValue] < 7)
     {
