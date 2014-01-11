@@ -10,19 +10,16 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
 #import <Foundation/Foundation.h>
+#import "TyphoonAssembly.h"
 
-@protocol TyphoonInstanceRegister <NSObject>
+@interface TyphoonAssembly (TyphoonAssemblyFriend)
 
-+ (instancetype)instanceRegister;
++ (BOOL)selectorReservedOrPropertySetter:(SEL)selector;
 
-- (void)stashInstance:(id)instance forKey:(NSString*)key;
+- (void)prepareForUse;
+- (NSArray*)definitions;
 
-- (id)unstashInstanceForKey:(NSString*)key;
-
-- (id)peekInstanceForKey:(NSString*)key;
-
-- (BOOL)hasInstanceForKey:(NSString*)key;
+@property (readonly) NSSet *definitionSelectors;
 
 @end

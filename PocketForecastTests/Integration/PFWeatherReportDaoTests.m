@@ -11,13 +11,13 @@
 
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "PFWeatherReportDao.h"
 #import "PFWeatherReport.h"
 #import "RXMLElement+PFWeatherReport.h"
 #import "Typhoon.h"
 
-@interface PFWeatherReportDaoTests : SenTestCase
+@interface PFWeatherReportDaoTests : XCTestCase
 @end
 
 @implementation PFWeatherReportDaoTests

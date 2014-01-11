@@ -11,12 +11,13 @@
 
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "PFWeatherClient.h"
 #import "PFWeatherReport.h"
 #import "Typhoon.h"
+#import "TyphoonTestUtils.h"
 
-@interface PFWeatherClientTests : SenTestCase
+@interface PFWeatherClientTests : XCTestCase
 @end
 
 @implementation PFWeatherClientTests
@@ -54,7 +55,7 @@
     } andPerformTests:^
     {
         LogDebug(@"################### Result: %@", retrievedReport);
-        assertThat(retrievedReport.forecast, isNot(empty()));
+        assertThat(retrievedReport.forecast, isNot(isEmpty()));
     }];
 
 }

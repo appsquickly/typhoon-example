@@ -11,11 +11,11 @@
 
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "PFCityDao.h"
 #import "TyphoonXmlComponentFactory.h"
 
-@interface PFCityDoaTests : SenTestCase
+@interface PFCityDoaTests : XCTestCase
 @end
 
 @implementation PFCityDoaTests
@@ -37,7 +37,7 @@
 - (void)test_should_list_all_cities_alphabetically
 {
     NSArray* cities = [cityDao listAllCities];
-    assertThat(cities, isNot(empty()));
+    assertThat(cities, isNot(isEmpty()));
 }
 
 
@@ -47,7 +47,7 @@
 
     NSArray* cities = [cityDao listAllCities];
     LogDebug(@"Cities now: %@", cities);
-    assertThat(cities, isNot(empty()));
+    assertThat(cities, isNot(isEmpty()));
 
     //Adding the same city twice doesn't add an extra item.
     NSUInteger citiesCount = [cities count];
@@ -63,7 +63,7 @@
     [cityDao deleteCity:@"Manila"];
     NSArray* cities = [cityDao listAllCities];
     LogDebug(@"Cities now: %@", cities);
-    assertThat(cities, isNot(empty()));
+    assertThat(cities, isNot(isEmpty()));
 
     //Deleting a city that doesn't exist just gets ignored.
     [cityDao deleteCity:@"A City In The Sky - Part Coney Island and Part Paris"];

@@ -15,8 +15,10 @@
 #import "TyphoonAssembly.h"
 #import "TyphoonJRSwizzle.h"
 #import <objc/runtime.h>
+#import "TyphoonAssembly+TyphoonAssemblyFriend.h"
+#import "OCLogTemplate.h"
 
-static NSMutableArray* swizzleRegistry;
+static NSMutableDictionary* swizzledDefinitionsByAssemblyClass;
 
 
 @implementation TyphoonAssemblyAdviser
@@ -26,36 +28,99 @@ static NSMutableArray* swizzleRegistry;
 
 + (void)initialize
 {
-    [super initialize];
     @synchronized (self)
     {
-        swizzleRegistry = [[NSMutableArray alloc] init];
+        swizzledDefinitionsByAssemblyClass = [[NSMutableDictionary alloc] init];
     }
 }
 
+#pragma mark - Advising
 + (void)adviseMethods:(TyphoonAssembly*)assembly
 {
     @synchronized (self)
     {
-        if ([TyphoonAssemblyAdviser assemblyMethodsHaveNotYetBeenSwizzled:assembly])
+        if ([TyphoonAssemblyAdviser assemblyIsNotAdvised:assembly])
         {
             [self swizzleAssemblyMethods:assembly];
         }
     }
 }
 
++ (void)undoAdviseMethods:(TyphoonAssembly*)assembly
+{
+    @synchronized (self)
+    {
+        if ([TyphoonAssemblyAdviser assemblyIsAdvised:assembly])
+        {
+            [self unswizzleAssemblyMethods:assembly];
+        }
+    }
+}
+
++ (void)unswizzleAssemblyMethods:(TyphoonAssembly*)assembly
+{
+    NSSet* swizzledSelectors = [swizzledDefinitionsByAssemblyClass objectForKey:NSStringFromClass([assembly class])];
+
+    LogTrace(@"Unswizzling the following selectors: '%@' on assembly: '%@'.", [self humanReadableDescriptionForSelectorObjects:swizzledSelectors], assembly);
+
+    [self swizzleDefinitionSelectors:swizzledSelectors onAssembly:assembly];
+
+    [self markAssemblyMethodsAsNoLongerAdvised:assembly];
+}
+
++ (NSString*)humanReadableDescriptionForSelectorObjects:(NSSet*)selectors
+{
+    NSMutableSet* selectorStrings = [[NSMutableSet alloc] initWithCapacity:selectors.count];
+    [selectors enumerateObjectsUsingBlock:^(NSValue* obj, BOOL* stop)
+    {
+        SEL sel = [obj pointerValue];
+        NSString* string = NSStringFromSelector(sel);
+        [selectorStrings addObject:string];
+    }];
+
+    return [selectorStrings description];
+}
+
 + (void)swizzleAssemblyMethods:(TyphoonAssembly*)assembly
 {
-    [TyphoonAssemblyAdviser markAssemblyMethodsAsSwizzled:assembly];
+    NSSet* definitionSelectors = [self definitionSelectorsForAssembly:assembly];
+    LogTrace(@"About to swizzle the following methods: %@.", [self humanReadableDescriptionForSelectorObjects:definitionSelectors]);
 
-    NSSet* definitionSelectors = [self definitionSelectors:assembly];
-    [definitionSelectors enumerateObjectsUsingBlock:^(NSValue *selectorObj, BOOL* stop)
+    [self swizzleDefinitionSelectors:definitionSelectors onAssembly:assembly];
+
+    [self markAssemblyMethods:definitionSelectors asAdvised:assembly];
+}
+
++ (void)swizzleDefinitionSelectors:(NSSet*)definitionSelectors onAssembly:(TyphoonAssembly*)assembly
+{
+    [definitionSelectors enumerateObjectsUsingBlock:^(NSValue* selectorObj, BOOL* stop)
     {
-        [TyphoonAssemblyAdviser replaceImplementationOfDefinitionSelector:selectorObj withDynamicBeforeAdviceImplementationOnAssembly:assembly];
+        [self swapImplementationOfDefinitionSelector:selectorObj withDynamicBeforeAdviceImplementationOnAssembly:assembly];
     }];
 }
 
-+ (NSSet*)definitionSelectors:(TyphoonAssembly*)assembly
++ (void)swapImplementationOfDefinitionSelector:(NSValue*)obj withDynamicBeforeAdviceImplementationOnAssembly:(TyphoonAssembly*)assembly
+{
+    return [self swapImplementationOfDefinitionSelector:obj withDynamicBeforeAdviceImplementationOnAssemblyClass:[assembly class]];
+}
+
++ (void)swapImplementationOfDefinitionSelector:(NSValue*)obj withDynamicBeforeAdviceImplementationOnAssemblyClass:(Class)assemblyClass
+{
+    SEL methodSelector = (SEL)[obj pointerValue];
+    SEL swizzled = [TyphoonAssemblySelectorAdviser advisedSELForSEL:methodSelector];
+
+    NSError* err;
+    BOOL success = [assemblyClass typhoon_swizzleMethod:methodSelector withMethod:swizzled error:&err];
+    if (!success)
+    {
+        LogError(@"Failed to swizzle method '%@' on class '%@' with method '%@'.", NSStringFromSelector(methodSelector), NSStringFromClass(assemblyClass), NSStringFromSelector(swizzled));
+        LogError(@"'%@'", err);
+        [NSException raise:NSInternalInconsistencyException format:@"Failed to swizzle method, everything is broken!"];
+    }
+}
+
+#pragma mark - Definition Selector Enumerator
++ (NSSet*)definitionSelectorsForAssembly:(TyphoonAssembly*)assembly
 {
     NSMutableSet* definitionSelectors = [[NSMutableSet alloc] init];
     [self addDefinitionSelectorsForSubclassesOfAssembly:assembly toSet:definitionSelectors];
@@ -83,11 +148,17 @@ static NSMutableArray* swizzleRegistry;
 {
     [self enumerateMethodsInClass:aClass usingBlock:^(Method method)
     {
-        if ([self method:method onClassIsNotReserved:aClass])
+        if ([self method:method onClassIsNotReserved:aClass] && [self method:method onClassIsNotAdvised:aClass])
         {
             [self addDefinitionSelectorForMethod:method toSet:definitionSelectors];
         }
     }];
+}
+
++ (BOOL)method:(Method)pMethod onClassIsNotAdvised:(Class)advised
+{
+    SEL sel = method_getName(pMethod);
+    return ![TyphoonAssemblySelectorAdviser selectorIsAdvised:sel];
 }
 
 typedef void(^MethodEnumerationBlock)(Method method);
@@ -106,8 +177,6 @@ typedef void(^MethodEnumerationBlock)(Method method);
 
 + (BOOL)method:(Method)method onClassIsNotReserved:(Class)aClass
 {
-    // aClass must be a subclass of TyphoonAssembly
-
     SEL methodSelector = method_getName(method);
     return ![aClass selectorReservedOrPropertySetter:methodSelector];
 }
@@ -126,27 +195,30 @@ typedef void(^MethodEnumerationBlock)(Method method);
     [definitionSelectors addObject:[NSValue valueWithPointer:methodSelector]];
 }
 
-
-+ (BOOL)assemblyMethodsSwizzled:(TyphoonAssembly*)assembly
+#pragma mark - Advising Registry
++ (BOOL)assemblyIsNotAdvised:(TyphoonAssembly*)assembly;
 {
-    return [swizzleRegistry containsObject:[assembly class]];
+    return ![self assemblyIsAdvised:assembly];
 }
 
-+ (BOOL)assemblyMethodsHaveNotYetBeenSwizzled:(TyphoonAssembly*)assembly;
++ (BOOL)assemblyIsAdvised:(TyphoonAssembly*)assembly
 {
-    return ![self assemblyMethodsSwizzled:assembly];
+    return [self assemblyClassIsAdvised:[assembly class]];
 }
 
-+ (void)markAssemblyMethodsAsSwizzled:(TyphoonAssembly*)assembly;
++ (BOOL)assemblyClassIsAdvised:(Class)class
 {
-    [swizzleRegistry addObject:[assembly class]];
+    return [[swizzledDefinitionsByAssemblyClass allKeys] containsObject:NSStringFromClass(class)];
 }
 
-+ (void)replaceImplementationOfDefinitionSelector:(NSValue*)obj withDynamicBeforeAdviceImplementationOnAssembly:(TyphoonAssembly*)assembly
++ (void)markAssemblyMethods:(NSSet*)definitionSelectors asAdvised:(TyphoonAssembly*)assembly;
 {
-    SEL methodSelector = (SEL) [obj pointerValue];
-    SEL swizzled = [TyphoonAssemblySelectorAdviser advisedSELForSEL:methodSelector];
-    [[assembly class] typhoon_swizzleMethod:methodSelector withMethod:swizzled error:nil];
+    [swizzledDefinitionsByAssemblyClass setObject:definitionSelectors forKey:NSStringFromClass([assembly class])];
+}
+
++ (void)markAssemblyMethodsAsNoLongerAdvised:(TyphoonAssembly*)assembly;
+{
+    [swizzledDefinitionsByAssemblyClass removeObjectForKey:NSStringFromClass([assembly class])];
 }
 
 @end

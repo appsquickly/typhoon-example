@@ -16,7 +16,7 @@
 #import "TyphoonAssembly.h"
 #import "TyphoonDefinition.h"
 #import "OCLogTemplate.h"
-#import "TyphoonAssembly+TyphoonBlockFactoryFriend.h"
+#import "TyphoonAssembly+TyphoonAssemblyFriend.h"
 
 @implementation TyphoonBlockComponentFactory
 
@@ -47,14 +47,19 @@
     {
         for (TyphoonAssembly* assembly in assemblies)
         {
-            LogTrace(@"Building assembly: %@", NSStringFromClass([assembly class]));
-            [self assertIsAssembly:assembly];
-
-            [assembly prepareForUse];
-            [self registerAllDefinitions:assembly];
+            [self buildAssembly:assembly];
         }
     }
     return self;
+}
+
+- (void)buildAssembly:(TyphoonAssembly*)assembly
+{
+    LogTrace(@"Building assembly: %@", NSStringFromClass([assembly class]));
+    [self assertIsAssembly:assembly];
+
+    [assembly prepareForUse];
+    [self registerAllDefinitions:assembly];
 }
 
 - (void)assertIsAssembly:(TyphoonAssembly*)assembly
@@ -100,10 +105,5 @@
         return [[self class] instanceMethodSignatureForSelector:@selector(componentForKey:)];
     }
 }
-
-
-/* ====================================================================================================================================== */
-#pragma mark - Private Methods
-
 
 @end

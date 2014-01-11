@@ -11,10 +11,10 @@
 
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "PFTemperature.h"
 
-@interface PFTemperatureTests : SenTestCase
+@interface PFTemperatureTests : XCTestCase
 @end
 
 @implementation PFTemperatureTests

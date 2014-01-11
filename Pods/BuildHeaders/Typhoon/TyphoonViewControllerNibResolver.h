@@ -1,1 +1,1 @@
-../../Typhoon/Source/ios/Factory/Config/Resolver/TyphoonViewControllerNibResolver.h
+../../Typhoon/Source/ios/Configuration/Resolver/TyphoonViewControllerNibResolver.h

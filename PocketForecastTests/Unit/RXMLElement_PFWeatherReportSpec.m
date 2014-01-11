@@ -11,7 +11,7 @@
 
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "RXMLElement+PFWeatherReport.h"
 #import "PFWeatherReport.h"
 #import "PFCurrentConditions.h"
@@ -19,7 +19,7 @@
 #import "PFTemperature.h"
 #import "TyphoonBundleResource.h"
 
-@interface RXMLElement_PFWeatherReportTests : SenTestCase
+@interface RXMLElement_PFWeatherReportTests : XCTestCase
 @end
 
 @implementation RXMLElement_PFWeatherReportTests

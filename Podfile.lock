@@ -9,7 +9,7 @@ PODS:
     - OCHamcrest (~> 3.0)
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
-  - Typhoon (1.6.3)
+  - Typhoon (1.6.6)
 
 DEPENDENCIES:
   - CKUITools
@@ -34,10 +34,10 @@ SPEC CHECKSUMS:
   FlatUIKit: 43b2acaa6f4ef57539b51b00e4ce62d506e33e11
   NGAParallaxMotion: 876e8934ae1e99eea3a2a0a1e2ae33139f1503b7
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
-  OCLogTemplate: d448f0a0c7e34e715e0400fc04c6bd871b8c17f4
+  OCLogTemplate: 631d56d3344ce0f216c87feeafcaa102a95254e6
   OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
   PaperFold: 56c21be56fe6454fa99927b251396471d341c874
   RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
-  Typhoon: 0b8db7ac4980af3b70b12824fd45749eb2896032
+  Typhoon: d90415ac910355da6a99a58c70a0745eaf994547
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.29.0
