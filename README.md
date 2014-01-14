@@ -48,3 +48,7 @@ place of the old one. And you'd be able to reuse the existing test cases.
 ***Thanks @hongcheng for the excellent <a href="https://github.com/honcheng/PaperFold-for-iOS">Paperfold</a> animation, and @michaeljbishop for the <a href="https://github.com/michaeljbishop/NGAParallaxMotion">parallax effect</a>. ***
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e47e2f2028b2badfc88e13f95914938 "githalytics.com")](http://githalytics.com/jasperblues/Typhoon)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/typhoon-framework/typhoon-example/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
