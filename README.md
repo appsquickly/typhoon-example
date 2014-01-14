@@ -1,5 +1,6 @@
 Typhoon-example
 ==========================
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/typhoon-framework/typhoon-example/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 An example application built with <a href ="http://www.typhoonframework.org">Typhoon</a>.
 
@@ -50,5 +51,5 @@ place of the old one. And you'd be able to reuse the existing test cases.
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e47e2f2028b2badfc88e13f95914938 "githalytics.com")](http://githalytics.com/jasperblues/Typhoon)
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/typhoon-framework/typhoon-example/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
