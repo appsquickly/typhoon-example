@@ -11,6 +11,7 @@
 
 
 
+#import "TyphoonCollaboratingAssemblyProxy.h"
 #import "TyphoonInitializer.h"
 #import "TyphoonParameterInjectedByReference.h"
 #import "NSObject+TyphoonIntrospectionUtils.h"
@@ -47,39 +48,144 @@
     return [self initWithSelector:@selector(init) isClassMethodStrategy:TyphoonComponentInitializerIsClassMethodGuess];
 }
 
-
+- (void)dealloc
+{
+    for (id <TyphoonInjectedParameter> parameter in _injectedParameters)
+    {
+        //Null out the __unsafe_unretained pointer back to self.
+        [parameter setInitializer:nil];
+    }
+}
 
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
+- (NSArray*)injectedParameters
+{
+    return [_injectedParameters copy];
+}
+
+#pragma mark - injectParameterNamed
+
+- (void)injectParameterNamed:(NSString*)name withDefinition:(TyphoonDefinition*)definition;
+{
+    [self injectParameterNamed:name withReference:definition.key];
+}
 
 - (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference
 {
-    [self injectParameterAtIndex:[self indexOfParameter:name] withReference:reference];
-}
-
-
-- (void)injectParameterAtIndex:(NSUInteger)index withReference:(NSString*)reference
-{
-    if (index != NSIntegerMax &&index < [_parameterNames count])
+    [self injectParameterNamed:name success:^(NSInteger index)
     {
-        [_injectedParameters addObject:[[TyphoonParameterInjectedByReference alloc] initWithParameterIndex:index reference:reference]];
-    }
+        [self injectParameterAtIndex:index withReference:reference];
+    }];
 }
 
 - (void)injectParameterNamed:(NSString*)name withValueAsText:(NSString*)text requiredTypeOrNil:(id)classOrProtocol
 {
-    [self injectParameterAtIndex:[self indexOfParameter:name] withValueAsText:text requiredTypeOrNil:classOrProtocol];
+    [self injectParameterNamed:name success:^(NSInteger index)
+    {
+        [self injectParameterAtIndex:index withValueAsText:text requiredTypeOrNil:classOrProtocol];
+    }];
 }
 
 - (void)injectParameterNamed:(NSString*)name asCollection:(void (^)(TyphoonParameterInjectedAsCollection*))collectionValues requiredType:(id)requiredType
 {
-    [self injectParameterAtIndex:[self indexOfParameter:name] asCollection:collectionValues requiredType:requiredType];
+    [self injectParameterNamed:name success:^(NSInteger index)
+    {
+        [self injectParameterAtIndex:index asCollection:collectionValues requiredType:requiredType];
+    }];
+}
+
+- (void)injectParameterNamed:(NSString*)name withObject:(id)value
+{
+    [self injectParameterNamed:name success:^(NSInteger index)
+    {
+        [self injectParameterAtIndex:index withObject:value];
+    }];
+}
+
+- (void)injectParameterNamed:(NSString*)name success:(void (^)(NSInteger))success
+{
+    NSInteger index = [self indexOfParameter:name];
+    if (index == NSIntegerMax)
+    {
+        [NSException raise:NSInvalidArgumentException format:[self parameterNotFoundErrorMessageWithParameterNamed:name]];
+    }
+
+    if (success)
+    {
+        success(index);
+    }
+}
+
+
+- (NSString*)parameterNotFoundErrorMessageWithParameterNamed:(NSString*)name
+{
+    if ([_parameterNames count] == 0)
+    {
+        return [NSString stringWithFormat:@"Specified a parameter named '%@', but method '%@' takes no parameters.", name, NSStringFromSelector([self selector])];
+    }
+
+    NSString* failureExplanation =
+            [NSString stringWithFormat:@"Unrecognized parameter name: '%@' for method '%@'.", name, NSStringFromSelector([self selector])];
+    NSString* recoverySuggestion = [self recoverySuggestionForMissingParameter];
+    return [NSString stringWithFormat:@"%@ %@", failureExplanation, recoverySuggestion];
+}
+
+- (NSString*)recoverySuggestionForMissingParameter
+{
+    if ([_parameterNames count] == 1)
+    {
+        return [NSString stringWithFormat:@"Did you mean '%@'?", _parameterNames[0]];
+    }
+    else if ([_parameterNames count] == 2)
+    {
+        return [NSString stringWithFormat:@"Valid parameter names are '%@' or '%@'.", _parameterNames[0], _parameterNames[1]];
+    }
+    else
+    {
+        return [self recoverySuggestionForMultipleMissingParameters];
+    }
+}
+
+- (NSString*)recoverySuggestionForMultipleMissingParameters
+{
+    NSMutableString* messageBuilder = [NSMutableString stringWithFormat:@"Valid parameter names are"];
+    [_parameterNames enumerateObjectsUsingBlock:^(NSString* aParameterName, NSUInteger idx, BOOL* stop)
+    {
+        BOOL thisIsLastParameter = (idx == [_parameterNames count] - 1);
+        if (idx == 0)
+        {
+            [messageBuilder appendFormat:@" '%@'", aParameterName];
+        }
+        else if (!thisIsLastParameter)
+        { // middleParameter
+            [messageBuilder appendFormat:@", '%@'", aParameterName];
+        }
+        else
+        { // lastParameter
+            [messageBuilder appendFormat:@", or '%@'.", aParameterName];
+        }
+    }];
+
+    return [NSString stringWithString:messageBuilder];
+}
+
+#pragma mark injectParameterAtIndex:
+
+
+- (void)injectParameterAtIndex:(NSUInteger)index withReference:(NSString*)reference
+{
+    if (index != NSIntegerMax && index < [_parameterNames count])
+    {
+        [_injectedParameters addObject:[[TyphoonParameterInjectedByReference alloc]
+                initWithParameterIndex:index reference:reference]];
+    }
 }
 
 - (void)injectParameterAtIndex:(NSUInteger)index withValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredClass
 {
-    if (index != NSIntegerMax &&index < [_parameterNames count])
+    if (index != NSIntegerMax && index < [_parameterNames count])
     {
         TyphoonParameterInjectedWithStringRepresentation* parameterInjectedByValue =
                 [[TyphoonParameterInjectedWithStringRepresentation alloc] initWithIndex:index value:text requiredTypeOrNil:requiredClass];
@@ -89,10 +195,7 @@
 }
 
 /* ====================================================================================================================================== */
-- (void)injectParameterNamed:(NSString*)name withDefinition:(TyphoonDefinition*)definition;
-{
-    [self injectParameterNamed:name withReference:definition.key];
-}
+
 
 - (void)injectWithDefinition:(TyphoonDefinition*)definition;
 {
@@ -111,18 +214,13 @@
 
 - (void)injectParameterAtIndex:(NSUInteger)index withObject:(id)value
 {
-    if (index != NSIntegerMax &&index < [_parameterNames count])
+    if (index != NSIntegerMax && index < [_parameterNames count])
     {
         [_injectedParameters addObject:[[TyphoonParameterInjectedWithObjectInstance alloc] initWithParameterIndex:index value:value]];
     }
 }
 
-- (void)injectParameterNamed:(NSString*)name withObject:(id)value
-{
-    [self injectParameterAtIndex:[self indexOfParameter:name] withObject:value];
-}
-
-- (void)injectWithObject:(id)value
+- (void)injectWithObjectInstance:(id)value;
 {
     [self injectParameterAtIndex:[_injectedParameters count] withObject:value];
 }
@@ -139,7 +237,7 @@
 
 - (void)injectWithUnsignedInt:(unsigned int)unsignedIntValue
 {
-  [self injectWithValueAsText:[@(unsignedIntValue) stringValue]];
+    [self injectWithValueAsText:[@(unsignedIntValue) stringValue]];
 }
 
 - (void)injectWithShort:(short)shortValue
@@ -149,7 +247,7 @@
 
 - (void)injectWithUnsignedShort:(unsigned short)unsignedShortValue
 {
-  [self injectWithValueAsText:[@(unsignedShortValue) stringValue]];
+    [self injectWithValueAsText:[@(unsignedShortValue) stringValue]];
 }
 
 - (void)injectWithLong:(long)longValue
@@ -159,7 +257,7 @@
 
 - (void)injectWithUnsignedLong:(unsigned long)unsignedLongValue
 {
-  [self injectWithValueAsText:[@(unsignedLongValue) stringValue]];
+    [self injectWithValueAsText:[@(unsignedLongValue) stringValue]];
 }
 
 - (void)injectWithLongLong:(long long)longLongValue
@@ -169,7 +267,7 @@
 
 - (void)injectWithUnsignedLongLong:(unsigned long long)unsignedLongLongValue
 {
-  [self injectWithValueAsText:[@(unsignedLongLongValue) stringValue]];
+    [self injectWithValueAsText:[@(unsignedLongLongValue) stringValue]];
 }
 
 - (void)injectWithUnsignedChar:(unsigned char)unsignedCharValue
@@ -194,12 +292,12 @@
 
 - (void)injectWithInteger:(NSInteger)integerValue
 {
-  [self injectWithValueAsText:[@(integerValue) stringValue]];
+    [self injectWithValueAsText:[@(integerValue) stringValue]];
 }
 
 - (void)injectWithUnsignedInteger:(NSUInteger)unsignedIntegerValue
 {
-  [self injectWithValueAsText:[@(unsignedIntegerValue) stringValue]];
+    [self injectWithValueAsText:[@(unsignedIntegerValue) stringValue]];
 }
 
 - (void)injectWithClass:(Class)classValue
@@ -215,9 +313,9 @@
 /* ====================================================================================================================================== */
 #pragma mark - Block assembly
 
-- (void)injectParameterAtIndex:(NSUInteger)index1 withDefinition:(TyphoonDefinition*)definition
+- (void)injectParameterAtIndex:(NSUInteger)index withDefinition:(TyphoonDefinition*)definition
 {
-    [self injectParameterAtIndex:index1 withReference:definition.key];
+    [self injectParameterAtIndex:index withReference:definition.key];
 }
 
 - (void)injectParameterAtIndex:(NSUInteger)index
@@ -234,7 +332,7 @@
         collectionValues(weakParameterInjectedAsCollection);
     }
 
-    if (index != NSIntegerMax &&index < [_parameterNames count])
+    if (index != NSIntegerMax && index < [_parameterNames count])
     {
         [_injectedParameters addObject:parameterInjectedAsCollection];
     }
@@ -246,17 +344,6 @@
     _parameterNames = [self parameterNamesForSelector:_selector];
 }
 
-/* ====================================================================================================================================== */
-#pragma mark - Utility Methods
-
-- (void)dealloc
-{
-    for (id <TyphoonInjectedParameter> parameter in _injectedParameters)
-    {
-        //Null out the __unsafe_unretained pointer back to self.
-        [parameter setInitializer:nil];
-    }
-}
 
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods

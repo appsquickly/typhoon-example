@@ -22,12 +22,14 @@
 */
 @interface TyphoonBlockComponentFactory : TyphoonComponentFactory
 
-+ (instancetype)factoryWithAssembly:(TyphoonAssembly*)assembly;
++ (id)factoryWithAssembly:(TyphoonAssembly*)assembly;
 
-+ (instancetype)factoryWithAssemblies:(NSArray*)assemblies;
++ (id)factoryWithAssemblies:(NSArray*)assemblies;
 
 - (instancetype)initWithAssembly:(TyphoonAssembly*)assembly;
 
 - (instancetype)initWithAssemblies:(NSArray*)assemblies;
 
 @end
+
+

@@ -11,8 +11,8 @@
 
 
 #import <Foundation/Foundation.h>
-#import "TyphoonInjectedProperty.h"
 #import "TyphoonComponentInjectedByValue.h"
+#import "TyphoonAbstractInjectedProperty.h"
 
 /**
 * Represents a property injected with a string representation. The type converter system will convert the representation to an instance of
@@ -21,11 +21,7 @@
 * @see TyphoonPropertyPlaceholderConfigurer
 *
 */
-@interface TyphoonPropertyInjectedWithStringRepresentation : NSObject <TyphoonInjectedProperty, TyphoonComponentInjectedByValue>
-
-@property(nonatomic, strong, readonly) NSString* name;
-@property(nonatomic, readonly) TyphoonPropertyInjectionType type;
-
+@interface TyphoonPropertyInjectedWithStringRepresentation : TyphoonAbstractInjectedProperty <TyphoonComponentInjectedByValue>
 
 - (id)initWithName:(NSString*)name value:(NSString*)value;
 

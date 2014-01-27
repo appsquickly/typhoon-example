@@ -2,209 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6bc38d9-29d3-4e38-95cc-03c66446d1b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PocketForecastTests/PocketForecastTests-Prefix.pch" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Headers" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/OCHamcrestIOS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Resources" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCAllOf.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCAnyOf.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCAssertThat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCBaseDescription.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCBaseMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCBoxNumber.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCCollectMatchers.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCConformsToProtocol.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCDescribedAs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCDescription.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCHasCount.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCHasDescription.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCHasProperty.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCInvocationMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsAnything.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsCloseTo.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsCollectionContaining.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsCollectionContainingInAnyOrder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsCollectionContainingInOrder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsCollectionOnlyContaining.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsDictionaryContaining.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsDictionaryContainingEntries.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsDictionaryContainingKey.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsDictionaryContainingValue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsEmptyCollection.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsEqual.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsEqualIgnoringCase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsEqualIgnoringWhiteSpace.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsEqualToNumber.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsIn.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsInstanceOf.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsNil.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsNot.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCIsSame.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCNumberAssert.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCOrderingComparison.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCRequireNonNilObject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCRequireNonNilString.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCSelfDescribing.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCStringContains.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCStringContainsInOrder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCStringDescription.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCStringEndsWith.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCStringStartsWith.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCSubstringMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/HCWrapInMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Headers/OCHamcrestIOS.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/OCHamcrestIOS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/A/Resources/Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/External/OCHamcrestIOS.framework/Versions/Current" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PocketForecast.xcworkspace/xcshareddata/PocketForecast.xccheckout" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PocketForecastTests/Tests.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonAssembly+TyphoonBlockFactoryFriend.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/DVParallaxView/DVParallaxView/DVParallaxView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/DVParallaxView/DVParallaxView/DVParallaxView.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/DVParallaxView/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/FAImageView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/FAImageView.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/NSString+FontAwesome.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/NSString+FontAwesome.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/Resources/FontAwesome.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/UIFont+FontAwesome.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/UIFont+FontAwesome.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/UIImage+FontAwesome.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/FontAwesome+iOS/UIImage+FontAwesome.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonAssembly+TyphoonBlockFactoryFriend.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Local Podspecs/DVParallaxView.podspec" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Local Podspecs/PPiFlatSegmentedControl.podspec" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiAwesomeButton/Control/UIButton+PPiAwesome.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiAwesomeButton/Control/UIButton+PPiAwesome.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiAwesomeButton/Control/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiAwesomeButton/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiAwesomeButton/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiFlatSegmentedControl/Control/PPiFlatSegmentedControl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiFlatSegmentedControl/Control/PPiFlatSegmentedControl.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiFlatSegmentedControl/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/PPiFlatSegmentedControl/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-DVParallaxView-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-DVParallaxView-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-DVParallaxView-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-DVParallaxView.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-FontAwesome+iOS-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-FontAwesome+iOS-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-FontAwesome+iOS-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-FontAwesome+iOS.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-LRResty-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-LRResty-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-LRResty-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-LRResty.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-MKParallaxView-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-MKParallaxView-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-MKParallaxView-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-MKParallaxView.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-NSData+Base64-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-NSData+Base64-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-NSData+Base64-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-NSData+Base64.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiAwesomeButton-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiAwesomeButton-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiAwesomeButton-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiAwesomeButton.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiFlatSegmentedControl-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiFlatSegmentedControl-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiFlatSegmentedControl-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PPiFlatSegmentedControl.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-SVSegmentedControl-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-SVSegmentedControl-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-SVSegmentedControl-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-SVSegmentedControl.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/Classes/AppDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/Classes/AppDelegate.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/Classes/ViewController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/Classes/ViewController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/Default-568h@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/MainWindow.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/SVSegmentedControl-Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/SVSegmentedControl.xcodeproj/project.pbxproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/SVSegmentedControl_Prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/ViewController.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/Demo/main.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/SVSegmentedControl/SVSegmentedControl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/SVSegmentedControl/SVSegmentedControl.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/SVSegmentedControl/SVSegmentedThumb.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/SVSegmentedControl/SVSegmentedControl/SVSegmentedThumb.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectionDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly+TyphoonBlockFactoryFriend.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/TyphoonTestUtils.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/TyphoonTestUtils.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Converters/TyphoonBundledImageTypeConverter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Converters/TyphoonBundledImageTypeConverter.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Converters/TyphoonUIColorTypeConverter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Converters/TyphoonUIColorTypeConverter.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Factory/Config/Resolver/TyphoonViewControllerNibResolver.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Factory/Config/Resolver/TyphoonViewControllerNibResolver.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonArgumentInjectedAsCollection.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonGenericStack.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonInjectedProperty.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonKeyedStackInstanceRegister.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonArgumentInjectedAsCollection.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonGenericStack.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonInjectedProperty.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonKeyedStackInstanceRegister.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Collection/TyphoonArgumentInjectedAsCollection.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Collection/TyphoonArgumentInjectedAsCollection.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonInjectedProperty.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonKeyedStackInstanceRegister.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonKeyedStackInstanceRegister.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonGenericStack.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonGenericStack.m" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Integration/PFCityDoaTests.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Integration/PFCityDoaTests.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Unit/PFTemperatureTests.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Unit/PFTemperatureTests.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/PocketForecastTests-Info.plist" afterPath="$PROJECT_DIR$/PocketForecastTests/PocketForecastTests-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+TyphoonIntrospectionUtils.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+TyphoonIntrospectionUtils.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+TyphoonIntrospectionUtils.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+TyphoonIntrospectionUtils.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFThemeProvider.m" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFThemeProvider.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-environment.h" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-environment.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests.xcconfig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/README.md" afterPath="$PROJECT_DIR$/Pods/Typhoon/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m" afterPath="$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Typhoon.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Typhoon.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Collection/TyphoonArgumentInjectedAsCollection.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Collection/TyphoonArgumentInjectedAsCollection.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly+TyphoonAssemblyFriend.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly+TyphoonAssemblyFriend.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyAdviser.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyAdviser.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyAdviser.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyAdviser.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyDefinitionBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyDefinitionBuilder.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyDefinitionBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblyDefinitionBuilder.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblySelectorAdviser.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblySelectorAdviser.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblySelectorAdviser.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssemblySelectorAdviser.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreator+Private.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreator+Private.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreator.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreator.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreatorImplicit.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreatorImplicit.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreatorImplicit.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryCreatorImplicit.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryMethodClosure.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryMethodClosure.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonBundledImageTypeConverter.h" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonBundledImageTypeConverter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonBundledImageTypeConverter.h" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonBundledImageTypeConverter.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCircularDependencyTerminator.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCircularDependencyTerminator.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCircularDependencyTerminator.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCircularDependencyTerminator.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCollaboratingAssemblyProxy.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCollaboratingAssemblyProxy.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCollaboratingAssemblyProxy.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonCollaboratingAssemblyProxy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+TyphoonDefinitionRegisterer.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+TyphoonDefinitionRegisterer.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactory.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactory.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactoryAware.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactoryAware.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonFactoryProvider.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonFactoryProvider.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonDefinitionRegisterer.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonDefinitionRegisterer.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonInstanceRegister.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonInstanceRegister.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonKeyedStackInstanceRegister.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonKeyedStackInstanceRegister.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonKeyedStackInstanceRegister.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/InstanceRegister/TyphoonKeyedStackInstanceRegister.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonIntrospectionUtils.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonIntrospectionUtils.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonIntrospectiveNSObject.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonIntrospectiveNSObject.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Collection/TyphoonParameterInjectedAsCollection.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Collection/TyphoonParameterInjectedAsCollection.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedByReference.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedByReference.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedByReference.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedByReference.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatcher.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatcher.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/TypeConversion/Converters/TyphoonPrimitiveTypeConverter.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/TypeConversion/Converters/TyphoonPrimitiveTypeConverter.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/TypeConversion/Converters/TyphoonPrimitiveTypeConverter.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/TypeConversion/Converters/TyphoonPrimitiveTypeConverter.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/Collection/TyphoonPropertyInjectedAsCollection.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/Collection/TyphoonPropertyInjectedAsCollection.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/Collection/TyphoonPropertyInjectedAsCollection.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/Collection/TyphoonPropertyInjectedAsCollection.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonPropertyInjectionDelegate.h" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonPropertyInjectionDelegate.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonPropertyInjectionDelegate.h" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonPropertyInjectionDelegate.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Configuration/Resource/TyphoonResource.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Configuration/Resource/TyphoonResource.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonTestUtils.h" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonTestUtils.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonTestUtils.h" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonTestUtils.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Collection/TyphoonTypeConvertedCollectionValue.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Collection/TyphoonTypeConvertedCollectionValue.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonUIColorTypeConverter.h" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonUIColorTypeConverter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonUIColorTypeConverter.h" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonUIColorTypeConverter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonViewControllerNibResolver.h" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonViewControllerNibResolver.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonViewControllerNibResolver.h" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonViewControllerNibResolver.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedAsObjectInstance.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedAsObjectInstance.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedByReference.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedByReference.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedByReference.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedByReference.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedByType.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedByType.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedWithStringRepresentation.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Properties/TyphoonPropertyInjectedWithStringRepresentation.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Xml/TyphoonRXMLElement+XmlComponentFactory.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Xml/TyphoonRXMLElement+XmlComponentFactory.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Xml/TyphoonRXMLElement+XmlComponentFactory.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Xml/TyphoonRXMLElement+XmlComponentFactory.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/TypeConversion/TyphoonTypeDescriptor.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/TypeConversion/TyphoonTypeDescriptor.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/TypeConversion/Converters/TyphoonUIColorTypeConverter.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/TypeConversion/Converters/TyphoonUIColorTypeConverter.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Configuration/Resolver/TyphoonViewControllerNibResolver.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/ios/Configuration/Resolver/TyphoonViewControllerNibResolver.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcodeproj/xcuserdata/jblues.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/PocketForecast.xcodeproj/xcuserdata/jblues.xcuserdatad/xcschemes/xcschememanagement.plist" />
     </list>
     <ignored path="Typhoon-example.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -239,7 +110,7 @@
       <file leaf-file-name="PFCityDoaTests.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFCityDoaTests.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="38" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
+            <state line="17" column="38" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1185">
               <folding />
             </state>
           </provider>
@@ -248,7 +119,7 @@
       <file leaf-file-name="PocketForecastTests-Prefix.pch" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecastTests/PocketForecastTests-Prefix.pch">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="34" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+            <state line="13" column="34" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
@@ -257,7 +128,7 @@
       <file leaf-file-name="Configuration.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="29" selection-start="124" selection-end="145" vertical-scroll-proportion="0.11392405" vertical-offset="0" max-vertical-offset="395">
+            <state line="6" column="66" selection-start="166" selection-end="166" vertical-scroll-proportion="0.12658228" vertical-offset="0" max-vertical-offset="711">
               <folding />
             </state>
           </provider>
@@ -266,7 +137,7 @@
       <file leaf-file-name="RXMLElement_PFWeatherReportSpec.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="56" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
+            <state line="21" column="56" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1260">
               <folding />
             </state>
           </provider>
@@ -275,7 +146,7 @@
       <file leaf-file-name="PFTemperatureTests.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecastTests/Unit/PFTemperatureTests.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+            <state line="16" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
@@ -284,7 +155,7 @@
       <file leaf-file-name="PFWeatherReportDaoTests.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="47" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+            <state line="19" column="47" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="840">
               <folding />
             </state>
           </provider>
@@ -293,7 +164,7 @@
       <file leaf-file-name="PFWeatherClientTests.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="44" selection-start="586" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1335">
+            <state line="19" column="44" selection-start="586" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1335">
               <folding />
             </state>
           </provider>
@@ -302,7 +173,7 @@
       <file leaf-file-name="Podfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Podfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+            <state line="18" column="17" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="525">
               <folding />
             </state>
           </provider>
@@ -343,8 +214,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1436" />
-    <option name="height" value="878" />
+    <option name="width" value="2556" />
+    <option name="height" value="1418" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -378,6 +249,42 @@
             <PATH_ELEMENT>
               <option name="myItemId" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Typhoon" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -450,6 +357,38 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="PocketForecast" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PocketForecast" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PocketForecast" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PocketForecast" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Frameworks" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -487,9 +426,11 @@
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="PocketForecastTests" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="XCTest/Kiwi.Tests">
+  <component name="RunManager" selected="Application.PocketForecast">
     <configuration default="false" name="PocketForecast" type="AppleRunConfiguration" factoryName="Application" temporary="true" SCHEME_NAME="PocketForecast" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecast" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="PocketForecast" RUN_TARGET_NAME="PocketForecast" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
+      <RunnerSettings RunnerId="AppRunner" />
+      <ConfigurationWrapper RunnerId="AppRunner" />
       <method />
     </configuration>
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecast" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="PocketForecast" RUN_TARGET_NAME="PocketForecast" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -567,12 +508,12 @@
       <item index="5" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-RaptureXML" />
       <item index="6" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-Typhoon" />
       <item index="7" class="java.lang.String" itemvalue="Application.Pods-PocketForecast" />
-      <item index="8" class="java.lang.String" itemvalue="Application.PocketForecast" />
-      <item index="9" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-Expecta" />
-      <item index="10" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCHamcrest" />
-      <item index="11" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCMockito" />
-      <item index="12" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests" />
-      <item index="13" class="java.lang.String" itemvalue="XCTest/Kiwi.Tests" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-Expecta" />
+      <item index="9" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCHamcrest" />
+      <item index="10" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCMockito" />
+      <item index="11" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests" />
+      <item index="12" class="java.lang.String" itemvalue="XCTest/Kiwi.Tests" />
+      <item index="13" class="java.lang.String" itemvalue="Application.PocketForecast" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -590,18 +531,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1436" height="878" extended-state="6" />
+    <frame x="0" y="22" width="2556" height="1418" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44132653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4418429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1854211" sideWeight="0.5395408" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18515594" sideWeight="0.5581571" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46045917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46045917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2780612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -624,6 +565,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Prefix.pch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/ProgressHUD/PFProgressHUD.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="135" column="42" selection-start="4487" selection-end="4487" vertical-scroll-proportion="0.8667546" vertical-offset="1368" max-vertical-offset="2640" />
@@ -651,9 +599,7 @@
     </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/include/libxml2/libxml/xmlreader.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="273" selection-end="273" vertical-scroll-proportion="0.4390244" vertical-offset="0" max-vertical-offset="6510">
-          <folding />
-        </state>
+        <state line="12" column="9" selection-start="273" selection-end="273" vertical-scroll-proportion="0.4390244" vertical-offset="0" max-vertical-offset="6510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Prefix.pch">
@@ -714,7 +660,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="124" selection-end="145" vertical-scroll-proportion="0.11392405" vertical-offset="0" max-vertical-offset="395">
+        <state line="6" column="66" selection-start="166" selection-end="166" vertical-scroll-proportion="0.12658228" vertical-offset="0" max-vertical-offset="711">
           <folding />
         </state>
       </provider>

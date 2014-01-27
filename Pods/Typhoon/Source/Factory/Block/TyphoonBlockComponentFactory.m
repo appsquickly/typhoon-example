@@ -12,22 +12,25 @@
 
 
 #import <objc/runtime.h>
+#import "TyphoonInitializer+InstanceBuilder.h"
 #import "TyphoonBlockComponentFactory.h"
 #import "TyphoonAssembly.h"
 #import "TyphoonDefinition.h"
 #import "OCLogTemplate.h"
 #import "TyphoonAssembly+TyphoonAssemblyFriend.h"
 
+
 @implementation TyphoonBlockComponentFactory
 
 /* ====================================================================================================================================== */
 #pragma mark - Class Methods
-+ (instancetype)factoryWithAssembly:(TyphoonAssembly*)assembly
+
++ (id)factoryWithAssembly:(TyphoonAssembly*)assembly
 {
     return [[self alloc] initWithAssemblies:@[assembly]];
 }
 
-+ (instancetype)factoryWithAssemblies:(NSArray*)assemblies
++ (id)factoryWithAssemblies:(NSArray*)assemblies
 {
     return [[self alloc] initWithAssemblies:assemblies];
 }
@@ -59,6 +62,7 @@
     [self assertIsAssembly:assembly];
 
     [assembly prepareForUse];
+
     [self registerAllDefinitions:assembly];
 }
 
@@ -80,6 +84,8 @@
         [self register:definition];
     }
 }
+
+
 
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods

@@ -20,13 +20,12 @@
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
 
-- (id)initWithParameterIndex:(NSUInteger)parameterIndex reference:(NSString*)reference
+- (instancetype)initWithParameterIndex:(NSUInteger)index reference:(NSString*)reference
 {
-    self = [super init];
+    self = [super initWithReference:reference];
     if (self)
     {
-        _index = parameterIndex;
-        _reference = reference;
+        _index = index;
     }
     return self;
 }

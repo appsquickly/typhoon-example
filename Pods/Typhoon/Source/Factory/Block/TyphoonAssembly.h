@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2014, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -51,9 +51,6 @@ AnalyticsService* service = [assembly analyticsService];
 */
 + (instancetype)defaultAssembly;
 
-/**
-* Subclasses must implement to wire any collaborating assemblies to one of the following that will be resolved at runtime.
-*/
-- (void)resolveCollaboratingAssemblies;
++ (void)markSelectorReserved:(SEL)selector;
 
 @end

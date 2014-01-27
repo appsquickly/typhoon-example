@@ -12,10 +12,11 @@
 
 
 #import "TyphoonLinkerCategoryBugFix.h"
+
 TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
 
 #import "TyphoonRXMLElement+XmlComponentFactory.h"
-#import "TyphoonInjectedProperty.h"
+#import "TyphoonAbstractInjectedProperty.h"
 #import "TyphoonPropertyInjectedByReference.h"
 #import "TyphoonPropertyInjectedWithStringRepresentation.h"
 #import "TyphoonPropertyInjectedByType.h"
@@ -25,12 +26,13 @@ TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
 #import "TyphoonParameterInjectedAsCollection.h"
 #import "TyphoonDefinition+Infrastructure.h"
 #import "TyphoonBundleResource.h"
+#import "TyphoonReferenceDefinition.h"
 
 @implementation TyphoonRXMLElement (XmlComponentFactory)
 
 - (BOOL)isComponent
 {
-    return [[self tag] isEqualToString:@"component"]||[self isShorthandComponentTag];
+    return [[self tag] isEqualToString:@"component"] || [self isShorthandComponentTag];
 }
 
 - (TyphoonDefinition*)asComponentDefinition
@@ -51,7 +53,7 @@ TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
         NSString* key = [self attribute:@"key"];
         NSString* factory = [self attributeOrNilIfEmpty:@"factory-component"];
         TyphoonScope scope = [self scopeForStringValue:[[self attribute:@"scope"] lowercaseString]];
-        BOOL isLazy = (scope == TyphoonScopeSingleton)&&[self attributeAsBool:@"lazy-init"];
+        BOOL isLazy = (scope == TyphoonScopeSingleton) && [self attributeAsBool:@"lazy-init"];
 
 
         TyphoonDefinition* definition = [[TyphoonDefinition alloc] initWithClass:clazz key:key factoryComponent:factory];
@@ -60,14 +62,17 @@ TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
         [definition setLazy:isLazy];
         [definition setScope:scope];
         NSString* parentRef = [self attributeOrNilIfEmpty:@"parent"];
-        [definition setParentRef:parentRef];
+        if (parentRef)
+        {
+            [definition setParent:[TyphoonReferenceDefinition definitionReferringToComponent:parentRef]];
+        }
         [self parseComponentDefinitionChildren:definition];
         return definition;
     }
 }
 
 //TODO: Method too long, clean it up.
-- (id <TyphoonInjectedProperty>)asInjectedProperty
+- (TyphoonAbstractInjectedProperty*)asInjectedProperty
 {
     [self assertTagName:@"property"];
 
@@ -76,17 +81,17 @@ TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
     NSString* value = [self attribute:@"value"];
 
     TyphoonRXMLElement* collection = [self child:@"collection"];
-    if ((referenceName||value)&&collection)
+    if ((referenceName || value) && collection)
     {
         [NSException raise:NSInvalidArgumentException format:@"'ref' and 'value' attributes cannot be used with 'collection'"];
     }
 
-    id <TyphoonInjectedProperty> injectedProperty = nil;
-    if (referenceName&&value)
+    TyphoonAbstractInjectedProperty* injectedProperty = nil;
+    if (referenceName && value)
     {
         [NSException raise:NSInvalidArgumentException format:@"Ambigous - both reference and value attributes are set. Can only be one."];
     }
-    else if (referenceName&&[referenceName length] == 0)
+    else if (referenceName && [referenceName length] == 0)
     {
         [NSException raise:NSInvalidArgumentException format:@"Reference cannot be empty."];
     }
@@ -199,18 +204,22 @@ TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
 
 - (TyphoonScope)scopeForStringValue:(NSString*)scope
 {
-    NSArray* acceptedScopes = @[@"prototype", @"singleton"];
-    if (([scope length] > 0)&&(![acceptedScopes containsObject:scope]))
+    NSArray* acceptedScopes = @[@"default", @"prototype", @"singleton"];
+    if (([scope length] > 0) && (![acceptedScopes containsObject:scope]))
     {
-        [NSException raise:NSInvalidArgumentException format:@"Scope was '%@', but can only be 'singleton' or 'prototype'", scope];
+        [NSException raise:NSInvalidArgumentException format:
+                @"Scope was '%@', but can only be one of ['default', 'prototype', 'singleton'", scope];
     }
 
-    // Here, we don't follow the Spring's implementation :
-    // the "default" scope is the prototype.
-    TyphoonScope result = TyphoonScopeDefault;
+    // Here, we don't follow the Spring's implementation : the "default" scope is the TyphoonScopeObjectGraph.
+    TyphoonScope result = TyphoonScopeObjectGraph;
     if ([scope isEqualToString:@"singleton"])
     {
         result = TyphoonScopeSingleton;
+    }
+    else if ([scope isEqualToString:@"prototype"])
+    {
+        result = TyphoonScopePrototype;
     }
 
     return result;
@@ -271,7 +280,7 @@ TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
             [initializer injectParameterAtIndex:[index integerValue] withReference:reference];
         }
 
-        // TODO: should raise an exception if no name or index specified. is NOT implicit with XML. but it shoudl be - you should not need to specify.
+        // TODO: should raise an exception if no name or index specified. is NOT implicit with XML. but it should be - you should not need to specify.
 
     }
     else if (value)
@@ -350,11 +359,11 @@ TYPHOON_LINK_CATEGORY(TyphoonRXMLElement_XmlComponentFactory)
 
 - (TyphoonComponentInitializerIsClassMethod)handleIsClassMethod:(NSString*)isClassMethodString
 {
-    if ([[isClassMethodString lowercaseString] isEqualToString:@"yes"]||[[isClassMethodString lowercaseString] isEqualToString:@"true"])
+    if ([[isClassMethodString lowercaseString] isEqualToString:@"yes"] || [[isClassMethodString lowercaseString] isEqualToString:@"true"])
     {
         return TyphoonComponentInitializerIsClassMethodYes;
     }
-    else if ([[isClassMethodString lowercaseString] isEqualToString:@"no"]||[[isClassMethodString lowercaseString] isEqualToString:@"no"])
+    else if ([[isClassMethodString lowercaseString] isEqualToString:@"no"] || [[isClassMethodString lowercaseString] isEqualToString:@"no"])
     {
         return TyphoonComponentInitializerIsClassMethodNo;
     }

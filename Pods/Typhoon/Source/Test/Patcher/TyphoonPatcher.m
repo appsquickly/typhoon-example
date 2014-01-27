@@ -71,7 +71,7 @@
         TyphoonDefinition* patchFactory =
                 [[TyphoonDefinition alloc] initWithClass:[TyphoonPatchObjectFactory class] key:[self patchFactoryNameForKey:key]];
         patchFactory.initializer = [[TyphoonInitializer alloc] initWithSelector:@selector(initWithObject:)];
-        [patchFactory.initializer injectWithObject:[_patches objectForKey:key]];
+        [patchFactory.initializer injectWithObjectInstance:[_patches objectForKey:key]];
         [newDefinitions addObject:patchFactory];
     }
     LogDebug(@"New definitions to register: %@", newDefinitions);
@@ -86,7 +86,7 @@
         LogDebug(@"Patching component with key %@ with object %@", definition.key, patchObject);
         [definition setFactoryReference:[self patchFactoryNameForKey:definition.key]];
         [definition setInitializer:[[TyphoonInitializer alloc] initWithSelector:@selector(object)]];
-        [definition setInjectedProperties:nil];
+        [definition setValue:nil forKey:@"injectedProperties"];
     }
 }
 

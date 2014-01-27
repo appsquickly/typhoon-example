@@ -1,4 +1,6 @@
 # Typhoon! (www.typhoonframework.org) 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/typhoon-framework/typhoon/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
 A new dependency injection container for Objective-C. Light-weight, yet full-featured and super-easy to use. 
 
@@ -185,13 +187,18 @@ Test Failures typically indicate a bug that has been flagged, but not yet fixed.
 
 # Got a question? Need some help? 
 
-* Typhoon users and contributors monitor the Typhoon tag on <a href="http://stackoverflow.com/questions/tagged/typhoon?sort=newest&pageSize=15">Stack Overflow</a>. Chances are you question can be answered there. 
-* Professional consultation is available from key contributors. Please get in touch if you'd like this. 
+
+| I need help because | Action |
+| :---------- | :------ | 
+I'm not sure how to do [xyz]  | Typhoon users and contributors monitor the Typhoon tag on <a href="http://stackoverflow.com/questions/tagged/typhoon?sort=newest&pageSize=15">Stack Overflow</a>. Chances are your question can be answered there. 
+This looks like a bug | Please raise a <a href="https://github.com/typhoon-framework/Typhoon/issues">GitHub issue</a>
+I'll take all the help I can get | Professional consultation is available from key contributors. Please get in touch if you'd like this, and we'll connect you with the nearest available consultant 
+
 
 
 # Core Team
 
-* <a href="http://ph.linkedin.com/pub/jasper-blues/8/163/778">Jasper Blues</a> (Instigator and Project Lead) - <a href="mailto:jasper@appsquick.ly?Subject=Typhoon">jasper@appsquick.ly</a>  
+* <a href="http://ph.linkedin.com/pub/jasper-blues/8/163/778">Jasper Blues</a> (Founder / Project Lead) - <a href="mailto:jasper@appsquick.ly?Subject=Typhoon">jasper@appsquick.ly</a>  
 * <a href="https://github.com/rhgills">Robert Gilliam</a> - <a href="mailto:robert@robertgilliam.org?Subject=Typhoon">robert@robertgilliam.org</a>
 * <a href="https://github.com/drodriguez">Daniel Rodríguez Troitiño</a> 
 * <a href="https://github.com/eriksundin">Erik Sundin</a> 
@@ -229,6 +236,9 @@ Here's a few apps built with Typhoon:
 
 Apache License, Version 2.0, January 2004, http://www.apache.org/licenses/
 
-© 2012 - 2013 Jasper Blues and contributors.
+© 2012 - 2014 Jasper Blues and contributors.
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e47e2f2028b2badfc88e13f95914938 "githalytics.com")](http://githalytics.com/jasperblues/Typhoon)
+
+
+

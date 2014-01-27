@@ -12,7 +12,6 @@
 #import "PFThemeProvider.h"
 #import "PFThemeFactory.h"
 #import "TyphoonDefinition.h"
-#import "TyphoonArgumentInjectedAsCollection.h"
 #import "TyphoonPropertyInjectedAsCollection.h"
 #import "PFTheme.h"
 #import "TyphoonInitializer.h"

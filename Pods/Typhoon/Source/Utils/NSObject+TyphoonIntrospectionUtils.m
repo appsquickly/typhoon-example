@@ -18,6 +18,7 @@ TYPHOON_LINK_CATEGORY(NSObject_TyphoonIntrospectionUtils)
 #import <objc/runtime.h>
 #import "TyphoonTypeDescriptor.h"
 #import "TyphoonIntrospectionUtils.h"
+#import "NSString+TyphoonAdditions.h"
 
 
 static char const* const CIRCULAR_DEPENDENCIES_KEY = "typhoon.injectLater";
@@ -29,29 +30,12 @@ static char const* const CIRCULAR_DEPENDENCIES_KEY = "typhoon.injectLater";
     return [TyphoonIntrospectionUtils typeForPropertyWithName:propertyName inClass:[self class]];
 }
 
-- (SEL)setterForPropertyWithName:(NSString*)propertyName
-{
-
-    NSString* firstLetterUppercase = [[propertyName substringToIndex:1] uppercaseString];
-    NSString* propertyPart = [propertyName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:firstLetterUppercase];
-    NSString* selectorName = [NSString stringWithFormat:@"set%@:", propertyPart];
-    SEL selector = NSSelectorFromString(selectorName); //It's crashing here, not the next line.
-    if (![self respondsToSelector:selector])
-    {
-        if ([self respondsToSelector:NSSelectorFromString(propertyName)])
-        {
-            [NSException raise:NSInvalidArgumentException format:@"Property '%@' of class '%@' is readonly.", propertyName, [self class]];
-        }
-        else
-        {
-            [NSException raise:NSInvalidArgumentException format:@"No setter named '%@' on class '%@'.", selectorName, [self class]];
-        }
-    }
-    return selector;
-}
-
 - (NSArray*)parameterNamesForSelector:(SEL)selector
 {
+    if (![NSStringFromSelector(selector) _typhoon_contains:@":"]) {
+        return @[];
+    }
+
     NSMutableArray* parameterNames = [[NSMutableArray alloc] init];
     NSArray* parameters = [NSStringFromSelector(selector) componentsSeparatedByString:@":"];
     for (int i = 0; i < [parameters count]; i++)
@@ -63,12 +47,17 @@ static char const* const CIRCULAR_DEPENDENCIES_KEY = "typhoon.injectLater";
         }
         if ([parameterName length] > 0)
         {
-            parameterName = [parameterName stringByReplacingCharactersInRange:NSMakeRange(0, 1)
-                    withString:[[parameterName substringToIndex:1] lowercaseString]];
+            parameterName = [self stringByLowerCasingFirstLetter:parameterName];
             [parameterNames addObject:parameterName];
         }
     }
     return [parameterNames copy];
+}
+
+- (NSString*)stringByLowerCasingFirstLetter:(NSString*)name
+{
+    return [name stringByReplacingCharactersInRange:NSMakeRange(0, 1)
+            withString:[[name substringToIndex:1] lowercaseString]];
 }
 
 - (NSArray*)typeCodesForSelector:(SEL)selector

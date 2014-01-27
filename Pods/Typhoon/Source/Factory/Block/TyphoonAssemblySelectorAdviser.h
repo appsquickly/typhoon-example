@@ -17,8 +17,11 @@
 
 + (NSString*)keyForAdvisedSEL:(SEL)selWithAdvicePrefix;
 
++ (NSString *)keyForSEL:(SEL)sel;
+
 + (BOOL)selectorIsAdvised:(SEL)sel;
 
 + (SEL)advisedSELForSEL:(SEL)unwrappedSEL;
 
++ (NSString*)advisedNameForName:(NSString*)string;
 @end

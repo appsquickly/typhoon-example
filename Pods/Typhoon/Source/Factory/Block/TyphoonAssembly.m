@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2014, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -20,12 +20,16 @@
 #import "TyphoonAssembly+TyphoonAssemblyFriend.h"
 #import "TyphoonAssemblyAdviser.h"
 #import "TyphoonAssemblyDefinitionBuilder.h"
+#import "TyphoonCollaboratingAssemblyPropertyEnumerator.h"
+#import "TyphoonCollaboratingAssemblyProxy.h"
 
 static NSMutableArray* reservedSelectorsAsStrings;
 
 @interface TyphoonAssembly()
 
 @property (readwrite) NSSet *definitionSelectors;
+
+@property (readonly) TyphoonAssemblyAdviser* adviser;
 
 @end
 
@@ -79,7 +83,7 @@ static NSMutableArray* reservedSelectorsAsStrings;
 
 /* ====================================================================================================================================== */
 #pragma mark - Instance Method Resolution
-// handle definition method calls, mapping [self definitionA] to [self builtDefinitionForKey:@"definitionA"]
+// handle definition method calls, mapping [self definitionA] to [self->_definitionBuilder builtDefinitionForKey:@"definitionA"]
 + (BOOL)resolveInstanceMethod:(SEL)sel
 {
     if ([self shouldProvideDynamicImplementationFor:sel])
@@ -93,22 +97,23 @@ static NSMutableArray* reservedSelectorsAsStrings;
 
 + (BOOL)shouldProvideDynamicImplementationFor:(SEL)sel;
 {
-    return (![TyphoonAssembly selectorReservedOrPropertySetter:sel] && [TyphoonAssemblySelectorAdviser selectorIsAdvised:sel]);
+    return ([self selectorCorrespondsToDefinitionMethod:sel] && [TyphoonAssemblySelectorAdviser selectorIsAdvised:sel]);
+}
+
++ (BOOL)selectorCorrespondsToDefinitionMethod:(SEL)sel
+{
+    return ![self selectorReservedOrPropertySetter:sel];
 }
 
 + (BOOL)selectorReservedOrPropertySetter:(SEL)selector
 {
-    NSString* selectorString = NSStringFromSelector(selector);
-    if ([reservedSelectorsAsStrings containsObject:selectorString])
-    {
-        return YES;
-    }
-    else if ([self selectorIsPropertySetter:selector])
-    {
-        return YES;
-    }
+    return [self selectorIsReserved:selector] || [self selectorIsPropertySetter:selector];
+}
 
-    return NO;
++ (BOOL)selectorIsReserved:(SEL)selector
+{
+    NSString* selectorString = NSStringFromSelector(selector);
+    return [reservedSelectorsAsStrings containsObject:selectorString];
 }
 
 + (BOOL)selectorIsPropertySetter:(SEL)selector
@@ -142,13 +147,13 @@ static NSMutableArray* reservedSelectorsAsStrings;
     if (self)
     {
         _definitionBuilder = [[TyphoonAssemblyDefinitionBuilder alloc] initWithAssembly:self];
+        _adviser = [[TyphoonAssemblyAdviser alloc] initWithAssembly:self];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    LogTrace(@"$$$$$$ %@ in dealloc!", [self class]);
     [TyphoonAssemblyAdviser undoAdviseMethods:self];
 }
 
@@ -157,22 +162,44 @@ static NSMutableArray* reservedSelectorsAsStrings;
 
 - (void)resolveCollaboratingAssemblies
 {
+    TyphoonCollaboratingAssemblyPropertyEnumerator* enumerator = [[TyphoonCollaboratingAssemblyPropertyEnumerator alloc]
+            initWithAssembly:self];
+
+    for (NSString *propertyName in enumerator.collaboratingAssemblyProperties) {
+        [self setCollaboratingAssemblyProxyOnPropertyNamed:propertyName];
+    }
+}
+
+- (void)setCollaboratingAssemblyProxyOnPropertyNamed:(NSString*)name
+{
+    [self setValue:[TyphoonCollaboratingAssemblyProxy proxy] forKey:name];
 }
 
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods
-
-#pragma mark - TyphoonBlockFactoryFriend
 - (NSArray*)definitions
 {
     return [_definitionBuilder builtDefinitions];
 }
 
+- (TyphoonDefinition*)definitionForKey:(NSString*)key
+{
+    for (TyphoonDefinition* definition in [self definitions])
+    {
+        if ([definition.key isEqualToString:key])
+        {
+            return definition;
+        }
+    }
+    return nil;
+}
+
 - (void)prepareForUse
 {
-    self.definitionSelectors = [TyphoonAssemblyAdviser definitionSelectorsForAssembly:self];
 
-    [TyphoonAssemblyAdviser adviseMethods:self];
+
+    self.definitionSelectors = [self.adviser enumerateDefinitionSelectors];
+    [self.adviser adviseAssembly];
 }
 
 @end

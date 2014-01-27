@@ -14,6 +14,7 @@
 
 @class TyphoonDefinition;
 @class TyphoonParameterInjectedAsCollection;
+@protocol TyphoonLogger;
 
 typedef enum
 {
@@ -26,6 +27,20 @@ typedef enum
 * @ingroup Definition
 *
 * Represents an initializer for a component.
+*
+* ##Initializer style injection has the following advantages:
+*
+* - Presents a clear contract to put the instance in the required state before use.
+* - No custom lifecycle methods (before/after property injection) are required.
+*
+* ##Initializer injection has the following drawbacks:
+*
+* - Not suitable for classes with a very large number of dependencies - a very large initializer method will create poor readability.
+* - Auto-boxed primitives can't be used.
+* - No type introspection for objects injected with a text representation.
+*
+* Its generally recommended to use initializer-style injection, unless the above drawbacks will manifest.
+*
 */
 @interface TyphoonInitializer : NSObject
 {
@@ -41,26 +56,16 @@ typedef enum
 */
 @property(nonatomic) SEL selector;
 
+@property(nonatomic, readonly) NSArray* parameterNames;
+
 - (id)initWithSelector:(SEL)initializer;
 
 - (id)initWithSelector:(SEL)initializer isClassMethodStrategy:(TyphoonComponentInitializerIsClassMethod)isClassMethod;
 
-- (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference;
-
-- (void)injectParameterAtIndex:(NSUInteger)index withReference:(NSString*)reference;
-
-- (void)injectParameterNamed:(NSString*)name withValueAsText:(NSString*)text requiredTypeOrNil:(id)classOrProtocol;
-
-- (void)injectParameterAtIndex:(NSUInteger)index withValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredClass;
-
-- (void)injectParameterAtIndex:(NSUInteger)index withObject:(id)value;
-
-- (void)injectParameterNamed:(NSString*)name withObject:(id)value;
-
+- (NSArray*)injectedParameters;
 
 /* ====================================================================================================================================== */
-#pragma mark - Block assembly
-
+#pragma mark - inject
 /**
 * Injects with the given definition.
 */
@@ -82,7 +87,7 @@ typedef enum
 /**
 * Injects with an object instance.
 */
-- (void)injectWithObject:(id)value;
+- (void)injectWithObjectInstance:(id)value;
 
 /**
 * Injects with a collection of the given type.
@@ -169,11 +174,27 @@ typedef enum
 */
 - (void)injectWithSelector:(SEL)selectorValue;
 
+#pragma mark - injectParameterNamed:
+- (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference;
+
+- (void)injectParameterNamed:(NSString*)name withValueAsText:(NSString*)text requiredTypeOrNil:(id)classOrProtocol;
+
+- (void)injectParameterNamed:(NSString*)name withObject:(id)value;
+
 /**
 * Injects the parameter matched by the given name with the given definition.
 */
 - (void)injectParameterNamed:(NSString*)name withDefinition:(TyphoonDefinition*)definition;
 
+/**
+* Injects the parameter matched by the given name as a collection of the given requiredType.
+*/
+- (void)injectParameterNamed:(NSString*)name
+        asCollection:(void (^)(TyphoonParameterInjectedAsCollection*))collectionValues
+        requiredType:(id)requiredType;
+
+
+#pragma mark - injectParameterAtIndex
 /**
 * Injects the parameter at the given index with the given definition.
 */
@@ -186,12 +207,10 @@ typedef enum
         asCollection:(void (^)(TyphoonParameterInjectedAsCollection*))collectionValues
         requiredType:(id)requiredType;
 
-/**
-* Injects the parameter matched by the given name as a collection of the given requiredType.
-*/
-- (void)injectParameterNamed:(NSString*)name
-        asCollection:(void (^)(TyphoonParameterInjectedAsCollection*))collectionValues
-        requiredType:(id)requiredType;
+- (void)injectParameterAtIndex:(NSUInteger)index withReference:(NSString *)reference;
 
+- (void)injectParameterAtIndex:(NSUInteger)index withValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredClass;
+
+- (void)injectParameterAtIndex:(NSUInteger)index withObject:(id)value;
 
 @end

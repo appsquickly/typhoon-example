@@ -11,16 +11,23 @@
 
 
 #import <Foundation/Foundation.h>
+#import "TyphoonMethodSwizzler.h"
 
 @class TyphoonAssembly;
 
 
+
 @interface TyphoonAssemblyAdviser : NSObject
 
-+ (void)adviseMethods:(TyphoonAssembly*)assembly;
 + (void)undoAdviseMethods:(TyphoonAssembly*)assembly;
 + (BOOL)assemblyClassIsAdvised:(Class)class;
 
-+ (NSSet*)definitionSelectorsForAssembly:(TyphoonAssembly*)assembly;
+- (id)initWithAssembly:(TyphoonAssembly*)assembly;
+
+- (void)adviseAssembly;
+- (NSSet*)enumerateDefinitionSelectors;
+
+@property(readonly, weak) TyphoonAssembly* assembly;
+@property(nonatomic, strong) id <TyphoonMethodSwizzler> swizzler;
 
 @end

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		199A536E348B418CA156E0E1 /* libPods-PocketForecast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2943E8EFE24EB5B86A64F3 /* libPods-PocketForecast.a */; };
 		63BC2FE07CCF4D6582089FCE /* libPods-PocketForecastTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609097971E734E02BFBD9A9C /* libPods-PocketForecastTests.a */; };
+		6B2E1D9F18962CFB00BA4EE0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */; };
+		6B2E1DA018962D0100BA4EE0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */; };
 		6B9FABC016FEA9D800BABD3D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBE16FEA9D800BABD3D /* Default.png */; };
 		6B9FABC216FEA9D800BABD3D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBF16FEA9D800BABD3D /* Default@2x.png */; };
 		6B9FABC516FEB04500BABD3D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABC416FEB04500BABD3D /* Icon@2x.png */; };
@@ -107,6 +109,7 @@
 
 /* Begin PBXFileReference section */
 		609097971E734E02BFBD9A9C /* libPods-PocketForecastTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketForecastTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6B9FABBE16FEA9D800BABD3D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6B9FABBF16FEA9D800BABD3D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6B9FABC416FEB04500BABD3D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2E1DA018962D0100BA4EE0 /* libxml2.dylib in Frameworks */,
 				6BD5116A1880E794009C487A /* XCTest.framework in Frameworks */,
 				6BD5116C1880E794009C487A /* UIKit.framework in Frameworks */,
 				6BD5116B1880E794009C487A /* Foundation.framework in Frameworks */,
@@ -248,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2E1D9F18962CFB00BA4EE0 /* libxml2.dylib in Frameworks */,
 				6BA1400315B16B110071C7A0 /* QuartzCore.framework in Frameworks */,
 				6BE9745415AF01A3004472E2 /* UIKit.framework in Frameworks */,
 				6BE9745615AF01A3004472E2 /* Foundation.framework in Frameworks */,
@@ -318,6 +323,7 @@
 		6BE9745215AF01A3004472E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */,
 				6BA1400215B16B110071C7A0 /* QuartzCore.framework */,
 				6BE9745315AF01A3004472E2 /* UIKit.framework */,
 				6BE9745515AF01A3004472E2 /* Foundation.framework */,
@@ -644,11 +650,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BD5117A1880E794009C487A /* Build configuration list for PBXNativeTarget "PocketForecastTests" */;
 			buildPhases = (
-				9D8B7B7D91774BBAB7FDA976 /* Check Pods Manifest.lock */,
 				6BD511651880E794009C487A /* Sources */,
 				6BD511661880E794009C487A /* Frameworks */,
 				6BD511671880E794009C487A /* Resources */,
-				1AD39F5BF14E403F8EF4301D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -664,11 +668,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BE9748215AF01A3004472E2 /* Build configuration list for PBXNativeTarget "PocketForecast" */;
 			buildPhases = (
-				2BBD4E8B83114122B48A0FFE /* Check Pods Manifest.lock */,
 				6BE9744B15AF01A3004472E2 /* Sources */,
 				6BE9744C15AF01A3004472E2 /* Frameworks */,
 				6BE9744D15AF01A3004472E2 /* Resources */,
-				7D50E8DDC4194B5DB3ED45B8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -780,69 +782,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1AD39F5BF14E403F8EF4301D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-PocketForecastTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2BBD4E8B83114122B48A0FFE /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7D50E8DDC4194B5DB3ED45B8 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-PocketForecast-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9D8B7B7D91774BBAB7FDA976 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		6BD511651880E794009C487A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -921,6 +860,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E136BF8CD80B4650BB036CB5 /* Pods-PocketForecastTests.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketForecast.app/PocketForecast";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -949,32 +889,18 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/CKUITools\"",
-					"\"${PODS_ROOT}/Headers/Expecta\"",
-					"\"${PODS_ROOT}/Headers/FlatUIKit\"",
-					"\"${PODS_ROOT}/Headers/NGAParallaxMotion\"",
-					"\"${PODS_ROOT}/Headers/OCHamcrest\"",
-					"\"${PODS_ROOT}/Headers/OCLogTemplate\"",
-					"\"${PODS_ROOT}/Headers/OCMockito\"",
-					"\"${PODS_ROOT}/Headers/PaperFold\"",
-					"\"${PODS_ROOT}/Headers/RaptureXML\"",
-					"\"${PODS_ROOT}/Headers/Typhoon\"",
-					"${SDKROOT}/usr/include/libxml2",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PocketForecastTests/PocketForecastTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-framework",
-					Foundation,
-					"-lxml2",
+					"-Objc",
+					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -983,6 +909,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E136BF8CD80B4650BB036CB5 /* Pods-PocketForecastTests.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketForecast.app/PocketForecast";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1008,31 +935,17 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/CKUITools\"",
-					"\"${PODS_ROOT}/Headers/Expecta\"",
-					"\"${PODS_ROOT}/Headers/FlatUIKit\"",
-					"\"${PODS_ROOT}/Headers/NGAParallaxMotion\"",
-					"\"${PODS_ROOT}/Headers/OCHamcrest\"",
-					"\"${PODS_ROOT}/Headers/OCLogTemplate\"",
-					"\"${PODS_ROOT}/Headers/OCMockito\"",
-					"\"${PODS_ROOT}/Headers/PaperFold\"",
-					"\"${PODS_ROOT}/Headers/RaptureXML\"",
-					"\"${PODS_ROOT}/Headers/Typhoon\"",
-					"${SDKROOT}/usr/include/libxml2",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PocketForecastTests/PocketForecastTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-framework",
-					Foundation,
-					"-lxml2",
+					"-Objc",
+					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -1086,6 +999,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBD56735007547068B4E01EE /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1096,15 +1010,11 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"${SDKROOT}/usr/include/libxml2",
-					"$(inherited)",
-					"\"${PROJECT_DIR}/Pods\"/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = (
-					"-lxml2",
+					"-Objc",
 					"-all_load",
 					"$(inherited)",
 				);
@@ -1112,7 +1022,7 @@
 				PROVISIONING_PROFILE = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1121,6 +1031,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBD56735007547068B4E01EE /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1131,15 +1042,11 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"${SDKROOT}/usr/include/libxml2",
-					"$(inherited)",
-					"\"${PROJECT_DIR}/Pods\"/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = (
-					"-lxml2",
+					"-Objc",
 					"-all_load",
 					"$(inherited)",
 				);
@@ -1147,7 +1054,7 @@
 				PROVISIONING_PROFILE = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

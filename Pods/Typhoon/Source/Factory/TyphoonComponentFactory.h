@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2014, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -13,9 +13,9 @@
 
 #import <Foundation/Foundation.h>
 #import "TyphoonComponentFactoryPostProcessor.h"
-#import "TyphoonInstanceRegister.h"
 
 @class TyphoonDefinition;
+@class TyphoonResolutionStack;
 
 /**
 *
@@ -29,9 +29,11 @@
 {
     NSMutableArray* _registry;
     NSMutableDictionary* _singletons;
+    NSMutableDictionary* _objectGraphSharedInstances;
 
-    id <TyphoonInstanceRegister> _currentlyResolvingReferences;
+    TyphoonResolutionStack* _currentlyResolvingReferences;
     NSMutableArray* _postProcessors;
+    NSMutableArray* _componentPostProcessors;
     BOOL _isLoading;
 }
 
@@ -49,6 +51,12 @@
  * The attached factory post processors.
  */
 @property(nonatomic, strong, readonly) NSArray* postProcessors;
+
+/**
+ * The attached component post processors.
+ */
+@property(nonatomic, strong, readonly) NSArray* componentPostProcessors;
+
 
 /**
 * Returns the default component factory, if one has been set. @see [TyphoonComponentFactory makeDefault]. This allows resolving components
@@ -77,8 +85,7 @@
 
 /**
 * Sets a given instance of TyphoonComponentFactory, as the default factory so that it can be retrieved later with:
-*
-*       [TyphoonComponentFactory defaultFactory];
+* [TyphoonComponentFactory defaultFactory];
 *
 */
 - (void)makeDefault;
@@ -90,17 +97,25 @@
 
 /**
 * Returns an an instance of the component matching the supplied class or protocol. For example:
-
-        [factory objectForType:[Knight class]];
-        [factory objectForType:@protocol(Quest)];
-
+@code
+[factory objectForType:[Knight class]];
+[factory objectForType:@protocol(Quest)];
+@endcode
+*
 * @exception NSInvalidArgumentException When no singletons or prototypes match the requested type.
 * @exception NSInvalidArgumentException When when more than one singleton or prototype matches the requested type.
 *
-* @See: allComponentsForType:
+* @warning componentForType with a protocol argument is not currently supported in Objective-C++.
+*
+* @see: allComponentsForType:
 */
 - (id)componentForType:(id)classOrProtocol;
 
+/**
+* Returns an array objects matching the given type.
+*
+* @see componentForType
+*/
 - (NSArray*)allComponentsForType:(id)classOrProtocol;
 
 /**

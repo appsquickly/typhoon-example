@@ -14,23 +14,24 @@
 
 @class TyphoonInitializer;
 @class TyphoonDefinition;
-@protocol TyphoonInjectedProperty;
 @class TyphoonPropertyInjectedAsCollection;
 
 /**
 * @ingroup Definition
 * Describes the lifecycle of a Typhoon component.
-*
-* - TyphoonScopeDefault means that a new component is created for each time it is referenced in a collaborator, or retrieved from the
-* factory.
-*
+
+* - TyphoonScopeObjectGraph (default) means that a new non-retained component is created when resolved from the factory, and any
+* dependencies declared during resolution of the object graph will be shared.
+* - TyphoonScopePrototype means that a new component is created for each time it is referenced in a collaborator, or retrieved
+* from the factory.
 * - TyphoonScopeSingleton creates a shared instance.
 *
 */
 typedef enum
 {
-    TyphoonScopeDefault,
-    TyphoonScopeSingleton
+    TyphoonScopeObjectGraph =   1 << 0,
+    TyphoonScopePrototype =     1 << 1,
+    TyphoonScopeSingleton =     1 << 2,
 } TyphoonScope;
 
 
@@ -48,18 +49,140 @@ typedef void(^TyphoonDefinitionBlock)(TyphoonDefinition* definition);
     TyphoonInitializer* _initializer;
     NSMutableSet* _injectedProperties;
     NSString* _factoryReference;
+    TyphoonScope _scope;
 }
 
 @property(nonatomic, readonly) Class type;
+
+/**
+* The key of the component. A key is useful when multiple configuration of the same class or protocol are desired - for example
+* MasterCardPaymentClient and VisaPaymentClient.
+*
+* If using the TyphoonBlockComponentFactory style of assembly, the key is automatically generated based on the selector name of the
+* component, thus avoiding "magic strings" and providing better integration with IDE refactoring tools.
+*/
 @property(nonatomic, strong) NSString* key;
+
+/**
+* Describes the initializer, ie the selector and arguments that will be used to instantiate this component.
+*
+* An initializer can be an instance method, a class method, or even a reference to another component's method (see factory property).
+*
+* @see factory
+*/
 @property(nonatomic, strong) TyphoonInitializer* initializer;
+
+/**
+* A custom callback method that is invoked before property injection occurs. Use this method as an alternative to
+* TyphoonPropertyInjectionDelegate if the component being instantiated is a 3rd party library, or if a direct dependency on Typhoon is not
+* desired.
+*
+* @see TyphoonPropertyInjectionDelegate
+*/
 @property(nonatomic) SEL beforePropertyInjection;
+
+/**
+* A custom callback method that is invoked after property injection occurs. Use this method as an alternative to
+* TyphoonPropertyInjectionDelegate if the component being instantiated is a 3rd party library, or if a direct dependency on Typhoon is not
+* desired.
+*
+* @see TyphoonPropertyInjectionDelegate
+*/
 @property(nonatomic) SEL afterPropertyInjection;
-@property(nonatomic, strong) NSSet* injectedProperties;
+
+/**
+* The scope of the component, default being TyphoonScopeObjectGraph.
+*/
 @property(nonatomic) TyphoonScope scope;
+
+
+/**
+* A component that will produce an instance (with or without parameters) of this component. For example:
+*
+@code
+
+- (id)sqliteManager
+{
+    return [TyphoonDefinition withClass:[VBSqliteManager class] initialization:^(TyphoonInitializer* initializer)
+    {
+        initializer.selector = @selector(initWithDatabaseName:);
+        [initializer injectWithObject:@"app_database_v2.sqlite"];
+    } properties:^(TyphoonDefinition* definition)
+    {
+        definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
+- (id)databaseQueue
+{
+    return [TyphoonDefinition withClass:[FMDatabaseQueue class] initialization:^(TyphoonInitializer* initializer)
+    {
+        initializer.selector = @selector(queue);
+    } properties:^(TyphoonDefinition* definition)
+    {
+        definition.factory = [self sqliteManager];
+    }];
+}
+@endcode
+*
+* @note If the factory method takes arguments, these are provided in the initializer block, just like a regular initializer method.
+*
+* @see injectProperty:withDefinition:selector: An alternative short-hand approach for no-args instances.
+* @see injectProperty:withDefinition:keyPath: An alternative short-hand approach for no-args instances.
+* @see TyphoonFactoryProvider - For creating factories where the configuration arguments are not known until runtime.
+*
+*
+*/
 @property(nonatomic, strong) TyphoonDefinition* factory;
+
+/**
+* A parent component. When parent is defined the initializer and/or properties from a definition are inherited, unless overridden. Example:
+*
+@code
+
+- (id)signUpClient
+{
+    return [TyphoonDefinition withClass:[SignUpClientDefaultImpl class] properties:^(TyphoonDefinition* definition)
+    {
+        definition.parent = [self abstractClient];
+    }];
+}
+
+- (id)storeClient
+{
+    return [TyphoonDefinition withClass:[StoreClientDefaultImpl class] properties:^(TyphoonDefinition* definition)
+    {
+        definition.parent = [self abstractClient];
+        [definition injectProperty:@selector(storeDao) withDefinition:[_persistenceComponents storeDao]];
+        [definition injectProperty:@selector(couponDao) withDefinition:[_persistenceComponents couponDao]];
+    }];
+}
+
+- (id)abstractClient
+{
+    return [TyphoonDefinition withClass:[ClientBase class] properties:^(TyphoonDefinition* definition)
+    {
+        [definition injectProperty:@selector(serviceUrl) withValueAsText:@"${client.serviceUrl}"];
+        [definition injectProperty:@selector(networkMonitor) withDefinition:[self internetMonitor]];
+        [definition injectProperty:@selector(allowInvalidSSLCertificates) withValueAsText:@"${client.allowInvalidSSLCertificates}"];
+        [definition injectProperty:@selector(logRequests) withValueAsText:@"${client.logRequests}"];
+        [definition injectProperty:@selector(logResponses) withValueAsText:@"${client.logResponses}"];
+    }];
+}
+
+@endcode
+*
+* @see abstract
+*
+*/
 @property(nonatomic, strong) TyphoonDefinition* parent;
-@property(nonatomic, strong) NSString* parentRef;
+
+/**
+* If set, designates that a component can not be instantiated directly.
+*
+* @see parent
+*/
+@property(nonatomic) BOOL abstract;
 
 
 /**
@@ -79,6 +202,7 @@ typedef void(^TyphoonDefinitionBlock)(TyphoonDefinition* definition);
 
 + (TyphoonDefinition*)withClass:(Class)clazz properties:(TyphoonDefinitionBlock)properties;
 
++ (TyphoonDefinition*)withClass:(Class)clazz factory:(TyphoonDefinition*)definition selector:(SEL)selector;
 
 /* ====================================================================================================================================== */
 #pragma mark Injection
@@ -94,7 +218,23 @@ typedef void(^TyphoonDefinitionBlock)(TyphoonDefinition* definition);
 - (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition;
 
 /**
-* Injects property with the given object instance.
+ * Injects property with result of invocation factorySelector on factoryDefinition.
+ */
+- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)factoryDefinition selector:(SEL)factorySelector;
+
+/**
+ * Injects property with result of invocation valueForKeyPath with given keyPath on factoryDefinition.
+ */
+- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)factoryDefinition keyPath:(NSString*)keyPath;
+
+/**
+* Injects property with the given object instance. Auto-boxing can be used to injected primitive types, for example:
+*
+@code
+
+[definition injectProperty:@selector(boolValue) withObjectInstance:@(YES)];
+
+@endcode
 */
 - (void)injectProperty:(SEL)selector withObjectInstance:(id)instance;
 
@@ -106,89 +246,13 @@ typedef void(^TyphoonDefinitionBlock)(TyphoonDefinition* definition);
 */
 - (void)injectProperty:(SEL)withSelector withValueAsText:(NSString*)textValue;
 
+
 /**
 * Injects property as a collection.
 */
 - (void)injectProperty:(SEL)withSelector asCollection:(void (^)(TyphoonPropertyInjectedAsCollection*))collectionValues;
 
-/**
-* Injects property as int.
-*/
-- (void)injectProperty:(SEL)selector withInt:(int)intValue;
 
-/**
- * Injects property as unsigned int.
- */
-- (void)injectProperty:(SEL)selector withUnsignedInt:(unsigned int)unsignedIntValue;
-
-/**
-* Injects property as short.
-*/
-- (void)injectProperty:(SEL)selector withShort:(short)shortValue;
-
-/**
- * Injects property as unsigned short.
- */
-- (void)injectProperty:(SEL)selector withUnsignedShort:(unsigned short)unsignedShortValue;
-
-/**
-* Injects property as long.
-*/
-- (void)injectProperty:(SEL)selector withLong:(long)longValue;
-
-/**
- * Injects property as unsigned long.
- */
-- (void)injectProperty:(SEL)selector withUnsignedLong:(unsigned long)unsignedLongValue;
-
-/**
-* Injects property as long long.
-*/
-- (void)injectProperty:(SEL)selector withLongLong:(long long)longLongValue;
-
-/**
- * Injects property as unsigned long long.
- */
-- (void)injectProperty:(SEL)selector withUnsignedLongLong:(unsigned long long)unsignedLongLongValue;
-
-/**
-* Injects property as unsigned char.
-*/
-- (void)injectProperty:(SEL)selector withUnsignedChar:(unsigned char)unsignedCharValue;
-
-/**
-* Injects property as float.
-*/
-- (void)injectProperty:(SEL)selector withFloat:(float)floatValue;
-
-/**
-* Injects property as double.
-*/
-- (void)injectProperty:(SEL)selector withDouble:(double)doubleValue;
-
-/**
-* Injects property as boolean.
-*/
-- (void)injectProperty:(SEL)selector withBool:(BOOL)boolValue;
-
-/**
- * Injects property as integeger.
- */
-- (void)injectProperty:(SEL)selector withInteger:(NSInteger)integerValue;
-
-/**
- * Injects property as unsigned integer.
- */
-- (void)injectProperty:(SEL)selector withUnsignedInteger:(NSUInteger)unsignedIntegerValue;
-
-/**
-* Injects property as class.
-*/
-- (void)injectProperty:(SEL)selector withClass:(Class)classValue;
-
-/**
-* Injects property as selector.
-*/
-- (void)injectProperty:(SEL)selector withSelector:(SEL)selectorValue;
+- (NSSet*)injectedProperties;
 
 @end

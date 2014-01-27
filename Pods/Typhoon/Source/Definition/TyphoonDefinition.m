@@ -10,6 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
+
 #import "TyphoonInitializer.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonPropertyInjectedByType.h"
@@ -18,6 +19,7 @@
 #import "TyphoonDefinition+InstanceBuilder.h"
 #import "TyphoonPropertyInjectedAsCollection.h"
 #import "TyphoonPropertyInjectedAsObjectInstance.h"
+#import "TyphoonPropertyInjectedByFactoryReference.h"
 #import "TyphoonDefinition+Infrastructure.h"
 
 
@@ -65,6 +67,12 @@
         __unsafe_unretained TyphoonDefinition* weakDefinition = definition;
         properties(weakDefinition);
     }
+    if (definition.lazy && definition.scope != TyphoonScopeSingleton)
+    {
+        [NSException raise:NSInvalidArgumentException format:
+                @"The lazy attribute is only applicable to singleton scoped definitions, but is set for definition: %@ ", definition];
+    }
+
     return definition;
 }
 
@@ -78,6 +86,16 @@
     return [TyphoonDefinition withClass:clazz key:key initialization:nil properties:properties];
 }
 
++ (TyphoonDefinition*)withClass:(Class)clazz factory:(TyphoonDefinition*)_definition selector:(SEL)selector
+{
+    return [TyphoonDefinition withClass:clazz initialization:^(TyphoonInitializer* initializer)
+    {
+        [initializer setSelector:selector];
+    } properties:^(TyphoonDefinition* definition)
+    {
+        [definition setFactory:_definition];
+    }];
+}
 
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
@@ -96,6 +114,18 @@
 - (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition
 {
     [self injectProperty:selector withReference:definition.key];
+}
+
+- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition selector:(SEL)factorySelector
+{
+    [_injectedProperties addObject:[[TyphoonPropertyInjectedByFactoryReference alloc]
+            initWithName:NSStringFromSelector(selector) reference:definition.key keyPath:NSStringFromSelector(factorySelector)]];
+}
+
+- (void)injectProperty:(SEL)selector withDefinition:(TyphoonDefinition*)definition keyPath:(NSString*)keyPath
+{
+    [_injectedProperties addObject:[[TyphoonPropertyInjectedByFactoryReference alloc]
+            initWithName:NSStringFromSelector(selector) reference:definition.key keyPath:keyPath]];
 }
 
 - (void)injectProperty:(SEL)selector withObjectInstance:(id)instance
@@ -117,86 +147,6 @@
     [_injectedProperties addObject:propertyInjectedAsCollection];
 }
 
-- (void)injectProperty:(SEL)selector withInt:(int)intValue
-{
-   [self injectProperty:selector withValueAsText:[@(intValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withUnsignedInt:(unsigned int)unsignedIntValue
-{
-  [self injectProperty:selector withValueAsText:[@(unsignedIntValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withShort:(short)shortValue
-{
-    [self injectProperty:selector withValueAsText:[@(shortValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withUnsignedShort:(unsigned short)unsignedIntShort
-{
-  [self injectProperty:selector withValueAsText:[@(unsignedIntShort) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withLong:(long)longValue
-{
-    [self injectProperty:selector withValueAsText:[@(longValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withUnsignedLong:(unsigned long)unsignedLongValue
-{
-  [self injectProperty:selector withValueAsText:[@(unsignedLongValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withLongLong:(long long)longLongValue
-{
-    [self injectProperty:selector withValueAsText:[@(longLongValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withUnsignedLongLong:(unsigned long long)unsignedLongLongValue
-{
-  [self injectProperty:selector withValueAsText:[@(unsignedLongLongValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withUnsignedChar:(unsigned char)unsignedCharValue
-{
-    [self injectProperty:selector withValueAsText:[@(unsignedCharValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withFloat:(float)floatValue
-{
-    [self injectProperty:selector withValueAsText:[NSString stringWithFormat:@"%f", floatValue]];
-}
-
-- (void)injectProperty:(SEL)selector withDouble:(double)doubleValue
-{
-    [self injectProperty:selector withValueAsText:[NSString stringWithFormat:@"%f", doubleValue]];
-}
-
-- (void)injectProperty:(SEL)selector withBool:(BOOL)boolValue
-{
-    [self injectProperty:selector withValueAsText:[@(boolValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withInteger:(NSInteger)integerValue
-{
-    [self injectProperty:selector withValueAsText:[@(integerValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withUnsignedInteger:(NSUInteger)unsignedIntegerValue
-{
-    [self injectProperty:selector withValueAsText:[@(unsignedIntegerValue) stringValue]];
-}
-
-- (void)injectProperty:(SEL)selector withClass:(Class)classValue
-{
-    [self injectProperty:selector withValueAsText:NSStringFromClass(classValue)];
-}
-
-- (void)injectProperty:(SEL)selector withSelector:(SEL)selectorValue
-{
-    [self injectProperty:selector withValueAsText:NSStringFromSelector(selectorValue)];
-}
-
 - (void)setInitializer:(TyphoonInitializer*)initializer
 {
     _initializer = initializer;
@@ -209,13 +159,46 @@
     [self setFactoryReference:_factory.key];
 }
 
+/* ====================================================================================================================================== */
+#pragma mark - Overridden Methods
+
+- (TyphoonInitializer*)initializer
+{
+    if (!_initializer)
+    {
+        return _parent.initializer;
+    }
+    return _initializer;
+}
+
+
+- (NSSet*)injectedProperties
+{
+    NSMutableSet* parentProperties = [_parent injectedProperties] ? [[_parent injectedProperties] mutableCopy] : [NSMutableSet set];
+
+    NSMutableArray* overriddenProperties = [NSMutableArray array];
+    [parentProperties enumerateObjectsUsingBlock:^(id obj, BOOL* stop)
+    {
+        if ([_injectedProperties containsObject:obj])
+        {
+            [overriddenProperties addObject:obj];
+        }
+    }];
+
+    for (TyphoonAbstractInjectedProperty* overriddenProperty in overriddenProperties)
+    {
+        [parentProperties removeObject:overriddenProperty];
+    }
+
+    return [[parentProperties setByAddingObjectsFromSet:_injectedProperties] copy];
+}
 
 /* ====================================================================================================================================== */
 #pragma mark - Utility Methods
 
 - (NSString*)description
 {
-    return [NSString stringWithFormat:@"Definition: class='%@'", NSStringFromClass(_type)];
+    return [NSString stringWithFormat:@"Definition: class='%@', key='%@'", NSStringFromClass(_type), _key];
 }
 
 

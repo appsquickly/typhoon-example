@@ -20,6 +20,4 @@
 
 - (TyphoonTypeDescriptor*)typeForPropertyWithName:(NSString*)propertyName;
 
-- (SEL)setterForPropertyWithName:(NSString*)propertyName;
-
 @end
