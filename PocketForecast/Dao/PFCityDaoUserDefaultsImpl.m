@@ -41,8 +41,14 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     NSArray* cities = [_defaults objectForKey:pfCitiesListKey];
     if (cities == nil)
     {
-        cities = [NSArray arrayWithObjects:@"Manila", @"Sydney", @"Melbourne", @"Kuala Lumpur", @"London", @"San Francisco",
-                                           nil];
+        cities = @[
+            @"Manila",
+            @"Madris",
+            @"San Francisco",
+            @"Phnom Penh",
+            @"Omsk"
+        ];
+
         [_defaults setObject:cities forKey:pfCitiesListKey];
     }
     return [cities sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
@@ -102,7 +108,6 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
 {
     return [_defaults objectForKey:pfCurrentCityKey];
 }
-
 
 
 @end
