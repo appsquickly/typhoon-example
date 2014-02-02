@@ -13,9 +13,10 @@
 
 #import <Foundation/Foundation.h>
 #import "TyphoonComponentFactoryPostProcessor.h"
+#import "TyphoonComponentsPool.h"
 
 @class TyphoonDefinition;
-@class TyphoonResolutionStack;
+@class TyphoonCallStack;
 
 /**
 *
@@ -28,11 +29,12 @@
 @interface TyphoonComponentFactory : NSObject
 {
     NSMutableArray* _registry;
-    NSMutableDictionary* _singletons;
-    NSMutableDictionary* _objectGraphSharedInstances;
-
-    TyphoonResolutionStack* _currentlyResolvingReferences;
-    NSMutableArray* _postProcessors;
+    id<TyphoonComponentsPool> _singletons;
+    id<TyphoonComponentsPool> _objectGraphSharedInstances;
+    id<TyphoonComponentsPool> _weakSingletons;
+    
+    TyphoonCallStack* _stack;
+    NSMutableArray* _factoryPostProcessors;
     NSMutableArray* _componentPostProcessors;
     BOOL _isLoading;
 }
@@ -50,7 +52,7 @@
 /**
  * The attached factory post processors.
  */
-@property(nonatomic, strong, readonly) NSArray* postProcessors;
+@property(nonatomic, strong, readonly) NSArray* factoryPostProcessors;
 
 /**
  * The attached component post processors.

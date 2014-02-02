@@ -10,15 +10,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "NSObject+PropertyInjection.h"
+#import "TyphoonTypeDescriptor.h"
+#import "TyphoonStringUtils.h"
 #import <objc/message.h>
 
 @implementation NSObject (PropertyInjection)
-
-- (BOOL) isValue:(NSValue *)value withObjcType:(const char *)type
-{
-    const char *valueType = [value objCType];
-    return valueType == type || strcmp(valueType, type) == 0;
-}
 
 - (SEL) setterForPropertyName:(NSString *)propertyName
 {
@@ -28,28 +24,28 @@
     return NSSelectorFromString(selectorName);
 }
 
-- (void) injectValue:(id)value forPropertyName:(NSString *)propertyName
+- (BOOL) isPointerValue:(id)value
 {
-    BOOL isSupportKVC = YES;
-    id valueToInject = value;
-    
-    /* Workaround for property types not supported by KVC */
-    if ([value isKindOfClass:[NSValue class]]) {
-        if ([self isValue:value withObjcType:@encode(SEL)]) {
-            isSupportKVC = NO;
-            [value getValue:&valueToInject];
-        } else if ([self isValue:value withObjcType:@encode(const char *)]) {
-            isSupportKVC = NO;
-            [value getValue:&valueToInject];
-        }
-    }
-    
-    if (isSupportKVC) {
-        [self setValue:valueToInject forKey:propertyName];
+    return CStringEquals([value objCType], @encode(void *));
+}
+
+- (void) injectValue:(id)value forPropertyName:(NSString *)propertyName withType:(TyphoonTypeDescriptor *)type
+{    
+    if (type.isPrimitive && [value isKindOfClass:[NSValue class]] && [self isPointerValue:value]) {
+        [self injectValue:value asPointerForPropertyName:propertyName];
     } else {
-        SEL setterSelector = [self setterForPropertyName:propertyName];
-        objc_msgSend(self, setterSelector, valueToInject);
+        [self setValue:value forKey:propertyName];
     }
+}
+
+- (void) injectValue:(NSValue *)value asPointerForPropertyName:(NSString *)propertyName
+{
+    SEL setterSelector = [self setterForPropertyName:propertyName];
+    
+    void* pointer;
+    [value getValue:&pointer];
+    
+    objc_msgSend(self, setterSelector, pointer);
 }
 
 @end

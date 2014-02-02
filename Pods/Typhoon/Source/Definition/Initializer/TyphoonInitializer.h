@@ -36,7 +36,7 @@ typedef enum
 * ##Initializer injection has the following drawbacks:
 *
 * - Not suitable for classes with a very large number of dependencies - a very large initializer method will create poor readability.
-* - Auto-boxed primitives can't be used.
+* - Auto-injection by type is not supported.
 * - No type introspection for objects injected with a text representation.
 *
 * Its generally recommended to use initializer-style injection, unless the above drawbacks will manifest.
@@ -62,6 +62,8 @@ typedef enum
 
 - (id)initWithSelector:(SEL)initializer isClassMethodStrategy:(TyphoonComponentInitializerIsClassMethod)isClassMethod;
 
+- (TyphoonDefinition*)definition;
+
 - (NSArray*)injectedParameters;
 
 /* ====================================================================================================================================== */
@@ -85,7 +87,22 @@ typedef enum
 - (void)injectWithValueAsText:(NSString*)text requiredTypeOrNil:(id)requiredTypeOrNil;
 
 /**
-* Injects with an object instance.
+* Injects with an object instance. 
+* If object is NSNumber or NSValue and argument type is scalar, pointer or NSValue-supported struct, then value will be automatically unwrapped
+ * (Like KeyValueCoding does).
+@code
+ [initializer injectWithObjectInstance:@(YES)];
+ [initializer injectWithObjectInstance:@(1.43f)];
+ [initializer injectWithObjectInstance:[NSValue valueWithCGRect:defaultFrame]];
+ [initializer injectWithObjectInstance:[NSValue valueWithPointer:@selector(selectorValue)]];
+@endcode
+
+To inject a class object:
+
+@code
+[initializer injectWithObjectInstance:[SomeObject class]];
+@endcode
+
 */
 - (void)injectWithObjectInstance:(id)value;
 
@@ -94,85 +111,6 @@ typedef enum
 */
 - (void)injectWithCollection:(void (^)(TyphoonParameterInjectedAsCollection*))collectionValues requiredType:(id)requiredType;
 
-/**
-* Injects with an int.
-*/
-- (void)injectWithInt:(int)intValue;
-
-/**
- * Injects with an unsigned int.
- */
-- (void)injectWithUnsignedInt:(unsigned int)unsignedIntValue;
-
-/**
- * Injects with a short.
- */
-- (void)injectWithShort:(short)shortValue;
-
-/**
-* Injects with an unsigned short.
-*/
-- (void)injectWithUnsignedShort:(unsigned short)unsignedShortValue;
-
-/**
-* Injects with a long.
-*/
-- (void)injectWithLong:(long)longValue;
-
-/**
- * Injects with an unsigned long.
- */
-- (void)injectWithUnsignedLong:(unsigned long)unsignedLongValue;
-
-/**
-* Injects with a long long.
-*/
-- (void)injectWithLongLong:(long long)longLongValue;
-
-/**
- * Injects with an unsigned long long.
- */
-- (void)injectWithUnsignedLongLong:(unsigned long long)unsignedLongLongValue;
-
-/**
-* Injects with an unsigned char.
-*/
-- (void)injectWithUnsignedChar:(unsigned char)unsignedCharValue;
-
-/**
-* Injects with a float.
-*/
-- (void)injectWithFloat:(float)floatValue;
-
-/**
-* Injects with a double.
-*/
-- (void)injectWithDouble:(double)doubleValue;
-
-/**
-* Injects with a boolean.
-*/
-- (void)injectWithBool:(BOOL)boolValue;
-
-/**
- * Injects with an integer.
- */
-- (void)injectWithInteger:(NSInteger)integerValue;
-
-/**
- * Injects with an unsigned integer.
- */
-- (void)injectWithUnsignedInteger:(NSUInteger)unsignedIntegerValue;
-
-/**
-* Injects with a class.
-*/
-- (void)injectWithClass:(Class)classValue;
-
-/**
-* Injects with a selector.
-*/
-- (void)injectWithSelector:(SEL)selectorValue;
 
 #pragma mark - injectParameterNamed:
 - (void)injectParameterNamed:(NSString*)name withReference:(NSString*)reference;

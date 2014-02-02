@@ -2,7 +2,7 @@ platform :ios, '6.0'
 
 target :PocketForecast, :exclusive => true do
 
-  pod 'Typhoon'
+  pod 'Typhoon', :head
   pod 'OCLogTemplate'
   pod 'RaptureXML'
   pod 'CKUITools'

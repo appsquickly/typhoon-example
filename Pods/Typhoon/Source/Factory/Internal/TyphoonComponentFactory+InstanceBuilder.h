@@ -14,6 +14,9 @@
 #import <Foundation/Foundation.h>
 #import "TyphoonComponentFactory.h"
 #import "TyphoonIntrospectiveNSObject.h"
+#import "TyphoonInjectedAsCollection.h"
+
+@class TyphoonCallStack;
 
 /**
 * Encapsulates the methods related to assembling an instance using the Objective-C runtime. This is an internal category - the methods will
@@ -21,14 +24,19 @@
 */
 @interface TyphoonComponentFactory (InstanceBuilder)
 
+- (TyphoonCallStack*)stack;
+
 - (id)buildInstanceWithDefinition:(TyphoonDefinition*)definition;
 
 - (id)buildSharedInstanceForDefinition:(TyphoonDefinition*)definition;
 
-- (void)injectPropertyDependenciesOn:(id <TyphoonIntrospectiveNSObject>)instance withDefinition:(TyphoonDefinition*)definition;
+- (void)injectPropertyDependenciesOn:(__autoreleasing id)instance withDefinition:(TyphoonDefinition*)definition;
 
 - (NSArray*)allDefinitionsForType:(id)classOrProtocol;
 
 - (TyphoonDefinition*)definitionForType:(id)classOrProtocol;
+
+//FIXME: This shouldn't be a concern of the factory, but of the collection injected initializer or property.
+- (id)buildCollectionWithValues:(NSArray*)values requiredType:(TyphoonCollectionType)type;
 
 @end

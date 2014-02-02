@@ -104,9 +104,15 @@
 }
 
 - (void)setOn:(BOOL)on animated:(BOOL)animated {
+    [self setOn:on animated:NO sendEvent:NO];
+}
+
+- (void)setOn:(BOOL)on animated:(BOOL)animated sendEvent:(BOOL)sendEvent {
     if (_on != on) {
         _on = on;
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
+        if (sendEvent) {
+            [self sendActionsForControlEvents:UIControlEventValueChanged];
+        }
     }
     [self setPercentOn:_on * 1.0f animated:animated];
 }
@@ -138,16 +144,15 @@
         
         [self setPercentOn:(1 - newOffset.x/maxOffset) animated:NO];
         
-    }
-    else if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+    } else if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         BOOL left = newOffset.x > maxOffset / 2;
-        [self setOn:(!left) animated:YES];
+        [self setOn:(!left) animated:YES sendEvent:YES];
     }
     
 }
 
 - (void) tapped:(UITapGestureRecognizer *)gestureRecognizer {
-    [self setOn:!self.on animated:YES];
+    [self setOn:!self.on animated:YES sendEvent:YES];
 }
 
 - (void) setOnBackgroundColor:(UIColor *)onBackgroundColor {
@@ -168,6 +173,11 @@
 - (void) setOffColor:(UIColor *)offColor {
     _offColor = offColor;
     [self updateBackground];
+}
+
+- (void) setSwitchCornerRadius:(CGFloat)switchCornerRadius {
+    _switchCornerRadius = switchCornerRadius;
+    self.layer.cornerRadius = _switchCornerRadius;
 }
 
 - (void) updateBackground {

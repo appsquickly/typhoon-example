@@ -12,6 +12,7 @@
 
 #import "CKUITools.h"
 #import "TyphoonComponentFactoryAware.h"
+#import "TyphoonPropertyInjectionDelegate.h"
 #import "PFRootViewController.h"
 #import "PaperFoldView.h"
 #import "PFProgressHUD.h"

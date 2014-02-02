@@ -10,11 +10,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#import "TyphoonResolutionStack.h"
-#import "TyphoonStackItem.h"
-#import "TyphoonDefinition.h"
+#import "TyphoonCallStack.h"
+#import "TyphoonStackElement.h"
 
-@implementation TyphoonResolutionStack
+
+@implementation TyphoonCallStack
 {
     NSMutableArray* _storage;
 }
@@ -45,20 +45,16 @@
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
-- (void)push:(TyphoonStackItem*)stackItem
+- (void)push:(TyphoonStackElement*)stackItem
 {
-    if (![stackItem isKindOfClass:[TyphoonStackItem class]])
+    if (![stackItem isKindOfClass:[TyphoonStackElement class]])
     {
         [NSException raise:NSInvalidArgumentException format:@"Not a TyphoonStackItem: %@", stackItem];
-    }
-    if ([self itemForKey:stackItem.definition.key])
-    {
-        return;
     }
     [_storage addObject:stackItem];
 }
 
-- (TyphoonStackItem*)pop
+- (TyphoonStackElement*)pop
 {
     id element = [_storage lastObject];
     if ([self isEmpty] == NO)
@@ -68,17 +64,20 @@
     return element;
 }
 
-- (TyphoonStackItem*)peek
-{
-    return [_storage lastObject];
-}
 
-- (TyphoonStackItem*)itemForKey:(NSString*)key
+
+- (TyphoonStackElement*)peekForKey:(NSString*)key
 {
-    for (TyphoonStackItem* item in _storage)
+    for (TyphoonStackElement* item in [_storage reverseObjectEnumerator])
     {
-        if ([item.definition.key isEqualToString:key])
+        if ([item.key isEqualToString:key])
         {
+            if ([item isInitializingInstance])
+            {
+                [NSException raise:@"CircularInitializerDependence"
+                    format:@"The object for key %@ is currently initializing, but was specified as init dependency in another object",
+                           item.key];
+            }
             return item;
         }
     }
@@ -89,6 +88,11 @@
 - (BOOL)isEmpty
 {
     return ([_storage count] == 0);
+}
+
+- (BOOL)isResolvingKey:(NSString*)key
+{
+    return [self peekForKey:key] != nil;
 }
 
 @end

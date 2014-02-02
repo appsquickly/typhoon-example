@@ -32,6 +32,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
 
+
 - (id)initWithCityDao:(id <PFCityDao>)cityDao theme:(PFTheme*)theme
 {
     self = [super initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];

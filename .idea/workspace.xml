@@ -10,7 +10,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonResolutionStack.m" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonStackItem.h" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonStackItem.m" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/FUIAlertView.h" afterPath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/FUIAlertView.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/FUIAlertView.m" afterPath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/FUIAlertView.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/FUIButton.h" afterPath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/FUIButton.h" />
@@ -26,7 +25,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+PropertyInjection.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+PropertyInjection.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+PropertyInjection.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/NSObject+PropertyInjection.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Dao/PFCityDaoUserDefaultsImpl.m" afterPath="$PROJECT_DIR$/PocketForecast/Dao/PFCityDaoUserDefaultsImpl.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
@@ -47,13 +46,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Configuration/TyphoonComponentPostProcessor.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Configuration/TyphoonComponentPostProcessor.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/Internal/TyphoonInitializer+InstanceBuilder.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonInitializer.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonMiscUtils.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonMiscUtils.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithObjectInstance.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithObjectInstance.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithObjectInstance.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithObjectInstance.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithStringRepresentation.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithStringRepresentation.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithStringRepresentation.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Initializer/TyphoonParameterInjectedWithStringRepresentation.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatchObjectFactory.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatchObjectFactory.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatchObjectFactory.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatchObjectFactory.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatcher.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Test/Patcher/TyphoonPatcher.h" />
@@ -81,9 +86,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UITableViewCell+FlatUI.m" afterPath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UITableViewCell+FlatUI.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UIToolbar+FlatUI.h" afterPath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UIToolbar+FlatUI.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UIToolbar+FlatUI.m" afterPath="$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UIToolbar+FlatUI.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcodeproj/xcuserdata/jblues.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/PocketForecast.xcodeproj/xcuserdata/jblues.xcuserdatad/xcschemes/xcschememanagement.plist" />
     </list>
     <ignored path="Typhoon-example.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,11 +122,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFCityDaoUserDefaultsImpl.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PFCityDaoUserDefaultsImpl.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Dao/PFCityDaoUserDefaultsImpl.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="43" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.16398714" vertical-offset="543" max-vertical-offset="1770">
-              <folding />
+            <state line="64" column="9" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1770">
+              <folding>
+                <marker date="1391240344000" expanded="true" signature="0:416" placeholder="//..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSInvocation+TyphoonUtils.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/NSInvocation+TyphoonUtils.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="5" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="840">
+              <folding>
+                <marker date="1391314838000" expanded="true" signature="562:1144" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSInvocation+TyphoonUtils.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/NSInvocation+TyphoonUtils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="405">
+              <folding>
+                <marker date="1391314838000" expanded="true" signature="487:638" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,25 +158,25 @@
       <file leaf-file-name="TyphoonComponentFactory+InstanceBuilder.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="36" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="8055">
+            <state line="97" column="8" selection-start="3277" selection-end="3277" vertical-scroll-proportion="0.0" vertical-offset="1007" max-vertical-offset="6555">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Configuration.properties" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Configuration.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="48" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+            <state line="6" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.16423358" vertical-offset="0" max-vertical-offset="548">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFRootViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h">
+      <file leaf-file-name="PFCitiesListViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="42" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1245">
+            <state line="36" column="1" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.0" vertical-offset="268" max-vertical-offset="3210">
               <folding />
             </state>
           </provider>
@@ -154,34 +185,7 @@
       <file leaf-file-name="PFRootViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="271" column="35" selection-start="8797" selection-end="8797" vertical-scroll-proportion="0.0" vertical-offset="3858" max-vertical-offset="5625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFTemperatureTests.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecastTests/Unit/PFTemperatureTests.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1035">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFWeatherReportDaoTests.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="47" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="840">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFWeatherClientTests.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="44" selection-start="586" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1335">
+            <state line="271" column="5" selection-start="8797" selection-end="8797" vertical-scroll-proportion="0.0" vertical-offset="3858" max-vertical-offset="5625">
               <folding />
             </state>
           </provider>
@@ -190,7 +194,7 @@
       <file leaf-file-name="Podfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Podfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="22" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="525">
+            <state line="29" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
               <folding />
             </state>
           </provider>
@@ -214,8 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonBundleResource.h" />
-        <option value="$PROJECT_DIR$/Pods/Typhoon/Source/Utils/Resource/TyphoonBundleResource.m" />
         <option value="$PROJECT_DIR$/Tests/Tests-Prefix.pch" />
         <option value="$PROJECT_DIR$/PocketForecastTests/PocketForecastTests-Prefix.pch" />
         <option value="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m" />
@@ -226,9 +228,12 @@
         <option value="$PROJECT_DIR$/PocketForecastTests/PocketForecastTests.m" />
         <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
-        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
-        <option value="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Dao/PFCityDaoUserDefaultsImpl.m" />
+        <option value="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m" />
+        <option value="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/NSInvocation+TyphoonUtils.h" />
+        <option value="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/NSInvocation+TyphoonUtils.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
       </list>
     </option>
   </component>
@@ -263,6 +268,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,77 +337,8 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PocketForecast" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PocketForecast" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PocketForecast" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PocketForecast" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assembly" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PocketForecast" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PocketForecast" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assembly" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blocks" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PocketForecast" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Frameworks" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,12 +370,6 @@
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.PocketForecast">
-    <configuration default="false" name="PocketForecast" type="AppleRunConfiguration" factoryName="Application" temporary="true" SCHEME_NAME="PocketForecast" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecast" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="PocketForecast" RUN_TARGET_NAME="PocketForecast" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <RunnerSettings RunnerId="AppRunner" />
-      <ConfigurationWrapper RunnerId="AppRunner" />
-      <method />
-    </configuration>
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecast" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="PocketForecast" RUN_TARGET_NAME="PocketForecast" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <method />
@@ -495,10 +426,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Pods-PocketForecastTests" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PocketForecastTests" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="Tests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" SCHEME_NAME="Tests" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecastTests" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
       <envs />
       <RunnerSettings RunnerId="AppRunner" />
@@ -521,34 +448,51 @@
       <item index="12" class="java.lang.String" itemvalue="XCTest/Kiwi.Tests" />
       <item index="13" class="java.lang.String" itemvalue="Application.PocketForecast" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.PocketForecast" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f6bc38d9-29d3-4e38-95cc-03c66446d1b4" name="Default" comment="" />
       <created>1386181204775</created>
       <updated>1386181204775</updated>
     </task>
+    <task id="LOCAL-00001" summary="Make the default cities the home cities of Typhoon contributors. &#10;Fun fact: Its +41 degrees where Erik lives and -30 where Aleksey lives.">
+      <created>1391240584240</created>
+      <updated>1391240584240</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1436" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44132653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26081425" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19532908" sideWeight="0.82908165" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21160652" sideWeight="0.7346939" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252551" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17091836" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26530612" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2780612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -566,68 +510,23 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Make the default cities the home cities of Typhoon contributors. &#10;Fun fact: Its +41 degrees where Erik lives and -30 where Aleksey lives." />
+    <option name="LAST_COMMIT_MESSAGE" value="Make the default cities the home cities of Typhoon contributors. &#10;Fun fact: Its +41 degrees where Erik lives and -30 where Aleksey lives." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Prefix.pch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFCityDoaTests.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="38" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecastTests/PocketForecastTests-Prefix.pch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="34" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecastTests/Unit/RXMLElement_PFWeatherReportSpec.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="56" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="3195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecastTests/Unit/PFTemperatureTests.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherReportDaoTests.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="47" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <folding />
-        </state>
+        <state line="19" column="47" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="44" selection-start="586" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="22" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
           <folding />
         </state>
       </provider>
@@ -641,22 +540,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="271" column="35" selection-start="8797" selection-end="8797" vertical-scroll-proportion="0.0" vertical-offset="3858" max-vertical-offset="5625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="48" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+        <state line="271" column="5" selection-start="8797" selection-end="8797" vertical-scroll-proportion="0.0" vertical-offset="3858" max-vertical-offset="5625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Utils/TyphoonLinkerCategoryBugFix.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="758" selection-end="758" vertical-scroll-proportion="0.62761503" vertical-offset="0" max-vertical-offset="478">
-          <folding />
+        <state line="20" column="8" selection-start="758" selection-end="758" vertical-scroll-proportion="0.62761503" vertical-offset="0" max-vertical-offset="478" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Dao/PFCityDaoUserDefaultsImpl.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="9" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1770">
+          <folding>
+            <marker date="1391240344000" expanded="true" signature="0:416" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -667,16 +566,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSInvocation.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="36" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="8055">
+        <state line="39" column="8" selection-start="867" selection-end="867" vertical-scroll-proportion="0.33256352" vertical-offset="441" max-vertical-offset="1410">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Dao/PFCityDaoUserDefaultsImpl.m">
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonStackElement.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="43" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.16398714" vertical-offset="543" max-vertical-offset="1770">
+        <state line="37" column="9" selection-start="811" selection-end="811" vertical-scroll-proportion="0.33279744" vertical-offset="348" max-vertical-offset="1200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="8" selection-start="3277" selection-end="3277" vertical-scroll-proportion="0.0" vertical-offset="1007" max-vertical-offset="6555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/NSInvocation+TyphoonUtils.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="5" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="840">
+          <folding>
+            <marker date="1391314838000" expanded="true" signature="562:1144" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/NSInvocation+TyphoonUtils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="405">
+          <folding>
+            <marker date="1391314838000" expanded="true" signature="487:638" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFRunLoop.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="17" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.33271027" vertical-offset="737" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="1" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.0" vertical-offset="268" max-vertical-offset="3210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.16423358" vertical-offset="0" max-vertical-offset="548">
           <folding />
         </state>
       </provider>

@@ -11,20 +11,24 @@
 
 #import <Foundation/Foundation.h>
 
-@class TyphoonStackItem;
+@class TyphoonStackElement;
 
-@interface TyphoonResolutionStack : NSObject
+@interface TyphoonCallStack : NSObject
 
 + (instancetype)stack;
 
-- (void)push:(TyphoonStackItem*)stackItem;
+- (void)push:(TyphoonStackElement*)stackItem;
 
-- (TyphoonStackItem*)pop;
+- (TyphoonStackElement*)pop;
 
-- (TyphoonStackItem*)peek;
+/**
+* Peeks for the given key. If the key represents an instance undergoing initializer injection, raises a circular init exception.
+*/
+- (TyphoonStackElement*)peekForKey:(NSString*)key;
 
-- (TyphoonStackItem*)itemForKey:(NSString*)key;
+- (BOOL)isResolvingKey:(NSString*)key;
 
 - (BOOL)isEmpty;
+
 
 @end

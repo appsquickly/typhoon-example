@@ -1000,8 +1000,9 @@
 			baseConfigurationReference = BBD56735007547068B4E01EE /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
@@ -1019,10 +1020,11 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = PocketForecast;
-				PROVISIONING_PROFILE = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
+				PROVISIONING_PROFILE = "865EB4E3-A259-4CA5-BB4E-C864CF692C25";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "865EB4E3-A259-4CA5-BB4E-C864CF692C25";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1032,8 +1034,9 @@
 			baseConfigurationReference = BBD56735007547068B4E01EE /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (W7EMS47T7X)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jasper Blues (9MHUZ2475N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
@@ -1051,10 +1054,11 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = PocketForecast;
-				PROVISIONING_PROFILE = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73F0AED7-EB59-4FAF-91C1-63722F2E9056";
+				PROVISIONING_PROFILE = "865EB4E3-A259-4CA5-BB4E-C864CF692C25";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "865EB4E3-A259-4CA5-BB4E-C864CF692C25";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -13,15 +13,17 @@
 #import <Foundation/Foundation.h>
 #import "TyphoonInitializer.h"
 
+@class TyphoonComponentFactory;
+
 @interface TyphoonInitializer (InstanceBuilder)
 
 @property(nonatomic, readonly) BOOL isClassMethod;
 
 - (NSArray*)parametersInjectedByValue;
 
-- (NSInvocation*)asInvocationFor:(id)classOrInstance;
+- (NSInvocation*)newInvocationInFactory:(TyphoonComponentFactory*)factory;
 
-- (void)setComponentDefinition:(TyphoonDefinition*)definition;
+- (void)setDefinition:(TyphoonDefinition*)definition;
 
 
 @end

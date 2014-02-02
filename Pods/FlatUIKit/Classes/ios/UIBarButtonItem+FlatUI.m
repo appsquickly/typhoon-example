@@ -14,15 +14,12 @@
 - (void) configureFlatButtonWithColor:(UIColor *)color
                      highlightedColor:(UIColor *)highlightedColor
                          cornerRadius:(CGFloat) cornerRadius {
-  
   [UIBarButtonItem configureItemOrProxy:self forFlatButtonWithColor:color highlightedColor:highlightedColor cornerRadius:cornerRadius];
-  
 }
 
 + (void) configureFlatButtonsWithColor:(UIColor *) color
                       highlightedColor:(UIColor *)highlightedColor
                           cornerRadius:(CGFloat) cornerRadius {
-  
   [self configureFlatButtonsWithColor:color highlightedColor:highlightedColor cornerRadius:cornerRadius whenContainedIn:[UINavigationBar class], [UINavigationController class], [UIToolbar class], nil];
 }
 
@@ -37,13 +34,31 @@
   [UIBarButtonItem configureItemOrProxy:appearance forFlatButtonWithColor:color highlightedColor:highlightedColor cornerRadius:cornerRadius];
 }
 
+
 - (void) removeTitleShadow {
-  NSMutableDictionary *titleTextAttributes = [[self titleTextAttributesForState:UIControlStateNormal] mutableCopy];
-  if (!titleTextAttributes) {
-    titleTextAttributes = [NSMutableDictionary dictionary];
-  }
-  [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
-  [self setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
+    NSArray *states = @[@(UIControlStateNormal), @(UIControlStateHighlighted)];
+    
+    for (NSNumber *state in states) {
+        UIControlState controlState = [state unsignedIntegerValue];
+        NSMutableDictionary *titleTextAttributes = [[self titleTextAttributesForState:controlState] mutableCopy];
+        if (!titleTextAttributes) {
+            titleTextAttributes = [NSMutableDictionary dictionary];
+        }
+        
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
+            // iOS6 methods
+            NSShadow *shadow = [[NSShadow alloc] init];
+            [shadow setShadowOffset:CGSizeZero];
+            [shadow setShadowColor:[UIColor clearColor]];
+            [titleTextAttributes setObject:shadow forKey:NSShadowAttributeName];
+#else
+            // Pre-iOS6 methods
+            [titleTextAttributes setValue:[UIColor clearColor] forKey:UITextAttributeTextShadowColor];
+            [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetZero] forKey:UITextAttributeTextShadowOffset];
+#endif
+        
+        [self setTitleTextAttributes:titleTextAttributes forState:controlState];
+    }
 }
 
 //helper method, basically a wrapper to allow creating a custom UIAppearance method that doesn't conform to the usual naming style

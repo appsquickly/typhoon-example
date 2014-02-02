@@ -25,13 +25,16 @@
 * - TyphoonScopePrototype means that a new component is created for each time it is referenced in a collaborator, or retrieved
 * from the factory.
 * - TyphoonScopeSingleton creates a shared instance.
+* - TyphoonScopeWeakSingleton creates an instance that will be shared across all components. However as soon as the instance is not being
+* used it will be deallocated.
 *
 */
 typedef enum
 {
-    TyphoonScopeObjectGraph =   1 << 0,
-    TyphoonScopePrototype =     1 << 1,
-    TyphoonScopeSingleton =     1 << 2,
+    TyphoonScopeObjectGraph   = 1 << 0,
+    TyphoonScopePrototype     = 1 << 1,
+    TyphoonScopeSingleton     = 1 << 2,
+    TyphoonScopeWeakSingleton = 1 << 3
 } TyphoonScope;
 
 
@@ -67,6 +70,8 @@ typedef void(^TyphoonDefinitionBlock)(TyphoonDefinition* definition);
 * Describes the initializer, ie the selector and arguments that will be used to instantiate this component.
 *
 * An initializer can be an instance method, a class method, or even a reference to another component's method (see factory property).
+*
+* If no explicit initializer has been set, returns a default initializer representing the init method.
 *
 * @see factory
 */
