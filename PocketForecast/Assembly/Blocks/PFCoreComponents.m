@@ -17,6 +17,11 @@
 
 @implementation PFCoreComponents
 
+- (id)config
+{
+    return [TyphoonDefinition configDefinitionWithResource:[TyphoonBundleResource withName:@"Configuration.properties"]];
+}
+
 - (id)weatherClient
 {
     return [TyphoonDefinition withClass:[PFWeatherClientBasicImpl class] configuration:^(TyphoonDefinition* definition)

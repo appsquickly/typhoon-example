@@ -34,7 +34,11 @@
 
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    _factory = [self buildComponentFactory];
+    _factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[
+        [PFCoreComponents assembly],
+        [PFAssembly assembly],
+        [PFThemeProvider assembly]
+    ]];
 
     PFRootViewController* rootViewController = [_factory componentForType:[PFRootViewController class]];
     [_window setRootViewController:rootViewController];
@@ -62,18 +66,5 @@
     }
 }
 
-
-- (TyphoonComponentFactory*)buildComponentFactory
-{
-    TyphoonComponentFactory* factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[
-        [PFCoreComponents assembly],
-        [PFAssembly assembly],
-        [PFThemeProvider assembly]
-    ]];
-
-    id <TyphoonResource> configurationProperties = [TyphoonBundleResource withName:@"Configuration.properties"];
-    [factory attachPostProcessor:[TyphoonPropertyPlaceholderConfigurer configurerWithResource:configurationProperties]];
-    return factory;
-}
 
 @end
