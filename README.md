@@ -35,10 +35,6 @@ place of the old one. And you'd be able to reuse the existing test cases.
 1. Try writing the same Application without dependency injection. What would the code look like? 
 
 
-####Alternative Configuration Style
-
-1. Study the xml <a href="https://github.com/typhoon-framework/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/CoreComponents.xml">core components</a>, 
-<a href="https://github.com/typhoon-framework/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/ViewControllers.xml">view controllers</a> and <a href="https://github.com/typhoon-framework/Typhoon-example/blob/master/PocketForecast/Assembly/Xml/Themes.xml">themes</a>. Which style do you prefer? Would it be appropriate to add some <a href="https://github.com/jasperblues/Typhoon/wiki/Autowiring">auto-wiring</a>?
 
 ### The App 
 ![Weather Report](http://www.typhoonframework.org/images/portfolio/PocketForecast3.gif)
