@@ -56,7 +56,7 @@ typedef enum
 /**
 * The protocol being described.
 */
-@property(nonatomic, readonly) Protocol* protocol;
+@property(nonatomic, readonly) Protocol *protocol;
 
 /**
 * Indicates a primitive type is an array.
@@ -78,18 +78,22 @@ typedef enum
 */
 @property(nonatomic, readonly) BOOL isStructure;
 
-@property(nonatomic, strong, readonly) NSString* structureTypeName;
+@property(nonatomic, strong, readonly) NSString *structureTypeName;
 
-+ (TyphoonTypeDescriptor*)descriptorWithTypeCode:(NSString*)typeCode;
++ (TyphoonTypeDescriptor *)descriptorWithEncodedType:(const char *)encodedType;
 
-+ (TyphoonTypeDescriptor*)descriptorWithClassOrProtocol:(id)classOrProtocol;
++ (TyphoonTypeDescriptor *)descriptorWithTypeCode:(NSString *)typeCode;
 
-- (id)initWithTypeCode:(NSString*)typeCode;
++ (TyphoonTypeDescriptor *)descriptorWithClassOrProtocol:(id)classOrProtocol;
+
+- (id)initWithTypeCode:(NSString *)typeCode;
 
 /**
 * Returns the class or protocol. If the type descriptor is for a primitive, returns nil.
 */
 - (id)classOrProtocol;
 
+/** Returns encoded type as string */
+- (const char *)encodedType;
 
 @end

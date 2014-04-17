@@ -10,10 +10,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#import <QuartzCore/QuartzCore.h>
 #import "PFProgressHUD.h"
 #import "PFRootViewController.h"
-#import "TyphoonComponentFactory.h"
 #import "UIFont+ApplicationFonts.h"
 
 @implementation PFProgressHUD
@@ -31,7 +29,7 @@
 
 + (instancetype)present
 {
-    PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    PFRootViewController* controller = [UIApplication sharedApplication].keyWindow.rootViewController;
     [controller showProgressHUD];
     dispatch_async(dispatch_get_main_queue(), ^
     {
@@ -42,7 +40,7 @@
 
 + (void)dismiss
 {
-    PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    PFRootViewController* controller = [UIApplication sharedApplication].keyWindow.rootViewController;
     [controller dismissProgressHUD];
 }
 

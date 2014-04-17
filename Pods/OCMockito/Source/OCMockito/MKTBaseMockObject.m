@@ -1,6 +1,6 @@
 //
 //  OCMockito - MKTBaseMockObject.m
-//  Copyright 2013 Jonathan M. Reid. See LICENSE.txt
+//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Source: https://github.com/jonreid/OCMockito
@@ -15,7 +15,7 @@
 #import "MKTStubbedInvocationMatcher.h"
 #import "MKTVerificationData.h"
 #import "MKTVerificationMode.h"
-#import "NSInvocation+TKAdditions.h"
+#import "NSInvocation+OCMockito.h"
 
 
 @implementation MKTBaseMockObject
@@ -92,7 +92,7 @@
 
 - (void)useExistingAnswerInStub:(MKTStubbedInvocationMatcher *)stub forInvocation:(NSInvocation *)invocation
 {
-    MKTSetReturnValueForInvocation(invocation, stub.answer);
+    [invocation mkt_setReturnValue:stub.answer];
 }
 
 

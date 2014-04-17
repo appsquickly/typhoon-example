@@ -17,7 +17,7 @@
 #import "PaperFoldView.h"
 #import "PFProgressHUD.h"
 #import "TyphoonComponentFactory.h"
-#import "PFViewControllers.h"
+#import "PFAssembly.h"
 #import "PFCitiesListViewController.h"
 #import "PFAddCityViewController.h"
 
@@ -54,7 +54,7 @@
 }
 
 /**
-* Since we have a PFViewControllers interface (from the block-style assembly) we'll place that interface as a facade in front of the
+* Since we have a PFAssembly interface (from the block-style assembly) we'll place that interface as a facade in front of the
 * TyphoonComponentFactory. . . we could also use the TyphoonComponentFactory interface directly, eg:
  *
  *      TyphoonComponentFactory* factory = theFactory;

@@ -21,11 +21,12 @@
 */
 @interface TyphoonBundleResource : NSObject <TyphoonResource>
 {
-    NSData* _data;
+    NSData *_data;
 }
 
 
-+ (id <TyphoonResource>)withName:(NSString*)name;
++ (id <TyphoonResource>)withName:(NSString *)name;
+
 + (id <TyphoonResource>)withName:(NSString *)name inBundle:(NSBundle *)bundle;
 
 

@@ -17,12 +17,13 @@
 
 - (id)supportedType
 {
-    return [NSURL class];
+    return @"NSURL";
 }
 
-- (id)convert:(NSString*)stringValue
+- (id)convert:(NSString *)stringValue
 {
-    __autoreleasing NSURL* url = [NSURL URLWithString:stringValue];
+    stringValue = [TyphoonTypeConverterRegistry textWithoutTypeFromTextValue:stringValue];
+    __autoreleasing NSURL *url = [NSURL URLWithString:stringValue];
     return url;
 }
 

@@ -31,16 +31,44 @@
 /* ====================================================================================================================================== */
 #pragma mark - Class Methods
 
-+ (TyphoonTypeConverterRegistry*)shared
++ (TyphoonTypeConverterRegistry *)shared
 {
     static dispatch_once_t onceToken;
-    static TyphoonTypeConverterRegistry* instance;
+    static TyphoonTypeConverterRegistry *instance;
 
-    dispatch_once(&onceToken, ^
-    {
+    dispatch_once(&onceToken, ^{
         instance = [[[self class] alloc] init];
     });
     return instance;
+}
+
++ (NSString *)typeFromTextValue:(NSString *)textValue
+{
+    NSString *type = nil;
+    
+    NSRange openBraceRange = [textValue rangeOfString:@"("];
+    BOOL hasBraces = [textValue hasSuffix:@")"] && openBraceRange.location != NSNotFound;
+    if (hasBraces) {
+        type = [textValue substringToIndex:openBraceRange.location];
+    }
+    
+    return type;
+}
+
++ (NSString *)textWithoutTypeFromTextValue:(NSString *)textValue
+{
+    NSString *result = textValue;
+    
+    NSRange openBraceRange = [textValue rangeOfString:@"("];
+    BOOL hasBraces = [textValue hasSuffix:@")"] && openBraceRange.location != NSNotFound;
+    
+    if (hasBraces) {
+        NSRange range = NSMakeRange(openBraceRange.location + openBraceRange.length, 0);
+        range.length = [textValue length] - range.location - 1;
+        result = [textValue substringWithRange:range];
+    }
+    
+    return result;
 }
 
 /* ====================================================================================================================================== */
@@ -49,8 +77,7 @@
 - (id)init
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _typeConverters = [[NSMutableDictionary alloc] init];
         _primitiveTypeConverter = [[TyphoonPrimitiveTypeConverter alloc] init];
 
@@ -66,42 +93,30 @@
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
-- (id <TyphoonTypeConverter>)converterFor:(TyphoonTypeDescriptor*)typeDescriptor
+- (id <TyphoonTypeConverter>)converterForType:(NSString *)type
 {
-
-    id <TyphoonTypeConverter> converter = [_typeConverters objectForKey:[typeDescriptor classOrProtocol]];
-    if (!converter)
-    {
-        [NSException raise:NSInvalidArgumentException format:@"No type converter registered for type: '%@'.",
-                                                             [typeDescriptor classOrProtocol]];
-
-    }
-    return converter;
+    return [_typeConverters objectForKey:type];
 }
 
-- (TyphoonPrimitiveTypeConverter*)primitiveTypeConverter
+- (TyphoonPrimitiveTypeConverter *)primitiveTypeConverter
 {
     return _primitiveTypeConverter;
 }
 
-- (void)register:(id <TyphoonTypeConverter>)converter;
+- (void)registerTypeConverter:(id <TyphoonTypeConverter>)converter;
 {
-  id classOrProtocol = [converter supportedType];
-  if (!([_typeConverters objectForKey:classOrProtocol]))
-  {
-    [_typeConverters setObject:converter forKey:(id <NSCopying>) classOrProtocol];
-  }
-  else
-  {
-    BOOL isClass = class_isMetaClass(object_getClass(classOrProtocol));
-    NSString* name = isClass ? NSStringFromClass(classOrProtocol) : NSStringFromProtocol(classOrProtocol);
-    [NSException raise:NSInvalidArgumentException format:@"Converter for '%@' already registered.", name];
-  }
+    NSString *type = [converter supportedType];
+    if (!([_typeConverters objectForKey:type])) {
+        [_typeConverters setObject:converter forKey:type];
+    }
+    else {
+        [NSException raise:NSInvalidArgumentException format:@"Converter for '%@' already registered.", type];
+    }
 }
 
-- (void)unregister:(id <TyphoonTypeConverter>)converter
+- (void)unregisterTypeConverter:(id <TyphoonTypeConverter>)converter
 {
-  [_typeConverters removeObjectForKey:[converter supportedType]];
+    [_typeConverters removeObjectForKey:[converter supportedType]];
 }
 
 
@@ -110,23 +125,23 @@
 
 - (void)registerSharedConverters
 {
-    [self register:[[TyphoonPassThroughTypeConverter alloc] initWithIsMutable:NO]];
-    [self register:[[TyphoonPassThroughTypeConverter alloc] initWithIsMutable:YES]];
-    [self register:[[TyphoonNSURLTypeConverter alloc] init]];
+    [self registerTypeConverter:[[TyphoonPassThroughTypeConverter alloc] initWithIsMutable:NO]];
+    [self registerTypeConverter:[[TyphoonPassThroughTypeConverter alloc] initWithIsMutable:YES]];
+    [self registerTypeConverter:[[TyphoonNSURLTypeConverter alloc] init]];
 }
 
 - (void)registerPlatformConverters
 {
 #if TARGET_OS_IPHONE
     {
-        [self register:[[TyphoonUIColorTypeConverter alloc] init]];
-        [self register:[[TyphoonBundledImageTypeConverter alloc] init]];
+        [self registerTypeConverter:[[TyphoonUIColorTypeConverter alloc] init]];
+        [self registerTypeConverter:[[TyphoonBundledImageTypeConverter alloc] init]];
     }
 #else
     {
 
     }
-    #endif
+#endif
 }
 
 

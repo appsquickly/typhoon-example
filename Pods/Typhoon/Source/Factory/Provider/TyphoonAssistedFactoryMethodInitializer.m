@@ -17,7 +17,7 @@
 
 @interface TyphoonAssistedFactoryMethodInitializer ()
 
-@property (nonatomic, copy) NSMutableArray *injectedParameters;
+@property(nonatomic, copy) NSMutableArray *injectedParameters;
 
 @end
 
@@ -33,8 +33,7 @@
 - (instancetype)initWithFactoryMethod:(SEL)factoryMethod returnType:(Class)returnType
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _factoryMethod = factoryMethod;
         _returnType = returnType;
         _injectedParameters = [[NSMutableArray alloc] init];
@@ -53,12 +52,12 @@
 
 - (NSArray *)parameters
 {
-    return [self.injectedParameters sortedArrayWithOptions:0 usingComparator:
-            ^NSComparisonResult(id<TyphoonAssistedFactoryInjectedParameter> p1, id<TyphoonAssistedFactoryInjectedParameter> p2) {
-                if (p1.parameterIndex < p2.parameterIndex) return NSOrderedAscending;
-                if (p1.parameterIndex > p2.parameterIndex) return NSOrderedDescending;
-                return NSOrderedSame;
-            }];
+    return [self.injectedParameters sortedArrayWithOptions:0
+        usingComparator:^NSComparisonResult(id <TyphoonAssistedFactoryInjectedParameter> p1, id <TyphoonAssistedFactoryInjectedParameter> p2) {
+            if (p1.parameterIndex < p2.parameterIndex) {return NSOrderedAscending;}
+            if (p1.parameterIndex > p2.parameterIndex) {return NSOrderedDescending;}
+            return NSOrderedSame;
+        }];
 }
 
 #pragma mark - Configuration methods
@@ -70,14 +69,14 @@
 
 - (void)injectParameterNamed:(NSString *)parameterName withProperty:(SEL)property
 {
-  [self injectParameterAtIndex:[self indexOfParameter:parameterName] withProperty:property];
+    [self injectParameterAtIndex:[self indexOfParameter:parameterName] withProperty:property];
 }
 
 - (void)injectParameterAtIndex:(NSUInteger)parameterIndex withProperty:(SEL)property
 {
-    if (parameterIndex != NSNotFound && parameterIndex < [[self parameterNames] count])
-    {
-        [_injectedParameters addObject:[[TyphoonAssistedFactoryParameterInjectedWithProperty alloc] initWithParameterIndex:parameterIndex property:property]];
+    if (parameterIndex != NSNotFound && parameterIndex < [[self parameterNames] count]) {
+        [_injectedParameters addObject:[[TyphoonAssistedFactoryParameterInjectedWithProperty alloc]
+            initWithParameterIndex:parameterIndex property:property]];
     }
 }
 
@@ -93,10 +92,10 @@
 
 - (void)injectParameterAtIndex:(NSUInteger)parameterIndex withArgumentAtIndex:(NSUInteger)argumentIndex
 {
-    if (parameterIndex != NSNotFound && parameterIndex < [[self parameterNames] count] &&
-        argumentIndex != NSNotFound && argumentIndex < [[self argumentNames] count])
-    {
-        [_injectedParameters addObject:[[TyphoonAssistedFactoryParameterInjectedWithArgumentIndex alloc] initWithParameterIndex:parameterIndex argumentIndex:argumentIndex]];
+    if (parameterIndex != NSNotFound && parameterIndex < [[self parameterNames] count] && argumentIndex != NSNotFound && argumentIndex <
+        [[self argumentNames] count]) {
+        [_injectedParameters addObject:[[TyphoonAssistedFactoryParameterInjectedWithArgumentIndex alloc]
+            initWithParameterIndex:parameterIndex argumentIndex:argumentIndex]];
     }
 }
 
@@ -126,9 +125,8 @@
 
 - (NSArray *)parameterNames
 {
-    if (_parameterNames == nil)
-    {
-        _parameterNames = [self parameterNamesForSelector:_selector];
+    if (_parameterNames == nil) {
+        _parameterNames = [self typhoon_parameterNamesForSelector:_selector];
     }
 
     return _parameterNames;
@@ -136,9 +134,8 @@
 
 - (NSArray *)argumentNames
 {
-    if (!_argumentNames)
-    {
-        _argumentNames = [self parameterNamesForSelector:_factoryMethod];
+    if (!_argumentNames) {
+        _argumentNames = [self typhoon_parameterNamesForSelector:_factoryMethod];
     }
 
     return _argumentNames;

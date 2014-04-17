@@ -22,13 +22,13 @@ static NSString *const kMethodKey = @"kMethodKey";
 static NSString *const kScoreKey = @"kScoreKey";
 
 @interface TyphoonAssistedFactoryCreatorImplicitMethod : NSObject
-@property (nonatomic, assign) SEL methodName;
-@property (nonatomic, copy) NSArray *methodParameterNames;
+@property(nonatomic, assign) SEL methodName;
+@property(nonatomic, copy) NSArray *methodParameterNames;
 @end
 
 @interface TyphoonAssistedFactoryCreatorImplicitFactoryMethod : TyphoonAssistedFactoryCreatorImplicitMethod
-@property (nonatomic, copy) NSArray *preferredInitializers;
-@property (nonatomic, strong) TyphoonAssistedFactoryCreatorImplicitMethod *selectedInitializer;
+@property(nonatomic, copy) NSArray *preferredInitializers;
+@property(nonatomic, strong) TyphoonAssistedFactoryCreatorImplicitMethod *selectedInitializer;
 @end
 
 @implementation TyphoonAssistedFactoryCreatorImplicit
@@ -54,28 +54,27 @@ static NSString *const kScoreKey = @"kScoreKey";
         [self matchFactoryMethods:factoryMethods withInitializers:initializerMethods];
 
         TyphoonAssistedFactoryDefinition *factoryDefinition = [[TyphoonAssistedFactoryDefinition alloc] init];
-        for (TyphoonAssistedFactoryCreatorImplicitFactoryMethod *method in factoryMethods)
-        {
+        for (TyphoonAssistedFactoryCreatorImplicitFactoryMethod *method in factoryMethods) {
             // Simple arrays will suffice... but being "maps from this to that", I
             // find dictionaries more semantic.
-            NSDictionary *argumentParameters = [self findMappingsFrom:method.selectedInitializer.methodParameterNames
-                                                                   to:method.methodParameterNames
-                                                               except:nil];
-            NSDictionary *propertyParameters = [self findMappingsFrom:method.selectedInitializer.methodParameterNames
-                                                                   to:[self protocolPropertyNames]
-                                                               except:method.methodParameterNames];
+            NSDictionary *argumentParameters =
+                [self findMappingsFrom:method.selectedInitializer.methodParameterNames to:method.methodParameterNames except:nil];
+            NSDictionary *propertyParameters =
+                [self findMappingsFrom:method.selectedInitializer.methodParameterNames to:[self protocolPropertyNames]
+                    except:method.methodParameterNames];
 
-            [factoryDefinition factoryMethod:method.methodName returns:returnType initialization:^(TyphoonAssistedFactoryMethodInitializer *initializer) {
-                initializer.selector = method.selectedInitializer.methodName;
+            [factoryDefinition factoryMethod:method.methodName returns:returnType
+                initialization:^(TyphoonAssistedFactoryMethodInitializer *initializer) {
+                    initializer.selector = method.selectedInitializer.methodName;
 
-                [propertyParameters enumerateKeysAndObjectsUsingBlock:^(NSString *parameterName, NSString *propertyName, BOOL *stop) {
-                    [initializer injectParameterNamed:parameterName withProperty:sel_getUid([propertyName UTF8String])];
+                    [propertyParameters enumerateKeysAndObjectsUsingBlock:^(NSString *parameterName, NSString *propertyName, BOOL *stop) {
+                        [initializer injectParameterNamed:parameterName withProperty:sel_getUid([propertyName UTF8String])];
+                    }];
+
+                    [argumentParameters enumerateKeysAndObjectsUsingBlock:^(NSString *parameterName, NSString *argumentName, BOOL *stop) {
+                        [initializer injectParameterNamed:parameterName withArgumentNamed:argumentName];
+                    }];
                 }];
-
-                [argumentParameters enumerateKeysAndObjectsUsingBlock:^(NSString *parameterName, NSString *argumentName, BOOL *stop) {
-                    [initializer injectParameterNamed:parameterName withArgumentNamed:argumentName];
-                }];
-            }];
         }
 
         return factoryDefinition;
@@ -98,11 +97,10 @@ static NSString *const kScoreKey = @"kScoreKey";
     [methodNames minusSet:propertyNames];
 
     NSMutableArray *factoryMethods = [NSMutableArray arrayWithCapacity:methodNames.count];
-    for (NSString *methodName in methodNames)
-    {
+    for (NSString *methodName in methodNames) {
         TyphoonAssistedFactoryCreatorImplicitFactoryMethod *method = [[TyphoonAssistedFactoryCreatorImplicitFactoryMethod alloc] init];
         method.methodName = NSSelectorFromString(methodName);
-        method.methodParameterNames = [self parameterNamesForSelector:method.methodName];
+        method.methodParameterNames = [self typhoon_parameterNamesForSelector:method.methodName];
 
         [factoryMethods addObject:method];
     }
@@ -114,11 +112,10 @@ static NSString *const kScoreKey = @"kScoreKey";
 {
     NSMutableArray *initializerMethods = [NSMutableArray array];
     TyphoonAssistedFactoryCreatorForEachMethodInClass(_returnType, ^(struct objc_method_description methodDescription) {
-        if ([NSStringFromSelector(methodDescription.name) hasPrefix:@"initWith"])
-        {
+        if ([NSStringFromSelector(methodDescription.name) hasPrefix:@"initWith"]) {
             TyphoonAssistedFactoryCreatorImplicitMethod *method = [[TyphoonAssistedFactoryCreatorImplicitMethod alloc] init];
             method.methodName = methodDescription.name;
-            method.methodParameterNames = [self parameterNamesForSelector:method.methodName];
+            method.methodParameterNames = [self typhoon_parameterNamesForSelector:method.methodName];
 
             [initializerMethods addObject:method];
         }
@@ -127,7 +124,8 @@ static NSString *const kScoreKey = @"kScoreKey";
     return [initializerMethods copy];
 }
 
-- (void)calculatePreferredInitializersFor:(TyphoonAssistedFactoryCreatorImplicitFactoryMethod *)factoryMethod withInitializers:(NSArray *)initializerMethods
+- (void)calculatePreferredInitializersFor:(TyphoonAssistedFactoryCreatorImplicitFactoryMethod *)factoryMethod
+    withInitializers:(NSArray *)initializerMethods
 {
     NSSet *factoryMethodParameters = [NSSet setWithArray:factoryMethod.methodParameterNames];
     NSSet *protocolPropertyNames = [NSSet setWithArray:[self protocolPropertyNames]];
@@ -143,12 +141,13 @@ static NSString *const kScoreKey = @"kScoreKey";
         NSSet *coveredInitParameters = [commonArguments setByAddingObjectsFromSet:commonProperties];
         NSUInteger numberOfArguments = method.methodParameterNames.count;
 
-        if (coveredInitParameters.count >= numberOfArguments)
-        {
+        if (coveredInitParameters.count >= numberOfArguments) {
             // If you have more than 100 arguments in your initializer... better
             // go back to the drawing board.
-            [preferredInitializers addObject:@{kMethodKey: method,
-                                               kScoreKey: @(commonArguments.count * 100 + commonProperties.count)}];
+            [preferredInitializers addObject:@{
+                kMethodKey : method,
+                kScoreKey : @(commonArguments.count * 100 + commonProperties.count)
+            }];
         }
     }
 
@@ -178,37 +177,30 @@ static NSString *const kScoreKey = @"kScoreKey";
     NSMutableDictionary *initializerCandidatesInfo = [NSMutableDictionary dictionaryWithCapacity:initializers.count];
 
     NSMutableArray *factoryMethodsMaxProposalIndices = [NSMutableArray arrayWithCapacity:factoryMethods.count];
-    for (NSUInteger idx = 0; idx < factoryMethods.count; idx++) factoryMethodsMaxProposalIndices[idx] = @0;
+    for (NSUInteger idx = 0; idx < factoryMethods.count; idx++) {factoryMethodsMaxProposalIndices[idx] = @0;}
 
-    while ([freeFactoryMethods intersectsIndexesInRange:factoryMethodRange])
-    {
+    while ([freeFactoryMethods intersectsIndexesInRange:factoryMethodRange]) {
         NSUInteger factoryMethodIndex = [freeFactoryMethods firstIndex];
         TyphoonAssistedFactoryCreatorImplicitFactoryMethod *factoryMethod = factoryMethods[factoryMethodIndex];
         NSNumber *factoryMethodMaxProposalIndex = factoryMethodsMaxProposalIndices[factoryMethodIndex];
         factoryMethodsMaxProposalIndices[factoryMethodIndex] = @([factoryMethodMaxProposalIndex unsignedIntegerValue] + 1);
 
-        NSAssert([factoryMethodMaxProposalIndex unsignedIntegerValue] < factoryMethod.preferredInitializers.count,
-                 @"Could not find suitable candidate init for [%s %s] in %s",
-                 protocol_getName(_protocol),
-                 sel_getName(factoryMethod.methodName),
-                 class_getName(_returnType));
+        NSAssert([factoryMethodMaxProposalIndex unsignedIntegerValue] <
+            factoryMethod.preferredInitializers.count, @"Could not find suitable candidate init for [%s %s] in %s", protocol_getName(_protocol), sel_getName(factoryMethod.methodName), class_getName(_returnType));
 
         NSDictionary *preferredInitializer = factoryMethod.preferredInitializers[[factoryMethodMaxProposalIndex unsignedIntegerValue]];
         TyphoonAssistedFactoryCreatorImplicitMethod *initializer = preferredInitializer[kMethodKey];
         NSUInteger initializerIndex = [initializers indexOfObject:initializer];
         NSNumber *candidateIndex = initializerCandidates[@(initializerIndex)];
-        if (!candidateIndex)
-        {
+        if (!candidateIndex) {
             initializerCandidates[@(initializerIndex)] = @(factoryMethodIndex);
             initializerCandidatesInfo[@(initializerIndex)] = preferredInitializer;
             [freeFactoryMethods removeIndex:factoryMethodIndex];
         }
-        else
-        {
+        else {
             NSDictionary *previousPreferredInitializer = initializerCandidatesInfo[@(initializerIndex)];
 
-            if ([preferredInitializer[kScoreKey] integerValue] > [previousPreferredInitializer[kScoreKey] integerValue])
-            {
+            if ([preferredInitializer[kScoreKey] integerValue] > [previousPreferredInitializer[kScoreKey] integerValue]) {
                 [freeFactoryMethods addIndex:[candidateIndex unsignedIntegerValue]];
                 initializerCandidates[@(initializerIndex)] = @(factoryMethodIndex);
                 initializerCandidatesInfo[@(initializerIndex)] = preferredInitializer;
@@ -217,17 +209,12 @@ static NSString *const kScoreKey = @"kScoreKey";
         }
     }
 
-    for (NSNumber *initializerIndex in initializerCandidates)
-    {
+    for (NSNumber *initializerIndex in initializerCandidates) {
         NSNumber *factoryMethodIndex = initializerCandidates[initializerIndex];
         TyphoonAssistedFactoryCreatorImplicitMethod *initializer = initializers[[initializerIndex unsignedIntegerValue]];
         TyphoonAssistedFactoryCreatorImplicitFactoryMethod *factoryMethod = factoryMethods[[factoryMethodIndex unsignedIntegerValue]];
 
-        LogTrace(@"Factory Provider: found candidate: [%s %s] --> [%s %s]",
-                 protocol_getName(_protocol),
-                 sel_getName(factoryMethod.methodName),
-                 class_getName(_returnType),
-                 sel_getName(initializer.methodName));
+        LogTrace(@"Factory Provider: found candidate: [%s %s] --> [%s %s]", protocol_getName(_protocol), sel_getName(factoryMethod.methodName), class_getName(_returnType), sel_getName(initializer.methodName));
 
         factoryMethod.selectedInitializer = initializer;
     }
@@ -235,9 +222,8 @@ static NSString *const kScoreKey = @"kScoreKey";
 
 - (NSArray *)protocolPropertyNames
 {
-    if (_procotolPropertyNames == nil)
-    {
-        unsigned int count= 0;
+    if (_procotolPropertyNames == nil) {
+        unsigned int count = 0;
         objc_property_t *properties = protocol_copyPropertyList(_protocol, &count);
         NSMutableArray *names = [NSMutableArray arrayWithCapacity:count];
 
@@ -258,8 +244,7 @@ static NSString *const kScoreKey = @"kScoreKey";
     exceptNamesOrNil = exceptNamesOrNil ?: [NSArray array];
 
     for (NSString *name in fromNames) {
-        if ([toNames containsObject:name] && ![exceptNamesOrNil containsObject:name])
-        {
+        if ([toNames containsObject:name] && ![exceptNamesOrNil containsObject:name]) {
             mappings[name] = name;
         }
     }

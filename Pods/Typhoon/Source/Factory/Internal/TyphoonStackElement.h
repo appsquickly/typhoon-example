@@ -13,22 +13,27 @@
 #import <Foundation/Foundation.h>
 
 @class TyphoonDefinition;
+@class TyphoonRuntimeArguments;
 
 typedef void(^TyphoonInstanceCompleteBlock)(id instance);
 
 
 @interface TyphoonStackElement : NSObject
 
-@property(nonatomic, strong, readonly) NSString* key;
+@property(nonatomic, strong, readonly) NSString *key;
+@property(nonatomic, strong, readonly) TyphoonRuntimeArguments *args;
 @property(nonatomic, strong, readonly) id instance;
 
-+ (instancetype)itemWithKey:(NSString*)key;
+/* Raises a circular init exception if instance in initializing state. */
 
-- (NSString*)description;
++ (instancetype)elementWithKey:(NSString *)key args:(TyphoonRuntimeArguments *)args;
 
-- (BOOL) isInitializingInstance;
-- (void) addInstanceCompleteBlock:(TyphoonInstanceCompleteBlock)completeBlock;
+- (NSString *)description;
 
-- (void) takeInstance:(id)instance;
+- (BOOL)isInitializingInstance;
+
+- (void)addInstanceCompleteBlock:(TyphoonInstanceCompleteBlock)completeBlock;
+
+- (void)takeInstance:(id)instance;
 
 @end

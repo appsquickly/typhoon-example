@@ -22,19 +22,19 @@
 @interface TyphoonAssistedFactoryMethodInitializer : NSObject <TyphoonAssistedFactoryMethod>
 
 /** The init method name. Should be an instance method in the returnType. */
-@property (nonatomic, assign) SEL selector;
+@property(nonatomic, assign) SEL selector;
 
 /** The factory method name */
-@property (nonatomic, assign, readonly) SEL factoryMethod;
+@property(nonatomic, assign, readonly) SEL factoryMethod;
 
 /** Type of the returned instance from the factory method */
-@property (nonatomic, assign, readonly) Class returnType;
+@property(nonatomic, assign, readonly) Class returnType;
 
 /**
  * The parameters definitions, sorted by parameter index.
  * Users should not use this property directly.
  */
-@property (nonatomic, copy, readonly) NSArray *parameters;
+@property(nonatomic, copy, readonly) NSArray *parameters;
 
 /**
  * Creates a description for the given factoryMethod that will return an

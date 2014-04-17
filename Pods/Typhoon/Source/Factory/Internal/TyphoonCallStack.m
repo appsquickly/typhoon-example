@@ -12,11 +12,11 @@
 
 #import "TyphoonCallStack.h"
 #import "TyphoonStackElement.h"
-
+#import "TyphoonRuntimeArguments.h"
 
 @implementation TyphoonCallStack
 {
-    NSMutableArray* _storage;
+    NSMutableArray *_storage;
 }
 
 
@@ -34,8 +34,7 @@
 - (id)init
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _storage = [NSMutableArray array];
     }
     return self;
@@ -45,54 +44,43 @@
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
-- (void)push:(TyphoonStackElement*)stackItem
+- (void)push:(TyphoonStackElement *)stackItem
 {
-    if (![stackItem isKindOfClass:[TyphoonStackElement class]])
-    {
+    if (![stackItem isKindOfClass:[TyphoonStackElement class]]) {
         [NSException raise:NSInvalidArgumentException format:@"Not a TyphoonStackItem: %@", stackItem];
     }
     [_storage addObject:stackItem];
 }
 
-- (TyphoonStackElement*)pop
+- (TyphoonStackElement *)pop
 {
     id element = [_storage lastObject];
-    if ([self isEmpty] == NO)
-    {
+    if ([self isEmpty] == NO) {
         [_storage removeLastObject];
     }
     return element;
 }
 
-
-
-- (TyphoonStackElement*)peekForKey:(NSString*)key
+- (TyphoonStackElement *)peekForKey:(NSString *)key args:(TyphoonRuntimeArguments *)args
 {
-    for (TyphoonStackElement* item in [_storage reverseObjectEnumerator])
-    {
-        if ([item.key isEqualToString:key])
-        {
-            if ([item isInitializingInstance])
-            {
-                [NSException raise:@"CircularInitializerDependence"
-                    format:@"The object for key %@ is currently initializing, but was specified as init dependency in another object",
-                           item.key];
-            }
+    NSUInteger argsHash = [args hash];
+    
+    for (TyphoonStackElement *item in [_storage reverseObjectEnumerator]) {
+        if ([item.key isEqualToString:key] && argsHash == [item.args hash]) {
             return item;
         }
     }
     return nil;
 }
 
-
 - (BOOL)isEmpty
 {
     return ([_storage count] == 0);
 }
 
-- (BOOL)isResolvingKey:(NSString*)key
+- (BOOL)isResolvingKey:(NSString *)key withArgs:(TyphoonRuntimeArguments *)args
 {
-    return [self peekForKey:key] != nil;
+    return [self peekForKey:key args:args] != nil;
 }
 
 @end

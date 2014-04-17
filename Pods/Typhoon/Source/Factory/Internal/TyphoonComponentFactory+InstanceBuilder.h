@@ -14,7 +14,7 @@
 #import <Foundation/Foundation.h>
 #import "TyphoonComponentFactory.h"
 #import "TyphoonIntrospectiveNSObject.h"
-#import "TyphoonInjectedAsCollection.h"
+#import "TyphoonRuntimeArguments.h"
 
 @class TyphoonCallStack;
 
@@ -24,19 +24,20 @@
 */
 @interface TyphoonComponentFactory (InstanceBuilder)
 
-- (TyphoonCallStack*)stack;
+- (TyphoonCallStack *)stack;
 
-- (id)buildInstanceWithDefinition:(TyphoonDefinition*)definition;
+- (id)buildInstanceWithDefinition:(TyphoonDefinition *)definition args:(TyphoonRuntimeArguments *)args;
 
-- (id)buildSharedInstanceForDefinition:(TyphoonDefinition*)definition;
+- (id)buildSharedInstanceForDefinition:(TyphoonDefinition *)definition args:(TyphoonRuntimeArguments *)args;
 
-- (void)injectPropertyDependenciesOn:(__autoreleasing id)instance withDefinition:(TyphoonDefinition*)definition;
+- (void)doInjectionEventsOn:(id)instance withDefinition:(TyphoonDefinition *)definition args:(TyphoonRuntimeArguments *)args;
 
-- (NSArray*)allDefinitionsForType:(id)classOrProtocol;
+- (NSArray *)allDefinitionsForType:(id)classOrProtocol;
 
-- (TyphoonDefinition*)definitionForType:(id)classOrProtocol;
+- (TyphoonDefinition *)definitionForType:(id)classOrProtocol;
 
-//FIXME: This shouldn't be a concern of the factory, but of the collection injected initializer or property.
-- (id)buildCollectionWithValues:(NSArray*)values requiredType:(TyphoonCollectionType)type;
+- (void)injectAssemblyOnInstanceIfTyphoonAware:(id)instance;
+
+- (void)resolveCircularDependency:(NSString *)key args:(TyphoonRuntimeArguments *)args resolvedBlock:(void(^)(BOOL isCircular))resolvedBlock;
 
 @end

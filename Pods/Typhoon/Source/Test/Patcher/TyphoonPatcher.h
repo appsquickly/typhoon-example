@@ -12,6 +12,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TyphoonComponentFactoryPostProcessor.h"
+
 @class TyphoonDefinition;
 
 typedef id (^TyphoonPatchObjectCreationBlock)();
@@ -26,11 +27,11 @@ typedef id (^TyphoonPatchObjectCreationBlock)();
 */
 @interface TyphoonPatcher : NSObject <TyphoonComponentFactoryPostProcessor>
 {
-    NSMutableDictionary* _patches;
+    NSMutableDictionary *_patches;
 }
 
-- (void)patchDefinitionWithKey:(NSString*)key withObject:(TyphoonPatchObjectCreationBlock)objectCreationBlock;
+- (void)patchDefinitionWithKey:(NSString *)key withObject:(TyphoonPatchObjectCreationBlock)objectCreationBlock;
 
-- (void)patchDefinition:(TyphoonDefinition*)definition withObject:(TyphoonPatchObjectCreationBlock)objectCreationBlock;
+- (void)patchDefinition:(TyphoonDefinition *)definition withObject:(TyphoonPatchObjectCreationBlock)objectCreationBlock;
 
 @end

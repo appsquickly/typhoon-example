@@ -23,13 +23,13 @@
 @interface TyphoonAssistedFactoryMethodCreator : NSObject
 
 /** Recipe for the implementation that will be created */
-@property (nonatomic, strong, readonly) id<TyphoonAssistedFactoryMethod> factoryMethod;
+@property(nonatomic, strong, readonly) id <TyphoonAssistedFactoryMethod> factoryMethod;
 
 /**
  * Creates the right subclass of TyphoonAssistedFactoryMethodCreator for the
  * given factoryMethod.
  */
-+ (instancetype)creatorFor:(id<TyphoonAssistedFactoryMethod>)factoryMethod;
++ (instancetype)creatorFor:(id <TyphoonAssistedFactoryMethod>)factoryMethod;
 
 /**
  * Creates the implementation of the factoryMethod belonging to protocol into

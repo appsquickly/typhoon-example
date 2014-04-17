@@ -19,15 +19,17 @@
 
 @protocol PFCityDao;
 @protocol PFWeatherClient;
+@class PFRootViewController;
 
 
 @interface PFAddCityViewController : UIViewController <UITextFieldDelegate, PFThemeable, TyphoonPropertyInjectionDelegate>
 
 
-#pragma mark - Container injected properties.
+#pragma mark - Typhoon injected properties
 @property(nonatomic, strong) id <PFCityDao> cityDao;
 @property(nonatomic, strong) id <PFWeatherClient> weatherClient;
 @property(nonatomic, strong) PFTheme* theme;
+@property(nonatomic, strong) PFRootViewController* rootViewController;
 
 
 #pragma mark - Interface Builder injected properties

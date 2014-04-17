@@ -17,15 +17,21 @@
 
 @class TyphoonTypeDescriptor;
 
-NSSet* TyphoonAutoWiredProperties(Class clazz, NSSet* properties);
+NSSet *TyphoonAutoWiredProperties(Class clazz, NSSet *properties);
 
-NSString* TyphoonTypeStringFor(id classOrProtocol);
+NSString *TyphoonTypeStringFor(id classOrProtocol);
 
 
 @interface TyphoonIntrospectionUtils : NSObject
 
-+ (NSArray*)typeCodesForSelector:(SEL)selector ofClass:(Class)clazz isClassMethod:(BOOL)isClassMethod;
++ (NSArray *)typeCodesForSelector:(SEL)selector ofClass:(Class)clazz isClassMethod:(BOOL)isClassMethod;
 
-+ (TyphoonTypeDescriptor*)typeForPropertyWithName:(NSString*)propertyName inClass:(Class)clazz;
++ (TyphoonTypeDescriptor *)typeForPropertyWithName:(NSString *)propertyName inClass:(Class)clazz;
+
++ (SEL)setterForPropertyWithName:(NSString *)property inClass:(Class)clazz;
+
++ (NSMethodSignature *)methodSignatureWithArgumentsAndReturnValueAsObjectsFromSelector:(SEL)selector;
+
++ (NSUInteger)numberOfArgumentsInSelector:(SEL)selector;
 
 @end

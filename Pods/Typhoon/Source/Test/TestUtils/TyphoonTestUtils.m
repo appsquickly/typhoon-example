@@ -17,8 +17,7 @@
 
 + (void)waitForCondition:(BOOL (^)())condition
 {
-    [self waitForCondition:condition andPerformTests:^
-    {
+    [self waitForCondition:condition andPerformTests:^{
         //No assertions - wait for condition only.
     }];
 }
@@ -31,27 +30,21 @@
 + (void)wait:(NSTimeInterval)seconds secondsForCondition:(BOOL (^)())condition andPerformTests:(void (^)())assertions
 {
     __block BOOL conditionMet = NO;
-    for (float i = 0; i < seconds * 4; i = i + 0.25)
-    {
+    for (float i = 0; i < seconds * 4; i = i + 0.25) {
         conditionMet = condition();
-        if (conditionMet)
-        {
+        if (conditionMet) {
             break;
         }
-        else
-        {
+        else {
             [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.25]];
         }
     }
-    if (conditionMet)
-    {
-        if (assertions)
-        {
+    if (conditionMet) {
+        if (assertions) {
             assertions();
         }
     }
-    else
-    {
+    else {
         [NSException raise:NSGenericException format:@"Condition didn't happen before timeout: %f", seconds];
     }
 }

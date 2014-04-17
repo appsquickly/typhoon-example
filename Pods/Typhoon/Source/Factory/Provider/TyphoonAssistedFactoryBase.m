@@ -10,8 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "TyphoonAssistedFactoryBase.h"
-
-#import "TyphoonAbstractInjectedProperty.h"
+#import "TyphoonPropertyInjection.h"
 
 @implementation TyphoonAssistedFactoryBase
 {
@@ -21,8 +20,7 @@
 - (instancetype)init
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _injections = [[NSMutableDictionary alloc] init];
     }
 
@@ -34,12 +32,21 @@
     return [_injections objectForKey:property];
 }
 
-- (id)_dummyGetter { return nil; }
-- (void)_setDummySetter:(id)value {}
-
-- (BOOL)shouldInjectProperty:(TyphoonAbstractInjectedProperty*)property withType:(TyphoonTypeDescriptor*)type lazyValue:(TyphoonPropertyInjectionLazyValue)lazyValue
+- (id)dependencyValueForProperty:(NSString *)property
 {
-    [_injections setObject:lazyValue forKey:property.name];
+    @synchronized (self) {
+        return ((TyphoonPropertyInjectionLazyValue) [self injectionValueForProperty:property])();
+    }
+}
+
+- (id)_dummyGetter
+{
+    return nil;
+}
+
+- (BOOL)shouldInjectProperty:(id <TyphoonPropertyInjection>)property withType:(TyphoonTypeDescriptor *)type lazyValue:(TyphoonPropertyInjectionLazyValue)lazyValue
+{
+    [_injections setObject:lazyValue forKey:property.propertyName];
     return NO;
 }
 

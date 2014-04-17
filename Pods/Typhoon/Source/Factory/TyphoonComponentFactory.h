@@ -17,6 +17,7 @@
 
 @class TyphoonDefinition;
 @class TyphoonCallStack;
+@class TyphoonRuntimeArguments;
 
 /**
 *
@@ -24,25 +25,25 @@
 *
 * This is the base class for all component factories. It defines methods for retrieving components from the factory, as well as a low-level
 * API for assembling components from their constituent parts. This low-level API could be used as-is, however its intended to use a higher
-* level abstraction such as TyphoonBlockComponentFactory or TyphoonXmlComponentFactory.
+* level abstraction such as TyphoonBlockComponentFactory.
 */
 @interface TyphoonComponentFactory : NSObject
 {
-    NSMutableArray* _registry;
-    id<TyphoonComponentsPool> _singletons;
-    id<TyphoonComponentsPool> _objectGraphSharedInstances;
-    id<TyphoonComponentsPool> _weakSingletons;
-    
-    TyphoonCallStack* _stack;
-    NSMutableArray* _factoryPostProcessors;
-    NSMutableArray* _componentPostProcessors;
+    NSMutableArray *_registry;
+    id <TyphoonComponentsPool> _singletons;
+    id <TyphoonComponentsPool> _objectGraphSharedInstances;
+    id <TyphoonComponentsPool> _weakSingletons;
+
+    TyphoonCallStack *_stack;
+    NSMutableArray *_factoryPostProcessors;
+    NSMutableArray *_componentPostProcessors;
     BOOL _isLoading;
 }
 
 /**
 * The instantiated singletons.
 */
-@property(nonatomic, strong, readonly) NSArray* singletons;
+@property(nonatomic, strong, readonly) NSArray *singletons;
 
 /**
 * Say if the factory has been loaded.
@@ -52,12 +53,12 @@
 /**
  * The attached factory post processors.
  */
-@property(nonatomic, strong, readonly) NSArray* factoryPostProcessors;
+@property(nonatomic, strong, readonly) NSArray *factoryPostProcessors;
 
 /**
  * The attached component post processors.
  */
-@property(nonatomic, strong, readonly) NSArray* componentPostProcessors;
+@property(nonatomic, strong, readonly) NSArray *componentPostProcessors;
 
 
 /**
@@ -86,8 +87,33 @@
 - (void)unload;
 
 /**
-* Sets a given instance of TyphoonComponentFactory, as the default factory so that it can be retrieved later with:
-* [TyphoonComponentFactory defaultFactory];
+* Returns the default component factory, if one has been set. @see [TyphoonComponentFactory makeDefault]. This allows resolving components
+* from the Typhoon another class after the container has been set up.
+*
+* This method is only integrating Typhoon into legacy environments - classes not managed by Typhoon, and its use elsewhere is discouraged
+* as it will create a hard-wired dependency on Typhoon, whenever the default factory is retrieved.
+*
+* A more desirable approach is to use TyphoonComponentFactoryAware or to inject the factory via an assembly. This simplifies unit testing.
+*
+* ## Alternative approach: inject the factory (in this case posing behind a TyphoonAssembly subclass):
+
+@code
+
+- (id)loyaltyManagementController
+{
+    return [TyphoonDefinition withClass:[LoyaltyManagementViewController class]
+        properties:^(TyphoonDefinition* definition)
+    {
+        definition.scope = TyphoonScopePrototype;
+        //Inject the TyphoonComponentFactory posing as an assembly
+        [definition injectProperty:@selector(assembly)];
+    }];
+}
+
+@endcode
+
+* @see [TyphoonComponentFactory makeDefault].
+* @see TyphoonComponentFactoryAware
 *
 */
 - (void)makeDefault;
@@ -95,7 +121,7 @@
 /**
 * Registers a component into the factory. Components can be declared in any order, the container will work out how to resolve them.
 */
-- (void)register:(TyphoonDefinition*)definition;
+- (void)registerDefinition:(TyphoonDefinition *)definition;
 
 /**
 * Returns an an instance of the component matching the supplied class or protocol. For example:
@@ -118,16 +144,18 @@
 *
 * @see componentForType
 */
-- (NSArray*)allComponentsForType:(id)classOrProtocol;
+- (NSArray *)allComponentsForType:(id)classOrProtocol;
 
 /**
-* Returns the component matching the given key. For XML-style, this is the key specified as the 'id' attribute. For the block-style, this
-* is the name of the method on the TyphoonAssembly interface, although, for block-style you'd typically use the assembly interface itself
+* Returns the component matching the given key. For the block-style, this is the name of the method on the
+* TyphoonAssembly interface, although, for block-style you'd typically use the assembly interface itself
 * for component resolution.
 */
-- (id)componentForKey:(NSString*)key;
+- (id)componentForKey:(NSString *)key;
 
-- (NSArray*)registry;
+- (id)componentForKey:(NSString *)key args:(TyphoonRuntimeArguments *)args;
+
+- (NSArray *)registry;
 
 /**
  Attach a TyphoonComponentFactoryPostProcessor to this component factory.
@@ -136,8 +164,13 @@
 - (void)attachPostProcessor:(id <TyphoonComponentFactoryPostProcessor>)postProcessor;
 
 /**
- * Injects the properties of an object
+ * Injects the properties and methods of an object
  */
-- (void)injectProperties:(id)instance;
+- (void)inject:(id)instance;
+
+/**
+ * Injects the properties and methods of an object, descripted in definition
+ */
+- (void)inject:(id)instance withDefinition:(SEL)selector;
 
 @end

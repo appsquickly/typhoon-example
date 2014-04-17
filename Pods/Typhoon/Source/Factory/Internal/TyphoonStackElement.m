@@ -13,60 +13,71 @@
 
 #import "TyphoonStackElement.h"
 
-
-@implementation TyphoonStackElement {
-    NSMutableSet *completeBlocks;
-}
-
-+ (instancetype)itemWithKey:(NSString*)key
+@implementation TyphoonStackElement
 {
-    return [[self alloc] initWithKey:key];
+    NSMutableSet *completeBlocks;
+    id _instance;
+}
+
++ (instancetype)elementWithKey:(NSString *)key args:(TyphoonRuntimeArguments *)args
+{
+    return [[self alloc] initWithKey:key args:args];
 }
 
 
-- (instancetype)initWithKey:(NSString*)key
+- (instancetype)initWithKey:(NSString *)key args:(TyphoonRuntimeArguments *)args
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _key = key;
+        _args = args;
         completeBlocks = [NSMutableSet new];
     }
     return self;
 }
 
-- (BOOL) isInitializingInstance
+- (BOOL)isInitializingInstance
 {
     return _instance == nil;
 }
 
-- (void) addInstanceCompleteBlock:(TyphoonInstanceCompleteBlock)completeBlock
+- (id)instance
 {
-    NSParameterAssert(completeBlock);
-    
     if ([self isInitializingInstance]) {
-        [completeBlocks addObject:completeBlock];
-    } else {
-        completeBlock(_instance);
+        [NSException raise:@"CircularInitializerDependence"
+            format:@"The object for key %@ is currently initializing, but was specified as init dependency in another object", self.key];
     }
-    
+    return _instance;
 }
 
-- (void) takeInstance:(id)instance
+- (void)addInstanceCompleteBlock:(TyphoonInstanceCompleteBlock)completeBlock
+{
+    NSParameterAssert(completeBlock);
+
+    if ([self isInitializingInstance]) {
+        [completeBlocks addObject:completeBlock];
+    }
+    else {
+        completeBlock(_instance);
+    }
+
+}
+
+- (void)takeInstance:(id)instance
 {
     _instance = instance;
-    
+
     for (TyphoonInstanceCompleteBlock completeBlock in completeBlocks) {
         completeBlock(instance);
     }
     [completeBlocks removeAllObjects];
 }
 
-- (NSString*)description
+- (NSString *)description
 {
-    NSMutableString* description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
+    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
     [description appendFormat:@"self.key=%@", self.key];
-    [description appendFormat:@", completeBlocksCount=%lu", (unsigned long)[completeBlocks count]];
+    [description appendFormat:@", completeBlocksCount=%lu", (unsigned long) [completeBlocks count]];
     [description appendString:@">"];
     return description;
 }

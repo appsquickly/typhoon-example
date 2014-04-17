@@ -21,8 +21,7 @@
 - (id)initWithIsMutable:(BOOL)isMutable
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _isMutable = isMutable;
     }
     return self;
@@ -33,24 +32,22 @@
 
 - (id)supportedType
 {
-    if (_isMutable)
-    {
-        return [NSMutableString class];
+    if (_isMutable) {
+        return @"NSMutableString";
     }
-    else
-    {
-        return [NSString class];
-    }    
+    else {
+        return @"NSString";
+    }
 }
 
-- (id)convert:(NSString*)stringValue
+- (id)convert:(NSString *)stringValue
 {
-    if (_isMutable)
-    {
+    stringValue = [TyphoonTypeConverterRegistry textWithoutTypeFromTextValue:stringValue];
+    
+    if (_isMutable) {
         return [NSMutableString stringWithString:stringValue];
     }
-    else
-    {
+    else {
         return [NSString stringWithString:stringValue];
     }
 }

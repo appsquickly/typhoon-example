@@ -16,7 +16,7 @@
 #import "PaperFoldView.h"
 
 @class PFProgressHUD;
-@class PFViewControllers;
+@class PFAssembly;
 
 
 typedef enum

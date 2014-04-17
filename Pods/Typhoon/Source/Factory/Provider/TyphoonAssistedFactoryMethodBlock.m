@@ -13,8 +13,7 @@
 - (instancetype)initWithFactoryMethod:(SEL)factoryMethod body:(id)bodyBlock
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _factoryMethod = factoryMethod;
         _bodyBlock = bodyBlock;
     }

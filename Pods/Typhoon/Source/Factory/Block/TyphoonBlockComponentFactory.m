@@ -12,25 +12,35 @@
 
 
 #import <objc/runtime.h>
-#import "TyphoonInitializer+InstanceBuilder.h"
+#import "TyphoonMethod+InstanceBuilder.h"
 #import "TyphoonBlockComponentFactory.h"
 #import "TyphoonAssembly.h"
 #import "TyphoonDefinition.h"
 #import "OCLogTemplate.h"
 #import "TyphoonAssembly+TyphoonAssemblyFriend.h"
+#import "TyphoonAssemblyPropertyInjectionPostProcessor.h"
+#import "TyphoonComponentFactory+TyphoonDefinitionRegisterer.h"
+#import "TyphoonIntrospectionUtils.h"
 
+@interface TyphoonComponentFactory (Private)
+
+- (TyphoonDefinition *)definitionForKey:(NSString *)key;
+
+- (void)loadIfNeeded;
+
+@end
 
 @implementation TyphoonBlockComponentFactory
 
 /* ====================================================================================================================================== */
 #pragma mark - Class Methods
 
-+ (id)factoryWithAssembly:(TyphoonAssembly*)assembly
++ (id)factoryWithAssembly:(TyphoonAssembly *)assembly
 {
     return [[self alloc] initWithAssemblies:@[assembly]];
 }
 
-+ (id)factoryWithAssemblies:(NSArray*)assemblies
++ (id)factoryWithAssemblies:(NSArray *)assemblies
 {
     return [[self alloc] initWithAssemblies:assemblies];
 }
@@ -38,25 +48,24 @@
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
 
-- (instancetype)initWithAssembly:(TyphoonAssembly*)assembly
+- (instancetype)initWithAssembly:(TyphoonAssembly *)assembly
 {
     return [self initWithAssemblies:@[assembly]];
 }
 
-- (instancetype)initWithAssemblies:(NSArray*)assemblies
+- (instancetype)initWithAssemblies:(NSArray *)assemblies
 {
     self = [super init];
-    if (self)
-    {
-        for (TyphoonAssembly* assembly in assemblies)
-        {
+    if (self) {
+        [self attachPostProcessor:[TyphoonAssemblyPropertyInjectionPostProcessor new]];
+        for (TyphoonAssembly *assembly in assemblies) {
             [self buildAssembly:assembly];
         }
     }
     return self;
 }
 
-- (void)buildAssembly:(TyphoonAssembly*)assembly
+- (void)buildAssembly:(TyphoonAssembly *)assembly
 {
     LogTrace(@"Building assembly: %@", NSStringFromClass([assembly class]));
     [self assertIsAssembly:assembly];
@@ -66,49 +75,53 @@
     [self registerAllDefinitions:assembly];
 }
 
-- (void)assertIsAssembly:(TyphoonAssembly*)assembly
+- (void)assertIsAssembly:(TyphoonAssembly *)assembly
 {
     if (![assembly isKindOfClass:[TyphoonAssembly class]]) //
     {
-        [NSException raise:NSInvalidArgumentException format:@"Class '%@' is not a sub-class of %@",
-                                                             NSStringFromClass([assembly class]),
+        [NSException raise:NSInvalidArgumentException format:@"Class '%@' is not a sub-class of %@", NSStringFromClass([assembly class]),
                                                              NSStringFromClass([TyphoonAssembly class])];
     }
 }
 
-- (void)registerAllDefinitions:(TyphoonAssembly*)assembly
+- (void)registerAllDefinitions:(TyphoonAssembly *)assembly
 {
-    NSArray* definitions = [assembly definitions];
-    for (TyphoonDefinition* definition in definitions)
-    {
-        [self register:definition];
+    NSArray *definitions = [assembly definitions];
+    for (TyphoonDefinition *definition in definitions) {
+        [self registerDefinition:definition];
     }
 }
-
 
 
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods
 
-- (void)forwardInvocation:(NSInvocation*)invocation
+- (void)forwardInvocation:(NSInvocation *)invocation
 {
-    NSString* componentKey = NSStringFromSelector([invocation selector]);
+    NSString *componentKey = NSStringFromSelector([invocation selector]);
     LogTrace(@"Component key: %@", componentKey);
 
-    [invocation setSelector:@selector(componentForKey:)];
-    [invocation setArgument:&componentKey atIndex:2];
-    [invocation invoke];
+    TyphoonRuntimeArguments *args = [TyphoonRuntimeArguments argumentsFromInvocation:invocation];
+
+    NSInvocation *internalInvocation =
+        [NSInvocation invocationWithMethodSignature:[self methodSignatureForSelector:@selector(componentForKey:args:)]];
+    [internalInvocation setSelector:@selector(componentForKey:args:)];
+    [internalInvocation setArgument:&componentKey atIndex:2];
+    [internalInvocation setArgument:&args atIndex:3];
+    [internalInvocation invokeWithTarget:self];
+
+    void *returnValue;
+    [internalInvocation getReturnValue:&returnValue];
+    [invocation setReturnValue:&returnValue];
 }
 
-- (NSMethodSignature*)methodSignatureForSelector:(SEL)aSelector
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-    if ([self respondsToSelector:aSelector])
-    {
+    if ([self respondsToSelector:aSelector]) {
         return [[self class] instanceMethodSignatureForSelector:aSelector];
     }
-    else
-    {
-        return [[self class] instanceMethodSignatureForSelector:@selector(componentForKey:)];
+    else {
+        return [TyphoonIntrospectionUtils methodSignatureWithArgumentsAndReturnValueAsObjectsFromSelector:aSelector];
     }
 }
 

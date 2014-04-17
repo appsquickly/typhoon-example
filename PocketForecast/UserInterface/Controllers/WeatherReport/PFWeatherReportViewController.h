@@ -15,18 +15,21 @@
 #import <Foundation/Foundation.h>
 #import "PFWeatherClient.h"
 #import "PFWeatherReportViewDelegate.h"
+#import "TyphoonComponentFactoryAware.h"
 
 @class PFWeatherReport;
 @protocol PFWeatherReportDao;
 @protocol PFCityDao;
 @class PFTheme;
+@class TyphoonComponentFactory;
 
 
-@interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate>
+@interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate, TyphoonComponentFactoryAware>
 {
 
     PFWeatherReport* _weatherReport;
     NSString* _cityName;
+    TyphoonComponentFactory* _factory;
 }
 
 #pragma mark - Spring injected via initializer

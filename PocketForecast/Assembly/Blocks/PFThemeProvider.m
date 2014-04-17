@@ -11,13 +11,11 @@
 
 #import "PFThemeProvider.h"
 #import "PFThemeFactory.h"
-#import "TyphoonDefinition.h"
-#import "TyphoonPropertyInjectedAsCollection.h"
 #import "PFTheme.h"
-#import "TyphoonInitializer.h"
+#import "UIColor+CKUITools.h"
 
 /**
-* This assembly illustrates the use of several concepts: factory-components, collections, and type-converters.
+* This assembly illustrates the use of factory-components & collections.
 */
 @implementation PFThemeProvider
 
@@ -26,11 +24,9 @@
 */
 - (id)currentTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] initialization:^(TyphoonInitializer* initializer)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
     {
-        initializer.selector = @selector(sequentialTheme);
-    } properties:^(TyphoonDefinition* definition)
-    {
+        [definition useInitializer:@selector(sequentialTheme)];
         definition.factory = [self themeFactory];
     }];
 }
@@ -41,62 +37,61 @@
 */
 - (id)themeFactory
 {
-    return [TyphoonDefinition withClass:[PFThemeFactory class] properties:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFThemeFactory class] configuration:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(themes) asCollection:^(TyphoonPropertyInjectedAsCollection* collection)
-        {
-            [collection addItemWithDefinition:[self cloudsOverTheCityTheme]];
-            [collection addItemWithDefinition:[self beachTheme]];
-            [collection addItemWithDefinition:[self lightsInTheRainTheme]];
-            [collection addItemWithDefinition:[self sunsetTheme]];
-        }];
+        [definition injectProperty:@selector(themes) with:@[
+            [self cloudsOverTheCityTheme],
+            [self beachTheme],
+            [self lightsInTheRainTheme],
+            [self sunsetTheme]
+        ]];
         definition.scope = TyphoonScopeSingleton;
     }];
 }
 
 - (id)cloudsOverTheCityTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
     {
-    	[definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"bg3.png"];
-        [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#641d23"];
-        [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#641d23"];
-        [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#7f9588"];
+        [definition injectProperty:@selector(backgroundResourceName) with:@"bg3.png"];
+        [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0x641d23]];
+        [definition injectProperty:@selector(forecastTintColor) with:[UIColor colorWithHexRGB:0x641d23]];
+        [definition injectProperty:@selector(controlTintColor) with:[UIColor colorWithHexRGB:0x7f9588]];
     }];
 }
 
 - (id)lightsInTheRainTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"bg4.png"];
-        [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#eaa53d"];
-        [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#722d49"];
-        [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#722d49"];
+        [definition injectProperty:@selector(backgroundResourceName) with:@"bg4.png"];
+        [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0xeaa53d]];
+        [definition injectProperty:@selector(forecastTintColor) with:[UIColor colorWithHexRGB:0x722d49]];
+        [definition injectProperty:@selector(controlTintColor) with:[UIColor colorWithHexRGB:0x722d49]];
     }];
 }
 
 
 - (id)beachTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"bg5.png"];
-        [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#37b1da"];
-        [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#37b1da"];
-        [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#0043a6"];
+        [definition injectProperty:@selector(backgroundResourceName) with:@"bg5.png"];
+        [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0x37b1da]];
+        [definition injectProperty:@selector(forecastTintColor) with:[UIColor colorWithHexRGB:0x37b1da]];
+        [definition injectProperty:@selector(controlTintColor) with:[UIColor colorWithHexRGB:0x0043a6]];
     }];
 }
 
 
 - (id)sunsetTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] properties:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(backgroundResourceName) withValueAsText:@"sunset.png"];
-        [definition injectProperty:@selector(navigationBarColor) withValueAsText:@"#0a1d3b"];
-        [definition injectProperty:@selector(forecastTintColor) withValueAsText:@"#0a1d3b"];
-        [definition injectProperty:@selector(controlTintColor) withValueAsText:@"#606970"];
+        [definition injectProperty:@selector(backgroundResourceName) with:@"sunset.png"];
+        [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0x0a1d3b]];
+        [definition injectProperty:@selector(forecastTintColor) with:[UIColor colorWithHexRGB:0x0a1d3b]];
+        [definition injectProperty:@selector(controlTintColor) with:[UIColor colorWithHexRGB:0x606970]];
     }];
 }
 

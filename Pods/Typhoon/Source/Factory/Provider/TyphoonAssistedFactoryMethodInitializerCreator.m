@@ -13,15 +13,8 @@
 #import "TyphoonAssistedFactoryMethodCreator+Private.h"
 
 #import "TyphoonAssistedFactoryBase+TyphoonFactoryMethodClosure.h"
-#import "TyphoonAssistedFactoryMethodClosure.h"
+#import "TyphoonAssistedFactoryMethodInitializerClosure.h"
 #import "TyphoonAssistedFactoryMethodInitializer.h"
-
-
-@interface TyphoonAssistedFactoryMethodInitializerCreator ()
-
-@property (nonatomic, strong) TyphoonAssistedFactoryMethodInitializer *factoryMethod;
-
-@end
 
 
 @implementation TyphoonAssistedFactoryMethodInitializerCreator
@@ -31,7 +24,8 @@
     struct objc_method_description methodDescription = [self methodDescriptionFor:self.factoryMethod.factoryMethod inProtocol:protocol];
     NSMethodSignature *methodSignature = [NSMethodSignature signatureWithObjCTypes:methodDescription.types];
 
-    TyphoonAssistedFactoryMethodClosure *closure = [[TyphoonAssistedFactoryMethodClosure alloc] initWithInitializer:self.factoryMethod methodSignature:methodSignature];
+    TyphoonAssistedFactoryMethodInitializerClosure *closure =
+        [[TyphoonAssistedFactoryMethodInitializerClosure alloc] initWithInitializer:self.factoryMethod methodSignature:methodSignature];
     [factoryClass _fmc_setClosure:closure forSelector:self.factoryMethod.factoryMethod];
 }
 

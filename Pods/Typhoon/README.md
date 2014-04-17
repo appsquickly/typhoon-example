@@ -1,5 +1,4 @@
 # Typhoon! (www.typhoonframework.org) 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/typhoon-framework/typhoon/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 
 A new dependency injection container for Objective-C. Light-weight, yet full-featured and super-easy to use. 
@@ -111,8 +110,7 @@ following:
 
 ## Design Goals / Features
 
-* Non-invasive. ***No macros or XML required***. . . while ***Spring-style XML*** or ***Guice-style macros*** are fully 
-supported (and sometimes useful), the main focus is on a <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-with-Blocks">powerful Objective-C runtime approach.</a>
+* Non-invasive. ***No macros or XML required*** . . . The main focus is on a <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-with-Blocks">powerful Objective-C runtime approach.</a>
 
 * Its not necessary to change ***any*** of your classes to use the framework. ***Can be introduced into legacy applications.***
 
@@ -151,7 +149,7 @@ ensure that the class is in the required state before and after properties are s
 
 And then:
 
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-with-Blocks">Assembling Components with Blocks (recommended) </a> ___or___ <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-in-XML">Assembling Components in XML</a>
+* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-with-Blocks">Assembling Components with Blocks</a>
 
 * <a href="https://github.com/typhoon-framework/Typhoon/wiki/Autowiring">Autowiring</a>
 
@@ -165,15 +163,16 @@ And then:
 ![Build Status](http://www.typhoonframework.org/docs/latest/build-status/build-status.png?q=zz)
 
 
-The following reports are published by our build server after each commit. (We use something a little more comprehensive than Travis - if you'd like the scripts, we'd be happy to share). Note that the status of the CI build is not related to tagged releases that are published and pushed to CocoaPods - these are stable. 
+The following reports are published by our build server after each commit. Note that the status of the CI build is not related to tagged releases that are published and pushed to CocoaPods - these are stable. 
 
 Test Failures typically indicate a bug that has been flagged, but not yet fixed. By policy we maintain more than 90% test coverage. 
 
 
-
 * <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API</a>
-* <a href="http://www.typhoonframework.org/docs/latest/test-results/">Test Results</a>
-* <a href="http://www.typhoonframework.org/docs/latest/coverage">Coverage Reports</a>
+* <a href="http://appsquick.dyndns.org:8085/artifact/TPN-TC/JOB1/build-latest/reports/test-results/index.html">Test Results</a>
+* <a href="http://appsquick.dyndns.org:8085/artifact/TPN-TC/JOB1/build-latest/reports/coverage/index.html">Coverage Reports</a>
+
+(These reports are hosted on a temporary server until we fully complete moving our build-system to Gradle)
 
 
 # Feature Requests and Contributions
@@ -192,7 +191,7 @@ Test Failures typically indicate a bug that has been flagged, but not yet fixed.
 | :---------- | :------ | 
 I'm not sure how to do [xyz]  | Typhoon users and contributors monitor the Typhoon tag on <a href="http://stackoverflow.com/questions/tagged/typhoon?sort=newest&pageSize=15">Stack Overflow</a>. Chances are your question can be answered there. 
 This looks like a bug | Please raise a <a href="https://github.com/typhoon-framework/Typhoon/issues">GitHub issue</a>
-I'll take all the help I can get | Professional consultation is available from key contributors. Please get in touch if you'd like this, and we'll connect you with the nearest available consultant 
+I'll take all the help I can get | While Typhoon is free, open-source and volunteer based, if you're interested in professional consultation/support we do maintain a list of experts and companies that can provide services. Get in touch with us, and we'll do our best to connect you. 
 
 
 
@@ -210,11 +209,10 @@ I'll take all the help I can get | Professional consultation is available from k
 * <a href="https://github.com/BrynCooke">Bryn Cooke</a> : Late injections & story board integration. 
 * <a href="http://www.linkedin.com/in/jeffreydroberts">Jeffrey Roberts</a>, Mobile Software Engineer at 
 <a href="http://www.riotgames.com/">Riot Games</a>, previous contributor to Swiz for ActionScript : Advice, feedback and testing. 
-* John Blanco of Rapture in Venice, LLC : contributed his 
-<a href="https://github.com/ZaBlanc/RaptureXML">lean and elegant XML library</a>. A great example that full-featured
-is not the same as heavy. 
 * <a href="http://www.jetbrains.com/">Jetbrains</a>, maker of very cool software development tools : Assistance with AppCode integration. 
 * <a href="http://es.linkedin.com/in/josegonzalezgomez/">José González Gómez</a>, Mobile and cloud developer at OPEN input : Feedback; testing, support for property placeholders in initializers. 
+* <a href="https://github.com/sergiou87">Sergio Padrino Recio</a> : Performance improvements.
+* <a href="https://github.com/jervine10">Josh Ervine</a> : Feedback and support for TyphoonFactoryProviders.
 * ___Your name here!!!!!!!___ 
 
 *(If you've sent a pull request and didn't get a mention. . . sorry! Please let us know and we'll correct it).*

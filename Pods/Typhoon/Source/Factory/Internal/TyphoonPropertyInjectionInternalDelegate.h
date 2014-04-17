@@ -10,8 +10,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "TyphoonPropertyInjectionDelegate.h"
+#import "TyphoonPropertyInjection.h"
 
-@class TyphoonAbstractInjectedProperty;
 @class TyphoonTypeDescriptor;
 
 typedef id (^TyphoonPropertyInjectionLazyValue)(void);
@@ -21,6 +21,7 @@ typedef id (^TyphoonPropertyInjectionLazyValue)(void);
 
 @optional
 
-- (BOOL)shouldInjectProperty:(TyphoonAbstractInjectedProperty*)property withType:(TyphoonTypeDescriptor*)type lazyValue:(TyphoonPropertyInjectionLazyValue)lazyValue;
+- (BOOL)shouldInjectProperty:(id <TyphoonPropertyInjection>)property withType:(TyphoonTypeDescriptor *)type
+    lazyValue:(TyphoonPropertyInjectionLazyValue)lazyValue;
 
 @end

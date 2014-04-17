@@ -1,18 +1,25 @@
+////////////////////////////////////////////////////////////////////////////////
 //
-//  NSObject+DeallocNotification.h
-//  A-Typhoon
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
+//  All Rights Reserved.
 //
-//  Created by Aleksey Garbarev on 29.01.14.
-//  Copyright (c) 2014 Jasper Blues. All rights reserved.
+//  NOTICE: The authors permit you to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
 //
+////////////////////////////////////////////////////////////////////////////////
 
 #import <Foundation/Foundation.h>
 
 
 @interface NSObject (DeallocNotification)
 
-- (void) setDeallocNotificationInBlock:(dispatch_block_t)block;
+- (void)setDeallocNotificationInBlock:(dispatch_block_t)block;
 
-- (void) removeDeallocNotification;
+- (void)removeDeallocNotification;
+
+- (void)setDeallocNotificationWithKey:(const char *)key andBlock:(dispatch_block_t)block;
+
+- (void)removeDeallocNotificationForKey:(const char *)key;
 
 @end

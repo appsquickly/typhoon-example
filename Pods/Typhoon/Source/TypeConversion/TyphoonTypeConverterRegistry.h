@@ -22,34 +22,42 @@
 */
 @interface TyphoonTypeConverterRegistry : NSObject
 {
-    TyphoonPrimitiveTypeConverter* _primitiveTypeConverter;
-    NSMutableDictionary* _typeConverters;
+    TyphoonPrimitiveTypeConverter *_primitiveTypeConverter;
+    NSMutableDictionary *_typeConverters;
 }
 
 /**
 * Returns the shard/default registry instance used by the container.
 */
-+ (TyphoonTypeConverterRegistry*)shared;
++ (TyphoonTypeConverterRegistry *)shared;
+
+
++ (NSString *)typeFromTextValue:(NSString *)textValue;
++ (NSString *)textWithoutTypeFromTextValue:(NSString *)textValue;
 
 /**
-* Returns the type converter for the given type either a Class object or @protocol(SomeType).
-*/
-- (id <TyphoonTypeConverter>)converterFor:(TyphoonTypeDescriptor*)typeDescriptor;
+ * Returns the type converter for the given type string. Usually type is class of object you want to convert.
+ * For example for NSURL type, you should use next syntax in properties file.
+ * @code
+ * key=NSURL(http://example.com)
+ * @endcode
+ */
+- (id <TyphoonTypeConverter>)converterForType:(NSString *)type;
 
 /**
 * Returns the type converter for primitives - BOOLS, ints, floats, etc.
 */
-- (TyphoonPrimitiveTypeConverter*)primitiveTypeConverter;
+- (TyphoonPrimitiveTypeConverter *)primitiveTypeConverter;
 
 /**
  * Adds a converter to the registry. Raises an exception if the a converter for the same type 
  * already exists.
  */
-- (void)register:(id <TyphoonTypeConverter>)converter;
+- (void)registerTypeConverter:(id <TyphoonTypeConverter>)converter;
 
 /**
  * Unregister a type converter.
  */
-- (void)unregister:(id <TyphoonTypeConverter>)converter;
+- (void)unregisterTypeConverter:(id <TyphoonTypeConverter>)converter;
 
 @end

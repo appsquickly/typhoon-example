@@ -44,12 +44,14 @@ void TyphoonAssistedFactoryCreatorForEachMethodInClass(Class klass, TyphoonAssis
 /**
  * Enumerates over all the methods in a protocol.
  */
-void TyphoonAssistedFactoryCreatorForEachMethodInProtocol(Protocol *protocol, TyphoonAssistedFactoryCreatorMethodEnumeration enumerationBlock);
+void TyphoonAssistedFactoryCreatorForEachMethodInProtocol
+    (Protocol *protocol, TyphoonAssistedFactoryCreatorMethodEnumeration enumerationBlock);
 
 /**
  * Enumerates over all the properties in a protocol.
  */
-void TyphoonAssistedFactoryCreatorForEachPropertyInProtocol(Protocol *protocol, TyphoonAssistedFactoryCreatorPropertyEnumeration enumerationBlock);
+void TyphoonAssistedFactoryCreatorForEachPropertyInProtocol
+    (Protocol *protocol, TyphoonAssistedFactoryCreatorPropertyEnumeration enumerationBlock);
 
 
 @interface TyphoonAssistedFactoryCreator ()
@@ -62,6 +64,7 @@ void TyphoonAssistedFactoryCreatorForEachPropertyInProtocol(Protocol *protocol, 
  * Creates a new factory creator for the given protocol and the given lazy
  * factory definition.
  */
-- (instancetype)initWithProtocol:(Protocol *)protocol factoryDefinitionProvider:(TyphoonAssistedFactoryDefinitionProvider)definitionProvider;
+- (instancetype)initWithProtocol:(Protocol *)protocol
+    factoryDefinitionProvider:(TyphoonAssistedFactoryDefinitionProvider)definitionProvider;
 
 @end

@@ -21,7 +21,7 @@
 typedef void(^TyphoonAssistedFactoryDefinitionBlock)(TyphoonAssistedFactoryDefinition *definition);
 
 /** Used to enumerate over factory method selectors and their associated body blocks */
-typedef void(^TyphoonAssistedFactoryMethodsEnumerationBlock)(id<TyphoonAssistedFactoryMethod> factoryMethod);
+typedef void(^TyphoonAssistedFactoryMethodsEnumerationBlock)(id <TyphoonAssistedFactoryMethod> factoryMethod);
 
 /** Used to configure a TyphoonAssistedFactoryMethod */
 typedef void(^TyphoonAssistedFactoryMethodInitializerBlock)(TyphoonAssistedFactoryMethodInitializer *initializer);
@@ -53,7 +53,7 @@ typedef void(^TyphoonAssistedFactoryMethodInitializerBlock)(TyphoonAssistedFacto
  * The number of factory methods defined for this assisted factory. Users should
  * not invoke this method directly.
  */
-@property (nonatomic, assign, readonly) NSUInteger countOfFactoryMethods;
+@property(nonatomic, assign, readonly) NSUInteger countOfFactoryMethods;
 
 /**
  * Configure this assisted factory definition inside the block provider as

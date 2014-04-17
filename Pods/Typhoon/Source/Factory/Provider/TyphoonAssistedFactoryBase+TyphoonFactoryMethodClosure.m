@@ -14,25 +14,24 @@
 #include <objc/runtime.h>
 
 #import "TyphoonAssistedFactoryMethodClosure.h"
+#import "TyphoonComponentFactory+InstanceBuilder.h"
 
 static const void *sFactoryMethodClosures = &sFactoryMethodClosures;
 
 @implementation TyphoonAssistedFactoryBase (TyphoonFactoryMethodClosure)
 
-+ (void)_fmc_setClosure:(TyphoonAssistedFactoryMethodClosure *)closure forSelector:(SEL)selector
++ (void)_fmc_setClosure:(id <TyphoonAssistedFactoryMethodClosure>)closure forSelector:(SEL)selector
 {
     NSMutableDictionary *closures = [self _fmc_closures];
-    @synchronized(closures)
-    {
+    @synchronized (closures) {
         closures[NSStringFromSelector(selector)] = closure;
     }
 }
 
-+ (TyphoonAssistedFactoryMethodClosure *)_fmc_closureForSelector:(SEL)selector
++ (id <TyphoonAssistedFactoryMethodClosure>)_fmc_closureForSelector:(SEL)selector
 {
     NSMutableDictionary *closures = [self _fmc_closures];
-    @synchronized(closures)
-    {
+    @synchronized (closures) {
         return closures[NSStringFromSelector(selector)];
     }
 }
@@ -40,14 +39,11 @@ static const void *sFactoryMethodClosures = &sFactoryMethodClosures;
 + (NSMutableDictionary *)_fmc_closures
 {
     NSMutableDictionary *closures = objc_getAssociatedObject(self, sFactoryMethodClosures);
-    if (!closures)
-    {
-        @synchronized(self)
-        {
+    if (!closures) {
+        @synchronized (self) {
             closures = objc_getAssociatedObject(self, sFactoryMethodClosures);
             // yes, I know, double-checked locking
-            if (!closures)
-            {
+            if (!closures) {
                 closures = [NSMutableDictionary dictionary];
                 objc_setAssociatedObject(self, sFactoryMethodClosures, closures, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
@@ -62,9 +58,8 @@ static const void *sFactoryMethodClosures = &sFactoryMethodClosures;
     // Return the method signature of the real object, or find the method
     // signature from the corresponding factory method closure.
     NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
-    if (!signature)
-    {
-        TyphoonAssistedFactoryMethodClosure *closure = [[self class] _fmc_closureForSelector:aSelector];
+    if (!signature) {
+        id <TyphoonAssistedFactoryMethodClosure> closure = [[self class] _fmc_closureForSelector:aSelector];
         signature = closure.methodSignature;
     }
 
@@ -75,7 +70,7 @@ static const void *sFactoryMethodClosures = &sFactoryMethodClosures;
 {
     // Find the factory method closure related to this invocation selector, and
     // create a new invocation from it, using the arguments of this invocation.
-    TyphoonAssistedFactoryMethodClosure *closure = [[self class] _fmc_closureForSelector:anInvocation.selector];
+    id <TyphoonAssistedFactoryMethodClosure> closure = [[self class] _fmc_closureForSelector:anInvocation.selector];
     NSInvocation *closureInvocation = [closure invocationWithFactory:self forwardedInvocation:anInvocation];
     [closureInvocation invoke];
 
@@ -83,7 +78,11 @@ static const void *sFactoryMethodClosures = &sFactoryMethodClosures;
     NSUInteger methodReturnLength = [closure.methodSignature methodReturnLength];
     void *returnValue = malloc(methodReturnLength);
     [closureInvocation getReturnValue:returnValue];
+
+    [self.componentFactory injectAssemblyOnInstanceIfTyphoonAware:*(__unsafe_unretained id *) returnValue];
+
     [anInvocation setReturnValue:returnValue];
+    [anInvocation retainArguments];
     free(returnValue);
 }
 

@@ -21,6 +21,7 @@
 #import "PFRootViewController.h"
 #import "PFProgressHUD.h"
 #import "PFTheme.h"
+#import "TyphoonComponentFactory.h"
 
 
 @implementation PFWeatherReportViewController
@@ -48,6 +49,14 @@
 //    Typhoon_LogDealloc();
 }
 
+#pragma mark - <TyphoonComponentFactoryAware>
+
+- (void)setFactory:(id)theFactory
+{
+    _factory = theFactory;
+}
+
+
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods
 
@@ -67,7 +76,7 @@
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
-    _cityName = [_cityDao getCurrentlySelectedCity];
+    _cityName = [_cityDao loadSelectedCity];
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
     {
@@ -130,7 +139,7 @@
 
 - (void)presentMenu
 {
-    PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    PFRootViewController* controller = [_factory componentForType:[PFRootViewController class]];
     [controller toggleSideViewController];
 }
 

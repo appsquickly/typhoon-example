@@ -18,8 +18,7 @@
 - (instancetype)initWithParameterIndex:(NSUInteger)parameterIndex argumentIndex:(NSUInteger)argumentIndex
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _parameterIndex = parameterIndex;
         _argumentIndex = argumentIndex;
     }

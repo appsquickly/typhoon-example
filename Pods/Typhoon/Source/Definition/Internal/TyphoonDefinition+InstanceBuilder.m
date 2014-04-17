@@ -14,11 +14,13 @@
 TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
 
 #import "TyphoonDefinition+InstanceBuilder.h"
-#import "TyphoonPropertyInjectedWithStringRepresentation.h"
-#import "TyphoonPropertyInjectedByType.h"
-#import "TyphoonPropertyInjectedByReference.h"
-#import "TyphoonInitializer+InstanceBuilder.h"
-#import "TyphoonAbstractInjectedProperty.h"
+#import "TyphoonMethod+InstanceBuilder.h"
+
+#import "TyphoonInjectionByType.h"
+#import "TyphoonInjectionByObjectFromString.h"
+#import "TyphoonInjectionByObjectInstance.h"
+#import "TyphoonInjectionByReference.h"
+#import "TyphoonInjectionByRuntimeArgument.h"
 
 @implementation TyphoonDefinition (InstanceBuilder)
 
@@ -32,61 +34,94 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
     _type = type;
 }
 
-
-- (NSString*)factoryReference
+- (NSSet *)componentsInjectedByValue;
 {
-    return _factoryReference;
-}
-
-- (void)setFactoryReference:(NSString*)factoryReference;
-{
-    _factoryReference = factoryReference;
-}
-
-- (NSSet*)componentsInjectedByValue;
-{
-    NSMutableSet* set = [[NSMutableSet alloc] init];
+    NSMutableSet *set = [[NSMutableSet alloc] init];
     [set unionSet:[self propertiesInjectedByValue]];
 
-    NSArray* a = [self.initializer parametersInjectedByValue];
+    NSArray *a = [self.initializer parametersInjectedByValue];
     [set unionSet:[NSSet setWithArray:a]];
     return set;
 }
 
-
-- (void)injectProperty:(SEL)selector withReference:(NSString*)reference
+- (NSSet *)propertiesInjectedByValue
 {
-    [_injectedProperties addObject:[[TyphoonPropertyInjectedByReference alloc]
-        initWithName:NSStringFromSelector(selector) reference:reference]];
+    return [self injectedPropertiesWithKind:[TyphoonInjectionByObjectFromString class]];
 }
 
-- (NSSet*)propertiesInjectedByValue
+- (NSSet *)propertiesInjectedByType
 {
-    return [self injectedPropertiesWithKind:[TyphoonPropertyInjectedWithStringRepresentation class]];
+    return [self injectedPropertiesWithKind:[TyphoonInjectionByType class]];
 }
 
-- (NSSet*)propertiesInjectedByType
+- (NSSet *)propertiesInjectedByObjectInstance
 {
-    return [self injectedPropertiesWithKind:[TyphoonPropertyInjectedByType class]];
+    return [self injectedPropertiesWithKind:[TyphoonInjectionByObjectInstance class]];
 }
 
-- (NSSet*)propertiesInjectedByReference
+- (NSSet *)propertiesInjectedByReference
 {
-    return [self injectedPropertiesWithKind:[TyphoonPropertyInjectedByReference class]];
+    return [self injectedPropertiesWithKind:[TyphoonInjectionByReference class]];
 }
 
-- (void)addInjectedProperty:(TyphoonAbstractInjectedProperty*)property
+- (NSSet *)propertiesInjectedByRuntimeArgument
+{
+    return [self injectedPropertiesWithKind:[TyphoonInjectionByRuntimeArgument class]];
+}
+
+- (void)addInjectedProperty:(id <TyphoonPropertyInjection>)property
 {
     [_injectedProperties addObject:property];
 }
 
+- (void)removeInjectedProperty:(id <TyphoonPropertyInjection>)property
+{
+    [_injectedProperties removeObject:property];
+}
+
+- (NSSet *)injectedProperties
+{
+    NSMutableSet *parentProperties = [self.parent injectedProperties] ? [[self.parent injectedProperties] mutableCopy] : [NSMutableSet set];
+    
+    NSMutableArray *overriddenProperties = [NSMutableArray array];
+    [parentProperties enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        if ([_injectedProperties containsObject:obj]) {
+            [overriddenProperties addObject:obj];
+        }
+    }];
+    
+    for (id <TyphoonPropertyInjection> overriddenProperty in overriddenProperties) {
+        [parentProperties removeObject:overriddenProperty];
+    }
+    
+    return [[parentProperties setByAddingObjectsFromSet:_injectedProperties] copy];
+}
+
+- (NSSet *)injectedMethods
+{
+    NSMutableSet *parentMethods = [self.parent injectedMethods] ? [[self.parent injectedMethods] mutableCopy] : [NSMutableSet set];
+    
+    NSMutableArray *overriddenMethods = [NSMutableArray array];
+    [parentMethods enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        if ([_injectedMethods containsObject:obj]) {
+            [overriddenMethods addObject:obj];
+        }
+    }];
+    
+    for (TyphoonMethod *overriddenMethod in overriddenMethods) {
+        [parentMethods removeObject:overriddenMethod];
+    }
+    
+    return [[parentMethods setByAddingObjectsFromSet:_injectedMethods] copy];
+}
+
+
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods
 
-- (NSSet*)injectedPropertiesWithKind:(Class)clazz
+- (NSSet *)injectedPropertiesWithKind:(Class)clazz
 {
-    NSPredicate* predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary* bindings)
-    {
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:clazz];
     }];
     return [_injectedProperties filteredSetUsingPredicate:predicate];

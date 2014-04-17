@@ -21,6 +21,7 @@
 #import "PFTheme.h"
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
+#import "PFAssembly.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;
@@ -83,7 +84,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     [super viewWillAppear:animated];
     [self refreshCitiesList];
 
-    NSString* cityName = [_cityDao getCurrentlySelectedCity];
+    NSString* cityName = [_cityDao loadSelectedCity];
     if (cityName)
     {
         NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[_cities indexOfObject:cityName] inSection:0];
@@ -136,7 +137,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     NSString* cityName = [_cities objectAtIndex:indexPath.row];
     [_cityDao saveCurrentlySelectedCity:cityName];
 
-    PFRootViewController* controller = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    PFRootViewController* controller = [_assembly rootViewController];
     [controller dismissCitiesListController];
 
 }
@@ -164,7 +165,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 - (void)addCity
 {
-    PFRootViewController* rootViewController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
+    PFRootViewController* rootViewController = [_assembly rootViewController];
     [rootViewController showAddCitiesController];
 }
 

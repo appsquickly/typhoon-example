@@ -16,42 +16,44 @@
 #import "TyphoonDefinition.h"
 #import "TyphoonComponentFactory.h"
 #import "TyphoonAssemblySelectorAdviser.h"
-#import "OCLogTemplate.h"
 #import "TyphoonAssembly+TyphoonAssemblyFriend.h"
 #import "TyphoonAssemblyAdviser.h"
 #import "TyphoonAssemblyDefinitionBuilder.h"
 #import "TyphoonCollaboratingAssemblyPropertyEnumerator.h"
 #import "TyphoonCollaboratingAssemblyProxy.h"
+#import "TyphoonRuntimeArguments.h"
+#import "TyphoonObjectWithCustomInjection.h"
+#import "TyphoonInjectionByComponentFactory.h"
 
-static NSMutableArray* reservedSelectorsAsStrings;
+static NSMutableArray *reservedSelectorsAsStrings;
 
-@interface TyphoonAssembly()
+@interface TyphoonAssembly () <TyphoonObjectWithCustomInjection>
 
-@property (readwrite) NSSet *definitionSelectors;
+@property(readwrite) NSSet *definitionSelectors;
 
-@property (readonly) TyphoonAssemblyAdviser* adviser;
+@property(readonly) TyphoonAssemblyAdviser *adviser;
 
 @end
 
 @implementation TyphoonAssembly
 {
-    TyphoonAssemblyDefinitionBuilder* _definitionBuilder;
+    TyphoonAssemblyDefinitionBuilder *_definitionBuilder;
 }
 
 
 /* ====================================================================================================================================== */
 #pragma mark - Class Methods
 
-+ (TyphoonAssembly*)assembly
++ (TyphoonAssembly *)assembly
 {
-    TyphoonAssembly* assembly = [[self alloc] init];
+    TyphoonAssembly *assembly = [[self alloc] init];
     [assembly resolveCollaboratingAssemblies];
     return assembly;
 }
 
 + (instancetype)defaultAssembly
 {
-    return (TyphoonAssembly*)[TyphoonComponentFactory defaultFactory];
+    return (TyphoonAssembly *) [TyphoonComponentFactory defaultFactory];
 }
 
 + (void)load
@@ -76,7 +78,7 @@ static NSMutableArray* reservedSelectorsAsStrings;
     [self markSelectorReservedFromString:NSStringFromSelector(selector)];
 }
 
-+ (void)markSelectorReservedFromString:(NSString*)stringFromSelector
++ (void)markSelectorReservedFromString:(NSString *)stringFromSelector
 {
     [reservedSelectorsAsStrings addObject:stringFromSelector];
 }
@@ -86,8 +88,7 @@ static NSMutableArray* reservedSelectorsAsStrings;
 // handle definition method calls, mapping [self definitionA] to [self->_definitionBuilder builtDefinitionForKey:@"definitionA"]
 + (BOOL)resolveInstanceMethod:(SEL)sel
 {
-    if ([self shouldProvideDynamicImplementationFor:sel])
-    {
+    if ([self shouldProvideDynamicImplementationFor:sel]) {
         [self provideDynamicImplementationToConstructDefinitionForSEL:sel];
         return YES;
     }
@@ -112,31 +113,31 @@ static NSMutableArray* reservedSelectorsAsStrings;
 
 + (BOOL)selectorIsReserved:(SEL)selector
 {
-    NSString* selectorString = NSStringFromSelector(selector);
+    NSString *selectorString = NSStringFromSelector(selector);
     return [reservedSelectorsAsStrings containsObject:selectorString];
 }
 
 + (BOOL)selectorIsPropertySetter:(SEL)selector
 {
-    NSString* selectorString = NSStringFromSelector(selector);
+    NSString *selectorString = NSStringFromSelector(selector);
     return [selectorString hasPrefix:@"set"] && [selectorString hasSuffix:@":"];
 }
 
 + (void)provideDynamicImplementationToConstructDefinitionForSEL:(SEL)sel;
 {
-    IMP imp = [self implementationToConstructDefinitionForSEL:sel];
+    IMP imp = &ImplementationToConstructDefinitionAndCatchArguments;
     class_addMethod(self, sel, imp, "@");
 }
 
-+ (IMP)implementationToConstructDefinitionForSEL:(SEL)selWithAdvicePrefix
-{
-    return imp_implementationWithBlock((__bridge id)objc_unretainedPointer((TyphoonDefinition*)^(TyphoonAssembly* me)
-    {
-        NSString* key = [TyphoonAssemblySelectorAdviser keyForAdvisedSEL:selWithAdvicePrefix];
-        return [me->_definitionBuilder builtDefinitionForKey:key];
-    }));
-}
+static id ImplementationToConstructDefinitionAndCatchArguments(TyphoonAssembly *me, SEL selector, ...) {
+    va_list list;
+    va_start(list, selector);
+    TyphoonRuntimeArguments *args = [TyphoonRuntimeArguments argumentsFromVAList:list selector:selector];
+    va_end(list);
 
+    NSString *key = [TyphoonAssemblySelectorAdviser keyForAdvisedSEL:selector];
+    return [me->_definitionBuilder builtDefinitionForKey:key args:args];
+}
 
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
@@ -144,8 +145,7 @@ static NSMutableArray* reservedSelectorsAsStrings;
 - (id)init
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _definitionBuilder = [[TyphoonAssemblyDefinitionBuilder alloc] initWithAssembly:self];
         _adviser = [[TyphoonAssemblyAdviser alloc] initWithAssembly:self];
     }
@@ -158,36 +158,43 @@ static NSMutableArray* reservedSelectorsAsStrings;
 }
 
 /* ====================================================================================================================================== */
+#pragma mark - <TyphoonObjectWithCustomInjection>
+
+- (id <TyphoonPropertyInjection, TyphoonParameterInjection>)typhoonCustomObjectInjection
+{
+    return [[TyphoonInjectionByComponentFactory alloc] init];
+}
+
+/* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
 - (void)resolveCollaboratingAssemblies
 {
-    TyphoonCollaboratingAssemblyPropertyEnumerator* enumerator = [[TyphoonCollaboratingAssemblyPropertyEnumerator alloc]
-            initWithAssembly:self];
+    TyphoonCollaboratingAssemblyPropertyEnumerator
+        *enumerator = [[TyphoonCollaboratingAssemblyPropertyEnumerator alloc] initWithAssembly:self];
 
     for (NSString *propertyName in enumerator.collaboratingAssemblyProperties) {
         [self setCollaboratingAssemblyProxyOnPropertyNamed:propertyName];
     }
 }
 
-- (void)setCollaboratingAssemblyProxyOnPropertyNamed:(NSString*)name
+- (void)setCollaboratingAssemblyProxyOnPropertyNamed:(NSString *)name
 {
     [self setValue:[TyphoonCollaboratingAssemblyProxy proxy] forKey:name];
 }
 
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods
-- (NSArray*)definitions
+
+- (NSArray *)definitions
 {
     return [_definitionBuilder builtDefinitions];
 }
 
-- (TyphoonDefinition*)definitionForKey:(NSString*)key
+- (TyphoonDefinition *)definitionForKey:(NSString *)key
 {
-    for (TyphoonDefinition* definition in [self definitions])
-    {
-        if ([definition.key isEqualToString:key])
-        {
+    for (TyphoonDefinition *definition in [self definitions]) {
+        if ([definition.key isEqualToString:key]) {
             return definition;
         }
     }
@@ -196,10 +203,9 @@ static NSMutableArray* reservedSelectorsAsStrings;
 
 - (void)prepareForUse
 {
-
-
     self.definitionSelectors = [self.adviser enumerateDefinitionSelectors];
     [self.adviser adviseAssembly];
 }
+
 
 @end

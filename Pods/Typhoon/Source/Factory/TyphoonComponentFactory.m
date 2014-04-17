@@ -20,20 +20,21 @@
 #import "TyphoonOrdered.h"
 #import "TyphoonCallStack.h"
 #import "TyphoonParentReferenceHydratingPostProcessor.h"
+#import "TyphoonFactoryPropertyInjectionPostProcessor.h"
 #import "TyphoonComponentPostProcessor.h"
 #import "TyphoonWeakComponentsPool.h"
 
-typedef id(^TyphoonInstanceBuildBlock)(TyphoonDefinition* definition);
+typedef id(^TyphoonInstanceBuildBlock)(TyphoonDefinition *definition);
 
 @interface TyphoonDefinition (TyphoonComponentFactory)
 
-@property(nonatomic, strong) NSString* key;
+@property(nonatomic, strong) NSString *key;
 
 @end
 
 @implementation TyphoonComponentFactory
 
-static TyphoonComponentFactory* defaultFactory;
+static TyphoonComponentFactory *defaultFactory;
 
 
 /* ====================================================================================================================================== */
@@ -50,16 +51,16 @@ static TyphoonComponentFactory* defaultFactory;
 - (id)init
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _registry = [[NSMutableArray alloc] init];
-        _singletons = (id <TyphoonComponentsPool>)[[NSMutableDictionary alloc] init];
+        _singletons = (id <TyphoonComponentsPool>) [[NSMutableDictionary alloc] init];
         _weakSingletons = [TyphoonWeakComponentsPool new];
-        _objectGraphSharedInstances = (id <TyphoonComponentsPool>)[[NSMutableDictionary alloc] init];
+        _objectGraphSharedInstances = (id <TyphoonComponentsPool>) [[NSMutableDictionary alloc] init];
         _stack = [TyphoonCallStack stack];
         _factoryPostProcessors = [[NSMutableArray alloc] init];
         _componentPostProcessors = [[NSMutableArray alloc] init];
         [self attachPostProcessor:[[TyphoonParentReferenceHydratingPostProcessor alloc] init]];
+        [self attachPostProcessor:[[TyphoonFactoryPropertyInjectionPostProcessor alloc] init]];
 
     }
     return self;
@@ -69,17 +70,15 @@ static TyphoonComponentFactory* defaultFactory;
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
-- (NSArray*)singletons
+- (NSArray *)singletons
 {
     return [[_singletons allValues] copy];
 }
 
 - (void)load
 {
-    @synchronized (self)
-    {
-        if (!_isLoading && ![self isLoaded])
-        {
+    @synchronized (self) {
+        if (!_isLoading && ![self isLoaded]) {
             // ensure that the method won't be call recursively.
             _isLoading = YES;
 
@@ -93,31 +92,27 @@ static TyphoonComponentFactory* defaultFactory;
 
 - (void)unload
 {
-    @synchronized (self)
-    {
-        if ([self isLoaded])
-        {
+    @synchronized (self) {
+        if ([self isLoaded]) {
             [_singletons removeAllObjects];
             [self setLoaded:NO];
         }
     }
 }
 
-- (void)register:(TyphoonDefinition*)definition
+- (void)registerDefinition:(TyphoonDefinition *)definition
 {
-    TyphoonDefinitionRegisterer* registerer = [[TyphoonDefinitionRegisterer alloc] initWithDefinition:definition componentFactory:self];
-    [registerer register];
+    TyphoonDefinitionRegisterer *registerer = [[TyphoonDefinitionRegisterer alloc] initWithDefinition:definition componentFactory:self];
+    [registerer doRegistration];
 
-    if ([self isLoaded])
-    {
+    if ([self isLoaded]) {
         [self _load];
     }
 }
 
 - (id)objectForKeyedSubscript:(id)key
 {
-    if ([key isKindOfClass:[NSString class]])
-    {
+    if ([key isKindOfClass:[NSString class]]) {
         return [self componentForKey:key];
     }
     return [self componentForType:key];
@@ -125,46 +120,45 @@ static TyphoonComponentFactory* defaultFactory;
 
 - (id)componentForType:(id)classOrProtocol
 {
-    if (![self isLoaded])
-    {[self load];}
-    return [self objectForDefinition:[self definitionForType:classOrProtocol]];
+    if (![self isLoaded]) {[self load];}
+    return [self objectForDefinition:[self definitionForType:classOrProtocol] args:nil];
 }
 
-- (NSArray*)allComponentsForType:(id)classOrProtocol
+- (NSArray *)allComponentsForType:(id)classOrProtocol
 {
-    if (![self isLoaded])
-    {[self load];}
-    NSMutableArray* results = [[NSMutableArray alloc] init];
-    NSArray* definitions = [self allDefinitionsForType:classOrProtocol];
-    for (TyphoonDefinition* definition in definitions)
-    {
-        [results addObject:[self objectForDefinition:definition]];
+    if (![self isLoaded]) {[self load];}
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    NSArray *definitions = [self allDefinitionsForType:classOrProtocol];
+    for (TyphoonDefinition *definition in definitions) {
+        [results addObject:[self objectForDefinition:definition args:nil]];
     }
     return [results copy];
 }
 
-- (id)componentForKey:(NSString*)key
+- (id)componentForKey:(NSString *)key
 {
-    if (!key)
-    {
+    return [self componentForKey:key args:nil];
+}
+
+- (id)componentForKey:(NSString *)key args:(TyphoonRuntimeArguments *)args
+{
+    if (!key) {
         return nil;
     }
 
     [self loadIfNeeded];
 
-    TyphoonDefinition* definition = [self definitionForKey:key];
-    if (!definition)
-    {
+    TyphoonDefinition *definition = [self definitionForKey:key];
+    if (!definition) {
         [NSException raise:NSInvalidArgumentException format:@"No component matching id '%@'.", key];
     }
 
-    return [self objectForDefinition:definition];
+    return [self objectForDefinition:definition args:args];
 }
 
 - (void)loadIfNeeded
 {
-    if ([self notLoaded])
-    {
+    if ([self notLoaded]) {
         [self load];
     }
 }
@@ -176,14 +170,17 @@ static TyphoonComponentFactory* defaultFactory;
 
 - (void)makeDefault
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
+    @synchronized (self)
     {
+        if (defaultFactory)
+        {
+            NSLog(@"*** Warning *** overriding current default factory.");
+        }
         defaultFactory = self;
-    });
+    }
 }
 
-- (NSArray*)registry
+- (NSArray *)registry
 {
     [self loadIfNeeded];
 
@@ -194,21 +191,36 @@ static TyphoonComponentFactory* defaultFactory;
 {
     LogTrace(@"Attaching post processor: %@", postProcessor);
     [_factoryPostProcessors addObject:postProcessor];
-    if ([self isLoaded])
-    {
+    if ([self isLoaded]) {
         LogDebug(@"Definitions registered, refreshing all singletons.");
         [self unload];
     }
 }
 
-- (void)injectProperties:(id)instance
+- (void)inject:(id)instance
 {
-    Class class = [instance class];
-    for (TyphoonDefinition* definition in _registry)
-    {
-        if (definition.type == class)
-        {
-            [self injectPropertyDependenciesOn:instance withDefinition:definition];
+    @synchronized(self) {
+        if (![self isLoaded]) {[self load];}
+        Class class = [instance class];
+        for (TyphoonDefinition *definition in _registry) {
+            if (definition.type == class) {
+                [self doInjectionEventsOn:instance withDefinition:definition args:nil];
+            }
+        }
+    }
+}
+
+- (void)inject:(id)instance withDefinition:(SEL)selector
+{
+    @synchronized(self) {
+        if (![self isLoaded]) {[self load];}
+        TyphoonDefinition *definition = [self definitionForKey:NSStringFromSelector(selector)];
+        if (definition) {
+            [self doInjectionEventsOn:instance withDefinition:definition args:nil];
+        }
+        else {
+            [NSException raise:NSInvalidArgumentException format:@"Can't find definition for specified selector %@",
+             NSStringFromSelector(selector)];
         }
     }
 }
@@ -216,9 +228,9 @@ static TyphoonComponentFactory* defaultFactory;
 /* ====================================================================================================================================== */
 #pragma mark - Utility Methods
 
-- (NSString*)description
+- (NSString *)description
 {
-    NSMutableString* description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
+    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
     [description appendFormat:@"_registry=%@", _registry];
     [description appendString:@">"];
     return description;
@@ -235,18 +247,15 @@ static TyphoonComponentFactory* defaultFactory;
     [self instantiateEagerSingletons];
 }
 
-- (NSArray*)orderedArray:(NSMutableArray*)array
+- (NSArray *)orderedArray:(NSMutableArray *)array
 {
-    return [array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
-    {
+    return [array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSInteger firstObjectOrder = TyphoonOrderLowestPriority;
         NSInteger secondObjectOrder = TyphoonOrderLowestPriority;
-        if ([obj1 conformsToProtocol:@protocol(TyphoonOrdered)])
-        {
+        if ([obj1 conformsToProtocol:@protocol(TyphoonOrdered)]) {
             firstObjectOrder = [obj1 order];
         }
-        if ([obj2 conformsToProtocol:@protocol(TyphoonOrdered)])
-        {
+        if ([obj2 conformsToProtocol:@protocol(TyphoonOrdered)]) {
             secondObjectOrder = [obj2 order];
         }
         return [@(firstObjectOrder) compare:@(secondObjectOrder)];
@@ -262,34 +271,39 @@ static TyphoonComponentFactory* defaultFactory;
 
 - (void)applyPostProcessors
 {
-    [_factoryPostProcessors enumerateObjectsUsingBlock:^(id <TyphoonComponentFactoryPostProcessor> postProcessor, NSUInteger idx, BOOL* stop)
-    {
+    [_factoryPostProcessors enumerateObjectsUsingBlock:^(id <TyphoonComponentFactoryPostProcessor> postProcessor, NSUInteger idx, BOOL *stop) {
         [postProcessor postProcessComponentFactory:self];
     }];
 }
 
 - (void)instantiateEagerSingletons
 {
-    [_registry enumerateObjectsUsingBlock:^(id definition, NSUInteger idx, BOOL* stop)
-    {
-        if (([definition scope] == TyphoonScopeSingleton) && ![definition isLazy])
-        {
-            [self sharedInstanceForDefinition:definition fromPool:_singletons];
+    [_registry enumerateObjectsUsingBlock:^(id definition, NSUInteger idx, BOOL *stop) {
+        if (([definition scope] == TyphoonScopeSingleton) && ![definition isLazy]) {
+            [self sharedInstanceForDefinition:definition args:nil fromPool:_singletons];
         }
     }];
 }
 
-- (id)sharedInstanceForDefinition:(TyphoonDefinition*)definition fromPool:(id <TyphoonComponentsPool>)pool
+- (id)sharedInstanceForDefinition:(TyphoonDefinition *)definition args:(TyphoonRuntimeArguments *)args fromPool:(id <TyphoonComponentsPool>)pool
 {
-    @synchronized (self)
-    {
-        id instance = [pool objectForKey:definition.key];
-        if (instance == nil)
-        {
-            instance = [self buildSharedInstanceForDefinition:definition];
-            [pool setObject:instance forKey:definition.key];
+    @synchronized (self) {
+        NSString *poolKey = [self poolKeyForDefinition:definition args:args];
+        id instance = [pool objectForKey:poolKey];
+        if (instance == nil) {
+            instance = [self buildSharedInstanceForDefinition:definition args:args];
+            [pool setObject:instance forKey:poolKey];
         }
         return instance;
+    }
+}
+
+- (NSString *)poolKeyForDefinition:(TyphoonDefinition *)definition args:(TyphoonRuntimeArguments *)args
+{
+    if (args) {
+        return [NSString stringWithFormat:@"%@-%x", definition.key, [args hash]];
+    } else {
+        return definition.key;
     }
 }
 
@@ -298,52 +312,50 @@ static TyphoonComponentFactory* defaultFactory;
 
 @implementation TyphoonComponentFactory (TyphoonDefinitionRegisterer)
 
-- (TyphoonDefinition*)definitionForKey:(NSString*)key
+- (TyphoonDefinition *)definitionForKey:(NSString *)key
 {
-    for (TyphoonDefinition* definition in _registry)
-    {
-        if ([definition.key isEqualToString:key])
-        {
+    for (TyphoonDefinition *definition in _registry) {
+        if ([definition.key isEqualToString:key]) {
             return definition;
         }
     }
     return nil;
 }
 
-- (id)objectForDefinition:(TyphoonDefinition*)definition
+- (id)objectForDefinition:(TyphoonDefinition *)definition args:(TyphoonRuntimeArguments *)args
 {
-    if (definition.abstract)
-    {
+    if (definition.abstract) {
         [NSException raise:NSInvalidArgumentException format:@"Attempt to instantiate abstract definition: %@", definition];
     }
-
-    id instance = nil;
-    switch (definition.scope)
-    {
-        case TyphoonScopeSingleton:
-            instance = [self sharedInstanceForDefinition:definition fromPool:_singletons];
-            break;
-        case TyphoonScopeWeakSingleton:
-            instance = [self sharedInstanceForDefinition:definition fromPool:_weakSingletons];
-            break;
-        case TyphoonScopeObjectGraph:
-            instance = [self sharedInstanceForDefinition:definition fromPool:_objectGraphSharedInstances];
-            break;
-        default:
-        case TyphoonScopePrototype:
-            instance = [self buildInstanceWithDefinition:definition];
-            break;
+    
+    @synchronized(self) {
+        
+        id instance = nil;
+        switch (definition.scope) {
+            case TyphoonScopeSingleton:
+                instance = [self sharedInstanceForDefinition:definition args:args fromPool:_singletons];
+                break;
+            case TyphoonScopeWeakSingleton:
+                instance = [self sharedInstanceForDefinition:definition args:args fromPool:_weakSingletons];
+                break;
+            case TyphoonScopeObjectGraph:
+                instance = [self sharedInstanceForDefinition:definition args:args fromPool:_objectGraphSharedInstances];
+                break;
+            default:
+            case TyphoonScopePrototype:
+                instance = [self buildInstanceWithDefinition:definition args:args];
+                break;
+        }
+        
+        if ([_stack isEmpty]) {
+            [_objectGraphSharedInstances removeAllObjects];
+        }
+        
+        return instance;
     }
-
-    if ([_stack isEmpty])
-    {
-        [_objectGraphSharedInstances removeAllObjects];
-    }
-
-    return instance;
 }
 
-- (void)addDefinitionToRegistry:(TyphoonDefinition*)definition
+- (void)addDefinitionToRegistry:(TyphoonDefinition *)definition
 {
     [_registry addObject:definition];
 }

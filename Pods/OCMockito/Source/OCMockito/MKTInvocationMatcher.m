@@ -1,6 +1,6 @@
 //
 //  OCMockito - MKTInvocationMatcher.m
-//  Copyright 2013 Jonathan M. Reid. See LICENSE.txt
+//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Source: https://github.com/jonreid/OCMockito
@@ -9,7 +9,7 @@
 #import "MKTInvocationMatcher.h"
 
 #import "MKTCapturingMatcher.h"
-#import "NSInvocation+TKAdditions.h"
+#import "NSInvocation+OCMockito.h"
 #import <OCHamcrest/HCIsNil.h>
 #import <OCHamcrest/HCWrapInMatcher.h>
 
@@ -57,7 +57,7 @@
 
     self.numberOfArguments = [[self.expected methodSignature] numberOfArguments] - 2;
     [self trueUpArgumentMatchersToCount:self.numberOfArguments];
-    [self replacePlaceholdersWithEqualityMatchersForArguments:TKArrayArgumentsForInvocation(self.expected)];
+    [self replacePlaceholdersWithEqualityMatchersForArguments:[self.expected mkt_arrayArguments]];
 }
 
 - (void)replacePlaceholdersWithEqualityMatchersForArguments:(NSArray *)expectedArgs
@@ -87,7 +87,7 @@
     if ([self.expected selector] != [actual selector])
         return NO;
 
-    NSArray *actualArgs = TKArrayArgumentsForInvocation(actual);
+    NSArray *actualArgs = [actual mkt_arrayArguments];
     for (NSUInteger index = 0; index < self.numberOfArguments; ++index)
     {
         if ([self argument:actualArgs[index] doesNotMatch:self.argumentMatchers[index]])
@@ -121,7 +121,7 @@
     {
         if ([self.expected selector] == [inv selector])
         {
-            NSArray *args = TKArrayArgumentsForInvocation(inv);
+            NSArray *args = [inv mkt_arrayArguments];
             [capturingMatcher performSelector:@selector(captureArgument:) withObject:args[index]];
         }
     }

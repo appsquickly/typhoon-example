@@ -122,7 +122,7 @@
   {
     [definition injectProperty:@selector(creditService)];
     [definition injectProperty:@selector(authService)];
-  } factory^id (id<PaymentFactory> factory, NSDate *startDate, NSUInteger amount)
+  } factory:^id (id<PaymentFactory> factory, NSDate *startDate, NSUInteger amount)
   {
     return [[Payment alloc] initWithCreditService:factory.creditService authService:factory.authService startDate:startDate amount:amount];
   }];
@@ -169,9 +169,7 @@
  * Creates a factory definition for a given protocol, dependencies and factory block. The protocol is supposed to only have one factory
  * method, otherwise this method will fail during runtime.
 */
-+ (TyphoonDefinition*)withProtocol:(Protocol*)protocol
-        dependencies:(TyphoonDefinitionBlock)dependenciesBlock
-        factory:(id)factoryBlock;
++ (TyphoonDefinition *)withProtocol:(Protocol *)protocol dependencies:(TyphoonDefinitionBlock)dependenciesBlock factory:(id)factoryBlock;
 
 /**
  * Creates a factory definition for a given protocol, dependencies, and return type. The protocol can have any number of instance
@@ -210,13 +208,13 @@
  * you want to debug the matching performed by Typhoon, enable LOGGING_LEVEL_TRACE in your build, and look in your console output for lines
  * like "Factory Provider: found candidate: [YourProtocol yourFactoryMethodWithFoo:] --> [YourReturnType initWithFoo:]".
  */
-+ (TyphoonDefinition*)withProtocol:(Protocol*)protocol dependencies:(TyphoonDefinitionBlock)dependenciesBlock returns:(Class)returnType;
++ (TyphoonDefinition *)withProtocol:(Protocol *)protocol dependencies:(TyphoonDefinitionBlock)dependenciesBlock returns:(Class)returnType;
 
 /**
  * Creates a factor definition for a given protocol, dependencies and a list of factory methods. The protocol is supposed to have the same
  * number of class methods, and with the same selectors as defined in the factories block, otherwise this method will fail during runtime.
 */
-+ (TyphoonDefinition*)withProtocol:(Protocol*)protocol dependencies:(TyphoonDefinitionBlock)dependenciesBlock
-        factories:(TyphoonAssistedFactoryDefinitionBlock)definitionBlock;
++ (TyphoonDefinition *)withProtocol:(Protocol *)protocol dependencies:(TyphoonDefinitionBlock)dependenciesBlock
+    factories:(TyphoonAssistedFactoryDefinitionBlock)definitionBlock;
 
 @end

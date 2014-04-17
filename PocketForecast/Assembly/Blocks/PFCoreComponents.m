@@ -11,7 +11,6 @@
 
 
 #import "PFCoreComponents.h"
-#import "Typhoon.h"
 #import "PFWeatherClientBasicImpl.h"
 #import "PFWeatherReportDaoFileSystemImpl.h"
 #import "PFCityDaoUserDefaultsImpl.h"
@@ -20,12 +19,12 @@
 
 - (id)weatherClient
 {
-    return [TyphoonDefinition withClass:[PFWeatherClientBasicImpl class] properties:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFWeatherClientBasicImpl class] configuration:^(TyphoonDefinition* definition)
     {
-        [definition injectProperty:@selector(serviceUrl) withValueAsText:@"${service.url}"];
-        [definition injectProperty:@selector(apiKey) withValueAsText:@"${api.key}"];
-        [definition injectProperty:@selector(daysToRetrieve) withValueAsText:@"${days.to.retrieve}"];
-        [definition injectProperty:@selector(weatherReportDao) withDefinition:[self weatherReportDao]];
+        [definition injectProperty:@selector(serviceUrl) with:TyphoonConfig(@"service.url")];
+        [definition injectProperty:@selector(apiKey) with:TyphoonConfig(@"api.key")];
+        [definition injectProperty:@selector(daysToRetrieve) with:TyphoonConfig(@"days.to.retrieve")];
+        [definition injectProperty:@selector(weatherReportDao) with:[self weatherReportDao]];
     }];
 }
 

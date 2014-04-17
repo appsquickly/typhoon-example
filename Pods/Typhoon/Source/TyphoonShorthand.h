@@ -9,6 +9,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+
 #ifdef typhoon_shorthand
 
 #define autoWire typhoon_autoWire
@@ -18,4 +19,3 @@
 #define Prototype TyphoonComponentLifecyclePrototype
 
 #endif
-

@@ -17,6 +17,7 @@
 @protocol PFCityDao;
 @class PFTheme;
 @class FUISegmentedControl;
+@class PFAssembly;
 
 @interface PFCitiesListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
@@ -25,6 +26,7 @@
 
 @property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
 @property(nonatomic, strong, readonly) PFTheme* theme;
+@property(nonatomic, strong) PFAssembly* assembly;
 
 @property(nonatomic, weak) IBOutlet UITableView* citiesListTableView;
 @property(nonatomic, weak) IBOutlet UISegmentedControl* temperatureUnitsControl;

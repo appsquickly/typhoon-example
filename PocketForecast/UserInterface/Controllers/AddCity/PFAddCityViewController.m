@@ -16,7 +16,6 @@
 #import "PFCityDao.h"
 #import "PFWeatherReport.h"
 #import "UIFont+ApplicationFonts.h"
-#import "TyphoonComponentFactory.h"
 #import "PFRootViewController.h"
 #import "PFTheme.h"
 #import "UIBarButtonItem+FlatUI.h"
@@ -89,7 +88,6 @@
 
 - (void)doneAdding:(id)sender
 {
-    PFRootViewController* rootViewController = [[TyphoonComponentFactory defaultFactory] componentForType:[PFRootViewController class]];
     if ([[_nameOfCityToAdd text] length] > 0)
     {
         [_validationMessage setText:@"Validating city . ."];
@@ -103,7 +101,7 @@
         {
             LogDebug(@"Got weather report: %@", weatherReport);
             [cityDao saveCity:[weatherReport cityDisplayName]];
-            [rootViewController dismissAddCitiesController];
+            [_rootViewController dismissAddCitiesController];
         } onError:^(NSString* message)
         {
             [_spinner stopAnimating];
@@ -114,7 +112,7 @@
     else
     {
         [_nameOfCityToAdd resignFirstResponder];
-        [rootViewController dismissAddCitiesController];
+        [_rootViewController dismissAddCitiesController];
     }
 }
 

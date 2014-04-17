@@ -23,8 +23,7 @@
 - (instancetype)initWithCreationBlock:(TyphoonPatchObjectCreationBlock)creationBlock
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         NSAssert(creationBlock != nil, @"Creation block can't be nil");
         _patchObject = creationBlock();
     }

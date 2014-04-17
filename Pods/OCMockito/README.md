@@ -1,5 +1,7 @@
 ![mockito](http://docs.mockito.googlecode.com/hg/latest/org/mockito/logo.jpg)
 
+[![Build Status](https://travis-ci.org/jonreid/OCMockito.svg?branch=master)](https://travis-ci.org/jonreid/OCMockito) [![Coverage Status](https://coveralls.io/repos/jonreid/OCMockito/badge.png?branch=master)](https://coveralls.io/r/jonreid/OCMockito?branch=master) [![Cocoapods Version](https://cocoapod-badges.herokuapp.com/v/OCMockito/badge.png)](http://cocoapods.org/?q=ocmockito)
+
 OCMockito is an iOS and Mac OS X implementation of Mockito, supporting creation,
 verification and stubbing of mock objects.
 
@@ -54,7 +56,7 @@ The binaries are packaged as frameworks:
 
 OCHamcrest comes in a similar scheme. Drag the appropriate frameworks for both
 both OCMockito and OCHamcrest into your project, specifying "Copy items into
-destination group's folder".
+destination group's folder". Then specify `-ObjC` in your "Other Linker Flags".
 
 #### iOS Development:
 

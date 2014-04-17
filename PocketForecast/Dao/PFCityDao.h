@@ -43,7 +43,7 @@
 /**
 * Used to retrieve the last page that the user has visited, or nil if first use.
 */
-- (NSString*) getCurrentlySelectedCity;
+- (NSString*)loadSelectedCity;
 
 
 @end

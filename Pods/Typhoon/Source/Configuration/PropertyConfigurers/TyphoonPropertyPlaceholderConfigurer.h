@@ -20,23 +20,26 @@
 */
 @interface TyphoonPropertyPlaceholderConfigurer : NSObject <TyphoonComponentFactoryPostProcessor>
 {
-    NSString* _prefix;
-    NSString* _suffix;
-    NSMutableDictionary* _properties;
+    NSString *_prefix;
+    NSString *_suffix;
+    NSMutableDictionary *_properties;
 }
 
-+ (TyphoonPropertyPlaceholderConfigurer*)configurer;
++ (TyphoonPropertyPlaceholderConfigurer *)configurer;
 
-+ (TyphoonPropertyPlaceholderConfigurer*)configurerWithResource:(id <TyphoonResource>)resource;
++ (TyphoonPropertyPlaceholderConfigurer *)configurerWithResource:(id <TyphoonResource>)resource;
 
-+ (TyphoonPropertyPlaceholderConfigurer*)configurerWithResources:(id <TyphoonResource>)first, ...NS_REQUIRES_NIL_TERMINATION;
++ (TyphoonPropertyPlaceholderConfigurer *)configurerWithResources:(id <TyphoonResource>)first, ...NS_REQUIRES_NIL_TERMINATION;
 
-+ (TyphoonPropertyPlaceholderConfigurer*)configurerWithResourceList:(NSArray*)resources;
++ (TyphoonPropertyPlaceholderConfigurer *)configurerWithResourceList:(NSArray *)resources;
 
-- (id)initWithPrefix:(NSString*)prefix suffix:(NSString*)suffix;
+- (id)initWithPrefix:(NSString *)prefix suffix:(NSString *)suffix;
 
 - (void)usePropertyStyleResource:(id <TyphoonResource>)resource;
 
-- (NSDictionary*)properties;
+- (NSDictionary *)properties;
 
 @end
+
+/** Returns injection */
+id TyphoonConfig(NSString *configKey);

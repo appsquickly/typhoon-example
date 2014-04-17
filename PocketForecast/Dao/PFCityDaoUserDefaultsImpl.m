@@ -104,7 +104,7 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
 }
 
 
-- (NSString*)getCurrentlySelectedCity
+- (NSString*)loadSelectedCity
 {
     return [_defaults objectForKey:pfCurrentCityKey];
 }
