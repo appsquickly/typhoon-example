@@ -51,7 +51,7 @@
 
 #pragma mark - <TyphoonComponentFactoryAware>
 
-- (void)setFactory:(id)theFactory
+- (void)typhoonSetFactory:(id)theFactory
 {
     _factory = theFactory;
 }

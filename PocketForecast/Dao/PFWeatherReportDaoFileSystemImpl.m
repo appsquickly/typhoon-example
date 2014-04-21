@@ -32,7 +32,9 @@
 }
 
 
-/* ================================================== Private Methods =============================================== */
+/* ====================================================================================================================================== */
+#pragma mark - Private Methods
+
 - (NSString*) filePathFor:(NSString*)cityName {
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectory = [paths objectAtIndex:0];

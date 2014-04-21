@@ -11,9 +11,9 @@
 
 
 #import <UIKit/UIKit.h>
-#import "TyphoonPropertyInjectionDelegate.h"
 #import "TyphoonComponentFactoryAware.h"
 #import "PaperFoldView.h"
+#import "TyphoonInjectionCallbacks.h"
 
 @class PFProgressHUD;
 @class PFAssembly;
@@ -25,7 +25,7 @@ typedef enum
     PFSideViewStateShowing
 } PFSideViewState;
 
-@interface PFRootViewController : UIViewController <TyphoonPropertyInjectionDelegate, TyphoonComponentFactoryAware, PaperFoldViewDelegate>
+@interface PFRootViewController : UIViewController <TyphoonInjectionCallbacks, TyphoonComponentFactoryAware, PaperFoldViewDelegate>
 {
     UINavigationController* _navigator;
     UIView* _mainContentViewContainer;

@@ -2,21 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6bc38d9-29d3-4e38-95cc-03c66446d1b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/NSObject+FactoryHooks.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/NSObject+FactoryHooks.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Hooks/NSObject+FactoryHooks.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Hooks/NSObject+FactoryHooks.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Hooks/TyphoonComponentFactoryAware.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonInjectionCallbacks.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonInjectionCallbacks.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Hooks/TyphoonInjectionCallbacks.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonPropertyInjectionDelegate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonPropertyInjectionDelegate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactoryAware.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonPropertyInjectionDelegate.h" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" afterPath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-Typhoon-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-Typhoon-prefix.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Dao/PFWeatherReportDaoFileSystemImpl.m" afterPath="$PROJECT_DIR$/PocketForecast/Dao/PFWeatherReportDaoFileSystemImpl.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcshareddata/xcschemes/Pods-PocketForecastTests.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcshareddata/xcschemes/Pods-PocketForecastTests.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Typhoon.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Typhoon.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonAssembly.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryBase.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Provider/TyphoonAssistedFactoryBase.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactory.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactory.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+Infrastructure.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonComponentFactory+InstanceBuilder.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonComponentFactoryAware.h" afterPath="$PROJECT_DIR$/Pods/BuildHeaders/Typhoon/TyphoonComponentFactoryAware.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonComponentFactoryAware.h" afterPath="$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonComponentFactoryAware.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/TyphoonDefinition.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Method/Internal/TyphoonMethod+InstanceBuilder.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Method/Internal/TyphoonMethod+InstanceBuilder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Method/Internal/TyphoonMethod+InstanceBuilder.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Method/Internal/TyphoonMethod+InstanceBuilder.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Method/TyphoonMethod.m" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Method/TyphoonMethod.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonPropertyInjectionInternalDelegate.h" afterPath="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Internal/TyphoonPropertyInjectionInternalDelegate.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -41,10 +61,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PFAppDelegate.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.m">
+      <file leaf-file-name="Configuration.properties" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="7" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="1140">
+            <state line="3" column="32" selection-start="152" selection-end="152" vertical-scroll-proportion="0.101123594" vertical-offset="0" max-vertical-offset="445">
               <folding />
             </state>
           </provider>
@@ -53,52 +73,16 @@
       <file leaf-file-name="PFAddCityViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="10" selection-start="1058" selection-end="1060" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="2325">
+            <state line="50" column="1" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="2325">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFCitiesListViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m">
+      <file leaf-file-name="PFAddCityViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="69" selection-start="4359" selection-end="4359" vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="3225">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFWeatherReportViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="48" selection-start="4122" selection-end="4122" vertical-scroll-proportion="0.0" vertical-offset="1695" max-vertical-offset="2295">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFProgressHUD.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/ProgressHUD/PFProgressHUD.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="102" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="1854" max-vertical-offset="2610">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFWeatherReportViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="118" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFCitiesListViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="20" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="645">
+            <state line="25" column="0" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
@@ -107,25 +91,61 @@
       <file leaf-file-name="PFCoreComponents.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="106" selection-start="724" selection-end="724" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="795">
+            <state line="24" column="63" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="840">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Configuration.properties" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
+      <file leaf-file-name="PFProgressHUD.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/ProgressHUD/PFProgressHUD.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="29" selection-start="152" selection-end="152" vertical-scroll-proportion="0.101123594" vertical-offset="0" max-vertical-offset="445">
+            <state line="13" column="0" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="2610">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFAssembly.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFAssembly.m">
+      <file leaf-file-name="PFRootViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="53" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1290">
+            <state line="24" column="16" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="5610">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFWeatherReportViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="112" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="2295">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TyphoonComponentFactoryAware.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonComponentFactoryAware.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="25" selection-start="2140" selection-end="2157" vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1035">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFRootViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="96" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFWeatherReportDaoFileSystemImpl.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/Dao/PFWeatherReportDaoFileSystemImpl.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="101" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="795">
               <folding />
             </state>
           </provider>
@@ -149,21 +169,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFThemeProvider.m" />
-        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFViewControllers.h" />
-        <option value="$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Block/TyphoonBlockComponentFactory.m" />
         <option value="$PROJECT_DIR$/PocketForecast/PFAppDelegate.h" />
-        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFViewControllers.m" />
-        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFAssembly.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h" />
-        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/ProgressHUD/PFProgressHUD.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.h" />
-        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m" />
         <option value="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/Dao/PFWeatherReportDaoFileSystemImpl.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h" />
+        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h" />
+        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
       </list>
     </option>
@@ -332,6 +352,24 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Dao" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PocketForecast" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PocketForecast" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Assembly" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -380,14 +418,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="139" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="141" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="141" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="141" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/PocketForecastTests/Unit" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="151" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="940" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="939" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="940" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="146" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="143" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
@@ -519,7 +557,7 @@
     <frame x="0" y="22" width="1436" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26020408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25892857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -561,112 +599,114 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIApplication.h">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="331" column="78" selection-start="17561" selection-end="17564" vertical-scroll-proportion="0.33333334" vertical-offset="4812" max-vertical-offset="7230">
+        <state line="46" column="53" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactory.m">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Dao/PFWeatherReportDaoFileSystemImpl.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="22" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="5595">
+        <state line="38" column="101" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="795">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/TyphoonComponentFactory.h">
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Hooks/NSObject+FactoryHooks.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="15" selection-start="2503" selection-end="2503" vertical-scroll-proportion="-7.6538463" vertical-offset="926" max-vertical-offset="2730">
+        <state line="14" column="48" selection-start="546" selection-end="546" vertical-scroll-proportion="0.37974682" vertical-offset="0" max-vertical-offset="553">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.h">
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Hooks/NSObject+FactoryHooks.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="72" selection-start="757" selection-end="757" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+        <state line="10" column="16" selection-start="206" selection-end="206" vertical-scroll-proportion="0.27124774" vertical-offset="0" max-vertical-offset="553">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonPropertyInjectionDelegate.h">
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Factory/Hooks/TyphoonInjectionCallbacks.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="10" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.6505824" vertical-offset="14" max-vertical-offset="615" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="70" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0" vertical-offset="59" max-vertical-offset="690">
+        <state line="27" column="35" selection-start="1009" selection-end="1034" vertical-scroll-proportion="0.62025315" vertical-offset="62" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m">
+    <entry file="file://$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonInjectionCallbacks.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="10" selection-start="1058" selection-end="1060" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="2325">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFAssembly.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="53" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1290">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="69" selection-start="4359" selection-end="4359" vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="3225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="118" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="48" selection-start="4122" selection-end="4122" vertical-scroll-proportion="0.0" vertical-offset="1695" max-vertical-offset="2295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/ProgressHUD/PFProgressHUD.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="102" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="1854" max-vertical-offset="2610">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="645">
+        <state line="30" column="25" selection-start="1065" selection-end="1082" vertical-scroll-proportion="0.7016275" vertical-offset="62" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="106" selection-start="724" selection-end="724" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="795">
+        <state line="24" column="63" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="840">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.m">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="7" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="1140">
+        <state line="25" column="0" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="1" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="2325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="16" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="5610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/ProgressHUD/PFProgressHUD.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="2610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="96" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Headers/Typhoon/TyphoonComponentFactoryAware.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="25" selection-start="2140" selection-end="2157" vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Definition/Injections/TyphoonInjectionContext.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="54" selection-start="497" selection-end="497" vertical-scroll-proportion="0.5730337" vertical-offset="0" max-vertical-offset="445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="112" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="2295">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="152" selection-end="152" vertical-scroll-proportion="0.101123594" vertical-offset="0" max-vertical-offset="445">
+        <state line="3" column="32" selection-start="152" selection-end="152" vertical-scroll-proportion="0.101123594" vertical-offset="0" max-vertical-offset="445">
           <folding />
         </state>
       </provider>

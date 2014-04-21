@@ -14,6 +14,9 @@
 #import "PFWeatherClientBasicImpl.h"
 #import "PFWeatherReportDaoFileSystemImpl.h"
 #import "PFCityDaoUserDefaultsImpl.h"
+#import "TyphoonBundleResource.h"
+#import "TyphoonDefinition+Infrastructure.h"
+#import "TyphoonPropertyPlaceholderConfigurer.h"
 
 @implementation PFCoreComponents
 

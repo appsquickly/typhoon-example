@@ -12,7 +12,6 @@
 
 #import "CKUITools.h"
 #import "TyphoonComponentFactoryAware.h"
-#import "TyphoonPropertyInjectionDelegate.h"
 #import "PFRootViewController.h"
 #import "PaperFoldView.h"
 #import "PFProgressHUD.h"
@@ -47,7 +46,7 @@
     return [self initWithMainContentViewController:nil];
 }
 
-- (void)beforePropertiesSet
+- (void)typhoonWillInject
 {
     if (self.view)
     {} //Eager load view
@@ -59,7 +58,7 @@
  *
  *      TyphoonComponentFactory* factory = theFactory;
 */
-- (void)setFactory:(id)theFactory
+- (void)typhoonSetFactory:(id)theFactory
 {
     _factory = theFactory;
 }

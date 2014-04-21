@@ -41,13 +41,13 @@
     NSLog(@"***** %@ in dealloc *****", self);
 }
 
-- (void)beforePropertiesSet
+- (void)typhoonWillInject
 {
     if (self.view) //Eagerly load view
     {}
 }
 
-- (void)afterPropertiesSet
+- (void)typhoonDidInject
 {
     [self validateRequiredProperties];
     [self applyTheme];

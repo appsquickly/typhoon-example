@@ -40,9 +40,11 @@
         [PFThemeProvider assembly]
     ]];
 
-    PFRootViewController* rootViewController = [_factory componentForType:[PFRootViewController class]];
+    //We can resolve components by having an assembly interface pose in front of the factory. . .
+    PFRootViewController* rootViewController = [(PFAssembly*) _factory rootViewController];
     [_window setRootViewController:rootViewController];
 
+    //. . . or we can resolve typhoon-built instances using the TyphoonComponentFactory API
     id <PFCityDao> cityDao = [_factory componentForType:@protocol(PFCityDao)];
     NSString* selectedCity = [cityDao loadSelectedCity];
     if (!selectedCity)

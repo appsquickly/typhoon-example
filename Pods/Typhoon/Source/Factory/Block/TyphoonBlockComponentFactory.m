@@ -18,6 +18,7 @@
 #import "OCLogTemplate.h"
 #import "TyphoonAssembly+TyphoonAssemblyFriend.h"
 #import "TyphoonAssemblyPropertyInjectionPostProcessor.h"
+#import "TyphoonIntrospectionUtils.h"
 
 @interface TyphoonComponentFactory (Private)
 
@@ -28,6 +29,16 @@
 @end
 
 @implementation TyphoonBlockComponentFactory
+
+- (id)asAssembly
+{
+    return self;
+}
+
+- (TyphoonComponentFactory *)asFactory
+{
+    return self;
+}
 
 /* ====================================================================================================================================== */
 #pragma mark - Class Methods
