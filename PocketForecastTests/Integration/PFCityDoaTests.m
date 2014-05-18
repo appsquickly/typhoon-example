@@ -13,7 +13,8 @@
 
 #import <XCTest/XCTest.h>
 #import "PFCityDao.h"
-#import "TyphoonXmlComponentFactory.h"
+#import "PFCoreComponents.h"
+#import "Typhoon.h"
 
 @interface PFCityDoaTests : XCTestCase
 @end
@@ -29,7 +30,9 @@
 
 - (void)setUp
 {
-    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"CoreComponents.xml"];
+    
+    TyphoonComponentFactory * factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[PFCoreComponents assembly]]];
+    
     cityDao = [factory componentForKey:@"cityDao"];
 }
 
