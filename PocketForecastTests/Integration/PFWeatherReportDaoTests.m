@@ -16,6 +16,7 @@
 #import "PFWeatherReport.h"
 #import "RXMLElement+PFWeatherReport.h"
 #import "Typhoon.h"
+#import "PFCoreComponents.h"
 
 @interface PFWeatherReportDaoTests : XCTestCase
 @end
@@ -28,7 +29,8 @@
 
 - (void)setUp
 {
-    TyphoonXmlComponentFactory* factory = [[TyphoonXmlComponentFactory alloc] initWithConfigFileName:@"CoreComponents.xml"];
+    TyphoonComponentFactory * factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[PFCoreComponents assembly]]];
+               
     weatherReportDao = [factory componentForType:@protocol(PFWeatherReportDao)];
 
     NSString* xmlString = [[TyphoonBundleResource withName:@"SampleForecast.xml" inBundle:[NSBundle bundleForClass:[self class]]] asString];
