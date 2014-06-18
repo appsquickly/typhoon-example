@@ -162,9 +162,7 @@
     // call the user's assembly method to get it.
     SEL sel = [TyphoonAssemblySelectorAdviser advisedSELForKey:key];
 
-    // Using signature of original (not-adviced) method because they are same and signature
-    // of method created at runtime are wrong
-    NSMethodSignature *signature = [self.assembly methodSignatureForSelector:NSSelectorFromString(key)];
+    NSMethodSignature *signature = [self.assembly methodSignatureForSelector:sel];
 
     id cached =
         objc_msgSend_InjectionArguments(self.assembly, sel, signature); // the advisedSEL will call through to the original, unwrapped implementation because prepareForUse has been called, and all our definition methods have been swizzled.
@@ -180,7 +178,7 @@ static id objc_msgSend_InjectionArguments(id target, SEL selector, NSMethodSigna
         [invocation setSelector:selector];
         [invocation retainArguments];
         /* Fill invocation arguments with TyphoonInjectionWithRuntimeArgumentAtIndex injections */
-        for (int i = 0; i < signature.numberOfArguments - 2; i++) {
+        for (NSUInteger i = 0; i < signature.numberOfArguments - 2; i++) {
             id injection = TyphoonInjectionWithRuntimeArgumentAtIndex(i);
             [invocation setArgument:&injection atIndex:i + 2];
         }

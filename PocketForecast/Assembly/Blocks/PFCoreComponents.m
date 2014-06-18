@@ -16,7 +16,7 @@
 #import "PFCityDaoUserDefaultsImpl.h"
 #import "TyphoonBundleResource.h"
 #import "TyphoonDefinition+Infrastructure.h"
-#import "TyphoonPropertyPlaceholderConfigurer.h"
+#import "TyphoonConfigPostProcessor.h"
 
 @implementation PFCoreComponents
 

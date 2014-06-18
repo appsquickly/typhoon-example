@@ -15,7 +15,6 @@
 #import <Foundation/Foundation.h>
 #import "PFWeatherClient.h"
 #import "PFWeatherReportViewDelegate.h"
-#import "TyphoonComponentFactoryAware.h"
 
 @class PFWeatherReport;
 @protocol PFWeatherReportDao;
@@ -24,7 +23,7 @@
 @class TyphoonComponentFactory;
 
 
-@interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate, TyphoonComponentFactoryAware>
+@interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate>
 {
 
     PFWeatherReport* _weatherReport;

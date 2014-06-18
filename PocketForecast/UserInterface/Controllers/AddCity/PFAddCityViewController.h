@@ -15,14 +15,13 @@
 #import <Foundation/Foundation.h>
 #import "PFWeatherClient.h"
 #import "PFThemeable.h"
-#import "TyphoonInjectionCallbacks.h"
 
 @protocol PFCityDao;
 @protocol PFWeatherClient;
 @class PFRootViewController;
 
 
-@interface PFAddCityViewController : UIViewController <UITextFieldDelegate, PFThemeable, TyphoonInjectionCallbacks>
+@interface PFAddCityViewController : UIViewController <UITextFieldDelegate, PFThemeable>
 
 
 #pragma mark - Typhoon injected properties

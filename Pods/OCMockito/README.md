@@ -48,7 +48,7 @@ Use the following imports:
 
 Prebuilt binaries are available on GitHub for
 [OCMockito](https://github.com/jonreid/OCMockito/releases/). You will also need
-[OCHamcrest](https://github.com/hamcrest/OCHamcrest/releases/).
+[OCHamcrest 3.0.1](https://github.com/hamcrest/OCHamcrest/releases/tag/v3.0.1).
 The binaries are packaged as frameworks:
 
 * __OCMockitoIOS.framework__ for iOS development
@@ -85,11 +85,12 @@ Use the following imports:
 
 ### Build Your Own
 
-If you want to build OCMockito yourself, clone the repo, copy OCHamcrest-3.0.0
-into the Frameworks folder, then
+If you want to build OCMockito yourself, clone the repo, then
 
 ```sh
 $ git submodule update --init
+$ Frameworks/gethamcrest
+$ Frameworks/getweakproxy
 $ cd Source
 $ ./MakeDistribution.sh
 ```
@@ -164,14 +165,36 @@ UIViewController <CustomProtocol> *controller =
 ```
 
 
-How do you stub methods that return non-objects?
-------------------------------------------------
+How do you stub methods that return primitives?
+-----------------------------------------------
 
-To stub methods that return non-object types, specify `willReturn<type>`,
-like this:
+To stub methods that return primitive scalars, box the scalars into NSValues:
 
 ```obj-c
-[given([mockArray count]) willReturnUnsignedInteger:3];
+[given([mockArray count]) willReturn:@3];
+```
+
+
+How do you stub methods that return structs?
+--------------------------------------------
+
+Use `willReturnStruct:objCType:` passing a pointer to your structure and the
+type created with the Objective-C `@encode()` compiler directive:
+
+```obj-c
+SomeStruct aStruct = {...};
+[given([mockObject methodReturningStruct]) willReturnStruct:&aStruct
+                                                   objCType:@encode(SomeStruct)];
+```
+
+
+How do you stub a property so that KVO works?
+---------------------------------------------
+
+Use `stubProperty(instance, property, value)`. For example:
+
+```obj-c
+stubProperty(mockEmployee, firstName, @"fake-firstname");
 ```
 
 
@@ -268,5 +291,12 @@ block, then invoke it within your test:
 MKTArgumentCaptor *argument = [[MKTArgumentCaptor alloc] init];
 [verify(mockArray) sortUsingComparator:[argument capture]];
 NSComparator block = [argument value];
-assertThatInt(block(@"a", @"z"), equalToInt(NSOrderedAscending));
+assertThat(@(block(@"a", @"z")), is(@(NSOrderedAscending)));
 ```
+
+Fixing retain cycles
+--------------------
+
+If you have a situation where the `-dealloc` of your System Under Test is not
+called when you nil out your SUT, call `-reset` on your mock object (probably
+from `tearDown`).

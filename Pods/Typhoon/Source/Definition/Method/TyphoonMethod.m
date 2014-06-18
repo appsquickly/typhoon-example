@@ -170,14 +170,13 @@
 
 - (NSUInteger)calculateHash
 {
-    int charactersPerPointer = sizeof(void*)*2;
-    NSString *format = [NSString stringWithFormat:@"%%%dx",charactersPerPointer];
-    NSMutableString *string = [[NSMutableString alloc] initWithCapacity: charactersPerPointer * ([_injectedParameters count] + 1)];
-    [string appendFormat:format,sel_getName(_selector)];
+    NSUInteger hash = (NSUInteger) sel_getName(_selector);
+
     for (id <TyphoonParameterInjection> parameter in _injectedParameters) {
-        [string appendFormat:format,parameter];
+        hash = (NSUInteger) ((5 << hash) - hash + [[parameter description] hash]);
     }
-    return [string hash];
+
+    return hash;
 }
 
 
@@ -211,7 +210,7 @@
 - (NSInteger)indexOfParameter:(NSString *)name
 {
     NSInteger parameterIndex = NSNotFound;
-    for (NSInteger i = 0; i < [_parameterNames count]; i++) {
+    for (NSUInteger i = 0; i < [_parameterNames count]; i++) {
         NSString *parameterName = [_parameterNames objectAtIndex:i];
         if ([name isEqualToString:parameterName]) {
             parameterIndex = i;

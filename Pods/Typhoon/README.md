@@ -1,14 +1,12 @@
 # Typhoon! (www.typhoonframework.org) 
 
-
-A new dependency injection container for Objective-C. Light-weight, yet full-featured and super-easy to use. 
+Elegant, powerful dependency injection for Cocoa and CocoaTouch. Lightweight (just 2500 lines of code), yet full-featured and super-easy to use. 
 
 ## Familiar with Dependency Injection?
 
-* Read the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-with-Blocks">User Guide</a> or <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API Docs</a>
-* <a href="https://github.com/typhoon-framework/Typhoon-example">Try the sample application</a> (***Now updated for iOS7!!!!***)
+* Read the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Quick Start</a>, <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a> or <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API Docs</a>  ***Updated for version 2.0!!!!***
+* <a href="https://github.com/typhoon-framework/Typhoon-example">Try the sample application</a> 
 * <a href="https://github.com/typhoon-framework/Typhoon#design-goals--features">Check the feature list</a>.
-
 otherwise. . . 
 
 ### What is Dependency Injection? 
@@ -27,16 +25,16 @@ ___Without dependency injection, you might have a View Controller like this___:
 
 ```objective-c
 
--(id) init 
+- (id)init 
 {
- self = [super init];
- if (self) 
- {
-  //The class using some collaborating class builds its own assistant.
-  //it might be one of several classes using the weatherClient. 
-  _weatherClient = [[GoogleWeatherClientImpl alloc] initWithParameters:xyz];
- }
- return self;
+    self = [super init];
+    if (self) 
+    {
+        //The class using some collaborating class builds its own assistant.
+        //it might be one of several classes using the weatherClient. 
+        _weatherClient = [[GoogleWeatherClientImpl alloc] initWithParameters:xyz];
+    }
+    return self;
 }
 
 ```
@@ -68,28 +66,32 @@ ___And now, it simply becomes___:
 
 ```objective-c
 
--(id) initWithWeatherClient:(id<WeatherClient>)weatherClient
+- (id)initWithWeatherClient:(id<WeatherClient>)weatherClient
 {
- self = [super init];
- if (self) 
- {
-     _weatherClient = weatherClient;
- }
- return self;
+    self = [super init];
+    if (self) 
+    {
+        _weatherClient = weatherClient;
+    }
+    return self;
 }
 
 ```
 
 
 ####Is that all they mean by 'injected'?
-Yes it is. Right now, you might be thinking "Geez! That's a pretty fancy name for something so plain." Well, you'd be right. But let's look at the implications on our application architecture: If you do this with significant collaborators throughout your app, it means that the __GoogleWeatherClientImpl__ is now declared in a single place - the top-level assembly, so-to-speak. ___And___ all of the classes that need to use some kind of __id&lt;WeatherClient&gt;__ will have it passed in. This means that: 
 
-* If you want to change from one implementation to another, you need only change a single declaration. 
-* Classes are easier to test, because we can supply simple mocks and stubs in place of concrete collaborators. Or 
-the real collaborators, but configured to be used in a test scenario. (One of my design goals). 
-* It promotes separation of concerns and a clear contract between classes. Its easy to see what each class needs in order
-to do its job. 
-* Your app is easier to maintain and can accommodate new requirements. 
+Yes it is. Right now, you might be thinking “Geez! That’s a pretty fancy name for something so plain.” Well, you‘d be right. But let‘s look at what happens when we start to apply this approach: Let's say you identify some hard-wired network configurations in a your GoogleWeatherClient, and correct this by instead passing them in via an initializer method. Now if you want to use this class, as a collaborator in a new class, let's say a ViewController, then your GoogleWeatherClient itself can be either a hard-wired dependency, or injected. To get the benefits of dependency injection again, we repeat the process, pulling up the class and along with its own dependencies. And we keep applying until we have a logical module or 'assembly'.
+
+In this way dependency injection lets your application tell an architectural story. When the key actors are pulled up into an assembly that describes roles and collaborations, then the application’s configuration no longer exhibits fragmentation, duplication or tight-coupling. Having created this "script" that describes roles and collaborations we realize a number of benefits.
+
+####Benefits of Dependency Injection
+
+*    We can substitute another actor to fulfill a given role. If you want to change from one implementation to another, you need only change a single declaration.
+*    By removing tight-coupling, we need not understand all of a problem at once, its easy to evolve our app’s design as the requirements evolve.
+*    Classes are easier to test, because we can supply simple mocks and stubs in place of concrete collaborators. Or the real collaborators, but configured to be used in a test scenario.
+*    It promotes separation of concerns and a clear contract between classes. Its easy to see what each class needs in order to do its job.
+*    We can layout an app's architecture using stubs - the simplest possible implementation of a role - so that we can quickly see an end-to-end use-case taking place. Having done this, we can assign to other team members the responsibility of filling out these stubs for real implementations, and they can do so without breaking the app while they work, and without impacting other team members.
 
 
 # Your Dependency Injection Options
@@ -110,7 +112,7 @@ following:
 
 ## Design Goals / Features
 
-* Non-invasive. ***No macros or XML required*** . . . The main focus is on a <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-with-Blocks">powerful Objective-C runtime approach.</a>
+* Non-invasive. ***No macros or XML required*** . . . Uses <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">powerful Objective-C runtime approach.</a>
 
 * Its not necessary to change ***any*** of your classes to use the framework. ***Can be introduced into legacy applications.***
 
@@ -138,28 +140,23 @@ ensure that the class is in the required state before and after properties are s
 
 * ***Powerful memory management features***. Provides pre-configured objects, without the memory overhead of singletons.
 
-* ***Lean***. It has a very low footprint, so is appropriate for CPU and memory constrained devices. 
+* ***Lightweight***. It has a very low footprint, so is appropriate for CPU and memory constrained devices. Weighs in at just 2500 lines of code in total! 
 
 * ***Battle-tested*** - used in all kinds of Appstore-featured apps. 
 
 
 # Usage
 
+
+* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Quick Start</a>
+* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a>
 * <a href="https://github.com/typhoon-framework/Typhoon-example">Play with the sample application</a>.
 
-And then:
+# Installing
 
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Assembling-Components-with-Blocks">Assembling Components with Blocks</a>
+Typhoon is available through <a href="http://cocoapods.org/?q=Typhoon">CocoaPods</a> (recommended). Alternatively, add the source files to your project's target or set up an Xcode workspace. 
 
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Autowiring">Autowiring</a>
-
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Using-Assembled-Components">Using Assembled Components</a>
-
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Incorporating">Incorporating the framework into your project.</a>
-
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Configuration-Management-&amp;-Testing">Configuration Management & Testing.</a>
-
-# Reports 
+# Build Status 
 ![Build Status](http://www.typhoonframework.org/docs/latest/build-status/build-status.png?q=zz)
 
 
@@ -169,10 +166,9 @@ Test Failures typically indicate a bug that has been flagged, but not yet fixed.
 
 
 * <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API</a>
-* <a href="http://appsquick.dyndns.org:8085/artifact/TPN-TC/JOB1/build-latest/reports/test-results/index.html">Test Results</a>
-* <a href="http://appsquick.dyndns.org:8085/artifact/TPN-TC/JOB1/build-latest/reports/coverage/index.html">Coverage Reports</a>
+* <a href="http://www.typhoonframework.org/docs/latest/test-results/index.html">Test Results</a>
+* <a href="http://www.typhoonframework.org/docs/latest/coverage/index.html">Test Coverage</a>
 
-(These reports are hosted on a temporary server until we fully complete moving our build-system to Gradle)
 
 
 # Feature Requests and Contributions
@@ -209,7 +205,6 @@ I'll take all the help I can get | While Typhoon is free, open-source and volunt
 * <a href="https://github.com/BrynCooke">Bryn Cooke</a> : Late injections & story board integration. 
 * <a href="http://www.linkedin.com/in/jeffreydroberts">Jeffrey Roberts</a>, Mobile Software Engineer at 
 <a href="http://www.riotgames.com/">Riot Games</a>, previous contributor to Swiz for ActionScript : Advice, feedback and testing. 
-* <a href="http://www.jetbrains.com/">Jetbrains</a>, maker of very cool software development tools : Assistance with AppCode integration. 
 * <a href="http://es.linkedin.com/in/josegonzalezgomez/">José González Gómez</a>, Mobile and cloud developer at OPEN input : Feedback; testing, support for property placeholders in initializers. 
 * <a href="https://github.com/sergiou87">Sergio Padrino Recio</a> : Performance improvements.
 * <a href="https://github.com/jervine10">Josh Ervine</a> : Feedback and support for TyphoonFactoryProviders.
@@ -236,8 +231,6 @@ Here's a few apps built with Typhoon:
 Apache License, Version 2.0, January 2004, http://www.apache.org/licenses/
 
 © 2012 - 2014 Jasper Blues and contributors.
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e47e2f2028b2badfc88e13f95914938 "githalytics.com")](http://githalytics.com/jasperblues/Typhoon)
 
 
 

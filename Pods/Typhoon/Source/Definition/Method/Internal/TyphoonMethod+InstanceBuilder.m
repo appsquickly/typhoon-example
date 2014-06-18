@@ -21,6 +21,7 @@
 #import "TyphoonTypeDescriptor.h"
 #import "NSArray+TyphoonManualEnumeration.h"
 #import "NSInvocation+TCFUnwrapValues.h"
+#import "TyphoonParameterInjection.h"
 
 TYPHOON_LINK_CATEGORY(TyphoonInitializer_InstanceBuilder)
 
@@ -30,25 +31,16 @@ TYPHOON_LINK_CATEGORY(TyphoonInitializer_InstanceBuilder)
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
+- (void)replaceInjection:(id<TyphoonParameterInjection>)injection with:(id<TyphoonParameterInjection>)injectionToReplace
+{
+    [injectionToReplace setParameterIndex:[injection parameterIndex]];
+    NSUInteger index = [_injectedParameters indexOfObject:injection];
+    [_injectedParameters replaceObjectAtIndex:index withObject:injectionToReplace];
+}
+
 - (NSArray *)injectedParameters
 {
     return [_injectedParameters copy];
-}
-
-- (NSArray *)parametersInjectedByValue
-{
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        return [evaluatedObject isKindOfClass:[TyphoonInjectionByObjectFromString class]];
-    }];
-    return [_injectedParameters filteredArrayUsingPredicate:predicate];
-}
-
-- (NSArray *)parametersInjectedByRuntimeArgument
-{
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        return [evaluatedObject isKindOfClass:[TyphoonInjectionByRuntimeArgument class]];
-    }];
-    return [_injectedParameters filteredArrayUsingPredicate:predicate];
 }
 
 - (void)createInvocationOnClass:(Class)clazz withContext:(TyphoonInjectionContext *)context completion:(void(^)(NSInvocation *invocation))result

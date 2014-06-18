@@ -9,7 +9,6 @@
 #import "TyphoonInjectionByDictionary.h"
 #import "TyphoonInjections.h"
 #import "TyphoonIntrospectionUtils.h"
-#import "TyphoonIntrospectiveNSObject.h"
 #import "TyphoonTypeDescriptor.h"
 #import "NSArray+TyphoonManualEnumeration.h"
 
@@ -116,7 +115,7 @@
     TyphoonInjectionByDictionary *copied = [[TyphoonInjectionByDictionary alloc] init];
     copied.injections = self.injections;
     copied.requiredClass = self.requiredClass;
-    [self copyBaseProperiesTo:copied];
+    [self copyBasePropertiesTo:copied];
     return copied;
 }
 

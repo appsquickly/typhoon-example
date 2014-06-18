@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIs.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,17 +11,14 @@
 
 
 @interface HCIs : HCBaseMatcher
-{
-    id <HCMatcher> matcher;
-}
 
-+ (instancetype)is:(id <HCMatcher>)aMatcher;
-- (instancetype)initWithMatcher:(id <HCMatcher>)aMatcher;
++ (instancetype)is:(id <HCMatcher>)matcher;
+- (instancetype)initWithMatcher:(id <HCMatcher>)matcher;
 
 @end
 
 
-OBJC_EXPORT id HC_is(id match);
+FOUNDATION_EXPORT id HC_is(id match);
 
 /**
  is(aMatcher) -
@@ -33,12 +30,12 @@ OBJC_EXPORT id HC_is(id match);
  
  If the @a aMatcher argument is a matcher, its behavior is retained, but the test may be more
  expressive. For example:
- @li <code>@ref assertThatInt(value, equalToInt(5))</code>
- @li <code>@ref assertThatInt(value, is(equalToInt(5)))</code>
+ @li <code>@ref assertThat(@(value), equalTo(@5))</code>
+ @li <code>@ref assertThat(@(value), is(equalTo(@5)))</code>
  
  If the @a aMatcher argument is not a matcher, it is wrapped in an @ref equalTo matcher. This
  makes the following statements equivalent:
- @li <code>@ref assertThat(cheese, equalTo(s melly))</code>
+ @li <code>@ref assertThat(cheese, equalTo(smelly))</code>
  @li <code>@ref assertThat(cheese, is(equalTo(smelly)))</code>
  @li <code>@ref assertThat(cheese, is(smelly))</code>
  

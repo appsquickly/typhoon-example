@@ -11,12 +11,11 @@
 
 
 #import <UIKit/UIKit.h>
-#import "TyphoonComponentFactoryAware.h"
 #import "PaperFoldView.h"
-#import "TyphoonInjectionCallbacks.h"
 
 @class PFProgressHUD;
 @class PFAssembly;
+@class TyphoonComponentFactory;
 
 
 typedef enum
@@ -25,7 +24,7 @@ typedef enum
     PFSideViewStateShowing
 } PFSideViewState;
 
-@interface PFRootViewController : UIViewController <TyphoonInjectionCallbacks, TyphoonComponentFactoryAware, PaperFoldViewDelegate>
+@interface PFRootViewController : UIViewController <PaperFoldViewDelegate>
 {
     UINavigationController* _navigator;
     UIView* _mainContentViewContainer;

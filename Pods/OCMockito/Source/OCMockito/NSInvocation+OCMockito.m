@@ -12,33 +12,46 @@
 #import "MKTArgumentGetterChain.h"
 #import "MKTReturnValueSetter.h"
 #import "MKTReturnValueSetterChain.h"
+#import "TPWeakProxy.h"
 
 
 @implementation NSInvocation (OCMockito)
 
-- (NSArray *)mkt_arrayArguments     // Inspired by NSInvocation+TKAdditions by Taras Kalapun
+- (NSArray *)mkt_arguments
 {
-    NSMethodSignature *signature = self.methodSignature;
+    NSMethodSignature *signature = [self methodSignature];
     NSUInteger numberOfArguments = [signature numberOfArguments];
-    NSMutableArray *args = [NSMutableArray arrayWithCapacity:numberOfArguments-2];
+    NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:numberOfArguments - 2];
 
-    for (NSUInteger idx = 2; idx < numberOfArguments; ++idx) // self and _cmd are at index 0 and 1
+    for (NSUInteger idx = 2; idx < numberOfArguments; ++idx) // Indices 0 and 1 are self and _cmd
     {
         const char *argType = [signature getArgumentTypeAtIndex:idx];
         id arg = [MKTArgumentGetterChain() retrieveArgumentAtIndex:idx ofType:argType onInvocation:self];
         if (arg)
-            [args addObject:arg];
+            [arguments addObject:arg];
         else
-            NSCAssert1(NO, @"-- Unhandled type: %s", argType);
+        {
+            NSLog(@"mkt_arguments unhandled type: %s", argType);
+            [arguments addObject:[NSNull null]];
+        }
     }
 
-    return args;
+    return arguments;
 }
 
 - (void)mkt_setReturnValue:(id)returnValue
 {
     char const *returnType = [[self methodSignature] methodReturnType];
     [MKTReturnValueSetterChain() setReturnValue:returnValue ofType:returnType onInvocation:self];
+}
+
+- (void)mkt_retainArgumentsWithWeakTarget
+{
+    if ([self argumentsRetained])
+        return;
+    TPWeakProxy *proxy = [[TPWeakProxy alloc] initWithObject:[self target]];
+    [self setTarget:proxy];
+    [self retainArguments];
 }
 
 @end

@@ -66,7 +66,6 @@ static NSString *TyphoonScopeToString(TyphoonScope scope) {
 
 + (TyphoonDefinition *)withClass:(Class)clazz key:(NSString *)key injections:(TyphoonDefinitionBlock)properties
 {
-
     TyphoonDefinition *definition = [[TyphoonDefinition alloc] initWithClass:clazz key:key];
 
     if (properties) {
@@ -79,11 +78,26 @@ static NSString *TyphoonScopeToString(TyphoonScope scope) {
     return definition;
 }
 
+//Deprecated!
 + (TyphoonDefinition *)withClass:(Class)clazz factory:(TyphoonDefinition *)_definition selector:(SEL)selector
 {
     return [TyphoonDefinition withClass:clazz configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:selector parameters:nil];
         [definition setFactory:_definition];
+    }];
+}
+
++ (TyphoonDefinition *)withFactory:(TyphoonDefinition *)factory selector:(SEL)selector
+{
+    return [TyphoonDefinition withFactory:factory selector:selector parameters:nil];
+}
+
++ (TyphoonDefinition *)withFactory:(TyphoonDefinition *)factory selector:(SEL)selector parameters:(void (^)(TyphoonMethod *method))parametersBlock
+{
+    return [TyphoonDefinition withClass:[NSObject class] configuration:^(TyphoonDefinition *definition) {
+        [definition setFactory:factory];
+        [definition setScope:TyphoonScopePrototype];
+        [definition useInitializer:selector parameters:parametersBlock];
     }];
 }
 
@@ -175,11 +189,6 @@ static NSString *TyphoonScopeToString(TyphoonScope scope) {
 {
     [self initializer]; //call getter to generate initializer if needed
     return _initializerGenerated;
-}
-
-- (BOOL)hasRuntimeArgumentInjections
-{
-    return [[self.initializer parametersInjectedByRuntimeArgument] count] > 0 || [[self propertiesInjectedByRuntimeArgument] count] > 0;
 }
 
 - (TyphoonScope)scope

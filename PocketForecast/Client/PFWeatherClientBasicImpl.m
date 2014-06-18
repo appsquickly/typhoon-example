@@ -15,7 +15,7 @@
 #import "RXMLElement+PFWeatherReport.h"
 #import "PFWeatherReport.h"
 #import "PFWeatherReportDao.h"
-#import "TyphoonURLUtils.h"
+#import "PFURLUtils.h"
 
 
 @implementation PFWeatherClientBasicImpl
@@ -80,7 +80,7 @@
 
 - (NSURL*)queryURL:(NSString*)city
 {
-    NSURL* url = [TyphoonURLUtils URL:_serviceUrl appendedWithQueryParameters:@{
+    NSURL* url = [PFURLUtils URL:_serviceUrl appendedWithQueryParameters:@{
         @"q"           : city,
         @"format"      : @"xml",
         @"num_of_days" : [NSString stringWithFormat:@"%i", _daysToRetrieve],

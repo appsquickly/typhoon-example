@@ -19,9 +19,10 @@
 *
  Allows for custom modification of a component factory's definitions.
  
- Component factories can auto-detect TyphoonComponentFactoryPostProcessor components in their definitions and apply them before any other components get created.
+ Component factories can auto-detect TyphoonComponentFactoryPostProcessor components in their definitions and apply them before any other
+ components get created.
  
- @see TyphoonPropertyPlaceholderConfigurer for an example implementation.
+ @see TyphoonConfigPostProcessor for an example implementation.
  @see TyphoonComponentPostProcessor which modifies instances after they've been built, rather than the definitions
  */
 @protocol TyphoonComponentFactoryPostProcessor <NSObject>

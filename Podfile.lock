@@ -1,17 +1,19 @@
 PODS:
   - CKUITools (0.5.3)
   - Expecta (0.2.4)
-  - FlatUIKit (1.3)
+  - FlatUIKit (1.4)
   - NGAParallaxMotion (1.0.2)
-  - OCHamcrest (3.0.1)
+  - OCHamcrest (4.0.1)
   - OCLogTemplate (1.0)
-  - OCMockito (1.2.0):
-    - OCHamcrest (~> 3.0)
+  - OCMockito (1.3.0):
+    - OCHamcrest (~> 4.0)
+    - TPWeakProxy (~> 1.0)
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
-  - Typhoon (HEAD based on 1.8.2):
+  - TPWeakProxy (1.0.0)
+  - Typhoon (2.1.0):
     - Typhoon/no-arc
-  - Typhoon/no-arc (HEAD based on 1.8.2)
+  - Typhoon/no-arc (2.1.0)
 
 DEPENDENCIES:
   - CKUITools
@@ -23,7 +25,7 @@ DEPENDENCIES:
   - OCMockito
   - PaperFold (from `https://github.com/jasperblues/PaperFold-for-iOS.git`, tag `1.2-no-gesture-recognizers`)
   - RaptureXML
-  - Typhoon (HEAD)
+  - Typhoon
 
 EXTERNAL SOURCES:
   PaperFold:
@@ -31,15 +33,16 @@ EXTERNAL SOURCES:
     :tag: 1.2-no-gesture-recognizers
 
 SPEC CHECKSUMS:
-  CKUITools: bbac5931dfa9e96721897bea21f6a2233d611db4
-  Expecta: 5c147dedfea5fbcf773995f7e65020abcc936ce5
-  FlatUIKit: 3b32b52bb3c266477709cfe4812ab2c877ae942b
-  NGAParallaxMotion: 876e8934ae1e99eea3a2a0a1e2ae33139f1503b7
-  OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
-  OCLogTemplate: 3586060ab39a4dd8bd1cfe1511137049530c3c3b
-  OCMockito: 050fca9528760faa8b5fafc82faad9d54f0864c0
+  CKUITools: f29a7a5fafbafee96c10b42d5aaf2dc0fc58ad87
+  Expecta: 112bcafa2304ee0f3c5e586505f24555a47b25d5
+  FlatUIKit: edc1ed0c130687dc64a10e45851cc58925f6893d
+  NGAParallaxMotion: f25d6b7e4eefe1c94211dbf402cd3563e56d46f3
+  OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
+  OCLogTemplate: 441259f3660762183dc412d6c30e68a6b6bd6adf
+  OCMockito: eca2670b3ce4a457d316b046a36d6f2b980a4da7
   PaperFold: 56c21be56fe6454fa99927b251396471d341c874
-  RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
-  Typhoon: fba1b1978289e4a9f8662ae0e3a5ddbb0538e2be
+  RaptureXML: b9b0aca9c68c684c189af73dd5e8f8fdeec74600
+  TPWeakProxy: a23251ba7fbe268c93f809cc072ef834f5063798
+  Typhoon: 5af23b4d01c3aee0f3ba72464a1d92e7f93b3552
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1

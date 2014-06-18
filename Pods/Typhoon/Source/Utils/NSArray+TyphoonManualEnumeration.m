@@ -1,10 +1,13 @@
+////////////////////////////////////////////////////////////////////////////////
 //
-//  NSArray+TyphoonSignalEnumerator.m
-//  A-Typhoon
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
+//  All Rights Reserved.
 //
-//  Created by Aleksey Garbarev on 25.03.14.
-//  Copyright (c) 2014 Jasper Blues. All rights reserved.
+//  NOTICE: The authors permit you to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
 //
+////////////////////////////////////////////////////////////////////////////////
 
 #import "NSArray+TyphoonManualEnumeration.h"
 
@@ -42,8 +45,8 @@
 
     NSEnumerator *objectsEnumerator = [self objectEnumerator];
     
-    __weak typeof (self) weakSelf = self;
-    __weak typeof (signal) weakSignal = signal;
+    __weak __typeof (self) weakSelf = self;
+    __weak __typeof (signal) weakSignal = signal;
 
     [signal setNextBlock:^{
         [weakSelf typhoon_doStepWithEnumerator:objectsEnumerator signal:weakSignal block:block completion:completion];

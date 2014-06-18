@@ -24,8 +24,9 @@
 #import "TyphoonRuntimeArguments.h"
 #import "TyphoonObjectWithCustomInjection.h"
 #import "TyphoonInjectionByComponentFactory.h"
+#import "TyphoonSelector.h"
 
-static NSMutableArray *reservedSelectorsAsStrings;
+static NSMutableSet *reservedSelectorsAsStrings;
 
 @interface TyphoonAssembly () <TyphoonObjectWithCustomInjection>
 
@@ -61,9 +62,9 @@ static NSMutableArray *reservedSelectorsAsStrings;
     [self reserveSelectors];
 }
 
-+ (void)reserveSelectors;
++ (void)reserveSelectors
 {
-    reservedSelectorsAsStrings = [[NSMutableArray alloc] init];
+    reservedSelectorsAsStrings = [[NSMutableSet alloc] init];
 
     [self markSelectorReserved:@selector(init)];
     [self markSelectorReserved:@selector(definitions)];
@@ -72,6 +73,7 @@ static NSMutableArray *reservedSelectorsAsStrings;
     [self markSelectorReserved:@selector(defaultAssembly)];
     [self markSelectorReserved:@selector(asFactory)];
     [self markSelectorReserved:@selector(resolveCollaboratingAssemblies)];
+
 }
 
 + (void)markSelectorReserved:(SEL)selector
@@ -84,60 +86,28 @@ static NSMutableArray *reservedSelectorsAsStrings;
     [reservedSelectorsAsStrings addObject:stringFromSelector];
 }
 
-/* ====================================================================================================================================== */
-#pragma mark - Instance Method Resolution
-// handle definition method calls, mapping [self definitionA] to [self->_definitionBuilder builtDefinitionForKey:@"definitionA"]
-+ (BOOL)resolveInstanceMethod:(SEL)sel
-{
-    if ([self shouldProvideDynamicImplementationFor:sel]) {
-        [self provideDynamicImplementationToConstructDefinitionForSEL:sel];
-        return YES;
-    }
-
-    return [super resolveInstanceMethod:sel];
-}
-
-+ (BOOL)shouldProvideDynamicImplementationFor:(SEL)sel;
-{
-    return ([self selectorCorrespondsToDefinitionMethod:sel] && [TyphoonAssemblySelectorAdviser selectorIsAdvised:sel]);
-}
-
-+ (BOOL)selectorCorrespondsToDefinitionMethod:(SEL)sel
-{
-    return ![self selectorReservedOrPropertySetter:sel];
-}
-
-+ (BOOL)selectorReservedOrPropertySetter:(SEL)selector
-{
-    return [self selectorIsReserved:selector] || [self selectorIsPropertySetter:selector];
-}
-
 + (BOOL)selectorIsReserved:(SEL)selector
 {
     NSString *selectorString = NSStringFromSelector(selector);
     return [reservedSelectorsAsStrings containsObject:selectorString];
 }
 
-+ (BOOL)selectorIsPropertySetter:(SEL)selector
+#pragma mark - Forwarding definition methods
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
 {
-    NSString *selectorString = NSStringFromSelector(selector);
-    return [selectorString hasPrefix:@"set"] && [selectorString hasSuffix:@":"];
+    TyphoonRuntimeArguments *args = [TyphoonRuntimeArguments argumentsFromInvocation:anInvocation];
+
+    TyphoonDefinition *definition = [self buildDefinitionForSelector:anInvocation.selector args:args];
+
+    [anInvocation retainArguments];
+    [anInvocation setReturnValue:&definition];
 }
 
-+ (void)provideDynamicImplementationToConstructDefinitionForSEL:(SEL)sel;
+- (TyphoonDefinition *)buildDefinitionForSelector:(SEL)selector args:(TyphoonRuntimeArguments *)args
 {
-    IMP imp = &ImplementationToConstructDefinitionAndCatchArguments;
-    class_addMethod(self, sel, imp, "@");
-}
-
-static id ImplementationToConstructDefinitionAndCatchArguments(TyphoonAssembly *me, SEL selector, ...) {
-    va_list list;
-    va_start(list, selector);
-    TyphoonRuntimeArguments *args = [TyphoonRuntimeArguments argumentsFromVAList:list selector:selector];
-    va_end(list);
-
-    NSString *key = [TyphoonAssemblySelectorAdviser keyForAdvisedSEL:selector];
-    return [me->_definitionBuilder builtDefinitionForKey:key args:args];
+    NSString *key = NSStringFromSelector(selector);
+    return [_definitionBuilder builtDefinitionForKey:key args:args];
 }
 
 /* ====================================================================================================================================== */

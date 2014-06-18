@@ -52,12 +52,12 @@
 
 - (void)setExpectedInvocation:(NSInvocation *)expectedInvocation
 {
+    [expectedInvocation mkt_retainArgumentsWithWeakTarget];
     self.expected = expectedInvocation;
-    [self.expected retainArguments];
 
     self.numberOfArguments = [[self.expected methodSignature] numberOfArguments] - 2;
     [self trueUpArgumentMatchersToCount:self.numberOfArguments];
-    [self replacePlaceholdersWithEqualityMatchersForArguments:[self.expected mkt_arrayArguments]];
+    [self replacePlaceholdersWithEqualityMatchersForArguments:[self.expected mkt_arguments]];
 }
 
 - (void)replacePlaceholdersWithEqualityMatchersForArguments:(NSArray *)expectedArgs
@@ -87,7 +87,7 @@
     if ([self.expected selector] != [actual selector])
         return NO;
 
-    NSArray *actualArgs = [actual mkt_arrayArguments];
+    NSArray *actualArgs = [actual mkt_arguments];
     for (NSUInteger index = 0; index < self.numberOfArguments; ++index)
     {
         if ([self argument:actualArgs[index] doesNotMatch:self.argumentMatchers[index]])
@@ -121,7 +121,7 @@
     {
         if ([self.expected selector] == [inv selector])
         {
-            NSArray *args = [inv mkt_arrayArguments];
+            NSArray *args = [inv mkt_arguments];
             [capturingMatcher performSelector:@selector(captureArgument:) withObject:args[index]];
         }
     }

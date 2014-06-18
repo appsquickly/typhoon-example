@@ -9,20 +9,18 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#import "TyphoonAssembly.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonDefinition+Infrastructure.h"
 #import "TyphoonMethod.h"
-#import "TyphoonPropertyPlaceholderConfigurer.h"
-#import "TyphoonFactoryProvider.h"
+#import "TyphoonConfigPostProcessor.h"
 #import "TyphoonResource.h"
 #import "TyphoonBundleResource.h"
 #import "TyphoonComponentFactory.h"
 #import "TyphoonComponentFactory+InstanceBuilder.h"
 #import "TyphoonComponentFactoryPostProcessor.h"
 #import "TyphoonIntrospectionUtils.h"
-#import "TyphoonAssembly.h"
 #import "TyphoonCollaboratingAssemblyProxy.h"
-#import "TyphoonComponentFactoryAware.h"
 #import "NSObject+FactoryHooks.h"
 
 #import "TyphoonBlockComponentFactory.h"
