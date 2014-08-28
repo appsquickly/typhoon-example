@@ -11,9 +11,9 @@ PODS:
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
   - TPWeakProxy (1.0.0)
-  - Typhoon (2.1.0):
+  - Typhoon (2.2.0):
     - Typhoon/no-arc
-  - Typhoon/no-arc (2.1.0)
+  - Typhoon/no-arc (2.2.0)
 
 DEPENDENCIES:
   - CKUITools
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   PaperFold: 56c21be56fe6454fa99927b251396471d341c874
   RaptureXML: b9b0aca9c68c684c189af73dd5e8f8fdeec74600
   TPWeakProxy: a23251ba7fbe268c93f809cc072ef834f5063798
-  Typhoon: 5af23b4d01c3aee0f3ba72464a1d92e7f93b3552
+  Typhoon: 6fc39bd11ed9a71f2551594590f4ef8bf7043afb
 
 COCOAPODS: 0.33.1

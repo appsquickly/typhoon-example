@@ -94,7 +94,10 @@ static TyphoonComponentFactory *defaultFactory;
 {
     @synchronized (self) {
         if ([self isLoaded]) {
+            NSAssert([_stack isEmpty], @"Stack should be empty when unloading factory. Please finish all object creation before factory unloading");
             [_singletons removeAllObjects];
+            [_weakSingletons removeAllObjects];
+            [_objectGraphSharedInstances removeAllObjects];
             [self setLoaded:NO];
         }
     }
@@ -120,13 +123,13 @@ static TyphoonComponentFactory *defaultFactory;
 
 - (id)componentForType:(id)classOrProtocol
 {
-    if (![self isLoaded]) {[self load];}
+    [self loadIfNeeded];
     return [self objectForDefinition:[self definitionForType:classOrProtocol] args:nil];
 }
 
 - (NSArray *)allComponentsForType:(id)classOrProtocol
 {
-    if (![self isLoaded]) {[self load];}
+    [self loadIfNeeded];
     NSMutableArray *results = [[NSMutableArray alloc] init];
     NSArray *definitions = [self allDefinitionsForType:classOrProtocol];
     for (TyphoonDefinition *definition in definitions) {
@@ -200,20 +203,16 @@ static TyphoonComponentFactory *defaultFactory;
 - (void)inject:(id)instance
 {
     @synchronized(self) {
-        if (![self isLoaded]) {[self load];}
-        Class class = [instance class];
-        for (TyphoonDefinition *definition in _registry) {
-            if (definition.type == class) {
-                [self doInjectionEventsOn:instance withDefinition:definition args:nil];
-            }
-        }
+        [self loadIfNeeded];
+        TyphoonDefinition *definitionForInstance = [self definitionForType:[instance class] orNil:YES includeSubclasses:NO];
+        [self doInjectionEventsOn:instance withDefinition:definitionForInstance args:nil];
     }
 }
 
 - (void)inject:(id)instance withDefinition:(SEL)selector
 {
     @synchronized(self) {
-        if (![self isLoaded]) {[self load];}
+        [self loadIfNeeded];
         TyphoonDefinition *definition = [self definitionForKey:NSStringFromSelector(selector)];
         if (definition) {
             [self doInjectionEventsOn:instance withDefinition:definition args:nil];
@@ -224,6 +223,7 @@ static TyphoonComponentFactory *defaultFactory;
         }
     }
 }
+
 
 /* ====================================================================================================================================== */
 #pragma mark - Utility Methods

@@ -19,9 +19,16 @@
 #import "TyphoonInjectionByCollection.h"
 #import "TyphoonInjectionByRuntimeArgument.h"
 #import "TyphoonInjectionByDictionary.h"
+#import "TyphoonInjectionByCurrentRuntimeArguments.h"
 
 #import "TyphoonObjectWithCustomInjection.h"
 #import "TyphoonInjectionByConfig.h"
+
+#import <objc/runtime.h>
+
+static const char *typhoonRuntimeArgumentBlockWrapperKey;
+
+BOOL IsWrappedIntoTyphoonBlock(id objectOrBlock) ;
 
 id TyphoonInjectionMatchedByType(void) {
     return [[TyphoonInjectionByType alloc] init];
@@ -39,8 +46,14 @@ id TyphoonInjectionWithDictionaryAndType(id dictionary, Class requiredClass) {
     return [[TyphoonInjectionByDictionary alloc] initWithDictionary:dictionary requiredClass:requiredClass];
 }
 
-id TyphoonInjectionWithRuntimeArgumentAtIndex(NSInteger argumentIndex) {
+id TyphoonInjectionWithRuntimeArgumentAtIndex(NSUInteger argumentIndex) {
     return [[TyphoonInjectionByRuntimeArgument alloc] initWithArgumentIndex:argumentIndex];
+}
+
+id TyphoonInjectionWithRuntimeArgumentAtIndexWrappedIntoBlock(NSUInteger argumentIndex) {
+    id(^block)() = ^{return[[TyphoonInjectionByRuntimeArgument alloc] initWithArgumentIndex:argumentIndex];};
+    objc_setAssociatedObject(block, &typhoonRuntimeArgumentBlockWrapperKey, @YES, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return block;
 }
 
 id TyphoonInjectionWithObject(id object) {
@@ -56,6 +69,11 @@ id TyphoonInjectionWithConfigKey(NSString *configKey)
     return [[TyphoonInjectionByConfig alloc] initWithConfigKey:configKey];
 }
 
+id TyphoonInjectionWithCurrentRuntimeArguments()
+{
+    return [TyphoonInjectionByCurrentRuntimeArguments new];
+}
+
 id TyphoonMakeInjectionFromObjectIfNeeded(id objectOrInjection) {
     id injection = nil;
 
@@ -64,6 +82,9 @@ id TyphoonMakeInjectionFromObjectIfNeeded(id objectOrInjection) {
     }
     else if (IsTyphoonInjection(objectOrInjection)) {
         injection = objectOrInjection;
+    }
+    else if (IsWrappedIntoTyphoonBlock(objectOrInjection)) {
+        injection = ((id(^)())objectOrInjection)();
     }
     else {
         injection = TyphoonInjectionWithObject(objectOrInjection);
@@ -75,5 +96,9 @@ id TyphoonMakeInjectionFromObjectIfNeeded(id objectOrInjection) {
 BOOL IsTyphoonInjection(id objectOrInjection) {
     return [objectOrInjection conformsToProtocol:@protocol(TyphoonPropertyInjection)] ||
         [objectOrInjection conformsToProtocol:@protocol(TyphoonParameterInjection)];
+}
+
+BOOL IsWrappedIntoTyphoonBlock(id objectOrBlock) {
+    return [objc_getAssociatedObject(objectOrBlock, &typhoonRuntimeArgumentBlockWrapperKey) isEqualToNumber:@YES];
 }
 

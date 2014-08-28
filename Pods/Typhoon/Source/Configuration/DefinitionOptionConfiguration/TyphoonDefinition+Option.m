@@ -6,22 +6,23 @@
 #import "TyphoonDefinition+Option.h"
 #import "TyphoonOptionMatcher+Internal.h"
 #import "TyphoonMatcherDefinitionFactory.h"
+#import "TyphoonInjections.h"
 
 @implementation TyphoonDefinition (Option)
 
-+ (TyphoonDefinition *)withOption:(id)option yes:(TyphoonDefinition *)yesDefinition no:(TyphoonDefinition *)noDefinition
++ (id)withOption:(id)option yes:(id)yesDefinition no:(id)noDefinition
 {
     return [self withOption:option matcher:^(TyphoonOptionMatcher *matcher) {
-        [matcher caseOption:@YES use:yesDefinition];
-        [matcher caseOption:@"YES" use:yesDefinition];
-        [matcher caseOption:@"1" use:yesDefinition];
-        [matcher caseOption:@NO use:noDefinition];
-        [matcher caseOption:@"NO" use:noDefinition];
-        [matcher caseOption:@"0" use:noDefinition];
+        [matcher caseEqual:@YES use:yesDefinition];
+        [matcher caseEqual:@"YES" use:yesDefinition];
+        [matcher caseEqual:@"1" use:yesDefinition];
+        [matcher caseEqual:@NO use:noDefinition];
+        [matcher caseEqual:@"NO" use:noDefinition];
+        [matcher caseEqual:@"0" use:noDefinition];
     }];
 }
 
-+ (TyphoonDefinition *)withOption:(id)option matcher:(TyphoonMatcherBlock)matcherBlock
++ (id)withOption:(id)option matcher:(TyphoonMatcherBlock)matcherBlock
 {
     TyphoonOptionMatcher *matcher = [[TyphoonOptionMatcher alloc] initWithBlock:matcherBlock];
 
@@ -33,8 +34,9 @@
     return [TyphoonDefinition withClass:[TyphoonInternalFactoryContainedDefinition class] configuration:^(TyphoonDefinition *definition) {
         [definition setFactory:factoryDefinition];
         [definition setScope:TyphoonScopePrototype];
-        [definition useInitializer:@selector(valueCreatedFromDefinitionMatchedOption:) parameters:^(TyphoonMethod *initializer) {
+        [definition useInitializer:@selector(valueCreatedFromDefinitionMatchedOption:args:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:option];
+            [initializer injectParameterWith:TyphoonInjectionWithCurrentRuntimeArguments()];
         }];
     }];
 }

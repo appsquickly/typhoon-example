@@ -2,6 +2,13 @@
 
 Elegant, powerful dependency injection for Cocoa and CocoaTouch. Lightweight (just 2500 lines of code), yet full-featured and super-easy to use. 
 
+### Swift News!!!
+
+We're getting Typhoon ready to work with Swift. 
+
+* Currently its possible to create assemblies and resolve components from TyphoonComponentFactory using componentForType, componentForKey, etc. 
+* Resolving using your assembly interfaces does not yet work in Swift. 
+
 ## Familiar with Dependency Injection?
 
 * Read the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Quick Start</a>, <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a> or <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API Docs</a>  ***Updated for version 2.0!!!!***

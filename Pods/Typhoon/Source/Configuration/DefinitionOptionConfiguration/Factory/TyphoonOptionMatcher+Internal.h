@@ -8,11 +8,15 @@
 #import "TyphoonDefinition+Option.h"
 
 @class TyphoonComponentFactory;
+@protocol TyphoonInjection;
+
+typedef void(^TyphoonOptionMatcherDefinitionSearchResult)(TyphoonDefinition *definition, TyphoonRuntimeArguments *arguments);
+
 
 @interface TyphoonOptionMatcher (Internal)
 
 - (instancetype)initWithBlock:(TyphoonMatcherBlock)block;
 
-- (TyphoonDefinition *)definitionMatchingValue:(id)value withComponentFactory:(TyphoonComponentFactory *)factory;
+- (id<TyphoonInjection>)injectionMatchedValue:(id)value;
 
 @end
