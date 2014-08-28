@@ -210,7 +210,7 @@
         [self.view addSubview:_addCitiesController.view];
 
         __block CGRect frame = _citiesListController.view.frame;
-        [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+        [UIView transitionWithView:self.view duration:0.25 options:UIViewAnimationOptionCurveEaseInOut animations:^
         {
             frame.origin.y = 0;
             _addCitiesController.view.frame = frame;
@@ -224,7 +224,7 @@
     {
         [_citiesListController viewWillAppear:YES];
         __block CGRect frame = _citiesListController.view.frame;
-        [UIView transitionWithView:self.view duration:0.4 options:UIViewAnimationOptionCurveEaseInOut animations:^
+        [UIView transitionWithView:self.view duration:0.25 options:UIViewAnimationOptionCurveEaseInOut animations:^
         {
             frame.origin.y += self.view.height;
             _addCitiesController.view.frame = frame;

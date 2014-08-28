@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6bc38d9-29d3-4e38-95cc-03c66446d1b4" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFAssembly.h" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFAssembly.m" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.h" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.m" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFThemeProvider.h" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFThemeProvider.m" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.m" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/runConfigurations/Pods_PocketForecastTests.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcshareddata/xcschemes/Pods-PocketForecastTests.xcscheme" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.h" afterPath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" afterPath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist" afterPath="$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcworkspace/xcshareddata/PocketForecast.xccheckout" afterPath="$PROJECT_DIR$/PocketForecast.xcworkspace/xcshareddata/PocketForecast.xccheckout" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Typhoon-example.iml" afterPath="$PROJECT_DIR$/.idea/Typhoon-example.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Typhoon-example.iws" />
@@ -33,36 +27,16 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_iPhone_Retina__3_5_inch__7.1_i386_1" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_9f73d7ea60cb753b8a126b8fcc855f143b27bcd1" />
   <component name="FavoritesManager">
     <favorites_list name="PocketForecast" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PFThemeProvider.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PocketForecast-Info.plist" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-              <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PFWeatherReportViewController.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+            <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="795">
               <caret line="44" column="91" selection-start-line="44" selection-start-column="91" selection-end-line="44" selection-end-column="91" />
               <folding />
             </state>
@@ -72,7 +46,7 @@
       <file leaf-file-name="PFAppDelegate.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="735">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
@@ -82,18 +56,38 @@
       <file leaf-file-name="PFAppDelegate.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+            <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="555">
               <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFAssembly.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PFAssembly.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28869048" vertical-offset="9" max-vertical-offset="1920">
-              <caret line="20" column="168" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1920">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFRootViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.692307" vertical-offset="2673" max-vertical-offset="5565">
+              <caret line="195" column="48" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFCitiesListViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1925" max-vertical-offset="3225">
+              <caret line="168" column="40" selection-start-line="168" selection-start-column="40" selection-end-line="168" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -102,17 +96,17 @@
       <file leaf-file-name="PFCoreComponents.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="540">
               <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Configuration.properties" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Configuration.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+            <state vertical-scroll-proportion="0.08928572" vertical-offset="0" max-vertical-offset="1008">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
@@ -122,7 +116,7 @@
       <file leaf-file-name="PFWeatherReportViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2145">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="2145">
               <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
               <folding />
             </state>
@@ -132,7 +126,7 @@
       <file leaf-file-name="PFAssembly.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+            <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="870">
               <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
               <folding>
                 <marker date="1409202505000" expanded="true" signature="955:1808" placeholder="..." />
@@ -174,7 +168,6 @@
         <option value="$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h" />
-        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
         <option value="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.m" />
@@ -184,10 +177,11 @@
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.h" />
-        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
         <option value="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" />
         <option value="$PROJECT_DIR$/PocketForecast/PFAppDelegate.h" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
       </list>
     </option>
   </component>
@@ -222,7 +216,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -415,6 +408,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -539,6 +533,13 @@
       </EXTENSION>
       <method />
     </configuration>
+    <configuration default="false" name="Pods-PocketForecastTests" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests" CONFIG_NAME="Debug" SCHEME_NAME="Pods-PocketForecastTests" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
     <configuration default="false" name="Tests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecastTests" CONFIG_NAME="Debug" SCHEME_NAME="Tests" TEST_MODE="SUITE_TEST" XCODE_SKIPPED_TESTS_HASH_CODE="0">
       <envs />
       <RunnerSettings RunnerId="AppRunner" />
@@ -602,18 +603,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2760181" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25791857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25716442" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17979316" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17263326" sideWeight="0.6033163" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17382658" sideWeight="0.6033163" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21870287" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35714287" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35714287" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -640,14 +641,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="840">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="675">
@@ -668,9 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="750">
           <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,9 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="405">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,44 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="5565">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL complete){...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1455">
           <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="840">
           <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,9 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="750">
           <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,9 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="405">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,44 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="5565">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL complete){...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -862,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1455">
           <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -870,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="840">
           <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,9 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="750">
           <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -904,9 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="405">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,44 +811,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="5565">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL complete){...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,9 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1023,9 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
           <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-          <folding>
-            <marker date="1403085813000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1455">
           <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,56 +898,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5565">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL finished){...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^{...}" />
-            <marker date="1403085965000" expanded="true" signature="-1:-1" placeholder="^(BOOL complete){...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pods/Typhoon/Source/Configuration/ConfigPostProcessor/TyphoonConfigPostProcessor.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3075">
           <caret line="158" column="32" selection-start-line="158" selection-start-column="32" selection-end-line="158" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,7 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1470">
           <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,7 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,7 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="552" max-vertical-offset="1560">
           <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,14 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1198,8 +993,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28869048" vertical-offset="9" max-vertical-offset="1920">
-          <caret line="20" column="168" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1920">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1925" max-vertical-offset="3225">
+          <caret line="168" column="40" selection-start-line="168" selection-start-column="40" selection-end-line="168" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.692307" vertical-offset="2673" max-vertical-offset="5565">
+          <caret line="195" column="48" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08928572" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
