@@ -21,25 +21,28 @@
 @protocol PFCityDao;
 @class PFTheme;
 @class TyphoonComponentFactory;
+@class PFAssembly;
+@class PFRootViewController;
 
 
 @interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate>
 {
 
-    PFWeatherReport* _weatherReport;
-    NSString* _cityName;
-    TyphoonComponentFactory* _factory;
+    PFWeatherReport *_weatherReport;
+    NSString *_cityName;
 }
 
-#pragma mark - Spring injected via initializer
+#pragma mark - Injected w/ initializer
+
 @property(nonatomic, strong, readonly) id <PFWeatherClient> weatherClient;
 @property(nonatomic, strong, readonly) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
-@property(nonatomic, strong, readonly) PFTheme* theme;
+@property(nonatomic, strong, readonly) PFTheme *theme;
+@property(nonatomic, strong, readonly) PFAssembly *assembly;
 
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme*)theme;
+    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFAssembly *)assembly;
 
 
 @end

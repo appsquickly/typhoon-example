@@ -18,12 +18,14 @@
 @class PFWeatherReportViewController;
 @protocol PFCityDao;
 @class TyphoonComponentFactory;
+@class PFRootViewController;
 
 @interface PFAppDelegate : UIResponder <UIApplicationDelegate>
 
 
-@property(nonatomic, strong) UIWindow* window;
-@property(nonatomic, strong, readonly) TyphoonComponentFactory* factory;
+@property(nonatomic, strong) UIWindow *window;
+@property(nonatomic, strong) id <PFCityDao> cityDao;
+@property(nonatomic, strong) PFRootViewController *rootViewController;
 
 
 @end

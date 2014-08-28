@@ -14,20 +14,13 @@
 #import "PFWeatherClientBasicImpl.h"
 #import "PFWeatherReportDaoFileSystemImpl.h"
 #import "PFCityDaoUserDefaultsImpl.h"
-#import "TyphoonBundleResource.h"
-#import "TyphoonDefinition+Infrastructure.h"
 #import "TyphoonConfigPostProcessor.h"
 
 @implementation PFCoreComponents
 
-- (id)config
+- (id <PFWeatherClient>)weatherClient
 {
-    return [TyphoonDefinition configDefinitionWithResource:[TyphoonBundleResource withName:@"Configuration.properties"]];
-}
-
-- (id)weatherClient
-{
-    return [TyphoonDefinition withClass:[PFWeatherClientBasicImpl class] configuration:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFWeatherClientBasicImpl class] configuration:^(TyphoonDefinition *definition)
     {
         [definition injectProperty:@selector(serviceUrl) with:TyphoonConfig(@"service.url")];
         [definition injectProperty:@selector(apiKey) with:TyphoonConfig(@"api.key")];
@@ -37,12 +30,12 @@
 }
 
 
-- (id)weatherReportDao
+- (id <PFWeatherReportDao>)weatherReportDao
 {
     return [TyphoonDefinition withClass:[PFWeatherReportDaoFileSystemImpl class]];
 }
 
-- (id)cityDao
+- (id <PFCityDao>)cityDao
 {
     return [TyphoonDefinition withClass:[PFCityDaoUserDefaultsImpl class]];
 }

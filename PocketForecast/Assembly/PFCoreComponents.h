@@ -14,14 +14,18 @@
 #import <Foundation/Foundation.h>
 #import "TyphoonAssembly.h"
 
+@protocol PFWeatherClient;
+@protocol PFCityDao;
+@protocol PFWeatherReportDao;
+
 
 @interface PFCoreComponents : TyphoonAssembly
 
 
-- (id)weatherClient;
+- (id<PFWeatherClient>)weatherClient;
 
-- (id)weatherReportDao;
+- (id<PFWeatherReportDao>)weatherReportDao;
 
-- (id)cityDao;
+- (id<PFCityDao>)cityDao;
 
 @end

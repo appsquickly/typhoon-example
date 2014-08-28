@@ -9,25 +9,24 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
 #import <Foundation/Foundation.h>
 #import "TyphoonAssembly.h"
 
-@class PFCoreComponents;
-@class PFThemeProvider;
+@class PFTheme;
 
+/**
+* This assembly illustrates the use of several concepts: factory-components, collections, and type-converters.
+*/
+@interface PFThemeProvider : TyphoonAssembly
 
-@interface PFAssembly : TyphoonAssembly
+- (PFTheme *)currentTheme;
 
-@property(nonatomic, strong, readonly) PFCoreComponents* coreComponents;
-@property(nonatomic, strong, readonly) PFThemeProvider* themeProvider;
+- (PFTheme *)cloudsOverTheCityTheme;
 
-- (id)rootViewController;
+- (PFTheme *)lightsInTheRainTheme;
 
-- (id)citiesListController;
+- (PFTheme *)beachTheme;
 
-- (id)weatherReportController;
-
-- (id)addCityViewController;
+- (PFTheme *)sunsetTheme;
 
 @end

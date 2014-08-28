@@ -21,7 +21,7 @@
 #import "PFRootViewController.h"
 #import "PFProgressHUD.h"
 #import "PFTheme.h"
-#import "TyphoonComponentFactory.h"
+#import "PFAssembly.h"
 
 
 @implementation PFWeatherReportViewController
@@ -31,7 +31,7 @@
 #pragma mark - Initialization & Destruction
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme*)theme
+    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFAssembly *)assembly;
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
@@ -40,29 +40,17 @@
         _weatherReportDao = weatherReportDao;
         _cityDao = cityDao;
         _theme = theme;
+        _assembly = assembly;
     }
     return self;
 }
-
-- (void)dealloc
-{
-//    Typhoon_LogDealloc();
-}
-
-#pragma mark - <TyphoonComponentFactoryAware>
-
-- (void)typhoonSetFactory:(id)theFactory
-{
-    _factory = theFactory;
-}
-
 
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods
 
 - (void)loadView
 {
-    PFWeatherReportView* view = [[PFWeatherReportView alloc] initWithFrame:CGRectZero];
+    PFWeatherReportView *view = [[PFWeatherReportView alloc] initWithFrame:CGRectZero];
     [view setTheme:_theme];
     self.view = view;
 }
@@ -80,7 +68,7 @@
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
     {
-        [(PFWeatherReportView*) self.view setWeatherReport:_weatherReport];
+        [(PFWeatherReportView *) self.view setWeatherReport:_weatherReport];
     }
     else if (_cityName)
     {
@@ -92,18 +80,18 @@
 {
     if (_cityName)
     {
-        UIBarButtonItem* cityListButton = [[UIBarButtonItem alloc]
-            initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(presentMenu)];
+        UIBarButtonItem *cityListButton =
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(presentMenu)];
         [cityListButton setTintColor:[UIColor whiteColor]];
 
-        UIBarButtonItem* space = [[UIBarButtonItem alloc]
+        UIBarButtonItem *space = [[UIBarButtonItem alloc]
             initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(menuButtonPressed)];
 
-        UIBarButtonItem* refreshButton =
+        UIBarButtonItem *refreshButton =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshData)];
         [refreshButton setTintColor:[UIColor whiteColor]];
 
-        [((PFWeatherReportView*) self.view).toolbar setItems:@[
+        [((PFWeatherReportView *) self.view).toolbar setItems:@[
             cityListButton,
             space,
             refreshButton
@@ -123,14 +111,14 @@
 
 - (void)refreshData
 {
-    __weak PFWeatherReportView* view = (PFWeatherReportView*) self.view;
+    __weak PFWeatherReportView *view = (PFWeatherReportView *) self.view;
     [PFProgressHUD present];
-    [_weatherClient loadWeatherReportFor:_cityName onSuccess:^(PFWeatherReport* report)
+    [_weatherClient loadWeatherReportFor:_cityName onSuccess:^(PFWeatherReport *report)
     {
         LogDebug(@"Got report: %@", report);
         [view setWeatherReport:report];
         [PFProgressHUD dismiss];
-    } onError:^(NSString* message)
+    } onError:^(NSString *message)
     {
         [PFProgressHUD dismiss];
         LogDebug(@"Error %@", message);
@@ -139,8 +127,10 @@
 
 - (void)presentMenu
 {
-    PFRootViewController* controller = [_factory componentForType:[PFRootViewController class]];
-    [controller toggleSideViewController];
+    //Here we could have injected the root controller itself, however its useful to see the TyphoonComponentFactory itself being injected,
+    //and posing behind an assembly interface.
+
+    [[_assembly rootViewController] toggleSideViewController];
 }
 
 

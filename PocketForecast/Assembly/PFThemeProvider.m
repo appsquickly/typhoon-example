@@ -22,9 +22,9 @@
 /**
 * Current-theme is emitted from the theme-factory, which increments the theme on each run of the application.
 */
-- (id)currentTheme
+- (PFTheme *)currentTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition *definition)
     {
         [definition useInitializer:@selector(sequentialTheme)];
         definition.factory = [self themeFactory];
@@ -37,7 +37,7 @@
 */
 - (id)themeFactory
 {
-    return [TyphoonDefinition withClass:[PFThemeFactory class] configuration:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFThemeFactory class] configuration:^(TyphoonDefinition *definition)
     {
         [definition injectProperty:@selector(themes) with:@[
             [self cloudsOverTheCityTheme],
@@ -49,9 +49,9 @@
     }];
 }
 
-- (id)cloudsOverTheCityTheme
+- (PFTheme *)cloudsOverTheCityTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition *definition)
     {
         [definition injectProperty:@selector(backgroundResourceName) with:@"bg3.png"];
         [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0x641d23]];
@@ -60,9 +60,9 @@
     }];
 }
 
-- (id)lightsInTheRainTheme
+- (PFTheme *)lightsInTheRainTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition *definition)
     {
         [definition injectProperty:@selector(backgroundResourceName) with:@"bg4.png"];
         [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0xeaa53d]];
@@ -72,9 +72,9 @@
 }
 
 
-- (id)beachTheme
+- (PFTheme *)beachTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition *definition)
     {
         [definition injectProperty:@selector(backgroundResourceName) with:@"bg5.png"];
         [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0x37b1da]];
@@ -84,9 +84,9 @@
 }
 
 
-- (id)sunsetTheme
+- (PFTheme *)sunsetTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition* definition)
+    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition *definition)
     {
         [definition injectProperty:@selector(backgroundResourceName) with:@"sunset.png"];
         [definition injectProperty:@selector(navigationBarColor) with:[UIColor colorWithHexRGB:0x0a1d3b]];
