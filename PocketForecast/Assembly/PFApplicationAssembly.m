@@ -10,19 +10,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#import "PFAssembly.h"
+#import "PFApplicationAssembly.h"
 #import "PFCoreComponents.h"
 #import "PFAddCityViewController.h"
 #import "PFRootViewController.h"
 #import "PFCitiesListViewController.h"
-#import "PFThemeProvider.h"
+#import "PFThemeAssembly.h"
 #import "PFWeatherReportViewController.h"
 #import "PFAppDelegate.h"
 #import "TyphoonBundleResource.h"
 #import "TyphoonDefinition+Infrastructure.h"
 
 
-@implementation PFAssembly
+@implementation PFApplicationAssembly
 
 /* ====================================================================================================================================== */
 #pragma mark - Bootstrapping

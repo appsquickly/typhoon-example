@@ -17,7 +17,7 @@
 /**
 * This assembly illustrates the use of several concepts: factory-components, collections, and type-converters.
 */
-@interface PFThemeProvider : TyphoonAssembly
+@interface PFThemeAssembly : TyphoonAssembly
 
 - (PFTheme *)currentTheme;
 

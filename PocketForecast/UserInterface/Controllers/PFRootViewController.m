@@ -50,7 +50,7 @@
 }
 
 /**
-* Since we have a PFAssembly interface (from the block-style assembly) we'll place that interface as a facade in front of the
+* Since we have a PFApplicationAssembly interface (from the block-style assembly) we'll place that interface as a facade in front of the
 * TyphoonComponentFactory. . . we could also use the TyphoonComponentFactory interface directly, eg:
  *
  *      TyphoonComponentFactory* factory = theFactory;

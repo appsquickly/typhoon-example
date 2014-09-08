@@ -3,6 +3,7 @@ PODS:
   - Expecta (0.2.4)
   - FlatUIKit (1.4)
   - NGAParallaxMotion (1.0.2)
+  - NSURL+QueryDictionary (1.0.3)
   - OCHamcrest (4.0.1)
   - OCLogTemplate (1.0)
   - OCMockito (1.3.0):
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Expecta (~> 0.2.1)
   - FlatUIKit
   - NGAParallaxMotion
+  - NSURL+QueryDictionary
   - OCHamcrest
   - OCLogTemplate
   - OCMockito
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   Expecta: 112bcafa2304ee0f3c5e586505f24555a47b25d5
   FlatUIKit: edc1ed0c130687dc64a10e45851cc58925f6893d
   NGAParallaxMotion: f25d6b7e4eefe1c94211dbf402cd3563e56d46f3
+  NSURL+QueryDictionary: 1ad81be60c10e3f4d80c5c4beb7125de96aaec5e
   OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
   OCLogTemplate: 441259f3660762183dc412d6c30e68a6b6bd6adf
   OCMockito: eca2670b3ce4a457d316b046a36d6f2b980a4da7

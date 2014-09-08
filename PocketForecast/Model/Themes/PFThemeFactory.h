@@ -21,6 +21,9 @@
 
 @property(nonatomic, strong, readonly) NSArray* themes;
 
+- (instancetype)initWithThemes:(NSArray *)themes;
+
+
 - (PFTheme*)sequentialTheme;
 
 @end

@@ -43,9 +43,9 @@
     <string>UIStatusBarStyleLightContent</string>
     <key>TyphoonInitialAssemblies</key>
     <array>
-        <string>PFAssembly</string>
+        <string>PFApplicationAssembly</string>
         <string>PFCoreComponents</string>
-        <string>PFThemeProvider</string>
+        <string>PFThemeAssembly</string>
     </array>
 </dict>
 </plist>

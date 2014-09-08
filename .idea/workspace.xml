@@ -2,11 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6bc38d9-29d3-4e38-95cc-03c66446d1b4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/runConfigurations/Pods_PocketForecastTests.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcshareddata/xcschemes/Pods-PocketForecastTests.xcscheme" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.m" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.h" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFApplicationAssembly.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFApplicationAssembly.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.h" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeAssembly.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.m" afterPath="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeAssembly.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" afterPath="$PROJECT_DIR$/PocketForecast/PFAppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.h" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/CitiesList/PFCitiesListViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcworkspace/xcshareddata/PocketForecast.xccheckout" afterPath="$PROJECT_DIR$/PocketForecast.xcworkspace/xcshareddata/PocketForecast.xccheckout" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.h" afterPath="$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.m" afterPath="$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m" afterPath="$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" afterPath="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist" afterPath="$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-CKUITools-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-CKUITools-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-FlatUIKit-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-FlatUIKit-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-NGAParallaxMotion-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-NGAParallaxMotion-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-OCLogTemplate-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-OCLogTemplate-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PaperFold-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-PaperFold-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-RaptureXML-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-RaptureXML-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-Typhoon-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-Typhoon-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-acknowledgements.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-acknowledgements.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast-environment.h" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast-environment.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecast.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecast.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-Expecta-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-Expecta-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-OCHamcrest-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-OCHamcrest-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-OCMockito-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-OCMockito-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-TPWeakProxy-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests-TPWeakProxy-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-PocketForecastTests.xcconfig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Typhoon-example.iml" afterPath="$PROJECT_DIR$/.idea/Typhoon-example.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/PocketForecast.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
@@ -27,57 +58,17 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_9f73d7ea60cb753b8a126b8fcc855f143b27bcd1" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_iPhone_Retina__3_5_inch__7.1_i386_1" />
   <component name="FavoritesManager">
     <favorites_list name="PocketForecast" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PFWeatherReportViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="795">
-              <caret line="44" column="91" selection-start-line="44" selection-start-column="91" selection-end-line="44" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFAppDelegate.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="735">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFAppDelegate.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/PFAppDelegate.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="555">
-              <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PFAssembly.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1920">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PFRootViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.692307" vertical-offset="2673" max-vertical-offset="5565">
-              <caret line="195" column="48" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2673" max-vertical-offset="5565">
+              <caret line="195" column="9" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -93,44 +84,82 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFCoreComponents.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="540">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Configuration.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08928572" vertical-offset="0" max-vertical-offset="1008">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.07653061" vertical-offset="0" max-vertical-offset="588">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFWeatherReportViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m">
+      <file leaf-file-name="Podfile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Podfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="2145">
-              <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+              <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PFAssembly.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.h">
+      <file leaf-file-name="PFWeatherClientBasicImpl.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="870">
-              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-              <folding>
-                <marker date="1409202505000" expanded="true" signature="955:1808" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1455">
+              <caret line="24" column="17" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFThemeAssembly.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFThemeAssembly.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1545">
+              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UIImage+FlatUI.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UIImage+FlatUI.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFThemeFactory.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="1080">
+              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PocketForecast-Info.plist" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="855">
+              <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PFThemeFactory.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="510">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,18 +190,14 @@
         <option value="$PROJECT_DIR$/PocketForecast/Dao/PFWeatherReportDaoFileSystemImpl.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/Views/AddCity.xib" />
-        <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h" />
         <option value="$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.h" />
-        <option value="$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/Blocks/PFCoreComponents.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h" />
         <option value="$PROJECT_DIR$/PocketForecastTests/Integration/PFWeatherClientTests.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFCoreComponents.m" />
-        <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.h" />
-        <option value="$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.h" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.h" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/WeatherReport/PFWeatherReportViewController.m" />
@@ -181,14 +206,21 @@
         <option value="$PROJECT_DIR$/PocketForecast/PFAppDelegate.h" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m" />
         <option value="$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.m" />
+        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.h" />
+        <option value="$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist" />
+        <option value="$PROJECT_DIR$/PocketForecast/Assembly/PFThemeAssembly.m" />
+        <option value="$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m" />
         <option value="$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="2556" />
-    <option name="height" value="1418" />
+    <option name="width" value="1436" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -477,6 +509,13 @@
       </EXTENSION>
       <method />
     </configuration>
+    <configuration default="false" name="Pods-PocketForecast-NSURL+QueryDictionary" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-NSURL+QueryDictionary" CONFIG_NAME="Debug" SCHEME_NAME="Pods-PocketForecast-NSURL+QueryDictionary" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
     <configuration default="false" name="Pods-PocketForecast-OCLogTemplate" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecast-OCLogTemplate" CONFIG_NAME="Debug" SCHEME_NAME="Pods-PocketForecast-OCLogTemplate" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -533,19 +572,6 @@
       </EXTENSION>
       <method />
     </configuration>
-    <configuration default="false" name="Pods-PocketForecastTests" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests" CONFIG_NAME="Debug" SCHEME_NAME="Pods-PocketForecastTests" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
-    <configuration default="false" name="Tests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="PocketForecast" TARGET_NAME="PocketForecastTests" CONFIG_NAME="Debug" SCHEME_NAME="Tests" TEST_MODE="SUITE_TEST" XCODE_SKIPPED_TESTS_HASH_CODE="0">
-      <envs />
-      <RunnerSettings RunnerId="AppRunner" />
-      <ConfigurationWrapper RunnerId="AppRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="Pods-PocketForecastTests-TPWeakProxy" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests-TPWeakProxy" CONFIG_NAME="Debug" SCHEME_NAME="Pods-PocketForecastTests-TPWeakProxy" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -553,22 +579,29 @@
       </EXTENSION>
       <method />
     </configuration>
+    <configuration default="false" name="Pods-PocketForecastTests" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-PocketForecastTests" CONFIG_NAME="Debug" SCHEME_NAME="Pods-PocketForecastTests" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
     <list size="15">
-      <item index="0" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-CKUITools" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-FlatUIKit" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-NGAParallaxMotion" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-OCLogTemplate" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-PaperFold" />
-      <item index="5" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-RaptureXML" />
-      <item index="6" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-Typhoon" />
-      <item index="7" class="java.lang.String" itemvalue="Application.Pods-PocketForecast" />
-      <item index="8" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-Expecta" />
-      <item index="9" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCHamcrest" />
-      <item index="10" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCMockito" />
-      <item index="11" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests" />
-      <item index="12" class="java.lang.String" itemvalue="XCTest/Kiwi.Tests" />
-      <item index="13" class="java.lang.String" itemvalue="Application.PocketForecast" />
-      <item index="14" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-TPWeakProxy" />
+      <item index="0" class="java.lang.String" itemvalue="Application.PocketForecast" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-CKUITools" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-FlatUIKit" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-NGAParallaxMotion" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-NSURL+QueryDictionary" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-OCLogTemplate" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-PaperFold" />
+      <item index="7" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-RaptureXML" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Pods-PocketForecast-Typhoon" />
+      <item index="9" class="java.lang.String" itemvalue="Application.Pods-PocketForecast" />
+      <item index="10" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-Expecta" />
+      <item index="11" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCHamcrest" />
+      <item index="12" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-OCMockito" />
+      <item index="13" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests-TPWeakProxy" />
+      <item index="14" class="java.lang.String" itemvalue="Application.Pods-PocketForecastTests" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -592,7 +625,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2556" height="1418" extended-state="6" />
+    <frame x="0" y="22" width="1436" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -603,15 +636,15 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2760181" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25716442" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25318065" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17979316" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17382658" sideWeight="0.6033163" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21870287" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17934003" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23170732" sideWeight="0.6033163" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21628499" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35714287" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35659897" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -641,11 +674,50 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFThemeAssembly.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1545">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UIImage+FlatUI.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="585">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="1080">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="855">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="510">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/AddCity/PFAddCityViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="675">
           <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,20 +726,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="750">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="750">
-          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="405">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -691,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
           <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="675">
           <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,20 +778,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="750">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="750">
-          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="405">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -759,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
           <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="675">
           <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,20 +830,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="750">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="750">
-          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="405">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -854,39 +880,10 @@
         <state ui-designer-zoom="1.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12692308" vertical-offset="0" max-vertical-offset="1300">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
           <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFURLUtils.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
-          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1455">
-          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -894,7 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
           <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,25 +915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="552" max-vertical-offset="1560">
-          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFThemeProvider.h">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFThemeAssembly.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -961,7 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,25 +956,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.h">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFApplicationAssembly.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
           <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-          <folding>
-            <marker date="1409202505000" expanded="true" signature="955:1808" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFAssembly.m">
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFApplicationAssembly.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1920">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,16 +983,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/UserInterface/Controllers/PFRootViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.692307" vertical-offset="2673" max-vertical-offset="5565">
-          <caret line="195" column="48" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2673" max-vertical-offset="5565">
+          <caret line="195" column="9" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Model/Themes/PFThemeFactory.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="1080">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/PocketForecast-Info.plist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="855">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/PFThemeAssembly.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1545">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/FlatUIKit/Classes/ios/UIImage+FlatUI.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PocketForecast/Client/PFWeatherClientBasicImpl.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1455">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketForecast/Assembly/Configuration.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08928572" vertical-offset="0" max-vertical-offset="1008">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.07653061" vertical-offset="0" max-vertical-offset="588">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
           <folding />
         </state>
       </provider>

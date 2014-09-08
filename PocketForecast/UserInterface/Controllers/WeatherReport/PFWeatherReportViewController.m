@@ -21,7 +21,7 @@
 #import "PFRootViewController.h"
 #import "PFProgressHUD.h"
 #import "PFTheme.h"
-#import "PFAssembly.h"
+#import "PFApplicationAssembly.h"
 
 
 @implementation PFWeatherReportViewController
@@ -31,7 +31,7 @@
 #pragma mark - Initialization & Destruction
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFAssembly *)assembly;
+    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFApplicationAssembly *)assembly;
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)

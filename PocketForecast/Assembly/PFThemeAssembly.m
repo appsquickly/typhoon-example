@@ -9,7 +9,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "PFThemeProvider.h"
+#import "PFThemeAssembly.h"
 #import "PFThemeFactory.h"
 #import "PFTheme.h"
 #import "UIColor+CKUITools.h"
@@ -17,18 +17,14 @@
 /**
 * This assembly illustrates the use of factory-components & collections.
 */
-@implementation PFThemeProvider
+@implementation PFThemeAssembly
 
 /**
 * Current-theme is emitted from the theme-factory, which increments the theme on each run of the application.
 */
 - (PFTheme *)currentTheme
 {
-    return [TyphoonDefinition withClass:[PFTheme class] configuration:^(TyphoonDefinition *definition)
-    {
-        [definition useInitializer:@selector(sequentialTheme)];
-        definition.factory = [self themeFactory];
-    }];
+    return [TyphoonDefinition withFactory:[self themeFactory] selector:@selector(sequentialTheme)];
 }
 
 /**
@@ -39,12 +35,15 @@
 {
     return [TyphoonDefinition withClass:[PFThemeFactory class] configuration:^(TyphoonDefinition *definition)
     {
-        [definition injectProperty:@selector(themes) with:@[
-            [self cloudsOverTheCityTheme],
-            [self beachTheme],
-            [self lightsInTheRainTheme],
-            [self sunsetTheme]
-        ]];
+        [definition useInitializer:@selector(initWithThemes:) parameters:^(TyphoonMethod *initializer)
+        {
+            [initializer injectParameterWith:@[
+                [self cloudsOverTheCityTheme],
+                [self beachTheme],
+                [self lightsInTheRainTheme],
+                [self sunsetTheme]
+            ]];
+        }];
         definition.scope = TyphoonScopeSingleton;
     }];
 }

@@ -21,7 +21,7 @@
 @protocol PFCityDao;
 @class PFTheme;
 @class TyphoonComponentFactory;
-@class PFAssembly;
+@class PFApplicationAssembly;
 @class PFRootViewController;
 
 
@@ -38,11 +38,11 @@
 @property(nonatomic, strong, readonly) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
 @property(nonatomic, strong, readonly) PFTheme *theme;
-@property(nonatomic, strong, readonly) PFAssembly *assembly;
+@property(nonatomic, strong, readonly) PFApplicationAssembly *assembly;
 
 
 - (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFAssembly *)assembly;
+    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFApplicationAssembly *)assembly;
 
 
 @end

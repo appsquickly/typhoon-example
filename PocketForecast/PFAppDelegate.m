@@ -16,7 +16,7 @@
 #import "Typhoon.h"
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
-#import "PFAssembly.h"
+#import "PFApplicationAssembly.h"
 
 @implementation PFAppDelegate
 

@@ -14,22 +14,33 @@
 
 static NSString* const kCurrentThemeIndexFileName = @"PF_CURRENT_THEME_INDEX";
 
-@interface PFThemeFactory ()
-
-@property(nonatomic, strong, readwrite) NSArray* themes;
-
-@end
-
 @implementation PFThemeFactory
 
+/* ====================================================================================================================================== */
+#pragma mark - Initialization & Destruction
 
-- (PFTheme*)sequentialTheme
+- (instancetype)initWithThemes:(NSArray *)themes
 {
-    if ([_themes count] == 0)
+    if ([themes count] == 0)
     {
         [NSException raise:NSInvalidArgumentException format:@"Sequential theme requires at least one theme in collection"];
     }
 
+    self = [super init];
+    if (self)
+    {
+        _themes = themes;
+    }
+
+    return self;
+}
+
+
+/* ====================================================================================================================================== */
+#pragma mark - Interface Methods
+
+- (PFTheme*)sequentialTheme
+{
     if (!_sequentialTheme)
     {
         NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

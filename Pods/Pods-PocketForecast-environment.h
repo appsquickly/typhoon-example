@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_NGAParallaxMotion 0
 #define COCOAPODS_VERSION_PATCH_NGAParallaxMotion 2
 
+// NSURL+QueryDictionary
+#define COCOAPODS_POD_AVAILABLE_NSURL_QueryDictionary
+#define COCOAPODS_VERSION_MAJOR_NSURL_QueryDictionary 1
+#define COCOAPODS_VERSION_MINOR_NSURL_QueryDictionary 0
+#define COCOAPODS_VERSION_PATCH_NSURL_QueryDictionary 3
+
 // OCLogTemplate
 #define COCOAPODS_POD_AVAILABLE_OCLogTemplate
 #define COCOAPODS_VERSION_MAJOR_OCLogTemplate 1

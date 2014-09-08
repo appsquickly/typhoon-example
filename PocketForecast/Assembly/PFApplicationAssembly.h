@@ -14,7 +14,7 @@
 #import "TyphoonAssembly.h"
 
 @class PFCoreComponents;
-@class PFThemeProvider;
+@class PFThemeAssembly;
 @class PFAppDelegate;
 @class PFRootViewController;
 @class PFCitiesListViewController;
@@ -27,10 +27,10 @@
 *
 * For tests, we bootstrap Typhoon in setup.
 */
-@interface PFAssembly : TyphoonAssembly
+@interface PFApplicationAssembly : TyphoonAssembly
 
 @property(nonatomic, strong, readonly) PFCoreComponents *coreComponents;
-@property(nonatomic, strong, readonly) PFThemeProvider *themeProvider;
+@property(nonatomic, strong, readonly) PFThemeAssembly *themeProvider;
 
 /**
 * Typhoon will hook-in and provide dependency injection on the app delegate, which is available is we use plist-style bootstrapping of

@@ -14,7 +14,7 @@
 #import "PaperFoldView.h"
 
 @class PFProgressHUD;
-@class PFAssembly;
+@class PFApplicationAssembly;
 @class TyphoonComponentFactory;
 
 

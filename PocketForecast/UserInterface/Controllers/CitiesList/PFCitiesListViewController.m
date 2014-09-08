@@ -21,7 +21,7 @@
 #import "PFTheme.h"
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
-#import "PFAssembly.h"
+#import "PFApplicationAssembly.h"
 
 
 static int const CELSIUS_SEGMENT_INDEX = 0;

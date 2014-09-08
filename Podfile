@@ -1,4 +1,4 @@
-platform :ios, '6.0'
+platform :ios, '6.1'
 
 target :PocketForecast, :exclusive => true do
 
@@ -9,6 +9,7 @@ target :PocketForecast, :exclusive => true do
   pod 'NGAParallaxMotion'
   pod 'FlatUIKit'
   pod 'PaperFold', :git => 'https://github.com/jasperblues/PaperFold-for-iOS.git', :tag => '1.2-no-gesture-recognizers'
+  pod 'NSURL+QueryDictionary'
 
 end
 

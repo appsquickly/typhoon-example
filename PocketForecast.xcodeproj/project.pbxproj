@@ -33,16 +33,15 @@
 		BA7981CC39013885C2FE0863 /* PFCityDoaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79840E939AE3BF6DBA71E8 /* PFCityDoaTests.m */; };
 		BA7981D19BEB3B55DABF9ECE /* sunset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798AC9E07F264D97ACA770 /* sunset@2x.png */; };
 		BA7981DC11B1519DABA991CB /* sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7982FD0093CF803EE283AE /* sunset.png */; };
-		BA7981DF2314DB246B25838E /* PFAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E37FB886A376AD93008 /* PFAssembly.m */; };
+		BA7981DF2314DB246B25838E /* PFApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */; };
 		BA79820179A4C7B8C43BC1BF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7986D22B15C65F246F8705 /* Icon.png */; };
-		BA79822BC72207E033FC90C5 /* PFThemeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C8257734841BAC551B1 /* PFThemeProvider.m */; };
+		BA79822BC72207E033FC90C5 /* PFThemeAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C8257734841BAC551B1 /* PFThemeAssembly.m */; };
 		BA79826C1FDA74AFD7DE1593 /* PFProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7982E36985C2B98D7F709A /* PFProgressHUD.m */; };
 		BA7982AB92D80DBF0BC2E1B8 /* loader-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7981C5D7F087328A9CC853 /* loader-bg.png */; };
 		BA79831DAB57B1F0736F960C /* icon_sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798253399A5FEC6A52CFCA /* icon_sunny.png */; };
 		BA7983310436F7ED629C7F11 /* PFWeatherReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798312A8E6D9B8F302DCCB /* PFWeatherReportView.m */; };
 		BA798343E93DFA08479EE28A /* cell_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */; };
 		BA798358F55EBAC8EE9A4C11 /* loader-dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798184A69B08B5A95639DE /* loader-dot@2x.png */; };
-		BA79839D8A3FEF92EA12CAD5 /* PFURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B0482CCFC2AB436A320 /* PFURLUtils.m */; };
 		BA7983A84F71D0AA1FFDB2E1 /* bg5.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7985380591D97A53DD10EA /* bg5.png */; };
 		BA7983D9D89BC9024B1FCB17 /* PFAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C7B558024C0786FA923 /* PFAddCityViewController.m */; };
 		BA79843316D1C6911788F18D /* SampleForecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA79864F0BCEE619CF0905DE /* SampleForecast.xml */; };
@@ -61,7 +60,6 @@
 		BA798711EE4D26A67AB61DE4 /* PFForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */; };
 		BA7987510DCA61EC53A55897 /* icon_rainy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798BBF4F91EF53D782E574 /* icon_rainy.png */; };
 		BA79879F1CEE83F038081C53 /* CitiesList.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7989DC41BCE0FC73A7C518 /* CitiesList.xib */; };
-		BA7987B2C7799F843371774A /* PFURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B0482CCFC2AB436A320 /* PFURLUtils.m */; };
 		BA7987C750BFF6B7240BBE6F /* PFTemperatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79813E3EE85D93E2E01569 /* PFTemperatureTests.m */; };
 		BA79882BDEEABC5F7C635589 /* icon_sunny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7984DEDAA150FBEE6C95AE /* icon_sunny@2x.png */; };
 		BA798873E9DA8CEE34984273 /* PFTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B1EF321D3252A608028 /* PFTemperature.m */; };
@@ -135,7 +133,7 @@
 		6BE9746215AF01A3004472E2 /* PFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAppDelegate.h; sourceTree = "<group>"; };
 		6BE9746315AF01A3004472E2 /* PFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFAppDelegate.m; sourceTree = "<group>"; };
 		6BE9747115AF01A3004472E2 /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		BA7980365453A2C4CA5B71EB /* PFAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAssembly.h; sourceTree = "<group>"; };
+		BA7980365453A2C4CA5B71EB /* PFApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFApplicationAssembly.h; sourceTree = "<group>"; };
 		BA7980523B805CF697C4D409 /* UIFont+ApplicationFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ApplicationFonts.h"; sourceTree = "<group>"; };
 		BA79805C0A0C2453D9AF3841 /* PFWeatherReportViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportViewDelegate.h; sourceTree = "<group>"; };
 		BA7980D610AB0AE04C4A3E99 /* icon_partly_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_partly_cloudy.png; sourceTree = "<group>"; };
@@ -164,9 +162,8 @@
 		BA79841E09AFC834B5DB666E /* icon_windy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_windy.png; sourceTree = "<group>"; };
 		BA79849E8B7E0932CE3BCD1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BA7984DEDAA150FBEE6C95AE /* icon_sunny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_sunny@2x.png"; sourceTree = "<group>"; };
-		BA79852CA9797A8EF8049D81 /* PFURLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFURLUtils.h; sourceTree = "<group>"; };
 		BA7985380591D97A53DD10EA /* bg5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg5.png; sourceTree = "<group>"; };
-		BA7985FE29ADAAD09D517058 /* PFThemeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThemeProvider.h; sourceTree = "<group>"; };
+		BA7985FE29ADAAD09D517058 /* PFThemeAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThemeAssembly.h; sourceTree = "<group>"; };
 		BA798607FFF7BAB6B7106B72 /* loader-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loader-dot.png"; sourceTree = "<group>"; };
 		BA79864F0BCEE619CF0905DE /* SampleForecast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleForecast.xml; sourceTree = "<group>"; };
 		BA7986D22B15C65F246F8705 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -195,7 +192,6 @@
 		BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherClientBasicImpl.m; sourceTree = "<group>"; };
 		BA798AD5669A020612B839CA /* bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg3.png; sourceTree = "<group>"; };
 		BA798AFF8F7ED2C2BAA5DEB6 /* UIFont+ApplicationFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ApplicationFonts.m"; sourceTree = "<group>"; };
-		BA798B0482CCFC2AB436A320 /* PFURLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFURLUtils.m; sourceTree = "<group>"; };
 		BA798B04A978C626822DE2BF /* PFRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRootViewController.m; path = Controllers/PFRootViewController.m; sourceTree = "<group>"; };
 		BA798B0AB010ADE20EF1CF44 /* PFTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTheme.m; sourceTree = "<group>"; };
 		BA798B1EF321D3252A608028 /* PFTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperature.m; sourceTree = "<group>"; };
@@ -205,7 +201,7 @@
 		BA798C0F599C2103DE4A0316 /* PFCityLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityLabelTableViewCell.h; sourceTree = "<group>"; };
 		BA798C2EBA35DCFC44E9F6CD /* AddCity.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCity.xib; sourceTree = "<group>"; };
 		BA798C7B558024C0786FA923 /* PFAddCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddCityViewController.m; sourceTree = "<group>"; };
-		BA798C8257734841BAC551B1 /* PFThemeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThemeProvider.m; sourceTree = "<group>"; };
+		BA798C8257734841BAC551B1 /* PFThemeAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThemeAssembly.m; sourceTree = "<group>"; };
 		BA798C8773496CD7E3A95CA6 /* bg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg4.png; sourceTree = "<group>"; };
 		BA798CAD4A4D871788DC4EB6 /* PFForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFForecastTableViewCell.h; sourceTree = "<group>"; };
 		BA798CC8FA97B066BD5DD319 /* PFWeatherReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportView.h; sourceTree = "<group>"; };
@@ -216,7 +212,7 @@
 		BA798D7C35F1F7DBC95B2DA1 /* PFCitiesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCitiesListViewController.h; sourceTree = "<group>"; };
 		BA798DB9D6A187392B3C07C1 /* icon_cloudy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_cloudy@2x.png"; sourceTree = "<group>"; };
 		BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RXMLElement+PFWeatherReport.m"; sourceTree = "<group>"; };
-		BA798E37FB886A376AD93008 /* PFAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAssembly.m; sourceTree = "<group>"; };
+		BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFApplicationAssembly.m; sourceTree = "<group>"; };
 		BA798E6B7BCCED2C5A113449 /* icon_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_cloudy.png; sourceTree = "<group>"; };
 		BA798E9E3746332B48394016 /* Questrial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; path = "Questrial-Regular.otf"; sourceTree = "<group>"; };
 		BA798EE55B711367BC250ADC /* PFForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFForecastTableViewCell.m; sourceTree = "<group>"; };
@@ -394,10 +390,10 @@
 			children = (
 				BA798954410F86A5232E1ED2 /* Configuration.properties */,
 				BA798A07FF934E58F2C3FE16 /* PFCoreComponents.h */,
-				BA7980365453A2C4CA5B71EB /* PFAssembly.h */,
-				BA798E37FB886A376AD93008 /* PFAssembly.m */,
-				BA7985FE29ADAAD09D517058 /* PFThemeProvider.h */,
-				BA798C8257734841BAC551B1 /* PFThemeProvider.m */,
+				BA7980365453A2C4CA5B71EB /* PFApplicationAssembly.h */,
+				BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */,
+				BA7985FE29ADAAD09D517058 /* PFThemeAssembly.h */,
+				BA798C8257734841BAC551B1 /* PFThemeAssembly.m */,
 				BA7988AA248E5686F8E3E522 /* PFCoreComponents.m */,
 			);
 			path = Assembly;
@@ -580,8 +576,6 @@
 				BA7981F95ADE57DBB6722C39 /* PFWeatherClientBasicImpl.h */,
 				BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */,
 				BA798D2A742E3B6ED1BCE83D /* PFWeatherClient.h */,
-				BA798B0482CCFC2AB436A320 /* PFURLUtils.m */,
-				BA79852CA9797A8EF8049D81 /* PFURLUtils.h */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -837,7 +831,6 @@
 				BA798E904AE89A193853B7A6 /* PFWeatherReportDaoTests.m in Sources */,
 				BA7987C750BFF6B7240BBE6F /* PFTemperatureTests.m in Sources */,
 				BA798CB6FED702BC06F5473B /* RXMLElement_PFWeatherReportSpec.m in Sources */,
-				BA7987B2C7799F843371774A /* PFURLUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,9 +859,8 @@
 				BA79826C1FDA74AFD7DE1593 /* PFProgressHUD.m in Sources */,
 				BA798A54EBB46BF31180EAB1 /* PFTheme.m in Sources */,
 				BA7989FB9D72895BE06997FA /* PFThemeFactory.m in Sources */,
-				BA79839D8A3FEF92EA12CAD5 /* PFURLUtils.m in Sources */,
-				BA7981DF2314DB246B25838E /* PFAssembly.m in Sources */,
-				BA79822BC72207E033FC90C5 /* PFThemeProvider.m in Sources */,
+				BA7981DF2314DB246B25838E /* PFApplicationAssembly.m in Sources */,
+				BA79822BC72207E033FC90C5 /* PFThemeAssembly.m in Sources */,
 				BA798ED5F222C1490F204E49 /* PFCoreComponents.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
