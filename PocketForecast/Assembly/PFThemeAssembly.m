@@ -31,7 +31,7 @@
 * The theme factory contains a collection of each theme. Individual themes are using Typhoon's type-converter system to convert the string
 * representation of properties to their required runtime type. (This is particularly useful when using PropertyPlaceholder configs).
 */
-- (id)themeFactory
+- (PFThemeFactory *)themeFactory
 {
     return [TyphoonDefinition withClass:[PFThemeFactory class] configuration:^(TyphoonDefinition *definition)
     {
