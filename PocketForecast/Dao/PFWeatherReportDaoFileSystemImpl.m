@@ -38,7 +38,7 @@
 - (NSString*) filePathFor:(NSString*)cityName {
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectory = [paths objectAtIndex:0];
-    NSString* weatherReportKey = [NSString stringWithFormat:@"weatherReport$$%@", cityName];
+    NSString* weatherReportKey = [NSString stringWithFormat:@"weatherReport@$%@", cityName];
     NSString* filePath = [documentsDirectory stringByAppendingPathComponent:weatherReportKey];
     LogDebug(@"Filepath for archiving: %@", filePath);
     return filePath;

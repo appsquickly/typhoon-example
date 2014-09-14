@@ -43,7 +43,7 @@ static NSString *const pfCurrentCityKey = @"pfWeather.currentCityKey";
     {
         cities = @[
             @"Manila",
-            @"Madris",
+            @"Madrid",
             @"San Francisco",
             @"Phnom Penh",
             @"Omsk"
