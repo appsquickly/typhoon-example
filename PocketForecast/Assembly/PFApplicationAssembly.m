@@ -62,9 +62,10 @@
 {
     return [TyphoonDefinition withClass:[PFRootViewController class] configuration:^(TyphoonDefinition *definition)
     {
-        [definition useInitializer:@selector(initWithMainContentViewController:) parameters:^(TyphoonMethod *initializer)
+        [definition useInitializer:@selector(initWithMainContentViewController:assembly:) parameters:^(TyphoonMethod *initializer)
         {
             [initializer injectParameterWith:[self weatherReportController]];
+            [initializer injectParameterWith:self];
         }];
         definition.scope = TyphoonScopeSingleton;
     }];

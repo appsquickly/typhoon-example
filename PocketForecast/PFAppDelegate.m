@@ -11,18 +11,20 @@
 
 
 
+#import <ICLoader/ICLoader.h>
 #import "PFAppDelegate.h"
 #import "PFCityDao.h"
-#import "Typhoon.h"
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
-#import "PFApplicationAssembly.h"
 
 @implementation PFAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [ICLoader setImageName:@"cloud_icon.png"];
+    [ICLoader setLabelFontName:[UIFont applicationFontOfSize:10].fontName];
+
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
         NSFontAttributeName            : [UIFont applicationFontOfSize:20],

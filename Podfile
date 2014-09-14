@@ -3,12 +3,15 @@ platform :ios, '6.1'
 target :PocketForecast, :exclusive => true do
 
   pod 'Typhoon', :head
-  pod 'OCLogTemplate'
-  pod 'RaptureXML'
+
   pod 'CKUITools'
+  pod 'ICLoader'
+  pod 'JBReplaceableRootNavigationController'
   pod 'NGAParallaxMotion'
-  pod 'PaperFold', :git => 'https://github.com/jasperblues/PaperFold-for-iOS.git', :tag => '1.2-no-gesture-recognizers'
   pod 'NSURL+QueryDictionary'
+  pod 'OCLogTemplate'
+  pod 'PaperFold', :git => 'https://github.com/jasperblues/PaperFold-for-iOS.git', :tag => '1.2-no-gesture-recognizers'
+  pod 'RaptureXML'
 
 end
 

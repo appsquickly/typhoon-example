@@ -12,10 +12,11 @@
 
 #import "CKUITools.h"
 #import "PFRootViewController.h"
-#import "PFProgressHUD.h"
 #import "TyphoonComponentFactory.h"
 #import "PFCitiesListViewController.h"
 #import "PFAddCityViewController.h"
+#import "JBReplaceableRootNavigationController.h"
+#import "PFApplicationAssembly.h"
 
 #define SIDE_CONTROLLER_WIDTH 245.0
 
@@ -24,11 +25,12 @@
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
 
-- (instancetype)initWithMainContentViewController:(UIViewController*)mainContentViewController
+- (instancetype)initWithMainContentViewController:(UIViewController *)mainContentViewController assembly:(PFApplicationAssembly*)assembly
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
     {
+        _assembly = assembly;
         _sideViewState = PFSideViewStateHidden;
         if (mainContentViewController)
         {
@@ -40,53 +42,30 @@
 
 - (id)init
 {
-    return [self initWithMainContentViewController:nil];
+    return [self initWithMainContentViewController:nil assembly:nil];
 }
-
-- (void)typhoonWillInject
-{
-    if (self.view)
-    {} //Eager load view
-}
-
-/**
-* Since we have a PFApplicationAssembly interface (from the block-style assembly) we'll place that interface as a facade in front of the
-* TyphoonComponentFactory. . . we could also use the TyphoonComponentFactory interface directly, eg:
- *
- *      TyphoonComponentFactory* factory = theFactory;
-*/
-- (void)typhoonSetFactory:(id)theFactory
-{
-    _factory = theFactory;
-}
-
 
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
-- (void)pushViewController:(UIViewController*)viewController
+- (void)pushViewController:(UIViewController *)viewController
 {
     [self pushViewController:viewController replaceRoot:NO];
 }
 
-- (void)pushViewController:(UIViewController*)viewController replaceRoot:(BOOL)replaceRoot
+- (void)pushViewController:(UIViewController *)viewController replaceRoot:(BOOL)replaceRoot
 {
     @synchronized (self)
     {
-        if (replaceRoot || _navigator == nil)
+        if (!_navigator)
         {
-            BOOL isApplicationStartup = _navigator == nil ? YES : NO;
-
             [self makeNavigationControllerWithRoot:viewController];
-            if (!isApplicationStartup)
-            {
-                [self performPushAnimation];
-            }
-            else
-            {
-                [_navigator.view setFrame:_mainContentViewContainer.bounds];
-                [_mainContentViewContainer addSubview:_navigator.view];
-            }
+            [_navigator.view setFrame:_mainContentViewContainer.bounds];
+            [_mainContentViewContainer addSubview:_navigator.view];
+        }
+        else if (replaceRoot)
+        {
+            [_navigator setRootViewController:viewController animated:YES];
         }
         else
         {
@@ -110,12 +89,12 @@
         _sideViewState = PFSideViewStateShowing;
 
         _citiesListController =
-            [[UINavigationController alloc] initWithRootViewController:[_factory componentForType:[PFCitiesListViewController class]]];
+            [[UINavigationController alloc] initWithRootViewController:[_assembly citiesListController]];
 
         [_citiesListController.view setFrame:CGRectMake(0, 0,
             _mainContentViewContainer.width - (_mainContentViewContainer.width - SIDE_CONTROLLER_WIDTH), _mainContentViewContainer.height)];
 
-        PaperFoldView* view = (PaperFoldView*) self.view;
+        PaperFoldView *view = (PaperFoldView *) self.view;
         [view setDelegate:self];
         [view setLeftFoldContentView:_citiesListController.view foldCount:5 pullFactor:0.9];
         [view setEnableLeftFoldDragging:NO];
@@ -134,7 +113,7 @@
     if (_sideViewState != PFSideViewStateHidden)
     {
         _sideViewState = PFSideViewStateHidden;
-        PaperFoldView* view = (PaperFoldView*) self.view;
+        PaperFoldView *view = (PaperFoldView *) self.view;
         [view setPaperFoldState:PaperFoldStateDefault];
         [_navigator.topViewController viewWillAppear:YES];
     }
@@ -153,58 +132,13 @@
 }
 
 
-- (void)showProgressHUD
-{
-    dispatch_async(dispatch_get_main_queue(), ^
-    {
-        if (_progressHudRetainCount == 0)
-        {
-            _progressHUD = [[PFProgressHUD alloc] initWithFrame:self.view.frame];
-            [_progressHUD setAlpha:0];
-            [self.view setUserInteractionEnabled:NO];
-            [UIView transitionWithView:_progressHUD duration:0.33 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^
-            {
-                [self.view addSubview:_progressHUD];
-                [_progressHUD setAlpha:1.0];
-            } completion:nil];
-        }
-        _progressHudRetainCount++;
-    });
-}
-
-- (void)dismissProgressHUD
-{
-    dispatch_async(dispatch_get_main_queue(), ^
-    {
-        _progressHudRetainCount--;
-        if (_progressHudRetainCount == 0)
-        {
-            [UIView transitionWithView:_progressHUD duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop animations:^
-            {
-                [_progressHUD setAlpha:0.0];
-            } completion:^(BOOL finished)
-            {
-                [_progressHUD removeFromSuperview];
-                _progressHUD = nil;
-                [self.view setUserInteractionEnabled:YES];
-            }];
-        }
-        if (_progressHudRetainCount < 0)
-        {
-            _progressHudRetainCount = 0;
-            LogError("*** Unmatched calls to progressHUD present/dismiss ***");
-        }
-
-    });
-}
-
 - (void)showAddCitiesController
 {
     if (!_addCitiesController)
     {
         [_navigator.topViewController.view setUserInteractionEnabled:NO];
         _addCitiesController =
-            [[UINavigationController alloc] initWithRootViewController:[_factory componentForType:[PFAddCityViewController class]]];
+            [[UINavigationController alloc] initWithRootViewController:[_assembly addCityViewController]];
 
         [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
         [self.view addSubview:_addCitiesController.view];
@@ -248,8 +182,8 @@
         [_navigator.topViewController viewDidAppear:YES];
 
         //We could set the left-side view to nil here, however Paper-fold issues a (basically harmless) warning about CGRectZero state.
-        UIView* dummyView = [[UIView alloc] initWithFrame:CGRectMake(1, 1, 1, 1)];
-        [(PaperFoldView*) self.view setLeftFoldContentView:dummyView foldCount:0 pullFactor:0];
+        UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(1, 1, 1, 1)];
+        [(PaperFoldView *) self.view setLeftFoldContentView:dummyView foldCount:0 pullFactor:0];
         _citiesListController = nil;
     }
 }
@@ -262,7 +196,7 @@
 {
     CGRect screen = [UIScreen mainScreen].bounds;
 
-    PaperFoldView* paperFoldView;
+    PaperFoldView *paperFoldView;
 
     if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
     {
@@ -302,13 +236,13 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    UIViewController* topController = _navigator.topViewController;
+    UIViewController *topController = _navigator.topViewController;
     return [topController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
 }
 
 - (BOOL)shouldAutorotate
 {
-    UIViewController* topController = _navigator.topViewController;
+    UIViewController *topController = _navigator.topViewController;
     return [topController shouldAutorotate];
 }
 
@@ -327,39 +261,11 @@
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods
 
-- (void)makeNavigationControllerWithRoot:(UIViewController*)root
+- (void)makeNavigationControllerWithRoot:(UIViewController *)root
 {
-    _navigator = [[UINavigationController alloc] initWithRootViewController:root];
+    _navigator = [[JBReplaceableRootNavigationController alloc] initWithRootViewController:root];
     _navigator.view.frame = self.view.bounds;
 }
 
-- (void)performPushAnimation
-{
-    CGFloat slideOnInitialX = _mainContentViewContainer.frame.size.width;
-    _slideOnMainContentViewContainer.frame =
-        CGRectMake(slideOnInitialX, 0, _mainContentViewContainer.frame.size.width, _mainContentViewContainer.frame.size.height);
-    _mainContentViewContainer.frame =
-        CGRectMake(0, 0, _mainContentViewContainer.frame.size.width, _mainContentViewContainer.frame.size.height);
-    [_slideOnMainContentViewContainer addSubview:_navigator.view];
-    [_slideOnMainContentViewContainer setHidden:NO];
-
-    CGRect mainContentViewFrame = _mainContentViewContainer.frame;
-    mainContentViewFrame.origin.x -= slideOnInitialX;
-    CGRect slideOnViewFrame = _slideOnMainContentViewContainer.frame;
-    slideOnViewFrame.origin.x -= slideOnInitialX;
-
-    [UIView transitionWithView:_mainContentViewContainer duration:0.40 options:UIViewAnimationOptionCurveEaseInOut animations:^
-    {
-        _mainContentViewContainer.frame = mainContentViewFrame;
-        _slideOnMainContentViewContainer.frame = slideOnViewFrame;
-    } completion:^(BOOL complete)
-    {
-        [_navigator.view removeFromSuperview];
-        [_navigator.view setFrame:_mainContentViewContainer.bounds];
-        [_mainContentViewContainer addSubview:_navigator.view];
-        [_mainContentViewContainer setFrame:self.view.bounds];
-        [_slideOnMainContentViewContainer setHidden:YES];
-    }];
-}
 
 @end
