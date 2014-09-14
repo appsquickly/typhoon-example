@@ -23,6 +23,8 @@
 #import "TyphoonMethod.h"
 #import "TyphoonMethod+InstanceBuilder.h"
 #import "TyphoonMatcherDefinitionFactory.h"
+#import "TyphoonIntrospectionUtils.h"
+#import "TyphoonDefinition+Infrastructure.h"
 
 @implementation TyphoonDefinitionRegisterer
 {
@@ -43,19 +45,11 @@
 
 - (void)doRegistration
 {
-    if ([[_definition.initializer parameterNames] count] != [[_definition.initializer injectedParameters] count]) {
-        [NSException raise:NSInvalidArgumentException
-            format:@"Supplied parameters does not match number of parameters in initializer. Inject with null if necessary. Defintion: %@",
-                   _definition];
-    }
-
     [self setDefinitionKeyRandomlyIfNeeded];
 
     if ([self definitionAlreadyRegistered]) {
         [NSException raise:NSInvalidArgumentException format:@"Key '%@' is already registered.", _definition.key];
     }
-
-    [self injectAutowiredPropertiesIfNeeded];
 
     [self registerDefinitionWithFactory];
 }
@@ -71,17 +65,6 @@
 - (BOOL)definitionAlreadyRegistered
 {
     return [_componentFactory definitionForKey:_definition.key] != nil;
-}
-
-- (void)injectAutowiredPropertiesIfNeeded
-{
-    SEL autoInjectedProperties = sel_registerName("typhoonAutoInjectedProperties");
-    if ([_definition.type respondsToSelector:autoInjectedProperties]) {
-        id autoWiredProperties = objc_msgSend(_definition.type, autoInjectedProperties);
-        for (NSString *anAutoWiredProperty in autoWiredProperties) {
-            [_definition injectProperty:NSSelectorFromString(anAutoWiredProperty)];
-        }
-    }
 }
 
 - (void)registerDefinitionWithFactory
@@ -110,7 +93,7 @@
 
 - (BOOL)definitionHasInternalFactory
 {
-    return _definition.type == [TyphoonInternalFactoryContainedDefinition class];
+    return _definition.class == [TyphoonInfrastructureFactoryDefinition class];
 }
 
 - (void)registerInfrastructureComponentFromDefinition

@@ -36,6 +36,7 @@
 		BA7981DF2314DB246B25838E /* PFApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */; };
 		BA79820179A4C7B8C43BC1BF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7986D22B15C65F246F8705 /* Icon.png */; };
 		BA79822BC72207E033FC90C5 /* PFThemeAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C8257734841BAC551B1 /* PFThemeAssembly.m */; };
+		BA798231EAF35A0CCBE0DEFD /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA7983A4913554BC6677D776 /* Configuration.plist */; };
 		BA79826C1FDA74AFD7DE1593 /* PFProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7982E36985C2B98D7F709A /* PFProgressHUD.m */; };
 		BA7982AB92D80DBF0BC2E1B8 /* loader-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7981C5D7F087328A9CC853 /* loader-bg.png */; };
 		BA79831DAB57B1F0736F960C /* icon_sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798253399A5FEC6A52CFCA /* icon_sunny.png */; };
@@ -84,7 +85,7 @@
 		BA798D97A97B46BA3A44A899 /* icon_windy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79841E09AFC834B5DB666E /* icon_windy.png */; };
 		BA798DC0E482FA6C6807D438 /* icon_partly_cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7980D610AB0AE04C4A3E99 /* icon_partly_cloudy.png */; };
 		BA798E5E4CB73163221DEBC0 /* cell_fade.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798CD5EC96425F648C2CCF /* cell_fade.png */; };
-		BA798E69EBE0DC68032B347D /* Configuration.properties in Resources */ = {isa = PBXBuildFile; fileRef = BA798954410F86A5232E1ED2 /* Configuration.properties */; };
+		BA798E7D5256491EFD740848 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA7983A4913554BC6677D776 /* Configuration.plist */; };
 		BA798E82EF7D56A91CE6649A /* temperature_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798AA1DEFB3C8006C73FBB /* temperature_circle.png */; };
 		BA798E904AE89A193853B7A6 /* PFWeatherReportDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A7A3F225459AF1D5154 /* PFWeatherReportDaoTests.m */; };
 		BA798ED5F222C1490F204E49 /* PFCoreComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7988AA248E5686F8E3E522 /* PFCoreComponents.m */; };
@@ -154,6 +155,7 @@
 		BA79831FB69C01468CCE157A /* PFCityLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityLabelTableViewCell.m; sourceTree = "<group>"; };
 		BA7983426BAEC1F75CEBC6C7 /* PFThemeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThemeFactory.h; sourceTree = "<group>"; };
 		BA798386C46D4F082497CCBB /* icon_stormy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_stormy@2x.png"; sourceTree = "<group>"; };
+		BA7983A4913554BC6677D776 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Configuration.plist; sourceTree = "<group>"; };
 		BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_fade@2x.png"; sourceTree = "<group>"; };
 		BA7983C21E1C454CE757BCD6 /* bg4-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg4-568h@2x.png"; sourceTree = "<group>"; };
 		BA7983F2134358A4E02D50EA /* VarelaRound-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; path = "VarelaRound-Regular.otf"; sourceTree = "<group>"; };
@@ -179,11 +181,9 @@
 		BA7988F4AB80D4FD96C0E415 /* icon_stormy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_stormy.png; sourceTree = "<group>"; };
 		BA79890A042F3EF38A97A758 /* temperature_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temperature_circle@2x.png"; sourceTree = "<group>"; };
 		BA798945DD532BA1BD7FE30A /* PFWeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportViewController.m; sourceTree = "<group>"; };
-		BA798954410F86A5232E1ED2 /* Configuration.properties */ = {isa = PBXFileReference; lastKnownFileType = file.properties; path = Configuration.properties; sourceTree = "<group>"; };
 		BA7989A03B709D5789A1ACE2 /* icon_windy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_windy@2x.png"; sourceTree = "<group>"; };
 		BA7989A335B2EAA9251101D3 /* PFProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProgressHUD.h; sourceTree = "<group>"; };
 		BA7989DC41BCE0FC73A7C518 /* CitiesList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesList.xib; sourceTree = "<group>"; };
-		BA798A024407C194DFC20E5C /* WebColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebColors.h; sourceTree = "<group>"; };
 		BA798A07FF934E58F2C3FE16 /* PFCoreComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCoreComponents.h; sourceTree = "<group>"; };
 		BA798A7A3F225459AF1D5154 /* PFWeatherReportDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportDaoTests.m; sourceTree = "<group>"; };
 		BA798A7EF3E53E1850551BEC /* PFWeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReport.h; sourceTree = "<group>"; };
@@ -388,13 +388,13 @@
 		BA7981AECCB463AE5C18DCD2 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				BA798954410F86A5232E1ED2 /* Configuration.properties */,
 				BA798A07FF934E58F2C3FE16 /* PFCoreComponents.h */,
 				BA7980365453A2C4CA5B71EB /* PFApplicationAssembly.h */,
 				BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */,
 				BA7985FE29ADAAD09D517058 /* PFThemeAssembly.h */,
 				BA798C8257734841BAC551B1 /* PFThemeAssembly.m */,
 				BA7988AA248E5686F8E3E522 /* PFCoreComponents.m */,
+				BA7983A4913554BC6677D776 /* Configuration.plist */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -465,7 +465,6 @@
 			children = (
 				BA798AFF8F7ED2C2BAA5DEB6 /* UIFont+ApplicationFonts.m */,
 				BA7980523B805CF697C4D409 /* UIFont+ApplicationFonts.h */,
-				BA798A024407C194DFC20E5C /* WebColors.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -703,6 +702,7 @@
 			files = (
 				6BD511721880E794009C487A /* InfoPlist.strings in Resources */,
 				BA79843316D1C6911788F18D /* SampleForecast.xml in Resources */,
+				BA798231EAF35A0CCBE0DEFD /* Configuration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,7 +711,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BE9745E15AF01A3004472E2 /* InfoPlist.strings in Resources */,
-				BA798E69EBE0DC68032B347D /* Configuration.properties in Resources */,
 				BA798CC56BF649127B173D19 /* AddCity.xib in Resources */,
 				BA79879F1CEE83F038081C53 /* CitiesList.xib in Resources */,
 				BA798F7C02D6F939EC3FA0B6 /* icon_cloudy.png in Resources */,
@@ -753,6 +752,7 @@
 				BA7981DC11B1519DABA991CB /* sunset.png in Resources */,
 				BA7981D19BEB3B55DABF9ECE /* sunset@2x.png in Resources */,
 				BA798CBD4204102A990F871D /* sunset-568h@2x.png in Resources */,
+				BA798E7D5256491EFD740848 /* Configuration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,7 +1052,7 @@
 				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-Objc",
@@ -1087,7 +1087,7 @@
 				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-Objc",

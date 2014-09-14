@@ -20,7 +20,6 @@
 #import "CKUITools.h"
 #import "PFTheme.h"
 #import "NGAParallaxMotion.h"
-#import "UIToolbar+FlatUI.h"
 
 
 @implementation PFWeatherReportView
@@ -50,7 +49,7 @@
 /* ====================================================================================================================================== */
 #pragma mark - Interface Methods
 
-- (void)setWeatherReport:(PFWeatherReport*)weatherReport
+- (void)setWeatherReport:(PFWeatherReport *)weatherReport
 {
     if (weatherReport)
     {
@@ -63,7 +62,7 @@
             [_conditionsIcon setHidden:NO];
             [_temperatureLabelContainer setHidden:NO];
 
-            NSArray* indexPaths = @[
+            NSArray *indexPaths = @[
                 [NSIndexPath indexPathForRow:0 inSection:0],
                 [NSIndexPath indexPathForRow:1 inSection:0],
                 [NSIndexPath indexPathForRow:2 inSection:0]
@@ -81,20 +80,13 @@
     }
 }
 
-- (void)setTheme:(PFTheme*)theme
+- (void)setTheme:(PFTheme *)theme
 {
     _theme = theme;
     dispatch_async(dispatch_get_main_queue(), ^
     {
-        if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
-        {
-            [_toolbar setBarTintColor:theme.forecastTintColor];
-        }
-        else
-        {
-            [_toolbar configureFlatToolbarWithColor:theme.forecastTintColor];
-        }
-        [(UIImageView*) _backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
+        [_toolbar setBarTintColor:theme.forecastTintColor];
+        [(UIImageView *) _backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
         [_tableView reloadData];
     });
 
@@ -124,26 +116,26 @@
 #pragma mark <UITableVieDelegate> & <UITableViewDataSource>
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
 
-- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 3;
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFForecastConditions* forecastConditions;
+    PFForecastConditions *forecastConditions;
     if ([[_weatherReport forecast] count] > indexPath.row)
     {
         forecastConditions = [[_weatherReport forecast] objectAtIndex:indexPath.row];
     }
-    static NSString* reuseIdentifier = @"weatherForecast";
-    PFForecastTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    static NSString *reuseIdentifier = @"weatherForecast";
+    PFForecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (cell == nil)
     {
         cell = [[PFForecastTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
@@ -159,22 +151,22 @@
     return cell;
 }
 
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewCellEditingStyleDelete;
 }
 
-- (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50;
 }
 
-- (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.backgroundColor = [UIColor clearColor];
 }
@@ -230,7 +222,7 @@
     _temperatureLabelContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 88, 88)];
     [self addSubview:_temperatureLabelContainer];
 
-    UIImageView* labelBackground = [[UIImageView alloc] initWithFrame:_temperatureLabelContainer.bounds];
+    UIImageView *labelBackground = [[UIImageView alloc] initWithFrame:_temperatureLabelContainer.bounds];
     [labelBackground setImage:[UIImage imageNamed:@"temperature_circle"]];
     [_temperatureLabelContainer addSubview:labelBackground];
 
@@ -274,7 +266,7 @@
 
 /* ====================================================================================================================================== */
 
-- (UIColor*)colorForRow:(NSUInteger)row
+- (UIColor *)colorForRow:(NSUInteger)row
 {
     switch (row)
     {
@@ -287,7 +279,7 @@
     }
 }
 
-- (UIImage*)uiImageForImageUri:(NSString*)imageUri
+- (UIImage *)uiImageForImageUri:(NSString *)imageUri
 {
 
     if ([imageUri length] > 0)

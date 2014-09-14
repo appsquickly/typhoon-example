@@ -18,15 +18,13 @@
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
 #import "PFTheme.h"
-#import "UIBarButtonItem+FlatUI.h"
-#import "UINavigationBar+FlatUI.h"
 
 
 @implementation PFAddCityViewController
 
 
 /* ============================================================ Initializers ============================================================ */
-- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
@@ -44,7 +42,8 @@
 - (void)typhoonWillInject
 {
     if (self.view) //Eagerly load view
-    {}
+    {
+    }
 }
 
 - (void)typhoonDidInject
@@ -76,7 +75,7 @@
 }
 
 
-- (BOOL)textFieldShouldReturn:(UITextField*)textField
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self doneAdding:textField];
     return YES;
@@ -97,12 +96,12 @@
 
         __weak id <PFCityDao> cityDao = _cityDao;
 
-        [_weatherClient loadWeatherReportFor:[_nameOfCityToAdd text] onSuccess:^(PFWeatherReport* weatherReport)
+        [_weatherClient loadWeatherReportFor:[_nameOfCityToAdd text] onSuccess:^(PFWeatherReport *weatherReport)
         {
             LogDebug(@"Got weather report: %@", weatherReport);
             [cityDao saveCity:[weatherReport cityDisplayName]];
             [_rootViewController dismissAddCitiesController];
-        } onError:^(NSString* message)
+        } onError:^(NSString *message)
         {
             [_spinner stopAnimating];
             [_nameOfCityToAdd setEnabled:YES];
@@ -132,18 +131,9 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^
     {
-        if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
-        {
-            [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-            [self.navigationController.navigationBar setBarTintColor:_theme.navigationBarColor];
-        }
-        else
-        {
-            [self.navigationController.navigationBar configureFlatNavigationBarWithColor:_theme.navigationBarColor];
-            [UIBarButtonItem configureFlatButtonsWithColor:_theme.controlTintColor highlightedColor:_theme.controlTintColor cornerRadius:3];
-            [self.navigationItem.rightBarButtonItem configureFlatButtonWithColor:_theme.navigationBarColor
-                highlightedColor:_theme.navigationBarColor cornerRadius:0];
-        }
+        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+        [self.navigationController.navigationBar setBarTintColor:_theme.navigationBarColor];
+
     });
 }
 

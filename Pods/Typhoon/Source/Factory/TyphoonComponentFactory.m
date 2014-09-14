@@ -23,8 +23,7 @@
 #import "TyphoonFactoryPropertyInjectionPostProcessor.h"
 #import "TyphoonComponentPostProcessor.h"
 #import "TyphoonWeakComponentsPool.h"
-
-typedef id(^TyphoonInstanceBuildBlock)(TyphoonDefinition *definition);
+#import "TyphoonFactoryAutoInjectionPostProcessor.h"
 
 @interface TyphoonDefinition (TyphoonComponentFactory)
 
@@ -59,9 +58,9 @@ static TyphoonComponentFactory *defaultFactory;
         _stack = [TyphoonCallStack stack];
         _factoryPostProcessors = [[NSMutableArray alloc] init];
         _componentPostProcessors = [[NSMutableArray alloc] init];
-        [self attachPostProcessor:[[TyphoonParentReferenceHydratingPostProcessor alloc] init]];
-        [self attachPostProcessor:[[TyphoonFactoryPropertyInjectionPostProcessor alloc] init]];
-
+        [self attachPostProcessor:[TyphoonParentReferenceHydratingPostProcessor new]];
+        [self attachPostProcessor:[TyphoonFactoryPropertyInjectionPostProcessor new]];
+        [self attachPostProcessor:[TyphoonFactoryAutoInjectionPostProcessor new]];
     }
     return self;
 }
@@ -278,8 +277,8 @@ static TyphoonComponentFactory *defaultFactory;
 
 - (void)instantiateEagerSingletons
 {
-    [_registry enumerateObjectsUsingBlock:^(id definition, NSUInteger idx, BOOL *stop) {
-        if (([definition scope] == TyphoonScopeSingleton) && ![definition isLazy]) {
+    [_registry enumerateObjectsUsingBlock:^(TyphoonDefinition *definition, NSUInteger idx, BOOL *stop) {
+        if (definition.scope == TyphoonScopeSingleton) {
             [self sharedInstanceForDefinition:definition args:nil fromPool:_singletons];
         }
     }];
@@ -333,6 +332,7 @@ static TyphoonComponentFactory *defaultFactory;
         id instance = nil;
         switch (definition.scope) {
             case TyphoonScopeSingleton:
+            case TyphoonScopeLazySingleton:
                 instance = [self sharedInstanceForDefinition:definition args:args fromPool:_singletons];
                 break;
             case TyphoonScopeWeakSingleton:

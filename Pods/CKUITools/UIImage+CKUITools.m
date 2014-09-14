@@ -15,7 +15,7 @@
 
 +(UIImage*)imageWithCALayer:(CALayer*)layer
 {
-    UIGraphicsBeginImageContext(layer.frame.size);
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, [[UIScreen mainScreen] scale]);
     
     [layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage* out = UIGraphicsGetImageFromCurrentImageContext();
@@ -27,12 +27,30 @@
 
 + (UIImage *)imageWithUIView:(UIView *)view
 {
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(CGRectGetWidth([view bounds]), CGRectGetHeight([view bounds])), NO, [[UIScreen mainScreen] scale]);
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
+    return [UIImage imageWithCALayer:view.layer];
+}
+
++ (UIImage *)imageNamed:(NSString *)name tint:(UIColor *)tint;
+{
+  return [[self imageNamed:name] tint:tint];
+}
+
+- (UIImage *)tint:(UIColor *)tint;
+{
+  NSAssert(tint != nil, @"tint must not be nil");
+  
+  UIGraphicsBeginImageContextWithOptions([self size], NO, 0.0);
+  CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
+  
+  [tint setFill];
+  
+  UIRectFill(bounds);
+  [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0];
+  
+  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  
+  return image;
 }
 
 - (UIColor *)colorAtPixel:(CGPoint)point

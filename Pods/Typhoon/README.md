@@ -1,20 +1,16 @@
 # Typhoon! (www.typhoonframework.org) 
 
-Elegant, powerful dependency injection for Cocoa and CocoaTouch. Lightweight (just 2500 lines of code), yet full-featured and super-easy to use. 
-
-### Swift News!!!
-
-We're getting Typhoon ready to work with Swift. 
-
-* Currently its possible to create assemblies and resolve components from TyphoonComponentFactory using componentForType, componentForKey, etc. 
-* Resolving using your assembly interfaces does not yet work in Swift. 
+Powerful dependency injection for Cocoa and CocoaTouch. Lightweight, yet full-featured and super-easy to use. 
 
 ## Familiar with Dependency Injection?
 
-* Read the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Quick Start</a>, <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a> or <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API Docs</a>  ***Updated for version 2.0!!!!***
-* <a href="https://github.com/typhoon-framework/Typhoon-example">Try the sample application</a> 
-* <a href="https://github.com/typhoon-framework/Typhoon#design-goals--features">Check the feature list</a>.
-otherwise. . . 
+*Typhoon is a DI library that makes good use of the runtime's (ObjC or Swift) late binding nature in order to perform method interception and forwarding. This makes for a very compelling <a href="https://github.com/typhoon-framework/Typhoon#design-goals--features">feature list.</a>*
+
+* In a rush? Here's a <a href="https://github.com/typhoon-framework/Typhoon/wiki/Swift-Quick-Start">Swift Quick Start</a> and an <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Objective-C Quick Start</a>.
+* Read the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a> or <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API Docs</a>.  
+* Try the <a href="https://github.com/typhoon-framework/Typhoon-Swift-Example">Swift Sample Application</a> (in progress) or the <a href="https://github.com/typhoon-framework/Typhoon-example">Objective-C Sample Application</a>.
+
+. . . otherwise . . . 
 
 ### What is Dependency Injection? 
 
@@ -140,8 +136,9 @@ good compromise between integration testing and pure unit testing. (Biggest test
 
 * Supports ***injection of view controllers*** and ***storyboard integration.*** 
 
-* Supports both ***initializer*** and ***property injection***. In the case of the latter, it has customizable call-backs to 
-ensure that the class is in the required state before and after properties are set. 
+* Supports both ***initializer***, ***property*** and ***method injection***. For the latter two, it has customizable call-backs to ensure that the class is in the required state before and after injection. 
+
+* Supports a mixture of static dependencies along with <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections#injection-with-run-time-arguments">run-time arguments</a> to create factories on the fly. This greatly reduces the amount of boiler-plate code that you would normally write. 
 
 * Excellent ***support for circular dependencies.***
 

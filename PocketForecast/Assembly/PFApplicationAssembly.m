@@ -18,7 +18,6 @@
 #import "PFThemeAssembly.h"
 #import "PFWeatherReportViewController.h"
 #import "PFAppDelegate.h"
-#import "TyphoonBundleResource.h"
 #import "TyphoonDefinition+Infrastructure.h"
 
 
@@ -54,7 +53,7 @@
 
 - (id)config
 {
-    return [TyphoonDefinition configDefinitionWithResource:[TyphoonBundleResource withName:@"Configuration.properties"]];
+    return [TyphoonDefinition configDefinitionWithName:@"Configuration.plist"];
 }
 
 /* ====================================================================================================================================== */

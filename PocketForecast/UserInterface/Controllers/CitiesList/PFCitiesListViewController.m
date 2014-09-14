@@ -19,8 +19,6 @@
 #import "UIFont+ApplicationFonts.h"
 #import "PFRootViewController.h"
 #import "PFTheme.h"
-#import "UIBarButtonItem+FlatUI.h"
-#import "UINavigationBar+FlatUI.h"
 #import "PFApplicationAssembly.h"
 
 
@@ -34,7 +32,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 #pragma mark - Initialization & Destruction
 
 
-- (id)initWithCityDao:(id <PFCityDao>)cityDao theme:(PFTheme*)theme
+- (id)initWithCityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme
 {
     self = [super initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];
     if (self)
@@ -84,15 +82,13 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     [super viewWillAppear:animated];
     [self refreshCitiesList];
 
-    NSString* cityName = [_cityDao loadSelectedCity];
+    NSString *cityName = [_cityDao loadSelectedCity];
     if (cityName)
     {
-        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[_cities indexOfObject:cityName] inSection:0];
-        [_citiesListTableView selectRowAtIndexPath:indexPath animated:YES
-            scrollPosition:UITableViewScrollPositionMiddle];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[_cities indexOfObject:cityName] inSection:0];
+        [_citiesListTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
     }
 }
-
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -103,21 +99,21 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 /* ====================================================================================================================================== */
 #pragma mark UITableView methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
 
-- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_cities count];
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* reuseId = @"Cities";
-    PFCityLabelTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
+    static NSString *reuseId = @"Cities";
+    PFCityLabelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
     if (cell == nil)
     {
         cell = [[PFCityLabelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
@@ -131,29 +127,29 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     return cell;
 }
 
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSString* cityName = [_cities objectAtIndex:indexPath.row];
+    NSString *cityName = [_cities objectAtIndex:indexPath.row];
     [_cityDao saveCurrentlySelectedCity:cityName];
 
-    PFRootViewController* controller = [_assembly rootViewController];
+    PFRootViewController *controller = [_assembly rootViewController];
     [controller dismissCitiesListController];
 
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewCellEditingStyleDelete;
 }
 
-- (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-    forRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+    forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        NSString* city = [_cities objectAtIndex:indexPath.row];
+        NSString *city = [_cities objectAtIndex:indexPath.row];
         [_cityDao deleteCity:city];
         [self refreshCitiesList];
     }
@@ -165,7 +161,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 - (void)addCity
 {
-    PFRootViewController* rootViewController = [_assembly rootViewController];
+    PFRootViewController *rootViewController = [_assembly rootViewController];
     [rootViewController showAddCitiesController];
 }
 
@@ -191,19 +187,8 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 - (void)applyTheme
 {
     [_temperatureUnitsControl setTintColor:_theme.controlTintColor];
-    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
-    {
-        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-        [self.navigationController.navigationBar setBarTintColor:_theme.navigationBarColor];
-    }
-    else
-    {
-        _temperatureUnitsControl.segmentedControlStyle = UISegmentedControlStyleBar;
-        [self.navigationController.navigationBar configureFlatNavigationBarWithColor:_theme.navigationBarColor];
-        [UIBarButtonItem configureFlatButtonsWithColor:_theme.controlTintColor highlightedColor:_theme.controlTintColor cornerRadius:3];
-        [self.navigationItem.rightBarButtonItem configureFlatButtonWithColor:_theme.navigationBarColor
-            highlightedColor:_theme.navigationBarColor cornerRadius:0];
-    }
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBarTintColor:_theme.navigationBarColor];
 }
 
 @end

@@ -14,26 +14,13 @@
 TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
 
 #import "TyphoonDefinition+InstanceBuilder.h"
+#import "TyphoonDefinition+Infrastructure.h"
 #import "TyphoonMethod+InstanceBuilder.h"
 
 #import "TyphoonInjectionByType.h"
-#import "TyphoonInjectionByObjectFromString.h"
-#import "TyphoonInjectionByObjectInstance.h"
-#import "TyphoonInjectionByReference.h"
 #import "TyphoonInjectionByRuntimeArgument.h"
-#import "TyphoonInjection.h"
 
 @implementation TyphoonDefinition (InstanceBuilder)
-
-
-
-/* ====================================================================================================================================== */
-#pragma mark - Initialization & Destruction
-
-- (void)setType:(Class)type
-{
-    _type = type;
-}
 
 #pragma mark - Base methods
 
@@ -141,35 +128,28 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
 
 #pragma mark - Shorthands
 
-- (NSSet *)propertiesInjectedByValue
-{
-    return [self injectedPropertiesWithKind:[TyphoonInjectionByObjectFromString class]];
-}
-
-- (NSSet *)propertiesInjectedByType
-{
-    return [self injectedPropertiesWithKind:[TyphoonInjectionByType class]];
-}
-
-- (NSSet *)propertiesInjectedByObjectInstance
-{
-    return [self injectedPropertiesWithKind:[TyphoonInjectionByObjectInstance class]];
-}
-
-- (NSSet *)propertiesInjectedByReference
-{
-    return [self injectedPropertiesWithKind:[TyphoonInjectionByReference class]];
-}
-
-- (NSSet *)propertiesInjectedByRuntimeArgument
-{
-    return [self injectedPropertiesWithKind:[TyphoonInjectionByRuntimeArgument class]];
-}
-
 - (void)addInjectedProperty:(id <TyphoonPropertyInjection>)property
 {
     [_injectedProperties addObject:property];
 }
+
+- (void)addInjectedPropertyIfNotExists:(id <TyphoonPropertyInjection>)property
+{
+    if (![_injectedProperties containsObject:property]) {
+        [_injectedProperties addObject:property];
+    }
+}
+
+- (BOOL)matchesAutoInjectionByProtocol:(Protocol *)aProtocol
+{
+    return NO;
+}
+
+- (BOOL)matchesAutoInjectionByClass:(Class)aClass
+{
+    return NO;
+}
+
 
 - (BOOL)hasRuntimeArgumentInjections
 {
@@ -181,18 +161,6 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
     }];
     return hasInjections;
 
-}
-
-- (NSSet *)injectedPropertiesWithKind:(Class)clazz
-{
-    NSMutableSet *properties = [NSMutableSet new];
-
-    [self enumerateInjectionsOfKind:clazz options:TyphoonInjectionsEnumerationOptionProperties
-                         usingBlock:^(id <TyphoonInjection> injection, id <TyphoonInjection> *injectionToReplace, BOOL *stop) {
-        [properties addObject:injection];
-    }];
-
-    return properties;
 }
 
 @end

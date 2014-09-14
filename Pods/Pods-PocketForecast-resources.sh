@@ -41,10 +41,6 @@ install_resource()
       ;;
   esac
 }
-install_resource "FlatUIKit/Resources/Lato-Bold.ttf"
-install_resource "FlatUIKit/Resources/Lato-Italic.ttf"
-install_resource "FlatUIKit/Resources/Lato-Light.ttf"
-install_resource "FlatUIKit/Resources/Lato-Regular.ttf"
 install_resource "PaperFold/PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left.png"
 install_resource "PaperFold/PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left@2x.png"
 install_resource "PaperFold/PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_right.png"

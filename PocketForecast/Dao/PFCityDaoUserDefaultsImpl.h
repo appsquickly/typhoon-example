@@ -20,5 +20,7 @@
     NSUserDefaults* _defaults;
 }
 
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults;
+
 
 @end

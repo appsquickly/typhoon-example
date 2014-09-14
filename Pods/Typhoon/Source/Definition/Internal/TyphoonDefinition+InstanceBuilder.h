@@ -27,8 +27,6 @@ typedef enum {
 
 @interface TyphoonDefinition (InstanceBuilder)
 
-- (void)setType:(Class)type;
-
 - (NSSet *)injectedProperties;
 
 - (NSSet *)injectedMethods;
@@ -40,5 +38,7 @@ typedef enum {
 
 - (void)addInjectedProperty:(id <TyphoonPropertyInjection>)property;
 
+
+- (void)addInjectedPropertyIfNotExists:(id <TyphoonPropertyInjection>)property;
 
 @end

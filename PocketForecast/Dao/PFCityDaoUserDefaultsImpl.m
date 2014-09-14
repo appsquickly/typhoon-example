@@ -17,17 +17,17 @@
 @implementation PFCityDaoUserDefaultsImpl
 
 
-static NSString* const pfCitiesListKey = @"pfWeather.cities";
-static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
+static NSString *const pfCitiesListKey = @"pfWeather.cities";
+static NSString *const pfCurrentCityKey = @"pfWeather.currentCityKey";
 
 
 /* ============================================================ Initializers ============================================================ */
-- (id)init
+- (instancetype)initWithDefaults:(NSUserDefaults *)defaults
 {
     self = [super init];
     if (self)
     {
-        _defaults = [NSUserDefaults standardUserDefaults];
+        _defaults = defaults;
     }
     return self;
 }
@@ -35,10 +35,10 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
 
 /* =========================================================== Protocol Methods ========================================================= */
 
-- (NSArray*)listAllCities
+- (NSArray *)listAllCities
 {
 
-    NSArray* cities = [_defaults objectForKey:pfCitiesListKey];
+    NSArray *cities = [_defaults objectForKey:pfCitiesListKey];
     if (cities == nil)
     {
         cities = @[
@@ -54,12 +54,12 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     return [cities sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 }
 
-- (void)saveCity:(NSString*)name
+- (void)saveCity:(NSString *)name
 {
     name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSMutableArray* cities = [NSMutableArray arrayWithArray:[_defaults objectForKey:pfCitiesListKey]];
+    NSMutableArray *cities = [NSMutableArray arrayWithArray:[_defaults objectForKey:pfCitiesListKey]];
     BOOL canAddCity = YES;
-    for (NSString* city in cities)
+    for (NSString *city in cities)
     {
         if ([city caseInsensitiveCompare:name] == NSOrderedSame)
         {
@@ -73,12 +73,12 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     }
 }
 
-- (void)deleteCity:(NSString*)name
+- (void)deleteCity:(NSString *)name
 {
     name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSMutableArray* cities = [NSMutableArray arrayWithArray:[_defaults objectForKey:pfCitiesListKey]];
-    NSString* cityToRemove = nil;
-    for (NSString* city in cities)
+    NSMutableArray *cities = [NSMutableArray arrayWithArray:[_defaults objectForKey:pfCitiesListKey]];
+    NSString *cityToRemove = nil;
+    for (NSString *city in cities)
     {
         if ([city caseInsensitiveCompare:name] == NSOrderedSame)
         {
@@ -89,9 +89,9 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
     [_defaults setObject:cities forKey:pfCitiesListKey];
 }
 
-- (void)saveCurrentlySelectedCity:(NSString*)cityName
+- (void)saveCurrentlySelectedCity:(NSString *)cityName
 {
-    NSString* trimmed = [cityName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *trimmed = [cityName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if ([trimmed length] > 0)
     {
         [_defaults setObject:cityName forKey:pfCurrentCityKey];
@@ -104,7 +104,7 @@ static NSString* const pfCurrentCityKey = @"pfWeather.currentCityKey";
 }
 
 
-- (NSString*)loadSelectedCity
+- (NSString *)loadSelectedCity
 {
     return [_defaults objectForKey:pfCurrentCityKey];
 }

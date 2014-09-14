@@ -15,7 +15,12 @@
 @interface UIImage (CKUITools)
 
 + (UIImage*)imageWithUIView:(UIView*)view;
+
 + (UIImage*)imageWithCALayer:(CALayer*)layer;
+
++ (UIImage *)imageNamed:(NSString *)name tint:(UIColor *)tint;
+
+- (UIImage *)tint:(UIColor *)tint;
 
 - (UIColor*)colorAtPixel:(CGPoint)point;
 

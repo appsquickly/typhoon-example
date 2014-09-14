@@ -20,19 +20,11 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
 #import "TyphoonMethod.h"
 #import "TyphoonMethod+InstanceBuilder.h"
 #import "TyphoonReferenceDefinition.h"
+#import "TyphoonIntrospectionUtils.h"
 
 @implementation TyphoonDefinition (Infrastructure)
 
-
-- (void)setCurrentRuntimeArguments:(TyphoonRuntimeArguments *)currentRuntimeArguments
-{
-    _currentRuntimeArguments = currentRuntimeArguments;
-}
-
-- (TyphoonRuntimeArguments *)currentRuntimeArguments
-{
-    return _currentRuntimeArguments;
-}
+@dynamic initializer, initializerGenerated, currentRuntimeArguments, key;
 
 /* ====================================================================================================================================== */
 #pragma mark - Class Methods
@@ -42,23 +34,23 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
     return [[TyphoonDefinition alloc] initWithClass:clazz key:key];
 }
 
-
-+ (instancetype)configDefinitionWithResource:(id <TyphoonResource>)resource
-{
-    return [self configDefinitionWithResources:@[resource]];
-}
-
-+ (instancetype)configDefinitionWithResources:(NSArray *)resources
++ (instancetype)configDefinitionWithName:(NSString *)fileName
 {
     return [self withClass:[TyphoonConfigPostProcessor class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(configurerWithResourceList:) parameters:^(TyphoonMethod *initializer) {
-            [initializer injectParameterWith:resources];
+        [definition injectMethod:@selector(useResourceWithName:) parameters:^(TyphoonMethod *method) {
+            [method injectParameterWith:fileName];
         }];
-        NSString *resourceDescription = @"";
-        if ([resources count] > 0) {
-            resourceDescription = [resources[0] description];
-        }
-        definition.key = [NSString stringWithFormat:@"%@-%@", NSStringFromClass(definition.class), resourceDescription];
+        definition.key = [NSString stringWithFormat:@"%@-%@", NSStringFromClass(definition.class), fileName];
+    }];
+}
+
++ (instancetype)configDefinitionWithPath:(NSString *)filePath
+{
+    return [self withClass:[TyphoonConfigPostProcessor class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectMethod:@selector(useResourceAtPath:) parameters:^(TyphoonMethod *method) {
+            [method injectParameterWith:filePath];
+        }];
+        definition.key = [NSString stringWithFormat:@"%@-%@", NSStringFromClass(definition.class), [filePath lastPathComponent]];
     }];
 }
 
@@ -80,10 +72,11 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
     self = [super init];
     if (self) {
         _type = clazz;
-        _key = [key copy];
-        _scope = TyphoonScopeObjectGraph;
         _injectedProperties = [[NSMutableSet alloc] init];
         _injectedMethods = [[NSMutableSet alloc] init];
+        _key = [key copy];
+        _scope = TyphoonScopeObjectGraph;
+        self.autoInjectionVisibility = TyphoonAutoInjectVisibilityDefault;
         if (factoryComponent) {
             _factory = [TyphoonReferenceDefinition definitionReferringToComponent:factoryComponent];
         }
@@ -91,6 +84,26 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
     }
     return self;
 }
+
+- (BOOL)matchesAutoInjectionWithType:(id)classOrProtocol includeSubclasses:(BOOL)includeSubclasses
+{
+    BOOL result = NO;
+
+    BOOL isClass = IsClass(classOrProtocol);
+    BOOL isProtocol = IsProtocol(classOrProtocol);
+
+    if (isClass && self.autoInjectionVisibility & TyphoonAutoInjectVisibilityByClass) {
+        BOOL isSameClass = self.type == classOrProtocol;
+        BOOL isSubclass = includeSubclasses && [self.type isSubclassOfClass:classOrProtocol];
+        result = isSameClass || isSubclass;
+    }
+    else if (isProtocol && self.autoInjectionVisibility & TyphoonAutoInjectVisibilityByProtocol) {
+        result = [self.type conformsToProtocol:classOrProtocol];
+    }
+
+    return result;
+}
+
 
 /* ====================================================================================================================================== */
 #pragma mark - Private Methods

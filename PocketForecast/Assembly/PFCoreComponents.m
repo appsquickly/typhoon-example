@@ -37,7 +37,13 @@
 
 - (id <PFCityDao>)cityDao
 {
-    return [TyphoonDefinition withClass:[PFCityDaoUserDefaultsImpl class]];
+    return [TyphoonDefinition withClass:[PFCityDaoUserDefaultsImpl class] configuration:^(TyphoonDefinition *definition)
+    {
+        [definition useInitializer:@selector(initWithDefaults:) parameters:^(TyphoonMethod *initializer)
+        {
+            [initializer injectParameterWith:[NSUserDefaults standardUserDefaults]];
+        }];
+    }];
 }
 
 

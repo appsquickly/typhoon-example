@@ -52,4 +52,9 @@
     return [self rectWithOrientation:UIInterfaceOrientationPortrait];
 }
 
+-(BOOL)isRetina
+{
+    return ([self respondsToSelector:@selector(scale)] && [self scale] == 2.0);
+}
+
 @end

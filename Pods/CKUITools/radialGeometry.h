@@ -15,6 +15,8 @@
 #ifndef radialGeometry_h
 #define radialGeometry_h
 
+#include <CoreGraphics/CoreGraphics.h>
+
 typedef struct {
     float radius;
     float angle;

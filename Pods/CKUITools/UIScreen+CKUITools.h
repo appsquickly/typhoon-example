@@ -19,5 +19,6 @@
 -(CGRect)currentRect;
 -(CGRect)landscapeRect;
 -(CGRect)portraitRect;
+-(BOOL)isRetina;
 
 @end

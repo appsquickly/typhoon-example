@@ -25,8 +25,7 @@
 
 #import "TyphoonBlockComponentFactory.h"
 
-#import "TyphoonAutowire.h"
-#import "TyphoonShorthand.h"
+#import "TyphoonAutoInjection.h"
 
 #if TARGET_OS_IPHONE
 #import "TyphooniOS.h"

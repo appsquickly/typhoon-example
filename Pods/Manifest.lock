@@ -1,7 +1,6 @@
 PODS:
-  - CKUITools (0.5.3)
+  - CKUITools (0.5.4)
   - Expecta (0.2.4)
-  - FlatUIKit (1.4)
   - NGAParallaxMotion (1.0.2)
   - NSURL+QueryDictionary (1.0.3)
   - OCHamcrest (4.0.1)
@@ -12,14 +11,13 @@ PODS:
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
   - TPWeakProxy (1.0.0)
-  - Typhoon (2.2.0):
+  - Typhoon (HEAD based on 2.2.1):
     - Typhoon/no-arc
-  - Typhoon/no-arc (2.2.0)
+  - Typhoon/no-arc (HEAD based on 2.2.1)
 
 DEPENDENCIES:
   - CKUITools
   - Expecta (~> 0.2.1)
-  - FlatUIKit
   - NGAParallaxMotion
   - NSURL+QueryDictionary
   - OCHamcrest
@@ -27,7 +25,7 @@ DEPENDENCIES:
   - OCMockito
   - PaperFold (from `https://github.com/jasperblues/PaperFold-for-iOS.git`, tag `1.2-no-gesture-recognizers`)
   - RaptureXML
-  - Typhoon
+  - Typhoon (HEAD)
 
 EXTERNAL SOURCES:
   PaperFold:
@@ -35,9 +33,8 @@ EXTERNAL SOURCES:
     :tag: 1.2-no-gesture-recognizers
 
 SPEC CHECKSUMS:
-  CKUITools: f29a7a5fafbafee96c10b42d5aaf2dc0fc58ad87
+  CKUITools: b7e352ba583531b8946f22319aef43ce5e258f33
   Expecta: 112bcafa2304ee0f3c5e586505f24555a47b25d5
-  FlatUIKit: edc1ed0c130687dc64a10e45851cc58925f6893d
   NGAParallaxMotion: f25d6b7e4eefe1c94211dbf402cd3563e56d46f3
   NSURL+QueryDictionary: 1ad81be60c10e3f4d80c5c4beb7125de96aaec5e
   OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
@@ -46,6 +43,6 @@ SPEC CHECKSUMS:
   PaperFold: 56c21be56fe6454fa99927b251396471d341c874
   RaptureXML: b9b0aca9c68c684c189af73dd5e8f8fdeec74600
   TPWeakProxy: a23251ba7fbe268c93f809cc072ef834f5063798
-  Typhoon: 6fc39bd11ed9a71f2551594590f4ef8bf7043afb
+  Typhoon: 9b807bc020c4945824ee19130bb11fb3ef5eaea8
 
 COCOAPODS: 0.33.1
