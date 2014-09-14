@@ -33,7 +33,7 @@
     if ([_apiKey isEqualToString:@"$$YOUR_API_KEY_HERE$$"])
     {
         [NSException raise:NSInvalidArgumentException
-            format:@"Please get an API key from: http://free.worldweatheronline.com, and then edit 'Configuration.properties'"];
+            format:@"Please get an API key from: http://free.worldweatheronline.com, and then edit 'Configuration.plist'"];
     }
 }
 
