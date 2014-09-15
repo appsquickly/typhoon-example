@@ -12,7 +12,6 @@
 
 #import "CKUITools.h"
 #import "PFRootViewController.h"
-#import "TyphoonComponentFactory.h"
 #import "PFCitiesListViewController.h"
 #import "PFAddCityViewController.h"
 #import "JBReplaceableRootNavigationController.h"

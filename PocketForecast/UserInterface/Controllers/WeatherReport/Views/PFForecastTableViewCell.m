@@ -1,13 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  JASPER BLUES
-//  Copyright 2013 Jasper Blues
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Jasper Blues & Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: Jasper Blues permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
+
 
 #import "PFForecastTableViewCell.h"
 #import "UIFont+ApplicationFonts.h"
@@ -30,14 +31,6 @@
         [self initLowTempLabel];
     }
     return self;
-}
-
-
-/* ========================================================== Interface Methods ========================================================= */
-- (void)layoutIfNeeded
-{
-    [super layoutSubviews];
-    _overlayView.frame = self.bounds;
 }
 
 

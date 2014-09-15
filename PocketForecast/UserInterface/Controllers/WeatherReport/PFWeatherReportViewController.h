@@ -15,6 +15,7 @@
 #import <Foundation/Foundation.h>
 #import "PFWeatherClient.h"
 #import "PFWeatherReportViewDelegate.h"
+#import "PFWeatherReportView.h"
 
 @class PFWeatherReport;
 @protocol PFWeatherReportDao;
@@ -31,6 +32,8 @@
     PFWeatherReport *_weatherReport;
     NSString *_cityName;
 }
+
+@property(nonatomic, strong) PFWeatherReportView* view;
 
 #pragma mark - Injected w/ initializer
 

@@ -53,30 +53,25 @@
 {
     if (weatherReport)
     {
-        dispatch_async(dispatch_get_main_queue(), ^
-        {
-            [_tableView setHidden:NO];
-            LogDebug(@"Set weather report: %@", weatherReport);
-            _weatherReport = weatherReport;
+        [_tableView setHidden:NO];
+        LogDebug(@"Set weather report: %@", weatherReport);
+        _weatherReport = weatherReport;
 
-            [_conditionsIcon setHidden:NO];
-            [_temperatureLabelContainer setHidden:NO];
+        [_conditionsIcon setHidden:NO];
+        [_temperatureLabelContainer setHidden:NO];
 
-            NSArray *indexPaths = @[
-                [NSIndexPath indexPathForRow:0 inSection:0],
-                [NSIndexPath indexPathForRow:1 inSection:0],
-                [NSIndexPath indexPathForRow:2 inSection:0]
-            ];
+        NSArray *indexPaths = @[
+            [NSIndexPath indexPathForRow:0 inSection:0],
+            [NSIndexPath indexPathForRow:1 inSection:0],
+            [NSIndexPath indexPathForRow:2 inSection:0]
+        ];
 
-            [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-            [_cityNameLabel setText:[_weatherReport cityDisplayName]];
-            [_temperatureLabel setText:[_weatherReport.currentConditions.temperature asShortStringInDefaultUnits]];
-            [_conditionsDescriptionLabel setText:[_weatherReport.currentConditions longSummary]];
-            [_conditionsIcon setImage:[self uiImageForImageUri:weatherReport.currentConditions.imageUri]];
-            [_lastUpdateLabel setText:[NSString stringWithFormat:@"Updated %@", [weatherReport reportDateAsString]]];
-
-
-        });
+        [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        [_cityNameLabel setText:[_weatherReport cityDisplayName]];
+        [_temperatureLabel setText:[_weatherReport.currentConditions.temperature asShortStringInDefaultUnits]];
+        [_conditionsDescriptionLabel setText:[_weatherReport.currentConditions longSummary]];
+        [_conditionsIcon setImage:[self uiImageForImageUri:weatherReport.currentConditions.imageUri]];
+        [_lastUpdateLabel setText:[NSString stringWithFormat:@"Updated %@", [weatherReport reportDateAsString]]];
     }
 }
 

@@ -17,7 +17,6 @@
 #import "PFWeatherReportDao.h"
 #import "PFCityDao.h"
 #import "Typhoon.h"
-#import "PFWeatherReportView.h"
 #import "PFRootViewController.h"
 #import "ICLoader.h"
 #import "PFTheme.h"
@@ -68,7 +67,7 @@
     _weatherReport = [_weatherReportDao getReportForCityName:_cityName];
     if (_weatherReport)
     {
-        [(PFWeatherReportView *) self.view setWeatherReport:_weatherReport];
+        [self.view setWeatherReport:_weatherReport];
     }
     else if (_cityName)
     {
@@ -85,13 +84,13 @@
         [cityListButton setTintColor:[UIColor whiteColor]];
 
         UIBarButtonItem *space = [[UIBarButtonItem alloc]
-            initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(menuButtonPressed)];
+            initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
         UIBarButtonItem *refreshButton =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshData)];
         [refreshButton setTintColor:[UIColor whiteColor]];
 
-        [((PFWeatherReportView *) self.view).toolbar setItems:@[
+        [self.view.toolbar setItems:@[
             cityListButton,
             space,
             refreshButton
