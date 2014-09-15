@@ -14,7 +14,6 @@
 
 #import <Foundation/Foundation.h>
 #import "PFWeatherClient.h"
-#import "PFWeatherReportViewDelegate.h"
 #import "PFWeatherReportView.h"
 
 @class PFWeatherReport;
@@ -26,7 +25,7 @@
 @class PFRootViewController;
 
 
-@interface PFWeatherReportViewController : UIViewController <PFWeatherReportViewDelegate>
+@interface PFWeatherReportViewController : UIViewController
 {
 
     PFWeatherReport *_weatherReport;

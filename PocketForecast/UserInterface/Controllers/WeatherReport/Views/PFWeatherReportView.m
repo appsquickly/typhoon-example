@@ -20,6 +20,7 @@
 #import "CKUITools.h"
 #import "PFTheme.h"
 #import "NGAParallaxMotion.h"
+#import "UIColor+CKUITools.h"
 
 
 @implementation PFWeatherReportView
@@ -187,7 +188,7 @@
 {
     _cityNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_cityNameLabel setFont:[UIFont applicationFontOfSize:35]];
-    [_cityNameLabel setTextColor:UIColorFromRGB(0xf9f7f4)];
+    [_cityNameLabel setTextColor:[UIColor colorWithHexRGB:0xf9f7f4]];
     [_cityNameLabel setBackgroundColor:[UIColor clearColor]];
     [_cityNameLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:_cityNameLabel];
@@ -197,7 +198,7 @@
 {
     _conditionsDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_conditionsDescriptionLabel setFont:[UIFont applicationFontOfSize:16]];
-    [_conditionsDescriptionLabel setTextColor:UIColorFromRGB(0xf9f7f4)];
+    [_conditionsDescriptionLabel setTextColor:[UIColor colorWithHexRGB:0xf9f7f4]];
     [_conditionsDescriptionLabel setBackgroundColor:[UIColor clearColor]];
     [_conditionsDescriptionLabel setTextAlignment:NSTextAlignmentCenter];
     [_conditionsDescriptionLabel setNumberOfLines:0];
@@ -223,7 +224,7 @@
 
     _temperatureLabel = [[UILabel alloc] initWithFrame:_temperatureLabelContainer.bounds];
     [_temperatureLabel setFont:[UIFont temperatureFontOfSize:35]];
-    [_temperatureLabel setTextColor:UIColorFromRGB(0x7f9588)];
+    [_temperatureLabel setTextColor:[UIColor colorWithHexRGB:0x7f9588]];
     [_temperatureLabel setBackgroundColor:[UIColor clearColor]];
     [_temperatureLabel setTextAlignment:NSTextAlignmentCenter];
 
@@ -253,7 +254,7 @@
 {
     _lastUpdateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_lastUpdateLabel setFont:[UIFont applicationFontOfSize:10]];
-    [_lastUpdateLabel setTextColor:UIColorFromRGB(0xf9f7f4)];
+    [_lastUpdateLabel setTextColor:[UIColor colorWithHexRGB:0xf9f7f4]];
     [_lastUpdateLabel setBackgroundColor:[UIColor clearColor]];
     [_lastUpdateLabel setTextAlignment:NSTextAlignmentCenter];
     [_toolbar addSubview:_lastUpdateLabel];

@@ -12,6 +12,7 @@
 
 #import "PFForecastTableViewCell.h"
 #import "UIFont+ApplicationFonts.h"
+#import "UIColor+CKUITools.h"
 
 
 @implementation PFForecastTableViewCell
@@ -38,7 +39,7 @@
 - (void)initBackgroundView
 {
     UIView* backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    [backgroundView setBackgroundColor:UIColorFromRGB(0x837758)];
+    [backgroundView setBackgroundColor:[UIColor colorWithHexRGB:0x837758]];
     [self setBackgroundView:backgroundView];
 }
 
@@ -63,7 +64,7 @@
 {
     _dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 150, 18)];
     [_dayLabel setFont:[UIFont applicationFontOfSize:16]];
-    [_dayLabel setTextColor:UIColorFromRGB(0xffffff)];
+    [_dayLabel setTextColor:[UIColor colorWithHexRGB:0xffffff]];
     [_dayLabel setBackgroundColor:[UIColor clearColor]];
     [self addSubview:_dayLabel];
 }
@@ -72,7 +73,7 @@
 {
     _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 28, 150, 16)];
     [_descriptionLabel setFont:[UIFont applicationFontOfSize:13]];
-    [_descriptionLabel setTextColor:UIColorFromRGB(0xe9e1cd)];
+    [_descriptionLabel setTextColor:[UIColor colorWithHexRGB:0xe9e1cd]];
     [_descriptionLabel setBackgroundColor:[UIColor clearColor]];
     [self addSubview:_descriptionLabel];
 }
@@ -81,7 +82,7 @@
 {
     _highTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 10, 55, 30)];
     [_highTempLabel setFont:[UIFont temperatureFontOfSize:27]];
-    [_highTempLabel setTextColor:UIColorFromRGB(0xffffff)];
+    [_highTempLabel setTextColor:[UIColor colorWithHexRGB:0xffffff]];
     [_highTempLabel setBackgroundColor:[UIColor clearColor]];
     [_highTempLabel setTextAlignment:NSTextAlignmentRight];
     [self addSubview:_highTempLabel];
@@ -91,7 +92,7 @@
 {
     _lowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(270, 11.5, 40, 30)];
     [_lowTempLabel setFont:[UIFont temperatureFontOfSize:20]];
-    [_lowTempLabel setTextColor:UIColorFromRGB(0xd9d1bd)];
+    [_lowTempLabel setTextColor:[UIColor colorWithHexRGB:0xd9d1bd]];
     [_lowTempLabel setBackgroundColor:[UIColor clearColor]];
     [_lowTempLabel setTextAlignment:NSTextAlignmentRight];
     [self addSubview:_lowTempLabel];

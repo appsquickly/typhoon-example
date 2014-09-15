@@ -133,7 +133,6 @@
 		6BE9747115AF01A3004472E2 /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BA7980365453A2C4CA5B71EB /* PFApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFApplicationAssembly.h; sourceTree = "<group>"; };
 		BA7980523B805CF697C4D409 /* UIFont+ApplicationFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ApplicationFonts.h"; sourceTree = "<group>"; };
-		BA79805C0A0C2453D9AF3841 /* PFWeatherReportViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportViewDelegate.h; sourceTree = "<group>"; };
 		BA7980D610AB0AE04C4A3E99 /* icon_partly_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_partly_cloudy.png; sourceTree = "<group>"; };
 		BA79810DC6998A5D91FB537B /* PFTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTheme.h; sourceTree = "<group>"; };
 		BA798134314953715D04412E /* RXMLElement_PFWeatherReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement_PFWeatherReportSpec.m; sourceTree = "<group>"; };
@@ -544,7 +543,6 @@
 				BA798945DD532BA1BD7FE30A /* PFWeatherReportViewController.m */,
 				BA798F27FD489318A1210076 /* PFWeatherReportViewController.h */,
 				BA798AE679659C7CC95C40E8 /* Views */,
-				BA79805C0A0C2453D9AF3841 /* PFWeatherReportViewDelegate.h */,
 			);
 			path = WeatherReport;
 			sourceTree = "<group>";
