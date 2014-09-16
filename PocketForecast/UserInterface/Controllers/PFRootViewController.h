@@ -13,6 +13,7 @@
 #import <UIKit/UIKit.h>
 #import "PaperFoldView.h"
 
+
 @class PFApplicationAssembly;
 @class TyphoonComponentFactory;
 @class JBReplaceableRootNavigationController;
@@ -28,7 +29,6 @@ typedef enum
 {
     JBReplaceableRootNavigationController *_navigator;
     UIView *_mainContentViewContainer;
-    UIView *_slideOnMainContentViewContainer;
     PFSideViewState _sideViewState;
 
     UIViewController *_citiesListController;
@@ -37,6 +37,8 @@ typedef enum
     PFApplicationAssembly *_assembly;
 
 }
+
+@property(nonatomic, strong) PaperFoldView *view;
 
 
 /**

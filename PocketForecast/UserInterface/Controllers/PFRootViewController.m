@@ -24,7 +24,7 @@
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
 
-- (instancetype)initWithMainContentViewController:(UIViewController *)mainContentViewController assembly:(PFApplicationAssembly*)assembly
+- (instancetype)initWithMainContentViewController:(UIViewController *)mainContentViewController assembly:(PFApplicationAssembly *)assembly
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
@@ -85,21 +85,14 @@
     {
         _sideViewState = PFSideViewStateShowing;
 
-        _citiesListController =
-            [[UINavigationController alloc] initWithRootViewController:[_assembly citiesListController]];
+        _citiesListController = [[UINavigationController alloc] initWithRootViewController:[_assembly citiesListController]];
 
         [_citiesListController.view setFrame:CGRectMake(0, 0,
             _mainContentViewContainer.width - (_mainContentViewContainer.width - SIDE_CONTROLLER_WIDTH), _mainContentViewContainer.height)];
 
-        PaperFoldView *view = (PaperFoldView *) self.view;
-        [view setDelegate:self];
-        [view setLeftFoldContentView:_citiesListController.view foldCount:5 pullFactor:0.9];
-        [view setEnableLeftFoldDragging:NO];
-        [view setEnableRightFoldDragging:NO];
-        [view setEnableTopFoldDragging:NO];
-        [view setEnableBottomFoldDragging:NO];
-        [view setEnableHorizontalEdgeDragging:NO];
-        [view setPaperFoldState:PaperFoldStateLeftUnfolded];
+        [self.view setDelegate:self];
+        [self.view setLeftFoldContentView:_citiesListController.view foldCount:5 pullFactor:0.9];
+        [self.view setPaperFoldState:PaperFoldStateLeftUnfolded];
 
         [_mainContentViewContainer setNeedsDisplay];
     }
@@ -110,8 +103,7 @@
     if (_sideViewState != PFSideViewStateHidden)
     {
         _sideViewState = PFSideViewStateHidden;
-        PaperFoldView *view = (PaperFoldView *) self.view;
-        [view setPaperFoldState:PaperFoldStateDefault];
+        [self.view setPaperFoldState:PaperFoldStateDefault];
         [_navigator.topViewController viewWillAppear:YES];
     }
 }
@@ -134,8 +126,7 @@
     if (!_addCitiesController)
     {
         [_navigator.topViewController.view setUserInteractionEnabled:NO];
-        _addCitiesController =
-            [[UINavigationController alloc] initWithRootViewController:[_assembly addCityViewController]];
+        _addCitiesController = [[UINavigationController alloc] initWithRootViewController:[_assembly addCityViewController]];
 
         [_addCitiesController.view setFrame:CGRectMake(0, self.view.height, SIDE_CONTROLLER_WIDTH, self.view.height)];
         [self.view addSubview:_addCitiesController.view];
@@ -178,7 +169,7 @@
     {
         [_navigator.topViewController viewDidAppear:YES];
 
-        //We could set the left-side view to nil here, however Paper-fold issues a (basically harmless) warning about CGRectZero state.
+        //We could set the left-side view to nil here, however Paper-fold does not like an empty view at this point
         UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(1, 1, 1, 1)];
         [(PaperFoldView *) self.view setLeftFoldContentView:dummyView foldCount:0 pullFactor:0];
         _citiesListController = nil;
@@ -192,30 +183,16 @@
 - (void)loadView
 {
     CGRect screen = [UIScreen mainScreen].bounds;
+    self.view = [[PaperFoldView alloc] initWithFrame:CGRectMake(0, 0, screen.size.width, screen.size.height)];
 
-    PaperFoldView *paperFoldView;
-
-    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7)
-    {
-        paperFoldView = [[PaperFoldView alloc] initWithFrame:CGRectMake(0, 0, screen.size.width, screen.size.height)];
-    }
-    else
-    {
-        paperFoldView = [[PaperFoldView alloc] initWithFrame:CGRectMake(0, 0, screen.size.width,
-            screen.size.height - [UIApplication sharedApplication].statusBarFrame.size.height)];
-    }
-    [paperFoldView setTimerStepDuration:0.02];
-    self.view = paperFoldView;
+    [self.view setTimerStepDuration:0.02];
 
     [self.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 
     _mainContentViewContainer = [[UIView alloc] initWithFrame:self.view.bounds];
     [_mainContentViewContainer setBackgroundColor:[UIColor blackColor]];
-    [paperFoldView setCenterContentView:_mainContentViewContainer];
+    [self.view setCenterContentView:_mainContentViewContainer];
 
-    _slideOnMainContentViewContainer = [[UIView alloc] initWithFrame:_mainContentViewContainer.bounds];
-    [_slideOnMainContentViewContainer setHidden:YES];
-    [self.view addSubview:_slideOnMainContentViewContainer];
 }
 
 - (void)viewWillLayoutSubviews
@@ -229,13 +206,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    UIViewController *topController = _navigator.topViewController;
-    return [topController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
 }
 
 - (BOOL)shouldAutorotate
