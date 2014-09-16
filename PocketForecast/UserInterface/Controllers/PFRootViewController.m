@@ -59,8 +59,6 @@
         if (!_navigator)
         {
             [self makeNavigationControllerWithRoot:viewController];
-            [_navigator.view setFrame:_mainContentViewContainer.bounds];
-            [_mainContentViewContainer addSubview:_navigator.view];
         }
         else if (replaceRoot)
         {
@@ -224,6 +222,7 @@
 {
     [super viewWillLayoutSubviews];
     [_mainContentViewContainer setFrame:self.view.bounds];
+    [_navigator.view setFrame:_mainContentViewContainer.bounds];
 }
 
 
@@ -264,6 +263,7 @@
 {
     _navigator = [[JBReplaceableRootNavigationController alloc] initWithRootViewController:root];
     _navigator.view.frame = self.view.bounds;
+    [_mainContentViewContainer addSubview:_navigator.view];
 }
 
 

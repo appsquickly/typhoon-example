@@ -34,14 +34,15 @@ typedef enum
     UIViewController *_citiesListController;
     UIViewController *_addCitiesController;
 
+    PFApplicationAssembly *_assembly;
+
 }
 
-@property(nonatomic, strong, readonly) PFApplicationAssembly *assembly;
 
 /**
 * Creates a root view controller instance, with the initial main content view controller, and side view controller.
 */
-- (instancetype)initWithMainContentViewController:(UIViewController *)mainContentViewController assembly:(PFApplicationAssembly*)assembly;
+- (instancetype)initWithMainContentViewController:(UIViewController *)mainContentViewController assembly:(PFApplicationAssembly *)assembly;
 
 /**
 * Sets main content view, with an animated transition.
