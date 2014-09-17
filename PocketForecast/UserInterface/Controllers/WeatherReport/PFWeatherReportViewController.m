@@ -29,16 +29,16 @@
 /* ====================================================================================================================================== */
 #pragma mark - Initialization & Destruction
 
-- (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFApplicationAssembly *)assembly;
+- (id)initWithView:(PFWeatherReportView *)view weatherClient:(id <PFWeatherClient>)weatherClient
+    weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao cityDao:(id <PFCityDao>)cityDao assembly:(PFApplicationAssembly *)assembly
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self)
     {
+        self.view = view;
         _weatherClient = weatherClient;
         _weatherReportDao = weatherReportDao;
         _cityDao = cityDao;
-        _theme = theme;
         _assembly = assembly;
     }
     return self;
@@ -46,13 +46,6 @@
 
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods
-
-- (void)loadView
-{
-    PFWeatherReportView *view = [[PFWeatherReportView alloc] initWithFrame:CGRectZero];
-    [view setTheme:_theme];
-    self.view = view;
-}
 
 - (void)viewDidLoad
 {

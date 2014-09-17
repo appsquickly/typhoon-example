@@ -11,6 +11,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "PFThemeable.h"
 
 @class PFWeatherReport;
 @protocol PFWeatherReportViewDelegate;
@@ -18,7 +19,7 @@
 @class MKParallaxView;
 
 
-@interface PFWeatherReportView : UIView <UITableViewDelegate, UITableViewDataSource>
+@interface PFWeatherReportView : UIView <UITableViewDelegate, UITableViewDataSource, PFThemeable>
 {
     UIImageView* _backgroundView;
     UILabel* _cityNameLabel;
@@ -32,13 +33,13 @@
     UITableView* _tableView;
 
     PFWeatherReport* _weatherReport;
-    PFTheme* _theme;
 }
+
+@property(nonatomic, strong) PFTheme* theme;
 
 @property (nonatomic, strong, readonly) UIToolbar* toolbar;
 
 - (void)setWeatherReport:(PFWeatherReport*)weatherReport;
 
-- (void)setTheme:(PFTheme*)theme;
 
 @end

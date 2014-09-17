@@ -89,17 +89,23 @@
 {
     return [TyphoonDefinition withClass:[PFWeatherReportViewController class] configuration:^(TyphoonDefinition *definition)
     {
-        [definition useInitializer:@selector(initWithWeatherClient:weatherReportDao:cityDao:theme:assembly:)
+        [definition useInitializer:@selector(initWithView:weatherClient:weatherReportDao:cityDao:assembly:)
             parameters:^(TyphoonMethod *initializer)
             {
+                [initializer injectParameterWith:[self weatherReportView]];
                 [initializer injectParameterWith:[_coreComponents weatherClient]];
                 [initializer injectParameterWith:[_coreComponents weatherReportDao]];
                 [initializer injectParameterWith:[_coreComponents cityDao]];
-                [initializer injectParameterWith:[_themeProvider currentTheme]];
-
-                //Inject the TyphoonComponentFactory itself! (It can pose as any of your assembly interfaces).
                 [initializer injectParameterWith:self];
             }];
+    }];
+}
+
+- (PFWeatherReportView *)weatherReportView
+{
+    return [TyphoonDefinition withClass:[PFWeatherReportView class] configuration:^(TyphoonDefinition *definition)
+    {
+        [definition injectProperty:@selector(theme) with:[_themeProvider currentTheme]];
     }];
 }
 

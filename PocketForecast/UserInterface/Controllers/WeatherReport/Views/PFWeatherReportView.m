@@ -76,19 +76,6 @@
     }
 }
 
-- (void)setTheme:(PFTheme *)theme
-{
-    _theme = theme;
-    dispatch_async(dispatch_get_main_queue(), ^
-    {
-        [_toolbar setBarTintColor:theme.forecastTintColor];
-        [(UIImageView *) _backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
-        [_tableView reloadData];
-    });
-
-}
-
-
 /* ====================================================================================================================================== */
 #pragma mark - Overridden Methods
 
@@ -105,6 +92,18 @@
     [_toolbar setFrame:CGRectMake(0, self.frame.size.height - _toolbar.height, self.width, _toolbar.height)];
     [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 150, 320, 150)];
     [_lastUpdateLabel setFrame:[_toolbar bounds]];
+}
+
+- (void)setTheme:(PFTheme *)theme
+{
+    _theme = theme;
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        [_toolbar setBarTintColor:theme.forecastTintColor];
+        [(UIImageView *) _backgroundView setImage:[UIImage imageNamed:theme.backgroundResourceName]];
+        [_tableView reloadData];
+    });
+
 }
 
 /* ====================================================================================================================================== */

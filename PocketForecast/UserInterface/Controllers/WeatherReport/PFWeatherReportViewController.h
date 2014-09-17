@@ -32,19 +32,18 @@
     NSString *_cityName;
 }
 
-@property(nonatomic, strong) PFWeatherReportView* view;
+@property(nonatomic, strong) PFWeatherReportView *view;
 
 #pragma mark - Injected w/ initializer
 
 @property(nonatomic, strong, readonly) id <PFWeatherClient> weatherClient;
 @property(nonatomic, strong, readonly) id <PFWeatherReportDao> weatherReportDao;
 @property(nonatomic, strong, readonly) id <PFCityDao> cityDao;
-@property(nonatomic, strong, readonly) PFTheme *theme;
 @property(nonatomic, strong, readonly) PFApplicationAssembly *assembly;
 
 
-- (id)initWithWeatherClient:(id <PFWeatherClient>)weatherClient weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao
-    cityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme assembly:(PFApplicationAssembly *)assembly;
+- (id)initWithView:(PFWeatherReportView *)view weatherClient:(id <PFWeatherClient>)weatherClient
+    weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao cityDao:(id <PFCityDao>)cityDao assembly:(PFApplicationAssembly *)assembly;
 
 
 @end
