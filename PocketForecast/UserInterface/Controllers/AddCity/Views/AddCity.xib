@@ -35,7 +35,7 @@
                     </connections>
                 </textField>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="25">
-                    <rect key="frame" x="208" y="140" width="20" height="20"/>
+                    <rect key="frame" x="205" y="148" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>

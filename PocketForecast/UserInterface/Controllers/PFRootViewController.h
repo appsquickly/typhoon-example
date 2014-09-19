@@ -27,7 +27,7 @@ typedef enum
 
 @interface PFRootViewController : UIViewController <PaperFoldViewDelegate>
 {
-    JBReplaceableRootNavigationController *_navigator;
+    UINavigationController *_navigator;
     UIView *_mainContentViewContainer;
     PFSideViewState _sideViewState;
 

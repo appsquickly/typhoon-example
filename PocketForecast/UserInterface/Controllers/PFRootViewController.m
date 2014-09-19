@@ -14,7 +14,6 @@
 #import "PFRootViewController.h"
 #import "PFCitiesListViewController.h"
 #import "PFAddCityViewController.h"
-#import "JBReplaceableRootNavigationController.h"
 #import "PFApplicationAssembly.h"
 
 #define SIDE_CONTROLLER_WIDTH 245.0
@@ -62,7 +61,7 @@
         }
         else if (replaceRoot)
         {
-            [_navigator setRootViewController:viewController animated:YES];
+            [_navigator setViewControllers:@[viewController] animated:YES];
         }
         else
         {
@@ -231,7 +230,7 @@
 
 - (void)makeNavigationControllerWithRoot:(UIViewController *)root
 {
-    _navigator = [[JBReplaceableRootNavigationController alloc] initWithRootViewController:root];
+    _navigator = [[UINavigationController alloc] initWithRootViewController:root];
     _navigator.view.frame = self.view.bounds;
     [_mainContentViewContainer addSubview:_navigator.view];
 }
