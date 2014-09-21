@@ -3,6 +3,8 @@ Typhoon-example
 
 An example application built with <a href ="http://www.typhoonframework.org">Typhoon</a>.
 
+* Looking for a Swift sample application? We <a href="https://github.com/typhoon-framework/Typhoon-Swift-Example">have one here</a>. 
+
 ###Features: 
 
 * Returns weather reports from a remote cloud service
