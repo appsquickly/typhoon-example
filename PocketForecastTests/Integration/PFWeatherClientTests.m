@@ -38,7 +38,7 @@
     TyphoonComponentFactory * factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[PFCoreComponents assembly]]];
 
     TyphoonConfigPostProcessor* configurer = [TyphoonConfigPostProcessor configurer];
-    [configurer useResourceWithName:@"Configuration.properties"];
+    [configurer useResourceWithName:@"Configuration.plist"];
     [factory attachPostProcessor:configurer];
 
 
