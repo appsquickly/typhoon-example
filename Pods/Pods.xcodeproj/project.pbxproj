@@ -893,7 +893,7 @@
 		3B53F5259E724C2182A7C490 /* TyphoonDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonDefinition.m; path = Source/Definition/TyphoonDefinition.m; sourceTree = "<group>"; };
 		3B65129B890546F89587D0C8 /* Pods-PocketForecast-Typhoon-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PocketForecast-Typhoon-prefix.pch"; sourceTree = "<group>"; };
 		3B741836DBF5449982ACD419 /* TyphoonInitialStoryboardResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonInitialStoryboardResolver.m; path = Source/ios/Storyboard/TyphoonInitialStoryboardResolver.m; sourceTree = "<group>"; };
-		3BEF63624C1A4BE29C4DB8F4 /* swipe_guide_left@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "swipe_guide_left@2x.png"; path = "PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left@2x.png"; sourceTree = "<group>"; };
+		3BEF63624C1A4BE29C4DB8F4 /* swipe_guide_left@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "swipe_guide_left@2x.png"; path = "PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left@2x.png"; sourceTree = "<group>"; };
 		3C7099AA216C4399990CAC0A /* HCGenericTestFailureHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCGenericTestFailureHandler.m; path = Source/Core/Helpers/TestFailureHandlers/HCGenericTestFailureHandler.m; sourceTree = "<group>"; };
 		3C7B597EFFE349BBAF4FDA6F /* libPods-PocketForecast-Typhoon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketForecast-Typhoon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C82F8495EC24610B7D9AC2A /* MKTVerificationData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTVerificationData.h; path = Source/OCMockito/MKTVerificationData.h; sourceTree = "<group>"; };
@@ -953,7 +953,7 @@
 		51E5A0C31E4A4E0890BCC802 /* Pods-PocketForecast-CKUITools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PocketForecast-CKUITools-dummy.m"; sourceTree = "<group>"; };
 		528B087926FC4A06872B5923 /* TyphoonSelector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TyphoonSelector.h; path = Source/Utils/TyphoonSelector.h; sourceTree = "<group>"; };
 		5296FCA3FAC14D86B50E0041 /* MKTUnsignedLongReturnSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTUnsignedLongReturnSetter.h; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTUnsignedLongReturnSetter.h; sourceTree = "<group>"; };
-		52D5A442B1B2497795D12CE1 /* randomDouble.c */ = {isa = PBXFileReference; includeInIndex = 1; path = randomDouble.c; sourceTree = "<group>"; };
+		52D5A442B1B2497795D12CE1 /* randomDouble.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = randomDouble.c; sourceTree = "<group>"; };
 		534FBBFE432448219AA194CC /* MKTStructArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTStructArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTStructArgumentGetter.h; sourceTree = "<group>"; };
 		53E26E5259C6442BBA66F967 /* HCIsEqualIgnoringCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsEqualIgnoringCase.m; path = Source/Library/Text/HCIsEqualIgnoringCase.m; sourceTree = "<group>"; };
 		54306E418A9748C89437FD59 /* TyphoonInjectionByRuntimeArgument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonInjectionByRuntimeArgument.m; path = Source/Definition/Injections/TyphoonInjectionByRuntimeArgument.m; sourceTree = "<group>"; };
@@ -976,7 +976,7 @@
 		5BC7A5C9F837412DA1345BC0 /* NSInvocation+TCFInstanceBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+TCFInstanceBuilder.h"; path = "Source/Factory/Internal/NSInvocation+TCFInstanceBuilder.h"; sourceTree = "<group>"; };
 		5C9F2EBDF21A4CE48276EDAA /* MKTUnsignedIntArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTUnsignedIntArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTUnsignedIntArgumentGetter.m; sourceTree = "<group>"; };
 		5D90F6E8153E4729AFAE0850 /* TyphoonRuntimeArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TyphoonRuntimeArguments.h; path = Source/Factory/Block/TyphoonRuntimeArguments.h; sourceTree = "<group>"; };
-		5E62492267BC4183878A8F90 /* swipe_guide_right@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "swipe_guide_right@2x.png"; path = "PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_right@2x.png"; sourceTree = "<group>"; };
+		5E62492267BC4183878A8F90 /* swipe_guide_right@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "swipe_guide_right@2x.png"; path = "PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_right@2x.png"; sourceTree = "<group>"; };
 		5E719F947AFC43D0A0CAC733 /* HCLongReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCLongReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCLongReturnGetter.h; sourceTree = "<group>"; };
 		5E8EAB192350443BA973E72A /* libPods-PocketForecastTests-OCHamcrest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketForecastTests-OCHamcrest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECD0D32518C46C58D28D753 /* TyphoonStoryboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonStoryboard.m; path = Source/ios/Storyboard/TyphoonStoryboard.m; sourceTree = "<group>"; };
@@ -1018,7 +1018,7 @@
 		6C275DEF4B904C08B8B1489B /* Pods-PocketForecastTests-Expecta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PocketForecastTests-Expecta.xcconfig"; sourceTree = "<group>"; };
 		6CC7F687147C4A5EA176349A /* MKTBaseMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTBaseMockObject.h; path = Source/OCMockito/MKTBaseMockObject.h; sourceTree = "<group>"; };
 		6D99832B8EE44DD2B564EB24 /* libPods-PocketForecast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketForecast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DB356B986844BBCBAE5D1FE /* swipe_guide_right.png */ = {isa = PBXFileReference; includeInIndex = 1; name = swipe_guide_right.png; path = PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_right.png; sourceTree = "<group>"; };
+		6DB356B986844BBCBAE5D1FE /* swipe_guide_right.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = swipe_guide_right.png; path = PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_right.png; sourceTree = "<group>"; };
 		6DF6822D8FF346CFB600DCD0 /* TyphoonFactoryAutoInjectionPostProcessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonFactoryAutoInjectionPostProcessor.m; path = Source/Definition/AutoInjection/TyphoonFactoryAutoInjectionPostProcessor.m; sourceTree = "<group>"; };
 		6E6516A8C8CB40938C365B8F /* HCOrderingComparison.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCOrderingComparison.h; path = Source/Library/Number/HCOrderingComparison.h; sourceTree = "<group>"; };
 		6EA9CECE1FDF48DE8C205B65 /* HCIsEqualIgnoringWhiteSpace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsEqualIgnoringWhiteSpace.m; path = Source/Library/Text/HCIsEqualIgnoringWhiteSpace.m; sourceTree = "<group>"; };
@@ -1070,7 +1070,7 @@
 		7CD79059F25D49B893C76D6D /* TyphoonTypeConverterRegistry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonTypeConverterRegistry.m; path = Source/TypeConversion/TyphoonTypeConverterRegistry.m; sourceTree = "<group>"; };
 		7CEF611BD0624065908E76EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		7D0E134791814449BBFA84F5 /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "src/matchers/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
-		7D5BB04B0F314343BD72F586 /* radialGeometry.c */ = {isa = PBXFileReference; includeInIndex = 1; path = radialGeometry.c; sourceTree = "<group>"; };
+		7D5BB04B0F314343BD72F586 /* radialGeometry.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = radialGeometry.c; sourceTree = "<group>"; };
 		7D97AB68CAD8411BB30677D9 /* TyphoonComponentFactory+TyphoonDefinitionRegisterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TyphoonComponentFactory+TyphoonDefinitionRegisterer.h"; path = "Source/Factory/Internal/TyphoonComponentFactory+TyphoonDefinitionRegisterer.h"; sourceTree = "<group>"; };
 		7E3515826C7541C7A2C4DBE8 /* TyphoonBundledImageTypeConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonBundledImageTypeConverter.m; path = Source/ios/TypeConversion/Converters/TyphoonBundledImageTypeConverter.m; sourceTree = "<group>"; };
 		7E9AC5C47DE1480B9F0293E4 /* MKTObjectArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTObjectArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTObjectArgumentGetter.h; sourceTree = "<group>"; };
@@ -1147,7 +1147,7 @@
 		A07FD23CFDCA4EC6AB7FCE1F /* MKTArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTArgumentGetter.m; sourceTree = "<group>"; };
 		A0C0B25D51BA434A8C25B60C /* MKTBaseMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTBaseMockObject.m; path = Source/OCMockito/MKTBaseMockObject.m; sourceTree = "<group>"; };
 		A0FC21978FD940A8926986A1 /* TPWeakProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPWeakProxy.h; sourceTree = "<group>"; };
-		A16E2B85897A42A6BE6D6887 /* swipe_guide_left.png */ = {isa = PBXFileReference; includeInIndex = 1; name = swipe_guide_left.png; path = PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left.png; sourceTree = "<group>"; };
+		A16E2B85897A42A6BE6D6887 /* swipe_guide_left.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = swipe_guide_left.png; path = PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left.png; sourceTree = "<group>"; };
 		A18A72D8879A4AA8A0C79C5B /* PaperFoldNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PaperFoldNavigationController.m; path = PaperFold/PaperFold/PaperFold/PaperFoldNavigationController.m; sourceTree = "<group>"; };
 		A19E225C0075420288B636E1 /* HCIsCollectionContainingInAnyOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCollectionContainingInAnyOrder.m; path = Source/Library/Collection/HCIsCollectionContainingInAnyOrder.m; sourceTree = "<group>"; };
 		A1BA1E15E22F484287B67087 /* HCSelfDescribing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCSelfDescribing.h; path = Source/Core/HCSelfDescribing.h; sourceTree = "<group>"; };
@@ -1557,7 +1557,6 @@
 				E71258E6959E43DD981D455B /* TPWeakProxy.m */,
 				43073131885A4DD8834B8E92 /* Support Files */,
 			);
-			name = TPWeakProxy;
 			path = TPWeakProxy;
 			sourceTree = "<group>";
 		};
@@ -1568,7 +1567,6 @@
 				40F851DC574D451E80EC1434 /* ICLoader.m */,
 				D420415A047B4CD8A42C0165 /* Support Files */,
 			);
-			name = ICLoader;
 			path = ICLoader;
 			sourceTree = "<group>";
 		};
@@ -1788,7 +1786,6 @@
 				0A8CDBF6BE374E1B8D4DFFBB /* Support Files */,
 				0B6F96ED0D414157B26EF00D /* no-arc */,
 			);
-			name = Typhoon;
 			path = Typhoon;
 			sourceTree = "<group>";
 		};
@@ -1905,7 +1902,6 @@
 				851EC949D52D4E84BC0EC306 /* NGAParallaxMotion.m */,
 				6EA99BC29E2C46A2949488B6 /* Support Files */,
 			);
-			name = NGAParallaxMotion;
 			path = NGAParallaxMotion;
 			sourceTree = "<group>";
 		};
@@ -1956,7 +1952,6 @@
 				5EDC0A80E60543B0BAED7175 /* Resources */,
 				CA239DBB3D8448AC821EB54E /* Support Files */,
 			);
-			name = PaperFold;
 			path = PaperFold;
 			sourceTree = "<group>";
 		};
@@ -1980,7 +1975,6 @@
 				B9B3172E059446A09CE14EF9 /* NSURL+QueryDictionary.m */,
 				95622AD2D3A04925B95FA83E /* Support Files */,
 			);
-			name = "NSURL+QueryDictionary";
 			path = "NSURL+QueryDictionary";
 			sourceTree = "<group>";
 		};
@@ -2107,7 +2101,6 @@
 				162448017D4A47829B463223 /* OCMockito.m */,
 				511D27207C1247ECB6588071 /* Support Files */,
 			);
-			name = OCMockito;
 			path = OCMockito;
 			sourceTree = "<group>";
 		};
@@ -2289,7 +2282,6 @@
 				1E0DCAAD71A74E6AA7E5AFA1 /* OCHamcrest.h */,
 				9FF9BC98B25D42CF8166E121 /* Support Files */,
 			);
-			name = OCHamcrest;
 			path = OCHamcrest;
 			sourceTree = "<group>";
 		};
@@ -2313,7 +2305,6 @@
 				6F25058C593F45598125C5D8 /* RXMLElement.m */,
 				EC5830B4D1D44E42B32626F1 /* Support Files */,
 			);
-			name = RaptureXML;
 			path = RaptureXML;
 			sourceTree = "<group>";
 		};
@@ -2334,7 +2325,6 @@
 				59E040F23F6E479F81A4BAF1 /* OCLogTemplate.h */,
 				8CA9C805520746CDAB24A83D /* Support Files */,
 			);
-			name = OCLogTemplate;
 			path = OCLogTemplate;
 			sourceTree = "<group>";
 		};
@@ -2380,7 +2370,6 @@
 				45538C0AD03745E4A6F5C954 /* randomDouble.h */,
 				400D50118F8C413894281DC6 /* Support Files */,
 			);
-			name = CKUITools;
 			path = CKUITools;
 			sourceTree = "<group>";
 		};
@@ -2391,7 +2380,6 @@
 				95A61C32CC064710B3E938E5 /* FXBlurView.m */,
 				7CEB825838674C99A95AD83B /* Support Files */,
 			);
-			name = FXBlurView;
 			path = FXBlurView;
 			sourceTree = "<group>";
 		};
@@ -2472,7 +2460,6 @@
 				357430F1EB3C4CD09FB187F3 /* NSValue+Expecta.m */,
 				D7A2E5BE033D45908BB8844E /* Support Files */,
 			);
-			name = Expecta;
 			path = Expecta;
 			sourceTree = "<group>";
 		};
@@ -3146,7 +3133,7 @@
 		319E368AFE4542D4AC480167 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = AEC32A91A9974D3281F7C780 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3158,8 +3145,6 @@
 			mainGroup = 9FDFADDD1F2A4FBFBB454EC3;
 			productRefGroup = F334F657E3F149A6868FA247 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				53C7CCBC924A4107A7920752 /* Pods-PocketForecast */,
@@ -3660,7 +3645,6 @@
 			baseConfigurationReference = 01B6C0F4F5654506BC0BEF99 /* Pods-PocketForecast-Typhoon-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3689,7 +3673,6 @@
 			baseConfigurationReference = 0705B7284E444322871B9C88 /* Pods-PocketForecastTests-OCHamcrest-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3718,7 +3701,6 @@
 			baseConfigurationReference = 4F320205B7294A9C9E0AC265 /* Pods-PocketForecast-OCLogTemplate-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3749,7 +3731,6 @@
 			baseConfigurationReference = 78400D3C6E674332AC384D54 /* Pods-PocketForecast-CKUITools-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3780,7 +3761,6 @@
 			baseConfigurationReference = B0446C9A0276425CA0933713 /* Pods-PocketForecast-FXBlurView-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3809,7 +3789,6 @@
 			baseConfigurationReference = F9E837E6EFA04F25A1C9A418 /* Pods-PocketForecastTests-TPWeakProxy-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3838,7 +3817,6 @@
 			baseConfigurationReference = 0705B7284E444322871B9C88 /* Pods-PocketForecastTests-OCHamcrest-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3869,7 +3847,6 @@
 			baseConfigurationReference = 98F63CF70E2542FDB49B7B0F /* Pods-PocketForecastTests-OCMockito-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3900,7 +3877,6 @@
 			baseConfigurationReference = F9E837E6EFA04F25A1C9A418 /* Pods-PocketForecastTests-TPWeakProxy-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3931,7 +3907,6 @@
 			baseConfigurationReference = 1CBA42524DCD4E4A84E00568 /* Pods-PocketForecast-NGAParallaxMotion-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3962,7 +3937,6 @@
 			baseConfigurationReference = 78400D3C6E674332AC384D54 /* Pods-PocketForecast-CKUITools-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3991,7 +3965,6 @@
 			baseConfigurationReference = 4F320205B7294A9C9E0AC265 /* Pods-PocketForecast-OCLogTemplate-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4050,7 +4023,6 @@
 			baseConfigurationReference = CE9C1B1560CD4EDB8BCEF934 /* Pods-PocketForecast-RaptureXML-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4079,7 +4051,6 @@
 			baseConfigurationReference = 388C2F005D4C430DA2B1FBCB /* Pods-PocketForecast-NSURL+QueryDictionary-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4110,7 +4081,6 @@
 			baseConfigurationReference = E7B0238906824CF1BE394370 /* Pods-PocketForecast-ICLoader-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4141,7 +4111,6 @@
 			baseConfigurationReference = CE9C1B1560CD4EDB8BCEF934 /* Pods-PocketForecast-RaptureXML-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4172,7 +4141,6 @@
 			baseConfigurationReference = EAD414BEC52A47EE8CBEBF36 /* Pods-PocketForecast-PaperFold-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4201,7 +4169,6 @@
 			baseConfigurationReference = BF20B6E2CB6543B6AAF23FA9 /* Pods-PocketForecastTests-Expecta-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4230,7 +4197,6 @@
 			baseConfigurationReference = F105356380E0425E8E2C2D3F /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4296,7 +4262,6 @@
 			baseConfigurationReference = 01B6C0F4F5654506BC0BEF99 /* Pods-PocketForecast-Typhoon-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4327,7 +4292,6 @@
 			baseConfigurationReference = D5846665719B4359832B1FA6 /* Pods-PocketForecastTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4357,7 +4321,6 @@
 			baseConfigurationReference = 98F63CF70E2542FDB49B7B0F /* Pods-PocketForecastTests-OCMockito-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4386,7 +4349,6 @@
 			baseConfigurationReference = B0446C9A0276425CA0933713 /* Pods-PocketForecast-FXBlurView-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4417,7 +4379,6 @@
 			baseConfigurationReference = 388C2F005D4C430DA2B1FBCB /* Pods-PocketForecast-NSURL+QueryDictionary-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4446,7 +4407,6 @@
 			baseConfigurationReference = F105356380E0425E8E2C2D3F /* Pods-PocketForecast.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4474,7 +4434,6 @@
 			baseConfigurationReference = 1CBA42524DCD4E4A84E00568 /* Pods-PocketForecast-NGAParallaxMotion-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4503,7 +4462,6 @@
 			baseConfigurationReference = E7B0238906824CF1BE394370 /* Pods-PocketForecast-ICLoader-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4532,7 +4490,6 @@
 			baseConfigurationReference = BF20B6E2CB6543B6AAF23FA9 /* Pods-PocketForecastTests-Expecta-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4563,7 +4520,6 @@
 			baseConfigurationReference = D5846665719B4359832B1FA6 /* Pods-PocketForecastTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4591,7 +4547,6 @@
 			baseConfigurationReference = EAD414BEC52A47EE8CBEBF36 /* Pods-PocketForecast-PaperFold-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
