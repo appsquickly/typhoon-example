@@ -55,7 +55,11 @@ static NSString* const PFTemperatureDefaultUnits = @"pfWeather.defaultTemperatur
 
 - (id) initWithFahrenheitString:(NSString*)fahrenheitString {
     self = [self init];
-    _temperatureInFahrenheit = [NSDecimalNumber decimalNumberWithString:fahrenheitString];
+    
+    if (fahrenheitString  != nil) {
+        _temperatureInFahrenheit = [NSDecimalNumber decimalNumberWithString:fahrenheitString];
+    }
+    
     return self;
 }
 
