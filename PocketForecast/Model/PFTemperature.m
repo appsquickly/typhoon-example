@@ -29,7 +29,7 @@ static NSString* const PFTemperatureDefaultUnits = @"pfWeather.defaultTemperatur
 }
 
 + (PFTemperatureUnits) defaultUnits {
-    return [[NSUserDefaults standardUserDefaults] integerForKey:PFTemperatureDefaultUnits];
+    return (int)[[NSUserDefaults standardUserDefaults] integerForKey:PFTemperatureDefaultUnits];
 }
 
 
