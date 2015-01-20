@@ -50,14 +50,14 @@ static NSString* const kCurrentThemeIndexFileName = @"PF_CURRENT_THEME_INDEX";
 
 
         NSInteger index = [[NSString stringWithContentsOfFile:indexFileName encoding:NSUTF8StringEncoding error:nil] integerValue];
-        LogDebug(@"Current theme index is: %i", index);
+        LogDebug(@"Current theme index is: %li", index);
         if (index > [_themes count] - 1)
         {
             LogDebug(@"$$$$$$$$$$$$$ resetting index");
             index = 0;
         }
         _sequentialTheme = [_themes objectAtIndex:index];
-        [[NSString stringWithFormat:@"%i", (index + 1)] writeToFile:indexFileName atomically:NO encoding:NSUTF8StringEncoding error:nil];
+        [[NSString stringWithFormat:@"%li", (index + 1)] writeToFile:indexFileName atomically:NO encoding:NSUTF8StringEncoding error:nil];
 
     }
     return _sequentialTheme;
