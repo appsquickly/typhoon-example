@@ -14,10 +14,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class PFCitiesListViewController;
-@class PFWeatherReportViewController;
 @protocol PFCityDao;
-@class TyphoonComponentFactory;
 @class PFRootViewController;
 
 @interface PFAppDelegate : UIResponder <UIApplicationDelegate>
