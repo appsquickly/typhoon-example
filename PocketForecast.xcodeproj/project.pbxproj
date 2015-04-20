@@ -649,9 +649,6 @@
 					6BD511681880E794009C487A = {
 						TestTargetID = 6BE9744E15AF01A3004472E2;
 					};
-					6BE9744E15AF01A3004472E2 = {
-						DevelopmentTeam = H9V995WFAB;
-					};
 				};
 			};
 			buildConfigurationList = 6BE9744915AF01A3004472E2 /* Build configuration list for PBXProject "PocketForecast" */;
@@ -1051,8 +1048,8 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = PocketForecast;
-				PROVISIONING_PROFILE = "0c39b245-400b-4b24-921c-9c075548af59";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0c39b245-400b-4b24-921c-9c075548af59";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -1083,8 +1080,8 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = PocketForecast;
-				PROVISIONING_PROFILE = "0c39b245-400b-4b24-921c-9c075548af59";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0c39b245-400b-4b24-921c-9c075548af59";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
