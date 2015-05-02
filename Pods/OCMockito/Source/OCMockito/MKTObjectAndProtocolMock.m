@@ -1,20 +1,19 @@
-//
-//  OCMockito - MKTObjectAndProtocolMock.m
-//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
-//  
-//  Created by: Kevin Lundberg
-//  Source: https://github.com/jonreid/OCMockito
-//
+//  OCMockito by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
+//  Contribution by Kevin Lundberg
 
 #import "MKTObjectAndProtocolMock.h"
 
+#import "MKTDynamicProperties.h"
 #import <objc/runtime.h>
 
 
+@interface MKTObjectAndProtocolMock ()
+@property (readonly, nonatomic, strong) Class mockedClass;
+@property (nonatomic, strong) MKTDynamicProperties *dynamicProperties;
+@end
+
 @implementation MKTObjectAndProtocolMock
-{
-    Class _mockedClass;
-}
 
 + (instancetype)mockForClass:(Class)aClass protocol:(Protocol *)protocol
 {
@@ -25,24 +24,28 @@
 {
     self = [super initWithProtocol:protocol];
     if (self)
+    {
         _mockedClass = aClass;
+        _dynamicProperties = [[MKTDynamicProperties alloc] initWithClass:aClass];
+    }
     return self;
 }
 
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"mock object of %@ implementing %@ protocol",
-            NSStringFromClass(_mockedClass), NSStringFromProtocol(_mockedProtocol)];
+            NSStringFromClass(self.mockedClass), NSStringFromProtocol(self.mockedProtocol)];
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-    NSMethodSignature *signature = [_mockedClass instanceMethodSignatureForSelector:aSelector];
-    
+    NSMethodSignature *dynamicPropertySignature = [self.dynamicProperties methodSignatureForSelector:aSelector];
+    if (dynamicPropertySignature)
+        return dynamicPropertySignature;
+    NSMethodSignature *signature = [self.mockedClass instanceMethodSignatureForSelector:aSelector];
     if (signature)
         return signature;
-    else
-        return [super methodSignatureForSelector:aSelector];
+    return [super methodSignatureForSelector:aSelector];
 }
 
 
@@ -50,7 +53,8 @@
 
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
-    return [_mockedClass instancesRespondToSelector:aSelector] ||
+    return [self.dynamicProperties methodSignatureForSelector:aSelector] ||
+           [self.mockedClass instancesRespondToSelector:aSelector] ||
            [super respondsToSelector:aSelector];
 }
 

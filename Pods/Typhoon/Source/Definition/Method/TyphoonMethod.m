@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -20,7 +20,7 @@
     NSUInteger _hash;
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
 
 - (id)initWithSelector:(SEL)selector
@@ -66,7 +66,7 @@
     [self injectParameterAtIndex:[self indexToAddParameter] with:injection];
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Utility Methods
 
 - (id)copyWithZone:(NSZone *)zone

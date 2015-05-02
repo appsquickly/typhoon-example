@@ -1,13 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
+#import <UIKit/UIKit.h>
 
 #import "TyphoonViewControllerNibResolver.h"
 #import "TyphoonDefinition.h"
@@ -19,12 +20,10 @@
 
 #pragma mark - Protocol methods
 
-- (void)postProcessComponentFactory:(TyphoonComponentFactory *)factory
+- (void)postProcessDefinition:(TyphoonDefinition *)definition replacement:(TyphoonDefinition **)definitionToReplace withFactory:(TyphoonComponentFactory *)factory
 {
-    for (TyphoonDefinition *definition in [factory registry]) {
-        if ([self shouldProcessDefinition:definition]) {
-            [self processViewControllerDefinition:definition];
-        }
+    if ([self shouldProcessDefinition:definition]) {
+        [self processViewControllerDefinition:definition];
     }
 }
 
@@ -35,15 +34,15 @@
     return NSStringFromClass(viewControllerClass);
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Private Methods
 
 - (void)processViewControllerDefinition:(TyphoonDefinition *)definition
 {
-    TyphoonMethod *initializer = [[TyphoonMethod alloc] initWithSelector:@selector(initWithNibName:bundle:)];
-    [initializer injectParameterWith:[self resolveNibNameForClass:definition.type]];
-    [initializer injectParameterWith:[NSBundle mainBundle]];
-    definition.initializer = initializer;
+    [definition useInitializer:@selector(initWithNibName:bundle:) parameters:^(TyphoonMethod *initializer) {
+        [initializer injectParameterWith:[self resolveNibNameForClass:definition.type]];
+        [initializer injectParameterWith:[NSBundle mainBundle]];
+    }];
 }
 
 - (BOOL)shouldProcessDefinition:(TyphoonDefinition *)definition

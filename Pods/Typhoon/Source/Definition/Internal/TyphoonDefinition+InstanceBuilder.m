@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -19,6 +19,8 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
 
 #import "TyphoonInjectionByType.h"
 #import "TyphoonInjectionByRuntimeArgument.h"
+#import "TyphoonComponentFactory.h"
+#import "TyphoonRuntimeArguments.h"
 
 @implementation TyphoonDefinition (InstanceBuilder)
 
@@ -40,6 +42,12 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
                 [method replaceInjection:injection with:injectionToReplace];
             }];
         }
+        [self enumerateInjectionsOfKind:injectionClass onCollection:[_afterInjections injectedParameters] withBlock:block replaceBlock:^(id injection, id injectionToReplace) {
+            [_afterInjections replaceInjection:injection with:injectionToReplace];
+        }];
+        [self enumerateInjectionsOfKind:injectionClass onCollection:[_beforeInjections injectedParameters] withBlock:block replaceBlock:^(id injection, id injectionToReplace) {
+            [_beforeInjections replaceInjection:injection with:injectionToReplace];
+        }];
     }
 
     if (options & TyphoonInjectionsEnumerationOptionProperties) {
@@ -66,6 +74,16 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
             }
         }
     }
+}
+
+- (TyphoonMethod *)beforeInjections
+{
+    return _beforeInjections;
+}
+
+- (TyphoonMethod *)afterInjections
+{
+    return _afterInjections;
 }
 
 - (NSSet *)injectedProperties
@@ -135,9 +153,21 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_InstanceBuilder)
 
 - (void)addInjectedPropertyIfNotExists:(id <TyphoonPropertyInjection>)property
 {
-    if (![_injectedProperties containsObject:property]) {
+    BOOL isExists = NO;
+    for (id<TyphoonPropertyInjection>p in _injectedProperties) {
+        if ([[p propertyName] isEqualToString:[property propertyName]]) {
+            isExists = YES;
+            break;
+        }
+    }
+    if (!isExists) {
         [_injectedProperties addObject:property];
     }
+}
+
+- (id)targetForInitializerWithFactory:(TyphoonComponentFactory *)factory args:(TyphoonRuntimeArguments *)args
+{
+    return _type;
 }
 
 - (BOOL)matchesAutoInjectionByProtocol:(Protocol *)aProtocol

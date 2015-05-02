@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -21,23 +21,20 @@
 
 @implementation TyphoonFactoryPropertyInjectionPostProcessor
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Protocol Methods
 
-- (void)postProcessComponentFactory:(TyphoonComponentFactory *)factory
+- (void)postProcessDefinition:(TyphoonDefinition *)definition replacement:(TyphoonDefinition **)definitionToReplace withFactory:(TyphoonComponentFactory *)factory
 {
-    for (TyphoonDefinition *definition in [factory registry]) {
-
-        [definition enumerateInjectionsOfKind:[TyphoonInjectionByType class] options:TyphoonInjectionsEnumerationOptionProperties
-                                   usingBlock:^(TyphoonInjectionByType *typeInjection, id <TyphoonInjection> *injectionToReplace, BOOL *stop) {
-            if ([self shouldReplaceInjectionByType:typeInjection withFactoryInjectionInDefinition:definition]) {
-                *injectionToReplace = [self factoryInjectionToReplacePropertyInjection:typeInjection];
-            }
-        }];
-    }
+    [definition enumerateInjectionsOfKind:[TyphoonInjectionByType class] options:TyphoonInjectionsEnumerationOptionProperties
+                               usingBlock:^(TyphoonInjectionByType *typeInjection, id <TyphoonInjection> *injectionToReplace, BOOL *stop) {
+                                   if ([self shouldReplaceInjectionByType:typeInjection withFactoryInjectionInDefinition:definition]) {
+                                       *injectionToReplace = [self factoryInjectionToReplacePropertyInjection:typeInjection];
+                                   }
+                               }];
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Instance Methods
 
 - (BOOL)shouldReplaceInjectionByType:(TyphoonInjectionByType *)propertyInjection
@@ -46,7 +43,7 @@
     BOOL isFactoryClass = NO;
 
     TyphoonTypeDescriptor
-        *type = [TyphoonIntrospectionUtils typeForPropertyWithName:propertyInjection.propertyName inClass:definition.type];
+        *type = [TyphoonIntrospectionUtils typeForPropertyNamed:propertyInjection.propertyName inClass:definition.type];
 
     if (type.typeBeingDescribed) {
         isFactoryClass = [type.typeBeingDescribed isSubclassOfClass:[TyphoonComponentFactory class]];

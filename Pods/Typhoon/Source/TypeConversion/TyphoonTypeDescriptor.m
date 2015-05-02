@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -50,21 +50,23 @@
 @end
 
 
-@implementation TyphoonTypeDescriptor {
+@implementation TyphoonTypeDescriptor
+{
     NSString *_typeCode;
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Class Methods
+//-------------------------------------------------------------------------------------------
 
 + (TyphoonTypeDescriptor *)descriptorWithEncodedType:(const char *)encodedType
 {
-    return [[[self class] alloc] initWithTypeCode:[NSString stringWithCString:encodedType encoding:NSUTF8StringEncoding]];
+    return [[self alloc] initWithTypeCode:[NSString stringWithCString:encodedType encoding:NSUTF8StringEncoding]];
 }
 
 + (TyphoonTypeDescriptor *)descriptorWithTypeCode:(NSString *)typeCode
 {
-    return [[[self class] alloc] initWithTypeCode:typeCode];
+    return [[self alloc] initWithTypeCode:typeCode];
 }
 
 + (TyphoonTypeDescriptor *)descriptorWithClassOrProtocol:(id)classOrProtocol
@@ -75,8 +77,9 @@
     return [self descriptorWithTypeCode:[NSString stringWithFormat:@"T@<%@>", NSStringFromProtocol(classOrProtocol)]];
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
 
 - (id)initWithTypeCode:(NSString *)typeCode
 {
@@ -89,14 +92,14 @@
             if ([typeCode hasPrefix:@"<"] && [typeCode hasSuffix:@">"]) {
                 typeCode = [typeCode stringByReplacingOccurrencesOfString:@"<" withString:@""];
                 typeCode = [typeCode stringByReplacingOccurrencesOfString:@">" withString:@""];
-                _protocol = NSProtocolFromString(typeCode);
+                _declaredProtocol = typeCode;
             }
             else if ([typeCode hasSuffix:@">"]) {
                 NSArray *components = [typeCode componentsSeparatedByString:@"<"];
                 NSString *protocol = [components[1] stringByReplacingOccurrencesOfString:@">" withString:@""];
                 NSString *class = components[0];
 
-                _protocol = NSProtocolFromString(protocol);
+                _declaredProtocol = protocol;
                 _typeBeingDescribed = TyphoonClassFromString(class);
             }
             else {
@@ -113,8 +116,9 @@
     return self;
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Interface Methods
+//-------------------------------------------------------------------------------------------
 
 - (id)classOrProtocol
 {
@@ -122,7 +126,7 @@
         return _typeBeingDescribed;
     }
     else {
-        return _protocol;
+        return self.protocol;
     }
 }
 
@@ -131,8 +135,14 @@
     return [_typeCode cStringUsingEncoding:NSUTF8StringEncoding];
 }
 
-/* ====================================================================================================================================== */
-#pragma mark - Utility Methods
+//-------------------------------------------------------------------------------------------
+#pragma mark - Overridden Methods
+//-------------------------------------------------------------------------------------------
+
+- (Protocol *)protocol
+{
+    return NSProtocolFromString(_declaredProtocol);
+}
 
 - (NSString *)description
 {
@@ -155,8 +165,9 @@
     }
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Private Methods
+//-------------------------------------------------------------------------------------------
 
 - (void)parsePrimitiveType:(NSString *)typeCode
 {
@@ -171,8 +182,8 @@
 {
     if ([typeCode hasPrefix:@"["] && [typeCode hasSuffix:@"]"]) {
         _isArray = YES;
-        typeCode =
-            [[typeCode stringByReplacingOccurrencesOfString:@"[" withString:@""] stringByReplacingOccurrencesOfString:@"]" withString:@""];
+        typeCode = [[typeCode stringByReplacingOccurrencesOfString:@"[" withString:@""]
+            stringByReplacingOccurrencesOfString:@"]" withString:@""];
         NSScanner *scanner = [[NSScanner alloc] initWithString:typeCode];
         [scanner scanInt:&_arrayLength];
         typeCode = [typeCode stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
@@ -193,8 +204,8 @@
 {
     if ([typeCode hasPrefix:@"{"] && [typeCode hasSuffix:@"}"]) {
         _isStructure = YES;
-        typeCode =
-            [[typeCode stringByReplacingOccurrencesOfString:@"{" withString:@""] stringByReplacingOccurrencesOfString:@"}" withString:@""];
+        typeCode = [[typeCode stringByReplacingOccurrencesOfString:@"{" withString:@""]
+            stringByReplacingOccurrencesOfString:@"}" withString:@""];
         _structureTypeName = [typeCode copy];
     }
     return typeCode;
@@ -211,7 +222,8 @@
 
 - (TyphoonPrimitiveType)typeFromTypeCode:(NSString *)typeCode
 {
-    return (TyphoonPrimitiveType) [[[NSDictionary dictionaryWithTyphoonPrimitiveTypesAsStrings] objectForKey:typeCode] intValue];
+    return (TyphoonPrimitiveType)[[[NSDictionary dictionaryWithTyphoonPrimitiveTypesAsStrings] objectForKey:typeCode]
+        intValue];
 }
 
 @end

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -12,13 +12,13 @@
 
 #import "TyphoonPrimitiveTypeConverter.h"
 #import "TyphoonTypeDescriptor.h"
-#import "TyphoonStringUtils.h"
+#import "TyphoonUtils.h"
 #import "TyphoonIntrospectionUtils.h"
 
 @implementation TyphoonPrimitiveTypeConverter
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Interface Methods
 
 - (int)convertToInt:(NSString *)stringValue
@@ -101,7 +101,7 @@
     return (void *)[stringValue integerValue];
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 - (id)valueFromText:(NSString *)textValue withType:(TyphoonTypeDescriptor *)requiredType
 {
     id value = nil;

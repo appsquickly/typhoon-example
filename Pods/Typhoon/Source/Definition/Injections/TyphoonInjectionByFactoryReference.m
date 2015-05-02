@@ -1,16 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
 //
-//  TyphoonInjectionByFactoryReference.m
-//  A-Typhoon
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Typhoon Framework Contributors
+//  All Rights Reserved.
 //
-//  Created by Aleksey Garbarev on 12.03.14.
-//  Copyright (c) 2014 Jasper Blues. All rights reserved.
+//  NOTICE: The authors permit you to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
 //
+////////////////////////////////////////////////////////////////////////////////
+
 
 #import "TyphoonInjectionByFactoryReference.h"
 #import "TyphoonComponentFactory+InstanceBuilder.h"
 #import "TyphoonCallStack.h"
 #import "TyphoonStackElement.h"
 #import "NSInvocation+TCFUnwrapValues.h"
+#import "TyphoonUtils.h"
 
 @implementation TyphoonInjectionByFactoryReference
 
@@ -43,6 +48,11 @@
     id referenceInstance = [super resolveReferenceWithContext:context];
     
     return [referenceInstance valueForKeyPath:self.keyPath];
+}
+
+- (NSUInteger)customHash
+{
+    return TyphoonHashByAppendingInteger([super customHash], [self.keyPath hash]);
 }
 
 @end

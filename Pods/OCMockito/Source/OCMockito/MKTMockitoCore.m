@@ -1,10 +1,5 @@
-//
-//  OCMockito - MKTMockitoCore.m
-//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
-//
-//  Created by: Jon Reid, http://qualitycoding.org/
-//  Source: https://github.com/jonreid/OCMockito
-//
+//  OCMockito by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
 #import "MKTMockitoCore.h"
 
@@ -12,10 +7,14 @@
 #import "MKTVerificationMode.h"
 
 
+@interface MKTMockitoCore ()
+
+@property (readonly, nonatomic, strong) MKTMockingProgress *mockingProgress;
+@end
+
+
 @implementation MKTMockitoCore
-{
-    MKTMockingProgress *_mockingProgress;
-}
+
 
 + (instancetype)sharedCore
 {
@@ -35,20 +34,20 @@
 
 - (MKTOngoingStubbing *)stubAtLocation:(MKTTestLocation)location
 {
-    [_mockingProgress stubbingStartedAtLocation:location];
+    [self.mockingProgress stubbingStartedAtLocation:location];
     return [self stub];
 }
 
 - (MKTOngoingStubbing *)stub
 {
-    return [_mockingProgress pullOngoingStubbing];
+    return [self.mockingProgress pullOngoingStubbing];
 }
 
 - (id)verifyMock:(MKTObjectMock *)mock
         withMode:(id <MKTVerificationMode>)mode
       atLocation:(MKTTestLocation)location
 {
-    [_mockingProgress verificationStarted:mode atLocation:location];
+    [self.mockingProgress verificationStarted:mode atLocation:location];
     return mock;
 }
 

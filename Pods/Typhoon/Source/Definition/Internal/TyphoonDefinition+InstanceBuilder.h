@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -15,6 +15,8 @@
 
 @protocol TyphoonPropertyInjection;
 @protocol TyphoonInjection;
+@class TyphoonComponentFactory;
+@class TyphoonRuntimeArguments;
 
 typedef void(^TyphoonInjectionsEnumerationBlock)(id injection, id*injectionToReplace, BOOL*stop);
 
@@ -27,9 +29,13 @@ typedef enum {
 
 @interface TyphoonDefinition (InstanceBuilder)
 
+- (TyphoonMethod *)beforeInjections;
+
 - (NSSet *)injectedProperties;
 
 - (NSSet *)injectedMethods;
+
+- (TyphoonMethod *)afterInjections;
 
 - (void)enumerateInjectionsOfKind:(Class)injectionClass options:(TyphoonInjectionsEnumerationOption)options
                        usingBlock:(TyphoonInjectionsEnumerationBlock)block;
@@ -38,7 +44,8 @@ typedef enum {
 
 - (void)addInjectedProperty:(id <TyphoonPropertyInjection>)property;
 
-
 - (void)addInjectedPropertyIfNotExists:(id <TyphoonPropertyInjection>)property;
+
+- (id)targetForInitializerWithFactory:(TyphoonComponentFactory *)factory args:(TyphoonRuntimeArguments *)args;
 
 @end

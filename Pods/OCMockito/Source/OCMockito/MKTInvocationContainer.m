@@ -1,10 +1,5 @@
-//
-//  OCMockito - MKTInvocationContainer.m
-//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
-//
-//  Created by: Jon Reid, http://qualitycoding.org/
-//  Source: https://github.com/jonreid/OCMockito
-//
+//  OCMockito by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
 #import "MKTInvocationContainer.h"
 
@@ -12,11 +7,13 @@
 #import "NSInvocation+OCMockito.h"
 
 
+@interface MKTInvocationContainer ()
+@property (nonatomic, strong) MKTStubbedInvocationMatcher *invocationForStubbing;
+@property (readonly, nonatomic, strong) NSMutableArray *stubbed;
+@end
+
 @implementation MKTInvocationContainer
-{
-    MKTStubbedInvocationMatcher *_invocationForStubbing;
-    NSMutableArray *_stubbed;
-}
+
 
 - (instancetype)init
 {
@@ -34,28 +31,28 @@
 {
     [invocation mkt_retainArgumentsWithWeakTarget];
     [_registeredInvocations addObject:invocation];
-    
+
     MKTStubbedInvocationMatcher *s = [[MKTStubbedInvocationMatcher alloc] init];
     [s setExpectedInvocation:invocation];
-    _invocationForStubbing = s;
+    self.invocationForStubbing = s;
 }
 
 - (void)setMatcher:(id <HCMatcher>)matcher atIndex:(NSUInteger)argumentIndex
 {
-    [_invocationForStubbing setMatcher:matcher atIndex:argumentIndex];
+    [self.invocationForStubbing setMatcher:matcher atIndex:argumentIndex];
 }
 
-- (void)addAnswer:(id)answer
+- (void)addAnswer:(id <MKTAnswer>)answer
 {
     [_registeredInvocations removeLastObject];
 
-    _invocationForStubbing.answer = answer;
-    [_stubbed insertObject:_invocationForStubbing atIndex:0];
+    [self.invocationForStubbing addAnswer:answer];
+    [self.stubbed insertObject:self.invocationForStubbing atIndex:0];
 }
 
 - (MKTStubbedInvocationMatcher *)findAnswerFor:(NSInvocation *)invocation
 {
-    for (MKTStubbedInvocationMatcher *s in _stubbed)
+    for (MKTStubbedInvocationMatcher *s in self.stubbed)
         if ([s matches:invocation])
             return s;
     return nil;

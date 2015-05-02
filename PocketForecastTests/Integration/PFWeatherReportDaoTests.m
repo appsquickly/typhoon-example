@@ -17,24 +17,26 @@
 #import "RXMLElement+PFWeatherReport.h"
 #import "Typhoon.h"
 #import "PFCoreComponents.h"
+#import "PFApplicationAssembly.h"
 
 @interface PFWeatherReportDaoTests : XCTestCase
 @end
 
 @implementation PFWeatherReportDaoTests
 {
-    id <PFWeatherReportDao> weatherReportDao;
-    PFWeatherReport* testReport;
+    id<PFWeatherReportDao> weatherReportDao;
+    PFWeatherReport *testReport;
 }
 
 - (void)setUp
 {
-    TyphoonComponentFactory * factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[PFCoreComponents assembly]]];
-               
-    weatherReportDao = [factory componentForType:@protocol(PFWeatherReportDao)];
+    PFApplicationAssembly *assembly = [[PFApplicationAssembly new] activate];
 
-    NSString* xmlString = [[TyphoonBundleResource withName:@"SampleForecast.xml" inBundle:[NSBundle bundleForClass:[self class]]] asString];
-    RXMLElement* xmlElement = [RXMLElement elementFromXMLString:xmlString encoding:NSUTF8StringEncoding];
+    weatherReportDao = [assembly.coreComponents weatherReportDao];
+
+    NSString *xmlString = [[TyphoonBundleResource withName:@"SampleForecast.xml"
+        inBundle:[NSBundle bundleForClass:[self class]]] asString];
+    RXMLElement *xmlElement = [RXMLElement elementFromXMLString:xmlString encoding:NSUTF8StringEncoding];
     testReport = [xmlElement asWeatherReport];
 }
 
@@ -44,7 +46,7 @@
 
     [weatherReportDao saveReport:testReport];
 
-    PFWeatherReport* weatherReport = [weatherReportDao getReportForCityName:@"Manila"];
+    PFWeatherReport *weatherReport = [weatherReportDao getReportForCityName:@"Manila"];
     assertThat(weatherReport, notNilValue());
 
 }

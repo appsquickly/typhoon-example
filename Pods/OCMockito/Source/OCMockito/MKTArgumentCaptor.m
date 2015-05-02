@@ -1,20 +1,16 @@
-//
-//  OCMockito - MKTArgumentCaptor.m
-//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
-//
-//  Created by: Jon Reid, http://qualitycoding.org/
-//  Source: https://github.com/jonreid/OCMockito
-//
+//  OCMockito by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
 #import "MKTArgumentCaptor.h"
 
 #import "MKTCapturingMatcher.h"
 
 
+@interface MKTArgumentCaptor ()
+@property (readonly, nonatomic, strong) MKTCapturingMatcher *matcher;
+@end
+
 @implementation MKTArgumentCaptor
-{
-    MKTCapturingMatcher *_matcher;
-}
 
 - (instancetype)init
 {
@@ -26,17 +22,17 @@
 
 - (id)capture
 {
-    return _matcher;
+    return self.matcher;
 }
 
 - (id)value
 {
-    return [_matcher lastValue];
+    return [self.matcher lastValue];
 }
 
 - (NSArray *)allValues
 {
-    return [_matcher allValues];
+    return [self.matcher allValues];
 }
 
 @end

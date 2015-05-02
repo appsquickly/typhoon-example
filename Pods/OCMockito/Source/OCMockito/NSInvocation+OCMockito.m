@@ -1,10 +1,5 @@
-//
-//  OCMockito - NSInvocation+OCMockito.m
-//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
-//
-//  Created by: Jon Reid, http://qualitycoding.org/
-//  Source: https://github.com/jonreid/OCMockito
-//
+//  OCMockito by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
 #import "NSInvocation+OCMockito.h"
 
@@ -12,7 +7,7 @@
 #import "MKTArgumentGetterChain.h"
 #import "MKTReturnValueSetter.h"
 #import "MKTReturnValueSetterChain.h"
-#import "TPWeakProxy.h"
+#import "MKT_TPDWeakProxy.h"
 
 
 @implementation NSInvocation (OCMockito)
@@ -49,7 +44,7 @@
 {
     if ([self argumentsRetained])
         return;
-    TPWeakProxy *proxy = [[TPWeakProxy alloc] initWithObject:[self target]];
+    MKT_TPDWeakProxy *proxy = [[MKT_TPDWeakProxy alloc] initWithObject:[self target]];
     [self setTarget:proxy];
     [self retainArguments];
 }

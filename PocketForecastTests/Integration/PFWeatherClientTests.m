@@ -16,11 +16,9 @@
 #import "PFWeatherReport.h"
 #import "TyphoonAssembly.h"
 #import "PFCoreComponents.h"
-#import "TyphoonComponentFactory.h"
-#import "TyphoonBlockComponentFactory.h"
-#import "TyphoonResource.h"
 #import "TyphoonConfigPostProcessor.h"
 #import "TyphoonTestUtils.h"
+#import "PFApplicationAssembly.h"
 
 @interface PFWeatherClientTests : XCTestCase
 @end
@@ -35,14 +33,12 @@
 
 - (void)setUp
 {
-    TyphoonComponentFactory * factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[PFCoreComponents assembly]]];
+    PFApplicationAssembly *assembly = [[PFApplicationAssembly new] activate];
 
-    TyphoonConfigPostProcessor* configurer = [TyphoonConfigPostProcessor configurer];
-    [configurer useResourceWithName:@"Configuration.plist"];
-    [factory attachPostProcessor:configurer];
+    TyphoonConfigPostProcessor* config = [TyphoonConfigPostProcessor forResourceNamed:@"Configuration.plist"];
+    [assembly attachPostProcessor:config];
 
-
-    weatherClient = [factory componentForKey:@"weatherClient"];
+    weatherClient = [assembly.coreComponents weatherClient];
 }
 
 

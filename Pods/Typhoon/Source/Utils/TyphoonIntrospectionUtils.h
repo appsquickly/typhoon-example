@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -27,9 +27,10 @@ BOOL IsProtocol(id classOrProtocol);
 
 @interface TyphoonIntrospectionUtils : NSObject
 
-+ (TyphoonTypeDescriptor *)typeForPropertyWithName:(NSString *)propertyName inClass:(Class)clazz;
++ (TyphoonTypeDescriptor *)typeForPropertyNamed:(NSString *)propertyName inClass:(Class)clazz;
 
 + (SEL)setterForPropertyWithName:(NSString *)property inClass:(Class)clazz;
+
 + (SEL)getterForPropertyWithName:(NSString *)property inClass:(Class)clazz;
 
 + (NSMethodSignature *)methodSignatureWithArgumentsAndReturnValueAsObjectsFromSelector:(SEL)selector;

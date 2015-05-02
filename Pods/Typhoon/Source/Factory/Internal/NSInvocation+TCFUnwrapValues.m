@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 // TYPHOON FRAMEWORK
-// Copyright 2014, Jasper Blues & Contributors
+// Copyright 2014, Typhoon Framework Contributors
 // All Rights Reserved.
 //
 // NOTICE: The authors permit you to use, modify, and distribute this file
@@ -11,7 +11,7 @@
 
 #import "NSInvocation+TCFUnwrapValues.h"
 #import "NSValue+TCFUnwrapValues.h"
-#import "TyphoonStringUtils.h"
+#import "TyphoonUtils.h"
 #import "NSMethodSignature+TCFUnwrapValues.h"
 
 @implementation NSInvocation (TCFUnwrapValues)

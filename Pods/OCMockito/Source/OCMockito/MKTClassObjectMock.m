@@ -1,18 +1,15 @@
-//
-//  OCMockito - MKTClassObjectMock.m
-//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
-//
-//  Created by: David Hart
-//  Source: https://github.com/jonreid/OCMockito
-//
+//  OCMockito by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
+//  Contribution by David Hart
 
 #import "MKTClassObjectMock.h"
 
 
+@interface MKTClassObjectMock ()
+@property (readonly, nonatomic, strong) Class mockedClass;
+@end
+
 @implementation MKTClassObjectMock
-{
-    __strong Class _mockedClass;
-}
 
 + (instancetype)mockForClass:(Class)aClass
 {
@@ -29,12 +26,12 @@
 
 - (NSString *)description
 {
-    return [@"mock class of " stringByAppendingString:NSStringFromClass(_mockedClass)];
+    return [@"mock class of " stringByAppendingString:NSStringFromClass(self.mockedClass)];
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-    return [_mockedClass methodSignatureForSelector:aSelector];
+    return [self.mockedClass methodSignatureForSelector:aSelector];
 }
 
 
@@ -42,7 +39,7 @@
 
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
-    return [_mockedClass respondsToSelector:aSelector];
+    return [self.mockedClass respondsToSelector:aSelector];
 }
 
 @end

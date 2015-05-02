@@ -1,25 +1,34 @@
+////////////////////////////////////////////////////////////////////////////////
 //
-// Created by Aleksey Garbarev on 27.05.14.
-// Copyright (c) 2014 Jasper Blues. All rights reserved.
+//  TYPHOON FRAMEWORK
+//  Copyright 2013, Typhoon Framework Contributors
+//  All Rights Reserved.
 //
+//  NOTICE: The authors permit you to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
+//
+////////////////////////////////////////////////////////////////////////////////
+
 
 #import "TyphoonPathResource.h"
 
 
 @implementation TyphoonPathResource
 {
+    NSString *_path;
     NSData *_data;
 }
 
 + (id <TyphoonResource>)withPath:(NSString *)filePath
 {
-    return [[[self class] alloc] initWithContentsOfFile:filePath];
+    return [[TyphoonPathResource alloc] initWithContentsOfFile:filePath];
 }
 
 - (instancetype)initWithContentsOfFile:(NSString *)filePath
 {
     self = [super init];
     if (self) {
+        _path = filePath;
         _data = [[NSData alloc] initWithContentsOfFile:filePath];
     }
     return self;
@@ -39,5 +48,11 @@
 {
     return _data;
 }
+
+- (NSURL *)url
+{
+    return [NSURL fileURLWithPath:_path];
+}
+
 
 @end

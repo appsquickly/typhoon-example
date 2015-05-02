@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -13,7 +13,6 @@
 #import "TyphoonComponentFactory.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonDefinition+InstanceBuilder.h"
-#import "NSObject+TyphoonIntrospectionUtils.h"
 #import "TyphoonIntrospectionUtils.h"
 #import "TyphoonTypeDescriptor.h"
 #import "TyphoonInjectedObject.h"
@@ -21,14 +20,13 @@
 #import "TyphoonInjections.h"
 
 static BOOL IsTyphoonAutoInjectionType(TyphoonTypeDescriptor *type);
+static id TypeForInjectionFromType(TyphoonTypeDescriptor *type);
 
 @implementation TyphoonFactoryAutoInjectionPostProcessor
 
-- (void)postProcessComponentFactory:(TyphoonComponentFactory *)factory
+- (void)postProcessDefinition:(TyphoonDefinition *)definition replacement:(TyphoonDefinition **)definitionToReplace withFactory:(TyphoonComponentFactory *)factory
 {
-    for (TyphoonDefinition *definition in [factory registry]) {
-        [self postProcessDefinition:definition];
-    }
+    [self postProcessDefinition:definition];
 }
 
 - (void)postProcessDefinition:(TyphoonDefinition *)definition
@@ -47,9 +45,13 @@ static BOOL IsTyphoonAutoInjectionType(TyphoonTypeDescriptor *type);
     NSMutableArray *injections = nil;
     NSSet *allProperties = [TyphoonIntrospectionUtils propertiesForClass:clazz upToParentClass:[NSObject class]];
     for (NSString *propertyName in allProperties) {
-        TyphoonTypeDescriptor *type = [clazz typhoon_typeForPropertyWithName:propertyName];
+        TyphoonTypeDescriptor *type = [TyphoonIntrospectionUtils typeForPropertyNamed:propertyName inClass:clazz];
         if (IsTyphoonAutoInjectionType(type)) {
-            id<TyphoonPropertyInjection> injection = TyphoonInjectionWithType(TypeForInjectionFromType(type));
+            id explicitType = TypeForInjectionFromType(type);
+            if (!explicitType) {
+                [NSException raise:NSInternalInconsistencyException format:@"Can't resolve '%@' property in %@ class. Make sure that specified protocol/class exist and linked.", propertyName, clazz];
+            }
+            id<TyphoonPropertyInjection> injection = TyphoonInjectionWithType(explicitType);
             [injection setPropertyName:propertyName];
             if (!injections) {
                 injections = [[NSMutableArray alloc] initWithCapacity:allProperties.count];

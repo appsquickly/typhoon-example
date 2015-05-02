@@ -1,240 +1,116 @@
-# Typhoon! (www.typhoonframework.org) 
+![Typhoon](http://www.typhoonframework.org/typhoon-splash.png)
+# <a href="http://typhoonframework.org">typhoonframework.org</a>  
+<a href="http://builds.appsquick.ly/browse/TPN-TC/latest">
+![Build Status](http://typhoonframework.org/build-status/build-status.png?q=z)
+</a>
 
 Powerful dependency injection for Cocoa and CocoaTouch. Lightweight, yet full-featured and super-easy to use. 
 
-## Familiar with Dependency Injection?
+## Not familiar with Dependency Injection? 
 
-*Typhoon is a DI library that makes good use of the runtime's (ObjC or Swift) late binding nature in order to perform method interception and forwarding. This makes for a very compelling <a href="https://github.com/typhoon-framework/Typhoon#design-goals--features">feature list.</a>*
+Visit <a href="http://typhoonframework.org">the Typhoon website</a> for an introduction. There's also a nice intro over at <a href="http://www.bignerdranch.com/blog/dependency-injection-ios/">Big Nerd Ranch</a>, or <a href="http://www.objc.io/issue-15/dependency-injection.html">here's an article</a>, by <a href="http://qualitycoding.org/">John Reid</a>. Quite a few books have been written on the topic, though we're not familiar with one that focuses specifically on Objective-C, Swift or Cocoa yet. 
 
-* In a rush? Here's a <a href="https://github.com/typhoon-framework/Typhoon/wiki/Swift-Quick-Start">Swift Quick Start</a> and an <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Objective-C Quick Start</a>.
-* Read the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a> or <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API Docs</a>.  
-* Try the <a href="https://github.com/typhoon-framework/Typhoon-Swift-Example">Swift Sample Application</a> (in progress) or the <a href="https://github.com/typhoon-framework/Typhoon-example">Objective-C Sample Application</a>.
+## Is Typhoon the right DI framework for you? 
 
-. . . otherwise . . . 
+Check out the <a href="http://www.typhoonframework.org/#features">feature list</a>. 
 
-### What is Dependency Injection? 
-
-Many people have trouble getting the hang of dependency injection, at first. And I think part of the problem is that
-it is actually so simple that we're inclined to look for something more complicated. "Surely that there has to be
-more to it?!", so to say.  
-
-So, with that in mind, imagine that you're writing an app that gives weather reports. You need a cloud-service 
-(excuse the pun ;) ) to provide the data, and at first you go for a free weather report provider, but in future you'd 
-like to integrate a weather service with better accuracy and more features. So, as do all good object-oriented 
-developers, you make a WeatherClient protocol and back it initially with an implementation based on the free, online
-data provider. 
-
-___Without dependency injection, you might have a View Controller like this___: 
-
-```objective-c
-
-- (id)init 
-{
-    self = [super init];
-    if (self) 
-    {
-        //The class using some collaborating class builds its own assistant.
-        //it might be one of several classes using the weatherClient. 
-        _weatherClient = [[GoogleWeatherClientImpl alloc] initWithParameters:xyz];
-    }
-    return self;
-}
-
-```
-
-The thing with this approach is, if you wanted to change to another weather client implementation you'd have to go
-and find all the places in your code that use the old one, and move them over to the new one. Each time, making sure 
-to pass in the correct initialization parameters. 
-
-A very common approach is to have a centrally configured singleton:
-
-```objective-c  
-_weatherClient = [GoogleWeatherClient sharedInstance];
-```  
-
-With either of the above approaches, in order to test your view controller, you now have to test its collaborating 
-class (the weather client) at the same time, and this can get tricky, especially as your application gets more 
-complex. Imagine testing Class A, depends on Class B, depends on Class C, depends on .... Not much fun! 
-
-_Sure, you could patch out the singleton with a mock or a stub, but this requires peeking inside the code to find the
-dependencies. Besides taking time that could be better spent else-where, this ends up becoming "glass-box" testing as
-opposed to "black-box" testing. Isn't it better to be able to test the external interface to a class, without having 
-worry about what's going on inside? _And_ you have to remember un-patch again at the end of the test-case or risk 
-strange breakages to other tests, where its difficult to pin-point what the real problem is might be._ . . 
-
-. . . So with dependency injection, rather than having objects make their own collaborators, we have them supplied to the 
-class instance via an initializer or property setter.
-
-___And now, it simply becomes___: 
-
-```objective-c
-
-- (id)initWithWeatherClient:(id<WeatherClient>)weatherClient
-{
-    self = [super init];
-    if (self) 
-    {
-        _weatherClient = weatherClient;
-    }
-    return self;
-}
-
-```
-
-
-####Is that all they mean by 'injected'?
-
-Yes it is. Right now, you might be thinking “Geez! That’s a pretty fancy name for something so plain.” Well, you‘d be right. But let‘s look at what happens when we start to apply this approach: Let's say you identify some hard-wired network configurations in a your GoogleWeatherClient, and correct this by instead passing them in via an initializer method. Now if you want to use this class, as a collaborator in a new class, let's say a ViewController, then your GoogleWeatherClient itself can be either a hard-wired dependency, or injected. To get the benefits of dependency injection again, we repeat the process, pulling up the class and along with its own dependencies. And we keep applying until we have a logical module or 'assembly'.
-
-In this way dependency injection lets your application tell an architectural story. When the key actors are pulled up into an assembly that describes roles and collaborations, then the application’s configuration no longer exhibits fragmentation, duplication or tight-coupling. Having created this "script" that describes roles and collaborations we realize a number of benefits.
-
-####Benefits of Dependency Injection
-
-*    We can substitute another actor to fulfill a given role. If you want to change from one implementation to another, you need only change a single declaration.
-*    By removing tight-coupling, we need not understand all of a problem at once, its easy to evolve our app’s design as the requirements evolve.
-*    Classes are easier to test, because we can supply simple mocks and stubs in place of concrete collaborators. Or the real collaborators, but configured to be used in a test scenario.
-*    It promotes separation of concerns and a clear contract between classes. Its easy to see what each class needs in order to do its job.
-*    We can layout an app's architecture using stubs - the simplest possible implementation of a role - so that we can quickly see an end-to-end use-case taking place. Having done this, we can assign to other team members the responsibility of filling out these stubs for real implementations, and they can do so without breaking the app while they work, and without impacting other team members.
-
-
-# Your Dependency Injection Options
-
-If you proceed with the Dependency Injection pattern _(assuming you're not one of the remaining "flat-earthers", who 
-believe that Objective-C somehow magically alleviates the need for common-sense: "Oh, I don't do DI, I use swizzling 
-class-clusters!")_, then there are basically two options: 
-
-* You can do dependency injection without a framework/library/container to help you. It ___is___ simple after all, and in 
-fact I recommend you do this, at least as an exercise in software design. And yes, it is certainly possble that this will be 
-adequate. ___But___, I think its good to have help, if you can get it. You can also write tests without a test 
-framework, mocks with out a mock library, software without a compiler. 
-
-* So, going down the library/framework route, there's been quite a lot of action in Objective-C land, over the last 
-three years. In fact, there are now around 15 Dependency Injection frameworks, many following in the footsteps of Google Guice. 
-The authors have done a great job (Objection is especially good). However, I wanted an approach that allows the 
-following: 
-
-## Design Goals / Features
-
-* Non-invasive. ***No macros or XML required*** . . . Uses <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">powerful Objective-C runtime approach.</a>
-
-* Its not necessary to change ***any*** of your classes to use the framework. ***Can be introduced into legacy applications.***
-
-* No magic strings - ***supports IDE refactoring, code-completion and compile-time checking.*** 
-
-* Provides ***full-modularization and encapsulation of configuration*** - grouping the application assembly 
-details into a single document, with chapters. ***Let your architecture tell a story.*** 
-
-* ***Dependencies declared in any order.*** (The order that makes sense to humans).
-
-* Makes it easy to have multiple configurations of the same base-class or protocol. 
-
-* Allows both dependency injection (injection of classes defined in the DI context) as well as configuration 
- management (values that get converted to the required type at runtime). Because this allows. . . 
- 
-* . . . ability to configure components for use in eg ___Test___ vs ___Production___ scenarios. This faciliates a 
-good compromise between integration testing and pure unit testing. (Biggest testing bang-for-your-buck). 
-
-* Supports ***injection of view controllers*** and ***storyboard integration.*** 
-
-* Supports both ***initializer***, ***property*** and ***method injection***. For the latter two, it has customizable call-backs to ensure that the class is in the required state before and after injection. 
-
-* Supports a mixture of static dependencies along with <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections#injection-with-run-time-arguments">run-time arguments</a> to create factories on the fly. This greatly reduces the amount of boiler-plate code that you would normally write. 
-
-* Excellent ***support for circular dependencies.***
-
-* ***Powerful memory management features***. Provides pre-configured objects, without the memory overhead of singletons.
-
-* ***Lightweight***. It has a very low footprint, so is appropriate for CPU and memory constrained devices. Weighs in at just 2500 lines of code in total! 
-
-* ***Battle-tested*** - used in all kinds of Appstore-featured apps. 
-
+---------------------------------------
 
 # Usage
 
+* Read the ***Quick Start*** for <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Objective-C</a> or <a href="https://github.com/appsquickly/Typhoon/wiki/Swift-Quick-Start">Swift</a>. 
+* Here's the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a>.
+* And here are the <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API Docs</a>. Generally googling a Typhoon class name will return the correct page as the first hit. 
+* <a href="http://ios.caph.jp/typhoon/introduction">日本のドキュメンテーション</a>
 
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Quick-Start">Quick Start</a>
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Types-of-Injections">User Guide</a>
-* <a href="https://github.com/typhoon-framework/Typhoon-example">Play with the sample application</a>.
+# Open Source Sample Applications
 
-# Installing
+* Try the official <a href="https://github.com/typhoon-framework/Typhoon-Swift-Example">Swift Sample Application</a> or <a href="https://github.com/typhoon-framework/Typhoon-example">Objective-C Sample Application</a>. 
+* This sample shows how to <a href="https://github.com/typhoon-framework/Typhoon-CoreData-RAC-Example">set up Typhoon with Storyboards, Core Data and Reactive Cocoa</a>. 
+* <a href="https://github.com/JeffBNimble/LoLBookOfChampions-ios">Here's a really fun sample</a> that was created by <a href="https://github.com/JeffBNimble">Jeff Roberts</a> of <a href="http://www.nimblenogginsoftware.com/">Nimble Noggin Software</a>. It was used to teach Typhoon to the good folks at <a href="http://www.riotgames.com/">Riot Games</a>, where he consults. 
 
-Typhoon is available through <a href="http://cocoapods.org/?q=Typhoon">CocoaPods</a> (recommended). Alternatively, add the source files to your project's target or set up an Xcode workspace. 
+*Have a Typhoon example app that you'd like to share? Great! Get in touch with us :)*
 
-# Build Status 
-![Build Status](http://www.typhoonframework.org/docs/latest/build-status/build-status.png?q=zz)
+---------------------------------------
 
+# Installing 
+<a href="https://github.com/appsquickly/Typhoon/wiki/Change-Log">![Cocoapods Version](https://cocoapod-badges.herokuapp.com/v/Typhoon/badge.png)</a> [![Pod Platform](http://img.shields.io/cocoapods/p/Typhoon.svg?style=flat)](http://typhoonframework.org/docs/latest/api/modules.html) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Dependency Status](https://www.versioneye.com/objective-c/typhoon/1.1.1/badge.svg?style=flat)](https://www.versioneye.com/objective-c/typhoon) [![Pod License](http://img.shields.io/cocoapods/l/Typhoon.svg?style=flat)](https://github.com/appsquickly/Typhoon/blob/master/LICENSE)
 
-The following reports are published by our build server after each commit. Note that the status of the CI build is not related to tagged releases that are published and pushed to CocoaPods - these are stable. 
+Typhoon is available through <a href="http://cocoapods.org/?q=Typhoon">CocoaPods</a> or <a href="https://github.com/Carthage/Carthage">Carthage</a>, and also builds easily from source.
 
-Test Failures typically indicate a bug that has been flagged, but not yet fixed. By policy we maintain more than 90% test coverage. 
+##With CocoaPods . . . 
 
+###Static Library
 
-* <a href="http://www.typhoonframework.org/docs/latest/api/modules.html">API</a>
-* <a href="http://www.typhoonframework.org/docs/latest/test-results/index.html">Test Results</a>
-* <a href="http://www.typhoonframework.org/docs/latest/coverage/index.html">Test Coverage</a>
+```ruby
 
+# platform *must* be at least 5.0
+platform :ios, '5.0'
 
+target :MyAppTarget, :exclusive => true do
 
-# Feature Requests and Contributions
+pod 'Typhoon'
 
-. . . are very welcome. 
+end
+```
 
-* <a href="https://github.com/typhoon-framework/Typhoon/wiki/Contribution-Guide">Contribution Guide.</a>
+###Dynamic Framework
 
-* Look at, and contribute to the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Roadmap">roadmap</a> here.
+If you're using Swift, you may with to install dynamic frameworks, which can be done with the Podfile shown below: 
 
+```ruby
+# platform *must* be at least 8.0
+platform :ios, '8.0'
 
-# Got a question? Need some help? 
+# flag makes all dependencies build as frameworks
+use_frameworks!
 
+# framework dependencies
+pod 'Typhoon'
+```
 
-| I need help because | Action |
-| :---------- | :------ | 
-I'm not sure how to do [xyz]  | Typhoon users and contributors monitor the Typhoon tag on <a href="http://stackoverflow.com/questions/tagged/typhoon?sort=newest&pageSize=15">Stack Overflow</a>. Chances are your question can be answered there. 
-This looks like a bug | Please raise a <a href="https://github.com/typhoon-framework/Typhoon/issues">GitHub issue</a>
-I'll take all the help I can get | While Typhoon is free, open-source and volunteer based, if you're interested in professional consultation/support we do maintain a list of experts and companies that can provide services. Get in touch with us, and we'll do our best to connect you. 
+Simply import the Typhoon module in any Swift file that uses the framework:
 
+```Swift
+import Typhoon
+```
 
+##With Carthage
 
-# Core Team
+```
+github "appsquickly/Typhoon"
+```
 
-* <a href="https://github.com/jasperblues">Jasper Blues</a> (Founder / Project Lead) - <a href="mailto:jasper@appsquick.ly?Subject=Typhoon">jasper@appsquick.ly</a>  
-* <a href="https://github.com/rhgills">Robert Gilliam</a> - <a href="mailto:robert@robertgilliam.org?Subject=Typhoon">robert@robertgilliam.org</a>
-* <a href="https://github.com/drodriguez">Daniel Rodríguez Troitiño</a> 
-* <a href="https://github.com/eriksundin">Erik Sundin</a> 
-* <a href="https://github.com/alexgarbarev">Aleksey Garbarev</a>
-         
-### With contributions from: 
+##From Source
 
-* <a href="https://github.com/cesteban">César Estébanez Tascón</a> : Circular Dependencies fixes. 
-* <a href="https://github.com/BrynCooke">Bryn Cooke</a> : Late injections & story board integration. 
-* <a href="http://www.linkedin.com/in/jeffreydroberts">Jeffrey Roberts</a>, Mobile Software Engineer at 
-<a href="http://www.riotgames.com/">Riot Games</a>, previous contributor to Swiz for ActionScript : Advice, feedback and testing. 
-* <a href="http://es.linkedin.com/in/josegonzalezgomez/">José González Gómez</a>, Mobile and cloud developer at OPEN input : Feedback; testing, support for property placeholders in initializers. 
-* <a href="https://github.com/sergiou87">Sergio Padrino Recio</a> : Performance improvements.
-* <a href="https://github.com/jervine10">Josh Ervine</a> : Feedback and support for TyphoonFactoryProviders.
-* ___Your name here!!!!!!!___ 
+Alternatively, add the source files to your project's target or set up an Xcode workspace. 
 
-*(If you've sent a pull request and didn't get a mention. . . sorry! Please let us know and we'll correct it).*
+**NB:** *All version of Typhoon work with iOS5 and up (and OSX 10.7 and up), iOS8 is only required if you wish to use dynamic frameworks.* 
 
-****
+---------------------------------------
 
+# Feedback
 
-# Apps Using Typhoon
+### I'm not sure how to do [xyz]
 
-Here's a few apps built with Typhoon:
+If you can't find what you need in the Quick Start or User Guides above, then Typhoon users and contributors monitor the Typhoon tag on <a href="http://stackoverflow.com/questions/tagged/typhoon?sort=newest&pageSize=15">Stack Overflow</a>. Chances are your question can be answered there. 
 
-* Mod Productions' ACO Virtual <a href="http://vimeo.com/75451558">iPad controller</a> and <a href="https://itunes.apple.com/au/app/aco-virtual/id623225640?mt=8">companion AR app.</a> (Awarded ***AppStore Best New Apps***). 
-* <a href="http://itunes.com/apps/GonnaGo">GonnaGo</a> - a social travel app. 
-* <a href="http://appstore.com/alpify">Alpify</a> - don't go skiing or snow boarding without it!
-* Many others. . . ***Your app here!!!***
+### I've found a bug, or have a feature request
 
+Please raise a <a href="https://github.com/typhoon-framework/Typhoon/issues">GitHub issue</a>.
 
+### Interested in contributing?
 
-# LICENSE
+ Great! Here's the <a href="https://github.com/typhoon-framework/Typhoon/wiki/Contribution-Guide">contribution guide.</a>
 
-Apache License, Version 2.0, January 2004, http://www.apache.org/licenses/
+### I'm blown away!
 
-© 2012 - 2014 Jasper Blues and contributors.
+Typhoon is a non-profit, community driven project. We only ask that if you've found it useful to star us on Github or send a tweet mentioning us (<a href="https://twitter.com/appsquickly">@appsquickly</a>). If you've written a Typhoon related blog or tutorial, or published a new Typhoon powered app, we'd certainly be happy to hear about that too. 
+
+Typhoon is sponsored and lead by <a href="http://appsquick.ly">AppsQuick.ly</a> with <a href="https://github.com/appsquickly/Typhoon/graphs/contributors">contributions from around the world</a>. 
+ 
+---------------------------------------
+© 2012 - 2015 Jasper Blues, Aleksey Garbarev and contributors.
 
 
 

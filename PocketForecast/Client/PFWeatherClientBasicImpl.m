@@ -48,6 +48,9 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^
         {
             NSData* data = [NSData dataWithContentsOfURL:[self queryURL:city]];
+
+            NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+
             RXMLElement* rootElement = [RXMLElement elementFromXMLData:data];
             RXMLElement* error = [rootElement child:@"error"];
             if (error && errorBlock)

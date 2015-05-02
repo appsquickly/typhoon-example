@@ -15,13 +15,14 @@
 #import "PFCityDao.h"
 #import "PFCoreComponents.h"
 #import "Typhoon.h"
+#import "PFApplicationAssembly.h"
 
 @interface PFCityDoaTests : XCTestCase
 @end
 
 @implementation PFCityDoaTests
 {
-    id <PFCityDao> cityDao;
+    id<PFCityDao> cityDao;
 }
 
 /* ====================================================================================================================================== */
@@ -30,16 +31,14 @@
 
 - (void)setUp
 {
-    
-    TyphoonComponentFactory * factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[PFCoreComponents assembly]]];
-    
-    cityDao = [factory componentForKey:@"cityDao"];
+    PFApplicationAssembly *assembly = [[PFApplicationAssembly new] activate];
+    cityDao = [assembly.coreComponents cityDao];
 }
 
 
 - (void)test_should_list_all_cities_alphabetically
 {
-    NSArray* cities = [cityDao listAllCities];
+    NSArray *cities = [cityDao listAllCities];
     assertThat(cities, isNot(isEmpty()));
 }
 
@@ -48,7 +47,7 @@
 {
     [cityDao saveCity:@"Manila"];
 
-    NSArray* cities = [cityDao listAllCities];
+    NSArray *cities = [cityDao listAllCities];
     LogDebug(@"Cities now: %@", cities);
     assertThat(cities, isNot(isEmpty()));
 
@@ -64,7 +63,7 @@
 - (void)test_should_allow_removing_a_city
 {
     [cityDao deleteCity:@"Manila"];
-    NSArray* cities = [cityDao listAllCities];
+    NSArray *cities = [cityDao listAllCities];
     LogDebug(@"Cities now: %@", cities);
     assertThat(cities, isNot(isEmpty()));
 

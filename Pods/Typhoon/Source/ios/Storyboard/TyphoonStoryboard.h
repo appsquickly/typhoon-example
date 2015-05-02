@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2013, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -33,11 +33,11 @@
  */
 @interface TyphoonStoryboard : UIStoryboard
 
-@property(nonatomic, strong) TyphoonComponentFactory *factory;
+@property(nonatomic, strong) id<TyphoonComponentFactory> factory;
 
 + (TyphoonStoryboard *)storyboardWithName:(NSString *)name bundle:(NSBundle *)storyboardBundleOrNil;
 
-+ (TyphoonStoryboard *)storyboardWithName:(NSString *)name factory:(TyphoonComponentFactory *)factory bundle:(NSBundle *)bundleOrNil;
++ (TyphoonStoryboard *)storyboardWithName:(NSString *)name factory:(id<TyphoonComponentFactory>)factory bundle:(NSBundle *)bundleOrNil;
 
 @end
 
