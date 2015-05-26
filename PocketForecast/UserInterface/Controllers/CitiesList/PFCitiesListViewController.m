@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -28,15 +28,15 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 @implementation PFCitiesListViewController
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
 
 
-- (id)initWithCityDao:(id <PFCityDao>)cityDao theme:(PFTheme *)theme
+- (id)initWithCityDao:(id<PFCityDao>)cityDao theme:(PFTheme *)theme
 {
     self = [super initWithNibName:@"CitiesList" bundle:[NSBundle mainBundle]];
-    if (self)
-    {
+    if (self) {
         _cityDao = cityDao;
         _theme = theme;
     }
@@ -51,26 +51,26 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Overridden Methods
+//-------------------------------------------------------------------------------------------
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setTitle:@"Pocket Forecast"];
 
-    self.navigationItem.rightBarButtonItem =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+        initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity)];
     [_citiesListTableView setEditing:YES];
 
-    [_temperatureUnitsControl addTarget:self action:@selector(saveTemperatureUnitPreference) forControlEvents:UIControlEventValueChanged];
+    [_temperatureUnitsControl addTarget:self action:@selector(saveTemperatureUnitPreference)
+        forControlEvents:UIControlEventValueChanged];
 
-    if ([PFTemperature defaultUnits] == PFTemperatureUnitsCelsius)
-    {
+    if ([PFTemperature defaultUnits] == PFTemperatureUnitsCelsius) {
         [_temperatureUnitsControl setSelectedSegmentIndex:CELSIUS_SEGMENT_INDEX];
     }
-    else
-    {
+    else {
         [_temperatureUnitsControl setSelectedSegmentIndex:FAHRENHEIT_SEGMENT_INDEX];
     }
 
@@ -83,10 +83,10 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     [self refreshCitiesList];
 
     NSString *cityName = [_cityDao loadSelectedCity];
-    if (cityName)
-    {
+    if (cityName) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[_cities indexOfObject:cityName] inSection:0];
-        [_citiesListTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+        [_citiesListTableView selectRowAtIndexPath:indexPath animated:YES
+            scrollPosition:UITableViewScrollPositionMiddle];
     }
 }
 
@@ -96,8 +96,9 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-/* ====================================================================================================================================== */
-#pragma mark UITableView methods
+//-------------------------------------------------------------------------------------------
+#pragma mark - <UITableViewDelegate> & <UITableViewDataSource>
+//-------------------------------------------------------------------------------------------
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -114,8 +115,7 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 {
     static NSString *reuseId = @"Cities";
     PFCityLabelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[PFCityLabelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -147,17 +147,17 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSString *city = [_cities objectAtIndex:indexPath.row];
         [_cityDao deleteCity:city];
         [self refreshCitiesList];
     }
 }
 
-
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Private Methods
+//-------------------------------------------------------------------------------------------
+
 
 - (void)addCity
 {
@@ -174,12 +174,10 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
 
 - (void)saveTemperatureUnitPreference
 {
-    if ([_temperatureUnitsControl selectedSegmentIndex] == CELSIUS_SEGMENT_INDEX)
-    {
+    if ([_temperatureUnitsControl selectedSegmentIndex] == CELSIUS_SEGMENT_INDEX) {
         [PFTemperature setDefaultUnits:PFTemperatureUnitsCelsius];
     }
-    else
-    {
+    else {
         [PFTemperature setDefaultUnits:PFTemperatureUnitsFahrenheit];
     }
 }

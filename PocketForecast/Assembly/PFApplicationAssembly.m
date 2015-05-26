@@ -1,14 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
-
 
 #import "PFApplicationAssembly.h"
 #import "PFCoreComponents.h"
@@ -23,8 +22,9 @@
 
 @implementation PFApplicationAssembly
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Bootstrapping
+//-------------------------------------------------------------------------------------------
 
 - (PFAppDelegate *)appDelegate
 {
@@ -56,7 +56,7 @@
     return [TyphoonDefinition configDefinitionWithName:@"Configuration.plist"];
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 
 - (PFRootViewController *)rootViewController
 {

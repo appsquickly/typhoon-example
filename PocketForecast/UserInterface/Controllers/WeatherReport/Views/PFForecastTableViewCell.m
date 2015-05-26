@@ -1,14 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
-
 
 #import "PFForecastTableViewCell.h"
 #import "UIFont+ApplicationFonts.h"
@@ -17,7 +16,10 @@
 
 @implementation PFForecastTableViewCell
 
-/* ============================================================ Initializers ============================================================ */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -35,7 +37,10 @@
 }
 
 
-/* ============================================================ Private Methods ========================================================= */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Private Methods
+//-------------------------------------------------------------------------------------------
+
 - (void)initBackgroundView
 {
     UIView* backgroundView = [[UIView alloc] initWithFrame:self.bounds];

@@ -1,3393 +1,1142 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0036AD35FB5E8579F3A87CAB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PocketForecastTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0DBED6614EB640FFDEBAFC96</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PocketForecast.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0FC7EBF913C643679D215992</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FD2943E8EFE24EB5B86A64F3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3BDC141ECD73560DCF2EBF7E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF29A0F6EC0D9D7CFB526030</string>
-				<string>0DBED6614EB640FFDEBAFC96</string>
-				<string>0036AD35FB5E8579F3A87CAB</string>
-				<string>8CE344E6633143DE526E9792</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>609097971E734E02BFBD9A9C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-PocketForecastTests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6B2E1D9E18962CFB00BA4EE0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>compiled.mach-o.dylib</string>
-			<key>name</key>
-			<string>libxml2.dylib</string>
-			<key>path</key>
-			<string>usr/lib/libxml2.dylib</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>6B2E1D9F18962CFB00BA4EE0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B2E1D9E18962CFB00BA4EE0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6B2E1DA018962D0100BA4EE0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B2E1D9E18962CFB00BA4EE0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6B9FABBE16FEA9D800BABD3D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6B9FABBF16FEA9D800BABD3D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6B9FABC016FEA9D800BABD3D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B9FABBE16FEA9D800BABD3D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6B9FABC216FEA9D800BABD3D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B9FABBF16FEA9D800BABD3D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6B9FABC416FEB04500BABD3D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Icon@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6B9FABC516FEB04500BABD3D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B9FABC416FEB04500BABD3D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BA1400215B16B110071C7A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>QuartzCore.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/QuartzCore.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>6BA1400315B16B110071C7A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BA1400215B16B110071C7A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BC1C67B1880DE0100A9B367</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>6BD511651880E794009C487A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BA7981CC39013885C2FE0863</string>
-				<string>BA7985B04F1ABA60F98D5BBA</string>
-				<string>BA798E904AE89A193853B7A6</string>
-				<string>BA7987C750BFF6B7240BBE6F</string>
-				<string>BA798CB6FED702BC06F5473B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6BD511661880E794009C487A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6B2E1DA018962D0100BA4EE0</string>
-				<string>6BD5116A1880E794009C487A</string>
-				<string>6BD5116C1880E794009C487A</string>
-				<string>6BD5116B1880E794009C487A</string>
-				<string>FC9D136326AD4C2DA9F61105</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6BD511671880E794009C487A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6BD511721880E794009C487A</string>
-				<string>BA79843316D1C6911788F18D</string>
-				<string>BA798231EAF35A0CCBE0DEFD</string>
-				<string>BA7987A833F6B13F702FD9A1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6BD511681880E794009C487A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>6BD5117A1880E794009C487A</string>
-			<key>buildPhases</key>
-			<array>
-				<string>9E2C99B289DF4C21A5BE2151</string>
-				<string>6BD511651880E794009C487A</string>
-				<string>6BD511661880E794009C487A</string>
-				<string>6BD511671880E794009C487A</string>
-				<string>AF4C7AB3E69344549F0F9AA3</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>6BD511771880E794009C487A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PocketForecastTests</string>
-			<key>productName</key>
-			<string>PocketForecastTests</string>
-			<key>productReference</key>
-			<string>6BD511691880E794009C487A</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>6BD511691880E794009C487A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PocketForecastTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6BD5116A1880E794009C487A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BC1C67B1880DE0100A9B367</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BD5116B1880E794009C487A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9745515AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BD5116C1880E794009C487A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9745315AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BD5116D1880E794009C487A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BD5116E1880E794009C487A</string>
-				<string>BA798A39BCD2CB3E3E9E2FBC</string>
-				<string>BA7980AA6498F9744BCD811A</string>
-				<string>BA7986967D5038324EDD7DDC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PocketForecastTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BD5116E1880E794009C487A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BD5116F1880E794009C487A</string>
-				<string>6BD511701880E794009C487A</string>
-				<string>6BD511751880E794009C487A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BD5116F1880E794009C487A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>PocketForecastTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BD511701880E794009C487A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BD511711880E794009C487A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BD511711880E794009C487A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BD511721880E794009C487A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BD511701880E794009C487A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BD511751880E794009C487A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PocketForecastTests-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BD511761880E794009C487A</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>6BE9744615AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>6BE9744E15AF01A3004472E2</string>
-			<key>remoteInfo</key>
-			<string>PocketForecast</string>
-		</dict>
-		<key>6BD511771880E794009C487A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>6BE9744E15AF01A3004472E2</string>
-			<key>targetProxy</key>
-			<string>6BD511761880E794009C487A</string>
-		</dict>
-		<key>6BD511781880E794009C487A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>0036AD35FB5E8579F3A87CAB</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>YES</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PocketForecast.app/PocketForecast</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PocketForecastTests/PocketForecastTests-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>HEADER_SEARCH_PATHS</key>
-				<string>$(inherited)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PocketForecastTests/PocketForecastTests-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>-Objc</string>
-					<string>-all_load</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>USER_HEADER_SEARCH_PATHS</key>
-				<string>$(SDKROOT)/usr/include/libxml2 "${PROJECT_DIR}/Pods"/**</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>6BD511791880E794009C487A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8CE344E6633143DE526E9792</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>YES</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PocketForecast.app/PocketForecast</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PocketForecastTests/PocketForecastTests-Prefix.pch</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>HEADER_SEARCH_PATHS</key>
-				<string>$(inherited)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PocketForecastTests/PocketForecastTests-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>-Objc</string>
-					<string>-all_load</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>USER_HEADER_SEARCH_PATHS</key>
-				<string>$(SDKROOT)/usr/include/libxml2 "${PROJECT_DIR}/Pods"/**</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>6BD5117A1880E794009C487A</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6BD511781880E794009C487A</string>
-				<string>6BD511791880E794009C487A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>6BE9230315B29E56002EF310</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BE9230415B29E56002EF310</string>
-				<string>6BE9230515B29E56002EF310</string>
-				<string>6BE9230615B29E56002EF310</string>
-				<string>6BE9230715B29E56002EF310</string>
-				<string>6BE9230815B29E56002EF310</string>
-				<string>6BE9230915B29E56002EF310</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Dao</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9230415B29E56002EF310</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFCityDao.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9230515B29E56002EF310</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFCityDaoUserDefaultsImpl.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9230615B29E56002EF310</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFCityDaoUserDefaultsImpl.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9230715B29E56002EF310</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFWeatherReportDao.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9230815B29E56002EF310</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFWeatherReportDaoFileSystemImpl.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9230915B29E56002EF310</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFWeatherReportDaoFileSystemImpl.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9230A15B29E56002EF310</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9230615B29E56002EF310</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9230B15B29E56002EF310</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9230915B29E56002EF310</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9744415AF01A3004472E2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BE9745915AF01A3004472E2</string>
-				<string>6BD5116D1880E794009C487A</string>
-				<string>6BE9745215AF01A3004472E2</string>
-				<string>6BE9745015AF01A3004472E2</string>
-				<string>3BDC141ECD73560DCF2EBF7E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9744615AF01A3004472E2</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>PF</string>
-				<key>LastUpgradeCheck</key>
-				<string>0610</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>typhoon</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>6BD511681880E794009C487A</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>6BE9744E15AF01A3004472E2</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>6BE9744915AF01A3004472E2</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>6BE9744415AF01A3004472E2</string>
-			<key>productRefGroup</key>
-			<string>6BE9745015AF01A3004472E2</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>6BE9744E15AF01A3004472E2</string>
-				<string>6BD511681880E794009C487A</string>
-			</array>
-		</dict>
-		<key>6BE9744915AF01A3004472E2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6BE9748015AF01A3004472E2</string>
-				<string>6BE9748115AF01A3004472E2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>6BE9744B15AF01A3004472E2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6BE9746015AF01A3004472E2</string>
-				<string>6BE9746415AF01A3004472E2</string>
-				<string>BA798CD6D23ACE87BFC6DAA4</string>
-				<string>BA798CFBF46EB10AC945B816</string>
-				<string>BA798873E9DA8CEE34984273</string>
-				<string>BA7981088FA218ECD034170C</string>
-				<string>BA798CD2C01837FD3E6B9167</string>
-				<string>BA798711EE4D26A67AB61DE4</string>
-				<string>6BE9230A15B29E56002EF310</string>
-				<string>6BE9230B15B29E56002EF310</string>
-				<string>BA798B05BFE968110CD32813</string>
-				<string>BA7983D9D89BC9024B1FCB17</string>
-				<string>BA798AEDFC11905236E98CE3</string>
-				<string>BA7981261B5929B6EA923BD4</string>
-				<string>BA7983310436F7ED629C7F11</string>
-				<string>BA798479CEF2F6CFA15C8587</string>
-				<string>BA7988B4C6492066F2440A11</string>
-				<string>BA798EFDC1DE7FD4BABFFF0C</string>
-				<string>BA798A54EBB46BF31180EAB1</string>
-				<string>BA7989FB9D72895BE06997FA</string>
-				<string>BA7981DF2314DB246B25838E</string>
-				<string>BA79822BC72207E033FC90C5</string>
-				<string>BA798ED5F222C1490F204E49</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6BE9744C15AF01A3004472E2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6B2E1D9F18962CFB00BA4EE0</string>
-				<string>6BA1400315B16B110071C7A0</string>
-				<string>6BE9745415AF01A3004472E2</string>
-				<string>6BE9745615AF01A3004472E2</string>
-				<string>6BE9745815AF01A3004472E2</string>
-				<string>0FC7EBF913C643679D215992</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6BE9744D15AF01A3004472E2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6BE9745E15AF01A3004472E2</string>
-				<string>BA798CC56BF649127B173D19</string>
-				<string>BA79879F1CEE83F038081C53</string>
-				<string>BA798F7C02D6F939EC3FA0B6</string>
-				<string>BA798FBE47D1FF07A7FB2A80</string>
-				<string>BA798DC0E482FA6C6807D438</string>
-				<string>BA798CC96A8610C2266A544E</string>
-				<string>BA7987510DCA61EC53A55897</string>
-				<string>BA798ACA8D54255FF6D367D2</string>
-				<string>BA798AE967680E4C6D984092</string>
-				<string>BA7980B84E636274BB2D9F89</string>
-				<string>BA79831DAB57B1F0736F960C</string>
-				<string>BA79882BDEEABC5F7C635589</string>
-				<string>BA798D97A97B46BA3A44A899</string>
-				<string>BA798655FF08CCF03AAFAEC7</string>
-				<string>BA79820179A4C7B8C43BC1BF</string>
-				<string>BA7984CF7CDF6DC46EAFB736</string>
-				<string>BA798E82EF7D56A91CE6649A</string>
-				<string>BA7985BD57A6F911C135B167</string>
-				<string>BA7985CD4B2D4332CB0C3135</string>
-				<string>BA798343E93DFA08479EE28A</string>
-				<string>BA798E5E4CB73163221DEBC0</string>
-				<string>6B9FABC016FEA9D800BABD3D</string>
-				<string>6B9FABC216FEA9D800BABD3D</string>
-				<string>6B9FABC516FEB04500BABD3D</string>
-				<string>BA798932263C88CAE1030072</string>
-				<string>BA798607C95F754C2CD7BFA2</string>
-				<string>BA798C717F0FB458BF71743F</string>
-				<string>BA7981AF874ACB6C0FC6F7F4</string>
-				<string>BA798D3A2D8741F4582B9347</string>
-				<string>BA798499E35DC29B45B47A1C</string>
-				<string>BA7985AA12F02833B47C9953</string>
-				<string>BA7983A84F71D0AA1FFDB2E1</string>
-				<string>BA798B4A56CBB75FC5ADF57E</string>
-				<string>BA7984496F8871AEBA128A25</string>
-				<string>BA7981DC11B1519DABA991CB</string>
-				<string>BA7981D19BEB3B55DABF9ECE</string>
-				<string>BA798CBD4204102A990F871D</string>
-				<string>BA798E7D5256491EFD740848</string>
-				<string>BA7981A80E1051AB9403D7B4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6BE9744E15AF01A3004472E2</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>6BE9748215AF01A3004472E2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F8D0778E628C4F479F4B3FF4</string>
-				<string>6BE9744B15AF01A3004472E2</string>
-				<string>6BE9744C15AF01A3004472E2</string>
-				<string>6BE9744D15AF01A3004472E2</string>
-				<string>8CBDFD0C214E4C8881741781</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PocketForecast</string>
-			<key>productName</key>
-			<string>PocketForecast</string>
-			<key>productReference</key>
-			<string>6BE9744F15AF01A3004472E2</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>6BE9744F15AF01A3004472E2</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PocketForecast.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6BE9745015AF01A3004472E2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BE9744F15AF01A3004472E2</string>
-				<string>6BD511691880E794009C487A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9745215AF01A3004472E2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6B2E1D9E18962CFB00BA4EE0</string>
-				<string>6BA1400215B16B110071C7A0</string>
-				<string>6BE9745315AF01A3004472E2</string>
-				<string>6BE9745515AF01A3004472E2</string>
-				<string>6BE9745715AF01A3004472E2</string>
-				<string>6BE9747115AF01A3004472E2</string>
-				<string>FD2943E8EFE24EB5B86A64F3</string>
-				<string>609097971E734E02BFBD9A9C</string>
-				<string>6BC1C67B1880DE0100A9B367</string>
-				<string>E4467A75CA1D458DB9901CA3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9745315AF01A3004472E2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>6BE9745415AF01A3004472E2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9745315AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9745515AF01A3004472E2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>6BE9745615AF01A3004472E2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9745515AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9745715AF01A3004472E2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>6BE9745815AF01A3004472E2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9745715AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9745915AF01A3004472E2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BE9746215AF01A3004472E2</string>
-				<string>6BE9746315AF01A3004472E2</string>
-				<string>6BE9745A15AF01A3004472E2</string>
-				<string>BA798E7C3679201AEC43BC53</string>
-				<string>6BE9230315B29E56002EF310</string>
-				<string>BA798A517BE02ED4643239E0</string>
-				<string>BA79840A9B9BA6AD4B22AE22</string>
-				<string>BA7981AECCB463AE5C18DCD2</string>
-				<string>BA79847674065A0E13E255D8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PocketForecast</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9745A15AF01A3004472E2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BE9745B15AF01A3004472E2</string>
-				<string>6BE9745C15AF01A3004472E2</string>
-				<string>6BE9745F15AF01A3004472E2</string>
-				<string>6BE9746115AF01A3004472E2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9745B15AF01A3004472E2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>PocketForecast-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9745C15AF01A3004472E2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6BE9745D15AF01A3004472E2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9745D15AF01A3004472E2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9745E15AF01A3004472E2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9745C15AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9745F15AF01A3004472E2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9746015AF01A3004472E2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9745F15AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9746115AF01A3004472E2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PocketForecast-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9746215AF01A3004472E2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9746315AF01A3004472E2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BE9746415AF01A3004472E2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BE9746315AF01A3004472E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6BE9747115AF01A3004472E2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>6BE9748015AF01A3004472E2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>6BE9748115AF01A3004472E2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.1</string>
-				<key>OTHER_CFLAGS</key>
-				<string>-DNS_BLOCK_ASSERTIONS=1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>6BE9748215AF01A3004472E2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6BE9748315AF01A3004472E2</string>
-				<string>6BE9748415AF01A3004472E2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>6BE9748315AF01A3004472E2</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>AF29A0F6EC0D9D7CFB526030</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>"$(SRCROOT)/External"</string>
-				</array>
-				<key>GCC_GENERATE_TEST_COVERAGE_FILES</key>
-				<string>YES</string>
-				<key>GCC_INSTRUMENT_PROGRAM_FLOW_ARCS</key>
-				<string>YES</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PocketForecast/PocketForecast-Prefix.pch</string>
-				<key>HEADER_SEARCH_PATHS</key>
-				<string>$(inherited)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PocketForecast/PocketForecast-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>-Objc</string>
-					<string>-all_load</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>PRODUCT_NAME</key>
-				<string>PocketForecast</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>PROVISIONING_PROFILE[sdk=iphoneos*]</key>
-				<string></string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1</string>
-				<key>USER_HEADER_SEARCH_PATHS</key>
-				<string>$(SDKROOT)/usr/include/libxml2 "${PROJECT_DIR}/Pods"/**</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>6BE9748415AF01A3004472E2</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>0DBED6614EB640FFDEBAFC96</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>"$(SRCROOT)/External"</string>
-				</array>
-				<key>GCC_GENERATE_TEST_COVERAGE_FILES</key>
-				<string>YES</string>
-				<key>GCC_INSTRUMENT_PROGRAM_FLOW_ARCS</key>
-				<string>YES</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PocketForecast/PocketForecast-Prefix.pch</string>
-				<key>HEADER_SEARCH_PATHS</key>
-				<string>$(inherited)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PocketForecast/PocketForecast-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>-Objc</string>
-					<string>-all_load</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>PRODUCT_NAME</key>
-				<string>PocketForecast</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>PROVISIONING_PROFILE[sdk=iphoneos*]</key>
-				<string></string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1</string>
-				<key>USER_HEADER_SEARCH_PATHS</key>
-				<string>$(SDKROOT)/usr/include/libxml2 "${PROJECT_DIR}/Pods"/**</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>8CBDFD0C214E4C8881741781</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>8CE344E6633143DE526E9792</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PocketForecastTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9E2C99B289DF4C21A5BE2151</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>AF29A0F6EC0D9D7CFB526030</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PocketForecast.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF4C7AB3E69344549F0F9AA3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>BA79801B339D51E8C92ED317</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA7983F2134358A4E02D50EA</string>
-				<string>BA798E9E3746332B48394016</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>fonts</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7980365453A2C4CA5B71EB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFApplicationAssembly.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7980523B805CF697C4D409</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>UIFont+ApplicationFonts.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7980AA6498F9744BCD811A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA79864F0BCEE619CF0905DE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7980B84E636274BB2D9F89</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798386C46D4F082497CCBB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7980BD42EE97E7C03D7BE2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798D757661C56D7B6A49BD</string>
-				<string>BA798D7C35F1F7DBC95B2DA1</string>
-				<string>BA7981D2C28FC653520FA6CE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>CitiesList</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7980D610AB0AE04C4A3E99</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_partly_cloudy.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7981088FA218ECD034170C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798ACA3067E7098E5C0A06</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA79810DC6998A5D91FB537B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFTheme.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7981261B5929B6EA923BD4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798945DD532BA1BD7FE30A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798134314953715D04412E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RXMLElement_PFWeatherReportSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79813E3EE85D93E2E01569</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFTemperatureTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798162CA41E6D4902A2BD5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_rainy@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7981A0F0B7E0735109ABD3</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg5-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7981A80E1051AB9403D7B4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798CBE9C70CB9652F7A3B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7981AECCB463AE5C18DCD2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798A07FF934E58F2C3FE16</string>
-				<string>BA7988AA248E5686F8E3E522</string>
-				<string>BA7980365453A2C4CA5B71EB</string>
-				<string>BA798E37FB886A376AD93008</string>
-				<string>BA7985FE29ADAAD09D517058</string>
-				<string>BA798C8257734841BAC551B1</string>
-				<string>BA7983A4913554BC6677D776</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Assembly</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7981AF874ACB6C0FC6F7F4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7983FC5295E1248DF73C06</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7981CC39013885C2FE0863</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79840E939AE3BF6DBA71E8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7981D19BEB3B55DABF9ECE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798AC9E07F264D97ACA770</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7981D2C28FC653520FA6CE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA7989DC41BCE0FC73A7C518</string>
-				<string>BA79831FB69C01468CCE157A</string>
-				<string>BA798C0F599C2103DE4A0316</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7981DC11B1519DABA991CB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7982FD0093CF803EE283AE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7981DF2314DB246B25838E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798E37FB886A376AD93008</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7981E033DDC7D756CEC5DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798B0AB010ADE20EF1CF44</string>
-				<string>BA79810DC6998A5D91FB537B</string>
-				<string>BA79874E4B94F869CE8051B5</string>
-				<string>BA7983426BAEC1F75CEBC6C7</string>
-				<string>BA798C0B6B4D900FA67C84E5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Themes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7981F95ADE57DBB6722C39</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFWeatherClientBasicImpl.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79820179A4C7B8C43BC1BF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7986D22B15C65F246F8705</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA79820A0DFD6D50563F87BC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg4@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79822BC72207E033FC90C5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798C8257734841BAC551B1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798231EAF35A0CCBE0DEFD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7983A4913554BC6677D776</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798253399A5FEC6A52CFCA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_sunny.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7982FD0093CF803EE283AE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>sunset.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798312A8E6D9B8F302DCCB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFWeatherReportView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79831DAB57B1F0736F960C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798253399A5FEC6A52CFCA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA79831FB69C01468CCE157A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFCityLabelTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7983310436F7ED629C7F11</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798312A8E6D9B8F302DCCB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7983426BAEC1F75CEBC6C7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFThemeFactory.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798343E93DFA08479EE28A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7983B6A0DD71DD6BD78B58</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798386C46D4F082497CCBB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_stormy@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79839F6997E814BA1C682B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798C2EBA35DCFC44E9F6CD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7983A4913554BC6677D776</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist</string>
-			<key>path</key>
-			<string>Configuration.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7983A84F71D0AA1FFDB2E1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7985380591D97A53DD10EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7983B6A0DD71DD6BD78B58</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>cell_fade@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7983C21E1C454CE757BCD6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg4-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7983D9D89BC9024B1FCB17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798C7B558024C0786FA923</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7983D9EBFEEDC3ACE88726</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798E6B7BCCED2C5A113449</string>
-				<string>BA798DB9D6A187392B3C07C1</string>
-				<string>BA7980D610AB0AE04C4A3E99</string>
-				<string>BA798FABE8F822F7C4C37589</string>
-				<string>BA798BBF4F91EF53D782E574</string>
-				<string>BA798162CA41E6D4902A2BD5</string>
-				<string>BA7988F4AB80D4FD96C0E415</string>
-				<string>BA798386C46D4F082497CCBB</string>
-				<string>BA798253399A5FEC6A52CFCA</string>
-				<string>BA7984DEDAA150FBEE6C95AE</string>
-				<string>BA79841E09AFC834B5DB666E</string>
-				<string>BA7989A03B709D5789A1ACE2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>weatherIcons</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7983F2134358A4E02D50EA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.otf</string>
-			<key>path</key>
-			<string>VarelaRound-Regular.otf</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7983FC5295E1248DF73C06</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg3@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79840A9B9BA6AD4B22AE22</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA79877DD1EE5642AE5A333C</string>
-				<string>BA798457F5820C1547589C51</string>
-				<string>BA7988C7AC8843061AC0B8C6</string>
-				<string>BA798B04A978C626822DE2BF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>UserInterface</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79840E939AE3BF6DBA71E8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFCityDoaTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79841E09AFC834B5DB666E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_windy.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79843316D1C6911788F18D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79864F0BCEE619CF0905DE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7984496F8871AEBA128A25</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7981A0F0B7E0735109ABD3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798457F5820C1547589C51</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798AFF8F7ED2C2BAA5DEB6</string>
-				<string>BA7980523B805CF697C4D409</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Utils</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79847674065A0E13E255D8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6B9FABC416FEB04500BABD3D</string>
-				<string>BA79801B339D51E8C92ED317</string>
-				<string>BA7983D9EBFEEDC3ACE88726</string>
-				<string>BA7986D22B15C65F246F8705</string>
-				<string>BA798EA69027CA008D70D92A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798479CEF2F6CFA15C8587</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798EE55B711367BC250ADC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798499E35DC29B45B47A1C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79820A0DFD6D50563F87BC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA79849E8B7E0932CE3BCD1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7984CF7CDF6DC46EAFB736</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7983F2134358A4E02D50EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7984DEDAA150FBEE6C95AE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_sunny@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7985380591D97A53DD10EA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg5.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7985AA12F02833B47C9953</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7983C21E1C454CE757BCD6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7985B04F1ABA60F98D5BBA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798837E82B7219415A5636</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7985BD57A6F911C135B167</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79890A042F3EF38A97A758</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7985CD4B2D4332CB0C3135</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798E9E3746332B48394016</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7985FE29ADAAD09D517058</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFThemeAssembly.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798607C95F754C2CD7BFA2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79875DE5CE201282E6D700</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA79864F0BCEE619CF0905DE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xml</string>
-			<key>path</key>
-			<string>SampleForecast.xml</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798655FF08CCF03AAFAEC7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7989A03B709D5789A1ACE2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7986967D5038324EDD7DDC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA79813E3EE85D93E2E01569</string>
-				<string>BA798134314953715D04412E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Unit</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7986D22B15C65F246F8705</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Icon.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798711EE4D26A67AB61DE4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7987CC3C49F06FABB2BECF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7987478471BA92A0518862</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFWeatherReport.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79874E4B94F869CE8051B5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFThemeFactory.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7987510DCA61EC53A55897</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798BBF4F91EF53D782E574</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA79875DE5CE201282E6D700</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg3-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79877DD1EE5642AE5A333C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798B54A6F3F186E9499999</string>
-				<string>BA7980BD42EE97E7C03D7BE2</string>
-				<string>BA798DE2ABAB2A8A69B243FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Controllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79879F1CEE83F038081C53</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7989DC41BCE0FC73A7C518</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7987A833F6B13F702FD9A1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798CBE9C70CB9652F7A3B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7987C750BFF6B7240BBE6F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79813E3EE85D93E2E01569</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7987CC3C49F06FABB2BECF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFForecastConditions.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79881332BAAF14FBA016C4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>sunset-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79882BDEEABC5F7C635589</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7984DEDAA150FBEE6C95AE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798837E82B7219415A5636</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFWeatherClientTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798873E9DA8CEE34984273</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798B1EF321D3252A608028</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7988A5EED8474C69C5CB29</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFForecastConditions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7988AA248E5686F8E3E522</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFCoreComponents.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7988B4C6492066F2440A11</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79831FB69C01468CCE157A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA7988C7AC8843061AC0B8C6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>PFRootViewController.h</string>
-			<key>path</key>
-			<string>Controllers/PFRootViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7988F4AB80D4FD96C0E415</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_stormy.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA79890A042F3EF38A97A758</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>temperature_circle@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798932263C88CAE1030072</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79849E8B7E0932CE3BCD1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798945DD532BA1BD7FE30A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFWeatherReportViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7989A03B709D5789A1ACE2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_windy@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7989DC41BCE0FC73A7C518</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>CitiesList.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA7989FB9D72895BE06997FA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79874E4B94F869CE8051B5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798A07FF934E58F2C3FE16</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFCoreComponents.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798A39BCD2CB3E3E9E2FBC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA79840E939AE3BF6DBA71E8</string>
-				<string>BA798837E82B7219415A5636</string>
-				<string>BA798A7A3F225459AF1D5154</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Integration</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798A517BE02ED4643239E0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA7988A5EED8474C69C5CB29</string>
-				<string>BA7987CC3C49F06FABB2BECF</string>
-				<string>BA798F720169320B08150907</string>
-				<string>BA798B1EF321D3252A608028</string>
-				<string>BA798B92876C0679AA3E6DC8</string>
-				<string>BA798FEB5D10A22F3AC1C5D8</string>
-				<string>BA798A7EF3E53E1850551BEC</string>
-				<string>BA7987478471BA92A0518862</string>
-				<string>BA7981E033DDC7D756CEC5DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798A54EBB46BF31180EAB1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798B0AB010ADE20EF1CF44</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798A7A3F225459AF1D5154</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFWeatherReportDaoTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798A7EF3E53E1850551BEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFWeatherReport.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798AA1DEFB3C8006C73FBB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>temperature_circle.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798AC9E07F264D97ACA770</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>sunset@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798ACA3067E7098E5C0A06</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFWeatherClientBasicImpl.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798ACA8D54255FF6D367D2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798162CA41E6D4902A2BD5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798AD5669A020612B839CA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg3.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798AE679659C7CC95C40E8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798312A8E6D9B8F302DCCB</string>
-				<string>BA798CC8FA97B066BD5DD319</string>
-				<string>BA798EE55B711367BC250ADC</string>
-				<string>BA798CAD4A4D871788DC4EB6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798AE967680E4C6D984092</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7988F4AB80D4FD96C0E415</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798AEDFC11905236E98CE3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798D757661C56D7B6A49BD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798AFF8F7ED2C2BAA5DEB6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>UIFont+ApplicationFonts.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798B04A978C626822DE2BF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>PFRootViewController.m</string>
-			<key>path</key>
-			<string>Controllers/PFRootViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798B05BFE968110CD32813</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798AFF8F7ED2C2BAA5DEB6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798B0AB010ADE20EF1CF44</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFTheme.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798B1EF321D3252A608028</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFTemperature.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798B4A56CBB75FC5ADF57E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798D1B491EAE11E8515805</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798B54A6F3F186E9499999</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798C7B558024C0786FA923</string>
-				<string>BA798F69C1BEADA1AA7C7C66</string>
-				<string>BA79839F6997E814BA1C682B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>AddCity</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798B92876C0679AA3E6DC8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFCurrentConditions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798BBF4F91EF53D782E574</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_rainy.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798C0B6B4D900FA67C84E5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFThemeable.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798C0F599C2103DE4A0316</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFCityLabelTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798C2EBA35DCFC44E9F6CD</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>AddCity.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798C717F0FB458BF71743F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798AD5669A020612B839CA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798C7B558024C0786FA923</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFAddCityViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798C8257734841BAC551B1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFThemeAssembly.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798C8773496CD7E3A95CA6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg4.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798CAD4A4D871788DC4EB6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFForecastTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798CB6FED702BC06F5473B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798134314953715D04412E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798CBD4204102A990F871D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79881332BAAF14FBA016C4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798CBE9C70CB9652F7A3B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>cloud_icon@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798CC56BF649127B173D19</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798C2EBA35DCFC44E9F6CD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798CC8FA97B066BD5DD319</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFWeatherReportView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798CC96A8610C2266A544E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798FABE8F822F7C4C37589</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798CD2C01837FD3E6B9167</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798E33D2995015037E6DE5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798CD5EC96425F648C2CCF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>cell_fade.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798CD6D23ACE87BFC6DAA4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7987478471BA92A0518862</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798CFBF46EB10AC945B816</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798FEB5D10A22F3AC1C5D8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798D1B491EAE11E8515805</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>bg5@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798D2A742E3B6ED1BCE83D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFWeatherClient.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798D3A2D8741F4582B9347</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798C8773496CD7E3A95CA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798D757661C56D7B6A49BD</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFCitiesListViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798D7C35F1F7DBC95B2DA1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFCitiesListViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798D97A97B46BA3A44A899</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA79841E09AFC834B5DB666E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798DB9D6A187392B3C07C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_cloudy@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798DC0E482FA6C6807D438</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7980D610AB0AE04C4A3E99</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798DE2ABAB2A8A69B243FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798945DD532BA1BD7FE30A</string>
-				<string>BA798F27FD489318A1210076</string>
-				<string>BA798AE679659C7CC95C40E8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>WeatherReport</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798E33D2995015037E6DE5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RXMLElement+PFWeatherReport.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798E37FB886A376AD93008</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFApplicationAssembly.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798E5E4CB73163221DEBC0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798CD5EC96425F648C2CCF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798E6B7BCCED2C5A113449</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_cloudy.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798E7C3679201AEC43BC53</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798EF2E6B2241602FA1B9F</string>
-				<string>BA798E33D2995015037E6DE5</string>
-				<string>BA7981F95ADE57DBB6722C39</string>
-				<string>BA798ACA3067E7098E5C0A06</string>
-				<string>BA798D2A742E3B6ED1BCE83D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Client</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798E7D5256491EFD740848</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7983A4913554BC6677D776</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798E82EF7D56A91CE6649A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798AA1DEFB3C8006C73FBB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798E904AE89A193853B7A6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798A7A3F225459AF1D5154</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798E9E3746332B48394016</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.otf</string>
-			<key>path</key>
-			<string>Questrial-Regular.otf</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798EA69027CA008D70D92A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6B9FABBE16FEA9D800BABD3D</string>
-				<string>6B9FABBF16FEA9D800BABD3D</string>
-				<string>BA798AA1DEFB3C8006C73FBB</string>
-				<string>BA79890A042F3EF38A97A758</string>
-				<string>BA7983B6A0DD71DD6BD78B58</string>
-				<string>BA798CD5EC96425F648C2CCF</string>
-				<string>BA79849E8B7E0932CE3BCD1B</string>
-				<string>BA798F751E9984ADBD0255E5</string>
-				<string>BA79875DE5CE201282E6D700</string>
-				<string>BA798AD5669A020612B839CA</string>
-				<string>BA7983FC5295E1248DF73C06</string>
-				<string>BA798C8773496CD7E3A95CA6</string>
-				<string>BA79820A0DFD6D50563F87BC</string>
-				<string>BA7983C21E1C454CE757BCD6</string>
-				<string>BA7985380591D97A53DD10EA</string>
-				<string>BA798D1B491EAE11E8515805</string>
-				<string>BA7981A0F0B7E0735109ABD3</string>
-				<string>BA7982FD0093CF803EE283AE</string>
-				<string>BA798AC9E07F264D97ACA770</string>
-				<string>BA79881332BAAF14FBA016C4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>textures</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798ED5F222C1490F204E49</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA7988AA248E5686F8E3E522</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798EE55B711367BC250ADC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFForecastTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798EF2E6B2241602FA1B9F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RXMLElement+PFWeatherReport.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798EFDC1DE7FD4BABFFF0C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798B04A978C626822DE2BF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798F27FD489318A1210076</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFWeatherReportViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798F69C1BEADA1AA7C7C66</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFAddCityViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798F720169320B08150907</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PFTemperature.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798F751E9984ADBD0255E5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA798CBE9C70CB9652F7A3B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Loader</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798F7C02D6F939EC3FA0B6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798E6B7BCCED2C5A113449</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798FABE8F822F7C4C37589</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon_partly_cloudy@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA798FBE47D1FF07A7FB2A80</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA798DB9D6A187392B3C07C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA798FEB5D10A22F3AC1C5D8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PFCurrentConditions.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E4467A75CA1D458DB9901CA3</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Tests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F8D0778E628C4F479F4B3FF4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>FC9D136326AD4C2DA9F61105</key>
-		<dict>
-			<key>fileRef</key>
-			<string>609097971E734E02BFBD9A9C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FD2943E8EFE24EB5B86A64F3</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-PocketForecast.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>6BE9744615AF01A3004472E2</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FC7EBF913C643679D215992 /* libPods-PocketForecast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2943E8EFE24EB5B86A64F3 /* libPods-PocketForecast.a */; };
+		6B2E1D9F18962CFB00BA4EE0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */; };
+		6B2E1DA018962D0100BA4EE0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */; };
+		6B9FABC016FEA9D800BABD3D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBE16FEA9D800BABD3D /* Default.png */; };
+		6B9FABC216FEA9D800BABD3D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABBF16FEA9D800BABD3D /* Default@2x.png */; };
+		6B9FABC516FEB04500BABD3D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9FABC416FEB04500BABD3D /* Icon@2x.png */; };
+		6BA1400315B16B110071C7A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA1400215B16B110071C7A0 /* QuartzCore.framework */; };
+		6BD5116A1880E794009C487A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC1C67B1880DE0100A9B367 /* XCTest.framework */; };
+		6BD5116B1880E794009C487A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE9745515AF01A3004472E2 /* Foundation.framework */; };
+		6BD5116C1880E794009C487A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE9745315AF01A3004472E2 /* UIKit.framework */; };
+		6BD511721880E794009C487A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BD511701880E794009C487A /* InfoPlist.strings */; };
+		6BE9230A15B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9230615B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m */; };
+		6BE9230B15B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9230915B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.m */; };
+		6BE9745415AF01A3004472E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE9745315AF01A3004472E2 /* UIKit.framework */; };
+		6BE9745615AF01A3004472E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE9745515AF01A3004472E2 /* Foundation.framework */; };
+		6BE9745815AF01A3004472E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE9745715AF01A3004472E2 /* CoreGraphics.framework */; };
+		6BE9745E15AF01A3004472E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BE9745C15AF01A3004472E2 /* InfoPlist.strings */; };
+		6BE9746015AF01A3004472E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9745F15AF01A3004472E2 /* main.m */; };
+		6BE9746415AF01A3004472E2 /* PFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9746315AF01A3004472E2 /* PFAppDelegate.m */; };
+		BA7980B84E636274BB2D9F89 /* icon_stormy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798386C46D4F082497CCBB /* icon_stormy@2x.png */; };
+		BA7981088FA218ECD034170C /* PFWeatherClientBasicImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */; };
+		BA7981261B5929B6EA923BD4 /* PFWeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798945DD532BA1BD7FE30A /* PFWeatherReportViewController.m */; };
+		BA7981A80E1051AB9403D7B4 /* cloud_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798CBE9C70CB9652F7A3B7 /* cloud_icon@2x.png */; };
+		BA7981AF874ACB6C0FC6F7F4 /* bg3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983FC5295E1248DF73C06 /* bg3@2x.png */; };
+		BA7981CC39013885C2FE0863 /* PFCityDoaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79840E939AE3BF6DBA71E8 /* PFCityDoaTests.m */; };
+		BA7981D19BEB3B55DABF9ECE /* sunset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798AC9E07F264D97ACA770 /* sunset@2x.png */; };
+		BA7981DC11B1519DABA991CB /* sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7982FD0093CF803EE283AE /* sunset.png */; };
+		BA7981DF2314DB246B25838E /* PFApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */; };
+		BA79820179A4C7B8C43BC1BF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7986D22B15C65F246F8705 /* Icon.png */; };
+		BA79822BC72207E033FC90C5 /* PFThemeAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C8257734841BAC551B1 /* PFThemeAssembly.m */; };
+		BA798231EAF35A0CCBE0DEFD /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA7983A4913554BC6677D776 /* Configuration.plist */; };
+		BA79831DAB57B1F0736F960C /* icon_sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798253399A5FEC6A52CFCA /* icon_sunny.png */; };
+		BA7983310436F7ED629C7F11 /* PFWeatherReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798312A8E6D9B8F302DCCB /* PFWeatherReportView.m */; };
+		BA798343E93DFA08479EE28A /* cell_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */; };
+		BA7983A84F71D0AA1FFDB2E1 /* bg5.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7985380591D97A53DD10EA /* bg5.png */; };
+		BA7983C6FF96C3454EDB56C5 /* Forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = BA7983C9A91EA0915EEE01D3 /* Forecast.json */; };
+		BA7983D9D89BC9024B1FCB17 /* PFAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798C7B558024C0786FA923 /* PFAddCityViewController.m */; };
+		BA79843316D1C6911788F18D /* SampleForecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA79864F0BCEE619CF0905DE /* SampleForecast.xml */; };
+		BA7984496F8871AEBA128A25 /* bg5-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7981A0F0B7E0735109ABD3 /* bg5-568h@2x.png */; };
+		BA798479CEF2F6CFA15C8587 /* PFForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798EE55B711367BC250ADC /* PFForecastTableViewCell.m */; };
+		BA798499E35DC29B45B47A1C /* bg4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79820A0DFD6D50563F87BC /* bg4@2x.png */; };
+		BA7984CF7CDF6DC46EAFB736 /* VarelaRound-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA7983F2134358A4E02D50EA /* VarelaRound-Regular.otf */; };
+		BA7985AA12F02833B47C9953 /* bg4-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7983C21E1C454CE757BCD6 /* bg4-568h@2x.png */; };
+		BA7985B04F1ABA60F98D5BBA /* PFWeatherClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798837E82B7219415A5636 /* PFWeatherClientTests.m */; };
+		BA7985BD57A6F911C135B167 /* temperature_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79890A042F3EF38A97A758 /* temperature_circle@2x.png */; };
+		BA7985CD4B2D4332CB0C3135 /* Questrial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA798E9E3746332B48394016 /* Questrial-Regular.otf */; };
+		BA798607C95F754C2CD7BFA2 /* bg3-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79875DE5CE201282E6D700 /* bg3-568h@2x.png */; };
+		BA798655FF08CCF03AAFAEC7 /* icon_windy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7989A03B709D5789A1ACE2 /* icon_windy@2x.png */; };
+		BA798711EE4D26A67AB61DE4 /* PFForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */; };
+		BA7987510DCA61EC53A55897 /* icon_rainy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798BBF4F91EF53D782E574 /* icon_rainy.png */; };
+		BA79879F1CEE83F038081C53 /* CitiesList.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7989DC41BCE0FC73A7C518 /* CitiesList.xib */; };
+		BA7987A833F6B13F702FD9A1 /* cloud_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798CBE9C70CB9652F7A3B7 /* cloud_icon@2x.png */; };
+		BA7987C750BFF6B7240BBE6F /* PFTemperatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79813E3EE85D93E2E01569 /* PFTemperatureTests.m */; };
+		BA79882BDEEABC5F7C635589 /* icon_sunny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7984DEDAA150FBEE6C95AE /* icon_sunny@2x.png */; };
+		BA798873E9DA8CEE34984273 /* PFTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B1EF321D3252A608028 /* PFTemperature.m */; };
+		BA7988B4C6492066F2440A11 /* PFCityLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79831FB69C01468CCE157A /* PFCityLabelTableViewCell.m */; };
+		BA798932263C88CAE1030072 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79849E8B7E0932CE3BCD1B /* Default-568h@2x.png */; };
+		BA7989FB9D72895BE06997FA /* PFThemeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79874E4B94F869CE8051B5 /* PFThemeFactory.m */; };
+		BA798A54EBB46BF31180EAB1 /* PFTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B0AB010ADE20EF1CF44 /* PFTheme.m */; };
+		BA798ACA8D54255FF6D367D2 /* icon_rainy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798162CA41E6D4902A2BD5 /* icon_rainy@2x.png */; };
+		BA798AE967680E4C6D984092 /* icon_stormy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7988F4AB80D4FD96C0E415 /* icon_stormy.png */; };
+		BA798AEDFC11905236E98CE3 /* PFCitiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798D757661C56D7B6A49BD /* PFCitiesListViewController.m */; };
+		BA798B05BFE968110CD32813 /* UIFont+ApplicationFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798AFF8F7ED2C2BAA5DEB6 /* UIFont+ApplicationFonts.m */; };
+		BA798B4A56CBB75FC5ADF57E /* bg5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798D1B491EAE11E8515805 /* bg5@2x.png */; };
+		BA798C717F0FB458BF71743F /* bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798AD5669A020612B839CA /* bg3.png */; };
+		BA798CB6FED702BC06F5473B /* RXMLElement_PFWeatherReportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798134314953715D04412E /* RXMLElement_PFWeatherReportSpec.m */; };
+		BA798CBD4204102A990F871D /* sunset-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79881332BAAF14FBA016C4 /* sunset-568h@2x.png */; };
+		BA798CC56BF649127B173D19 /* AddCity.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA798C2EBA35DCFC44E9F6CD /* AddCity.xib */; };
+		BA798CC96A8610C2266A544E /* icon_partly_cloudy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798FABE8F822F7C4C37589 /* icon_partly_cloudy@2x.png */; };
+		BA798CD2C01837FD3E6B9167 /* RXMLElement+PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */; };
+		BA798CD6D23ACE87BFC6DAA4 /* PFWeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7987478471BA92A0518862 /* PFWeatherReport.m */; };
+		BA798CFBF46EB10AC945B816 /* PFCurrentConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */; };
+		BA798D3A2D8741F4582B9347 /* bg4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798C8773496CD7E3A95CA6 /* bg4.png */; };
+		BA798D97A97B46BA3A44A899 /* icon_windy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79841E09AFC834B5DB666E /* icon_windy.png */; };
+		BA798DC0E482FA6C6807D438 /* icon_partly_cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7980D610AB0AE04C4A3E99 /* icon_partly_cloudy.png */; };
+		BA798E5E4CB73163221DEBC0 /* cell_fade.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798CD5EC96425F648C2CCF /* cell_fade.png */; };
+		BA798E7D5256491EFD740848 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA7983A4913554BC6677D776 /* Configuration.plist */; };
+		BA798E82EF7D56A91CE6649A /* temperature_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798AA1DEFB3C8006C73FBB /* temperature_circle.png */; };
+		BA798E904AE89A193853B7A6 /* PFWeatherReportDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798A7A3F225459AF1D5154 /* PFWeatherReportDaoTests.m */; };
+		BA798ED5F222C1490F204E49 /* PFCoreComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7988AA248E5686F8E3E522 /* PFCoreComponents.m */; };
+		BA798EFDC1DE7FD4BABFFF0C /* PFRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA798B04A978C626822DE2BF /* PFRootViewController.m */; };
+		BA798F5D40BE6B8F6B815904 /* Forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = BA7983C9A91EA0915EEE01D3 /* Forecast.json */; };
+		BA798F7C02D6F939EC3FA0B6 /* icon_cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798E6B7BCCED2C5A113449 /* icon_cloudy.png */; };
+		BA798FBE47D1FF07A7FB2A80 /* icon_cloudy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA798DB9D6A187392B3C07C1 /* icon_cloudy@2x.png */; };
+		FC9D136326AD4C2DA9F61105 /* libPods-PocketForecastTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609097971E734E02BFBD9A9C /* libPods-PocketForecastTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6BD511761880E794009C487A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BE9744615AF01A3004472E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BE9744E15AF01A3004472E2;
+			remoteInfo = PocketForecast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0036AD35FB5E8579F3A87CAB /* Pods-PocketForecastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketForecastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0DBED6614EB640FFDEBAFC96 /* Pods-PocketForecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketForecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast.release.xcconfig"; sourceTree = "<group>"; };
+		609097971E734E02BFBD9A9C /* libPods-PocketForecastTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketForecastTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		6B9FABBE16FEA9D800BABD3D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6B9FABBF16FEA9D800BABD3D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6B9FABC416FEB04500BABD3D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		6BA1400215B16B110071C7A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6BC1C67B1880DE0100A9B367 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6BD511691880E794009C487A /* PocketForecastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketForecastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD5116F1880E794009C487A /* PocketForecastTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketForecastTests-Info.plist"; sourceTree = "<group>"; };
+		6BD511711880E794009C487A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6BD511751880E794009C487A /* PocketForecastTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketForecastTests-Prefix.pch"; sourceTree = "<group>"; };
+		6BE9230415B29E56002EF310 /* PFCityDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityDao.h; sourceTree = "<group>"; };
+		6BE9230515B29E56002EF310 /* PFCityDaoUserDefaultsImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityDaoUserDefaultsImpl.h; sourceTree = "<group>"; };
+		6BE9230615B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityDaoUserDefaultsImpl.m; sourceTree = "<group>"; };
+		6BE9230715B29E56002EF310 /* PFWeatherReportDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportDao.h; sourceTree = "<group>"; };
+		6BE9230815B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportDaoFileSystemImpl.h; sourceTree = "<group>"; };
+		6BE9230915B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportDaoFileSystemImpl.m; sourceTree = "<group>"; };
+		6BE9744F15AF01A3004472E2 /* PocketForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BE9745315AF01A3004472E2 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6BE9745515AF01A3004472E2 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6BE9745715AF01A3004472E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6BE9745B15AF01A3004472E2 /* PocketForecast-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketForecast-Info.plist"; sourceTree = "<group>"; };
+		6BE9745D15AF01A3004472E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6BE9745F15AF01A3004472E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6BE9746115AF01A3004472E2 /* PocketForecast-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketForecast-Prefix.pch"; sourceTree = "<group>"; };
+		6BE9746215AF01A3004472E2 /* PFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAppDelegate.h; sourceTree = "<group>"; };
+		6BE9746315AF01A3004472E2 /* PFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFAppDelegate.m; sourceTree = "<group>"; };
+		6BE9747115AF01A3004472E2 /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8CE344E6633143DE526E9792 /* Pods-PocketForecastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketForecastTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF29A0F6EC0D9D7CFB526030 /* Pods-PocketForecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketForecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast.debug.xcconfig"; sourceTree = "<group>"; };
+		BA7980365453A2C4CA5B71EB /* PFApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFApplicationAssembly.h; sourceTree = "<group>"; };
+		BA7980523B805CF697C4D409 /* UIFont+ApplicationFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ApplicationFonts.h"; sourceTree = "<group>"; };
+		BA7980D610AB0AE04C4A3E99 /* icon_partly_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_partly_cloudy.png; sourceTree = "<group>"; };
+		BA79810DC6998A5D91FB537B /* PFTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTheme.h; sourceTree = "<group>"; };
+		BA798134314953715D04412E /* RXMLElement_PFWeatherReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement_PFWeatherReportSpec.m; sourceTree = "<group>"; };
+		BA79813E3EE85D93E2E01569 /* PFTemperatureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperatureTests.m; sourceTree = "<group>"; };
+		BA798162CA41E6D4902A2BD5 /* icon_rainy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_rainy@2x.png"; sourceTree = "<group>"; };
+		BA7981A0F0B7E0735109ABD3 /* bg5-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg5-568h@2x.png"; sourceTree = "<group>"; };
+		BA7981F95ADE57DBB6722C39 /* PFWeatherClientBasicImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClientBasicImpl.h; sourceTree = "<group>"; };
+		BA79820A0DFD6D50563F87BC /* bg4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg4@2x.png"; sourceTree = "<group>"; };
+		BA798253399A5FEC6A52CFCA /* icon_sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sunny.png; sourceTree = "<group>"; };
+		BA7982FD0093CF803EE283AE /* sunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunset.png; sourceTree = "<group>"; };
+		BA798312A8E6D9B8F302DCCB /* PFWeatherReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportView.m; sourceTree = "<group>"; };
+		BA79831FB69C01468CCE157A /* PFCityLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityLabelTableViewCell.m; sourceTree = "<group>"; };
+		BA7983426BAEC1F75CEBC6C7 /* PFThemeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThemeFactory.h; sourceTree = "<group>"; };
+		BA798386C46D4F082497CCBB /* icon_stormy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_stormy@2x.png"; sourceTree = "<group>"; };
+		BA7983A4913554BC6677D776 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Configuration.plist; sourceTree = "<group>"; };
+		BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_fade@2x.png"; sourceTree = "<group>"; };
+		BA7983C21E1C454CE757BCD6 /* bg4-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg4-568h@2x.png"; sourceTree = "<group>"; };
+		BA7983C9A91EA0915EEE01D3 /* Forecast.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = Forecast.json; sourceTree = "<group>"; };
+		BA7983F2134358A4E02D50EA /* VarelaRound-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; path = "VarelaRound-Regular.otf"; sourceTree = "<group>"; };
+		BA7983FC5295E1248DF73C06 /* bg3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg3@2x.png"; sourceTree = "<group>"; };
+		BA79840E939AE3BF6DBA71E8 /* PFCityDoaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCityDoaTests.m; sourceTree = "<group>"; };
+		BA79841E09AFC834B5DB666E /* icon_windy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_windy.png; sourceTree = "<group>"; };
+		BA79849E8B7E0932CE3BCD1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BA7984DEDAA150FBEE6C95AE /* icon_sunny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_sunny@2x.png"; sourceTree = "<group>"; };
+		BA7985380591D97A53DD10EA /* bg5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg5.png; sourceTree = "<group>"; };
+		BA7985FE29ADAAD09D517058 /* PFThemeAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThemeAssembly.h; sourceTree = "<group>"; };
+		BA79864F0BCEE619CF0905DE /* SampleForecast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleForecast.xml; sourceTree = "<group>"; };
+		BA7986D22B15C65F246F8705 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		BA7987478471BA92A0518862 /* PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReport.m; sourceTree = "<group>"; };
+		BA79874E4B94F869CE8051B5 /* PFThemeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThemeFactory.m; sourceTree = "<group>"; };
+		BA79875DE5CE201282E6D700 /* bg3-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg3-568h@2x.png"; sourceTree = "<group>"; };
+		BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFForecastConditions.m; sourceTree = "<group>"; };
+		BA79881332BAAF14FBA016C4 /* sunset-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunset-568h@2x.png"; sourceTree = "<group>"; };
+		BA798837E82B7219415A5636 /* PFWeatherClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherClientTests.m; sourceTree = "<group>"; };
+		BA7988A5EED8474C69C5CB29 /* PFForecastConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFForecastConditions.h; sourceTree = "<group>"; };
+		BA7988AA248E5686F8E3E522 /* PFCoreComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCoreComponents.m; sourceTree = "<group>"; };
+		BA7988C7AC8843061AC0B8C6 /* PFRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFRootViewController.h; path = Controllers/PFRootViewController.h; sourceTree = "<group>"; };
+		BA7988F4AB80D4FD96C0E415 /* icon_stormy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_stormy.png; sourceTree = "<group>"; };
+		BA79890A042F3EF38A97A758 /* temperature_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temperature_circle@2x.png"; sourceTree = "<group>"; };
+		BA798945DD532BA1BD7FE30A /* PFWeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportViewController.m; sourceTree = "<group>"; };
+		BA7989A03B709D5789A1ACE2 /* icon_windy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_windy@2x.png"; sourceTree = "<group>"; };
+		BA7989DC41BCE0FC73A7C518 /* CitiesList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesList.xib; sourceTree = "<group>"; };
+		BA798A07FF934E58F2C3FE16 /* PFCoreComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCoreComponents.h; sourceTree = "<group>"; };
+		BA798A7A3F225459AF1D5154 /* PFWeatherReportDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherReportDaoTests.m; sourceTree = "<group>"; };
+		BA798A7EF3E53E1850551BEC /* PFWeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReport.h; sourceTree = "<group>"; };
+		BA798AA1DEFB3C8006C73FBB /* temperature_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperature_circle.png; sourceTree = "<group>"; };
+		BA798AC9E07F264D97ACA770 /* sunset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunset@2x.png"; sourceTree = "<group>"; };
+		BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWeatherClientBasicImpl.m; sourceTree = "<group>"; };
+		BA798AD5669A020612B839CA /* bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg3.png; sourceTree = "<group>"; };
+		BA798AFF8F7ED2C2BAA5DEB6 /* UIFont+ApplicationFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ApplicationFonts.m"; sourceTree = "<group>"; };
+		BA798B04A978C626822DE2BF /* PFRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRootViewController.m; path = Controllers/PFRootViewController.m; sourceTree = "<group>"; };
+		BA798B0AB010ADE20EF1CF44 /* PFTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTheme.m; sourceTree = "<group>"; };
+		BA798B1EF321D3252A608028 /* PFTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTemperature.m; sourceTree = "<group>"; };
+		BA798B92876C0679AA3E6DC8 /* PFCurrentConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCurrentConditions.h; sourceTree = "<group>"; };
+		BA798BBF4F91EF53D782E574 /* icon_rainy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_rainy.png; sourceTree = "<group>"; };
+		BA798C0B6B4D900FA67C84E5 /* PFThemeable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThemeable.h; sourceTree = "<group>"; };
+		BA798C0F599C2103DE4A0316 /* PFCityLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCityLabelTableViewCell.h; sourceTree = "<group>"; };
+		BA798C2EBA35DCFC44E9F6CD /* AddCity.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCity.xib; sourceTree = "<group>"; };
+		BA798C7B558024C0786FA923 /* PFAddCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddCityViewController.m; sourceTree = "<group>"; };
+		BA798C8257734841BAC551B1 /* PFThemeAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThemeAssembly.m; sourceTree = "<group>"; };
+		BA798C8773496CD7E3A95CA6 /* bg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg4.png; sourceTree = "<group>"; };
+		BA798CAD4A4D871788DC4EB6 /* PFForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFForecastTableViewCell.h; sourceTree = "<group>"; };
+		BA798CBE9C70CB9652F7A3B7 /* cloud_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_icon@2x.png"; sourceTree = "<group>"; };
+		BA798CC8FA97B066BD5DD319 /* PFWeatherReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportView.h; sourceTree = "<group>"; };
+		BA798CD5EC96425F648C2CCF /* cell_fade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_fade.png; sourceTree = "<group>"; };
+		BA798D1B491EAE11E8515805 /* bg5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg5@2x.png"; sourceTree = "<group>"; };
+		BA798D2A742E3B6ED1BCE83D /* PFWeatherClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherClient.h; sourceTree = "<group>"; };
+		BA798D757661C56D7B6A49BD /* PFCitiesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCitiesListViewController.m; sourceTree = "<group>"; };
+		BA798D7C35F1F7DBC95B2DA1 /* PFCitiesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCitiesListViewController.h; sourceTree = "<group>"; };
+		BA798DB9D6A187392B3C07C1 /* icon_cloudy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_cloudy@2x.png"; sourceTree = "<group>"; };
+		BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RXMLElement+PFWeatherReport.m"; sourceTree = "<group>"; };
+		BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFApplicationAssembly.m; sourceTree = "<group>"; };
+		BA798E6B7BCCED2C5A113449 /* icon_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_cloudy.png; sourceTree = "<group>"; };
+		BA798E9E3746332B48394016 /* Questrial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; path = "Questrial-Regular.otf"; sourceTree = "<group>"; };
+		BA798EE55B711367BC250ADC /* PFForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFForecastTableViewCell.m; sourceTree = "<group>"; };
+		BA798EF2E6B2241602FA1B9F /* RXMLElement+PFWeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RXMLElement+PFWeatherReport.h"; sourceTree = "<group>"; };
+		BA798F27FD489318A1210076 /* PFWeatherReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWeatherReportViewController.h; sourceTree = "<group>"; };
+		BA798F69C1BEADA1AA7C7C66 /* PFAddCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddCityViewController.h; sourceTree = "<group>"; };
+		BA798F720169320B08150907 /* PFTemperature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTemperature.h; sourceTree = "<group>"; };
+		BA798FABE8F822F7C4C37589 /* icon_partly_cloudy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_partly_cloudy@2x.png"; sourceTree = "<group>"; };
+		BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCurrentConditions.m; sourceTree = "<group>"; };
+		E4467A75CA1D458DB9901CA3 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD2943E8EFE24EB5B86A64F3 /* libPods-PocketForecast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketForecast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6BD511661880E794009C487A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B2E1DA018962D0100BA4EE0 /* libxml2.dylib in Frameworks */,
+				6BD5116A1880E794009C487A /* XCTest.framework in Frameworks */,
+				6BD5116C1880E794009C487A /* UIKit.framework in Frameworks */,
+				6BD5116B1880E794009C487A /* Foundation.framework in Frameworks */,
+				FC9D136326AD4C2DA9F61105 /* libPods-PocketForecastTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BE9744C15AF01A3004472E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B2E1D9F18962CFB00BA4EE0 /* libxml2.dylib in Frameworks */,
+				6BA1400315B16B110071C7A0 /* QuartzCore.framework in Frameworks */,
+				6BE9745415AF01A3004472E2 /* UIKit.framework in Frameworks */,
+				6BE9745615AF01A3004472E2 /* Foundation.framework in Frameworks */,
+				6BE9745815AF01A3004472E2 /* CoreGraphics.framework in Frameworks */,
+				0FC7EBF913C643679D215992 /* libPods-PocketForecast.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BDC141ECD73560DCF2EBF7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF29A0F6EC0D9D7CFB526030 /* Pods-PocketForecast.debug.xcconfig */,
+				0DBED6614EB640FFDEBAFC96 /* Pods-PocketForecast.release.xcconfig */,
+				0036AD35FB5E8579F3A87CAB /* Pods-PocketForecastTests.debug.xcconfig */,
+				8CE344E6633143DE526E9792 /* Pods-PocketForecastTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6BD5116D1880E794009C487A /* PocketForecastTests */ = {
+			isa = PBXGroup;
+			children = (
+				6BD5116E1880E794009C487A /* Supporting Files */,
+				BA798A39BCD2CB3E3E9E2FBC /* Integration */,
+				BA7980AA6498F9744BCD811A /* Resources */,
+				BA7986967D5038324EDD7DDC /* Unit */,
+			);
+			path = PocketForecastTests;
+			sourceTree = "<group>";
+		};
+		6BD5116E1880E794009C487A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BD5116F1880E794009C487A /* PocketForecastTests-Info.plist */,
+				6BD511701880E794009C487A /* InfoPlist.strings */,
+				6BD511751880E794009C487A /* PocketForecastTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6BE9230315B29E56002EF310 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				6BE9230415B29E56002EF310 /* PFCityDao.h */,
+				6BE9230515B29E56002EF310 /* PFCityDaoUserDefaultsImpl.h */,
+				6BE9230615B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m */,
+				6BE9230715B29E56002EF310 /* PFWeatherReportDao.h */,
+				6BE9230815B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.h */,
+				6BE9230915B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.m */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		6BE9744415AF01A3004472E2 = {
+			isa = PBXGroup;
+			children = (
+				6BE9745915AF01A3004472E2 /* PocketForecast */,
+				6BD5116D1880E794009C487A /* PocketForecastTests */,
+				6BE9745215AF01A3004472E2 /* Frameworks */,
+				6BE9745015AF01A3004472E2 /* Products */,
+				3BDC141ECD73560DCF2EBF7E /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		6BE9745015AF01A3004472E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BE9744F15AF01A3004472E2 /* PocketForecast.app */,
+				6BD511691880E794009C487A /* PocketForecastTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6BE9745215AF01A3004472E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B2E1D9E18962CFB00BA4EE0 /* libxml2.dylib */,
+				6BA1400215B16B110071C7A0 /* QuartzCore.framework */,
+				6BE9745315AF01A3004472E2 /* UIKit.framework */,
+				6BE9745515AF01A3004472E2 /* Foundation.framework */,
+				6BE9745715AF01A3004472E2 /* CoreGraphics.framework */,
+				6BE9747115AF01A3004472E2 /* SenTestingKit.framework */,
+				FD2943E8EFE24EB5B86A64F3 /* libPods-PocketForecast.a */,
+				609097971E734E02BFBD9A9C /* libPods-PocketForecastTests.a */,
+				6BC1C67B1880DE0100A9B367 /* XCTest.framework */,
+				E4467A75CA1D458DB9901CA3 /* libPods-Tests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6BE9745915AF01A3004472E2 /* PocketForecast */ = {
+			isa = PBXGroup;
+			children = (
+				6BE9746215AF01A3004472E2 /* PFAppDelegate.h */,
+				6BE9746315AF01A3004472E2 /* PFAppDelegate.m */,
+				6BE9745A15AF01A3004472E2 /* Supporting Files */,
+				BA798E7C3679201AEC43BC53 /* Client */,
+				6BE9230315B29E56002EF310 /* Dao */,
+				BA798A517BE02ED4643239E0 /* Model */,
+				BA79840A9B9BA6AD4B22AE22 /* UserInterface */,
+				BA7981AECCB463AE5C18DCD2 /* Assembly */,
+				BA79847674065A0E13E255D8 /* Resources */,
+			);
+			path = PocketForecast;
+			sourceTree = "<group>";
+		};
+		6BE9745A15AF01A3004472E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BE9745B15AF01A3004472E2 /* PocketForecast-Info.plist */,
+				6BE9745C15AF01A3004472E2 /* InfoPlist.strings */,
+				6BE9745F15AF01A3004472E2 /* main.m */,
+				6BE9746115AF01A3004472E2 /* PocketForecast-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA79801B339D51E8C92ED317 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BA7983F2134358A4E02D50EA /* VarelaRound-Regular.otf */,
+				BA798E9E3746332B48394016 /* Questrial-Regular.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		BA7980AA6498F9744BCD811A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA79864F0BCEE619CF0905DE /* SampleForecast.xml */,
+				BA7983C9A91EA0915EEE01D3 /* Forecast.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BA7980BD42EE97E7C03D7BE2 /* CitiesList */ = {
+			isa = PBXGroup;
+			children = (
+				BA798D757661C56D7B6A49BD /* PFCitiesListViewController.m */,
+				BA798D7C35F1F7DBC95B2DA1 /* PFCitiesListViewController.h */,
+				BA7981D2C28FC653520FA6CE /* Views */,
+			);
+			path = CitiesList;
+			sourceTree = "<group>";
+		};
+		BA7981AECCB463AE5C18DCD2 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				BA798A07FF934E58F2C3FE16 /* PFCoreComponents.h */,
+				BA7988AA248E5686F8E3E522 /* PFCoreComponents.m */,
+				BA7980365453A2C4CA5B71EB /* PFApplicationAssembly.h */,
+				BA798E37FB886A376AD93008 /* PFApplicationAssembly.m */,
+				BA7985FE29ADAAD09D517058 /* PFThemeAssembly.h */,
+				BA798C8257734841BAC551B1 /* PFThemeAssembly.m */,
+				BA7983A4913554BC6677D776 /* Configuration.plist */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		BA7981D2C28FC653520FA6CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA7989DC41BCE0FC73A7C518 /* CitiesList.xib */,
+				BA79831FB69C01468CCE157A /* PFCityLabelTableViewCell.m */,
+				BA798C0F599C2103DE4A0316 /* PFCityLabelTableViewCell.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA7981E033DDC7D756CEC5DA /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				BA798B0AB010ADE20EF1CF44 /* PFTheme.m */,
+				BA79810DC6998A5D91FB537B /* PFTheme.h */,
+				BA79874E4B94F869CE8051B5 /* PFThemeFactory.m */,
+				BA7983426BAEC1F75CEBC6C7 /* PFThemeFactory.h */,
+				BA798C0B6B4D900FA67C84E5 /* PFThemeable.h */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		BA79839F6997E814BA1C682B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA798C2EBA35DCFC44E9F6CD /* AddCity.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA7983D9EBFEEDC3ACE88726 /* weatherIcons */ = {
+			isa = PBXGroup;
+			children = (
+				BA798E6B7BCCED2C5A113449 /* icon_cloudy.png */,
+				BA798DB9D6A187392B3C07C1 /* icon_cloudy@2x.png */,
+				BA7980D610AB0AE04C4A3E99 /* icon_partly_cloudy.png */,
+				BA798FABE8F822F7C4C37589 /* icon_partly_cloudy@2x.png */,
+				BA798BBF4F91EF53D782E574 /* icon_rainy.png */,
+				BA798162CA41E6D4902A2BD5 /* icon_rainy@2x.png */,
+				BA7988F4AB80D4FD96C0E415 /* icon_stormy.png */,
+				BA798386C46D4F082497CCBB /* icon_stormy@2x.png */,
+				BA798253399A5FEC6A52CFCA /* icon_sunny.png */,
+				BA7984DEDAA150FBEE6C95AE /* icon_sunny@2x.png */,
+				BA79841E09AFC834B5DB666E /* icon_windy.png */,
+				BA7989A03B709D5789A1ACE2 /* icon_windy@2x.png */,
+			);
+			path = weatherIcons;
+			sourceTree = "<group>";
+		};
+		BA79840A9B9BA6AD4B22AE22 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				BA79877DD1EE5642AE5A333C /* Controllers */,
+				BA798457F5820C1547589C51 /* Utils */,
+				BA7988C7AC8843061AC0B8C6 /* PFRootViewController.h */,
+				BA798B04A978C626822DE2BF /* PFRootViewController.m */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		BA798457F5820C1547589C51 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA798AFF8F7ED2C2BAA5DEB6 /* UIFont+ApplicationFonts.m */,
+				BA7980523B805CF697C4D409 /* UIFont+ApplicationFonts.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BA79847674065A0E13E255D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6B9FABC416FEB04500BABD3D /* Icon@2x.png */,
+				BA79801B339D51E8C92ED317 /* fonts */,
+				BA7983D9EBFEEDC3ACE88726 /* weatherIcons */,
+				BA7986D22B15C65F246F8705 /* Icon.png */,
+				BA798EA69027CA008D70D92A /* textures */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BA7986967D5038324EDD7DDC /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				BA79813E3EE85D93E2E01569 /* PFTemperatureTests.m */,
+				BA798134314953715D04412E /* RXMLElement_PFWeatherReportSpec.m */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		BA79877DD1EE5642AE5A333C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA798B54A6F3F186E9499999 /* AddCity */,
+				BA7980BD42EE97E7C03D7BE2 /* CitiesList */,
+				BA798DE2ABAB2A8A69B243FE /* WeatherReport */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BA798A39BCD2CB3E3E9E2FBC /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				BA79840E939AE3BF6DBA71E8 /* PFCityDoaTests.m */,
+				BA798837E82B7219415A5636 /* PFWeatherClientTests.m */,
+				BA798A7A3F225459AF1D5154 /* PFWeatherReportDaoTests.m */,
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		BA798A517BE02ED4643239E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA7988A5EED8474C69C5CB29 /* PFForecastConditions.h */,
+				BA7987CC3C49F06FABB2BECF /* PFForecastConditions.m */,
+				BA798F720169320B08150907 /* PFTemperature.h */,
+				BA798B1EF321D3252A608028 /* PFTemperature.m */,
+				BA798B92876C0679AA3E6DC8 /* PFCurrentConditions.h */,
+				BA798FEB5D10A22F3AC1C5D8 /* PFCurrentConditions.m */,
+				BA798A7EF3E53E1850551BEC /* PFWeatherReport.h */,
+				BA7987478471BA92A0518862 /* PFWeatherReport.m */,
+				BA7981E033DDC7D756CEC5DA /* Themes */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA798AE679659C7CC95C40E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA798312A8E6D9B8F302DCCB /* PFWeatherReportView.m */,
+				BA798CC8FA97B066BD5DD319 /* PFWeatherReportView.h */,
+				BA798EE55B711367BC250ADC /* PFForecastTableViewCell.m */,
+				BA798CAD4A4D871788DC4EB6 /* PFForecastTableViewCell.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA798B54A6F3F186E9499999 /* AddCity */ = {
+			isa = PBXGroup;
+			children = (
+				BA798C7B558024C0786FA923 /* PFAddCityViewController.m */,
+				BA798F69C1BEADA1AA7C7C66 /* PFAddCityViewController.h */,
+				BA79839F6997E814BA1C682B /* Views */,
+			);
+			path = AddCity;
+			sourceTree = "<group>";
+		};
+		BA798DE2ABAB2A8A69B243FE /* WeatherReport */ = {
+			isa = PBXGroup;
+			children = (
+				BA798945DD532BA1BD7FE30A /* PFWeatherReportViewController.m */,
+				BA798F27FD489318A1210076 /* PFWeatherReportViewController.h */,
+				BA798AE679659C7CC95C40E8 /* Views */,
+			);
+			path = WeatherReport;
+			sourceTree = "<group>";
+		};
+		BA798E7C3679201AEC43BC53 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				BA798EF2E6B2241602FA1B9F /* RXMLElement+PFWeatherReport.h */,
+				BA798E33D2995015037E6DE5 /* RXMLElement+PFWeatherReport.m */,
+				BA7981F95ADE57DBB6722C39 /* PFWeatherClientBasicImpl.h */,
+				BA798ACA3067E7098E5C0A06 /* PFWeatherClientBasicImpl.m */,
+				BA798D2A742E3B6ED1BCE83D /* PFWeatherClient.h */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		BA798EA69027CA008D70D92A /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				6B9FABBE16FEA9D800BABD3D /* Default.png */,
+				6B9FABBF16FEA9D800BABD3D /* Default@2x.png */,
+				BA798AA1DEFB3C8006C73FBB /* temperature_circle.png */,
+				BA79890A042F3EF38A97A758 /* temperature_circle@2x.png */,
+				BA7983B6A0DD71DD6BD78B58 /* cell_fade@2x.png */,
+				BA798CD5EC96425F648C2CCF /* cell_fade.png */,
+				BA79849E8B7E0932CE3BCD1B /* Default-568h@2x.png */,
+				BA798F751E9984ADBD0255E5 /* Loader */,
+				BA79875DE5CE201282E6D700 /* bg3-568h@2x.png */,
+				BA798AD5669A020612B839CA /* bg3.png */,
+				BA7983FC5295E1248DF73C06 /* bg3@2x.png */,
+				BA798C8773496CD7E3A95CA6 /* bg4.png */,
+				BA79820A0DFD6D50563F87BC /* bg4@2x.png */,
+				BA7983C21E1C454CE757BCD6 /* bg4-568h@2x.png */,
+				BA7985380591D97A53DD10EA /* bg5.png */,
+				BA798D1B491EAE11E8515805 /* bg5@2x.png */,
+				BA7981A0F0B7E0735109ABD3 /* bg5-568h@2x.png */,
+				BA7982FD0093CF803EE283AE /* sunset.png */,
+				BA798AC9E07F264D97ACA770 /* sunset@2x.png */,
+				BA79881332BAAF14FBA016C4 /* sunset-568h@2x.png */,
+			);
+			path = textures;
+			sourceTree = "<group>";
+		};
+		BA798F751E9984ADBD0255E5 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				BA798CBE9C70CB9652F7A3B7 /* cloud_icon@2x.png */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6BD511681880E794009C487A /* PocketForecastTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BD5117A1880E794009C487A /* Build configuration list for PBXNativeTarget "PocketForecastTests" */;
+			buildPhases = (
+				9E2C99B289DF4C21A5BE2151 /* Check Pods Manifest.lock */,
+				6BD511651880E794009C487A /* Sources */,
+				6BD511661880E794009C487A /* Frameworks */,
+				6BD511671880E794009C487A /* Resources */,
+				AF4C7AB3E69344549F0F9AA3 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6BD511771880E794009C487A /* PBXTargetDependency */,
+			);
+			name = PocketForecastTests;
+			productName = PocketForecastTests;
+			productReference = 6BD511691880E794009C487A /* PocketForecastTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6BE9744E15AF01A3004472E2 /* PocketForecast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BE9748215AF01A3004472E2 /* Build configuration list for PBXNativeTarget "PocketForecast" */;
+			buildPhases = (
+				F8D0778E628C4F479F4B3FF4 /* Check Pods Manifest.lock */,
+				6BE9744B15AF01A3004472E2 /* Sources */,
+				6BE9744C15AF01A3004472E2 /* Frameworks */,
+				6BE9744D15AF01A3004472E2 /* Resources */,
+				8CBDFD0C214E4C8881741781 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PocketForecast;
+			productName = PocketForecast;
+			productReference = 6BE9744F15AF01A3004472E2 /* PocketForecast.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6BE9744615AF01A3004472E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PF;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = typhoon;
+				TargetAttributes = {
+					6BD511681880E794009C487A = {
+						TestTargetID = 6BE9744E15AF01A3004472E2;
+					};
+				};
+			};
+			buildConfigurationList = 6BE9744915AF01A3004472E2 /* Build configuration list for PBXProject "PocketForecast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6BE9744415AF01A3004472E2;
+			productRefGroup = 6BE9745015AF01A3004472E2 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+			);
+			projectRoot = "";
+			targets = (
+				6BE9744E15AF01A3004472E2 /* PocketForecast */,
+				6BD511681880E794009C487A /* PocketForecastTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6BD511671880E794009C487A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BD511721880E794009C487A /* InfoPlist.strings in Resources */,
+				BA79843316D1C6911788F18D /* SampleForecast.xml in Resources */,
+				BA798231EAF35A0CCBE0DEFD /* Configuration.plist in Resources */,
+				BA7987A833F6B13F702FD9A1 /* cloud_icon@2x.png in Resources */,
+				BA798F5D40BE6B8F6B815904 /* Forecast.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BE9744D15AF01A3004472E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BE9745E15AF01A3004472E2 /* InfoPlist.strings in Resources */,
+				BA798CC56BF649127B173D19 /* AddCity.xib in Resources */,
+				BA79879F1CEE83F038081C53 /* CitiesList.xib in Resources */,
+				BA798F7C02D6F939EC3FA0B6 /* icon_cloudy.png in Resources */,
+				BA798FBE47D1FF07A7FB2A80 /* icon_cloudy@2x.png in Resources */,
+				BA798DC0E482FA6C6807D438 /* icon_partly_cloudy.png in Resources */,
+				BA798CC96A8610C2266A544E /* icon_partly_cloudy@2x.png in Resources */,
+				BA7987510DCA61EC53A55897 /* icon_rainy.png in Resources */,
+				BA798ACA8D54255FF6D367D2 /* icon_rainy@2x.png in Resources */,
+				BA798AE967680E4C6D984092 /* icon_stormy.png in Resources */,
+				BA7980B84E636274BB2D9F89 /* icon_stormy@2x.png in Resources */,
+				BA79831DAB57B1F0736F960C /* icon_sunny.png in Resources */,
+				BA79882BDEEABC5F7C635589 /* icon_sunny@2x.png in Resources */,
+				BA798D97A97B46BA3A44A899 /* icon_windy.png in Resources */,
+				BA798655FF08CCF03AAFAEC7 /* icon_windy@2x.png in Resources */,
+				BA79820179A4C7B8C43BC1BF /* Icon.png in Resources */,
+				BA7984CF7CDF6DC46EAFB736 /* VarelaRound-Regular.otf in Resources */,
+				BA798E82EF7D56A91CE6649A /* temperature_circle.png in Resources */,
+				BA7985BD57A6F911C135B167 /* temperature_circle@2x.png in Resources */,
+				BA7985CD4B2D4332CB0C3135 /* Questrial-Regular.otf in Resources */,
+				BA798343E93DFA08479EE28A /* cell_fade@2x.png in Resources */,
+				BA798E5E4CB73163221DEBC0 /* cell_fade.png in Resources */,
+				6B9FABC016FEA9D800BABD3D /* Default.png in Resources */,
+				6B9FABC216FEA9D800BABD3D /* Default@2x.png in Resources */,
+				6B9FABC516FEB04500BABD3D /* Icon@2x.png in Resources */,
+				BA798932263C88CAE1030072 /* Default-568h@2x.png in Resources */,
+				BA798607C95F754C2CD7BFA2 /* bg3-568h@2x.png in Resources */,
+				BA798C717F0FB458BF71743F /* bg3.png in Resources */,
+				BA7981AF874ACB6C0FC6F7F4 /* bg3@2x.png in Resources */,
+				BA798D3A2D8741F4582B9347 /* bg4.png in Resources */,
+				BA798499E35DC29B45B47A1C /* bg4@2x.png in Resources */,
+				BA7985AA12F02833B47C9953 /* bg4-568h@2x.png in Resources */,
+				BA7983A84F71D0AA1FFDB2E1 /* bg5.png in Resources */,
+				BA798B4A56CBB75FC5ADF57E /* bg5@2x.png in Resources */,
+				BA7984496F8871AEBA128A25 /* bg5-568h@2x.png in Resources */,
+				BA7981DC11B1519DABA991CB /* sunset.png in Resources */,
+				BA7981D19BEB3B55DABF9ECE /* sunset@2x.png in Resources */,
+				BA798CBD4204102A990F871D /* sunset-568h@2x.png in Resources */,
+				BA798E7D5256491EFD740848 /* Configuration.plist in Resources */,
+				BA7981A80E1051AB9403D7B4 /* cloud_icon@2x.png in Resources */,
+				BA7983C6FF96C3454EDB56C5 /* Forecast.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8CBDFD0C214E4C8881741781 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E2C99B289DF4C21A5BE2151 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF4C7AB3E69344549F0F9AA3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8D0778E628C4F479F4B3FF4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6BD511651880E794009C487A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7981CC39013885C2FE0863 /* PFCityDoaTests.m in Sources */,
+				BA7985B04F1ABA60F98D5BBA /* PFWeatherClientTests.m in Sources */,
+				BA798E904AE89A193853B7A6 /* PFWeatherReportDaoTests.m in Sources */,
+				BA7987C750BFF6B7240BBE6F /* PFTemperatureTests.m in Sources */,
+				BA798CB6FED702BC06F5473B /* RXMLElement_PFWeatherReportSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BE9744B15AF01A3004472E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BE9746015AF01A3004472E2 /* main.m in Sources */,
+				6BE9746415AF01A3004472E2 /* PFAppDelegate.m in Sources */,
+				BA798CD6D23ACE87BFC6DAA4 /* PFWeatherReport.m in Sources */,
+				BA798CFBF46EB10AC945B816 /* PFCurrentConditions.m in Sources */,
+				BA798873E9DA8CEE34984273 /* PFTemperature.m in Sources */,
+				BA7981088FA218ECD034170C /* PFWeatherClientBasicImpl.m in Sources */,
+				BA798CD2C01837FD3E6B9167 /* RXMLElement+PFWeatherReport.m in Sources */,
+				BA798711EE4D26A67AB61DE4 /* PFForecastConditions.m in Sources */,
+				6BE9230A15B29E56002EF310 /* PFCityDaoUserDefaultsImpl.m in Sources */,
+				6BE9230B15B29E56002EF310 /* PFWeatherReportDaoFileSystemImpl.m in Sources */,
+				BA798B05BFE968110CD32813 /* UIFont+ApplicationFonts.m in Sources */,
+				BA7983D9D89BC9024B1FCB17 /* PFAddCityViewController.m in Sources */,
+				BA798AEDFC11905236E98CE3 /* PFCitiesListViewController.m in Sources */,
+				BA7981261B5929B6EA923BD4 /* PFWeatherReportViewController.m in Sources */,
+				BA7983310436F7ED629C7F11 /* PFWeatherReportView.m in Sources */,
+				BA798479CEF2F6CFA15C8587 /* PFForecastTableViewCell.m in Sources */,
+				BA7988B4C6492066F2440A11 /* PFCityLabelTableViewCell.m in Sources */,
+				BA798EFDC1DE7FD4BABFFF0C /* PFRootViewController.m in Sources */,
+				BA798A54EBB46BF31180EAB1 /* PFTheme.m in Sources */,
+				BA7989FB9D72895BE06997FA /* PFThemeFactory.m in Sources */,
+				BA7981DF2314DB246B25838E /* PFApplicationAssembly.m in Sources */,
+				BA79822BC72207E033FC90C5 /* PFThemeAssembly.m in Sources */,
+				BA798ED5F222C1490F204E49 /* PFCoreComponents.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6BD511771880E794009C487A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BE9744E15AF01A3004472E2 /* PocketForecast */;
+			targetProxy = 6BD511761880E794009C487A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6BD511701880E794009C487A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BD511711880E794009C487A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6BE9745C15AF01A3004472E2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BE9745D15AF01A3004472E2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6BD511781880E794009C487A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0036AD35FB5E8579F3A87CAB /* Pods-PocketForecastTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketForecast.app/PocketForecast";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketForecastTests/PocketForecastTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "PocketForecastTests/PocketForecastTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6BD511791880E794009C487A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CE344E6633143DE526E9792 /* Pods-PocketForecastTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketForecast.app/PocketForecast";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketForecastTests/PocketForecastTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "PocketForecastTests/PocketForecastTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		6BE9748015AF01A3004472E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6BE9748115AF01A3004472E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6BE9748315AF01A3004472E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF29A0F6EC0D9D7CFB526030 /* Pods-PocketForecast.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External\"",
+				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = PocketForecast;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6BE9748415AF01A3004472E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DBED6614EB640FFDEBAFC96 /* Pods-PocketForecast.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External\"",
+				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = PocketForecast;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2 \"${PROJECT_DIR}/Pods\"/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6BD5117A1880E794009C487A /* Build configuration list for PBXNativeTarget "PocketForecastTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BD511781880E794009C487A /* Debug */,
+				6BD511791880E794009C487A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BE9744915AF01A3004472E2 /* Build configuration list for PBXProject "PocketForecast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BE9748015AF01A3004472E2 /* Debug */,
+				6BE9748115AF01A3004472E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BE9748215AF01A3004472E2 /* Build configuration list for PBXNativeTarget "PocketForecast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BE9748315AF01A3004472E2 /* Debug */,
+				6BE9748415AF01A3004472E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6BE9744615AF01A3004472E2 /* Project object */;
+}

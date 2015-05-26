@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -16,8 +16,9 @@ static NSString* const kCurrentThemeIndexFileName = @"PF_CURRENT_THEME_INDEX";
 
 @implementation PFThemeFactory
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
 
 - (instancetype)initWithThemes:(NSArray *)themes
 {
@@ -36,8 +37,9 @@ static NSString* const kCurrentThemeIndexFileName = @"PF_CURRENT_THEME_INDEX";
 }
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Interface Methods
+//-------------------------------------------------------------------------------------------
 
 - (PFTheme*)sequentialTheme
 {

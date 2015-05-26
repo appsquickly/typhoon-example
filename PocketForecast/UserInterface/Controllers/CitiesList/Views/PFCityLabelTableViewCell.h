@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  AppsQuick.ly
-//  Copyright 2012 AppsQuick.ly
+//  TYPHOON FRAMEWORK
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
-//  NOTICE: AppsQuick.ly permits you to use, modify, and distribute this file
+//  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////

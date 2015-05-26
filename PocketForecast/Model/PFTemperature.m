@@ -1,14 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
-
 
 
 #import "PFTemperature.h"
@@ -19,7 +18,10 @@ static NSString* const PFTemperatureDefaultUnits = @"pfWeather.defaultTemperatur
 @implementation PFTemperature
 
 
-/* ================================================= Class Methods ================================================== */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Class Methods
+//-------------------------------------------------------------------------------------------
+
 + (PFTemperature*) temperatureWithFahrenheitString:(NSString*)fahrenheitString {
     return [[PFTemperature alloc] initWithFahrenheitString:fahrenheitString];
 }
@@ -38,7 +40,10 @@ static NSString* const PFTemperatureDefaultUnits = @"pfWeather.defaultTemperatur
 }
 
 
-/* ================================================== Initializers ================================================== */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
+
 - (id) init {
     self = [super init];
     if (self) {
@@ -83,7 +88,10 @@ static NSString* const PFTemperatureDefaultUnits = @"pfWeather.defaultTemperatur
 }
 
 
-/* ================================================ Interface Methods =============================================== */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Interface Methods
+//-------------------------------------------------------------------------------------------
+
 - (NSNumber*) inFahrenheit {
     return _temperatureInFahrenheit;
 }
@@ -133,7 +141,7 @@ static NSString* const PFTemperatureDefaultUnits = @"pfWeather.defaultTemperatur
     return [[_longFormatter stringFromNumber:[self inCelsius]] stringByAppendingString:@"°"];;
 }
 
-/* ================================================== Utility Methods =============================================== */
+
 - (NSString*) description {
     return [NSString stringWithFormat:@"Temperature: %@f [%@ celsius]", [self asShortStringInFahrenheit],
                                       [self asShortStringInCelsius]];

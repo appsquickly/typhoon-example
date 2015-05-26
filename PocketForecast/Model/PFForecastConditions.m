@@ -1,14 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
-
 
 
 #import "PFForecastConditions.h"
@@ -18,7 +17,10 @@
 @implementation PFForecastConditions
 
 
-/* =========================================================== Class Methods ============================================================ */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Class Methods
+//-------------------------------------------------------------------------------------------
+
 + (PFForecastConditions*)conditionsWithDate:(NSDate*)date low:(PFTemperature*)low
         high:(PFTemperature*)high summary:(NSString*)summary imageUri:(NSString*)imageUri
 {
@@ -27,7 +29,10 @@
 }
 
 
-/* ============================================================ Initializers ============================================================ */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
+
 - (id)initWithDate:(NSDate*)date low:(PFTemperature*)low high:(PFTemperature*)high
         summary:(NSString*)summary imageUri:(NSString*)imageUri
 {
@@ -59,7 +64,10 @@
 }
 
 
-/* ========================================================== Interface Methods ========================================================= */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Interface Methods
+//-------------------------------------------------------------------------------------------
+
 - (NSString*)longDayOfTheWeek
 {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
@@ -68,7 +76,6 @@
 }
 
 
-/* ============================================================ Utility Methods ========================================================= */
 - (NSString*)description
 {
     return [NSString stringWithFormat:@"Forcast: day=%@, low=%@, high=%@", [self longDayOfTheWeek], _low, _high];

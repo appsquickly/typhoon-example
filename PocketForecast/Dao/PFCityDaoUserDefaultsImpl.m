@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -21,7 +21,10 @@ static NSString *const pfCitiesListKey = @"pfWeather.cities";
 static NSString *const pfCurrentCityKey = @"pfWeather.currentCityKey";
 
 
-/* ============================================================ Initializers ============================================================ */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
+
 - (instancetype)initWithDefaults:(NSUserDefaults *)defaults
 {
     self = [super init];
@@ -33,7 +36,9 @@ static NSString *const pfCurrentCityKey = @"pfWeather.currentCityKey";
 }
 
 
-/* =========================================================== Protocol Methods ========================================================= */
+//-------------------------------------------------------------------------------------------
+#pragma mark - <PFCityDao>
+//-------------------------------------------------------------------------------------------
 
 - (NSArray *)listAllCities
 {

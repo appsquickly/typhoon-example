@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
@@ -17,25 +17,27 @@
 @implementation PFWeatherReport
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Class Methods
+//-------------------------------------------------------------------------------------------
 
-+ (PFWeatherReport*)reportWithCity:(NSString*)city date:(NSDate*)date currentConditions:(PFCurrentConditions*)currentConditions
-    forecast:(NSArray*)forecast
++ (PFWeatherReport *)reportWithCity:(NSString *)city date:(NSDate *)date
+    currentConditions:(PFCurrentConditions *)currentConditions forecast:(NSArray *)forecast
 {
 
     return [[PFWeatherReport alloc] initWithCity:city date:date currentConditions:currentConditions forecast:forecast];
 }
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
 
-- (id)initWithCity:(NSString*)city date:(NSDate*)date currentConditions:(PFCurrentConditions*)currentConditions forecast:(NSArray*)forecast
+- (id)initWithCity:(NSString *)city date:(NSDate *)date currentConditions:(PFCurrentConditions *)currentConditions
+    forecast:(NSArray *)forecast
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _city = [city copy];
         _date = [date copy];
         _currentConditions = currentConditions;
@@ -44,11 +46,10 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder*)coder
+- (id)initWithCoder:(NSCoder *)coder
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _city = [coder decodeObjectForKey:@"_city"];
         _date = [coder decodeObjectForKey:@"_date"];
         _currentConditions = [coder decodeObjectForKey:@"_currentConditions"];
@@ -58,42 +59,39 @@
 }
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Interface Methods
+//-------------------------------------------------------------------------------------------
 
-- (NSString*)cityDisplayName
+- (NSString *)cityDisplayName
 {
-    NSString* displayName;
-    NSArray* components = [_city componentsSeparatedByString:@","];
-    if ([components count] > 1)
-    {
+    NSString *displayName;
+    NSArray *components = [_city componentsSeparatedByString:@","];
+    if ([components count] > 1) {
         displayName = [components objectAtIndex:0];
     }
-    else
-    {
+    else {
         displayName = [_city capitalizedString];
     }
     return displayName;
 }
 
-- (NSString*)reportDateAsString
+- (NSString *)reportDateAsString
 {
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd',' yyyy 'at' hh:mm a"];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     return [dateFormatter stringFromDate:_date];
 }
 
-/* ====================================================================================================================================== */
-#pragma mark - Utility Methods
 
-- (NSString*)description
+- (NSString *)description
 {
-    return [NSString stringWithFormat:@"Weather Report: city=%@, current conditions = %@, forecast=%@", _city, _currentConditions,
-                                      _forecast];
+    return [NSString stringWithFormat:@"Weather Report: city=%@, current conditions = %@, forecast=%@", _city,
+                                      _currentConditions, _forecast];
 }
 
-- (void)encodeWithCoder:(NSCoder*)coder
+- (void)encodeWithCoder:(NSCoder *)coder
 {
 
     [coder encodeObject:_city forKey:@"_city"];

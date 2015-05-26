@@ -1,14 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
-
 
 
 
@@ -26,8 +25,9 @@
 @implementation PFWeatherReportViewController
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
 
 - (id)initWithView:(PFWeatherReportView *)view weatherClient:(id <PFWeatherClient>)weatherClient
     weatherReportDao:(id <PFWeatherReportDao>)weatherReportDao cityDao:(id <PFCityDao>)cityDao assembly:(PFApplicationAssembly *)assembly
@@ -44,8 +44,9 @@
     return self;
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Overridden Methods
+//-------------------------------------------------------------------------------------------
 
 - (void)viewDidLoad
 {
@@ -98,8 +99,9 @@
     [super viewWillDisappear:animated];
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Private Methods
+//-------------------------------------------------------------------------------------------
 
 - (void)refreshData
 {

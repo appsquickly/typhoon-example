@@ -1,14 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  TYPHOON FRAMEWORK
-//  Copyright 2013, Jasper Blues & Contributors
+//  Copyright 2015, Typhoon Framework Contributors
 //  All Rights Reserved.
 //
 //  NOTICE: The authors permit you to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //
 ////////////////////////////////////////////////////////////////////////////////
-
 
 #import "CKUITools.h"
 #import "PFRootViewController.h"
@@ -20,8 +19,9 @@
 
 @implementation PFRootViewController
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
 
 - (instancetype)initWithMainContentViewController:(UIViewController *)mainContentViewController assembly:(PFApplicationAssembly *)assembly
 {
@@ -43,8 +43,9 @@
     return [self initWithMainContentViewController:nil assembly:nil];
 }
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Interface Methods
+//-------------------------------------------------------------------------------------------
 
 - (void)pushViewController:(UIViewController *)viewController
 {
@@ -159,8 +160,9 @@
     }
 }
 
-/* ====================================================================================================================================== */
-#pragma mark - Protocol Methods
+//-------------------------------------------------------------------------------------------
+#pragma mark - <PaperFoldViewDelegate>
+//-------------------------------------------------------------------------------------------
 
 - (void)paperFoldView:(id)paperFoldView didFoldAutomatically:(BOOL)automated toState:(PaperFoldState)paperFoldState
 {
@@ -176,8 +178,9 @@
 }
 
 
-/* ====================================================================================================================================== */
-#pragma mark - Override
+//-------------------------------------------------------------------------------------------
+#pragma mark - Overridden Methods
+//-------------------------------------------------------------------------------------------
 
 - (void)loadView
 {
@@ -225,8 +228,9 @@
 }
 
 
-/* ====================================================================================================================================== */
+//-------------------------------------------------------------------------------------------
 #pragma mark - Private Methods
+//-------------------------------------------------------------------------------------------
 
 - (void)makeNavigationControllerWithRoot:(UIViewController *)root
 {
