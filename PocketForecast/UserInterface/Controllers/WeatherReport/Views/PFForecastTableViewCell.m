@@ -11,7 +11,7 @@
 
 #import "PFForecastTableViewCell.h"
 #import "UIFont+ApplicationFonts.h"
-#import "UIColor+CKUITools.h"
+#import "NanoFrame.h"
 
 
 @implementation PFForecastTableViewCell

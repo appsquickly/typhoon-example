@@ -1,0 +1,2 @@
+RAPTUREXML_HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2
+RAPTUREXML_OTHER_LDFLAGS = -l"xml2" -l"z"

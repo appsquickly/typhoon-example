@@ -12,7 +12,7 @@
 #import "PFThemeAssembly.h"
 #import "PFThemeFactory.h"
 #import "PFTheme.h"
-#import "UIColor+CKUITools.h"
+#import "NanoFrame.h"
 
 /**
 * This assembly illustrates the use of factory-components & collections.

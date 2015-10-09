@@ -9,7 +9,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "CKUITools.h"
+#import "NanoFrame.h"
 #import "PFRootViewController.h"
 #import "PFCitiesListViewController.h"
 #import "PFAddCityViewController.h"
@@ -18,6 +18,8 @@
 #define SIDE_CONTROLLER_WIDTH 245.0
 
 @implementation PFRootViewController
+
+@dynamic view;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction

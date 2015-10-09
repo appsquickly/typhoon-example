@@ -47,5 +47,10 @@
         <string>PFCoreComponents</string>
         <string>PFThemeAssembly</string>
     </array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

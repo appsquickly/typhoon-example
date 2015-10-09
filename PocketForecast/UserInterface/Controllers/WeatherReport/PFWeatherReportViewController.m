@@ -24,6 +24,7 @@
 
 @implementation PFWeatherReportViewController
 
+@dynamic view;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
