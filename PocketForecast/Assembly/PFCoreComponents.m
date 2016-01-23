@@ -15,6 +15,7 @@
 #import "PFWeatherReportDaoFileSystemImpl.h"
 #import "PFCityDaoUserDefaultsImpl.h"
 #import "TyphoonConfigPostProcessor.h"
+#import "TyphoonDefinition+Infrastructure.h"
 
 @implementation PFCoreComponents
 
@@ -46,5 +47,9 @@
     }];
 }
 
+- (id)config
+{
+    return [TyphoonDefinition withConfigName:@"Configuration.plist"];
+}
 
 @end

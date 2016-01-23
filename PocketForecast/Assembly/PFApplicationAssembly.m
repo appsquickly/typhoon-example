@@ -17,7 +17,6 @@
 #import "PFThemeAssembly.h"
 #import "PFWeatherReportViewController.h"
 #import "PFAppDelegate.h"
-#import "TyphoonDefinition+Infrastructure.h"
 
 
 @implementation PFApplicationAssembly
@@ -49,11 +48,6 @@
         }];
         [definition injectProperty:@selector(rootViewController) with:[self rootViewController]];
     }];
-}
-
-- (id)config
-{
-    return [TyphoonDefinition configDefinitionWithName:@"Configuration.plist"];
 }
 
 //-------------------------------------------------------------------------------------------
