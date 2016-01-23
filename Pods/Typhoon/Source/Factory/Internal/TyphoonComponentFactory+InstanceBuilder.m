@@ -26,6 +26,7 @@ TYPHOON_LINK_CATEGORY(TyphoonComponentFactory_InstanceBuilder)
 #import "TyphoonPropertyInjection.h"
 #import "NSObject+TyphoonIntrospectionUtils.h"
 #import "TyphoonFactoryAutoInjectionPostProcessor.h"
+#import "TyphoonDefinition+Namespacing.h"
 
 @implementation TyphoonComponentFactory (InstanceBuilder)
 
@@ -59,7 +60,7 @@ TYPHOON_LINK_CATEGORY(TyphoonComponentFactory_InstanceBuilder)
 
         TyphoonInjectionContext *context = [[TyphoonInjectionContext alloc] initWithFactory:self args:args
             raiseExceptionIfCircular:YES];
-        context.classUnderConstruction = isClass ? (Class)instance : [instance class];;
+        context.classUnderConstruction = isClass ? (Class)instance : [instance class];
 
         [definition.initializer createInvocationWithContext:context completion:^(NSInvocation *invocation) {
             if (isClass && ![definition.initializer isClassMethodOnClass:context.classUnderConstruction]) {
@@ -153,6 +154,10 @@ TYPHOON_LINK_CATEGORY(TyphoonComponentFactory_InstanceBuilder)
 
 - (void)doMethodInjection:(TyphoonMethod *)method onInstance:(id)instance args:(TyphoonRuntimeArguments *)args
 {
+    if (instance == nil) {
+        return;
+    }
+    
     TyphoonInjectionContext *context = [[TyphoonInjectionContext alloc] initWithFactory:self args:args
         raiseExceptionIfCircular:NO];
     context.classUnderConstruction = [instance class];
@@ -273,6 +278,7 @@ TYPHOON_LINK_CATEGORY(TyphoonComponentFactory_InstanceBuilder)
         for (id propertyInjection in properties) {
             [result addInjectedPropertyIfNotExists:propertyInjection];
         }
+        [result applyGlobalNamespace];
     }
 
     return result;

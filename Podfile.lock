@@ -11,9 +11,9 @@ PODS:
     - OCHamcrest (~> 4.0)
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
-  - Typhoon (HEAD based on 3.3.3):
-    - Typhoon/no-arc (= HEAD based on 3.3.3)
-  - Typhoon/no-arc (HEAD based on 3.3.3)
+  - Typhoon (HEAD based on 3.4.5):
+    - Typhoon/no-arc (= HEAD based on 3.4.5)
+  - Typhoon/no-arc (HEAD based on 3.4.5)
 
 DEPENDENCIES:
   - Expecta (~> 0.2.1)
@@ -49,6 +49,6 @@ SPEC CHECKSUMS:
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
   PaperFold: 7ebdf11028012a3e0f3906bd455054369ff79e4a
   RaptureXML: b5c33c04c1a4adfd8ad0d5463329a31820596e82
-  Typhoon: df3d23f59dccc8eda3e6535e58afd160ae60567e
+  Typhoon: 200100687af3233ec5ed019064df3c9ffe350475
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

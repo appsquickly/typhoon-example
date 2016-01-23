@@ -20,9 +20,9 @@
     if ([[original subviews] count] > 0) {
         LogInfo(@"Warning: placeholder view contains (%d) subviews. They will be replaced by typhoon definition '%@'", (int)[[original subviews] count], definitionKey);
     }
-    TyphoonComponentFactory *currentFactory = [TyphoonComponentFactory factoryForResolvingFromXibs];
+    TyphoonComponentFactory *currentFactory = [TyphoonComponentFactory factoryForResolvingUI];
     if (!currentFactory) {
-        [NSException raise:NSInternalInconsistencyException format:@"Can't find Typhoon factory to resolve definition from xib. Check [TyphoonComponentFactory setFactoryForResolvingFromXibs:] method."];
+        [NSException raise:NSInternalInconsistencyException format:@"Can't find Typhoon factory to resolve definition from xib. Check [TyphoonComponentFactory setFactoryForResolvingUI:] method."];
     }
     id result = [currentFactory componentForKey:definitionKey];
     if (![result isKindOfClass:[UIView class]]) {
@@ -42,8 +42,10 @@
         BOOL replaceSecondItem = [constraint secondItem] == src;
         id firstItem = replaceFirstItem ? dst : constraint.firstItem;
         id secondItem = replaceSecondItem ? dst : constraint.secondItem;
-        NSLayoutConstraint *copy = [NSLayoutConstraint constraintWithItem:firstItem attribute:constraint.firstAttribute relatedBy:constraint.relation toItem:secondItem attribute:constraint.secondAttribute multiplier:constraint.multiplier constant:constraint.constant];
-        [dst addConstraint:copy];
+        // Use the same constraint instance that the external outlets
+        [constraint setValue:firstItem forKey:NSStringFromSelector(@selector(firstItem))];
+        [constraint setValue:secondItem forKey:NSStringFromSelector(@selector(secondItem))];
+        [dst addConstraint:constraint];
     }
     
     dst.frame = src.frame;

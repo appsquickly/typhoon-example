@@ -1,2 +1,5 @@
-RAPTUREXML_HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2
-RAPTUREXML_OTHER_LDFLAGS = -l"xml2" -l"z"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/RaptureXML" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/ICLoader" "${PODS_ROOT}/Headers/Public/NGAParallaxMotion" "${PODS_ROOT}/Headers/Public/NSURL+QueryDictionary" "${PODS_ROOT}/Headers/Public/NanoFrame" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCLogTemplate" "${PODS_ROOT}/Headers/Public/OCMockito" "${PODS_ROOT}/Headers/Public/PaperFold" "${PODS_ROOT}/Headers/Public/RaptureXML" "${PODS_ROOT}/Headers/Public/Typhoon" $(SDKROOT)/usr/include/libxml2
+OTHER_LDFLAGS = -l"xml2" -l"z"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

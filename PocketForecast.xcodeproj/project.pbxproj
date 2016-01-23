@@ -620,6 +620,7 @@
 				6BD511661880E794009C487A /* Frameworks */,
 				6BD511671880E794009C487A /* Resources */,
 				AF4C7AB3E69344549F0F9AA3 /* Copy Pods Resources */,
+				D3499418E49E66312E5C71D0 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -640,6 +641,7 @@
 				6BE9744C15AF01A3004472E2 /* Frameworks */,
 				6BE9744D15AF01A3004472E2 /* Resources */,
 				8CBDFD0C214E4C8881741781 /* Copy Pods Resources */,
+				DD709A71169A18C043486D1B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -675,8 +677,6 @@
 			mainGroup = 6BE9744415AF01A3004472E2;
 			productRefGroup = 6BE9745015AF01A3004472E2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				6BE9744E15AF01A3004472E2 /* PocketForecast */,
@@ -792,6 +792,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3499418E49E66312E5C71D0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD709A71169A18C043486D1B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F8D0778E628C4F479F4B3FF4 /* Check Pods Manifest.lock */ = {
