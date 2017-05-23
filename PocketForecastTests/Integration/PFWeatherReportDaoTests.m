@@ -30,7 +30,7 @@
 
 - (void)setUp
 {
-    PFApplicationAssembly *assembly = [[PFApplicationAssembly new] activate];
+    PFApplicationAssembly *assembly = [[PFApplicationAssembly new] activated];
 
     weatherReportDao = [assembly.coreComponents weatherReportDao];
 

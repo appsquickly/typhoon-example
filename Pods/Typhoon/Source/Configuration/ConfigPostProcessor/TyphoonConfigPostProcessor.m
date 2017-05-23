@@ -11,10 +11,11 @@
 
 
 #import "TyphoonConfigPostProcessor.h"
+#import "TyphoonConfigPostProcessor+Internal.h"
 #import "TyphoonResource.h"
 #import "TyphoonDefinition.h"
 #import "TyphoonInjectionByConfig.h"
-#import "TyphoonDefinition+InstanceBuilder.h"
+#import "TyphoonDefinition+Infrastructure.h"
 #import "TyphoonPropertyStyleConfiguration.h"
 #import "TyphoonInjections.h"
 #import "TyphoonJsonStyleConfiguration.h"
@@ -23,6 +24,7 @@
 #import "TyphoonInjectionByReference.h"
 #import "TyphoonRuntimeArguments.h"
 #import "TyphoonDefinitionNamespace.h"
+#import "TyphoonInject.h"
 #import "OCLogTemplate.h"
 
 static NSMutableDictionary *propertyPlaceholderRegistry;
@@ -172,12 +174,6 @@ static NSMutableDictionary *propertyPlaceholderRegistry;
 }
 
 //-------------------------------------------------------------------------------------------
-#pragma mark - Interface Methods
-//-------------------------------------------------------------------------------------------
-
-
-
-//-------------------------------------------------------------------------------------------
 #pragma mark - Protocol Methods
 //-------------------------------------------------------------------------------------------
 
@@ -188,6 +184,15 @@ static NSMutableDictionary *propertyPlaceholderRegistry;
         [self configureInjectionsInDefinition:definition];
         [self configureInjectionsInRuntimeArgumentsInDefinition:definition];
     }
+}
+
+//-------------------------------------------------------------------------------------------
+#pragma mark - Private Methods
+//-------------------------------------------------------------------------------------------
+
+- (BOOL)shouldInjectDefinition:(TyphoonDefinition *)definition
+{
+    return [_space isEqual:definition.space] || [_space isGlobalNamespace];
 }
 
 - (void)configureInjectionsInDefinition:(TyphoonDefinition *)definition
@@ -233,14 +238,10 @@ static NSMutableDictionary *propertyPlaceholderRegistry;
     return result;
 }
 
-- (BOOL)shouldInjectDefinition:(TyphoonDefinition *)definition
-{
-    return [_space isEqual:definition.space] || [_space isGlobalNamespace];
-}
-
 @end
+
 
 id TyphoonConfig(NSString *configKey)
 {
-    return TyphoonInjectionWithConfigKey(configKey);
+    return [TyphoonInject byConfigKey:configKey];
 }

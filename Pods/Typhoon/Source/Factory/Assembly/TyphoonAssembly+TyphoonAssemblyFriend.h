@@ -10,7 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#import <Foundation/Foundation.h>
 #import "TyphoonAssembly.h"
 
 @interface TyphoonAssembly (TyphoonAssemblyFriend)
@@ -23,10 +22,12 @@
 
 - (NSArray *)preattachedInfrastructureComponents;
 
-- (TyphoonDefinition *)definitionForKey:(NSString *)key;
-
 - (Class)assemblyClassForKey:(NSString *)key;
 
-@property(readonly) NSSet *definitionSelectors;
+- (void)activateWithFactory:(TyphoonComponentFactory *)factory collaborators:(NSSet *)collaborators;
+
+@property (readonly) NSSet *definitionSelectors;
+
+- (instancetype)accessor;
 
 @end

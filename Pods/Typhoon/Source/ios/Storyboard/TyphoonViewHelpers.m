@@ -11,6 +11,7 @@
 
 #import "TyphoonViewHelpers.h"
 #import "TyphoonStoryboard.h"
+#import "NSLayoutConstraint+TyphoonOutletTransfer.h"
 #import "OCLogTemplate.h"
 
 @implementation TyphoonViewHelpers
@@ -42,10 +43,21 @@
         BOOL replaceSecondItem = [constraint secondItem] == src;
         id firstItem = replaceFirstItem ? dst : constraint.firstItem;
         id secondItem = replaceSecondItem ? dst : constraint.secondItem;
-        // Use the same constraint instance that the external outlets
-        [constraint setValue:firstItem forKey:NSStringFromSelector(@selector(firstItem))];
-        [constraint setValue:secondItem forKey:NSStringFromSelector(@selector(secondItem))];
-        [dst addConstraint:constraint];
+        NSLayoutConstraint *newConstraint = [NSLayoutConstraint constraintWithItem:firstItem
+                                                                         attribute:constraint.firstAttribute
+                                                                         relatedBy:constraint.relation
+                                                                            toItem:secondItem
+                                                                         attribute:constraint.secondAttribute
+                                                                        multiplier:constraint.multiplier
+                                                                          constant:constraint.constant];
+        newConstraint.priority = constraint.priority;
+        
+        NSString *typhoonTransferIdentifier = [[NSUUID UUID] UUIDString];
+        constraint.typhoonTransferIdentifier = typhoonTransferIdentifier;
+        newConstraint.typhoonTransferIdentifier = typhoonTransferIdentifier;
+        newConstraint.typhoonTransferConstraint = constraint;
+
+        [dst addConstraint:newConstraint];
     }
     
     dst.frame = src.frame;

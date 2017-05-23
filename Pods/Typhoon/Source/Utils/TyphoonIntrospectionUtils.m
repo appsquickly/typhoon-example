@@ -34,7 +34,7 @@ Class TyphoonClassFromFrameworkString(NSString *className);
             return (NULL);
         }
 
-        static char buffer[256];
+        char buffer[256];
         const char *e = strchr(attributes, ',');
         if (e == NULL) {
             return (NULL);
@@ -257,6 +257,11 @@ BOOL TyphoonIsInvalidClassName(NSString *className)
     return NO;
 }
 
+Class TyphoonClassFromClass(Class clazz)
+{
+    return TyphoonClassFromString(NSStringFromClass(clazz));
+}
+
 Class TyphoonClassFromString(NSString *className)
 {
     if (TyphoonIsInvalidClassName(className)) {
@@ -376,6 +381,11 @@ Class TyphoonClassFromFrameworkString(NSString *className) {
 BOOL IsClass(id classOrProtocol)
 {
     return class_isMetaClass(object_getClass(classOrProtocol));
+}
+
+BOOL IsBlock(const char *objCType)
+{
+    return strcmp(objCType, "@?") == 0;
 }
 
 BOOL IsProtocol(id classOrProtocol)

@@ -33,10 +33,10 @@
 
 - (void)setUp
 {
-    PFApplicationAssembly *assembly = [[PFApplicationAssembly new] activate];
+    PFApplicationAssembly *assembly = [[PFApplicationAssembly new] activated];
 
     TyphoonConfigPostProcessor* config = [TyphoonConfigPostProcessor forResourceNamed:@"Configuration.plist"];
-    [assembly attachPostProcessor:config];
+    [assembly attachDefinitionPostProcessor:config];
 
     weatherClient = [assembly.coreComponents weatherClient];
 }

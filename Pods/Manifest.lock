@@ -11,9 +11,14 @@ PODS:
     - OCHamcrest (~> 4.0)
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
-  - Typhoon (HEAD based on 3.4.5):
-    - Typhoon/no-arc (= HEAD based on 3.4.5)
-  - Typhoon/no-arc (HEAD based on 3.4.5)
+  - Typhoon (4.0.2):
+    - Typhoon/DeallocNotifier (= 4.0.2)
+    - Typhoon/IntrospectionUtils (= 4.0.2)
+    - Typhoon/no-arc (= 4.0.2)
+  - Typhoon/DeallocNotifier (4.0.2)
+  - Typhoon/IntrospectionUtils (4.0.2)
+  - Typhoon/no-arc (4.0.2):
+    - Typhoon/IntrospectionUtils
 
 DEPENDENCIES:
   - Expecta (~> 0.2.1)
@@ -26,7 +31,7 @@ DEPENDENCIES:
   - OCMockito
   - PaperFold (from `https://github.com/jasperblues/PaperFold-for-iOS.git`, tag `1.2-no-gesture-recognizers`)
   - RaptureXML
-  - Typhoon (HEAD)
+  - Typhoon
 
 EXTERNAL SOURCES:
   PaperFold:
@@ -49,6 +54,8 @@ SPEC CHECKSUMS:
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
   PaperFold: 7ebdf11028012a3e0f3906bd455054369ff79e4a
   RaptureXML: b5c33c04c1a4adfd8ad0d5463329a31820596e82
-  Typhoon: 200100687af3233ec5ed019064df3c9ffe350475
+  Typhoon: 05db9d33d798b90c202bf3f754275c03efe93297
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: e2a619a72884d9e4a60b99258655fae8f80ad897
+
+COCOAPODS: 1.2.1
