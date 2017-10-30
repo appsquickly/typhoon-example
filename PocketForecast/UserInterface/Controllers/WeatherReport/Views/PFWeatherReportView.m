@@ -93,8 +93,12 @@
     [_conditionsIcon setFrame:CGRectMake(self.width / 2 - 125, 143, 130, 120)];
     [_temperatureLabelContainer setFrame:CGRectMake(self.width / 2 + 15, 155, 88, 88)];
 
-    [_toolbar setFrame:CGRectMake(0, self.frame.size.height - _toolbar.height, self.width, _toolbar.height)];
-    [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 150, self.width, 150)];
+    CGFloat bottomOffset = self.frame.size.height;
+    if (@available(iOS 11.0, *)) {
+        bottomOffset -= self.safeAreaInsets.bottom;
+    }
+    [_toolbar setFrame:CGRectMake(0, bottomOffset - _toolbar.height, self.width, _toolbar.height)];
+    [_tableView setFrame:CGRectMake(0, _toolbar.frame.origin.y - 150, self.width, 150)];
     [_lastUpdateLabel setFrame:[_toolbar bounds]];
 }
 
