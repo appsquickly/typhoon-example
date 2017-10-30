@@ -30,7 +30,7 @@
     return [TyphoonDefinition withClass:[PFAppDelegate class] configuration:^(TyphoonDefinition *definition)
     {
         [definition injectProperty:@selector(window) with:[self mainWindow]];
-        [definition injectProperty:@selector(cityDao) with:[_coreComponents cityDao]];
+        [definition injectProperty:@selector(cityDao) with:[self.coreComponents cityDao]];
         [definition injectProperty:@selector(rootViewController) with:[self rootViewController]];
     }];
 }
@@ -72,8 +72,8 @@
     {
         [definition useInitializer:@selector(initWithCityDao:theme:) parameters:^(TyphoonMethod *initializer)
         {
-            [initializer injectParameterWith:[_coreComponents cityDao]];
-            [initializer injectParameterWith:[_themeProvider currentTheme]];
+            [initializer injectParameterWith:[self.coreComponents cityDao]];
+            [initializer injectParameterWith:[self.themeProvider currentTheme]];
         }];
         [definition injectProperty:@selector(assembly)];
     }];
@@ -87,9 +87,9 @@
             parameters:^(TyphoonMethod *initializer)
             {
                 [initializer injectParameterWith:[self weatherReportView]];
-                [initializer injectParameterWith:[_coreComponents weatherClient]];
-                [initializer injectParameterWith:[_coreComponents weatherReportDao]];
-                [initializer injectParameterWith:[_coreComponents cityDao]];
+                [initializer injectParameterWith:[self.coreComponents weatherClient]];
+                [initializer injectParameterWith:[self.coreComponents weatherReportDao]];
+                [initializer injectParameterWith:[self.coreComponents cityDao]];
                 [initializer injectParameterWith:self];
             }];
     }];
@@ -99,7 +99,7 @@
 {
     return [TyphoonDefinition withClass:[PFWeatherReportView class] configuration:^(TyphoonDefinition *definition)
     {
-        [definition injectProperty:@selector(theme) with:[_themeProvider currentTheme]];
+        [definition injectProperty:@selector(theme) with:[self.themeProvider currentTheme]];
     }];
 }
 
@@ -113,9 +113,9 @@
             [initializer injectParameterWith:[NSBundle mainBundle]];
         }];
 
-        [definition injectProperty:@selector(cityDao) with:[_coreComponents cityDao]];
-        [definition injectProperty:@selector(weatherClient) with:[_coreComponents weatherClient]];
-        [definition injectProperty:@selector(theme) with:[_themeProvider currentTheme]];
+        [definition injectProperty:@selector(cityDao) with:[self.coreComponents cityDao]];
+        [definition injectProperty:@selector(weatherClient) with:[self.coreComponents weatherClient]];
+        [definition injectProperty:@selector(theme) with:[self.themeProvider currentTheme]];
         [definition injectProperty:@selector(rootViewController) with:[self rootViewController]];
     }];
 }

@@ -88,12 +88,13 @@
     [_backgroundView setFrame:CGRectInset(self.bounds, -10, -10)];
 
     [_cityNameLabel setFrame:CGRectMake(0, 60, self.width, 40)];
-    [_conditionsDescriptionLabel setFrame:CGRectMake(0, 90, 320, 50)];
-    [_conditionsIcon setFrame:CGRectMake(40, 143, 130, 120)];
-    [_temperatureLabelContainer setFrame:CGRectMake(180, 155, 88, 88)];
+    [_conditionsDescriptionLabel setFrame:CGRectMake(0, 90, self.width, 50)];
+  
+    [_conditionsIcon setFrame:CGRectMake(self.width / 2 - 125, 143, 130, 120)];
+    [_temperatureLabelContainer setFrame:CGRectMake(self.width / 2 + 15, 155, 88, 88)];
 
     [_toolbar setFrame:CGRectMake(0, self.frame.size.height - _toolbar.height, self.width, _toolbar.height)];
-    [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 150, 320, 150)];
+    [_tableView setFrame:CGRectMake(0, self.frame.size.height - _toolbar.frame.size.height - 150, self.width, 150)];
     [_lastUpdateLabel setFrame:[_toolbar bounds]];
 }
 
