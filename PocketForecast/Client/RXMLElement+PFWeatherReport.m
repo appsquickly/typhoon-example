@@ -65,8 +65,8 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     NSDate* date = [formatter dateFromString:[[self child:@"date"] text]];
-    PFTemperature* low = [PFTemperature temperatureWithFahrenheitString:[[self child:@"tempMinF"] text]];
-    PFTemperature* high = [PFTemperature temperatureWithFahrenheitString:[[self child:@"tempMaxF"] text]];
+    PFTemperature* low = [PFTemperature temperatureWithFahrenheitString:[[self child:@"mintempF"] text]];
+    PFTemperature* high = [PFTemperature temperatureWithFahrenheitString:[[self child:@"maxtempF"] text]];
     NSString* description = [[self child:@"weatherDesc"] text];
     NSString* imageUri = [[self child:@"weatherIconUrl"] text];
 
