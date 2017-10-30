@@ -1108,7 +1108,7 @@
 				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",
@@ -1141,7 +1141,7 @@
 				GCC_PREFIX_HEADER = "PocketForecast/PocketForecast-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "PocketForecast/PocketForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",

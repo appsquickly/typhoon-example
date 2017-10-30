@@ -96,6 +96,12 @@ static int const FAHRENHEIT_SEGMENT_INDEX = 1;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 //-------------------------------------------------------------------------------------------
 #pragma mark - <UITableViewDelegate> & <UITableViewDataSource>
 //-------------------------------------------------------------------------------------------
