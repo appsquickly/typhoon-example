@@ -25,7 +25,6 @@
     [ICLoader setImageName:@"cloud_icon.png"];
     [ICLoader setLabelFontName:[UIFont applicationFontOfSize:10].fontName];
 
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
         NSFontAttributeName            : [UIFont applicationFontOfSize:20],
         NSForegroundColorAttributeName : [UIColor whiteColor],
