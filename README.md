@@ -26,11 +26,11 @@ to (Ha!). Now, proceed to the exercises below.
 ### Exercises
 
 1. Study the <a href="https://github.com/typhoon-framework/Typhoon-example/blob/master/PocketForecast/Assembly/PFCoreComponents.m">core components</a>, 
-<a href="https://github.com/typhoon-framework/Typhoon-example/blob/master/PocketForecast/Assembly/PFApplicationAssembly.m">view controllers</a> and <a href="https://github.com/typhoon-framework/Typhoon-example/blob/master/PocketForecast/Assembly/PFThemeAssembly.m">themes</a>. 
+<a href="https://github.com/typhoon-framework/typhoon-example/blob/master/PocketForecast/Assembly/PFApplicationAssembly.m">view controllers</a> and <a href="https://github.com/typhoon-framework/typhoon-example/blob/master/PocketForecast/Assembly/PFThemeAssembly.m">themes</a>. 
 Notice how the framework allows you to group related components together. Notice how dependency injection allows for 
 centralized configuration, at the same time as using aggressive memory management. (With default prototype-scope, components will go away 
 whenever they're not being used). 
-1. Study the <a href="https://github.com/typhoon-framework/Typhoon-example/tree/master/PocketForecastTests/Integration">test cases</a>.
+1. Study the <a href="https://github.com/typhoon-framework/typhoon-example/tree/master/PocketForecastTests/Integration">test cases</a>.
 Imagine that you needed to use one service URL for integration tests and another for production. How would you do it?
 1. Imagine that you decided to save the list of cities that the user wants to get reports for to iCloud, instead of 
 locally on the device. Notice how you'd only need to change one line of code to supply your new implementation in 
@@ -41,9 +41,9 @@ place of the old one. And you'd be able to reuse the existing test cases.
 
 
 ### The App 
-![Weather Report](http://appsquickly.github.io/Typhoon//images/portfolio/PocketForecast3.gif)
-![Weather Report](http://appsquickly.github.io/Typhoon//images/portfolio/pf-beach1.png)
-![Weather Report](http://appsquickly.github.io/Typhoon//images/portfolio/pf-lights1.png)
+![Weather Report](http://appsquickly.github.io/typhoon//images/portfolio/PocketForecast3.gif)
+![Weather Report](http://appsquickly.github.io/typhoon//images/portfolio/pf-beach1.png)
+![Weather Report](http://appsquickly.github.io/typhoon//images/portfolio/pf-lights1.png)
 
 ### I'm blown away!
 
