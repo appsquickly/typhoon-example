@@ -1,19 +1,12 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCIsAnything.h"
 
 
 @implementation HCIsAnything
-
-+ (instancetype)isAnything
 {
-    return [[self alloc] init];
-}
-
-+ (instancetype)isAnythingWithDescription:(NSString *)aDescription
-{
-    return [[self alloc] initWithDescription:aDescription];
+    NSString *_description;
 }
 
 - (instancetype)init
@@ -22,22 +15,22 @@
     return self;
 }
 
-- (instancetype)initWithDescription:(NSString *)aDescription
+- (instancetype)initWithDescription:(NSString *)description
 {
     self = [super init];
     if (self)
-        description = [aDescription copy];
+        _description = [description copy];
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     return YES;
 }
 
-- (void)describeTo:(id<HCDescription>)aDescription
+- (void)describeTo:(id <HCDescription>)aDescription
 {
-    [aDescription appendText:description];
+    [aDescription appendText:_description];
 }
 
 @end
@@ -45,10 +38,10 @@
 
 id HC_anything()
 {
-    return [HCIsAnything isAnything];
+    return [[HCIsAnything alloc] init];
 }
 
 id HC_anythingWithDescription(NSString *description)
 {
-    return [HCIsAnything isAnythingWithDescription:description];
+    return [[HCIsAnything alloc] initWithDescription:description];
 }

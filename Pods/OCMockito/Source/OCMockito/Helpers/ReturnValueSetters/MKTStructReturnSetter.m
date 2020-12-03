@@ -1,12 +1,12 @@
 //  OCMockito by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
+//  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
 #import "MKTStructReturnSetter.h"
 
 
 @implementation MKTStructReturnSetter
 
-- (instancetype)initWithSuccessor:(MKTReturnValueSetter *)successor
+- (instancetype)initWithSuccessor:(nullable MKTReturnValueSetter *)successor
 {
     self = [super initWithType:"{" successor:successor];
     return self;

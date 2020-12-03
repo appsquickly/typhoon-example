@@ -1,12 +1,12 @@
 //  OCMockito by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
+//  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
 #import "MKTCharReturnSetter.h"
 
 
 @implementation MKTCharReturnSetter
 
-- (instancetype)initWithSuccessor:(MKTReturnValueSetter *)successor
+- (instancetype)initWithSuccessor:(nullable MKTReturnValueSetter *)successor
 {
     self = [super initWithType:@encode(char) successor:successor];
     return self;

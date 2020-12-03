@@ -1,35 +1,42 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 //  Contribution by Todd Farrell
 
 #import <OCHamcrest/HCBaseMatcher.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * @abstract Matches objects that conform to specified protocol.
+ */
 @interface HCConformsToProtocol : HCBaseMatcher
 
-+ (instancetype)conformsTo:(Protocol *)protocol;
-- (instancetype)initWithProtocol:(Protocol *)protocol;
+- (instancetype)initWithProtocol:(Protocol *)protocol NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 
 
 FOUNDATION_EXPORT id HC_conformsTo(Protocol *aProtocol);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief conformsTo(aProtocol) -
- * Matches if object conforms to a given protocol.
+ * @abstract Creates a matcher that matches when the examined object conforms to the specified
+ * protocol.
  * @param aProtocol The protocol to compare against as the expected protocol.
- * @discussion This matcher checks whether the evaluated object conforms to <em>aProtocol</em>.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(myObject, conformsTo(\@protocol(NSCoding))</pre>
  *
- * Example:
- * <ul>
- *   <li><code>conformsTo(\@protocol(NSObject))</code></li>
- * </ul>
- *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_conformsTo instead.
  */
-#define conformsTo HC_conformsTo
+static inline id conformsTo(Protocol *aProtocol)
+{
+    return HC_conformsTo(aProtocol);
+}
 #endif
+
+NS_ASSUME_NONNULL_END

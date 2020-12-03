@@ -1,17 +1,12 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCStringStartsWith.h"
 
 
 @implementation HCStringStartsWith
 
-+ (instancetype)stringStartsWith:(NSString *)aSubstring
-{
-    return [[self alloc] initWithSubstring:aSubstring];
-}
-
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     if (![item respondsToSelector:@selector(hasPrefix:)])
         return NO;
@@ -27,7 +22,7 @@
 @end
 
 
-id HC_startsWith(NSString *aString)
+id HC_startsWith(NSString *prefix)
 {
-    return [HCStringStartsWith stringStartsWith:aString];
+    return [[HCStringStartsWith alloc] initWithSubstring:prefix];
 }

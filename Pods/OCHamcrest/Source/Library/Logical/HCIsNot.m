@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCIsNot.h"
 
@@ -12,12 +12,7 @@
 
 @implementation HCIsNot
 
-+ (instancetype)isNot:(id <HCMatcher>)matcher
-{
-    return [[self alloc] initNot:matcher];
-}
-
-- (instancetype)initNot:(id <HCMatcher>)matcher
+- (instancetype)initWithMatcher:(id <HCMatcher>)matcher
 {
     self = [super init];
     if (self)
@@ -25,24 +20,24 @@
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     return ![self.matcher matches:item];
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [[description appendText:@"not "] appendDescriptionOf:self.matcher];
 }
 
-- (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
+- (void)describeMismatchOf:(nullable id)item to:(nullable id <HCDescription>)mismatchDescription
 {
     [self.matcher describeMismatchOf:item to:mismatchDescription];
 }
 @end
 
 
-id HC_isNot(id aMatcher)
+id HC_isNot(_Nullable id value)
 {
-    return [HCIsNot isNot:HCWrapInMatcher(aMatcher)];
+    return [[HCIsNot alloc] initWithMatcher:HCWrapInMatcher(value)];
 }

@@ -1,1 +1,1 @@
-../../../OCMockito/Source/OCMockito/MKTTestLocation.h
+../../../OCMockito/Source/OCMockito/Core/MKTTestLocation.h

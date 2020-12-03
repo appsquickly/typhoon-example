@@ -22,6 +22,10 @@ Queries with empty values are converted to `NSNull` and vice versa as of `v0.0.5
 
 ##Version history
 
+###v1.2.0
+ * Adds support for WatchOS targets. Thanks to [Stedman Wilson](https://github.com/sandimas2688) and [Orta](https://github.com/orta).
+ * Necessary project updates
+
 ###v1.1.0
 
 * Now has methods to create URL copies with the query removed, or replaced with a specified query dictionary.

@@ -87,11 +87,11 @@
     [super layoutSubviews];
     [_backgroundView setFrame:CGRectInset(self.bounds, -10, -10)];
 
-    [_cityNameLabel setFrame:CGRectMake(0, 60, self.width, 40)];
-    [_conditionsDescriptionLabel setFrame:CGRectMake(0, 90, self.width, 50)];
+    [_cityNameLabel setFrame:CGRectMake(0, self.height / 6, self.width, 40)];
+    [_conditionsDescriptionLabel setFrame:CGRectMake(0, _cityNameLabel.y + 30, self.width, 50)];
   
-    [_conditionsIcon setFrame:CGRectMake(self.width / 2 - 125, 143, 130, 120)];
-    [_temperatureLabelContainer setFrame:CGRectMake(self.width / 2 + 15, 155, 88, 88)];
+    [_conditionsIcon setFrame:CGRectMake(self.width / 2 - 125, _conditionsDescriptionLabel.y + 53, 130, 120)];
+    [_temperatureLabelContainer setFrame:CGRectMake(self.width / 2 + 15, _conditionsIcon.y + 12, 88, 88)];
 
     CGFloat bottomOffset = self.frame.size.height;
     if (@available(iOS 11.0, *)) {
@@ -135,7 +135,7 @@
     PFForecastConditions *forecastConditions;
     if ([[_weatherReport forecast] count] > indexPath.row)
     {
-        forecastConditions = [[_weatherReport forecast] objectAtIndex:indexPath.row];
+        forecastConditions = [_weatherReport forecast][indexPath.row];
     }
     static NSString *reuseIdentifier = @"weatherForecast";
     PFForecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
@@ -148,7 +148,8 @@
     [cell.descriptionLabel setText:forecastConditions.summary];
     [cell.lowTempLabel setText:[forecastConditions.low asShortStringInDefaultUnits]];
     [cell.highTempLabel setText:[forecastConditions.high asShortStringInDefaultUnits]];
-    [cell.conditionsIcon setImage:[self uiImageForImageUri:forecastConditions.imageUri]];
+    UIImage *conditionsImage = [self uiImageForImageUri:forecastConditions.imageUri];
+    [cell.conditionsIcon setImage:conditionsImage];
 
     [cell.backgroundView setBackgroundColor:[self colorForRow:indexPath.row]];
     return cell;
@@ -285,7 +286,6 @@
 
 - (UIImage *)uiImageForImageUri:(NSString *)imageUri
 {
-
     if ([imageUri length] > 0)
     {
         LogDebug(@"Retrieving image for URI: %@", imageUri);
@@ -315,11 +315,11 @@
         }
         else
         {
-            LogDebug(@"*** No icon for %@ . . rerturning sunny ***", imageUri);
+            LogDebug(@"*** No icon for %@ . . returning sunny ***", imageUri);
             return [UIImage imageNamed:@"icon_sunny"];
         }
     }
-    return nil;
+    return [UIImage imageNamed:@"icon_sunny"];
 }
 
 

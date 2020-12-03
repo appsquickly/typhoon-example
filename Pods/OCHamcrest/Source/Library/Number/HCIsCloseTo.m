@@ -1,22 +1,15 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCIsCloseTo.h"
 
 
 @interface HCIsCloseTo ()
-
 @property (nonatomic, assign, readonly) double value;
 @property (nonatomic, assign, readonly) double delta;
 @end
 
-
 @implementation HCIsCloseTo
-
-+ (id)isCloseTo:(double)value within:(double)delta
-{
-    return [[self alloc] initWithValue:value delta:delta];
-}
 
 - (id)initWithValue:(double)value delta:(double)delta
 {
@@ -29,12 +22,17 @@
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     if ([self itemIsNotNumber:item])
         return NO;
 
-    return fabs([item doubleValue] - self.value) <= self.delta;
+    return [self actualDelta:item] <= self.delta;
+}
+
+- (double)actualDelta:(id)item
+{
+    return fabs([item doubleValue] - self.value);
 }
 
 - (BOOL)itemIsNotNumber:(id)item
@@ -42,20 +40,19 @@
     return ![item isKindOfClass:[NSNumber class]];
 }
 
-- (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
+- (void)describeMismatchOf:(nullable id)item to:(nullable id <HCDescription>)mismatchDescription
 {
     if ([self itemIsNotNumber:item])
         [super describeMismatchOf:item to:mismatchDescription];
     else
     {
-        double actualDelta = fabs([item doubleValue] - self.value);
         [[[mismatchDescription appendDescriptionOf:item]
                                appendText:@" differed by "]
-                               appendDescriptionOf:@(actualDelta)];
+                               appendDescriptionOf:@([self actualDelta:item])];
     }
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [[[[description appendText:@"a numeric value within "]
                     appendDescriptionOf:@(self.delta)]
@@ -68,5 +65,5 @@
 
 id HC_closeTo(double value, double delta)
 {
-    return [HCIsCloseTo isCloseTo:value within:delta];
+    return [[HCIsCloseTo alloc] initWithValue:value delta:delta];
 }

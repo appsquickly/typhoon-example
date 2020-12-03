@@ -1,34 +1,36 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <Foundation/Foundation.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
- @brief Test failure location and reason.
+ @abstract Test failure location and reason.
  */
 @interface HCTestFailure : NSObject
 
 /*!
- * @brief Test case used to run test method.
+ * @abstract Test case used to run test method.
  * @discussion Can be <code>nil</code>.
  *
- * For unmet OCHamcrest assertions, if the assertion was @ref assertThat or @ref assertWithTimeout,
- * <em>testCase</em> will be the test case instance.
+ * For unmet OCHamcrest assertions, if the assertion was <code>assertThat</code> or
+ * <code>assertWithTimeout</code>, <em>testCase</em> will be the test case instance.
  */
 @property (nonatomic, strong, readonly) id testCase;
 
-/*! @brief File name to report. */
+/*! @abstract File name to report. */
 @property (nonatomic, copy, readonly) NSString *fileName;
 
-/*! @brief Line number to report. */
+/*! @abstract Line number to report. */
 @property (nonatomic, assign, readonly) NSUInteger lineNumber;
 
-/*! @brief Failure reason to report. */
+/*! @abstract Failure reason to report. */
 @property (nonatomic, strong, readonly) NSString *reason;
 
 /*!
- * @brief Initializes a newly allocated instance of a test failure.
+ * @abstract Initializes a newly allocated instance of a test failure.
  */
 - (instancetype)initWithTestCase:(id)testCase
                         fileName:(NSString *)fileName
@@ -36,3 +38,5 @@
                           reason:(NSString *)reason;
 
 @end
+
+NS_ASSUME_NONNULL_END

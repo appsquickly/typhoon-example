@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCBaseDescription.h"
 
@@ -8,13 +8,13 @@
 
 @implementation HCBaseDescription
 
-- (id<HCDescription>)appendText:(NSString *)text
+- (id <HCDescription>)appendText:(NSString *)text
 {
     [self append:text];
     return self;
 }
 
-- (id<HCDescription>)appendDescriptionOf:(id)value
+- (id <HCDescription>)appendDescriptionOf:(nullable id)value
 {
     if (value == nil)
         [self append:@"nil"];
@@ -28,10 +28,10 @@
     return self;
 }
 
-- (id<HCDescription>)appendObjectDescriptionOf:(id)value
+- (id <HCDescription>)appendObjectDescriptionOf:(id)value
 {
     NSString *description = [value description];
-    NSUInteger descriptionLength = [description length];
+    NSUInteger descriptionLength = description.length;
     if (descriptionLength == 0)
         [self append:[NSString stringWithFormat:@"<%@: %p>", NSStringFromClass([value class]), (__bridge void *)value]];
     else if ([description characterAtIndex:0] == '<'
@@ -48,7 +48,7 @@
     return self;
 }
 
-- (id<HCDescription>)appendList:(NSArray *)values
+- (id <HCDescription>)appendList:(NSArray *)values
                           start:(NSString *)start
                       separator:(NSString *)separator
                             end:(NSString *)end
@@ -70,7 +70,7 @@
 - (void)toCSyntaxString:(NSString *)unformatted
 {
     [self append:@"\""];
-    NSUInteger length = [unformatted length];
+    NSUInteger length = unformatted.length;
     for (NSUInteger index = 0; index < length; ++index)
         [self toCSyntax:[unformatted characterAtIndex:index]];
     [self append:@"\""];

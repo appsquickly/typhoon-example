@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCHasCount.h"
 
@@ -12,20 +12,15 @@
 
 @implementation HCHasCount
 
-+ (instancetype)hasCount:(id <HCMatcher>)matcher
-{
-    return [[self alloc] initWithCount:matcher];
-}
-
-- (instancetype)initWithCount:(id <HCMatcher>)matcher
+- (instancetype)initWithMatcher:(id <HCMatcher>)countMatcher
 {
     self = [super init];
     if (self)
-        _countMatcher = matcher;
+        _countMatcher = countMatcher;
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     if (![self itemHasCount:item])
         return NO;
@@ -39,7 +34,7 @@
     return [item respondsToSelector:@selector(count)];
 }
 
-- (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
+- (void)describeMismatchOf:(nullable id)item to:(nullable id <HCDescription>)mismatchDescription
 {
     [mismatchDescription appendText:@"was "];
     if ([self itemHasCount:item])
@@ -51,7 +46,7 @@
     [mismatchDescription appendDescriptionOf:item];
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [[description appendText:@"a collection with count of "] appendDescriptionOf:self.countMatcher];
 }
@@ -59,9 +54,9 @@
 @end
 
 
-id HC_hasCount(id <HCMatcher> matcher)
+id HC_hasCount(id <HCMatcher> countMatcher)
 {
-    return [HCHasCount hasCount:matcher];
+    return [[HCHasCount alloc] initWithMatcher:countMatcher];
 }
 
 id HC_hasCountOf(NSUInteger value)

@@ -14,7 +14,7 @@
  *  @return URL's query component as keys/values
  *  Returns nil for an empty query
  */
-- (NSDictionary*) uq_queryDictionary;
+- (NSDictionary*)uq_queryDictionary;
 
 /**
  *  @return URL with keys values appending to query string
@@ -23,11 +23,11 @@
  *  @warning If keys overlap in receiver and query dictionary,
  *  behaviour is undefined.
  */
-- (NSURL*) uq_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary
-                             withSortedKeys:(BOOL) sortedKeys;
+- (NSURL*)uq_URLByAppendingQueryDictionary:(NSDictionary*)queryDictionary
+                            withSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSURL*) uq_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary;
+- (NSURL*)uq_URLByAppendingQueryDictionary:(NSDictionary*)queryDictionary;
 
 /**
  *  @return Copy of URL with its query component replaced with
@@ -35,14 +35,14 @@
  *  @param queryDictionary A new query dictionary
  *  @param sortedKeys      Whether or not to sort the query keys
  */
-- (NSURL*) uq_URLByReplacingQueryWithDictionary:(NSDictionary*) queryDictionary
-                                 withSortedKeys:(BOOL) sortedKeys;
+- (NSURL*)uq_URLByReplacingQueryWithDictionary:(NSDictionary*)queryDictionary
+                                withSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSURL*) uq_URLByReplacingQueryWithDictionary:(NSDictionary*) queryDictionary;
+- (NSURL*)uq_URLByReplacingQueryWithDictionary:(NSDictionary*)queryDictionary;
 
 /** @return Receiver with query component completely removed */
-- (NSURL*) uq_URLByRemovingQuery;
+- (NSURL*)uq_URLByRemovingQuery;
 
 @end
 
@@ -55,7 +55,7 @@
  *  components as key/value pairs. If couldn't split into *any* pairs,
  *  returns nil.
  */
-- (NSDictionary*) uq_URLQueryDictionary;
+- (NSDictionary*)uq_URLQueryDictionary;
 
 @end
 
@@ -69,9 +69,9 @@
  *  @param sortedKeys Sorted the keys alphabetically?
  *  @see cavetas from the main `NSURL` category as well.
  */
-- (NSString*) uq_URLQueryStringWithSortedKeys:(BOOL) sortedKeys;
+- (NSString*)uq_URLQueryStringWithSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSString*) uq_URLQueryString;
+- (NSString*)uq_URLQueryString;
 
 @end

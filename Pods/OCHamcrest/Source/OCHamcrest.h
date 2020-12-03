@@ -1,8 +1,9 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCAllOf.h>
 #import <OCHamcrest/HCAnyOf.h>
+#import <OCHamcrest/HCArgumentCaptor.h>
 #import <OCHamcrest/HCAssertThat.h>
 #import <OCHamcrest/HCConformsToProtocol.h>
 #import <OCHamcrest/HCDescribedAs.h>
@@ -16,6 +17,7 @@
 #import <OCHamcrest/HCIsCollectionContaining.h>
 #import <OCHamcrest/HCIsCollectionContainingInAnyOrder.h>
 #import <OCHamcrest/HCIsCollectionContainingInOrder.h>
+#import <OCHamcrest/HCIsCollectionContainingInRelativeOrder.h>
 #import <OCHamcrest/HCIsCollectionOnlyContaining.h>
 #import <OCHamcrest/HCIsDictionaryContaining.h>
 #import <OCHamcrest/HCIsDictionaryContainingEntries.h>
@@ -24,7 +26,7 @@
 #import <OCHamcrest/HCIsEmptyCollection.h>
 #import <OCHamcrest/HCIsEqual.h>
 #import <OCHamcrest/HCIsEqualIgnoringCase.h>
-#import <OCHamcrest/HCIsEqualIgnoringWhiteSpace.h>
+#import <OCHamcrest/HCIsEqualCompressingWhiteSpace.h>
 #import <OCHamcrest/HCIsEqualToNumber.h>
 #import <OCHamcrest/HCIsIn.h>
 #import <OCHamcrest/HCIsInstanceOf.h>
@@ -40,8 +42,13 @@
 #import <OCHamcrest/HCStringEndsWith.h>
 #import <OCHamcrest/HCStringStartsWith.h>
 #import <OCHamcrest/HCTestFailure.h>
-#import <OCHamcrest/HCTestFailureHandler.h>
-#import <OCHamcrest/HCTestFailureHandlerChain.h>
 #import <OCHamcrest/HCTestFailureReporter.h>
 #import <OCHamcrest/HCTestFailureReporterChain.h>
 #import <OCHamcrest/HCThrowsException.h>
+
+// Carthage workaround: Include transitive public headers
+#import <OCHamcrest/HCBaseDescription.h>
+#import <OCHamcrest/HCCollect.h>
+#import <OCHamcrest/HCRequireNonNilObject.h>
+#import <OCHamcrest/HCStringDescription.h>
+#import <OCHamcrest/HCWrapInMatcher.h>

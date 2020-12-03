@@ -1,33 +1,64 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCDiagnosingMatcher.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * @abstract Calculates the logical conjunction of multiple matchers.
+ * @discussion Evaluation is shortcut, so subsequent matchers are not called if an earlier matcher
+ * returns <code>NO</code>.
+ */
 @interface HCAllOf : HCDiagnosingMatcher
 
-+ (instancetype)allOf:(NSArray *)matchers;
-- (instancetype)initWithMatchers:(NSArray *)matchers;
+- (instancetype)initWithMatchers:(NSArray<id <HCMatcher>> *)matchers NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 
 
-FOUNDATION_EXPORT id HC_allOf(id match, ...) NS_REQUIRES_NIL_TERMINATION;
+FOUNDATION_EXPORT id HC_allOfIn(NSArray<id <HCMatcher>> *matchers);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief allOf(firstMatcher, ...) -
- * Matches if all of the given matchers evaluate to <code>YES</code>.
- * @param firstMatcher,... A comma-separated list of matchers ending with <code>nil</code>.
- * @discussion The matchers are evaluated from left to right using short-circuit evaluation, so
- * evaluation stops as soon as a matcher returns <code>NO</code>.
+ * @abstract Creates a matcher that matches when the examined object matches <b>all</b> of the
+ * specified matchers.
+ * @param matchers An array of matchers. Any element that is not a matcher is implicitly wrapped in
+ * an <em>equalTo</em> matcher to check for equality.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(\@"myValue", allOfIn(\@[startsWith(\@"my"), containsSubstring(\@"Val")]))</pre>
  *
- * Any argument that is not a matcher is implicitly wrapped in an @ref equalTo matcher to check for
- * equality.
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
+ * HC_allOfIn instead.
+ */
+static inline id allOfIn(NSArray *matchers)
+{
+    return HC_allOfIn(matchers);
+}
+#endif
+
+
+FOUNDATION_EXPORT id HC_allOf(id matchers, ...) NS_REQUIRES_NIL_TERMINATION;
+
+#ifndef HC_DISABLE_SHORT_SYNTAX
+/*!
+ * @abstract Creates a matcher that matches when the examined object matches <b>all</b> of the
+ * specified matchers.
+ * @param matchers... A comma-separated list of matchers ending with <code>nil</code>. Any argument
+ * that is not a matcher is implicitly wrapped in an <em>equalTo</em> matcher to check for equality.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(\@"myValue", allOf(startsWith(\@"my"), containsSubstring(\@"Val"), nil))</pre>
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_allOf instead.
  */
-#define allOf HC_allOf
+#define allOf(matchers...) HC_allOf(matchers)
 #endif
+
+NS_ASSUME_NONNULL_END

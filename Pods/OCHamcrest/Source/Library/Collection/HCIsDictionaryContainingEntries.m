@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCIsDictionaryContainingEntries.h"
 
@@ -8,20 +8,13 @@
 
 @interface HCIsDictionaryContainingEntries ()
 @property (nonatomic, copy, readonly) NSArray *keys;
-@property (nonatomic, copy, readonly) NSArray *valueMatchers;
+@property (nonatomic, copy, readonly) NSArray<id <HCMatcher>> *valueMatchers;
 @end
-
 
 @implementation HCIsDictionaryContainingEntries
 
-+ (instancetype)isDictionaryContainingKeys:(NSArray *)keys
-                             valueMatchers:(NSArray *)valueMatchers
-{
-    return [[self alloc] initWithKeys:keys valueMatchers:valueMatchers];
-}
-
 - (instancetype)initWithKeys:(NSArray *)keys
-               valueMatchers:(NSArray *)valueMatchers
+               valueMatchers:(NSArray<id <HCMatcher>> *)valueMatchers
 {
     self = [super init];
     if (self)
@@ -32,7 +25,7 @@
     return self;
 }
 
-- (BOOL)matches:(id)dict describingMismatchTo:(id<HCDescription>)mismatchDescription
+- (BOOL)matches:(id)dict describingMismatchTo:(id <HCDescription>)mismatchDescription
 {
     if (![dict isKindOfClass:[NSDictionary class]])
     {
@@ -40,7 +33,7 @@
         return NO;
     }
 
-    NSUInteger count = [self.keys count];
+    NSUInteger count = self.keys.count;
     for (NSUInteger index = 0; index < count; ++index)
     {
         id key = self.keys[index];
@@ -69,7 +62,7 @@
     return YES;
 }
 
-- (void)describeKeyValueAtIndex:(NSUInteger)index to:(id<HCDescription>)description
+- (void)describeKeyValueAtIndex:(NSUInteger)index to:(id <HCDescription>)description
 {
     [[[[description appendDescriptionOf:self.keys[index]]
                     appendText:@" = "]
@@ -77,7 +70,7 @@
                     appendText:@"; "];
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [description appendText:@"a dictionary containing { "];
     NSUInteger count = [self.keys count];
@@ -102,16 +95,27 @@ static void requirePairedObject(id obj)
 }
 
 
-id HC_hasEntries(id keysAndValueMatch, ...)
+id HC_hasEntriesIn(NSDictionary *valueMatchersForKeys)
+{
+    NSArray *keys = valueMatchersForKeys.allKeys;
+    NSMutableArray<id <HCMatcher>> *valueMatchers = [[NSMutableArray alloc] init];
+    for (id key in keys)
+        [valueMatchers addObject:HCWrapInMatcher(valueMatchersForKeys[key])];
+
+    return [[HCIsDictionaryContainingEntries alloc] initWithKeys:keys
+                                                   valueMatchers:valueMatchers];
+}
+
+id HC_hasEntries(id keysAndValueMatchers, ...)
 {
     va_list args;
-    va_start(args, keysAndValueMatch);
+    va_start(args, keysAndValueMatchers);
 
-    id key = keysAndValueMatch;
+    id key = keysAndValueMatchers;
     id valueMatcher = va_arg(args, id);
     requirePairedObject(valueMatcher);
     NSMutableArray *keys = [NSMutableArray arrayWithObject:key];
-    NSMutableArray *valueMatchers = [NSMutableArray arrayWithObject:HCWrapInMatcher(valueMatcher)];
+    NSMutableArray<id <HCMatcher>> *valueMatchers = [NSMutableArray arrayWithObject:HCWrapInMatcher(valueMatcher)];
 
     key = va_arg(args, id);
     while (key != nil)
@@ -123,6 +127,6 @@ id HC_hasEntries(id keysAndValueMatch, ...)
         key = va_arg(args, id);
     }
 
-    return [HCIsDictionaryContainingEntries isDictionaryContainingKeys:keys
-                                                         valueMatchers:valueMatchers];
+    return [[HCIsDictionaryContainingEntries alloc] initWithKeys:keys
+                                                   valueMatchers:valueMatchers];
 }

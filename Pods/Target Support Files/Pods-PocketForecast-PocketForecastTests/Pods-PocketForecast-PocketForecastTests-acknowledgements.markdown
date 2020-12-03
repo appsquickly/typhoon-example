@@ -926,7 +926,7 @@ THE SOFTWARE.
 ## OCHamcrest
 
 OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-Copyright 2014 hamcrest.org
+Copyright 2017 hamcrest.org
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -943,7 +943,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 ## OCMockito
 
 OCMockito by Jon Reid, http://qualitycoding.org/about/
-Copyright 2014 Jonathan M. Reid
+Copyright 2016 Jonathan M. Reid
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

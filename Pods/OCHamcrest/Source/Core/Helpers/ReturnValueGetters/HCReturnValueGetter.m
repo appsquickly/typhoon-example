@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCReturnValueGetter.h"
 
@@ -10,13 +10,12 @@
 
 @interface HCReturnValueGetter ()
 @property (nonatomic, assign, readonly) char const *handlerType;
-@property (nonatomic, strong, readonly) HCReturnValueGetter *successor;
+@property (nullable, nonatomic, strong, readonly) HCReturnValueGetter *successor;
 @end
-
 
 @implementation HCReturnValueGetter
 
-- (instancetype)initWithType:(char const *)handlerType successor:(HCReturnValueGetter *)successor
+- (instancetype)initWithType:(char const *)handlerType successor:(nullable HCReturnValueGetter *)successor
 {
     self = [super init];
     if (self)

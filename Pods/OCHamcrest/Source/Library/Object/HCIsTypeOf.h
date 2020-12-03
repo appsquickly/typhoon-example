@@ -1,33 +1,37 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCClassMatcher.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * @abstract Matches objects that are of a given class.
+ */
 @interface HCIsTypeOf : HCClassMatcher
-
-+ (id)isTypeOf:(Class)aClass;
-
 @end
 
 
-FOUNDATION_EXPORT id HC_isA(Class aClass);
+FOUNDATION_EXPORT id HC_isA(Class expectedClass);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief isA(aClass) -
- * Matches if object is an instance of a given class (but not of a subclass).
- * @param aClass The class to compare against as the expected class.
- * This matcher checks whether the evaluated object is an instance of <em>aClass</em>.
+ * @abstract Creates a matcher that matches when the examined object is an instance of the specified
+ * class, but not of any subclass.
+ * @param expectedClass The class to compare against as the expected class.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(canoe, isA([Canoe class]))</pre>
  *
- * Example:
- * <ul>
- *   <li><code>isA([Foo class])</code></li>
- * </ul>
- *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_isA instead.
  */
-#define isA HC_isA
+static inline id isA(Class expectedClass)
+{
+    return HC_isA(expectedClass);
+}
 #endif
+
+NS_ASSUME_NONNULL_END

@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCIsCollectionContainingInOrder.h"
 
@@ -7,15 +7,15 @@
 
 
 @interface HCMatchSequence : NSObject
-@property (nonatomic, copy, readonly) NSArray *matchers;
-@property (nonatomic, strong, readonly) id <HCDescription, NSObject> mismatchDescription;
+@property (nonatomic, copy, readonly) NSArray<id <HCMatcher>> *matchers;
+@property (nonatomic, strong, readonly) id <HCDescription> mismatchDescription;
 @property (nonatomic, assign) NSUInteger nextMatchIndex;
 @end
 
 @implementation HCMatchSequence
 
-- (instancetype)initWithMatchers:(NSArray *)itemMatchers
-             mismatchDescription:(id<HCDescription, NSObject>)description
+- (instancetype)initWithMatchers:(NSArray<id <HCMatcher>> *)itemMatchers
+             mismatchDescription:(id <HCDescription>)description
 {
     self = [super init];
     if (self)
@@ -26,14 +26,14 @@
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     return [self isNotSurplus:item] && [self isMatched:item];
 }
 
 - (BOOL)isFinished
 {
-    if (self.nextMatchIndex < [self.matchers count])
+    if (self.nextMatchIndex < self.matchers.count)
     {
         [[self.mismatchDescription appendText:@"no item was "]
                               appendDescriptionOf:self.matchers[self.nextMatchIndex]];
@@ -56,9 +56,12 @@
 
 - (BOOL)isNotSurplus:(id)item
 {
-    if ([self.matchers count] <= self.nextMatchIndex)
+    if (self.matchers.count <= self.nextMatchIndex)
     {
-        [[self.mismatchDescription appendText:@"not matched: "] appendDescriptionOf:item];
+        [[self.mismatchDescription
+                appendText:[NSString stringWithFormat:@"exceeded count of %lu with item ",
+                                                                (unsigned long)self.matchers.count]]
+                appendDescriptionOf:item];
         return NO;
     }
     return YES;
@@ -66,7 +69,8 @@
 
 - (void)describeMismatchOfMatcher:(id <HCMatcher>)matcher item:(id)item
 {
-    [self.mismatchDescription appendText:[NSString stringWithFormat:@"item %zi: ", self.nextMatchIndex]];
+    [self.mismatchDescription appendText:[NSString stringWithFormat:@"item %lu: ",
+                                                               (unsigned long)self.nextMatchIndex]];
     [matcher describeMismatchOf:item to:self.mismatchDescription];
 }
 
@@ -74,17 +78,12 @@
 
 
 @interface HCIsCollectionContainingInOrder ()
-@property (nonatomic, copy, readonly) NSArray *matchers;
+@property (nonatomic, copy, readonly) NSArray<id <HCMatcher>> *matchers;
 @end
 
 @implementation HCIsCollectionContainingInOrder
 
-+ (instancetype)isCollectionContainingInOrder:(NSArray *)itemMatchers
-{
-    return [[self alloc] initWithMatchers:itemMatchers];
-}
-
-- (instancetype)initWithMatchers:(NSArray *)itemMatchers
+- (instancetype)initWithMatchers:(NSArray<id <HCMatcher>> *)itemMatchers
 {
     self = [super init];
     if (self)
@@ -92,7 +91,7 @@
     return self;
 }
 
-- (BOOL)matches:(id)collection describingMismatchTo:(id<HCDescription, NSObject>)mismatchDescription
+- (BOOL)matches:(id)collection describingMismatchTo:(id <HCDescription>)mismatchDescription
 {
     if (![collection conformsToProtocol:@protocol(NSFastEnumeration)])
     {
@@ -110,7 +109,7 @@
     return [matchSequence isFinished];
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [[description appendText:@"a collection containing "]
                   appendList:self.matchers start:@"[" separator:@", " end:@"]"];
@@ -119,12 +118,17 @@
 @end
 
 
-id HC_contains(id itemMatch, ...)
+id HC_containsIn(NSArray *itemMatchers)
+{
+    return [[HCIsCollectionContainingInOrder alloc] initWithMatchers:HCWrapIntoMatchers(itemMatchers)];
+}
+
+id HC_contains(id itemMatchers, ...)
 {
     va_list args;
-    va_start(args, itemMatch);
-    NSArray *matchers = HCCollectMatchers(itemMatch, args);
+    va_start(args, itemMatchers);
+    NSArray *array = HCCollectItems(itemMatchers, args);
     va_end(args);
 
-    return [HCIsCollectionContainingInOrder isCollectionContainingInOrder:matchers];
+    return HC_containsIn(array);
 }

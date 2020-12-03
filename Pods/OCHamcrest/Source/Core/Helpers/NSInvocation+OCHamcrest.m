@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "NSInvocation+OCHamcrest.h"
 
@@ -13,7 +13,7 @@
 {
     NSMethodSignature *signature = [target methodSignatureForSelector:selector];
     NSInvocation *invocation= [self och_invocationWithSignature:signature selector:selector];
-    [invocation setTarget:target];
+    invocation.target = target;
     return invocation;
 }
 
@@ -26,7 +26,7 @@
 + (NSInvocation *)och_invocationWithSignature:(NSMethodSignature *)signature selector:(SEL)selector
 {
     NSInvocation *invocation = [[self class] invocationWithMethodSignature:signature];
-    [invocation setSelector:selector];
+    invocation.selector = selector;
     return invocation;
 }
 
@@ -38,7 +38,7 @@
 
 - (id)och_returnValue
 {
-    char const *returnType = [[self methodSignature] methodReturnType];
+    char const *returnType = self.methodSignature.methodReturnType;
     return [HCReturnValueGetterChain() returnValueOfType:returnType fromInvocation:self];
 }
 

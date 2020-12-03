@@ -1,44 +1,47 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCBaseMatcher.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * @abstract Matches if any entry in a dictionary satisfies the nested pair of matchers.
+ */
 @interface HCIsDictionaryContaining : HCBaseMatcher
 
-+ (instancetype)isDictionaryContainingKey:(id <HCMatcher>)keyMatcher
-                                    value:(id <HCMatcher>)valueMatcher;
-
 - (instancetype)initWithKeyMatcher:(id <HCMatcher>)keyMatcher
-                      valueMatcher:(id <HCMatcher>)valueMatcher;
+                      valueMatcher:(id <HCMatcher>)valueMatcher NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 
 
-FOUNDATION_EXPORT id HC_hasEntry(id keyMatch, id valueMatch);
+FOUNDATION_EXPORT id HC_hasEntry(id keyMatcher, id valueMatcher);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief hasEntry(keyMatcher, valueMatcher) -
- * Matches if dictionary contains key-value entry satisfying a given pair of matchers.
- * @param keyMatcher The matcher to satisfy for the key, or an expected value for @ref equalTo matching.
- * @param valueMatcher The matcher to satisfy for the value, or an expected value for @ref equalTo matching.
- * @discussion This matcher iterates the evaluated dictionary, searching for any key-value entry
- * that satisfies <em>keyMatcher</em> and <em>valueMatcher</em>. If a matching entry is found,
- * hasEntry is satisfied.
+ * @abstract Creates a matcher for NSDictionaries that matches when the examined dictionary contains
+ * at least one entry whose key satisfies the specified <code>keyMatcher</code> <b>and</b> whose
+ * value satisfies the specified <code>valueMatcher</code>.
+ * @param keyMatcher The matcher to satisfy for the key, or an expected value for <em>equalTo</em> matching.
+ * @param valueMatcher The matcher to satisfy for the value, or an expected value for <em>equalTo</em> matching.
+ * @discussion Any argument that is not a matcher is implicitly wrapped in an <em>equalTo</em>
+ * matcher to check for equality.
  *
- * Any argument that is not a matcher is implicitly wrapped in an @ref equalTo matcher to check for
- * equality.
+ * <b>Examples</b><br />
+ * <pre>assertThat(myDictionary, hasEntry(equalTo(\@"foo"), equalTo(\@"bar")))</pre>
+ * <pre>assertThat(myDictionary, hasEntry(\@"foo", \@"bar"))</pre>
  *
- * Examples:
- * <ul>
- *   <li><code>hasEntry(equalTo(\@"foo"), equalTo(\@"bar"))</code></li>
- *   <li><code>hasEntry(\@"foo", \@"bar")</code></li>
- * </ul>
- *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_hasEntry instead.
  */
-#define hasEntry HC_hasEntry
+static inline id hasEntry(id keyMatcher, id valueMatcher)
+{
+    return HC_hasEntry(keyMatcher, valueMatcher);
+}
 #endif
+
+NS_ASSUME_NONNULL_END

@@ -1,54 +1,95 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCDiagnosingMatcher.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * @abstract Matches if any item in a collection satisfies a nested matcher.
+ */
 @interface HCIsCollectionContaining : HCDiagnosingMatcher
 
-+ (instancetype)isCollectionContaining:(id <HCMatcher>)elementMatcher;
-- (instancetype)initWithMatcher:(id <HCMatcher>)elementMatcher;
+- (instancetype)initWithMatcher:(id <HCMatcher>)elementMatcher NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 
 
-FOUNDATION_EXPORT id HC_hasItem(id itemMatch);
+FOUNDATION_EXPORT id HC_hasItem(id itemMatcher);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief hasItem(aMatcher) -
- * Matches if any element of collection satisfies a given matcher.
- * @param aMatcher The matcher to satisfy, or an expected value for @ref equalTo matching.
- * @discussion This matcher iterates the evaluated collection, searching for any element that
- * satisfies a given matcher. If a matching element is found, hasItem is satisfied.
+ * @abstract hasItem(itemMatcher) -
+ * Creates a matcher for collections that matches when at least one item in the examined collection
+ * satisfies the specified matcher.
+ * @param itemMatcher The matcher to apply to collection elements, or an expected value
+ * for <em>equalTo</em> matching.
+ * @discussion This matcher works on any collection that conforms to the NSFastEnumeration protocol,
+ * performing a single pass.
  *
- * If <em>aMatcher</em> is not a matcher, it is implicitly wrapped in an @ref equalTo matcher to
- * check for equality.
+ * If <em>itemMatcher</em> is not a matcher, it is implicitly wrapped in an <em>equalTo</em> matcher
+ * to check for equality.
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Example</b><br />
+ * <pre>assertThat(\@[\@1, \@2, \@3], hasItem(equalTo(\@2)))</pre>
+ *
+ * <pre>assertThat(\@[\@1, \@2, \@3], hasItem(\@2))</pre>
+ *
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_hasItem instead.
  */
 #define hasItem HC_hasItem
 #endif
 
 
-FOUNDATION_EXPORT id HC_hasItems(id itemMatch, ...) NS_REQUIRES_NIL_TERMINATION;
+FOUNDATION_EXPORT id HC_hasItemsIn(NSArray *itemMatchers);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief hasItems(firstMatcher, ...) -
- * Matches if all of the given matchers are satisfied by any elements of the collection.
- * @param firstMatcher,... A comma-separated list of matchers ending with <code>nil</code>.
- * @discussion This matcher iterates the given matchers, searching for any elements in the evaluated
- * collection that satisfy them. If each matcher is satisfied, then hasItems is satisfied.
+ * @abstract Creates a matcher for collections that matches when all specified matchers are
+ * satisfied by any item in the examined collection.
+ * @param itemMatchers An array of matchers. Any element that is not a matcher is implicitly wrapped
+ * in an <em>equalTo</em> matcher to check for equality.
+ * @discussion This matcher works on any collection that conforms to the NSFastEnumeration protocol,
+ * performing one pass for each matcher.
  *
- * Any argument that is not a matcher is implicitly wrapped in an @ref equalTo matcher to check for
- * equality.
+ * <b>Example</b><br />
+ * <pre>assertThat(\@[\@"foo", \@"bar", \@"baz"], hasItems(\@[endsWith(\@"z"), endsWith(\@"o")]))</pre>
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
+ * HC_hasItemsIn instead.
+ */
+static inline id hasItemsIn(NSArray *itemMatchers)
+{
+    return HC_hasItemsIn(itemMatchers);
+}
+#endif
+
+
+FOUNDATION_EXPORT id HC_hasItems(id itemMatchers, ...) NS_REQUIRES_NIL_TERMINATION;
+
+#ifndef HC_DISABLE_SHORT_SYNTAX
+/*!
+ * @abstract Creates a matcher for collections that matches when all specified matchers are
+ * satisfied by any item in the examined collection.
+ * @param itemMatchers... A comma-separated list of matchers ending with <code>nil</code>.
+ * Any argument that is not a matcher is implicitly wrapped in an <em>equalTo</em> matcher to check
+ * for equality.
+ * @discussion This matcher works on any collection that conforms to the NSFastEnumeration protocol,
+ * performing one pass for each matcher.
+ *
+ * <b>Example</b><br />
+ * <pre>assertThat(\@[\@"foo", \@"bar", \@"baz"], hasItems(endsWith(\@"z"), endsWith(\@"o"), nil))</pre>
+ *
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_hasItems instead.
  */
-#define hasItems HC_hasItems
+#define hasItems(itemMatchers...) HC_hasItems(itemMatchers)
 #endif
+
+NS_ASSUME_NONNULL_END

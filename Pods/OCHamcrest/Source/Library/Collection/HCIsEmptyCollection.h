@@ -1,12 +1,16 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCHasCount.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * @abstract Matches empty collections.
+ */
 @interface HCIsEmptyCollection : HCHasCount
 
-+ (instancetype)isEmptyCollection;
 - (instancetype)init;
 
 @end
@@ -14,15 +18,22 @@
 
 FOUNDATION_EXPORT id HC_isEmpty(void);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief Matches empty collection.
- * @discussion This matcher invokes <code>-count</code> on the evaluated object to determine if the
- * number of elements it contains is zero.
+ * @abstract Creates a matcher that matches any examined object whose <code>-count</code> method
+ * returns zero.
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Example</b><br />
+ * <pre>assertThat(\@[], isEmpty())</pre>
+ *
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_isEmpty instead.
  */
-#define isEmpty() HC_isEmpty()
+static inline id isEmpty(void)
+{
+    return HC_isEmpty();
+}
 #endif
+
+NS_ASSUME_NONNULL_END

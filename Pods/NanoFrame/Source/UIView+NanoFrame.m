@@ -1,13 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
 //
-//  UIView+Position.m
+//  AppsQuick.ly
+//  Copyright 2015 AppsQuick.ly
+//  All Rights Reserved.
 //
-//  Created by Constantine Karlis on 7/28/12.
+//  NOTICE: Use is subject to license terms.
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+////////////////////////////////////////////////////////////////////////////////
 
 
 #import "UIView+NanoFrame.h"
@@ -164,55 +163,25 @@
     [self alignRightHorizontallyBelow:view padding:0.0];
 }
 
--(void)snapPosition
+- (void)addRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii
 {
-//    if we have a retina screen snap to nearest 0.5
-    CGRect f = self.frame;
-    if ([self screenIsRetina])
-    {
-        f.origin = CGPointMake((CGFloat)(roundf(f.origin.x*2.0)/2.0), (CGFloat)(roundf(f.origin.y*2.0)/2.0));
-    }
-    else
-    {
-        
-        f.origin = CGPointMake(roundf(f.origin.x) , roundf(f.origin.y));
-    }
-    self.frame = f;
+    CALayer *tMaskLayer = [self maskForRoundedCorners:corners withRadii:radii];
+    self.layer.mask = tMaskLayer;
 }
 
--(void)snapSize
+- (CALayer *)maskForRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii
 {
-    //    if we have a retina screen snap to nearest 0.5
-    CGRect f = self.frame;
-    if ([self screenIsRetina])
-    {
-        f.size = CGSizeMake((CGFloat)(roundf(f.size.width*2.0)/2.0), (CGFloat)(roundf(f.size.height*2.0)/2.0));
-    }
-    else
-    {
-        f.size = CGSizeMake(roundf(f.size.width) , roundf(f.size.height));
-    }
-    self.frame = f;
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = self.bounds;
+
+    UIBezierPath *roundedPath = [UIBezierPath bezierPathWithRoundedRect:maskLayer.bounds byRoundingCorners:corners
+        cornerRadii:radii];
+    maskLayer.fillColor = [[UIColor whiteColor] CGColor];
+    maskLayer.backgroundColor = [[UIColor clearColor] CGColor];
+    maskLayer.path = [roundedPath CGPath];
+
+    return maskLayer;
 }
 
--(void)snapFrame
-{
-    if ([self screenIsRetina])
-    {
-        CGRect f = self.frame;
-        f.size = CGSizeMake((CGFloat)(roundf(f.size.width*2.0)/2.0), (CGFloat)(roundf(f.size.height*2.0)/2.0));
-        f.origin = CGPointMake((CGFloat)(roundf(f.origin.x*2.0)/2.0), (CGFloat)(roundf(f.origin.y*2.0)/2.0));
-        self.frame = f;
-    }
-    else
-    {
-        self.frame = CGRectIntegral(self.frame);
-    }
-}
-
--(BOOL)screenIsRetina
-{
-    return ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2.0);
-}
 
 @end

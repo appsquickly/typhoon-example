@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCHasDescription.h"
 
@@ -8,11 +8,6 @@
 
 
 @implementation HCHasDescription
-
-+ (instancetype)hasDescription:(id <HCMatcher>)descriptionMatcher
-{
-    return [[self alloc] initWithDescription:descriptionMatcher];
-}
 
 - (instancetype)initWithDescription:(id <HCMatcher>)descriptionMatcher
 {
@@ -27,7 +22,7 @@
 @end
 
 
-id HC_hasDescription(id match)
+id HC_hasDescription(id descriptionMatcher)
 {
-    return [HCHasDescription hasDescription:HCWrapInMatcher(match)];
+    return [[HCHasDescription alloc] initWithDescription:HCWrapInMatcher(descriptionMatcher)];
 }

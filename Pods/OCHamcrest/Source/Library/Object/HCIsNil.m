@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCIsNil.h"
 
@@ -8,17 +8,12 @@
 
 @implementation HCIsNil
 
-+ (instancetype)isNil
-{
-    return [[self alloc] init];
-}
-
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     return item == nil;
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [description appendText:@"nil"];
 }
@@ -28,10 +23,10 @@
 
 id HC_nilValue()
 {
-    return [HCIsNil isNil];
+    return [[HCIsNil alloc] init];
 }
 
 id HC_notNilValue()
 {
-    return HC_isNot([HCIsNil isNil]);
+    return HC_isNot([[HCIsNil alloc] init]);
 }

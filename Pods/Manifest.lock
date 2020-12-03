@@ -2,22 +2,22 @@ PODS:
   - Expecta (0.2.4)
   - ICLoader (1.0.4):
     - NanoFrame
-  - NanoFrame (0.0.1)
+  - NanoFrame (0.0.3)
   - NGAParallaxMotion (1.1.0)
-  - NSURL+QueryDictionary (1.1.0)
-  - OCHamcrest (4.2.0)
+  - "NSURL+QueryDictionary (1.2.0)"
+  - OCHamcrest (6.1.1)
   - OCLogTemplate (1.0.1)
-  - OCMockito (1.4.0):
-    - OCHamcrest (~> 4.0)
+  - OCMockito (4.1.0):
+    - OCHamcrest (~> 6.0)
   - PaperFold (1.2)
   - RaptureXML (1.0.1)
-  - Typhoon (4.0.2):
-    - Typhoon/DeallocNotifier (= 4.0.2)
-    - Typhoon/IntrospectionUtils (= 4.0.2)
-    - Typhoon/no-arc (= 4.0.2)
-  - Typhoon/DeallocNotifier (4.0.2)
-  - Typhoon/IntrospectionUtils (4.0.2)
-  - Typhoon/no-arc (4.0.2):
+  - Typhoon (4.0.9):
+    - Typhoon/DeallocNotifier (= 4.0.9)
+    - Typhoon/IntrospectionUtils (= 4.0.9)
+    - Typhoon/no-arc (= 4.0.9)
+  - Typhoon/DeallocNotifier (4.0.9)
+  - Typhoon/IntrospectionUtils (4.0.9)
+  - Typhoon/no-arc (4.0.9):
     - Typhoon/IntrospectionUtils
 
 DEPENDENCIES:
@@ -25,13 +25,26 @@ DEPENDENCIES:
   - ICLoader
   - NanoFrame
   - NGAParallaxMotion
-  - NSURL+QueryDictionary
+  - "NSURL+QueryDictionary"
   - OCHamcrest
   - OCLogTemplate
   - OCMockito
   - PaperFold (from `https://github.com/jasperblues/PaperFold-for-iOS.git`, tag `1.2-no-gesture-recognizers`)
   - RaptureXML
   - Typhoon
+
+SPEC REPOS:
+  trunk:
+    - Expecta
+    - ICLoader
+    - NanoFrame
+    - NGAParallaxMotion
+    - "NSURL+QueryDictionary"
+    - OCHamcrest
+    - OCLogTemplate
+    - OCMockito
+    - RaptureXML
+    - Typhoon
 
 EXTERNAL SOURCES:
   PaperFold:
@@ -46,16 +59,16 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Expecta: cfaf1d3e2e194ca704a25e997093d30a1ce70b61
   ICLoader: 00592dc70b66252d58981369b42be47b668968c8
-  NanoFrame: 1c259be9c3241de2e60cccf430a85a1d25e4dd5b
+  NanoFrame: a1dabbac9994eeea5e6289ec8201d5752a01cd21
   NGAParallaxMotion: 8772f51f75e5177840053229bbf32bf6f7687e52
-  NSURL+QueryDictionary: dd0a5fec689a9b4780b6fa0e0225c01ca3ea653e
-  OCHamcrest: c14c0b3f4c4e99363e5b87d97bae38c4438b6d5d
+  "NSURL+QueryDictionary": bae616404e2adf6409d3d5c02a093cbf44c8a236
+  OCHamcrest: 363e1bf738c3e8a94abe7c2c415f70d671adde38
   OCLogTemplate: 3a67ba6e6b40bc7675f6017cb71674e51cd68fa2
-  OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
+  OCMockito: bceefcd365252bcdf8b59c1b2bd23890805fc0d8
   PaperFold: 7ebdf11028012a3e0f3906bd455054369ff79e4a
   RaptureXML: b5c33c04c1a4adfd8ad0d5463329a31820596e82
-  Typhoon: 05db9d33d798b90c202bf3f754275c03efe93297
+  Typhoon: 1973c93ecfb3edb963d78b10e715bc2911475bd2
 
 PODFILE CHECKSUM: e2a619a72884d9e4a60b99258655fae8f80ad897
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.10.0

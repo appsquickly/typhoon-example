@@ -1,39 +1,44 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCBaseMatcher.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * @abstract Matches if any entry in a dictionary has a key satisfying the nested matcher.
+ */
 @interface HCIsDictionaryContainingKey : HCBaseMatcher
 
-+ (instancetype)isDictionaryContainingKey:(id <HCMatcher>)keyMatcher;
-- (instancetype)initWithKeyMatcher:(id <HCMatcher>)keyMatcher;
+- (instancetype)initWithKeyMatcher:(id <HCMatcher>)keyMatcher NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 
 
-FOUNDATION_EXPORT id HC_hasKey(id keyMatch);
+FOUNDATION_EXPORT id HC_hasKey(id keyMatcher);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief hasKey(keyMatcher) -
- * Matches if dictionary contains an entry whose key satisfies a given matcher.
- * @param keyMatcher The matcher to satisfy for the key, or an expected value for @ref equalTo matching.
- * @discussion This matcher iterates the evaluated dictionary, searching for any key-value entry
- * whose key satisfies the given matcher. If a matching entry is found, hasKey is satisfied.
+ * @abstract Creates a matcher for NSDictionaries that matches when the examined dictionary contains
+ * at least key that satisfies the specified matcher.
+ * @param keyMatcher The matcher to satisfy for the key, or an expected value for <em>equalTo</em> matching.
+ * @discussion Any argument that is not a matcher is implicitly wrapped in an <em>equalTo</em>
+ * matcher to check for equality.
  *
- * Any argument that is not a matcher is implicitly wrapped in an @ref equalTo matcher to check for
- * equality.
+ * <b>Examples</b><br />
+ * <pre>assertThat(myDictionary, hasEntry(equalTo(\@"foo")))</pre>
+ * <pre>assertThat(myDictionary, hasEntry(\@"foo"))</pre>
  *
- * Examples:
- * <ul>
- *   <li><code>hasEntry(equalTo(\@"foo"))</code></li>
- *   <li><code>hasEntry(\@"foo")</code></li>
- * </ul>
- *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_hasKey instead.
  */
-#define hasKey HC_hasKey
+static inline id hasKey(id keyMatcher)
+{
+    return HC_hasKey(keyMatcher);
+}
 #endif
+
+NS_ASSUME_NONNULL_END

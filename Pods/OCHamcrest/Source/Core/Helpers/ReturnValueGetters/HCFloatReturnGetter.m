@@ -1,12 +1,12 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCFloatReturnGetter.h"
 
 
 @implementation HCFloatReturnGetter
 
-- (instancetype)initWithSuccessor:(HCReturnValueGetter *)successor
+- (instancetype)initWithSuccessor:(nullable HCReturnValueGetter *)successor
 {
     self = [super initWithType:@encode(float) successor:successor];
     return self;

@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCEvery.h"
 
@@ -60,7 +60,7 @@
     [mismatchDescription appendText:@"]"];
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [[description appendText:@"every item is "] appendDescriptionOf:self.matcher];
 }
@@ -68,7 +68,7 @@
 @end
 
 
-id HC_everyItem(id itemMatcher)
+id HC_everyItem(id <HCMatcher> itemMatcher)
 {
     return [[HCEvery alloc] initWithMatcher:itemMatcher];
 }

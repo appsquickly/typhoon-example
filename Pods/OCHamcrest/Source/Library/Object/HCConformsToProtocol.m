@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 //  Contribution by Todd Farrell
 //
 
@@ -14,11 +14,6 @@
 
 @implementation HCConformsToProtocol
 
-+ (instancetype)conformsTo:(Protocol *)protocol
-{
-    return [[self alloc] initWithProtocol:protocol];
-}
-
 - (instancetype)initWithProtocol:(Protocol *)protocol
 {
     HCRequireNonNilObject(protocol);
@@ -29,12 +24,12 @@
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     return [item conformsToProtocol:self.protocol];
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
     [[description appendText:@"an object that conforms to "]
                   appendText:NSStringFromProtocol(self.protocol)];
@@ -45,5 +40,5 @@
 
 id HC_conformsTo(Protocol *aProtocol)
 {
-    return [HCConformsToProtocol conformsTo:aProtocol];
+    return [[HCConformsToProtocol alloc] initWithProtocol:aProtocol];
 }

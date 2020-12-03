@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCDescribedAs.h"
 
@@ -15,7 +15,7 @@
     int decimal = 0;
     BOOL readDigit = NO;
 
-    NSUInteger length = [self length];
+    NSUInteger length = self.length;
     NSUInteger index;
     for (index = 0; index < length; ++index)
     {
@@ -44,17 +44,7 @@
 @property (nonatomic, copy, readonly) NSArray *values;
 @end
 
-
 @implementation HCDescribedAs
-
-+ (instancetype)describedAs:(NSString *)description
-                 forMatcher:(id <HCMatcher>)matcher
-                 overValues:(NSArray *)templateValues
-{
-    return [[self alloc] initWithDescription:description
-                                  forMatcher:matcher
-                                  overValues:templateValues];
-}
 
 - (instancetype)initWithDescription:(NSString *)description
                          forMatcher:(id <HCMatcher>)matcher
@@ -70,19 +60,19 @@
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(nullable id)item
 {
     return [self.matcher matches:item];
 }
 
-- (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
+- (void)describeMismatchOf:(nullable id)item to:(nullable id <HCDescription>)mismatchDescription
 {
     [self.matcher describeMismatchOf:item to:mismatchDescription];
 }
 
-- (void)describeTo:(id<HCDescription>)description
+- (void)describeTo:(id <HCDescription>)description
 {
-    NSArray *components = [self.descriptionTemplate componentsSeparatedByString:@"%"];
+    NSArray<NSString *> *components = [self.descriptionTemplate componentsSeparatedByString:@"%"];
     BOOL firstComponent = YES;
     for (NSString *component in components)
     {
@@ -125,5 +115,7 @@ id HC_describedAs(NSString *description, id <HCMatcher> matcher, ...)
     }
     va_end(args);
 
-    return [HCDescribedAs describedAs:description forMatcher:matcher overValues:valueList];
+    return [[HCDescribedAs alloc] initWithDescription:description
+                                           forMatcher:matcher
+                                           overValues:valueList];
 }

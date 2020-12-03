@@ -1,99 +1,114 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <OCHamcrest/HCBaseMatcher.h>
 
 
-@interface HCOrderingComparison : HCBaseMatcher
+NS_ASSUME_NONNULL_BEGIN
 
-+ (instancetype)compare:(id)expectedValue
-             minCompare:(NSComparisonResult)min
-             maxCompare:(NSComparisonResult)max
-  comparisonDescription:(NSString *)comparisonDescription;
+/*!
+ * @abstract Matches values with <code>-compare:</code>.
+ */
+@interface HCOrderingComparison : HCBaseMatcher
 
 - (instancetype)initComparing:(id)expectedValue
                    minCompare:(NSComparisonResult)min
                    maxCompare:(NSComparisonResult)max
-        comparisonDescription:(NSString *)comparisonDescription;
+        comparisonDescription:(NSString *)comparisonDescription NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 
 
-FOUNDATION_EXPORT id HC_greaterThan(id expected);
+FOUNDATION_EXPORT id HC_greaterThan(id value);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief greaterThan(aNumber) -
- * Matches if object is greater than a given number.
- * @param aNumber The NSNumber to compare against.
- * @discussion Example:
- * <ul>
- *   <li><code>greaterThan(\@5)</code></li>
- * </ul>
+ * @abstract Creates a matcher that matches when the examined object is greater than the specified
+ * value, as reported by the <code>-compare:</code> method of the <b>examined</b> object.
+ * @param value The value which, when passed to the <code>-compare:</code> method of the examined
+ * object, should return NSOrderedAscending.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(\@2, greaterThan(\@1))</pre>
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_greaterThan instead.
  */
-#define greaterThan HC_greaterThan
+static inline id greaterThan(id value)
+{
+    return HC_greaterThan(value);
+}
 #endif
 
 
-FOUNDATION_EXPORT id HC_greaterThanOrEqualTo(id expected);
+FOUNDATION_EXPORT id HC_greaterThanOrEqualTo(id value);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief greaterThanOrEqualTo(aNumber) -
- * Matches if object is greater than or equal to a given number.
- * @param aNumber The NSNumber to compare against.
- * @discussion Example:
- * <ul>
- *   <li><code>greaterThanOrEqualTo(\@5)</code></li>
- * </ul>
+ * @abstract Creates a matcher that matches when the examined object is greater than or equal to the
+ * specified value, as reported by the <code>-compare:</code> method of the <b>examined</b> object.
+ * @param value The value which, when passed to the <code>-compare:</code> method of the examined
+ * object, should return NSOrderedAscending or NSOrderedSame.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(\@1, greaterThanOrEqualTo(\@1))</pre>
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_greaterThanOrEqualTo instead.
  */
-#define greaterThanOrEqualTo HC_greaterThanOrEqualTo
+static inline id greaterThanOrEqualTo(id value)
+{
+    return HC_greaterThanOrEqualTo(value);
+}
 #endif
 
 
-FOUNDATION_EXPORT id HC_lessThan(id expected);
+FOUNDATION_EXPORT id HC_lessThan(id value);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief lessThan(aNumber) -
- * Matches if object is less than a given number.
- * @param aNumber The NSNumber to compare against.
- * @discussion Example:
- * <ul>
- *   <li><code>lessThan(\@5)</code></li>
- * </ul>
+ * @abstract Creates a matcher that matches when the examined object is less than the specified
+ * value, as reported by the <code>-compare:</code> method of the <b>examined</b> object.
+ * @param value The value which, when passed to the <code>-compare:</code> method of the examined
+ * object, should return NSOrderedDescending.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(\@1, lessThan(\@2))</pre>
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_lessThan instead.
  */
-#define lessThan HC_lessThan
+static inline id lessThan(id value)
+{
+    return HC_lessThan(value);
+}
 #endif
 
 
-FOUNDATION_EXPORT id HC_lessThanOrEqualTo(id expected);
+FOUNDATION_EXPORT id HC_lessThanOrEqualTo(id value);
 
-#ifdef HC_SHORTHAND
+#ifndef HC_DISABLE_SHORT_SYNTAX
 /*!
- * @brief lessThanOrEqualTo(aNumber) -
- * Matches if object is less than or equal to a given number.
- * @param aNumber The NSNumber to compare against.
- * @discussion Example:
- * <ul>
- *   <li><code>lessThanOrEqualTo(\@5)</code></li>
- * </ul>
+ * @abstract Creates a matcher that matches when the examined object is less than or equal to the
+ * specified value, as reported by the <code>-compare:</code> method of the <b>examined</b> object.
+ * @param value The value which, when passed to the <code>-compare:</code> method of the examined
+ * object, should return NSOrderedDescending or NSOrderedSame.
+ * @discussion
+ * <b>Example</b><br />
+ * <pre>assertThat(\@1, lessThanOrEqualTo(\@1))</pre>
  *
- * @attribute Name Clash
- * In the event of a name clash, don't <code>#define HC_SHORTHAND</code> and use the synonym
+ * <b>Name Clash</b><br />
+ * In the event of a name clash, <code>#define HC_DISABLE_SHORT_SYNTAX</code> and use the synonym
  * HC_lessThanOrEqualTo instead.
  */
-#define lessThanOrEqualTo HC_lessThanOrEqualTo
+static inline id lessThanOrEqualTo(id value)
+{
+    return HC_lessThanOrEqualTo(value);
+}
 #endif
+
+NS_ASSUME_NONNULL_END

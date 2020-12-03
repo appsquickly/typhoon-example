@@ -29,23 +29,7 @@
 {
     return [TyphoonDefinition withClass:[PFAppDelegate class] configuration:^(TyphoonDefinition *definition)
     {
-        [definition injectProperty:@selector(window) with:[self mainWindow]];
         [definition injectProperty:@selector(cityDao) with:[self.coreComponents cityDao]];
-        [definition injectProperty:@selector(rootViewController) with:[self rootViewController]];
-    }];
-}
-
-/**
-* Set up the main window. We don't really need to use DI for this, but it shows an example of injecting a struct.
-*/
-- (UIWindow *)mainWindow
-{
-    return [TyphoonDefinition withClass:[UIWindow class] configuration:^(TyphoonDefinition *definition)
-    {
-        [definition useInitializer:@selector(initWithFrame:) parameters:^(TyphoonMethod *initializer)
-        {
-            [initializer injectParameterWith:[NSValue valueWithCGRect:[[UIScreen mainScreen] bounds]]];
-        }];
         [definition injectProperty:@selector(rootViewController) with:[self rootViewController]];
     }];
 }

@@ -1,1 +1,1 @@
-../../../OCMockito/Source/OCMockito/MKTInvocationContainer.h
+../../../OCMockito/Source/OCMockito/Stubbing/MKTInvocationContainer.h

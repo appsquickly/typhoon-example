@@ -1,25 +1,29 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import <Foundation/Foundation.h>
 #import <OCHamcrest/HCDescription.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
- * @brief Base class for all @ref HCDescription implementations.
+ * @abstract Base class for all HCDescription implementations.
  */
 @interface HCBaseDescription : NSObject <HCDescription>
 @end
 
 
 /*!
- * @brief Methods that must be provided by subclasses of HCBaseDescription.
+ * @abstract Methods that must be provided by subclasses of HCBaseDescription.
  */
 @interface HCBaseDescription (SubclassResponsibility)
 
 /*!
- * @brief Appends the given string to the description.
+ * @abstract Appends the specified string to the description.
  */
 - (void)append:(NSString *)str;
 
 @end
+
+NS_ASSUME_NONNULL_END

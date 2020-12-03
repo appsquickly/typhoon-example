@@ -1,5 +1,5 @@
 //  OCHamcrest by Jon Reid, http://qualitycoding.org/about/
-//  Copyright 2015 hamcrest.org. See LICENSE.txt
+//  Copyright 2017 hamcrest.org. See LICENSE.txt
 
 #import "HCGenericTestFailureReporter.h"
 
@@ -13,7 +13,7 @@
     return YES;
 }
 
-- (void)executeHandlingOfFailure:(HCTestFailure *)failure;
+- (void)executeHandlingOfFailure:(HCTestFailure *)failure
 {
     NSException *exception = [self createExceptionForFailure:failure];
     [exception raise];
